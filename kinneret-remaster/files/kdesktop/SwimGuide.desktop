@@ -1,0 +1,21 @@
+[Desktop Entry]
+Comment=
+Comment[en_US]=
+Encoding=UTF-8
+Exec=/opt/kinneret/bin/swim
+GenericName=
+GenericName[en_US]=
+Icon=translate
+MimeType=
+Name=Swim Guide
+Name[en_US]=Swim Guide
+Name[he]=מדריך השחיה
+Path=
+ServiceTypes=
+SwallowExec=
+SwallowTitle=
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

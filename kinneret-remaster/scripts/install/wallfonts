@@ -1,0 +1,12 @@
+#!/bin/bash
+#install Daniel Levi's fonts from http://thewall.revizia.net
+exit 0 # we have a legal problem.
+wall="thewall-fonts*"
+echo "${BLUE}Installing the \"The Wall\" fonts by Daniel Levi. http://thewall.revizia.net/${NORMAL}"
+cd /usr/share/fonts/ttf
+tar -xzf /kinneret/packages/src/$wall
+cd wall-fonts
+ttmkfdir -o fonts.scale >/dev/null
+mkfontdir >/dev/null
+xset fp+ /usr/share/fonts/ttf/wall-fonts >/dev/null
+#SCRIPT ENDED

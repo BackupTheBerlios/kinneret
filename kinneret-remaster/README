@@ -1,0 +1,32 @@
+README - kinneret remastering scripts, version 0.1
+this is a readme file for the kinneret remastering scripts
+WARNING! those scripts may seriousley damage your system, especially if you are running them without knowing what you are doing.
+you should consider downloading a pre-prepared ISO image, as those scripts are dangarous pre-alpha.
+we have no responsability what so ever on any damage caused to information or your system by using those scripts.
+
+this script package is supposed to work on KNOPPIX 3.2 30/03/2003 and will mostly fail to provide desired results on any other version of knoppix.
+
+before running anything - 
+-- you should extract the contents of the knoppix compressed file system into sorce/ . use the cp flag p to preserve file permissions. you may come across errors if you don't.
+-- you should make sure the remaster/ directory is empty.
+-- you should make sure you have the cloop tools, available at knoppix' homepage.
+-- you should make sure you know what you're doing!
+
+if you don't have enough space on your partition, you can symlink the source/ and remaster/ directories somewhere else.
+
+steps in remastering -
+become root by using su.
+get into kinneret-remaster/ directory.
+run ./dokinneret
+this will take some time, depanding on the speed of your system (30~80 min)
+while this is running you will notice uic generates "cannot open network socket"errors. 
+this is a known problem, and does not appear to have any result on the outcome.
+also, compiling sim generates some warnings, again - nothing serious.
+next, make sure you have enough total memory (swap+ram) for compressing the fs
+you will need at least 700MB of free memory.
+run ./compressfs
+run ./mkiso
+
+you should now have your own home-made kinneret ISO in iso/
+
+for questions/suggestions/bug reports mail me - sillyfly@linux-kinneret.org

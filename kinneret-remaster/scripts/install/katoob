@@ -1,0 +1,4 @@
+#!/bin/bash
+#make a config file for katoob, so it doesn't display an error message.
+mkdir /etc/skel/.katoob
+echo -e 'rtl = 1\nxkb_err_dlg = 0' >/etc/skel/.katoob/config

@@ -1,0 +1,12 @@
+#!/bin/bash
+#Install KOffice Hebrew i18n
+kofficehe="koffice-i18n-he*"
+conflags="--prefix=/usr"
+echo "${BLUE}Installing koffice-i18n-he...${NORMAL}"
+cd /kinneret/tmp/
+tar -xjf /kinneret/packages/src/$kofficehe
+cd $kofficehe
+./configure $conflags
+make
+make install
+#SCRIPT ENDED

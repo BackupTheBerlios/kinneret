@@ -1,0 +1,9 @@
+#!/bin/bash
+cp /kinneret/packages/src/gimp*.mo /usr/share/locale/he/LC_MESSAGES/
+chmod a+r /usr/share/locale/he/LC_MESSAGES/gimp*.mo
+cd /usr/share/locale/he/LC_MESSAGES/
+ln -s gimp.mo gimp14.mo
+cd /usr/bin
+rm -f gimp
+ln -s gimp-1.3 gimp
+#SCRIPT ENDED

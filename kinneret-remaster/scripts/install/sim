@@ -1,0 +1,15 @@
+#!/bin/bash
+#Install sim icq client
+sim="sim*"
+conflags="--prefix=/usr --with-qt-dir=/usr/share/qt3 --disable-openssl"
+echo "${BLUE}Installing sim...${NORMAL}"
+cd /kinneret/tmp/
+tar -xzf /kinneret/packages/src/$sim.tar.gz
+cd $sim
+./configure $conflags
+make
+make install
+#
+cp /kinneret/packages/src/sim.mo /usr/share/locale/he/LC_MESSAGES/
+chmod a+r /usr/share/locale/he/LC_MESSAGES/sim.mo
+#SCRIPT ENDED

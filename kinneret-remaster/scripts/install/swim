@@ -1,0 +1,45 @@
+#!/bin/bash
+#Install swimming guide
+swim="l2swim2"
+swimdoc="l2swim-docs"
+conflags="--with-qt-dir=/usr/share/qt3 --prefix=/usr"
+echo "${BLUE}Installing swimming guide...${NORMAL}"
+cd /kinneret/tmp/
+tar -xzf /kinneret/packages/src/$swim.tar.gz
+cd $swim
+./configure $conflags
+make
+make install
+
+#Install the docs.
+cd /kinneret/tmp/
+tar -xzf /kinneret/packages/src/$swimdoc.tar.gz
+mkdir -p /opt/kinneret/l2swim
+cd /opt/kinneret/l2swim
+mkdir -p etc doc/he doc/image doc/en
+mkdir -p /opt/kinneret/images /opt/kinneret/bin
+cp /kinneret/tmp/$swimdoc/etc/swim_menu*.txt /opt/kinneret/l2swim/etc/
+ln -s /opt/kinneret/l2swim/etc/swim_menu_he.txt /opt/kinneret/l2swim/etc/swim_menu.txt
+cp /kinneret/tmp/$swimdoc/doc/he/* /opt/kinneret/l2swim/doc/he/
+cp /kinneret/tmp/$swimdoc/doc/en/* /opt/kinneret/l2swim/doc/en/
+cp /kinneret/tmp/$swimdoc/doc/image/* /opt/kinneret/l2swim/doc/image/
+cp /kinneret/tmp/$swimdoc/etc/image/* /opt/kinneret/images/
+ln -s /usr/bin/l2swim /opt/kinneret/bin/swim
+
+#mkdir -p /opt/kinneret/l2swim
+#cd $swimdoc
+#cp -r ./* /opt/kinneret/l2swim/
+#ln -s /opt/kinneret/l2swim/etc/swim_menu_he.txt /opt/kinneret/l2swim/etc/swim_menu.txt
+#chmod -R a+rx /opt/kinneret/l2swim
+
+#Old stuff.
+#
+#mkdir /usr/share/kinneret
+#cp -r images /usr/share/kinneret/
+#mkdir /usr/doc/kinneret
+#cp -r swim_guide /usr/doc/kinneret/
+#chown -R knoppix.knoppix /usr/share/kinneret
+#chown -R knoppix.knoppix /usr/doc/kinneret
+#############################################
+
+#SCRIPT ENDED

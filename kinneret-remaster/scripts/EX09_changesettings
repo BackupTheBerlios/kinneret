@@ -1,0 +1,17 @@
+#!/bin/bash
+#change settings script
+font="Nachlieli [URW]"
+echo "${BLUE}Setting default settings for:${NORMAL}"
+echo "  ${BLUE}kdeglobals${NORMAL}"
+echo '24Gd2$R1172G2eld$R=UTF-8jhRiljRhe:en_USZZ' >script.tmp
+vim -X -s script.tmp /etc/skel/.kde/share/config/kdeglobals >/dev/null 2>/dev/null
+replace "SingleClick=true" "SingleClick=false" -- /etc/skel/.kde/share/config/kdeglobals
+echo "  ${BLUE}XF86Config-4${NORMAL}"
+echo '60GoOption "XkbOptions" "grp:shift,grp:alt_shift_toggle,grp_led:scroll"ZZ' >script.tmp
+vim -X -s script.tmp "/etc/X11/XF86Config-4.in" >/dev/null 2>/dev/null
+rm -f script.tmp
+echo "${BLUE}Setting default font to $font${NORMAL}."
+replace "helvetica" "$font" "Nimbus Sans l" "$font" -- /etc/skel/.kde/share/config/k* /etc/skel/.kderc
+echo "Name[he]=אשפה" >>/etc/skel/Desktop/Trash/.directory
+rm -f /etc/skel/Desktop/SelfLinux.dekstop /etc/skel/Desktop/Floppy
+#SCRIPT ENDED

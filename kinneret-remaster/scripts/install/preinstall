@@ -1,0 +1,21 @@
+#!/bin/bash
+#Pre-install gimp & OO
+pifiles=".sversionrc"
+pigzarcs="oo gimp"
+pibzarcs=""
+echo "${BLUE}Pre-installing Gimp & OpenOffice.org...${NORMAL}"
+for file in $pifiles
+do
+	cp /kinneret/packages/src/$file /etc/skel/
+done
+cd /etc/skel/
+for arc in $pigzarcs 
+do
+	tar -xzf /kinneret/packages/src/$arc.tar.gz
+done
+for arc in $pibzarcs
+do
+	tar -xjf /kinneret/packages/src/$arc.tar.bz2
+done
+#SCRIPT ENDED
+		

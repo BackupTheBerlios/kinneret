@@ -1,0 +1,18 @@
+#!/bin/bash
+#Install Tuxpaint.
+apt-get update #this seems to be the only way to get the needed dev libs
+apt-get -fy install
+apt-get update >/dev/null 2>&1
+apt-get -y install libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf1.2-dev
+cd /kinneret/tmp/
+tar -xzf /kinneret/packages/src/tuxpaint.tar.gz
+cd tuxpaint
+make PREFIX=/usr
+make install PREFIX=/usr
+mkdir -p /usr/share/locale/he/LC_MESSAGES
+cp ./trans/he.mo /usr/share/locale/he/LC_MESSAGES/tuxpaint.mo
+chmod a+r /usr/share/locale/he/LC_MESSAGES/tuxpaint.mo
+mkdir -p /usr/share/tuxpaint/fonts/locale/
+cp /kinneret/packages/src/he.ttf /usr/share/tuxpaint/fonts/locale/he.ttf
+chmod a+r /usr/share/tuxpaint/fonts/locale/he.ttf
+#SCRIPT ENDED

@@ -1,0 +1,7 @@
+#!/bin/bash
+#put in license files
+licenses="licenses.tar.gz"
+cd /usr
+tar -xzf /kinneret/packages/src/$licenses
+#SCRIPT ENDED
+

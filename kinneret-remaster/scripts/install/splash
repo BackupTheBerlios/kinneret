@@ -1,0 +1,7 @@
+#!/bin/bash
+#put in our splash screen.
+splash="splash*"
+cd /usr/share/apps/ksplash/pics/
+rm -f ./*.png
+tar -xzf /kinneret/packages/src/$splash.tar.gz
+#SCRIPT ENDED

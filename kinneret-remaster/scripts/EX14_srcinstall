@@ -1,0 +1,8 @@
+#!/bin/bash
+#Install source packages
+echo "${BLUE}Making packages from sources${NORMAL}"
+for srcpackage in /kinneret/scripts/install/*
+do
+	bash $srcpackage
+done
+#SCRIPT ENDED

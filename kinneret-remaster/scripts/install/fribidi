@@ -1,0 +1,11 @@
+#!/bin/bash
+#install fribidi.
+fribidi="fribidi*"
+echo "${BLUE}Installing fribidi...${NORMAL}"
+cd /kinneret/tmp
+tar -xzf /kinneret/packages/src/$fribidi.tar.gz
+cd $fribidi
+./configure
+make
+make install
+#SCRIPT ENDED

@@ -1,0 +1,8 @@
+Kinneret Remastering Scripts.
+procedure - things you should do prior to running any script.
+
+* update the files in the files/ dir. for every file there you should find a file with the same name here describing how to update it.
+* update the packages.rem file in packages/ to contain the names of the packages that should be removed.
+* DEB packages should all be located under packages/deb/. you should make sure every package has all of it's dependancies, either already installed or in another DEB package. if you're wondering why those scripts doesn't use apt-get please refer to whynotapt.
+* programs that does not have a DEB packages, or stuff otherwise not installed through a DEB package should be stored in packages/src/. files there should be handeled by a bash script in scripts/install/. please refer to installscripts to learn more about those scripts.
+* additional actions should be preformed by a script in scripts/ named EXnn_scriptname, where nn is a 2 digit number representing the script's priority, and scriptname is a short name describing the script's goal.

@@ -1,0 +1,9 @@
+#!/bin/bash
+kkbswitch="kkbswitch*"
+conflags="--prefix=/usr --with-qt-dir=/usr/share/qt3"
+echo "${BLUE}Installing kkbswitch...${NORMAL}"
+cd /kinneret/tmp
+tar -xzf /kinneret/packages/src/$kkbswitch.tar.gz
+cd $kkbswitch
+./configure $conflags && make && make install
+#SCRIPT ENDED

@@ -1,0 +1,2 @@
+./remaster/boot/boot.img 1000
+./remaster/KNOPPIX/KNOPPIX -1000

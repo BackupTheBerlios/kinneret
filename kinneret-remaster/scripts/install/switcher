@@ -1,0 +1,12 @@
+#!/bin/bash
+#Install Switcher
+switcher="switcher*"
+conflags="--with-qt-dir=/usr/share/qt3 --prefix=/usr"
+echo "${BLUE}Installing switcher...${NORMAL}"
+cd /kinneret/tmp/
+tar -xjf /kinneret/packages/src/$switcher
+cd $switcher
+./configure $conflags
+make
+make install
+#SCRIPT ENDED

@@ -1,0 +1,7 @@
+[Icons]
+Group2=/KNOPPIX/usr/share/locale/l10n/il/flag.png
+
+[Options]
+default_group=0
+perwindow_group=false
+toggle_mode=false

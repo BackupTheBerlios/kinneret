@@ -1,0 +1,9 @@
+#!/bin/bash
+#Install Switcher
+geresh="geresh*"
+conflags="--with-qt-dir=/usr/share/qt3 --prefix=/usr"
+echo "${BLUE}Installing geresh...${NORMAL}"
+cd /kinneret/tmp/
+tar -xzf /kinneret/packages/src/$geresh
+cd $geresh && ./configure $conflags && make && make install
+#SCRIPT ENDED

@@ -1,0 +1,11 @@
+# KDE Config File  
+[Desktop Entry]
+Type=Application
+Exec=kkbswitch -caption "%c" %i %m  
+Icon=kkbswitch.png
+MiniIcon=kkbswitch.png
+DocPath=kkbswitch/index.html
+Comment=Keyboard Switch Indicator
+Terminal=0
+Name=KKBSwitch
+X-KDE-StartupNotify=false

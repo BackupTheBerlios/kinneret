@@ -1,0 +1,9 @@
+#!/bin/bash
+#Remastering Knoppix into Kinneret.
+#clean : clean up before leaving
+#last updated - 2 Mar 2003 by Itai Shaked
+#more info at http://kinneret.miloberi.com/
+echo "${BLUE}Cleaning${NORMAL}"
+apt-get clean
+apt-get autoclean
+#SCRIPT ENDED

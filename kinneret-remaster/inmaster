@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+# Kinneret from Knoppix script package.
+# inmaster : master script inside chrooted environment
+#
+# last updated : 21 Apr 2003
+#
+# please visit our homepage at http://kinneret.miloberi.com/  
+#
+export BLUE="[1;34m"
+export NORMAL="[0;39m"
+echo "${BLUE}chrooted.${NORMAL}"
+export LC_ALL=he_IL
+export LANG=he_IL
+mount -t proc /proc proc
+#
+for remscript in /kinneret/scripts/EX*
+do
+	bash $remscript
+done
+#
+rm -rdf /kinneret
+rm /etc/resolv.conf
+ln -s /etc/dhcpc/resolv.conf /etc/resolv.conf
+echo "${BLUE}Updaing slocate database...${NORMAL}"
+updatedb
+umount /proc
+echo "${BLUE}unchrooting...${NORMAL}"
+#
+#SCRIPT ENDED

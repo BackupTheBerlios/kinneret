@@ -1,0 +1,2 @@
+#!/bin/bash
+mkisofs -R -U -l -V "KINNERET fs" -cache-inodes -no-bak -hide-rr-moved -v ./source/ | create_compressed_fs - 65536 > ./remaster/KNOPPIX/KNOPPIX

@@ -1,0 +1,9 @@
+#!/bin/bash
+#Install the karamba presets
+karamba="karamba"
+mkdir -p /opt/kinneret
+cd /opt/kinneret/
+tar -xzf /kinneret/packages/src/$karamba.tar.gz
+chown -R knoppix:knoppix karamba
+chmod -R a+r karamba
+#SCRIPT ENDED

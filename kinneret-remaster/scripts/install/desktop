@@ -1,0 +1,10 @@
+#!/bin/bash
+desktop="desktop"
+cd /kinneret/tmp
+tar -xzf /kinneret/packages/src/$desktop.tar.gz
+cd $desktop
+rm -f /usr/share/wallpapers/*
+cp wallpaper/* /usr/share/wallpapers/
+chmod a+r /usr/share/wallpapers/*
+chmod a+r /etc/skel/.kde/share/config/kkbswitchrc
+#SCRIPT ENDED

@@ -1,0 +1,15 @@
+#!/bin/bash
+#Remaster Knoppix into Kinneret
+#addpackage : package installation script
+#last updated  - 20 Apr 2003 by Itai Shaked
+#part of the Gnu/Linux Kinneret project
+#more info at http://kinneret.miloberi.com/
+#
+echo "${BLUE}Installing deb packages${NORMAL}"
+mkdir -p /usr/share/doc/konversation/html #resolves an error in the konversation .deb package
+dpkg --force-conflicts --force-overwrite  -i /kinneret/packages/deb/*
+##apt-get update
+##apt-get -fy install pingus
+## let apt-get fix any errors that may have occured.
+#forget about it. creates too many problems. better be responsible to include the deps.
+#SCRIPT ENDED

@@ -1,0 +1,168 @@
+<!DOCTYPE xbel>
+<xbel folded="no" >
+ <folder folded="no" icon="bookmark_folder" >
+  <title>אינטרנט</title>
+  <bookmark icon="favicons/www.walla.co.il" href="http://www.walla.co.il/" >
+   <title>Walla!</title>
+  </bookmark>
+  <bookmark icon="favicons/www.google.co.il" href="http://www.google.co.il/" >
+   <title>Google (עברית)</title>
+  </bookmark>
+  <bookmark icon="folder" href="http://www.parpar.net/" >
+   <title>פרפר- אינדקס אתרים ויזואלי</title>
+  </bookmark>
+  <bookmark icon="favicons/www.google.com" href="http://www.google.com/" >
+   <title>Google</title>
+  </bookmark>
+  <bookmark icon="www" href="http://www.goop.co.il/" >
+   <title>www.GOOP.co.il</title>
+  </bookmark>
+  <bookmark icon="favicons/images.nana.co.il_Common_Includes_Favicon" href="http://www.nana.co.il/" >
+   <title>Nana</title>
+  </bookmark>
+ </folder>
+ <folder folded="no" icon="bookmark_folder" >
+  <title>חינוכי</title>
+  <bookmark icon="www" href="http://www.education.gov.il/" >
+   <title>או&quot;ח - אינטרנט ומיחשוב חינוכי</title>
+  </bookmark>
+  <bookmark icon="www" href="http://cms.education.gov.il/EducationCMS/Units/Exams/Default.aspx" >
+   <title>אגף בחינות</title>
+  </bookmark>
+  <bookmark icon="www" href="http://www.ort.org.il/" >
+   <title>אורט ישראל</title>
+  </bookmark>
+  <bookmark icon="favicons/www.aviv.k12.il" href="http://www.aviv.k12.il/" >
+   <title>אביב - ביה&quot;ס הוירטואלי</title>
+  </bookmark>
+  <bookmark icon="favicons/www.snunit.k12.il_g_favicon" href="http://www.snunit.k12.il/" >
+   <title>סנונית - לעוף רחוק יותר מהדמיון</title>
+  </bookmark>
+  <bookmark icon="favicons/www.cet.ac.il_cet" href="http://www.cet.ac.il/" >
+   <title>The Center for Educational Technology - CET (מטח)</title>
+  </bookmark>
+  <bookmark icon="favicons/www.snunit.k12.il_g_favicon" href="http://galim.org.il/" >
+   <title>גלים - אתר חינוכי לילדים</title>
+  </bookmark>
+  <bookmark icon="www" href="http://www.hemda.org.il/Default.asp" >
+   <title>חמדע</title>
+  </bookmark>
+ </folder>
+ <folder folded="yes" >
+  <title>מקורות מידע</title>
+  <folder folded="no" icon="bookmark_folder" >
+   <title>באנגלית</title>
+   <bookmark icon="favicons/www.wikipedia.org" href="http://www.wikipedia.org/" >
+    <title>Main Page - Wikipedia</title>
+   </bookmark>
+   <bookmark icon="favicons/www.britannica.com" href="http://www.britannica.com/" >
+    <title>Encyclopædia Britannica  - The online encyclopedia you can trust!</title>
+   </bookmark>
+   <bookmark icon="www" href="http://www.howstuffworks.com/" >
+    <title>HowStuffWorks - Learn how Everything Works!</title>
+   </bookmark>
+   <bookmark icon="www" href="http://www.ipl.org/" >
+    <title>Internet Public Library</title>
+   </bookmark>
+  </folder>
+  <folder folded="no" icon="bookmark_folder" >
+   <title>עבודות</title>
+   <bookmark icon="www" href="http://www.avodot.co.il/avodot/" >
+    <title>עבודות</title>
+   </bookmark>
+   <bookmark icon="www" href="http://www.schoolsucks.co.il/" >
+    <title>סקול סאקס ישראל</title>
+   </bookmark>
+   <bookmark icon="www" href="http://chapa.da.ru/" >
+    <title>The best students site</title>
+   </bookmark>
+   <bookmark icon="www" href="http://atomicw.50megs.com/" >
+    <title>Atomic Works</title>
+   </bookmark>
+  </folder>
+  <bookmark icon="favicons/he.wikipedia.org" href="http://he.wikipedia.org/" >
+   <title>עמוד ראשי - האנציקלופדיה החופשית</title>
+  </bookmark>
+  <bookmark icon="www" href="http://www.bendov.info/heb/" >
+   <title>Yoav Ben-Dov hebrew index</title>
+  </bookmark>
+  <bookmark icon="www" href="http://www.hayadan.org.il/BuildaGate4/general2/company_search_tree.php?NewNameMade=0&amp;InitialEntry=1&amp;SiteName=hayadan&amp;lan=en&amp;EnterDefault=&amp;Referral=tree&amp;BuyerID=973941882&amp;Clubtmp1=&amp;Design=2" >
+   <title>Hayadan - science in Hebrew</title>
+  </bookmark>
+  <bookmark icon="www" href="http://electronics.up.co.il/" >
+   <title>electronics</title>
+  </bookmark>
+  <bookmark icon="favicons/www.ibheb.com_~sikum_book_icon" href="http://www.ibheb.com/%7Esikum/" >
+   <title>סיכום- אתר הסיכומים של יואב פוירשטיין</title>
+  </bookmark>
+  <bookmark icon="www" href="http://www.snunit.k12.il/db/" >
+   <title>מאגר מידע וכתבי עת</title>
+  </bookmark>
+  <bookmark icon="www" href="http://www.yarden.ac.il/lib/subject/history.htm" >
+   <title>היסטוריה</title>
+  </bookmark>
+  <bookmark icon="favicons/www1.snunit.k12.il" href="http://www1.snunit.k12.il/heb_journals/galileo/" >
+   <title>גלילאו - המגזין הישראלי למדע ואקולוגיה</title>
+  </bookmark>
+  <bookmark icon="favicons/www.snunit.k12.il_g_favicon" href="http://www.snunit.k12.il/vmuseum/chaos/" >
+   <title>כאוס</title>
+  </bookmark>
+  <bookmark icon="www" href="http://gifted.snunit.k12.il/activities/clone/database.html" >
+   <title>?שיבוט - טובים השניים מן האחד</title>
+  </bookmark>
+ </folder>
+ <folder folded="yes" >
+  <title>חדשות</title>
+  <bookmark icon="favicons/www.ynet.co.il" href="http://www.ynet.co.il/home/0,7340,L-8,00.html" >
+   <title>Ynet </title>
+  </bookmark>
+  <bookmark icon="www" href="http://www.haaretz.co.il/" >
+   <title>הארץ</title>
+  </bookmark>
+  <bookmark icon="www" href="http://images.maariv.co.il/channels/HP_0.html?1058226417323" >
+   <title>מעריב</title>
+  </bookmark>
+  <bookmark icon="favicons/www.haayal.co.il" href="http://www.haayal.co.il/index.php3" >
+   <title>האייל הקורא - כתב-עת לענייני תרבות ואקטואליה</title>
+  </bookmark>
+  <bookmark icon="www" href="http://www.fisheye.co.il/" >
+   <title>Fish Eye : Movie reviews without the boring bits</title>
+  </bookmark>
+ </folder>
+ <folder folded="yes" >
+  <title>לינוקס</title>
+  <bookmark icon="favicons/www.whatsup.co.il" href="http://www.whatsup.co.il/" >
+   <title>Whatsup - פורטל הלינוקס העברי</title>
+  </bookmark>
+  <bookmark icon="favicons/www.penguin.org.il_images_tux16-16" href="http://www.penguin.org.il/" >
+   <title>הפינגווין</title>
+  </bookmark>
+  <bookmark icon="www" href="http://linux.israel.net/" >
+   <title>Linux.Israel.Net</title>
+  </bookmark>
+  <bookmark icon="www" href="http://easylinux.jokie.net/" >
+   <title>.: EasyLinux :.</title>
+  </bookmark>
+  <bookmark icon="favicons/www.linuxisrael.co.il_images_icon" href="http://www.linuxisrael.co.il/" >
+   <title>Linux Israel</title>
+  </bookmark>
+  <folder folded="yes" icon="bookmark_folder" >
+   <title>תוכנות</title>
+   <bookmark icon="www" href="http://www.openoffice.org.il/" >
+    <title>Open Office</title>
+   </bookmark>
+   <bookmark icon="favicons/www.kde.org_il_i18n-il" href="http://www.kde.org/il/" >
+    <title>KDE ישראל</title>
+   </bookmark>
+   <bookmark icon="favicons/www.mozilla.org.il_images_mozilla-16" href="http://www.mozilla.org.il/" >
+    <title>mozilla.org.il: Hebrew Mozilla</title>
+   </bookmark>
+  </folder>
+ </folder>
+ <bookmark icon="www" href="http://linux-kinneret.org/index.html" >
+  <title>כנרת</title>
+ </bookmark>
+ <bookmark icon="favicons/forums.gentoo.org" href="http://forums.gentoo.org/viewtopic.php?t=20175" >
+  <title>Gentoo Forums :: View topic - Kernel SCSI emulation for CD burning - the truth</title>
+ </bookmark>
+</xbel>

@@ -1,0 +1,2 @@
+#!/bin/bash
+mkisofs -l -r -J -V "Kinneret" -hide-rr-moved -sort sort.mkiso -v -b boot/boot.img -c boot/boot.cat -o ./iso/kinneret.iso ./remaster/

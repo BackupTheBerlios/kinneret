@@ -1,0 +1,37 @@
+Kinneret Remastering Scripts
+installscripts - an overview of an install script in scripts/install/
+
+let's have a look on the sim file for example :
+
+1:  #!/bin/bash
+2:  #Install sim icq client
+3:  sim="sim*"
+4:  conflags="--prefix=/usr --with-qt-dir=/usr/share/qt3 --disable-openssl"
+5:  echo "${BLUE}Installing sim...${NORMAL}"
+6:  cd /kinneret/tmp/
+7:  tar -xzf /kinneret/packages/src/$sim.tar.gz
+8:  cd $sim
+9:  ./configure $conflags
+10: make
+11: make install
+12: #
+13: cp /kinneret/packages/src/sim.mo /usr/share/locale/he/LC_MESSAGES/
+14: chmod a+r /usr/share/locale/he/LC_MESSAGES/sim.mo
+15: #SCRIPT ENDED
+
+ok, now for some explanation : 
+1:  like all other scripts, this is a bash script. you shouldn't use any other kind of script in here, as they are called by 'bash scriptname'.
+2:  a remark telling us what will this script do.
+3:  program-name = package-name. we will use it later on to decompress the package.
+4:  conflags="whatever". the flags that will be transfered to the configure script.
+5:  telling the user what we are doing. BLUE and NORMAL are defined on the main script (inmaster).
+6:  going into a temporary dir.
+7:  decompressing the package. all packages in packages/src/ are transferred to /kinneret/packages/src/ on the source fs.
+8:  chdir into the new folder.
+9:  run the configure script, passing the flags defined.
+10: make.
+11: make install (we are already root).
+12: a spacer as we have completed installing the program, but still have stuff to do.
+13: now we copy the translation file (also in packages/src/) to it's designated location.
+14: we want to let everyone read it.
+15: let everyone now we have finished our script.

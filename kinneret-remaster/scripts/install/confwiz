@@ -1,0 +1,13 @@
+#!/bin/bash
+# Install the configuration wizard
+conflags="--prefix=/usr --with-qt-dir=/usr/share/qt3"
+confwiz="confwiz*"
+echo "${BLUE}Installing confwiz...${NORMAL}"
+cd /kinneret/tmp/
+tar -xzf /kinneret/packages/src/$confwiz.tar.gz
+cd $confwiz
+./configure $conflags
+make
+make install
+
+#SCRIPT ENDED

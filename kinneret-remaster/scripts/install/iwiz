@@ -1,0 +1,28 @@
+#!/bin/bash
+#Install the internet wizard and co.
+echo "${BLUE}Installing the internet tool...${NORMAL}"
+cd /kinneret/tmp/
+tar -xzf /kinneret/packages/src/internet.tar.gz
+cd internet
+dpkg -i /kinneret/packages/deb/libxml*
+rm -f /kinneret/packages/deb/libmxml*
+./configure && make
+cp ./internet/internet /usr/bin
+echo 'DBPATH="/opt/kinneret/internet/db/"'>/etc/internet.conf
+echo "${BLUE}Installing the internet tool db...${NORMAL}"
+cd /kinneret/tmp/
+tar -xzf /kinneret/packages/src/internet_db.tar.gz
+mkdir -p /opt/kinneret/internet/db
+mv internet_db/* /opt/kinneret/internet/db/
+echo "${BLUE}Installing the GUI frontends...${NORMAL}"
+cd /kinneret/tmp/
+tar -xjf /kinneret/packages/src/iwiz-bin.tar.bz2
+mv iwiz /usr/bin/
+mv he.mo /usr/share/locale/he/LC_MESSAGES/iwiz.mo
+chmod a+r /usr/share/locale/he/LC_MESSAGES/iwiz.mo
+tar -xjf /kinneret/packages/src/idial-bin.tar.bz2
+mv idial /usr/bin/
+mv he.mo /usr/share/locale/he/LC_MESSAGES/idial.mo
+chmod a+r /usr/share/locale/he/LC_MESSAGES/idial.mo
+#SCRIPT ENDED
+

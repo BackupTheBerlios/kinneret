@@ -1,0 +1,52 @@
+#!/bin/bash
+#
+# Kinneret from Knoppix scripts package.
+# dokinneret : master creation script.
+#
+# last updated - 21 Apr 2003
+#
+# please visit our homepage at http://kinneret.miloberi.com/ 
+#
+BLUE="[1;34m"
+NORMAL="[0;39m"
+
+if [ $(id -u) != "0" ] 
+then
+	echo -e "${BLUE}You must be root to run this script!!\\nTry su first...${NORMAL}"
+	exit
+fi
+curdir=$PWD
+inmaster="inmaster"
+knoproot="./source"
+remdir="./remaster"
+
+cmdparams="$*"
+
+mkdir $knoproot/kinneret
+mkdir $knoproot/kinneret/packages
+mkdir $knoproot/kinneret/tmp
+mkdir $knoproot/kinneret/scripts
+echo "${BLUE}Copying deb packages...${NORMAL}"
+cp -r ./packages/deb $knoproot/kinneret/packages/
+echo "${BLUE}Copying source packages${NORMAL}"
+cp -r ./packages/src $knoproot/kinneret/packages/
+echo "${BLUE}Copying remaster scripts...${NORMAL}"
+cp -r ./scripts/* $knoproot/kinneret/scripts/
+echo "${BLUE}Reading packages to add/remove${NORMAL}"
+cp ./packages/packages.rem $knoproot/kinneret/
+#
+#mkdir $remdir/KNOPPIX
+./repfiles $knoproot $remdir
+#
+cp ./$inmaster $knoproot/
+chroot $knoproot/ chmod +x /$inmaster
+echo -n "${BLUE}chrooting into $knoproot ....${NORMAL}"
+chroot $knoproot/ /$inmaster
+#
+#deleting scripts
+#
+echo "${BLUE}Deleting files${NORMAL}"
+rm -f $knoproot/inmaster
+echo "${BLUE}Finished. run compressfs to compress the modified file system${NORMAL}"
+#
+#SCRIPT ENDED

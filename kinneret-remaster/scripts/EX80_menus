@@ -1,0 +1,13 @@
+#!/bin/bash
+#This is here to overrun any menu changes done during various installations.
+menu="menu"
+echo "${BLUE}Installing menus...${NORMAL}"
+cd /etc/skel/.kde/share/applnk/
+rm -rdf *
+cd /usr/share/applnk/
+rm -rdf *
+tar -xzf /kinneret/packages/src/$menu.tar.gz
+chown -R knoppix:knoppix ./*
+chmod -R a+rw /usr/share/applnk/*
+#SCRIPT ENDED
+

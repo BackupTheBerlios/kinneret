@@ -1,0 +1,25 @@
+#!/bin/bash
+#Remaster Knoppix into Kinneret.       
+#rmpackage : package removal script
+#last updated - 20 Apr 2003 by Itai Shaked.
+#part of the Gnu/Linux Kinneret project.
+#more info at http://kinneret.miloberi.com/
+#
+#Read packages to remove
+read rmpackages < /kinneret/packages.rem
+i=0
+pkgs=""
+for pkg in $(cat /kinneret/packages.rem)
+do
+	i=$[$i+1]
+	pkgs=$pkgs\ $pkg
+	if [ $i == "250" ]
+	then 
+		i=0
+		apt-get -y remove $pkgs
+		pkgs=""
+	fi
+done
+apt-get -y remove $pkgs
+#Remove packages
+#SCRIPT ENDED

@@ -1,0 +1,37 @@
+#!/bin/bash
+#replace and insert files
+knoproot=$1
+remdir=$2
+kconfig=$knoproot/etc/skel/.kde/share/config
+kdeskdir=$knoproot/etc/skel/Desktop
+kconfigfiles="kickerrc kkbswitchrc"
+
+for kfile in $kconfigfiles
+do
+  rm -f $kconfig/$kfile
+  cp ./files/$kfile $kconfig/
+done
+cp ./files/kkbswitch.desktop $knoproot/etc/skel/.kde/Autostart/
+cp ./files/bookmarks.xml $knoproot/etc/skel/.kde/share/apps/konqueror/
+cp ./files/kdesktop/* $kdeskdir/
+
+for i in gif jpg png
+do
+rm -f $knoproot/usr/local/lib/knoppix.$i 2>/dev/null
+#cp ./files/background.$i $remdir/KNOPPIX/
+cp ./files/cd/KNOPPIX/background.$i $knoproot/usr/local/lib/knoppix.$i 2>/dev/null
+done
+rm -f $knoproot/etc/init.d/knoppix-autoconfig
+cp -f ./files/knoppix-autoconfig $knoproot/etc/init.d/
+
+rm -f $knoproot/usr/share/services/kxkb.desktop
+rm -f $knoproot/etc/skel/Desktop/SelfLinux.desktop
+cp -r ./files/cd/* $remdir/
+tar -xzOf ./packages/src/confwiz* confwiz*/scripts/knoppix.sh >$remdir/KNOPPIX/knoppix.sh
+
+rm -f $knoproot/etc/resolv.conf
+cp /etc/resolv.conf $knoproot/etc/
+
+rm -f $knoproot/etc/X11/Xsession.d/45xsession
+cp ./files/45xsession $knoproot/etc/X11/Xsession.d/
+#SCRIPT ENDED

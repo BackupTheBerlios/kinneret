@@ -1,0 +1,12 @@
+#!/bin/bash
+#move settings to places where it'll be saved.
+echo "${BLUE}Moving the cups dir...${NORMAL}"
+mv /etc/cups /etc/skel/.cups
+mv /etc/ppp /etc/skel/.ppp
+>/etc/skel/.resolv.conf
+>/etc/resolv.conf.sv
+>/etc/skel/.resolv.conf.sv
+mv /opt/kinneret/internet/db/connections /etc/skel/.idb
+ln -s /home/knoppix/.idb /opt/kinneret/internet/db/connections
+#SCRIPT ENDED
+
