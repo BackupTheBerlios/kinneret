@@ -323,7 +323,7 @@
 		<kinneret>0.3</kinneret>
 		<hebrew>קיים</hebrew>
 		<home>http://www.koffice.org/kchart</home>
-		<extra>חלק מקייאופיס 1.2</extra>	
+		<extra>חלק מקייאופיס 1.2</extra>
 	</app>
 
 	<app>
@@ -609,53 +609,53 @@
 	</app>
 <app>
 		<group></group>
-		<title></title>
+		<title>apache</title>
 		<class></class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
+		<home>http://www.apache.org</home>
+	</app>
+<app>
+		<group></group>
+		<title>mySQL</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://www.mysql.com</home>
+	</app>
+<app>
+		<group></group>
+		<title>wxWindows</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://www.wxwindows.org/</home>
+	</app>
+<app>
+		<group></group>
+		<title>wxPython</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew>http://www.wxwindows.org/</hebrew>
 		<home></home>
 	</app>
 <app>
 		<group></group>
-		<title></title>
+		<title>DrScheme</title>
 		<class></class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
-		<home></home>
-	</app>
-<app>
-		<group></group>
-		<title></title>
-		<class></class>
-		<age></age>
-		<version></version>
-		<kinneret>?</kinneret>
-		<hebrew></hebrew>
-		<home></home>
-	</app>
-<app>
-		<group></group>
-		<title></title>
-		<class></class>
-		<age></age>
-		<version></version>
-		<kinneret>?</kinneret>
-		<hebrew></hebrew>
-		<home></home>
-	</app>
-<app>
-		<group></group>
-		<title></title>
-		<class></class>
-		<age></age>
-		<version></version>
-		<kinneret>?</kinneret>
-		<hebrew></hebrew>
-		<home></home>
+		<home>http://www.drscheme.org/</home>
 	</app>
 <app>
 		<group></group>
