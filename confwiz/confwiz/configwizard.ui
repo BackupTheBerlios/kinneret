@@ -1160,7 +1160,7 @@ NOTICE! This version is a development version and still experimental. We reccome
                                                     <number>4096</number>
                                                 </property>
                                                 <property name="value">
-                                                    <number>256</number>
+                                                    <number>100</number>
                                                 </property>
                                             </widget>
                                             <spacer>

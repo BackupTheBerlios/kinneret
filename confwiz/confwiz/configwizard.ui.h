@@ -377,7 +377,10 @@ void configwizard::onSelect()
 			unlink("/tmp/.meminfo");
 
 			// So now swap holds the size of the swap size...
-			swap_size->setValue(swap);
+
+			// NOTE: the autodetection has been discarded. a default of 100M is fine.
+			// have a nice day.
+			swap_size->setValue(100);
 
 			// automaticlly search for fonts...
 			if (system("/opt/kinneret/bin/findfonts.sh"))
