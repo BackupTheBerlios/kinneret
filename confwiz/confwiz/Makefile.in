@@ -1,5 +1,5 @@
 # Makefile.in generated automatically by automake 1.5 from Makefile.am.
-# KDE tags expanded automatically by am_edit - $Revision: 1.8 $ 
+# KDE tags expanded automatically by am_edit - $Revision: 1.9 $ 
 
 # Copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001
 # Free Software Foundation, Inc.
@@ -453,7 +453,7 @@ distclean-tags:
 
 #>- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 #>+ 4
-KDE_DIST=lo32-app-confwiz.png lo16-app-confwiz.png pleasewait.h help.h configwizard.h confwiz 
+KDE_DIST=lo32-app-confwiz.png lo16-app-confwiz.png 
 
 DISTFILES= $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
 
@@ -723,7 +723,7 @@ force-reedit:
 
 
 #>+ 11
-confwiz.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/confwiz.cpp $(srcdir)/dirview.cpp $(srcdir)/main.cpp $(srcdir)/help.cpp $(srcdir)/pleasewait.cpp $(srcdir)/configwizard.cpp $(srcdir)/dirview.moc.cpp $(srcdir)/confwiz.moc.cpp  pleasewait.moc help.moc configwizard.moc
+confwiz.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/confwiz.cpp $(srcdir)/dirview.cpp $(srcdir)/main.cpp help.cpp pleasewait.cpp configwizard.cpp dirview.moc.cpp confwiz.moc.cpp  pleasewait.moc help.moc configwizard.moc
 	@echo 'creating confwiz.all_cpp.cpp ...'; \
 	rm -f confwiz.all_cpp.files confwiz.all_cpp.final; \
 	echo "#define KDE_USE_FINAL 1" >> confwiz.all_cpp.final; \

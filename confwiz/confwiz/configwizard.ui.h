@@ -20,6 +20,7 @@
 #include <kapplication.h>
 #include <kprocess.h>
 #include <qobjectlist.h>
+#include <qfont.h>
 #include "help.h"
 
 #include <khtml_part.h>
@@ -320,6 +321,8 @@ void configwizard::onSelect()
 				// can we use swap * 2 and leave at least 100Megs free?
 				// if so, do it!
 				if (sz > swap * 2 + nToKeepFree) swap *= 2;
+				else if (sz > swap + nToKeepFree) swap = swap;
+				else swap = sz - nToKeepFree;
 
 				// if not, we already made sure we can use at least 100 + ramsize and leave
 				// nToKeepFree free, so we'll just set up a swap file at the size of the RAM.
@@ -644,4 +647,50 @@ void configwizard::onLicenseBack()
 	KLocale locale("");
 	KURL url = "/opt/kinneret/l2swim/doc/" + locale.language().left(2) + "/kinneret_license.html";
 	kHTML->openURL(url);
+}
+
+
+void configwizard::onFontInc()
+{
+	// Set the currect palette for all objects
+	QFont fnt = font();
+	fnt.setPointSize(fnt.pointSize() + 1);
+
+	setFont(fnt);
+
+	QString qCutSize = QString(tr2i18n("Current font size: %1")).arg(fnt.pointSize());
+	textCurFontSize->setText(qCutSize);
+	
+	QObjectList *l = queryList("QWidget");
+	QObjectListIt it(*l);
+	QObject *obj;
+	while ((obj = it.current()) != 0)
+	{
+		++it;
+		((QWidget*)obj)->setFont(fnt);
+	}
+	delete l; // delete the list, not the objects
+}
+
+
+void configwizard::onFontDec()
+{
+	// Set the currect palette for all objects
+	QFont fnt = font();
+	fnt.setPointSize(fnt.pointSize() - 1);
+
+	setFont(fnt);
+
+	QString qCutSize = QString(tr2i18n("Current font size: %1")).arg(fnt.pointSize());
+	textCurFontSize->setText(qCutSize);
+
+	QObjectList *l = queryList("QWidget");
+	QObjectListIt it(*l);
+	QObject *obj;
+	while ((obj = it.current()) != 0)
+	{
+		++it;
+		((QWidget*)obj)->setFont(fnt);
+	}
+	delete l; // delete the list, not the objects
 }

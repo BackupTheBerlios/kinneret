@@ -1,6 +1,6 @@
 # Makefile.in generated automatically by automake 1.5 from Makefile.am.
 # Generated automatically from Makefile.in by config.pl.
-# KDE tags expanded automatically by am_edit - $Revision: 1.8 $ 
+# KDE tags expanded automatically by am_edit - $Revision: 1.9 $ 
 
 # Copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001
 # Free Software Foundation, Inc.
@@ -52,19 +52,19 @@ INSTALL_PROGRAM = ${INSTALL} $(INSTALL_STRIP_FLAG)
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_HEADER = $(INSTALL_DATA)
-transform = s,x,x,
+transform = s,^,i386-linux-,
 NORMAL_INSTALL = :
 PRE_INSTALL = :
 POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_alias = 
-build_triplet = i686-pc-linux-gnu
-host_alias = 
-host_triplet = i686-pc-linux-gnu
-target_alias = 
-target_triplet = i686-pc-linux-gnu
+build_alias = i386-linux
+build_triplet = i386-pc-linux-gnu
+host_alias = i386-linux
+host_triplet = i386-pc-linux-gnu
+target_alias = i386-linux
+target_triplet = i386-pc-linux-gnu
 AMTAR = ${SHELL} /home/z9u2K/projects/kinneret/cvs/confwiz/admin/missing --run tar
 ARTSCCONFIG = /usr/kde/3.1/bin/artsc-config
 AS = @AS@
@@ -72,7 +72,7 @@ AUTODIRS =
 AWK = gawk
 CC = gcc
 CONF_FILES =  $(top_srcdir)/./admin/configure.in.min $(top_srcdir)/configure.in.in
-CPP = gcc -E
+CPP = cpp
 CXX = g++
 CXXCPP = g++ -E
 DCOPIDL = /usr/kde/3.1/bin/dcopidl
@@ -328,7 +328,7 @@ CXXLD = $(CXX)
 #>+ 2
 CXXLINK = $(LIBTOOL) --mode=link --tag=CXX $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
-CXXFLAGS = -Wnon-virtual-dtor -Wno-long-long -Wundef -Wall -pedantic -W -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -ansi -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -Wcast-align -Wconversion -O2 -fno-exceptions -fno-check-new
+CXXFLAGS = -Wnon-virtual-dtor -Wno-long-long -Wundef -Wall -pedantic -W -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -ansi -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -Wcast-align -Wconversion -O2 -O0 -Wall -fno-exceptions -fno-check-new
 DIST_SOURCES = $(confwiz_SOURCES)
 DIST_COMMON = Makefile.am Makefile.in
 SOURCES = $(confwiz_SOURCES)
@@ -454,7 +454,7 @@ distclean-tags:
 
 #>- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 #>+ 4
-KDE_DIST=lo32-app-confwiz.png lo16-app-confwiz.png pleasewait.h help.h configwizard.h confwiz 
+KDE_DIST=lo32-app-confwiz.png lo16-app-confwiz.png 
 
 DISTFILES= $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
 
@@ -724,7 +724,7 @@ force-reedit:
 
 
 #>+ 11
-confwiz.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/confwiz.cpp $(srcdir)/dirview.cpp $(srcdir)/main.cpp $(srcdir)/help.cpp $(srcdir)/pleasewait.cpp $(srcdir)/configwizard.cpp $(srcdir)/dirview.moc.cpp $(srcdir)/confwiz.moc.cpp  pleasewait.moc help.moc configwizard.moc
+confwiz.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/confwiz.cpp $(srcdir)/dirview.cpp $(srcdir)/main.cpp help.cpp pleasewait.cpp configwizard.cpp dirview.moc.cpp confwiz.moc.cpp  pleasewait.moc help.moc configwizard.moc
 	@echo 'creating confwiz.all_cpp.cpp ...'; \
 	rm -f confwiz.all_cpp.files confwiz.all_cpp.final; \
 	echo "#define KDE_USE_FINAL 1" >> confwiz.all_cpp.final; \

@@ -26,6 +26,7 @@
 #include <qcheckbox.h>
 #include <kprocess.h>
 #include <khtmlview.h>
+#include <qfont.h>
 
 #include "confwiz.h"
 #include "configwizard.h"
@@ -47,6 +48,7 @@ void InitWizard(configwizard *wizard)
 
 	// Set the currect palette for all objects
 	QPalette pal = wizard->palette();
+	QFont font = wizard->font();
 	QObjectList *l = wizard->queryList("QWidget");
 	QObjectListIt it(*l);
 	QObject *obj;
@@ -54,8 +56,12 @@ void InitWizard(configwizard *wizard)
 	{
 		++it;
 		((QWidget*)obj)->setPalette(pal);
+		((QWidget*)obj)->setFont(font);
 	}
 	delete l; // delete the list, not the objects
+
+	QString qCutSize = QString(tr2i18n("Current font size: %1")).arg(wizard->font().pointSize());
+	wizard->textCurFontSize->setText(qCutSize);
 
 	// Set side-menus
 	QString q_stage[] =
