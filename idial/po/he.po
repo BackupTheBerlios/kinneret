@@ -1,0 +1,189 @@
+# translation of he.po to Hebrew
+# Itay 'z9u2K' Duvdevani <z9u2K@bezeqint.net>, 2003
+msgid ""
+msgstr ""
+""
+"Last-Translator: Itay 'z9u2K' Duvdevani <z9u2K@bezeqint.net>\n"
+"PO-Revision-Date: 2003-07-23 12:06+0300\n"
+"Project-Id-Version: he\n"
+"Language-Team: Hebrew <livrix@il.org>\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.1\n"
+
+#: main.cpp:26 main.cpp:39 idial.moc.cpp:34 idial.moc.cpp:42
+msgid "Idial"
+msgstr "כלי החיוג לאינטרנט"
+
+#: idialer.cpp:227
+msgid "Internet Dialer"
+msgstr "חייגן האינטרנט"
+
+#: idialer.cpp:228
+msgid "Connection"
+msgstr "חיבור"
+
+#: idialer.cpp:229
+msgid "Username"
+msgstr "שם משתמש"
+
+#: idialer.cpp:230
+msgid "Password"
+msgstr "סיסמא"
+
+#: idialer.cpp:231
+msgid "Remember password (TODO)"
+msgstr "זכור סיסמא (מל\"ב)"
+
+#: idialer.cpp:232
+msgid "Actions"
+msgstr "פעולות"
+
+#: idialer.cpp:233
+msgid "Initialize"
+msgstr "הכן מערכת"
+
+#: idialer.cpp:234
+msgid "Boot"
+msgstr "אתחל"
+
+#: idialer.cpp:235 idialer.cpp:237 idialer.ui.h:79
+msgid "Connect"
+msgstr "התחבר"
+
+#: idialer.cpp:236
+msgid "Disconnect"
+msgstr "התנתק"
+
+#: idialer.cpp:238
+msgid "Actions:"
+msgstr "פעולות:"
+
+#: idialer.cpp:240
+msgid "List ISPs"
+msgstr "הצג רשימת ספקים"
+
+#: idialer.cpp:241
+msgid "List Hardwares"
+msgstr "הצג רשימת מודמים"
+
+#: idialer.cpp:242
+msgid "Get Info on Hardware"
+msgstr "הצג מידע אודות חומרה"
+
+#: idialer.cpp:243
+msgid "Get Info on ISP"
+msgstr "הצג מידע אודות ספק"
+
+#: idialer.cpp:244
+msgid "Delete Current Connection"
+msgstr "מחק חיבור נוכחי"
+
+#: idialer.cpp:245
+msgid "Set Current Connection as Default"
+msgstr "קבע חיבור נוכחי כברירת מחדל"
+
+#: idialer.cpp:246
+msgid "Extract a Script from Current Connection"
+msgstr "שלוף סקריפט מתוך חיבור"
+
+#: idialer.cpp:247
+msgid "Parameters"
+msgstr "פרמטרים"
+
+#: idialer.cpp:250 idialer.ui.h:139
+msgid "Advanced"
+msgstr "מתקדם"
+
+#: idialer.cpp:253
+msgid "Go!"
+msgstr "בצע!"
+
+#: idialer.ui.h:23
+msgid "Cannot query default connection"
+msgstr "שגיאה בקבלת רשימת ספקים"
+
+#: idialer.ui.h:39
+msgid "Cannot query connections list"
+msgstr "שגיאה בקבלת רשימת חיבורים"
+
+#: idialer.ui.h:73
+msgid "Exectuing..."
+msgstr "מבצע..."
+
+#: idialer.ui.h:84
+msgid ""
+"\n"
+"Initializing..."
+msgstr ""
+"\n"
+"מגדיר הגדרות מערכת..."
+
+#: idialer.ui.h:90
+msgid "Cannot initialize connection!"
+msgstr "שגיאה בעת אתחול מערכת!"
+
+#: idialer.ui.h:92 idialer.ui.h:106 idialer.ui.h:120 idialer.ui.h:134
+msgid ""
+"\n"
+"Failed."
+msgstr ""
+"\n"
+"נכשל."
+
+#: idialer.ui.h:98
+msgid ""
+"\n"
+"Booting..."
+msgstr ""
+"\n"
+"מאתחל..."
+
+#: idialer.ui.h:104
+msgid "Cannot boot connection!"
+msgstr "שגיאה בעת אתחול חיבור!"
+
+#: idialer.ui.h:112
+msgid ""
+"\n"
+"Connecting..."
+msgstr ""
+"\n"
+"מתחבר..."
+
+#: idialer.ui.h:118
+msgid "Cannot connect!"
+msgstr "שגיאה בעת התחברות!"
+
+#: idialer.ui.h:126
+msgid ""
+"\n"
+"Disconnecting..."
+msgstr ""
+"\n"
+"מתנתק..."
+
+#: idialer.ui.h:132
+msgid "Cannot disconnect!"
+msgstr "שגיאה בעת התנתקות!"
+
+#: idialer.ui.h:145
+msgid ""
+"\n"
+"Done."
+msgstr ""
+"\n"
+"בוצע."
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Itay 'z9u2K' Duvdevani"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "z9u2k@linux-kinneret.org"
+

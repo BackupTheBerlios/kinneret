@@ -1,0 +1,12 @@
+# KDE Config File  
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Exec=idial -caption "%c" %i %m  
+Icon=idial.png
+DocPath=idial/index.html
+Comment=
+Comment[de]=
+Terminal=0
+Name=Idial
+Name[de]=Idial

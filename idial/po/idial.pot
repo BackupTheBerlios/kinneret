@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2003-07-23 12:00+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.cpp:26 main.cpp:39 idial.moc.cpp:34 idial.moc.cpp:42
+msgid "Idial"
+msgstr ""
+
+#: idialer.cpp:227
+msgid "Internet Dialer"
+msgstr ""
+
+#: idialer.cpp:228
+msgid "Connection"
+msgstr ""
+
+#: idialer.cpp:229
+msgid "Username"
+msgstr ""
+
+#: idialer.cpp:230
+msgid "Password"
+msgstr ""
+
+#: idialer.cpp:231
+msgid "Remember password (TODO)"
+msgstr ""
+
+#: idialer.cpp:232
+msgid "Actions"
+msgstr ""
+
+#: idialer.cpp:233
+msgid "Initialize"
+msgstr ""
+
+#: idialer.cpp:234
+msgid "Boot"
+msgstr ""
+
+#: idialer.cpp:235 idialer.cpp:237 idialer.ui.h:79
+msgid "Connect"
+msgstr ""
+
+#: idialer.cpp:236
+msgid "Disconnect"
+msgstr ""
+
+#: idialer.cpp:238
+msgid "Actions:"
+msgstr ""
+
+#: idialer.cpp:240
+msgid "List ISPs"
+msgstr ""
+
+#: idialer.cpp:241
+msgid "List Hardwares"
+msgstr ""
+
+#: idialer.cpp:242
+msgid "Get Info on Hardware"
+msgstr ""
+
+#: idialer.cpp:243
+msgid "Get Info on ISP"
+msgstr ""
+
+#: idialer.cpp:244
+msgid "Delete Current Connection"
+msgstr ""
+
+#: idialer.cpp:245
+msgid "Set Current Connection as Default"
+msgstr ""
+
+#: idialer.cpp:246
+msgid "Extract a Script from Current Connection"
+msgstr ""
+
+#: idialer.cpp:247
+msgid "Parameters"
+msgstr ""
+
+#: idialer.cpp:250 idialer.ui.h:139
+msgid "Advanced"
+msgstr ""
+
+#: idialer.cpp:253
+msgid "Go!"
+msgstr ""
+
+#: idialer.ui.h:23
+msgid "Cannot query default connection"
+msgstr ""
+
+#: idialer.ui.h:39
+msgid "Cannot query connections list"
+msgstr ""
+
+#: idialer.ui.h:73
+msgid "Exectuing..."
+msgstr ""
+
+#: idialer.ui.h:84
+msgid ""
+"\n"
+"Initializing..."
+msgstr ""
+
+#: idialer.ui.h:90
+msgid "Cannot initialize connection!"
+msgstr ""
+
+#: idialer.ui.h:92 idialer.ui.h:106 idialer.ui.h:120 idialer.ui.h:134
+msgid ""
+"\n"
+"Failed."
+msgstr ""
+
+#: idialer.ui.h:98
+msgid ""
+"\n"
+"Booting..."
+msgstr ""
+
+#: idialer.ui.h:104
+msgid "Cannot boot connection!"
+msgstr ""
+
+#: idialer.ui.h:112
+msgid ""
+"\n"
+"Connecting..."
+msgstr ""
+
+#: idialer.ui.h:118
+msgid "Cannot connect!"
+msgstr ""
+
+#: idialer.ui.h:126
+msgid ""
+"\n"
+"Disconnecting..."
+msgstr ""
+
+#: idialer.ui.h:132
+msgid "Cannot disconnect!"
+msgstr ""
+
+#: idialer.ui.h:145
+msgid ""
+"\n"
+"Done."
+msgstr ""
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr ""
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr ""
