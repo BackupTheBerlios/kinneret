@@ -165,7 +165,7 @@ Questions, bugs, crashs and all other things may be sent to me, z9u2k@linux-kinn
                             <cstring>radioDialup</cstring>
                         </property>
                         <property name="enabled">
-                            <bool>false</bool>
+                            <bool>true</bool>
                         </property>
                         <property name="text">
                             <string>Analog (Dial-up)</string>
@@ -700,6 +700,107 @@ Please pick your ISP from the list below.</string>
                     </size>
                 </property>
             </spacer>
+        </vbox>
+    </widget>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>page</cstring>
+        </property>
+        <attribute name="title">
+            <string>Phone Numbers</string>
+        </attribute>
+        <vbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel2_4</cstring>
+                </property>
+                <property name="text">
+                    <string>Available phone numbers:</string>
+                </property>
+            </widget>
+            <widget class="QListBox">
+                <property name="name">
+                    <cstring>listPhones</cstring>
+                </property>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout70</cstring>
+                </property>
+                <hbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel1_4</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Your area code:</string>
+                        </property>
+                    </widget>
+                    <widget class="QComboBox">
+                        <item>
+                            <property name="text">
+                                <string>02</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>03</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>04</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>06</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>07</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>08</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>09</string>
+                            </property>
+                        </item>
+                        <property name="name">
+                            <cstring>comboAreaCode</cstring>
+                        </property>
+                    </widget>
+                    <spacer>
+                        <property name="name">
+                            <cstring>spacer85</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>81</width>
+                                <height>21</height>
+                            </size>
+                        </property>
+                    </spacer>
+                </hbox>
+            </widget>
         </vbox>
     </widget>
     <widget class="QWidget">
@@ -1579,6 +1680,12 @@ Please pick your ISP from the list below.</string>
         <receiver>iwizard</receiver>
         <slot>onStaticAddress()</slot>
     </connection>
+    <connection>
+        <sender>comboISPs</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>iwizard</receiver>
+        <slot>onISP(const QString&amp;)</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>radioLAN</tabstop>
@@ -1623,6 +1730,7 @@ Please pick your ISP from the list below.</string>
     <slot>onAnalog()</slot>
     <slot>onFromDHCP()</slot>
     <slot>onStaticAddress()</slot>
+    <slot>onISP(const QString &amp;qs)</slot>
 </slots>
 <functions>
     <function access="private" specifier="non virtual">init()</function>

@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 
 	KApplication a;
 	iwizard *iwiz = new iwizard();
-	iwiz->setFinishEnabled(iwiz->QWizard::page(5), true);
+	iwiz->setFinishEnabled(iwiz->QWizard::page(6), true);
 	a.setMainWidget(iwiz);
 	iwiz->show();
 
@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 	if (system("[ \"`whoami`\" == \"root\" ]"))
 	{
 		KMessageBox::error(0, tr2i18n("Must be root!"));
-		return -1;
+//		return -1;
 	}
 
 	a.exec();
@@ -163,6 +163,15 @@ int main(int argc, char *argv[])
 		else if (iwiz->radioISDN->isChecked()) strCmd += "isdn";
 		else if (iwiz->radioDialup->isChecked()) strCmd += "dialup";
 
+		if (iwiz->radioDialup->isChecked())
+		{
+			strCmd += " --myarea=";
+			strCmd += string(iwiz->comboAreaCode->currentText().ascii());
+
+			strCmd += " --phonenumber=";
+			strCmd += string(iwiz->listPhones->currentText().right(10).ascii());
+		}
+
 		if (iwiz->radioLAN->isChecked())
 		{
 			if (iwiz->radioStatic->isChecked())
@@ -189,7 +198,7 @@ int main(int argc, char *argv[])
 			strCmd += string(iwiz->comboLANEth->currentText().ascii());
 		}
 
-		if (iwiz->radioADSL->isChecked() || iwiz->radioCable->isChecked())
+		if (iwiz->radioADSL->isChecked() || iwiz->radioCable->isChecked() || iwiz->radioDialup->isChecked())
 		{
 			strCmd += " ";
 			strCmd += "--modem=\"";

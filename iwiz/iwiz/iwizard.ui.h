@@ -69,6 +69,7 @@ void iwizard::init()
 	for (iter = mapISPs.begin() ; iter != mapISPs.end() ; iter++)
 		comboISPs->insertItem(QString(iter->first.c_str()));
 	comboISPs->setCurrentItem(0);
+	onISP(comboISPs->currentText());
     
     // now, list modems
     ret = system("internet --listhws broadband > /tmp/.hws");
@@ -109,7 +110,7 @@ void iwizard::init()
 	hws.close();
 	unlink("/tmp/.hws");
 	comboModems->setCurrentItem(0);
-    
+	    
 	// fill ethernet's combo box
 	// count how many times the string 'eth' appears in /proc/net/dev
 	ret = system("cat /proc/net/dev | grep eth > /tmp/.eths");
@@ -238,6 +239,7 @@ void iwizard::onTypeChange( int stat )
 void iwizard::AssembleUsername(const QString &qs)
 {
 	if (0) { std::cout << qs << std::endl; } // I hate stupid warnings...
+	if (!radioADSL->isChecked() && !radioCable->isChecked()) return;
 	
 	// set suffix
 	QString qCmd = QString("internet --ispinfo ") + QString(mapISPs[comboISPs->currentText().ascii()].c_str());
@@ -288,32 +290,82 @@ void iwizard::onNewPage(const QString &qs)
 {
 	if (0) { std::cout << qs; }
 
-	// skip LAN
-	if (currentPage() == QWizard::page(3) && !radioLAN->isChecked() && nPrevPage == 2)
+//	const int nWelcome	= 0;
+//	const int nMethod	= 1;
+	const int nDebian	= 2;
+	const int nIP		= 3;
+	const int nPhone	= 4;
+	const int nModem	= 5;
+	const int nUsername	= 6;
+
+	// LAN
+	if (radioLAN->isChecked())
 	{
-		QWizard::showPage(QWizard::page(4));
-		return;
+		// foreward
+		if (currentPage() == QWizard::page(nPhone) && nPrevPage == nIP)
+		{
+			QWizard::showPage(QWizard::page(nModem));
+			return;
+		}
+
+		// backward
+		if (currentPage() == QWizard::page(nPhone) && nPrevPage == nModem)
+		{
+			QWizard::showPage(QWizard::page(nIP));
+			return;
+		}
 	}
 
-	if (currentPage() == QWizard::page(3) && !radioLAN->isChecked() && nPrevPage == 4)
+	// Dialup
+	if (radioDialup->isChecked())
 	{
-		QWizard::showPage(QWizard::page(2));
-		return;
+		// foreward
+		if (currentPage() == QWizard::page(nIP) && nPrevPage == nDebian)
+		{
+			QWizard::showPage(QWizard::page(nPhone));
+			return;
+		}
+
+		// backward
+		if (currentPage() == QWizard::page(nIP) && nPrevPage == nPhone)
+		{
+			QWizard::showPage(QWizard::page(nDebian));
+			return;
+		}
+
+		// foreward-2
+		if (currentPage() == QWizard::page(nModem) && nPrevPage == nPhone)
+		{
+			QWizard::showPage(QWizard::page(nUsername));
+			return;
+		}
+
+		// backward-2
+		if (currentPage() == QWizard::page(nModem) && nPrevPage == nUsername)
+		{
+			QWizard::showPage(QWizard::page(nPhone));
+			return;
+		}
 	}
 
-	// skip broadband stuff
-	if (currentPage() == QWizard::page(4) && radioLAN->isChecked() && nPrevPage == 3)
+	// Broadband
+	if (radioADSL->isChecked() || radioCable->isChecked())
 	{
-		QWizard::showPage(QWizard::page(5));
-		return;
-	}
+		// foreward
+		if (currentPage() == QWizard::page(nIP) && nPrevPage == nDebian)
+		{
+			QWizard::showPage(QWizard::page(nModem));
+			return;
+		}
 
-	if (currentPage() == QWizard::page(4) && radioLAN->isChecked() && nPrevPage == 5)
-	{
-		QWizard::showPage(QWizard::page(3));
-		return;
+		// backward
+		if (currentPage() == QWizard::page(nPhone) && nPrevPage == nModem)
+		{
+			QWizard::showPage(QWizard::page(nDebian));
+			return;
+		}
 	}
-
+	
 	nPrevPage = indexOf(currentPage());
 }
 
@@ -351,7 +403,11 @@ void iwizard::onISDN()
 
 void iwizard::onAnalog()
 {
-
+	// disable and enable stuff
+	comboModems->setEnabled(false);
+	lineUsername->setEnabled(true);
+	linePassword->setEnabled(true);
+	lineServer->setEnabled(false);
 }
 
 
@@ -370,4 +426,35 @@ void iwizard::onStaticAddress()
 	lineNetmask->setEnabled(true);
 	lineBroadcast->setEnabled(true);
 	lineGateway->setEnabled(true);
+}
+
+
+void iwizard::onISP(const QString &qs)
+{
+	QString qCmd = QString("internet --ispinfo ") + mapISPs[qs] + QString(" > /tmp/.phones");
+	int ret = system(qCmd);
+
+	const std::string trigger = std::string("Dialup Phones:");
+
+	std::ifstream f("/tmp/.phones");
+
+	char szBuffer[0xFF];	// line buffer
+	if (!f || ret != 0)
+	{
+		KMessageBox::error(parentWidget(), tr2i18n("Cannot query ISP's phone numbers"));
+		exit(-1);
+	}
+
+	while (listPhones->count()) listPhones->removeItem(0);	// clear
+	do f.getline(szBuffer, 0xFF); while (std::string(szBuffer) != trigger);
+	while (strlen(szBuffer))
+	{
+		f.getline(szBuffer, 0xFF);
+		if (strlen(szBuffer)) listPhones->insertItem(QString(szBuffer));
+	}
+
+	listPhones->setCurrentItem(0);
+
+	f.close();
+	unlink("/tmp/.phones");
 }
