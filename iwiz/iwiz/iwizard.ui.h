@@ -111,27 +111,30 @@ void iwizard::init()
 	// count how many times the string 'eth' appears in /proc/net/dev
 	ret = system("cat /proc/net/dev | grep eth > /tmp/.eths");
 
+	while (comboEth->count()) comboEth->removeItem(0);		// clear    
+
 	std::ifstream eths("/tmp/.eths");
 	if (!eths || ret != 0)
 	{
 		KMessageBox::error(parentWidget(), tr2i18n("Cannot query ethernet devices"));
-		exit(-1);
+		//exit(-1);
 	}
-    
-	while (comboEth->count()) comboEth->removeItem(0);		// clear
-    
-	while (!eths.eof())
+	
+	else
 	{
-		eths.getline(szBuffer, 0xFF);
-		if (strlen(szBuffer))
+		while (!eths.eof())
 		{
-			szBuffer[6] = 0;
-			comboEth->insertItem(&szBuffer[2]);
+			eths.getline(szBuffer, 0xFF);
+			if (strlen(szBuffer))
+			{
+				szBuffer[6] = 0;
+				comboEth->insertItem(&szBuffer[2]);
+			}
 		}
+	    
+		eths.close();
+		comboEth->setCurrentItem(0);
 	}
-    
-	eths.close();
-	comboEth->setCurrentItem(0);
 }
 
 
