@@ -41,7 +41,7 @@ maphome()
 		echo -e "${BLUE}Linking /mnt/${mntpt} to \\${letter}...${NORMAL}"
 		slash=\\
 		to=`echo -e "${slash}${letter}"`
-		ln -s /mnt/$mntpt/ "/home/z9u2K/partitions/лерп ${to}"
+		ln -s /mnt/$mntpt/ "/home/z9u2K/partitions/пїЅпїЅ${to}"
 
 		let letter++
 	done
@@ -73,7 +73,7 @@ echo "${BLUE}Searching for Kinneret's Home...${NORMAL}"
 # mount all vfat directories RW
 for dir in `cat /etc/fstab | grep vfat | cut -b 6-9`
 do
-	mount -t vfat -o defaults,rw,user,uid=1000,codepage=1255,iocharset=cp1255,utf8 /dev/$dir /mnt/$dir 2>&1
+	mount -t vfat -o defaults,rw,user,uid=1000,codepage=1255,iocharset=cp1255 /dev/$dir /mnt/$dir 2>&1
 done
 
 # Scan directories
