@@ -3,6 +3,9 @@
    - Sample Connection Description.
    - This file is sent to the connection assembler, describing anything needed by
    - it to create the connection.
+   -
+   - Author: z9u2k
+   - $Revision: 1.4 $
    -->
 <connection>
     
