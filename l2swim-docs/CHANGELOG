@@ -1,5 +1,12 @@
 This file includes changes since the last upload. It is intended to provide a reference for translators/authors/remastering.
 
+-------------- v 0.7.1 --------------
+* Updated Arabic translations from Nizar 19/Dec
+* Changes to templates - added background to documents 19/Dec
+* Added 6th installment to the "toughts" series 19/Dec
+* misc. corrections to various documents 19/Dec
+* Added article: Linux and Gnu 2/1/04
+
 -------------- v 0.7 ----------------
 * Important! layout and structure changes (XSL&XML) as follows: 17/9/2003
 -- removed "edited with free software" section as this is now automatically generated
