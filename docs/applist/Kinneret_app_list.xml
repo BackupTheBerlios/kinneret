@@ -179,8 +179,9 @@
 		<age>?</age>
 		<home>http://thewall.revizia.net/</home>
 		<version>?</version>
-		<kinneret>0.1</kinneret>
-		<hebrew>בעבודה</hebrew>
+		<kinneret>-----</kinneret>
+		<hebrew></hebrew>
+		<extra>בשלב זה, לא יכלל בכנרת בשל בעיות רישוי</extra>
 	</app>
 	<app>
 		<group>כללי</group>
@@ -198,16 +199,6 @@
 		<class>העברת קבצים</class>
 		<age>2+3</age>
 		<home>http://kbear.sourceforge.net/</home>
-		<version>?</version>
-		<kinneret>?</kinneret>
-		<hebrew>?</hebrew>
-	</app>
-	<app>
-		<group>כללי</group>
-		<title>ksirc</title>
-		<class>דיון מקוון</class>
-		<age>1+2+3</age>
-		<home>http://www.kde.orgt/</home>
 		<version>?</version>
 		<kinneret>?</kinneret>
 		<hebrew>?</hebrew>
