@@ -16,7 +16,14 @@ libkcm_knrtheme_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
 
 
 
-EXTRA_DIST = knrtheme.cpp knrtheme.h krdb.cpp krdb.h newthemedlg.cpp newthemedlg.h theme.cpp theme.h 
+EXTRA_DIST = knrtheme.cpp knrtheme.h krdb.cpp krdb.h newthemedlg.cpp newthemedlg.h theme.cpp theme.h knrtheme.desktop 
+
+install-data-local:
+	$(mkinstalldirs) $(kde_appsdir)/Settings/LookNFeel/
+	$(INSTALL_DATA) $(srcdir)/knrtheme.desktop $(kde_appsdir)/Settings/LookNFeel/knrtheme.desktop
+
+uninstall-local:
+	-rm -f $(kde_appsdir)/Settings/LookNFeel/knrtheme.desktop
 
 ####### kdevelop will overwrite this part!!! (end)############
 # These paths are KDE specific. Use them:

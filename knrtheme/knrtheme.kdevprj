@@ -26,12 +26,12 @@ ldadd=\s$(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT)
 ldflags=\s\s
 
 [General]
-AMChanged=true
+AMChanged=false
 author=Nir Misgav
 configure_args=\s--build=i386-linux --host=i386-linux --target=i386-linux\s
 email=nirro@linux-kinneret.org
 kdevprj_version=1.3
-lfv_open_groups=Headers,Others,Sources,Translations
+lfv_open_groups=GNU,Others,Sources
 make_options=\s-j1
 makefiles=Makefile.am,knrtheme/Makefile.am,doc/Makefile.am,doc/en/Makefile.am,po/Makefile.am
 modifyMakefiles=true
@@ -102,7 +102,7 @@ install_location=
 type=DATA
 
 [knrtheme/Makefile.am]
-files=knrtheme/knrtheme.cpp,knrtheme/knrtheme.h,knrtheme/krdb.cpp,knrtheme/krdb.h,knrtheme/newthemedlg.cpp,knrtheme/newthemedlg.h,knrtheme/theme.cpp,knrtheme/theme.h
+files=knrtheme/knrtheme.cpp,knrtheme/knrtheme.h,knrtheme/krdb.cpp,knrtheme/krdb.h,knrtheme/newthemedlg.cpp,knrtheme/newthemedlg.h,knrtheme/theme.cpp,knrtheme/theme.h,knrtheme/knrtheme.desktop
 sub_dirs=
 type=shared_library
 
@@ -111,6 +111,12 @@ dist=true
 install=false
 install_location=
 type=SOURCE
+
+[knrtheme/knrtheme.desktop]
+dist=true
+install=true
+install_location=$$(kde_appsdir)/Settings/LookNFeel/knrtheme.desktop
+type=DATA
 
 [knrtheme/knrtheme.h]
 dist=true
