@@ -8,6 +8,20 @@
 </head>
 
 <body bgcolor="#FFFFFF" text="#0066cc" link="#FFFFFF" alink="#000080" vlink="#FFFFFF">
+
+<script language="JavaScript1.2">
+
+/*
+Watermark Backgound Image Script- © Dynamic Drive (www.dynamicdrive.com)
+For full source code, 100's more DHTML scripts, and TOS,
+visit dynamicdrive.com
+*/
+
+if (document.all||document.getElementById)
+document.body.style.background="url('common/wallpaper.jpg') white center no-repeat fixed"
+
+</script>
+
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr> 
     <td colspan="2">
@@ -138,12 +152,93 @@ document.write(""+dayname+", "+monthname+" "+date+", "+yearname);
         <tr>
           <td>
             <p><span style="font-weight: bold;">What's new?</span></p>
+
+
+<script type="text/javascript">
+
+/******************************************
+* Scrollable content script II- © Dynamic Drive (www.dynamicdrive.com)
+* Visit http://www.dynamicdrive.com/ for full source code
+* This notice must stay intact for use
+******************************************/
+
+iens6=document.all||document.getElementById
+ns4=document.layers
+
+//specify speed of scroll (greater=faster)
+var speed=1
+
+if (iens6){
+document.write('<div id="container" style="position:relative;width:130px;height:145px;border:1px solid white;overflow:hidden">')
+document.write('<div id="content" style="position:absolute;width:125px;left:0;top:0">')
+}
+</script>
+
+<ilayer name="nscontainer" width=130 height=145 clip="0,0,130,145">
+<layer name="nscontent" width=130 height=145 visibility=hidden>
+
+<!--INSERT CONTENT HERE-->
+            <p>3 January 2005</p>
+            <p>The project will move soon to a new server. Until the move, some of the site's services will not be operational. Please accept our appology.</p>
+            <p>8 August 2004</p>
+            <p>New development version 0.7.3 is now available from the <i><a href="download-en.php" class="orange_white">Download page</a></i></p>
             <p>16 April 2004</p>
             <p>Online shops that sell GNU Linux/Kinneret were added to the <i><a href="download.php" class="orange_white">Download page</a></i></p>
             <p>March 30, 2004</p>
             <p>New development version 0.7.2 is now available from the <i><a href="download-en.php" class="orange_white">Download page</a></i></p>
             <p>March 26, 2004</p>
             <p>The home page is now <a href="index-ru.html" class="orange_white">available in Russian</a></p>
+
+<!--END CONTENT-->
+
+</layer>
+</ilayer>
+
+<script language="JavaScript1.2">
+if (iens6)
+document.write('</div></div>')
+</script>
+
+<table width="130px"><td><p align="right">
+<a href="#" onMouseover="moveup()" onMouseout="clearTimeout(moveupvar)" class="orange_white"><img src="common/scroll_up.gif" border=0> Up</a>  <a href="#" onMouseover="movedown()" onMouseout="clearTimeout(movedownvar)" class="orange_white"><img src="common/scroll_down.gif" border=0> Down</a></p></td>
+</table>
+
+<script language="JavaScript1.2">
+if (iens6){
+var crossobj=document.getElementById? document.getElementById("content") : document.all.content
+var contentheight=crossobj.offsetHeight
+}
+else if (ns4){
+var crossobj=document.nscontainer.document.nscontent
+var contentheight=crossobj.clip.height
+}
+
+function movedown(){
+if (iens6&&parseInt(crossobj.style.top)>=(contentheight*(-1)+100))
+crossobj.style.top=parseInt(crossobj.style.top)-speed+"px"
+else if (ns4&&crossobj.top>=(contentheight*(-1)+100))
+crossobj.top-=speed
+movedownvar=setTimeout("movedown()",20)
+}
+
+function moveup(){
+if (iens6&&parseInt(crossobj.style.top)<=0)
+crossobj.style.top=parseInt(crossobj.style.top)+speed+"px"
+else if (ns4&&crossobj.top<=0)
+crossobj.top+=speed
+moveupvar=setTimeout("moveup()",20)
+
+}
+
+function getcontent_height(){
+if (iens6)
+contentheight=crossobj.offsetHeight
+else if (ns4)
+document.nscontainer.document.nscontent.visibility="show"
+}
+window.onload=getcontent_height
+</script>
+
           </td>
         </tr>
       </table>

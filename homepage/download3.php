@@ -233,11 +233,12 @@ http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange
   <TD>#1</td>
   <TD><a href="http://www.hamakor.org.il" class="orange_white" target="new">המקור</a> - עמותה ישראלית לתוכנה חופשית ולקוד-מקור פתוח</td>
   <TD>ישראל</td>
-  <TD>0.7.2</td>
-  <TD><a href="http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.7.2.iso" class="orange_white">הורדה</a></td>
-  <TD><a href="http://mirror.hamakor.org.il/pub/Israeli/Kinneret//Kinneret-0.7.2.md5sum" class="orange_white">הורדה</a></td>
+  <TD>0.7.3</td>
+  <TD><a href="http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.7.3.iso" class="orange_white">הורדה</a></td>
+  <TD><a href="http://mirror.hamakor.org.il/pub/Israeli/Kinneret//Kinneret-0.7.3.iso.md5" class="orange_white">הורדה</a></td>
   <TD> </td>
 </tr>
+<!--
 <TR>
   <TD>#2</td>
   <TD><a href="http://www.haifux.org/" class="orange_white" target="new">חייפוקס</a> - מועדון הלינוקס החיפאי</td>
@@ -248,12 +249,13 @@ http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange
   <TD> </td>
 </tr>
 <TR>
-  <TD>#3</td>
+-->
+  <TD>#2</td>
  <TD><a href="http://developer.berlios.de/" class="orange_white" target="new">Berlios</a> - חממת פיתוח לקוד-פתוח</td>
    <TD>גרמניה</td>
-  <TD>0.7.1</td>
-  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.7.1.iso" class="orange_white">הורדה</a></td>
-  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.7.1.md5sum" class="orange_white">הורדה</a></td>
+  <TD>0.7.3</td>
+  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.7.3.iso" class="orange_white">הורדה</a></td>
+  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.7.3.md5sum" class="orange_white">הורדה</a></td>
   <TD> </td>
 </tr>
 
@@ -273,6 +275,7 @@ http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange
   <TH>עלות משוערת לתקליטור כולל משלוח</th>
   <TH>הערות</th>
 </tr>
+<!--
 <TR>
   <TD>1</td>
   <TD><a href="http://www.guides.co.il" class="orange_white" target="new">מדריך הטרמפיסט למחשבים</a></td>
@@ -281,20 +284,21 @@ http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange
   <TD>10 ש"ח (מינימום הזמנה - 25 ש"ח)</td>
   <TD></td>
 </tr>
+-->
 <TR>
-  <TD>2</td>
+  <TD>1</td>
   <TD><a href="http://www.bdcomp.co.il" class="orange_white" target="new">בי די מחשבים</a></td>
   <TD><a href="http://www.bdcomp.co.il/services/buylinux.html" class="orange_white" target="new">0.6</a></td>
-  <TD><a href="http://www.bdcomp.co.il/services/buylinux.html" class="orange_white" target="new">0.7.2</a></td>
+  <TD><a href="http://www.bdcomp.co.il/services/buylinux.html" class="orange_white" target="new">0.7.3</a></td>
   <TD>10 ש"ח</td>
   <TD></td>
 </tr>
 <TR>
-  <TD>3</td>
+  <TD>2</td>
   <TD><a href="http://www.easylinuxcds.com/" class="orange_white" target="new">Easy Linux CD</a></td>
   <TD>אין</td>
-  <TD><a href="http://www.easylinuxcds.com/catalog/product_info.php?cPath=49_60_192&products_id=448" class="orange_white" target="new">0.7.1</a></td>
-  <TD>4.95$ + משלוח</td>
+  <TD><a href="http://www.easylinuxcds.com/catalog/product_info.php?cPath=49_60_192&products_id=448" class="orange_white" target="new">0.7.3</a></td>
+  <TD>2.99$ + משלוח</td>
   <TD>משלוח לכל העולם</td>
 </tr>
 

@@ -228,11 +228,12 @@ http://mirror.hamakor.org.il/pub/Israeli/Kinneret/Kinneret-0.6-Yarden.iso" class
   <TD>#1</td>
   <TD><a href="http://www.hamakor.org.il/english.html" class="orange_white" target="new">Hamakor</a> - Israeli Society for Free Software and Open-Source Code</td>
   <TD>Israel</td>
-  <TD>0.7.2</td>
-  <TD><a href="http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.7.2.iso" class="orange_white">Download</a></td>
-  <TD><a href="http://mirror.hamakor.org.il/pub/Israeli/Kinneret//Kinneret-0.7.2.md5sum" class="orange_white">Download</a></td>
+  <TD>0.7.3</td>
+  <TD><a href="http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.7.3.iso" class="orange_white">Download</a></td>
+  <TD><a href="http://mirror.hamakor.org.il/pub/Israeli/Kinneret//Kinneret-0.7.3.iso.md5" class="orange_white">Download</a></td>
   <TD> </td>
 </tr>
+<!--
 <TR>
   <TD>#2</td>
   <TD><a href="http://www.haifux.org/" class="orange_white" target="new">Haifux</a> - Haifa Linux Club</td>
@@ -242,13 +243,14 @@ http://mirror.hamakor.org.il/pub/Israeli/Kinneret/Kinneret-0.6-Yarden.iso" class
   <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.7.2.md5sum" class="orange_white">Download</a></td>
   <TD> </td>
 </tr>
+-->
 <TR>
-  <TD>#3</td>
+  <TD>#2</td>
   <TD><a href="http://developer.berlios.de/" class="orange_white" target="new">Berlios</a> - Fostering Open Source Development</td>
   <TD>Germany</td>
-  <TD>0.7.1</td>
-  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.7.1.iso" class="orange_white">Download</a></td>
-  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.7.1.md5sum" class="orange_white">Download</a></td>
+  <TD>0.7.3</td>
+  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.7.3.iso" class="orange_white">Download</a></td>
+  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.7.3.md5sum" class="orange_white">Download</a></td>
   <TD> </td>
 </tr>
 
@@ -269,6 +271,7 @@ Following is a list of sites that sell CDs with GNU/Linux Kinneret. <b>These sit
   <TH>Estimated cost per CD incl. S&H</th>
   <TH>Comments</th>
 </tr>
+<!--
 <TR>
   <TD>1</td>
   <TD><a href="http://www.guides.co.il" class="orange_white" target="new">מדריך הטרמפיסט למחשבים</a></td>
@@ -277,20 +280,21 @@ Following is a list of sites that sell CDs with GNU/Linux Kinneret. <b>These sit
   <TD>10 ILS (min. order 25 ILS)</td>
   <TD>Hebrew site</td>
 </tr>
+-->
 <TR>
-  <TD>2</td>
+  <TD>1</td>
   <TD><a href="http://www.bdcomp.co.il" class="orange_white" target="new">בי די מחשבים</a></td>
   <TD><a href="http://www.bdcomp.co.il/services/buylinux.html" class="orange_white" target="new">0.6</a></td>
-  <TD><a href="http://www.bdcomp.co.il/services/buylinux.html" class="orange_white" target="new">0.7.2</a></td>
+  <TD><a href="http://www.bdcomp.co.il/services/buylinux.html" class="orange_white" target="new">0.7.3</a></td>
   <TD>10 ILS</td>
   <TD>Hebrew site</td>
 </tr>
 <TR>
-  <TD>3</td>
+  <TD>2</td>
   <TD><a href="http://www.easylinuxcds.com/" class="orange_white" target="new">Easy Linux CD</a></td>
   <TD>None</td>
-  <TD><a href="http://www.easylinuxcds.com/catalog/product_info.php?cPath=49_60_192&products_id=448" class="orange_white" target="new">0.7.1</a></td>
-  <TD>4.95$ + S&H</td>
+  <TD><a href="http://www.easylinuxcds.com/catalog/product_info.php?cPath=49_60_192&products_id=448" class="orange_white" target="new">0.7.3</a></td>
+  <TD>2.99$ + S&H</td>
   <TD>Worldwide delivery</td>
 </tr>
 
