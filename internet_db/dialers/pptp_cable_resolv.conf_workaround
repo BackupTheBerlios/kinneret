@@ -19,6 +19,15 @@ then
 	fi
 
 	DHCPCLIENT="`which dhcpcd`"
+elif [ -x `which dhcpd3` ]
+then
+	dhcpd3
+	if [ $? -ne 0 ]
+	then
+		exit -1
+	fi
+
+	DHCPCLIENT="`which dhcpd3`"
 elif [ -x `which dhclient` ]
 then
 	dhclient
@@ -78,6 +87,8 @@ then
 	CABLEGW=`grep routers /var/lib/dhcp/dhclient.leases | tail -n 1| cut -d ";" -f1 | cut -d ' ' -f5`
 elif [ "${DHCPCLIENT}" == "`which dhcpcd`" ]
 	CABLEGW=`cat /etc/dhcpc/dhcpcd-[*hw::eth*].info | grep GATEWAY | cut -d"=" -f2`
+elif [ "${DHCPCLIENT}" == "`which dhcpd3`" ]
+	CABLEGW=`grep routers /var/lib/dhcp/dhclient.leases | tail -n 1| cut -d ";" -f1 | cut -d ' ' -f5`
 fi
 
 # Add route
