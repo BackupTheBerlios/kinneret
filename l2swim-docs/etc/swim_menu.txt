@@ -77,18 +77,8 @@ Click here for English documentation
 <menu=index14>
  מדריך יישומים הכלולים ב<b><i>גנו/לינוקס כנרת</b></i>
 דף זה מכיל תקצירים שיאפשרו לך ללמוד את עיקרי השימוש בחלק מהתוכנות הכלולות בתקליטור.
-<null>
-<font color=grey>____________________ תקצירי נושאים __________________</font>
 <play=he/man_games.html>
 <img src="/opt/kinneret/images/star.png">מדריך משחקי מחשב 
-<null>
-<img src="/opt/kinneret/images/star.png">מדריך יישומי אינטרנט 
-<null>
-<img src="/opt/kinneret/images/star.png">מדריך יישומי מולטימדיה 
-<null>
-<img src="/opt/kinneret/images/star.png">מדריך עורכי מסמכים 
-<null>
-<font color=grey>____________________ מדריכים ליישומים __________________</font>
 <null>
 מדריך השמעת מוזיקה עם XMMS
 <null>
