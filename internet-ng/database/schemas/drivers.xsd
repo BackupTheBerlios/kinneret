@@ -1,64 +1,144 @@
 <?xml version="1.0"?>
+<!--
+    - Schema for driver validation.
+    -
+    - Author: z9u2k
+    - $Revision: 1.2 $
+-->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:simpleType name="type">
+    
+    <!-- Simple Types -->
+
+    <!-- Valid driver types -->
+    <xs:simpleType name="validDriverType">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="cable"/>
             <xs:enumeration value="adsl"/>
+            <xs:enumeration value="cable"/>
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="interface">
+    <!-- Valid kernel versions -->
+    <xs:simpleType name="validKernelType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]+(\.[0-9]+)+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Valid VPN communication types -->
+    <xs:simpleType name="validVpnType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="pptp"/>
+            <xs:enumeration value="pppoe"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Valid interfaces -->
+    <xs:simpleType name="validInterfaceType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="usb"/>
             <xs:enumeration value="ethernet"/>
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:complexType name="interfaces">
+    <!-- Valid IP addresses -->
+    <xs:simpleType name="validIpAddress">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([0-9]{1,3}\.){3}[0-9]{1,3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Complex Types -->
+
+    <!-- String element with language attribute -->
+    <xs:complexType name="langTag">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="lang" type="xs:language"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Intreface Type -->
+    <xs:complexType name="interfaceType">
+        <xs:attribute name="type" type="validInterfaceType"/>
+    </xs:complexType>
+
+    <!-- A module with kernel version -->
+    <xs:complexType name="moduleType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="kernel" type="validKernelType"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Configuration section for the ethernet card -->
+    <xs:complexType name="ethernetConfig">
         <xs:sequence>
-            <xs:element name="interface" type="interface"
-                minOccurs="1" maxOccurs="2"/>
+            <xs:element name="address" type="validIpAddress"/>
+            <xs:element name="netmask" type="validIpAddress"/>
+            <xs:element name="broadcast" type="validIpAddress"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="modules">
+    <!-- An empty group -->
+    <xs:group name="emptyGroup">
         <xs:sequence>
-            <!--- 2.4 Module name --> 
-            <xs:element name="module">
-                <xs:complexType>
-                    <xs:simpleContent>
-                        <xs:extension base="xs:string">
-                            <xs:attribute name="kernel" type="xs:string"
-                                use="required" fixed="2.4"/>
-                        </xs:extension>
-                    </xs:simpleContent>
-                </xs:complexType>
-            </xs:element>
-            <!--- 2.6 Module name --> 
-            <xs:element name="module">
-                <xs:complexType>
-                    <xs:simpleContent>
-                        <xs:extension base="xs:string">
-                            <xs:attribute name="kernel" type="xs:string"
-                                use="required" fixed="2.6"/>
-                        </xs:extension>
-                    </xs:simpleContent>
-                </xs:complexType>
-            </xs:element>
+            <xs:any minOccurs="0" maxOccurs="0"/>
         </xs:sequence>
+    </xs:group>
+    
+    <!-- PPtP VPN group -->
+    <xs:group name="pptpGroup">
+        <xs:sequence>
+            <xs:element name="address" type="validIpAddress"/>
+            <xs:element name="remotename" type="xs:string"/>
+            <xs:element name="ethernet" type="ethernetConfig"/>
+        </xs:sequence>
+    </xs:group>
+    
+    <!-- One of the valid VPN bodies -->
+    <xs:complexType name="vpnBodyType">
+        <xs:choice>
+            <xs:group ref="pptpGroup"/>
+            <xs:group ref="emptyGroup"/>
+        </xs:choice>
     </xs:complexType>
 
-    <xs:element name="modem">
+    <!-- One of the VPNs -->
+    <xs:complexType name="vpnType">
+        <xs:complexContent>
+            <xs:extension base="vpnBodyType">
+                <xs:attribute name="protocol" type="validVpnType"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- Document -->
+    <xs:element name="driver">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="name" type="xs:string"/>
-                <xs:element name="hebname" type="xs:string"/>
-                <xs:element name="type" type="type"/>
-                <xs:element name="interfaces" type="interfaces"/>
-
-                <!--- TODO: Optional -->
-                <xs:element name="modules" type="modules"/>
-                
+                <xs:element name="name" type="langTag"
+                    minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="comment" type="langTag" minOccurs="0"/>
+                <xs:element name="type" type="validDriverType"/>
+                <xs:element name="interface" type="interfaceType"
+                    minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="vpn" type="vpnType"
+                    minOccurs="0"/>
+                <xs:element name="module" type="moduleType"
+                    minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="supported">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="modem" type="xs:string"
+                                maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="unsupported" minOccurs="0">
+                    <xs:complexType></xs:complexType>
+                </xs:element>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
