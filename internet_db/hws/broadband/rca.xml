@@ -6,4 +6,6 @@
 		<type>cable</type>
 		<interface>ethernet</interface>
 	</hardware>
+
+	<module>CDCEther</module>
 </hw>
