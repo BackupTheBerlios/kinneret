@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boot-floppy-0.2b\n"
 "POT-Creation-Date: 2004-03-01 20:55\n"
-"PO-Revision-Date: 2004-03-24 22:06+0200\n"
-"Last-Translator: Nir Misgav [Nirro] <nirro@linux-kinneret.org>\n"
+"PO-Revision-Date: 2004-04-01 15:15+0200\n"
+"Last-Translator: Nir Misgav <nirro@linux-kinneret.org>\n"
 "Language-Team: Nir Misgav <nirro@yahoo.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -51,6 +51,24 @@ msgstr "אודות"
 #  FormWarning..Font.Name
 #  parinst..Font.Name
 #  parinst2..Font.Name
+#  MainForm..Font.Name
+#  WForm..Font.Name
+#  WForm..Label2..Font.Name
+#  FormAbout..Font.Name
+#  FormAdvanced..Font.Name
+#  FormWarning..Font.Name
+#  parinst..Font.Name
+#  parinst2..Font.Name
+#  ParInst3..Font.Name
+#  MainForm..Font.Name
+#  WForm..Font.Name
+#  WForm..Label2..Font.Name
+#  FormAbout..Font.Name
+#  FormAdvanced..Font.Name
+#  FormWarning..Font.Name
+#  parinst..Font.Name
+#  parinst2..Font.Name
+#  ParInst3..Font.Name
 #  MainForm..Font.Name
 #  WForm..Font.Name
 #  WForm..Label2..Font.Name
@@ -182,14 +200,15 @@ msgstr "הכנת תקליטון הפעלה"
 #  WForm..Caption
 #  WForm..Caption
 #  WForm..Caption
-#. WForm..Caption
+#  WForm..Caption
+#  WForm..Caption
 #: WelcomeForm.dfm:8
 msgid "Welcome to GNU/Linux \"Kinneret\""
-msgstr "\"ברוכים הבאים לגנו/לינוקס \"כנרת"
+msgstr "ברוכים הבאים לגנו/לינוקס כנרת"
 
 #  WForm..label1..Caption
 #  WForm..label1..Caption
-#. WForm..label1..Caption
+#  WForm..label1..Caption
 #: WelcomeForm.dfm:124
 msgid "Welcome to \"Kinneret\""
 msgstr "\"ברוכים הבאים ל-\"כנרת"
@@ -240,6 +259,17 @@ msgstr "מתקדם"
 #: WelcomeForm.dfm:579
 msgid "Hard-Drive Operation"
 msgstr "הפעלה מכונן קשיח"
+
+#. WForm..TntRadioButton1..Caption
+#: WelcomeForm.dfm:589
+msgid "Russian"
+msgstr ""
+
+#  ParInst3..Caption
+#  WForm..TntButton2..Caption
+#: WelcomeForm.dfm:599
+msgid "Uninstall Kinneret"
+msgstr "הסרת כנרת"
 
 #: About.pas:85
 msgid ""
@@ -355,7 +385,7 @@ msgstr "הסרת המפתח שנבחר וערכו"
 #  parinst2..ButtonCancel..Caption
 #: Advanced.pas:76
 #: fWarning.pas:71
-#: ParInstall2.pas:79
+#: ParInstall2.pas:83
 #: rawwrite.pas:256
 msgid "Cancel"
 msgstr "ביטול"
@@ -396,7 +426,7 @@ msgstr ""
 ",לא ניתן לשמור שינויים\n"
 ".אנא וודא/י שהתקליטון עדיין בכונן ונסה/י שוב"
 
-#: checkOS.pas:36
+#: checkOS.pas:37
 msgid "Unable to find Windows version"
 msgstr "לא ניתן למצוא את גרסת החלונות"
 
@@ -494,20 +524,20 @@ msgid ""
 msgstr ""
 
 #  WForm..TntButton1..Caption
-#: ParInstall2.pas:78
+#: ParInstall2.pas:82
 msgid "Hard-Drive Operation options"
 msgstr "אפשרויות הפעלה מכונן קשיח"
 
 #  parinst2..ButtonStart..Caption
-#: ParInstall2.pas:80
+#: ParInstall2.pas:84
 msgid "Start Installation"
 msgstr "התחל התקנה"
 
-#: ParInstall2.pas:81
+#: ParInstall2.pas:85
 msgid "Choose a drive to install GNU/Linux Kinneret :"
 msgstr ": נא לבחור כונן להתקנת גנו/לינוקס כנרת"
 
-#: ParInstall2.pas:83
+#: ParInstall2.pas:87
 msgid ""
 "Note: In some cases, a small directory will be created in\n"
 "drive C:, even if you choose another drive."
@@ -515,7 +545,7 @@ msgstr ""
 ",C: הערה: במקרים מסויימים, תיקייה קטנה תיווצר בכונן\n"
 ".אפילו אם בחרת בכונן אחר"
 
-#: ParInstall2.pas:88
+#: ParInstall2.pas:92
 msgid ""
 "In order to start Kinneret, you can always boot with the\n"
 "Kinneret CD, or with a Boot-Floppy. After booting, Kinneret\n"
@@ -530,37 +560,37 @@ msgstr ""
 ": (האיתחול הבאות (מומלץ"
 
 #  parinst2..TntGroupBox2..Caption
-#: ParInstall2.pas:89
+#: ParInstall2.pas:93
 msgid "1. Drive Options"
 msgstr "1. בחירת כונן"
 
 #  parinst2..TntGroupBox1..Caption
-#: ParInstall2.pas:90
+#: ParInstall2.pas:94
 msgid "2. Boot Options"
 msgstr "2. אפשרויות איתחול"
 
 #  parinst2..TntGroupBox1..CBDesktop..Caption
-#: ParInstall2.pas:91
+#: ParInstall2.pas:96
 msgid "Desktop shortcut (Windows 95,98)"
 msgstr "(קיצור דרך על שולחן העבודה (חלונות 95, 98"
 
 #  parinst2..TntGroupBox1..CBMenu..Caption
-#: ParInstall2.pas:92
+#: ParInstall2.pas:97
 msgid "Boot Menu (Windows 95,98, NT,2000, XP)"
 msgstr "(XP ,2000, NT ,תפריט בזמן האיתחול (חלונות 95, 98"
 
 #  parinst2..TntGroupBox2..ListDrives......Caption
-#: ParInstall2.pas:93
+#: ParInstall2.pas:99
 msgid "Drive"
 msgstr "כונן"
 
 #  parinst2..TntGroupBox2..ListDrives......Caption
-#: ParInstall2.pas:94
+#: ParInstall2.pas:100
 msgid "Free space before inst."
 msgstr "פנוי לפני ההתקנה"
 
 #  parinst2..TntGroupBox2..ListDrives......Caption
-#: ParInstall2.pas:95
+#: ParInstall2.pas:101
 msgid "Free space after inst."
 msgstr "פנוי לאחר ההתקנה"
 
@@ -568,7 +598,7 @@ msgstr "פנוי לאחר ההתקנה"
 #  Not enough free space
 #  Not enough free space
 #. Not enough free space
-#: ParInstall2.pas:183
+#: ParInstall2.pas:189
 msgid ""
 "Not enough free space on drive %s:\n"
 "Choose another one."
@@ -807,7 +837,7 @@ msgstr ""
 msgid "'%s' is not a valid currency value"
 msgstr ""
 
-#: WelcomeForm.pas:134
+#: WelcomeForm.pas:137
 msgid ""
 "You are going to reboot the computer.\n"
 "In order to prevent data loss, Please close\n"
@@ -817,7 +847,7 @@ msgstr ""
 ".מומלץ לסגור את כל התוכניות הרצות כרגע\n"
 "? האם להמשיך"
 
-#: WelcomeForm.pas:177
+#: WelcomeForm.pas:180
 msgid ""
 "Floppy has been successfully written.\n"
 "\n"
@@ -835,9 +865,9 @@ msgstr ""
 ",לסגור את כל התוכניות הרצות כרגע\n"
 ".ולאתחל את המחשב מחדש"
 
-#: WelcomeForm.pas:186
+#: WelcomeForm.pas:189
 msgid ""
-"Welcome to GNU/Linux \"Kinneret\".\n"
+"Welcome to GNU/Linux Kinneret.\n"
 "This program is not an installation Program,\n"
 "because Kinneret doesn't need to be installed.\n"
 "To start Kinneret, You should boot the computer\n"
@@ -849,20 +879,20 @@ msgid ""
 "NEW: You can now make a \"Hard-Drive Operation\",\n"
 "if you want to work with Kinneret from the Hard-Drive."
 msgstr ""
-".\"ברוך בואך לגנו/לינוקס \"כנרת\n"
-",זוהי אינה תוכנית התקנה\n"
-".מכיוון שכנרת אינה זקוקה להתקנה\n"
+".ברוך בואך לגנו/לינוקס כנרת\n"
+"זוהי אינה תוכנית התקנה, מכיוון שכנרת אינה זקוקה\n"
+".להתקנה\n"
 "\n"
-"על מנת להפעיל את כנרת יש לאתחל את המחשב\n"
-".מחדש מהתקליטור\n"
+"על מנת להפעיל את כנרת יש לאתחל את המחשב מחדש\n"
+".מהתקליטור\n"
 "\n"
-"אם אינך יכול/ה או אינך יודע/ת  איך לאתחל\n"
-".מהתקליטור, ביכולתך להכין תקליטון הפעלה כאן\n"
+"אם אינך רוצה לאתחל מהתקליטור (או לא ידוע לך איך\n"
+".עושים זאת), ביכולתך להכין תקליטון הפעלה כאן\n"
 "\n"
 "חדש: ניתן לבצע \"הפעלה מכונן קשיח\" כדי להפעיל את\n"
 ".כנרת ישירות מהכונן הקשיח, ללא צורך בתקליטור"
 
-#: WelcomeForm.pas:196
+#: WelcomeForm.pas:199
 msgid ""
 "Kinneret was successfully installed.\n"
 "\n"
@@ -895,7 +925,7 @@ msgstr ""
 #  Seperating Line to words
 #  Seperating Line to words
 #. Seperating Line to words
-#: WelcomeForm.pas:234
+#: WelcomeForm.pas:237
 msgid ""
 "In order to enter the Advanced options, You must put your boot-floppy\n"
 "(The floppy you can make here) in drive A:"

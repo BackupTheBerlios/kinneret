@@ -6,13 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2004-03-24 22:06\n"
-"PO-Revision-Date: 2004-03-24 22:06\n"
-"Last-Translator: Somebody <your.email@address.com>\n"
+"POT-Creation-Date: 2004-04-01 14:58\n"
+"PO-Revision-Date: 2004-04-01 14:58\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: dxgettext 1.1.1\n"
+"X-Generator: dxgettext 1.4\n"
 
 #. FormAbout..Caption
 #: About.dfm:8
@@ -116,6 +115,16 @@ msgstr ""
 msgid "Hard-Drive Operation"
 msgstr ""
 
+#. WForm..TntRadioButton1..Caption
+#: WelcomeForm.dfm:589
+msgid "Russian"
+msgstr ""
+
+#. WForm..TntButton2..Caption
+#: WelcomeForm.dfm:599
+msgid "Uninstall Kinneret"
+msgstr ""
+
 #: About.pas:85
 msgid "Kinneret's Boot Floppy Maker,\n"
 "And \"HD operation\" wizard.\n"
@@ -174,7 +183,7 @@ msgstr ""
 
 #: Advanced.pas:76
 #: fWarning.pas:71
-#: ParInstall2.pas:79
+#: ParInstall2.pas:83
 #: rawwrite.pas:256
 msgid "Cancel"
 msgstr ""
@@ -214,7 +223,7 @@ msgid "Unable to save changes,\n"
 "again."
 msgstr ""
 
-#: checkOS.pas:36
+#: checkOS.pas:37
 msgid "Unable to find Windows version"
 msgstr ""
 
@@ -287,26 +296,26 @@ msgid "You are using Windows Me.\n"
 "Dos."
 msgstr ""
 
-#: ParInstall2.pas:78
+#: ParInstall2.pas:82
 msgid "Hard-Drive Operation options"
 msgstr ""
 
-#: ParInstall2.pas:80
+#: ParInstall2.pas:84
 msgid "Start Installation"
 msgstr ""
 
-#: ParInstall2.pas:81
+#: ParInstall2.pas:85
 msgid "Choose a drive to install GNU/Linux Kinneret "
 ":"
 msgstr ""
 
-#: ParInstall2.pas:83
+#: ParInstall2.pas:87
 msgid "Note: In some cases, a small directory will be created in\n"
 "drive C:, even if you choose another "
 "drive."
 msgstr ""
 
-#: ParInstall2.pas:88
+#: ParInstall2.pas:92
 msgid "In order to start Kinneret, you can always boot with the\n"
 "Kinneret CD, or with a Boot-Floppy. After booting, Kinneret\n"
 "continues to load from the Hard-Drive automatically.\n"
@@ -315,36 +324,36 @@ msgid "In order to start Kinneret, you can always boot with the\n"
 ":"
 msgstr ""
 
-#: ParInstall2.pas:89
+#: ParInstall2.pas:93
 msgid "1. Drive Options"
 msgstr ""
 
-#: ParInstall2.pas:90
+#: ParInstall2.pas:94
 msgid "2. Boot Options"
 msgstr ""
 
-#: ParInstall2.pas:91
+#: ParInstall2.pas:96
 msgid "Desktop shortcut (Windows 95,98)"
 msgstr ""
 
-#: ParInstall2.pas:92
+#: ParInstall2.pas:97
 msgid "Boot Menu (Windows 95,98, NT,2000, XP)"
 msgstr ""
 
-#: ParInstall2.pas:93
+#: ParInstall2.pas:99
 msgid "Drive"
 msgstr ""
 
-#: ParInstall2.pas:94
+#: ParInstall2.pas:100
 msgid "Free space before inst."
 msgstr ""
 
-#: ParInstall2.pas:95
+#: ParInstall2.pas:101
 msgid "Free space after inst."
 msgstr ""
 
 #. Not enough free space
-#: ParInstall2.pas:183
+#: ParInstall2.pas:189
 msgid "Not enough free space on drive %s:\n"
 "Choose another one."
 msgstr ""
@@ -514,13 +523,13 @@ msgstr ""
 msgid "'%s' is not a valid currency value"
 msgstr ""
 
-#: WelcomeForm.pas:134
+#: WelcomeForm.pas:137
 msgid "You are going to reboot the computer.\n"
 "In order to prevent data loss, Please close\n"
 "all running programs. Continune ?"
 msgstr ""
 
-#: WelcomeForm.pas:177
+#: WelcomeForm.pas:180
 msgid "Floppy has been successfully written.\n"
 "\nTo restart Kinneret:\n\n"
 "Make sure the Floppy and the CD are still in place,\n"
@@ -528,8 +537,8 @@ msgid "Floppy has been successfully written.\n"
 "And Reboot the computer."
 msgstr ""
 
-#: WelcomeForm.pas:186
-msgid "Welcome to GNU/Linux \"Kinneret\".\n"
+#: WelcomeForm.pas:189
+msgid "Welcome to GNU/Linux Kinneret.\n"
 "This program is not an installation Program,\n"
 "because Kinneret doesn't need to be installed.\n"
 "To start Kinneret, You should boot the computer\n"
@@ -541,7 +550,7 @@ msgid "Welcome to GNU/Linux \"Kinneret\".\n"
 "Hard-Drive."
 msgstr ""
 
-#: WelcomeForm.pas:196
+#: WelcomeForm.pas:199
 msgid "Kinneret was successfully installed.\n"
 "\nIn order to start Kinneret:\n"
 "If you installed a Desktop Shortcut, just launch it, and\n"
@@ -555,7 +564,7 @@ msgid "Kinneret was successfully installed.\n"
 msgstr ""
 
 #. Seperating Line to words
-#: WelcomeForm.pas:234
+#: WelcomeForm.pas:237
 msgid "In order to enter the Advanced options, You must put your boot-floppy\n"
 "(The floppy you can make here) in drive "
 "A:"

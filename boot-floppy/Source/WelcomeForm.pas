@@ -4,7 +4,7 @@ unit WelcomeForm;
 // Version 2 (the "License"); you may not use this file except in compliance
 // with the License. You may obtain a copy of the License at http://www.gnu.org/copyleft/gpl.html
 //
-// Software distributed under the License is distributed on an "AS IS" basis,
+// Software dïstributed under the License is distributed on an "AS IS" basis,
 // WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for the
 // specific language governing rights and limitations under the License.
 
@@ -13,7 +13,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, Menus,gnugettext, About, gifimage,fWarning,
-  Buttons, TntStdCtrls, TntForms, Advanced, ParInstall,checkOS;
+  Buttons, TntStdCtrls, TntForms, Advanced, ParInstall,checkOS,ShellAPI;
 
 function MyExitWindows(RebootParam: Longword): Boolean;
 
@@ -31,6 +31,9 @@ type
     RadioButton2: TTntRadioButton;
     ButtonAdvanced: TTntButton;
     TntButton1: TTntButton;
+    RadioButton3: TTntRadioButton;
+    TntButton2: TTntButton;
+    LinkLabel: TTntLabel;
     procedure Button3Click(Sender: TObject);
     procedure WriteButtonClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -41,6 +44,8 @@ type
     procedure refreshlabel2();
     procedure ButtonAdvancedClick(Sender: TObject);
     procedure TntButton1Click(Sender: TObject);
+    procedure RadioButton3Click(Sender: TObject);
+    procedure LinkLabelClick(Sender: TObject);
   private
     Retranslator:TExecutable;
   public
@@ -140,15 +145,26 @@ begin
   FormAbout.ShowModal;
 end;
 
+procedure TWForm.RadioButton3Click(Sender: TObject);
+begin
+    BiDiMode:=bdLeftToRight;
+    Label2.Alignment:=taLeftJustify;
+    LinkLabel.Alignment:=taLeftJustify;
+    UseLanguage('ru');
+    Retranslator.Execute;
+//    Label2.Repaint;
+    refreshlabel2;
+end;
 
 procedure TWForm.RadioButton2Click(Sender: TObject);
 begin
 
     BiDiMode:=bdLeftToRight;
     Label2.Alignment:=taLeftJustify;
+    LinkLabel.Alignment:=taLeftJustify;
     UseLanguage('en');
     Retranslator.Execute;
-    Label2.Repaint;
+//    Label2.Repaint;
     refreshlabel2;
 end;
 
@@ -163,6 +179,7 @@ begin
     begin
       UseLanguage('he');
       Label2.Alignment:=taRightJustify;
+      LinkLabel.Alignment:=taRightJustify;
     end;
     Retranslator.Execute;
     refreshlabel2;
@@ -175,7 +192,7 @@ begin
    'Make sure the Floppy and the CD are still in place,'+#10#13+
    'Close any running programs'+#10#13+
    'And Reboot the computer.'))
-  else if (Condition=start) then label2.Caption:=PWideChar(_('Welcome to GNU/Linux "Kinneret".'+
+  else if (Condition=start) then label2.Caption:=PWideChar(_('Welcome to GNU/Linux Kinneret.'+
    #10#13+'This program is not an installation Program,'+
    #10#13+'because Kinneret doesn''t need to be installed.'+
    #10#13+'To start Kinneret, You should boot the computer'+
@@ -241,6 +258,18 @@ begin
   parinst.ShowModal();
   refreshlabel2;
 end;
+
+procedure TWForm.LinkLabelClick(Sender: TObject);
+begin
+  if (getCurrentLanguage='he') or (getCurrentLanguage='iw') then
+    ShellExecute(Handle, 'open',
+    pchar('..\manual\he\first_time.html'), nil, nil, SW_SHOWNORMAL)
+  else if (getCurrentLanguage='ru') then ShellExecute(Handle, 'open',
+    pchar('..\manual\ru\first_time.html'), nil, nil, SW_SHOWNORMAL)
+  else ShellExecute(Handle, 'open',
+    pchar('..\manual\en\first_time.html'), nil, nil, SW_SHOWNORMAL)
+
+  end;
 
 end.
 

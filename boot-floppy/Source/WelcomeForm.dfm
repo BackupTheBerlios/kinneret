@@ -4,10 +4,10 @@ object WForm: TWForm
   AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsDialog
-  BorderWidth = 30
+  BorderWidth = 25
   Caption = 'Welcome to GNU/Linux "Kinneret"'
-  ClientHeight = 337
-  ClientWidth = 481
+  ClientHeight = 369
+  ClientWidth = 465
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -115,9 +115,9 @@ object WForm: TWForm
   PixelsPerInch = 96
   TextHeight = 13
   object label1: TTntLabel
-    Left = 104
+    Left = 72
     Top = 0
-    Width = 369
+    Width = 385
     Height = 42
     Alignment = taRightJustify
     BiDiMode = bdLeftToRight
@@ -131,10 +131,10 @@ object WForm: TWForm
     ParentFont = False
   end
   object Label2: TTntLabel
-    Left = 184
-    Top = 64
-    Width = 289
-    Height = 177
+    Left = 176
+    Top = 72
+    Width = 281
+    Height = 161
     AutoSize = False
     Font.Charset = HEBREW_CHARSET
     Font.Color = clWindowText
@@ -145,7 +145,7 @@ object WForm: TWForm
   end
   object Image1: TImage
     Left = 0
-    Top = 32
+    Top = 56
     Width = 156
     Height = 200
     AutoSize = True
@@ -502,9 +502,25 @@ object WForm: TWForm
       58EF888000003B}
     Transparent = True
   end
+  object LinkLabel: TTntLabel
+    Left = 176
+    Top = 240
+    Width = 281
+    Height = 17
+    Cursor = crHandPoint
+    AutoSize = False
+    Caption = 'For detailed user guide press here.'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsUnderline]
+    ParentFont = False
+    OnClick = LinkLabelClick
+  end
   object WriteButton: TTntButton
-    Left = 344
-    Top = 256
+    Left = 184
+    Top = 288
     Width = 137
     Height = 33
     Caption = 'Make a bootable floppy'
@@ -512,17 +528,17 @@ object WForm: TWForm
     OnClick = WriteButtonClick
   end
   object Button3: TTntButton
-    Left = 8
-    Top = 304
-    Width = 137
+    Left = 0
+    Top = 336
+    Width = 81
     Height = 33
     Caption = 'Exit'
     TabOrder = 1
     OnClick = Button3Click
   end
   object Button1: TTntButton
-    Left = 8
-    Top = 256
+    Left = 0
+    Top = 288
     Width = 49
     Height = 25
     Caption = 'About'
@@ -530,17 +546,17 @@ object WForm: TWForm
     OnClick = Button1Click
   end
   object Button2: TTntButton
-    Left = 176
-    Top = 304
-    Width = 137
+    Left = 104
+    Top = 336
+    Width = 97
     Height = 33
     Caption = 'Reboot'
     TabOrder = 3
     OnClick = Button2Click
   end
   object RadioButton2: TTntRadioButton
-    Left = 64
-    Top = 272
+    Left = 56
+    Top = 288
     Width = 57
     Height = 17
     BiDiMode = bdLeftToRight
@@ -550,19 +566,25 @@ object WForm: TWForm
     OnClick = RadioButton2Click
   end
   object RadioButton1: TTntRadioButton
-    Left = 64
-    Top = 256
+    Left = 56
+    Top = 272
     Width = 57
     Height = 17
     BiDiMode = bdLeftToRight
+    Font.Charset = HEBREW_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
     ParentBiDiMode = False
+    ParentFont = False
     TabOrder = 5
     OnClick = RadioButton1Click
   end
   object ButtonAdvanced: TTntButton
-    Left = 176
-    Top = 256
-    Width = 137
+    Left = 224
+    Top = 336
+    Width = 97
     Height = 33
     Hint = 'Advanced options for editing kernel parameters'
     Caption = 'Advanced'
@@ -573,11 +595,36 @@ object WForm: TWForm
   end
   object TntButton1: TTntButton
     Left = 344
-    Top = 304
-    Width = 137
+    Top = 288
+    Width = 121
     Height = 33
     Caption = 'Hard-Drive Operation'
     TabOrder = 7
     OnClick = TntButton1Click
+  end
+  object RadioButton3: TTntRadioButton
+    Left = 56
+    Top = 304
+    Width = 57
+    Height = 17
+    BiDiMode = bdLeftToRight
+    Caption = 'Russian'
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentBiDiMode = False
+    ParentFont = False
+    TabOrder = 8
+    OnClick = RadioButton3Click
+  end
+  object TntButton2: TTntButton
+    Left = 344
+    Top = 336
+    Width = 121
+    Height = 33
+    Caption = 'Uninstall Kinneret'
+    TabOrder = 9
   end
 end
