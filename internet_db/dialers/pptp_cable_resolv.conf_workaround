@@ -1,7 +1,10 @@
 #!ppp0
 
 # Based on a script from the CABLE-DHCP-PPTP-HOWTO
-# fix#1 correct parsing of pump to get CABLEGW- dovix 16/1/04
+# originally written by z9u2k with modifications by shlomil 2003
+# fix#1 correct parsing of pump output to get cable gateway - dovix 15/1/04
+# fix#2 restore resolv.conf at end since starting DHCP client overrides it - dovix 16/1/04
+# fix#3 correction to waiting for IP step - dovix 16/1/04
 
 error_exit()
 {
@@ -117,9 +120,8 @@ case "$DHCPCLIENT_NAME" in
           CABLEGW=`grep routers /var/lib/dhcp/dhclient.leases | tail -n 1| cut -d ";" -f1 | cut -d ' ' -f5`
      ;;
      "pump" )
-# fix#1 fix wrong string since output has both 'Gateway:' and 'Gateways:'
+# fix#1 pump output has 'Gateway:' and 'Gateways:' so need specific search string    
           CABLEGW=`$W_PUMP -s | grep Gateway: | cut -d':' -f2`
-          
      ;;
      * )
           error_exit "WTF?!?!?"
@@ -163,14 +165,17 @@ then
      error_exit "PPTP execution failed"
 fi
 
-echo -n "Waiting 10 seconds for IP"
+# fix#3 correct message to indicate correct wait time
+echo -n "Waiting 20 seconds for IP"
 counter=1
 IF_RES=1
-while [ "$counter" -lt "20" -a "$IF_RES" -ne "0" ]
+# fix#3 change comparison from "less than" to "less than or equal"
+while [ "$counter" -le "20" -a "$IF_RES" -ne "0" ]
 do
 	echo -n .
 	sleep 2
-     /sbin/ifconfig ppp0 2&> /dev/null
+# fix#3 use netstat to identify ppp0 process as ifconfig shows it before IP assigned
+     netstat -n -r | grep ppp0 > /dev/null
      IF_RES=$?
 	counter=`expr $counter + 1`
 done
@@ -202,11 +207,12 @@ then
 	error_exit "could not set new default route"
 fi
 
-#echo "Fixing resolv.conf"
-#cp /etc/resolv.conf.sv /etc/resolv.conf
-#if [ $? -ne 0 ]
-#then
-#	exit -1
-#fi
+# fix#2 need to recover file since starting DHCP client overrides ISP values
+echo "Fixing resolv.conf"
+cp /etc/resolv.conf.sv /etc/resolv.conf
+if [ $? -ne 0 ]
+then
+	exit -1
+fi
 
 # Surf the web...
