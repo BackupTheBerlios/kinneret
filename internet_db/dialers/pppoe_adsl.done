@@ -1,0 +1,13 @@
+CONFIG="/etc/ppp/pppoe.conf"
+
+copy() {
+    cp "$1" "$2"
+    if [ "$?" != 0 ]
+	then
+		$ECHO "*** Error copying $1 to $2"
+		$ECHO "*** Quitting."
+		exit -1
+    fi
+}
+
+copy $CONFIG-bak $CONFIG
