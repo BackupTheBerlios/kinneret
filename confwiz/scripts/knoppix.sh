@@ -32,6 +32,8 @@ maphome()
 
 	mount "${d}/kinneret/.config" /home/knoppix -t ext3 -o rw,loop 2>&1 > /dev/null
 
+	chown -R knoppix:knoppix /home/knoppix/
+
 	echo "${BLUE}Linking partitions...${NORMAL}"
 	rm -fr /home/knoppix/partitions/*
 
@@ -46,7 +48,7 @@ maphome()
 		let letter++
 	done
 
-	chown -R knoppix:knoppix /home/knoppix/
+	chown -R knoppix:knoppix /home/knoppix/partitions/
 
 	HOMEFOUND="yes"
 }
