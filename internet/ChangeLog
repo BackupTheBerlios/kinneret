@@ -1,1 +1,9 @@
-v0.1
+v0.1 to v0.2-rc1
+------------
+* Bugfixes
+* Added support for proxy
+* Added support for server name (for huji, tau and technion)
+* Added support for IMAP email servers
+* README aligned to 80-lines width
+* Default database directory is now: /usr/share/internet_db/
+

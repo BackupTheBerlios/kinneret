@@ -1,8 +1,5 @@
 TODO for v0.2:
-Enlarge Database (Test modems etc.)
 Test dialers
 Add LAN support
-Create Qt/KDE GUI (http://iwiz.linux-kinneret.org/kde/)
-Check up on Linbrew and their GTK+ GUI
-Add L2TP support
 Add dialup and ISDN support
+
