@@ -97,9 +97,7 @@ then
 fi
 
 #make sure the partitions directory is present.
-if [ ! -e "/home/knoppix/partitions" ] then
-	cp -ua /etc/skel/partitions /home/knoppix
-fi
+[ ! -e "/home/knoppix/partitions" ] && /cp -ua /etc/skel/partitions /home/knoppix
 
 echo "${BLUE}Linking partitions...${NORMAL}"
 rm -fr /home/knoppix/partitions/*
