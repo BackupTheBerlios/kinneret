@@ -207,12 +207,19 @@ void iwizard::onModemChanged( const QString & qs )
     }
 }
 
-
-void iwizard::onISPChanged( const QString & qs )
+void iwizard::onTypeChange( int stat )
 {
+	if (0) { std::cout << stat << std::endl; } // I hate stupid warnings...
+	AssembleUsername(comboISPs->currentText());
+}
+
+
+void iwizard::AssembleUsername(const QString &qs)
+{
+	if (0) { std::cout << qs << std::endl; } // I hate stupid warnings...
+	
 	// set suffix
-	// load the modem, and see it's interface.
-	QString qCmd = "internet --ispinfo " + mapISPs[qs];
+	QString qCmd = "internet --ispinfo " + mapISPs[comboISPs->currentText()];
     
 	// cable or ADSL ?
 	if (radioADSL->isChecked()) qCmd += " | grep \"ADSL Username Suffix\" | cut -b 23-";
@@ -231,14 +238,23 @@ void iwizard::onISPChanged( const QString & qs )
 	char szBuffer[0xFF];
 	suffix.getline(szBuffer, 0xFF);
 	suffix.close();
-    
-	if (strlen(szBuffer)) textSuffix->setText(QString("@") + QString(szBuffer));
-	else textSuffix->setText(QString(""));
-}
 
+	QString qFinal = QString("(") + lineUsername->text() + QString(szBuffer) + QString(")");
 
-void iwizard::onTypeChange( int stat )
-{
-	if (0) { std::cout << stat << std::endl; } // I hate stupid warnings...
-	onISPChanged(comboISPs->currentText());
+	// Parse it...
+	std::string str = std::string(qFinal.ascii());
+
+	while (str.find("[*") != std::string::npos)
+	{
+		std::string::size_type st = str.find("[*");
+		std::string::size_type en = str.find("*]");
+
+		std::string name = str.substr(st + 2, en - st - 2);
+
+		if (name == "auth::server") name = std::string(lineServer->text().ascii());
+		str.replace(st, en - st + 2, name);
+	}
+
+	// set final    
+	textSuffix->setText(str);
 }

@@ -160,6 +160,14 @@ int main(int argc, char *argv[])
 		strCmd += string(iwiz->lineUsername->text().ascii());
 		strCmd += "\"";
 
+		if (!iwiz->lineServer->text().isEmpty())
+		{
+			strCmd += " ";
+			strCmd += "--server=\"";
+			strCmd += string(iwiz->lineServer->text().ascii());
+			strCmd += "\"";
+		}
+
 		strCmd += " ";
 		strCmd += "--passwd=\"";
 		strCmd += string(iwiz->linePassword->password());
