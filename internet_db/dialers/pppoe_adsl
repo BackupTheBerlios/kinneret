@@ -1,14 +1,62 @@
 #!ppp0
 
-# make sure interface is DOWN
-ifconfig [*hw::eth*] down
-if [ $? -ne 0 ]
-then
-	exit -1
+error_exit() {
+     echo "ERROR:$1"
+     exit -1
+}
+
+# Make sure no pppd is running
+if [ -x /usr/bin/kill ]; then
+    KILL="/usr/bin/kill"
+else
+    KILL="/bin/kill"
 fi
 
-adsl-start
-if [ $? -ne 0 ]
-then
-	exit -1
+SIG=TERM
+
+# Get the PIDs of all the pppds running.  Could also get these from
+# /var/run, but pppd doesn't create .pid files until ppp is up.
+PIDS="`pidof pppd`"
+
+if [ -z "$PIDS" ] ; then
+    echo "No pppd is running. Good."
+else
+    $KILL -$SIG $PIDS || {
+        echo "$KILL failed. Canceled."
+        exit 1
+    }
 fi
+
+# Get DHCP
+W_DHCPCD="`which dhcpcd`"
+W_DHCLIENT="`which dhclient`"
+W_PUMP="`which pump`"
+
+if [ -n "$W_DHCPCD" ]; then
+    $W_DHCPCD [*hw::eth*]
+    DH_RET=$?
+    DHCPCLIENT="$W_DHCPCD"
+    DHCPCLIENT_NAME="dhcpcd"
+elif [ -n "$W_DHCLIENT" ]; then
+    $W_DHCLIENT [*hw::eth*]
+    DH_RET=$?
+    DHCPCLIENT="$W_DHCLIENT"
+    DHCPCLIENT_NAME="dhclient"
+elif [ -n "$W_PUMP" ]; then
+    $W_PUMP -i [*hw::eth*]
+    DH_RET=$?
+    DHCPCLIENT="$W_PUMP"
+    DHCPCLIENT_NAME="pump"
+else
+    error_exit "No dhcp client found"
+fi
+
+# Bring down interface
+ifconfig [*hw::eth*] down
+
+# Bring connection up
+PPPOE="`which pppoe`" 
+/usr/sbin/pppd pty "$PPPOE -I [*hw::eth*] -T 80 -m 1452" noipdefault \
+defaultroute hide-password lcp-echo-interval 60 lcp-echo-failure 3 \
+connect /bin/true noauth mtu 1492 noaccomp default-asyncmap \
+user "[*auth::usr*]" usepeerdns

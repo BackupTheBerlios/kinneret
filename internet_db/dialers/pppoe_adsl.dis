@@ -1,5 +1,21 @@
-adsl-stop
-if [ $? -ne 0 ]
-then
-	exit -1
+# Kill all running pppds
+if [ -x /usr/bin/kill ]; then
+    KILL="/usr/bin/kill"
+else
+    KILL="/bin/kill"
+fi
+
+SIG=TERM
+
+# Get the PIDs of all the pppds running.  Could also get these from
+# /var/run, but pppd doesn't create .pid files until ppp is up.
+PIDS="`pidof pppd`"
+
+if [ -z "$PIDS" ] ; then
+    echo "No pppd is running."
+else
+    $KILL -$SIG $PIDS || {
+        echo "$KILL failed. Canceled."
+        exit 1
+    }
 fi
