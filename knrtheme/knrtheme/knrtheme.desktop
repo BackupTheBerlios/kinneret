@@ -1,0 +1,17 @@
+[Desktop Entry]
+Comment=Knrtheme - a kcontol module
+DocPath=
+Exec=kcmshell knrtheme
+Icon=
+Keywords=Knrtheme,knrtheme
+Name=The Knrtheme applet
+SwallowExec=
+SwallowTitle=
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-FactoryName=kcmknrtheme
+X-KDE-Library=kcmknrtheme
+X-KDE-ModuleType=Library
+X-KDE-SubstituteUID=false
+X-KDE-Username=

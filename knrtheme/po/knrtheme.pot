@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2003-08-27 11:27+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: knrtheme.cpp:44
+msgid "&Create"
+msgstr ""
+
+#: knrtheme.cpp:46
+msgid "&Erase"
+msgstr ""
+
+#: knrtheme.cpp:121
+msgid "Do you want to change to theme: \"%1\" ?"
+msgstr ""
+
+#: knrtheme.cpp:144
+msgid "Helpful information about the knrtheme module."
+msgstr ""
+
+#: knrtheme.cpp:164
+msgid "No description available"
+msgstr ""
+
+#: knrtheme.cpp:169
+msgid "No image available"
+msgstr ""
+
+#: knrtheme.cpp:207
+msgid "You cannot erase this theme (No write permission)"
+msgstr ""
+
+#: knrtheme.cpp:210
+msgid "Do you want to erase the theme: \"%1\" ?"
+msgstr ""
+
+#: knrtheme.cpp:215
+msgid "Theme erased"
+msgstr ""
+
+#: knrtheme.cpp:217
+msgid "Unable to erase the theme"
+msgstr ""
+
+#: knrtheme.cpp:222
+msgid "Plese wait"
+msgstr ""
+
+#: knrtheme.cpp:225
+msgid "Plese wait while applying theme"
+msgstr ""
+
+#: krdb.cpp:304
+msgid ""
+"# created by KDE, %1\n"
+"#\n"
+"# If you do not want KDE to override your GTK settings, select\n"
+"# Appearance & Themes -> Colors in the Control Center and disable the "
+"checkbox\n"
+"# \"Apply colors to non-KDE applications\"\n"
+"#\n"
+"#\n"
+msgstr ""
+
+#: newthemedlg.cpp:48
+msgid "Create New Theme"
+msgstr ""
+
+#: newthemedlg.cpp:55
+msgid "Detailed name:"
+msgstr ""
+
+#: newthemedlg.cpp:56
+msgid "Description:"
+msgstr ""
+
+#: newthemedlg.cpp:63
+msgid "&Browse"
+msgstr ""
+
+#: newthemedlg.cpp:65
+msgid "&Snapshot"
+msgstr ""
+
+#: newthemedlg.cpp:90
+msgid ""
+"In order to make a new theme, first you should modify your current elements "
+"in the Control Center- Appearence and Themes, then come back here, and save "
+"it into a theme.\n"
+"You cannot modify the elements here.\n"
+"Don't forget to write decent name and description, and attach a preview "
+"image.\n"
+"Sopported elements : Background, Icons, Style, Window Decorations, Colors."
+msgstr ""
+
+#: newthemedlg.cpp:96
+msgid "Quick help"
+msgstr ""
+
+#: newthemedlg.cpp:154
+msgid "Make Snapshot"
+msgstr ""
+
+#: newthemedlg.cpp:171
+msgid "Taking snapshot in %1 seconds!"
+msgstr ""
+
+#: theme.cpp:209
+msgid "Widget style %1 is not valid"
+msgstr ""
+
+#: theme.cpp:237
+msgid "Iconset %1 is not valid"
+msgstr ""
+
+#: theme.cpp:266
+msgid "Window Decoration %1 is not valid"
+msgstr ""

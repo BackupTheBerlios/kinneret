@@ -1,0 +1,125 @@
+#: knrtheme.cpp:44
+msgid "&Create"
+msgstr "&יצירה"
+
+#: knrtheme.cpp:46
+msgid "&Erase"
+msgstr "&מחיקה"
+
+#: knrtheme.cpp:121
+msgid "Do you want to load the theme: \"%1\" ?"
+msgstr "האם לטעון את הערכה \"%1\" ?"
+
+#: knrtheme.cpp:144
+msgid "Helpful information about the knrtheme module."
+msgstr ""
+
+#: knrtheme.cpp:164
+msgid "No description available"
+msgstr "ללא תיאור"
+
+#: knrtheme.cpp:169
+msgid "No image available"
+msgstr "ללא תמונה"
+
+#: knrtheme.cpp:207
+msgid "You cannot erase this theme (No write permission)"
+msgstr "לא ניתן למחוק ערכה זאת (אין הרשאות כתיבה)"
+
+#: knrtheme.cpp:210
+msgid "Do you want to erase the theme: \"%1\" ?"
+msgstr "האם למחוק את הערכה \"%1\" ?"
+
+#: knrtheme.cpp:215
+msgid "Theme erased"
+msgstr "הערכה נמחקה"
+
+#: knrtheme.cpp:217
+msgid "Unable to erase the theme"
+msgstr "לא ניתן למחוק את הערכה"
+
+#: knrtheme.cpp:222
+msgid "Plese wait"
+msgstr ""
+
+#: knrtheme.cpp:225
+msgid "Plese wait while applying theme"
+msgstr ""
+
+#: krdb.cpp:304
+msgid ""
+"# created by KDE, %1\n"
+"#\n"
+"# If you do not want KDE to override your GTK settings, select\n"
+"# Appearance & Themes -> Colors in the Control Center and disable the "
+"checkbox\n"
+"# \"Apply colors to non-KDE applications\"\n"
+"#\n"
+"#\n"
+msgstr ""
+
+#: newthemedlg.cpp:48
+msgid "Create New Theme"
+msgstr "יצירת ערכה חדשה"
+
+#: newthemedlg.cpp:55
+msgid "Detailed name:"
+msgstr "שם מפורט : "
+
+#: newthemedlg.cpp:56
+msgid "Description:"
+msgstr "תיאור : "
+
+#: newthemedlg.cpp:63
+msgid "&Browse"
+msgstr "&עיון"
+
+#: newthemedlg.cpp:65
+msgid "&Snapshot"
+msgstr "&תצלום"
+
+#: newthemedlg.cpp:90
+msgid ""
+"In order to make a new theme, first you should "
+"modify your current elements in the Control Center- Appearence and Themes, "
+"then come back here, and save it into a theme.\n"
+"You cannot modify the elements here.\n"
+"Don't forget to write decent name and description, and attach a preview image.\n"
+"Sopported elements : Background, Icons, Style, Window Decorations, Colors. "
+"Also supported : text and background colors in Konqueror and in the desktop."
+msgstr ""
+"על מנת ליצור ערכה חדשה, קודם כל עליך לערוך את האלמנטים הנוכחיים. "
+"ניתן לעשות זאת במרכז הבקרה - מראה וערכות נושא. "
+"אחר-כך יש לחזור לכאן ולשמור את הערכה.\n"
+"לא ניתן לערוך את האלמנטים כאן.\n"
+"אל תשכח/י להוסיף שם ותיאור, ולצרף תמונת תצוגה מקדימה.\n"
+"אלמנטים נתמכים : רקע, סמלים, סגנון, קישוטי חלונות, צבעים. "
+"כמו-כן נתמכים : צבעי הטקסט והרקע בקונקרור ובשולחן העבודה."
+
+#: newthemedlg.cpp:96
+msgid "Quick help"
+msgstr "עזרה מהירה"
+
+#: newthemedlg.cpp:154
+msgid "Make Snapshot"
+msgstr "תצלום מסך"
+
+#: newthemedlg.cpp:171
+msgid "Taking snapshot in %1 seconds!"
+msgstr "מצלם בעוד %1 שניות"
+
+#: theme.cpp:209
+msgid "Widget style %1 is not valid"
+msgstr "סגנון %1 לא תקין"
+
+#: theme.cpp:237
+msgid "Iconset %1 is not valid"
+msgstr "ערכת סמלים %1 לא תקינה"
+
+#: theme.cpp:266
+msgid "Window Decoration %1 is not valid"
+msgstr "קישוט חלון %1 לא תקין"
+
+#: 
+msgid "Load"
+msgstr "טעינה"
