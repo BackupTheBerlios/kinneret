@@ -96,6 +96,11 @@ then
 	chown knoppix:knoppix /tmp/foundhome
 fi
 
+#make sure the partitions directory is present.
+if [ ! -e "/home/knoppix/partitions" ] then
+	cp -ua /etc/skel/partitions /home/knoppix
+fi
+
 echo "${BLUE}Linking partitions...${NORMAL}"
 rm -fr /home/knoppix/partitions/*
 
