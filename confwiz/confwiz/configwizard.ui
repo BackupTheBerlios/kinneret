@@ -31,38 +31,13 @@
         <palette>
             <active>
                 <color>
-                    <red>255</red>
-                    <green>255</green>
-                    <blue>255</blue>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
                 </color>
                 <color>
-                    <red>68</red>
-                    <green>135</green>
-                    <blue>203</blue>
-                </color>
-                <color>
-                    <red>134</red>
-                    <green>195</green>
-                    <blue>255</blue>
-                </color>
-                <color>
-                    <red>101</red>
-                    <green>165</green>
-                    <blue>229</blue>
-                </color>
-                <color>
-                    <red>34</red>
-                    <green>67</green>
-                    <blue>101</blue>
-                </color>
-                <color>
-                    <red>45</red>
-                    <green>90</green>
-                    <blue>135</blue>
-                </color>
-                <color>
-                    <red>255</red>
-                    <green>255</green>
+                    <red>205</red>
+                    <green>238</green>
                     <blue>255</blue>
                 </color>
                 <color>
@@ -71,19 +46,19 @@
                     <blue>255</blue>
                 </color>
                 <color>
-                    <red>255</red>
-                    <green>255</green>
+                    <red>230</red>
+                    <green>246</green>
                     <blue>255</blue>
                 </color>
                 <color>
-                    <red>68</red>
-                    <green>135</green>
-                    <blue>203</blue>
+                    <red>102</red>
+                    <green>119</green>
+                    <blue>127</blue>
                 </color>
                 <color>
-                    <red>68</red>
-                    <green>135</green>
-                    <blue>203</blue>
+                    <red>137</red>
+                    <green>159</green>
+                    <blue>170</blue>
                 </color>
                 <color>
                     <red>0</red>
@@ -92,8 +67,8 @@
                 </color>
                 <color>
                     <red>255</red>
-                    <green>221</green>
-                    <blue>118</blue>
+                    <green>255</green>
+                    <blue>255</blue>
                 </color>
                 <color>
                     <red>0</red>
@@ -102,12 +77,37 @@
                 </color>
                 <color>
                     <red>255</red>
-                    <green>170</green>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>205</red>
+                    <green>238</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
                     <blue>0</blue>
                 </color>
                 <color>
-                    <red>173</red>
-                    <green>115</green>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>128</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
                     <blue>0</blue>
                 </color>
             </active>
@@ -118,34 +118,34 @@
                     <blue>128</blue>
                 </color>
                 <color>
-                    <red>68</red>
-                    <green>135</green>
-                    <blue>203</blue>
-                </color>
-                <color>
-                    <red>134</red>
-                    <green>195</green>
+                    <red>205</red>
+                    <green>238</green>
                     <blue>255</blue>
-                </color>
-                <color>
-                    <red>78</red>
-                    <green>155</green>
-                    <blue>233</blue>
-                </color>
-                <color>
-                    <red>34</red>
-                    <green>67</green>
-                    <blue>101</blue>
-                </color>
-                <color>
-                    <red>45</red>
-                    <green>90</green>
-                    <blue>135</blue>
                 </color>
                 <color>
                     <red>255</red>
                     <green>255</green>
                     <blue>255</blue>
+                </color>
+                <color>
+                    <red>243</red>
+                    <green>251</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>102</red>
+                    <green>119</green>
+                    <blue>127</blue>
+                </color>
+                <color>
+                    <red>137</red>
+                    <green>159</green>
+                    <blue>170</blue>
+                </color>
+                <color>
+                    <red>128</red>
+                    <green>128</green>
+                    <blue>128</blue>
                 </color>
                 <color>
                     <red>255</red>
@@ -158,29 +158,29 @@
                     <blue>128</blue>
                 </color>
                 <color>
-                    <red>68</red>
-                    <green>135</green>
-                    <blue>203</blue>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
                 </color>
                 <color>
-                    <red>68</red>
-                    <green>135</green>
-                    <blue>203</blue>
+                    <red>205</red>
+                    <green>238</green>
+                    <blue>255</blue>
                 </color>
                 <color>
                     <red>0</red>
                     <green>0</green>
                     <blue>0</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>128</blue>
                 </color>
                 <color>
                     <red>255</red>
-                    <green>221</green>
-                    <blue>118</blue>
-                </color>
-                <color>
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <green>255</green>
+                    <blue>255</blue>
                 </color>
                 <color>
                     <red>255</red>
@@ -195,38 +195,13 @@
             </disabled>
             <inactive>
                 <color>
-                    <red>255</red>
-                    <green>255</green>
-                    <blue>255</blue>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
                 </color>
                 <color>
-                    <red>68</red>
-                    <green>135</green>
-                    <blue>203</blue>
-                </color>
-                <color>
-                    <red>134</red>
-                    <green>195</green>
-                    <blue>255</blue>
-                </color>
-                <color>
-                    <red>78</red>
-                    <green>155</green>
-                    <blue>233</blue>
-                </color>
-                <color>
-                    <red>34</red>
-                    <green>67</green>
-                    <blue>101</blue>
-                </color>
-                <color>
-                    <red>45</red>
-                    <green>90</green>
-                    <blue>135</blue>
-                </color>
-                <color>
-                    <red>255</red>
-                    <green>255</green>
+                    <red>205</red>
+                    <green>238</green>
                     <blue>255</blue>
                 </color>
                 <color>
@@ -235,19 +210,19 @@
                     <blue>255</blue>
                 </color>
                 <color>
-                    <red>255</red>
-                    <green>255</green>
+                    <red>243</red>
+                    <green>251</green>
                     <blue>255</blue>
                 </color>
                 <color>
-                    <red>68</red>
-                    <green>135</green>
-                    <blue>203</blue>
+                    <red>102</red>
+                    <green>119</green>
+                    <blue>127</blue>
                 </color>
                 <color>
-                    <red>68</red>
-                    <green>135</green>
-                    <blue>203</blue>
+                    <red>137</red>
+                    <green>159</green>
+                    <blue>170</blue>
                 </color>
                 <color>
                     <red>0</red>
@@ -256,13 +231,38 @@
                 </color>
                 <color>
                     <red>255</red>
-                    <green>221</green>
-                    <blue>118</blue>
+                    <green>255</green>
+                    <blue>255</blue>
                 </color>
                 <color>
                     <red>0</red>
                     <green>0</green>
                     <blue>0</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>205</red>
+                    <green>238</green>
+                    <blue>255</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+                <color>
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>128</blue>
+                </color>
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
                 </color>
                 <color>
                     <red>255</red>
