@@ -13,7 +13,7 @@ namespace core {
          * and can provide application-wide constants.
          *
          * @author z9u2k
-         * $Revision: 1.2 $
+         * $Revision: 1.3 $
          */
         class Config {
         public:
@@ -40,30 +40,30 @@ namespace core {
             /**
              * Release constants repository at the end of usage.
              */
-            static void release();
+            static void release() throw ();
 
             /* --- Constants --- */
 
             /** @return Full path to the database's root */
-            static std::string getDatabasePath();
+            static std::string getDatabasePath() throw ();
 
             /** @return Name of the ISPs sub-directory. */
-            static std::string getIspsDirectoryName();
+            static std::string getIspsDirectoryName() throw ();
             
             /** @return Name of the drivers sub-directory. */
-            static std::string getDriversDirectoryName();
+            static std::string getDriversDirectoryName() throw ();
             
             /** @return Name of the XML Schema sub-directory. */
-            static std::string getSchemasDirectoryName();
+            static std::string getSchemasDirectoryName() throw ();
             
             /** @return Name of the connections sub-directory. */
-            static std::string getConnectionsDirectoryName();
+            static std::string getConnectionsDirectoryName() throw ();
             
             /** @return Name of the scripts sub-directory. */
-            static std::string getScriptsDirectoryName();
+            static std::string getScriptsDirectoryName()throw ();
             
             /** @return Name of the resolvers sub-directory. */
-            static std::string getResolversDirectoryName();
+            static std::string getResolversDirectoryName() throw ();
 
         private:
 
@@ -96,7 +96,7 @@ namespace core {
              * @return The value pointed by <code>key</code>, or an empty
              *         string if the value was not in the map.
              */
-            std::string get(const std::string &key) const;
+            std::string get(const std::string &key) const throw ();
 
             /**
              * Process a linge line from the file.
@@ -117,7 +117,7 @@ namespace core {
              * @param line Line to clean
              * @return Clean line with no whitespaces at the beginning.
              */
-            static std::string removeWhite(const std::string &line);
+            static std::string removeWhite(const std::string &line) throw ();
             
             /**
              * Parses the key from the line.
@@ -126,7 +126,7 @@ namespace core {
              * @param line Line to parse.
              * @return The key (Left hand side).
              */
-            static std::string getKey(const std::string &line);
+            static std::string getKey(const std::string &line) throw ();
 
             /**
              * Parses the value from the line.
@@ -135,7 +135,7 @@ namespace core {
              * @param line Line to parse.
              * @return The value (Right hand side).
              */
-            static std::string getValue(const std::string &line);
+            static std::string getValue(const std::string &line) throw ();
 
             /**
              * Validates a line. Throws <code>InvalidFormatException</code>

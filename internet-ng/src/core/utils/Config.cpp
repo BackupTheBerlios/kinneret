@@ -45,7 +45,7 @@ Config::Config(const std::string &file) throw (FileNotFoundException,
     infile.close();
 }
 
-void Config::release() {
+void Config::release() throw () {
     delete instance;
     instance = 0;
 }
@@ -82,25 +82,25 @@ void Config::validate(const std::string &line)
     }
 }
 
-string Config::getKey(const string &line) {
+string Config::getKey(const string &line) throw () {
     int lastAlnum;
     for (lastAlnum = 0 ; isalnum(line[lastAlnum]) ; lastAlnum++);
     return line.substr(0, lastAlnum);
 }
 
-string Config::getValue(const string &line) {
+string Config::getValue(const string &line) throw () {
     // Find the equals sign, get sub-string, and remove whitespaces.
     string::size_type equals = line.find('=');
     return removeWhite(line.substr(equals + 1, line.length() - equals));
 }
 
-string Config::removeWhite(const string &line) {
+string Config::removeWhite(const string &line) throw () {
     int firstAlnum;
     for (firstAlnum = 0 ; isspace(line[firstAlnum]) ; firstAlnum++);
     return line.substr(firstAlnum, line.length() - firstAlnum);
 }
 
-string Config::get(const string &key) const {
+string Config::get(const string &key) const throw () {
     map<string, string>::const_iterator iter = constants.find(key);
 
     if (iter == constants.end()) {
@@ -124,31 +124,31 @@ void Config::create(const string &file)
     instance = new Config(file);
 }
 
-string Config::getDatabasePath() {
-    return instance->get(DATABASE_PATH_NAME);
+string Config::getDatabasePath() throw () {
+    return instance->get(DATABASE_PATH_NAME) + "/";
 }
 
-string Config::getIspsDirectoryName() {
+string Config::getIspsDirectoryName() throw () {
     return instance->get(ISPS_DIR_NAME);
 }
 
-string Config::getDriversDirectoryName() {
+string Config::getDriversDirectoryName() throw () {
     return instance->get(DRIVERS_DIR_NAME);
 }
 
-string Config::getSchemasDirectoryName() {
+string Config::getSchemasDirectoryName() throw () {
     return instance->get(SCHEMAS_DIR_NAME);
 }
 
-string Config::getConnectionsDirectoryName() {
+string Config::getConnectionsDirectoryName() throw () {
     return instance->get(CONNECTIONS_DIR_NAME);
 }
 
-string Config::getScriptsDirectoryName() {
+string Config::getScriptsDirectoryName() throw () {
     return instance->get(SCRIPTS_DIR_NAME);
 }
 
-string Config::getResolversDirectoryName() {
+string Config::getResolversDirectoryName() throw () {
     return instance->get(RESOLVERS_DIR_NAME);
 }
 
