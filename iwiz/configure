@@ -1878,7 +1878,7 @@ fi
 
 # Define the identity of the package.
 PACKAGE=iwiz
-VERSION=0.2-rc1
+VERSION=0.2
 
 cat >>confdefs.h <<_ACEOF
 #define PACKAGE "$PACKAGE"

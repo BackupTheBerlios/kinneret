@@ -1,6 +1,6 @@
 # Makefile.in generated automatically by automake 1.5 from Makefile.am.
 # Generated automatically from Makefile.in by config.pl.
-# KDE tags expanded automatically by am_edit - $Revision: 1.5 $ 
+# KDE tags expanded automatically by am_edit - $Revision: 1.6 $ 
 # Copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001
 # Free Software Foundation, Inc.
 # This Makefile.in is free software; the Free Software Foundation
@@ -51,19 +51,19 @@ INSTALL_PROGRAM = ${INSTALL} $(INSTALL_STRIP_FLAG)
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_HEADER = $(INSTALL_DATA)
-transform = s,x,x,
+transform = s,^,i386-linux-,
 NORMAL_INSTALL = :
 PRE_INSTALL = :
 POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_alias = 
-build_triplet = i686-pc-linux-gnu
-host_alias = 
-host_triplet = i686-pc-linux-gnu
-target_alias = 
-target_triplet = i686-pc-linux-gnu
+build_alias = i386-linux
+build_triplet = i386-pc-linux-gnu
+host_alias = i386-linux
+host_triplet = i386-pc-linux-gnu
+target_alias = i386-linux
+target_triplet = i386-pc-linux-gnu
 AMTAR = ${SHELL} /home/z9u2K/projects/kinneret/cvs/iwiz/admin/missing --run tar
 ARTSCCONFIG = /usr/kde/3.1/bin/artsc-config
 AS = @AS@
@@ -71,7 +71,7 @@ AUTODIRS =
 AWK = gawk
 CC = gcc
 CONF_FILES =  $(top_srcdir)/./admin/configure.in.min $(top_srcdir)/configure.in.in
-CPP = gcc -E
+CPP = cpp
 CXX = g++
 CXXCPP = g++ -E
 DCOPIDL = /usr/kde/3.1/bin/dcopidl
@@ -197,7 +197,7 @@ USER_LDFLAGS =
 USE_EXCEPTIONS = -fexceptions
 USE_RTTI = 
 USE_THREADS = 
-VERSION = 0.2-rc1
+VERSION = 0.2
 WOVERLOADED_VIRTUAL = 
 XGETTEXT = /usr/bin/xgettext
 XPMINC = @XPMINC@
@@ -496,7 +496,6 @@ uninstall-info: uninstall-info-recursive
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:
-
 
 
 #>+ 2

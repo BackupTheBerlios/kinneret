@@ -1,7 +1,7 @@
 #! /bin/sh
 
 # libtoolT - Provide generalized library-building support services.
-# Generated automatically by  (GNU iwiz 0.2-rc1)
+# Generated automatically by  (GNU iwiz 0.2)
 # NOTE: Changes made to this file will be lost: look at ltmain.sh.
 #
 # Copyright (C) 1996, 1997, 1998, 1999, 2000, 2001
@@ -59,8 +59,8 @@ build_libtool_need_lc=no
 fast_install=yes
 
 # The host system.
-host_alias=
-host=i686-pc-linux-gnu
+host_alias=i386-linux
+host=i386-pc-linux-gnu
 
 # An echo program that does not interpret backslashes.
 echo="echo"
@@ -85,7 +85,7 @@ LD="/usr/i686-pc-linux-gnu/bin/ld"
 LN_S="ln -s"
 
 # A BSD-compatible nm program.
-NM="/usr/bin/nm -B"
+NM="nm"
 
 # A sed program that does not truncate output.
 SED="sed"
@@ -5908,8 +5908,8 @@ build_libtool_need_lc=yes
 fast_install=yes
 
 # The host system.
-host_alias=
-host=i686-pc-linux-gnu
+host_alias=i386-linux
+host=i386-pc-linux-gnu
 
 # An echo program that does not interpret backslashes.
 echo="echo"
@@ -5934,7 +5934,7 @@ LD="/usr/i686-pc-linux-gnu/bin/ld"
 LN_S="ln -s"
 
 # A BSD-compatible nm program.
-NM="/usr/bin/nm -B"
+NM="nm"
 
 # A sed program that does not truncate output.
 SED="sed"
@@ -6185,8 +6185,8 @@ build_libtool_need_lc=yes
 fast_install=yes
 
 # The host system.
-host_alias=
-host=i686-pc-linux-gnu
+host_alias=i386-linux
+host=i386-pc-linux-gnu
 
 # An echo program that does not interpret backslashes.
 echo="echo"
@@ -6211,7 +6211,7 @@ LD=""
 LN_S="ln -s"
 
 # A BSD-compatible nm program.
-NM="/usr/bin/nm -B"
+NM="nm"
 
 # A sed program that does not truncate output.
 SED="sed"

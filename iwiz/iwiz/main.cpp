@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 
 	KApplication a;
 	iwizard *iwiz = new iwizard();
-	iwiz->setFinishEnabled(iwiz->QWizard::page(6), true);
+	iwiz->setFinishEnabled(iwiz->QWizard::page(4), true);
 	a.setMainWidget(iwiz);
 	iwiz->show();  
 

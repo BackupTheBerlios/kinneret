@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>600</width>
-            <height>538</height>
+            <width>508</width>
+            <height>473</height>
         </rect>
     </property>
     <property name="caption">
@@ -188,7 +188,7 @@ Questions, bugs, crashs and all other things may be sent to me, z9u2k@linux-kinn
                 <property name="sizeHint">
                     <size>
                         <width>21</width>
-                        <height>245</height>
+                        <height>0</height>
                     </size>
                 </property>
             </spacer>
@@ -205,266 +205,250 @@ Questions, bugs, crashs and all other things may be sent to me, z9u2k@linux-kinn
             <property name="name">
                 <cstring>unnamed</cstring>
             </property>
-            <widget class="QLabel">
+            <widget class="QLayoutWidget">
                 <property name="name">
-                    <cstring>textLabel3</cstring>
-                </property>
-                <property name="text">
-                    <string>Debian system handle differently network from other Linuxes, In order to setup the connection right, the wizard needs to know if your distribution if Debian based (e.g. Knoppix), or non-Debian (e.g. RedHat or Mandrake)
-
-What system are you running this wizard on?</string>
-                </property>
-                <property name="alignment">
-                    <set>WordBreak|AlignTop</set>
-                </property>
-            </widget>
-            <widget class="QButtonGroup">
-                <property name="name">
-                    <cstring>buttonGroup2</cstring>
-                </property>
-                <property name="title">
-                    <string></string>
+                    <cstring>layout21</cstring>
                 </property>
                 <vbox>
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QLayoutWidget">
+                    <widget class="QLabel">
                         <property name="name">
-                            <cstring>layout7</cstring>
+                            <cstring>textLabel3</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Debian system handle differently network from other Linuxes, In order to setup the connection right, the wizard needs to know if your distribution if Debian based (e.g. Knoppix), or non-Debian (e.g. RedHat or Mandrake)
+
+What system are you running this wizard on?</string>
+                        </property>
+                        <property name="alignment">
+                            <set>WordBreak|AlignTop</set>
+                        </property>
+                    </widget>
+                    <widget class="QButtonGroup">
+                        <property name="name">
+                            <cstring>buttonGroup2</cstring>
+                        </property>
+                        <property name="title">
+                            <string></string>
                         </property>
                         <vbox>
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="QRadioButton">
+                            <widget class="QLayoutWidget">
                                 <property name="name">
-                                    <cstring>radioDebian</cstring>
+                                    <cstring>layout7</cstring>
                                 </property>
-                                <property name="text">
-                                    <string>Debian based Linux (Debian, Knoppix, Kinneret, etc...)</string>
-                                </property>
-                                <property name="checked">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="whatsThis" stdset="0">
-                                    <string>Choose this if your Linux is based on Debian.</string>
-                                </property>
-                            </widget>
-                            <widget class="QRadioButton">
-                                <property name="name">
-                                    <cstring>radioNonDebian</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Non-Debian based Linux (Mandrake, RedHat etc...)</string>
-                                </property>
-                                <property name="whatsThis" stdset="0">
-                                    <string>Choose this if your Linux is not based on Debian.</string>
-                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QRadioButton">
+                                        <property name="name">
+                                            <cstring>radioDebian</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Debian based Linux (Debian, Knoppix, Kinneret, etc...)</string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="whatsThis" stdset="0">
+                                            <string>Choose this if your Linux is based on Debian.</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QRadioButton">
+                                        <property name="name">
+                                            <cstring>radioNonDebian</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Non-Debian based Linux (Mandrake, RedHat etc...)</string>
+                                        </property>
+                                        <property name="whatsThis" stdset="0">
+                                            <string>Choose this if your Linux is not based on Debian.</string>
+                                        </property>
+                                    </widget>
+                                </vbox>
                             </widget>
                         </vbox>
                     </widget>
-                </vbox>
-            </widget>
-            <spacer>
-                <property name="name">
-                    <cstring>spacer2</cstring>
-                </property>
-                <property name="orientation">
-                    <enum>Vertical</enum>
-                </property>
-                <property name="sizeType">
-                    <enum>Expanding</enum>
-                </property>
-                <property name="sizeHint">
-                    <size>
-                        <width>21</width>
-                        <height>275</height>
-                    </size>
-                </property>
-            </spacer>
-        </vbox>
-    </widget>
-    <widget class="QWidget">
-        <property name="name">
-            <cstring>page</cstring>
-        </property>
-        <attribute name="title">
-            <string>Internet Service Provider (ISP)</string>
-        </attribute>
-        <vbox>
-            <property name="name">
-                <cstring>unnamed</cstring>
-            </property>
-            <widget class="QLabel">
-                <property name="name">
-                    <cstring>textLabel4</cstring>
-                </property>
-                <property name="text">
-                    <string>Here is a list if known Israeli Internet Service Providers (ISPs). If your is not on the list, please report to us, and we'll have it added.
+                    <spacer>
+                        <property name="name">
+                            <cstring>spacer3</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>20</width>
+                                <height>0</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel4</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Here is a list if known Israeli Internet Service Providers (ISPs). If your is not on the list, please report to us, and we'll have it added.
 
 Please pick your ISP from the list below.</string>
-                </property>
-                <property name="alignment">
-                    <set>WordBreak|AlignTop</set>
-                </property>
-            </widget>
-            <widget class="QLayoutWidget">
-                <property name="name">
-                    <cstring>layout20</cstring>
-                </property>
-                <hbox>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="QComboBox">
+                        </property>
+                        <property name="alignment">
+                            <set>WordBreak|AlignTop</set>
+                        </property>
+                    </widget>
+                    <widget class="QLayoutWidget">
                         <property name="name">
-                            <cstring>comboISPs</cstring>
+                            <cstring>layout20</cstring>
                         </property>
-                        <property name="sizePolicy">
-                            <sizepolicy>
-                                <hsizetype>5</hsizetype>
-                                <vsizetype>0</vsizetype>
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                            </sizepolicy>
-                        </property>
-                        <property name="minimumSize">
-                            <size>
-                                <width>135</width>
-                                <height>0</height>
-                            </size>
-                        </property>
-                        <property name="whatsThis" stdset="0">
-                            <string>A List of ISPs. Pick the one you use.</string>
-                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QComboBox">
+                                <property name="name">
+                                    <cstring>comboISPs</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>5</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>135</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>A List of ISPs. Pick the one you use.</string>
+                                </property>
+                            </widget>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer4</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>0</width>
+                                        <height>21</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </hbox>
                     </widget>
                     <spacer>
                         <property name="name">
-                            <cstring>spacer4</cstring>
+                            <cstring>spacer2</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Horizontal</enum>
+                            <enum>Vertical</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
                         </property>
                         <property name="sizeHint">
                             <size>
-                                <width>360</width>
-                                <height>21</height>
-                            </size>
-                        </property>
-                    </spacer>
-                </hbox>
-            </widget>
-            <spacer>
-                <property name="name">
-                    <cstring>spacer3</cstring>
-                </property>
-                <property name="orientation">
-                    <enum>Vertical</enum>
-                </property>
-                <property name="sizeType">
-                    <enum>Expanding</enum>
-                </property>
-                <property name="sizeHint">
-                    <size>
-                        <width>21</width>
-                        <height>657</height>
-                    </size>
-                </property>
-            </spacer>
-        </vbox>
-    </widget>
-    <widget class="QWidget">
-        <property name="name">
-            <cstring>page</cstring>
-        </property>
-        <attribute name="title">
-            <string>Modem</string>
-        </attribute>
-        <vbox>
-            <property name="name">
-                <cstring>unnamed</cstring>
-            </property>
-            <widget class="QLabel">
-                <property name="name">
-                    <cstring>textLabel4_2</cstring>
-                </property>
-                <property name="text">
-                    <string>Here is a list of modems. Choose the modem that is connected to your computer.</string>
-                </property>
-                <property name="alignment">
-                    <set>WordBreak|AlignTop</set>
-                </property>
-            </widget>
-            <widget class="QLayoutWidget">
-                <property name="name">
-                    <cstring>layout18</cstring>
-                </property>
-                <hbox>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="QComboBox">
-                        <property name="name">
-                            <cstring>comboModems</cstring>
-                        </property>
-                        <property name="sizePolicy">
-                            <sizepolicy>
-                                <hsizetype>5</hsizetype>
-                                <vsizetype>0</vsizetype>
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                            </sizepolicy>
-                        </property>
-                        <property name="minimumSize">
-                            <size>
-                                <width>250</width>
+                                <width>21</width>
                                 <height>0</height>
                             </size>
                         </property>
-                        <property name="whatsThis" stdset="0">
-                            <string>Pick your modem from the list.</string>
+                    </spacer>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel4_2</cstring>
                         </property>
+                        <property name="text">
+                            <string>Here is a list of modems. Choose the modem that is connected to your computer.</string>
+                        </property>
+                        <property name="alignment">
+                            <set>WordBreak|AlignTop</set>
+                        </property>
+                    </widget>
+                    <widget class="QLayoutWidget">
+                        <property name="name">
+                            <cstring>layout18</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QComboBox">
+                                <property name="name">
+                                    <cstring>comboModems</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>5</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>250</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>Pick your modem from the list.</string>
+                                </property>
+                            </widget>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer4_2</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>0</width>
+                                        <height>21</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </hbox>
                     </widget>
                     <spacer>
                         <property name="name">
-                            <cstring>spacer4_2</cstring>
+                            <cstring>spacer2_2</cstring>
                         </property>
                         <property name="orientation">
-                            <enum>Horizontal</enum>
+                            <enum>Vertical</enum>
                         </property>
                         <property name="sizeType">
                             <enum>Expanding</enum>
                         </property>
                         <property name="sizeHint">
                             <size>
-                                <width>290</width>
-                                <height>21</height>
+                                <width>21</width>
+                                <height>0</height>
                             </size>
                         </property>
                     </spacer>
-                </hbox>
+                </vbox>
             </widget>
-            <spacer>
-                <property name="name">
-                    <cstring>spacer3_2</cstring>
-                </property>
-                <property name="orientation">
-                    <enum>Vertical</enum>
-                </property>
-                <property name="sizeType">
-                    <enum>Expanding</enum>
-                </property>
-                <property name="sizeHint">
-                    <size>
-                        <width>21</width>
-                        <height>385</height>
-                    </size>
-                </property>
-            </spacer>
         </vbox>
     </widget>
     <widget class="QWidget">
@@ -478,282 +462,292 @@ Please pick your ISP from the list below.</string>
             <property name="name">
                 <cstring>unnamed</cstring>
             </property>
-            <widget class="QLabel">
+            <widget class="QLayoutWidget">
                 <property name="name">
-                    <cstring>textLabel8</cstring>
-                </property>
-                <property name="text">
-                    <string>You will now have to specify some parameters about your modem and the way it is connected to your computer</string>
-                </property>
-                <property name="alignment">
-                    <set>WordBreak|AlignTop</set>
-                </property>
-            </widget>
-            <widget class="QButtonGroup">
-                <property name="name">
-                    <cstring>buttonGroup4</cstring>
-                </property>
-                <property name="title">
-                    <string>Choose interface:</string>
+                    <cstring>layout22</cstring>
                 </property>
                 <vbox>
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QLayoutWidget">
+                    <widget class="QLabel">
                         <property name="name">
-                            <cstring>layout28</cstring>
+                            <cstring>textLabel8</cstring>
+                        </property>
+                        <property name="text">
+                            <string>You will now have to specify some parameters about your modem and the way it is connected to your computer</string>
+                        </property>
+                        <property name="alignment">
+                            <set>WordBreak|AlignTop</set>
+                        </property>
+                    </widget>
+                    <widget class="QButtonGroup">
+                        <property name="name">
+                            <cstring>buttonGroup4</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Choose interface:</string>
                         </property>
                         <vbox>
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="QRadioButton">
+                            <widget class="QLayoutWidget">
                                 <property name="name">
-                                    <cstring>radioEthernet</cstring>
+                                    <cstring>layout28</cstring>
                                 </property>
-                                <property name="text">
-                                    <string>Through Ethernet Card</string>
-                                </property>
-                                <property name="checked">
-                                    <bool>true</bool>
-                                </property>
-                            </widget>
-                            <widget class="QRadioButton">
-                                <property name="name">
-                                    <cstring>radioUSB</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Through USB</string>
-                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QRadioButton">
+                                        <property name="name">
+                                            <cstring>radioEthernet</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Through Ethernet Card</string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                    <widget class="QRadioButton">
+                                        <property name="name">
+                                            <cstring>radioUSB</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Through USB</string>
+                                        </property>
+                                    </widget>
+                                </vbox>
                             </widget>
                         </vbox>
                     </widget>
-                </vbox>
-            </widget>
-            <widget class="QGroupBox">
-                <property name="name">
-                    <cstring>groupBox4</cstring>
-                </property>
-                <property name="title">
-                    <string>Ethernet</string>
-                </property>
-                <vbox>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="QLayoutWidget">
+                    <widget class="QGroupBox">
                         <property name="name">
-                            <cstring>layout24</cstring>
+                            <cstring>groupBox4</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Ethernet</string>
                         </property>
                         <vbox>
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="QLabel">
-                                <property name="name">
-                                    <cstring>textLabel7</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Which card your modems connects to?</string>
-                                </property>
-                                <property name="alignment">
-                                    <set>WordBreak|AlignTop</set>
-                                </property>
-                            </widget>
                             <widget class="QLayoutWidget">
                                 <property name="name">
-                                    <cstring>layout23</cstring>
+                                    <cstring>layout24</cstring>
                                 </property>
-                                <hbox>
+                                <vbox>
                                     <property name="name">
                                         <cstring>unnamed</cstring>
                                     </property>
-                                    <widget class="QComboBox">
+                                    <widget class="QLabel">
                                         <property name="name">
-                                            <cstring>comboEth</cstring>
+                                            <cstring>textLabel7</cstring>
                                         </property>
-                                        <property name="sizePolicy">
-                                            <sizepolicy>
-                                                <hsizetype>5</hsizetype>
-                                                <vsizetype>0</vsizetype>
-                                                <horstretch>0</horstretch>
-                                                <verstretch>0</verstretch>
-                                            </sizepolicy>
+                                        <property name="text">
+                                            <string>Which card your modems connects to?</string>
+                                        </property>
+                                        <property name="alignment">
+                                            <set>WordBreak|AlignTop</set>
                                         </property>
                                     </widget>
-                                    <spacer>
+                                    <widget class="QLayoutWidget">
                                         <property name="name">
-                                            <cstring>spacer8</cstring>
+                                            <cstring>layout23</cstring>
                                         </property>
-                                        <property name="orientation">
-                                            <enum>Horizontal</enum>
-                                        </property>
-                                        <property name="sizeType">
-                                            <enum>Expanding</enum>
-                                        </property>
-                                        <property name="sizeHint">
-                                            <size>
-                                                <width>111</width>
-                                                <height>21</height>
-                                            </size>
-                                        </property>
-                                    </spacer>
-                                </hbox>
+                                        <hbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QComboBox">
+                                                <property name="name">
+                                                    <cstring>comboEth</cstring>
+                                                </property>
+                                                <property name="sizePolicy">
+                                                    <sizepolicy>
+                                                        <hsizetype>5</hsizetype>
+                                                        <vsizetype>0</vsizetype>
+                                                        <horstretch>0</horstretch>
+                                                        <verstretch>0</verstretch>
+                                                    </sizepolicy>
+                                                </property>
+                                            </widget>
+                                            <spacer>
+                                                <property name="name">
+                                                    <cstring>spacer8</cstring>
+                                                </property>
+                                                <property name="orientation">
+                                                    <enum>Horizontal</enum>
+                                                </property>
+                                                <property name="sizeType">
+                                                    <enum>Expanding</enum>
+                                                </property>
+                                                <property name="sizeHint">
+                                                    <size>
+                                                        <width>0</width>
+                                                        <height>21</height>
+                                                    </size>
+                                                </property>
+                                            </spacer>
+                                        </hbox>
+                                    </widget>
+                                </vbox>
                             </widget>
                         </vbox>
                     </widget>
-                </vbox>
-            </widget>
-            <widget class="QGroupBox">
-                <property name="name">
-                    <cstring>groupBox5</cstring>
-                </property>
-                <property name="title">
-                    <string>USB</string>
-                </property>
-                <vbox>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="QLayoutWidget">
+                    <widget class="QGroupBox">
                         <property name="name">
-                            <cstring>layout26</cstring>
+                            <cstring>groupBox5</cstring>
+                        </property>
+                        <property name="title">
+                            <string>USB</string>
                         </property>
                         <vbox>
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="QLabel">
-                                <property name="name">
-                                    <cstring>textLabel7_2</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>What is the module name that has to be loaded into the kernel to make the modem active (without the .o suffix)?</string>
-                                </property>
-                                <property name="alignment">
-                                    <set>WordBreak|AlignTop</set>
-                                </property>
-                            </widget>
                             <widget class="QLayoutWidget">
                                 <property name="name">
-                                    <cstring>layout22</cstring>
+                                    <cstring>layout26</cstring>
                                 </property>
-                                <hbox>
+                                <vbox>
                                     <property name="name">
                                         <cstring>unnamed</cstring>
                                     </property>
-                                    <widget class="QLineEdit">
+                                    <widget class="QLabel">
                                         <property name="name">
-                                            <cstring>lineUSBModule</cstring>
-                                        </property>
-                                        <property name="enabled">
-                                            <bool>false</bool>
-                                        </property>
-                                        <property name="sizePolicy">
-                                            <sizepolicy>
-                                                <hsizetype>0</hsizetype>
-                                                <vsizetype>0</vsizetype>
-                                                <horstretch>0</horstretch>
-                                                <verstretch>0</verstretch>
-                                            </sizepolicy>
+                                            <cstring>textLabel7_2</cstring>
                                         </property>
                                         <property name="text">
-                                            <string>CDCEther</string>
+                                            <string>What is the module name that has to be loaded into the kernel to make the modem active (without the .o suffix)?</string>
                                         </property>
+                                        <property name="alignment">
+                                            <set>WordBreak|AlignTop</set>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLayoutWidget">
+                                        <property name="name">
+                                            <cstring>layout22</cstring>
+                                        </property>
+                                        <hbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLineEdit">
+                                                <property name="name">
+                                                    <cstring>lineUSBModule</cstring>
+                                                </property>
+                                                <property name="enabled">
+                                                    <bool>false</bool>
+                                                </property>
+                                                <property name="sizePolicy">
+                                                    <sizepolicy>
+                                                        <hsizetype>0</hsizetype>
+                                                        <vsizetype>0</vsizetype>
+                                                        <horstretch>0</horstretch>
+                                                        <verstretch>0</verstretch>
+                                                    </sizepolicy>
+                                                </property>
+                                                <property name="text">
+                                                    <string>CDCEther</string>
+                                                </property>
+                                            </widget>
+                                            <spacer>
+                                                <property name="name">
+                                                    <cstring>spacer9</cstring>
+                                                </property>
+                                                <property name="orientation">
+                                                    <enum>Horizontal</enum>
+                                                </property>
+                                                <property name="sizeType">
+                                                    <enum>Expanding</enum>
+                                                </property>
+                                                <property name="sizeHint">
+                                                    <size>
+                                                        <width>0</width>
+                                                        <height>21</height>
+                                                    </size>
+                                                </property>
+                                            </spacer>
+                                        </hbox>
                                     </widget>
                                     <spacer>
                                         <property name="name">
-                                            <cstring>spacer9</cstring>
+                                            <cstring>spacer11</cstring>
                                         </property>
                                         <property name="orientation">
-                                            <enum>Horizontal</enum>
+                                            <enum>Vertical</enum>
                                         </property>
                                         <property name="sizeType">
                                             <enum>Expanding</enum>
                                         </property>
                                         <property name="sizeHint">
                                             <size>
-                                                <width>91</width>
-                                                <height>21</height>
+                                                <width>21</width>
+                                                <height>0</height>
                                             </size>
                                         </property>
                                     </spacer>
-                                </hbox>
-                            </widget>
-                            <spacer>
-                                <property name="name">
-                                    <cstring>spacer11</cstring>
-                                </property>
-                                <property name="orientation">
-                                    <enum>Vertical</enum>
-                                </property>
-                                <property name="sizeType">
-                                    <enum>Expanding</enum>
-                                </property>
-                                <property name="sizeHint">
-                                    <size>
-                                        <width>21</width>
-                                        <height>40</height>
-                                    </size>
-                                </property>
-                            </spacer>
-                            <widget class="QLabel">
-                                <property name="name">
-                                    <cstring>textLabel7_2_2</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>After the modem is activated, which network interface will it occupy?</string>
-                                </property>
-                                <property name="alignment">
-                                    <set>WordBreak|AlignTop</set>
-                                </property>
-                            </widget>
-                            <widget class="QLayoutWidget">
-                                <property name="name">
-                                    <cstring>layout22_2</cstring>
-                                </property>
-                                <hbox>
-                                    <property name="name">
-                                        <cstring>unnamed</cstring>
-                                    </property>
-                                    <widget class="QLineEdit">
+                                    <widget class="QLabel">
                                         <property name="name">
-                                            <cstring>lineUSBEth</cstring>
-                                        </property>
-                                        <property name="enabled">
-                                            <bool>false</bool>
-                                        </property>
-                                        <property name="sizePolicy">
-                                            <sizepolicy>
-                                                <hsizetype>0</hsizetype>
-                                                <vsizetype>0</vsizetype>
-                                                <horstretch>0</horstretch>
-                                                <verstretch>0</verstretch>
-                                            </sizepolicy>
+                                            <cstring>textLabel7_2_2</cstring>
                                         </property>
                                         <property name="text">
-                                            <string>eth0</string>
+                                            <string>After the modem is activated, which network interface will it occupy?</string>
+                                        </property>
+                                        <property name="alignment">
+                                            <set>WordBreak|AlignTop</set>
                                         </property>
                                     </widget>
-                                    <spacer>
+                                    <widget class="QLayoutWidget">
                                         <property name="name">
-                                            <cstring>spacer9_2</cstring>
+                                            <cstring>layout22_2</cstring>
                                         </property>
-                                        <property name="orientation">
-                                            <enum>Horizontal</enum>
-                                        </property>
-                                        <property name="sizeType">
-                                            <enum>Expanding</enum>
-                                        </property>
-                                        <property name="sizeHint">
-                                            <size>
-                                                <width>91</width>
-                                                <height>21</height>
-                                            </size>
-                                        </property>
-                                    </spacer>
-                                </hbox>
+                                        <hbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLineEdit">
+                                                <property name="name">
+                                                    <cstring>lineUSBEth</cstring>
+                                                </property>
+                                                <property name="enabled">
+                                                    <bool>false</bool>
+                                                </property>
+                                                <property name="sizePolicy">
+                                                    <sizepolicy>
+                                                        <hsizetype>0</hsizetype>
+                                                        <vsizetype>0</vsizetype>
+                                                        <horstretch>0</horstretch>
+                                                        <verstretch>0</verstretch>
+                                                    </sizepolicy>
+                                                </property>
+                                                <property name="text">
+                                                    <string>eth0</string>
+                                                </property>
+                                            </widget>
+                                            <spacer>
+                                                <property name="name">
+                                                    <cstring>spacer9_2</cstring>
+                                                </property>
+                                                <property name="orientation">
+                                                    <enum>Horizontal</enum>
+                                                </property>
+                                                <property name="sizeType">
+                                                    <enum>Expanding</enum>
+                                                </property>
+                                                <property name="sizeHint">
+                                                    <size>
+                                                        <width>0</width>
+                                                        <height>21</height>
+                                                    </size>
+                                                </property>
+                                            </spacer>
+                                        </hbox>
+                                    </widget>
+                                </vbox>
                             </widget>
                         </vbox>
                     </widget>
@@ -772,6 +766,17 @@ Please pick your ISP from the list below.</string>
             <property name="name">
                 <cstring>unnamed</cstring>
             </property>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1_3</cstring>
+                </property>
+                <property name="text">
+                    <string>Type your username as supplied by your ISP (usually English-only letters, In lowercase, with numbers and '_' allowed)</string>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignTop</set>
+                </property>
+            </widget>
             <widget class="QLayoutWidget">
                 <property name="name">
                     <cstring>layout37_2</cstring>
@@ -794,7 +799,7 @@ Please pick your ISP from the list below.</string>
                         </property>
                         <property name="minimumSize">
                             <size>
-                                <width>70</width>
+                                <width>75</width>
                                 <height>0</height>
                             </size>
                         </property>
@@ -847,7 +852,7 @@ Please pick your ISP from the list below.</string>
             </widget>
             <widget class="QLayoutWidget">
                 <property name="name">
-                    <cstring>layout37</cstring>
+                    <cstring>layout23</cstring>
                 </property>
                 <hbox>
                     <property name="name">
@@ -867,7 +872,7 @@ Please pick your ISP from the list below.</string>
                         </property>
                         <property name="minimumSize">
                             <size>
-                                <width>70</width>
+                                <width>75</width>
                                 <height>0</height>
                             </size>
                         </property>
@@ -906,7 +911,7 @@ Please pick your ISP from the list below.</string>
                         </property>
                         <property name="sizePolicy">
                             <sizepolicy>
-                                <hsizetype>7</hsizetype>
+                                <hsizetype>1</hsizetype>
                                 <vsizetype>5</vsizetype>
                                 <horstretch>0</horstretch>
                                 <verstretch>0</verstretch>
@@ -915,7 +920,27 @@ Please pick your ISP from the list below.</string>
                         <property name="text">
                             <string></string>
                         </property>
+                        <property name="alignment">
+                            <set>AlignCenter</set>
+                        </property>
                     </widget>
+                    <spacer>
+                        <property name="name">
+                            <cstring>spacer24</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>0</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                    </spacer>
                 </hbox>
             </widget>
             <widget class="QLayoutWidget">
@@ -940,7 +965,7 @@ Please pick your ISP from the list below.</string>
                         </property>
                         <property name="minimumSize">
                             <size>
-                                <width>70</width>
+                                <width>75</width>
                                 <height>0</height>
                             </size>
                         </property>
@@ -988,7 +1013,7 @@ Please pick your ISP from the list below.</string>
                         </property>
                         <property name="sizeHint">
                             <size>
-                                <width>160</width>
+                                <width>0</width>
                                 <height>21</height>
                             </size>
                         </property>
@@ -1029,7 +1054,7 @@ Please pick your ISP from the list below.</string>
                         </property>
                         <property name="sizeHint">
                             <size>
-                                <width>91</width>
+                                <width>0</width>
                                 <height>21</height>
                             </size>
                         </property>
@@ -1087,7 +1112,7 @@ Please pick your ISP from the list below.</string>
                         </property>
                         <property name="sizeHint">
                             <size>
-                                <width>101</width>
+                                <width>0</width>
                                 <height>20</height>
                             </size>
                         </property>
@@ -1128,7 +1153,7 @@ Please pick your ISP from the list below.</string>
                         </property>
                         <property name="sizeHint">
                             <size>
-                                <width>101</width>
+                                <width>0</width>
                                 <height>20</height>
                             </size>
                         </property>
@@ -1148,7 +1173,7 @@ Please pick your ISP from the list below.</string>
                 <property name="sizeHint">
                     <size>
                         <width>20</width>
-                        <height>110</height>
+                        <height>20</height>
                     </size>
                 </property>
             </spacer>
@@ -1207,7 +1232,7 @@ Please pick your ISP from the list below.</string>
                         </property>
                         <property name="sizeHint">
                             <size>
-                                <width>219</width>
+                                <width>0</width>
                                 <height>21</height>
                             </size>
                         </property>
@@ -1242,7 +1267,7 @@ Please pick your ISP from the list below.</string>
                         </property>
                         <property name="sizeHint">
                             <size>
-                                <width>392</width>
+                                <width>0</width>
                                 <height>21</height>
                             </size>
                         </property>
@@ -1258,12 +1283,6 @@ Please pick your ISP from the list below.</string>
         <signal>stateChanged(int)</signal>
         <receiver>iwizard</receiver>
         <slot>onEthClick(int)</slot>
-    </connection>
-    <connection>
-        <sender>comboModems</sender>
-        <signal>activated(const QString&amp;)</signal>
-        <receiver>iwizard</receiver>
-        <slot>onModemChanged(const QString&amp;)</slot>
     </connection>
     <connection>
         <sender>radioADSL</sender>
@@ -1284,14 +1303,20 @@ Please pick your ISP from the list below.</string>
         <slot>AssembleUsername(const QString&amp;)</slot>
     </connection>
     <connection>
-        <sender>comboISPs</sender>
-        <signal>activated(const QString&amp;)</signal>
+        <sender>lineUsername</sender>
+        <signal>textChanged(const QString&amp;)</signal>
         <receiver>iwizard</receiver>
         <slot>AssembleUsername(const QString&amp;)</slot>
     </connection>
     <connection>
-        <sender>lineUsername</sender>
-        <signal>textChanged(const QString&amp;)</signal>
+        <sender>comboModems</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>iwizard</receiver>
+        <slot>onModemChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>comboISPs</sender>
+        <signal>activated(const QString&amp;)</signal>
         <receiver>iwizard</receiver>
         <slot>AssembleUsername(const QString&amp;)</slot>
     </connection>
@@ -1304,8 +1329,6 @@ Please pick your ISP from the list below.</string>
     <tabstop>radioDialup</tabstop>
     <tabstop>radioDebian</tabstop>
     <tabstop>radioNonDebian</tabstop>
-    <tabstop>comboISPs</tabstop>
-    <tabstop>comboModems</tabstop>
     <tabstop>radioEthernet</tabstop>
     <tabstop>radioUSB</tabstop>
     <tabstop>comboEth</tabstop>

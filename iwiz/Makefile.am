@@ -2,7 +2,7 @@
 
 SUBDIRS = iwiz po doc 
 
-EXTRA_DIST = iwiz.kdevprj admin AUTHORS COPYING ChangeLog INSTALL README TODO iwiz.lsm 
+EXTRA_DIST = iwiz.kdevprj admin AUTHORS COPYING ChangeLog INSTALL README TODO iwiz.lsm iwiz.spec 
 
 ####### kdevelop will overwrite this part!!! (end)############
 # not a GNU package. You can remove this line, if 

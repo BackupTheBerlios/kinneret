@@ -152,7 +152,7 @@ void iwizard::onEthClick(int stat)
 	}
 }
 
-void iwizard::onModemChanged( const QString & qs )
+void iwizard::onModemChanged(const QString &qs)
 {
 	// load the modem, and see it's interface.
 	QString qCmd = "internet --hwinfo \"" + qs + "\" | grep Interface: > /tmp/.hwtype";
@@ -166,10 +166,9 @@ void iwizard::onModemChanged( const QString & qs )
 	}
     
 	char szBuffer[0xFF];
-	type.getline(szBuffer, 0xFF);
-    
+	type.getline(szBuffer, 0xFF);    
 	type.close();
-    
+
 	if (strcmp(szBuffer, "Interface: Ethernet") == 0)
 	{
 		onEthClick(QButton::On);
@@ -240,6 +239,8 @@ void iwizard::AssembleUsername(const QString &qs)
 	suffix.close();
 
 	QString qFinal = QString("(") + lineUsername->text() + QString(szBuffer) + QString(")");
+
+//	std::cout << qFinal.ascii() << std::endl;
 
 	// Parse it...
 	std::string str = std::string(qFinal.ascii());
