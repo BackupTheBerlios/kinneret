@@ -26,6 +26,7 @@ object FormAbout: TFormAbout
     Width = 217
     Height = 201
     Cursor = crIBeam
+    Color = clBtnFace
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 0

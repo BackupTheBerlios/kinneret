@@ -22,6 +22,7 @@ object parinst: Tparinst
     Width = 305
     Height = 217
     AutoSize = False
+    WordWrap = True
   end
   object YesButton: TTntButton
     Left = 192

@@ -34,15 +34,15 @@ begin
   else Bidimode:=bdLeftToRight;
   Caption:=pWideChar(_('Hard-Drive Operation Wizard'));
   explanation.Caption:=pWideChar(_('What is "Hard-Drive Operation" ?'+#10#13+#10#13+
-  'You can work with GNU/Linux Kinneret from the CD, without'+#10#13+
+  'You can work with GNU/Linux Kinneret from the CD, without '+
   'installing it to the hard-drive.'+#10#13+#10#13+
-  '"HD Operation" can copy the system into the Hard-Drive, and'+#10#13+
-  'enable the work from there. This method will improve speed,'+#10#13+
-  'and performance, and also frees the CD driver for other uses'+#10#13+
+  '"HD Operation" can copy the system into the Hard-Drive, and '+
+  'enable the work from there. This method will improve speed, '+
+  'and performance, and also frees the CD driver for other uses '+
   '(like listening to music CD''s).'#10#13+#10#13+
-  'For your knoledge, "HD Operation" is not a complete system'+#10#13+
-  'installation, therefore it does not require partitioning and,'+#10#13+
-  'doesn''t allow installation of more progrmas.'+#10#13+
+  'For your knoledge, "HD Operation" is not a complete system '+
+  'installation, therefore it does not require partitioning and, '+
+  'doesn''t allow installation of more progrmas. '+
   'A "HD installation" will be hopefully available in the future.'+#10#13+#10#13+
   'Do you want to make a Hard-Drive Operation ?'));
   YesButton.Caption:=pWideChar(_('Yes'));

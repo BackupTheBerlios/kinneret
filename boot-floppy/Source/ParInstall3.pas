@@ -56,10 +56,10 @@ begin
   source:=TStringList.Create;
   destination:=TStringList.Create;
   // ADDING FILES TO COPY
-  source.Add(cdrom+'\KNOPPIX\knoppix');
-  destination.add(ChosenDrive+':\KNOPPIX\knoppix');
-  source.Add(cdrom+'\KNOPPIX\knoppix.sh');
-  destination.add(ChosenDrive+':\KNOPPIX\knoppix.sh');
+//  source.Add(cdrom+'\KNOPPIX\knoppix');
+//  destination.add(ChosenDrive+':\KNOPPIX\knoppix');
+//  source.Add(cdrom+'\KNOPPIX\knoppix.sh');
+//  destination.add(ChosenDrive+':\KNOPPIX\knoppix.sh');
   if not osis95 and createmenu then
   begin
     source.Add(cdrom+'\boot\menu.lst');

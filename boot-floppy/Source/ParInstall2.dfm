@@ -46,6 +46,7 @@ object parinst2: Tparinst2
       Width = 321
       Height = 65
       AutoSize = False
+      WordWrap = True
     end
     object CBDesktop: TTntCheckBox
       Left = 16
@@ -75,6 +76,7 @@ object parinst2: Tparinst2
       Width = 321
       Height = 25
       AutoSize = False
+      WordWrap = True
     end
     object LabelNote: TTntLabel
       Left = 16
@@ -82,6 +84,7 @@ object parinst2: Tparinst2
       Width = 321
       Height = 33
       AutoSize = False
+      WordWrap = True
     end
     object ListDrives: TTntListView
       Left = 16

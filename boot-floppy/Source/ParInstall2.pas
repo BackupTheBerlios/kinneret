@@ -59,15 +59,15 @@ begin
   ButtonCancel.Caption:=pwideChar(_('Cancel'));
   ButtonStart.Caption:=pWideChar(_('Start Installation'));
   LabelChoose.Caption:=pwidechar(_('Choose a drive to install GNU/Linux Kinneret :'));
-  LabelNote.Caption:=pwidechar(_('Note: In some cases, a small directory will be created in'+#10#13+
+  LabelNote.Caption:=pwidechar(_('Note: In some cases, a small directory will be created in '+
   'drive C:, even if you choose another drive.'));
-  LabelBoot.Caption:=pwidechar(_('In order to start Kinneret, you can always boot with the'+#10#13+
-  'Kinneret CD, or with a Boot-Floppy. After booting, Kinneret'+#10#13+
+  LabelBoot.Caption:=pwidechar(_('In order to start Kinneret, you can always boot with the '+
+  'Kinneret CD, or with a Boot-Floppy. After booting, Kinneret '+
   'continues to load from the Hard-Drive automatically.'+#10#13+
-  'However, if you rather not use the CD at all, You can'+#10#13+
+  'However, if you rather not use the CD at all, You can '+
   'choose one or more of the next options (recommended) :'));
-  TNTGroupBox2.Caption:=pWideChar(_('1. Drive Options'));
-  TNTGroupBox1.Caption:=pWideChar(_('2. Boot Options'));
+  TNTGroupBox2.Caption:=pWideChar(_('Drive Options'));
+  TNTGroupBox1.Caption:=pWideChar(_('Boot Options'));
   CBDesktop.Caption:=pWideChar(_('Desktop shortcut (Windows 95,98)'));
   CBMenu.Caption:=pWideChar(_('Boot Menu (Windows 95,98, NT,2000, XP)'));
   ListDrives.Columns[0].Caption:=pWideChar(_('Drive'));

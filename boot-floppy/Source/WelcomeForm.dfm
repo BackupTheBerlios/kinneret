@@ -5,7 +5,7 @@ object WForm: TWForm
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsDialog
   BorderWidth = 25
-  Caption = 'Welcome to GNU/Linux "Kinneret"'
+  Caption = 'Welcome to GNU/Linux Kinneret'
   ClientHeight = 377
   ClientWidth = 465
   Color = clBtnFace
@@ -132,9 +132,9 @@ object WForm: TWForm
   end
   object Label2: TTntLabel
     Left = 176
-    Top = 72
+    Top = 64
     Width = 281
-    Height = 161
+    Height = 177
     AutoSize = False
     Font.Charset = HEBREW_CHARSET
     Font.Color = clWindowText
@@ -142,6 +142,7 @@ object WForm: TWForm
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
+    WordWrap = True
   end
   object Image1: TImage
     Left = 0

@@ -25,6 +25,7 @@ object FormAdvanced: TFormAdvanced
     Width = 369
     Height = 65
     AutoSize = False
+    WordWrap = True
   end
   object addLabel: TTntLabel
     Left = 240
