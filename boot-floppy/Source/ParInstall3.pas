@@ -4,25 +4,33 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, TntStdCtrls,gnuGetText, ShellAPI, fWarning,checkos, INIfiles;
+  Dialogs, StdCtrls, TntStdCtrls,gnuGetText, ShellAPI, fWarning,checkos, INIfiles, strUtils;
 
 type
+  textpos = (Start, Anywhere);
   TParInst3 = class(TForm)
     LabelWait: TTntLabel;
     ButtonClose: TTntButton;
     procedure FormActivate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure ButtonCloseClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
 
   private
+    configsys,autoexec : TStrings ;
     function FileOperation (sources, dests: TStrings; op, flags: Integer) : bool;
     function filesExist(files : TStrings) : bool;
+    procedure addMenu;
+    procedure removeMenu;
+    function install9xMenu : boolean;
     { Private declarations }
   public
     createMenu : bool;
     createShortcut : bool;
     { Public declarations }
   end;
+
+  function SearchFor(item : string; list : TStrings; position : textpos) : integer;
 
 var
   ParInst3: TParInst3;
@@ -34,8 +42,8 @@ implementation
 
 procedure TParInst3.FormActivate(Sender: TObject);
 var
-  source,destination,configsys,autoexec : TStrings ;
-  CDROM, configsysFile,autoexecFile: string;
+  source,destination : TStrings ;
+  CDROM : string;
   error : boolean;
   attribute : dword;
   BootIni: TIniFile;
@@ -151,38 +159,8 @@ begin
       BootIni.Free;
     end;
   end;
-  if not error and osis95 and createmenu then
-  begin
-    configsys := TStringList.Create;
-    autoexec := TStringList.Create;
-    configsysFile := 'c:\config.sys';
-    autoexecFile := 'c:\autoexec.bat';
-    try
-       with configsys do begin
-        LoadFromFile(configsysFile);
-        insert(0,'[menu]');
-        insert(1,'menuitem=windows, Windows');
-        insert(2,'menuitem=kinneret, GNU/Linux Kinneret');
-        insert(3,'menucolor=15,1');
-        insert(4,'menudefault=Windows, 10');
-        insert(5,'[kinneret]');
-        insert(6,'[windows]');
-        SaveToFile(configsysFile);
-      end;
-      with autoexec do begin
-        LoadFromFile(autoexecFile);
-        insert(0,'@echo off');
-        insert(1,'%config%');
-        insert(2,':kinneret');
-        insert(3,'call c:\boot\Kinneret.bat');
-        insert(4,':windows');
-        SaveToFile(autoexecFile);
-      end;
-      finally
-      Configsys.Free;
-      Autoexec.Free;
-    end;
-  end;
+  if not error and osis95 and createMenu then error:=install9xMenu
+  else if not error and osis95 and not createMenu then removeMenu;
 
   if not error then LabelWait.Caption:=pWideChar(_('Installation finished successfully.'));
   ButtonClose.Enabled:=true;
@@ -190,8 +168,7 @@ end;
 
 procedure TParInst3.FormShow(Sender: TObject);
 begin
-  LabelWait.Caption:=pWideChar(_(
-  'Please wait while installing Kinneret,'+#10#13+
+  LabelWait.Caption:=pWideChar(_('Please wait while installing Kinneret,'+#10#13+
   'this may take several minutes...'));
   ButtonClose.enabled:=false;
 end;
@@ -235,6 +212,155 @@ begin
     filesExist:=false;
     break;
   end;
+end;
+
+function SearchFor(item : string; list : TStrings; position : textpos) : integer;
+var
+  i : integer;
+begin
+  result:=-1;
+  for i:=0 to list.Count-1 do
+  begin
+    if ((position=Anywhere) and AnsiContainsStr(AnsiLowerCase(list[i]),AnsiLowerCase(item)))
+    or ((position=Start) and (AnsiStartsStr(AnsiLowerCase(list[i]),AnsiLowerCase(item)))) then
+    begin
+      result:=i;
+      break;
+    end;
+  end;
+end;
+
+procedure TparInst3.addMenu;
+begin
+  with configsys do
+  begin
+    insert(0,';**Kinneret edit start**, don''t edit this line.');
+    insert(1,'[menu]');
+    insert(2,'menuitem=windows, Windows');
+    insert(3,'menuitem=kinneret, GNU/Linux Kinneret');
+    insert(4,'menucolor=15,1');
+    insert(5,'menudefault=Windows, 10');
+    insert(6,'[kinneret]');
+    insert(7,'[windows]');
+    insert(8,';**Kinneret edit end**, don''t edit this line.');
+  end;
+  with autoexec do
+  begin
+    insert(0,'@rem **Kinneret edit start**, don''t edit this line.');
+    insert(1,'@echo off');
+    insert(2,'goto %config%');
+    insert(3,':kinneret');
+    insert(4,'echo Starting Kinneret...');
+    insert(5,'call c:\boot\Kinneret.bat');
+    insert(6,':windows');
+    insert(7,'echo Starting Windows...');
+    insert(8,'rem **Kinneret edit end**, don''t edit this line.');
+  end;
+end;
+
+function TparInst3.install9xMenu : boolean;
+var
+  configsysFile,autoexecFile : string;
+  confstart,confend,autostart,autoend,i : integer;
+  toAdd : boolean;
+begin
+  toAdd:=false;
+  result:=true; //Assume there is an error
+  configsysFile := 'c:\config.sys';
+  autoexecFile := 'c:\autoexec.bat';
+  try
+    configsys := TStringList.Create;
+    autoexec := TStringList.Create;
+    if fileexists(configsysfile) then configsys.LoadFromFile(configsysFile);
+    if fileexists(autoexecFile) then autoexec.LoadFromFile(autoexecFile);
+    confstart:=searchfor('**kinneret edit start**',configsys,anywhere);
+    confend:=searchfor('**kinneret edit end**',configsys,anywhere);
+    autostart:=searchfor('**kinneret edit start**',autoexec,anywhere);
+    autoend:=searchfor('**kinneret edit end**',autoexec,anywhere);
+    if ((confstart=-1) and (confend=-1) and (autostart=-1) and (autoend=-1)) and
+      (searchfor('[menu]',configsys,anywhere)>-1) then
+    begin
+      LabelWait.Caption:=pWideChar(_('Another Boot-Menu which is not related to Kinneret was'+#10#13+
+      'detected on your system.'+#10#13+'Kinneret boot-menu cannot be installed.'));
+      messagebeep(MB_ICONERROR);
+    end
+    else if ((confstart>-1) and (confend>confstart) and (autostart>-1) and (autoend>autostart)) then
+    begin
+      result:=false;
+      if ShowWarning(QST,pWideChar(_('There is an old Kinneret Boot-Menu installed,'+#10#13+
+        'Do you want to overwrite it ?'))) then
+      begin
+        for i:=confstart to confend do configsys.delete(0);
+        for i:=autostart to autoend do autoexec.delete(0);
+        toAdd:=true;
+      end;
+    end
+    else if ((confstart>-1) or (confend>-1) or (autostart>-1) or (autoend>-1)) then
+    begin
+      LabelWait.Caption:=pWideChar(_('It seems that there is an old Kinneret Boot-Menu installed,'+#10#13+
+      'but it is corrupted. Installation failed.'));
+      messagebeep(MB_ICONERROR);
+    end
+    // There is nothing in config.sys or autoexec.bat, just install normally.
+    else toAdd:=true;
+    if (toAdd=true) and (searchfor('[menu]',configsys,anywhere)=-1) then
+    begin
+      addMenu;
+      //make a backup and save changes
+      if fileExists(configsysFile) then copyFile(pchar(configsysFile),'c:\boot\config.bak',True);
+      if fileExists(autoexecFile) then copyFile(pchar(autoexecFile),'c:\boot\autoexec.bak',True);
+      configsys.SaveToFile(configsysFile);
+      autoexec.SaveToFile(autoexecFile);
+      result:=false;      //result is not error
+    end else if toAdd=true then
+    begin
+      LabelWait.Caption:=pWideChar(_('There is an unknown problem with the Boot-Menu.'+#10#13+
+      'Installation failed.'));
+      messagebeep(MB_ICONERROR);
+      result:=true;
+    end;
+  finally
+    configsys.free;
+    autoexec.Free;
+  end;
+end;
+
+procedure TparInst3.removeMenu;
+var
+  configsysFile,autoexecFile : string;
+  confstart,confend,autostart,autoend,i : integer;
+begin
+  configsysFile := 'c:\config.sys';
+  autoexecFile := 'c:\autoexec.bat';
+  try
+    configsys := TStringList.Create;
+    autoexec := TStringList.Create;
+    if fileexists(configsysfile) then configsys.LoadFromFile(configsysFile);
+    if fileexists(autoexecFile) then autoexec.LoadFromFile(autoexecFile);
+    confstart:=searchfor('**kinneret edit start**',configsys,anywhere);
+    confend:=searchfor('**kinneret edit end**',configsys,anywhere);
+    autostart:=searchfor('**kinneret edit start**',autoexec,anywhere);
+    autoend:=searchfor('**kinneret edit end**',autoexec,anywhere);
+    if ((confstart>-1) and (confend>confstart) and (autostart>-1) and (autoend>autostart)) then
+    begin
+      if ShowWarning(QST,pWideChar(_('There is an old Kinneret Boot-Menu installed,'+#10#13+
+        'Do you want to remove it ?'))) then
+      begin
+        for i:=confstart to confend do configsys.delete(0);
+        for i:=autostart to autoend do autoexec.delete(0);
+        configsys.SaveToFile(configsysFile);
+        autoexec.SaveToFile(autoexecFile);
+      end;
+    end;
+  finally
+    configsys.free;
+    autoexec.free;
+  end;
+end;
+
+procedure TParInst3.FormCreate(Sender: TObject);
+begin
+  TranslateProperties (self);      //GNUGETTEXT
 end;
 
 end.

@@ -1,6 +1,6 @@
 object ParInst3: TParInst3
-  Left = 169
-  Top = 57
+  Left = 255
+  Top = 237
   BorderStyle = bsToolWindow
   Caption = 'Installing Kinneret'
   ClientHeight = 159
@@ -14,6 +14,7 @@ object ParInst3: TParInst3
   OldCreateOrder = False
   Position = poDesktopCenter
   OnActivate = FormActivate
+  OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13

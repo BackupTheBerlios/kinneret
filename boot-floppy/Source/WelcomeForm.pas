@@ -80,7 +80,7 @@ procedure TWForm.FormCreate(Sender: TObject);
 begin
   if not getOS then exit;
   WriteSucceed:=false;
-
+  RadioButton1.Caption:='עברית';
   Retranslator:=gnugettext.DefaultInstance.TP_CreateRetranslator;
   if (osis95=false) then UseLanguage('he')
   else if (copy(getCurrentLanguage,0,2)='iw') then UseLanguage('iw');

@@ -41,6 +41,16 @@ implementation
 
 {$R *.dfm}
 
+procedure Tparinst2.FormActivate(Sender: TObject);
+begin
+  if osIsMe then
+  showWarning(MSG, pWideChar(_('You are using Windows Me.'+#10#13+
+  'Unfortunately Microsoft disabled Real Dos-Mode in this version,'+#10#13+
+  'so you won''t be able to start Kinneret without the Kinneret CD,'+#10#13+
+  'or Kinneret Boot-Floppy.'+#10#13#10#13+
+  'To learn more, search Google for : Windows Millenium Real Dos.')));
+end;
+
 procedure Tparinst2.FormShow(Sender: TObject);
 begin
   LabelChoose.Caption:=pwidechar(_('Choose a drive to install GNU/Linux Kinneret :'));
@@ -78,6 +88,7 @@ var
   i : Integer;
   DriveItem :TtntListItem;
 begin
+  TranslateProperties (self);      //GNUGETTEXT
   ChosenDrive:='';
   {get KNOPPIX SIZE}
   if not fileExists('..\KNOPPIX\knoppix') then knoppixSize:=700
@@ -161,17 +172,6 @@ begin
   parInst3.createShortcut:=CBDesktop.Checked;
   parInst3.showModal;
   close;
-end;
-
-procedure Tparinst2.FormActivate(Sender: TObject);
-begin
-  if osIsMe then
-  showWarning(MSG, pWideChar(_(
-  'You are using Windows Me.'+#10#13+
-  'Unfortunately Microsoft disabled Real Dos-Mode in this version,'+#10#13+
-  'so you won''t be able to start Kinneret without the Kinneret CD,'+#10#13+
-  'or Kinneret Boot-Floppy.'+#10#13+#10#13+
-  'To learn more, search Google for : Windows Millenium Real Dos.')));
 end;
 
 end.

@@ -555,11 +555,9 @@ object WForm: TWForm
     Width = 57
     Height = 17
     BiDiMode = bdLeftToRight
-    Caption = #1506#1489#1512#1497#1514
     ParentBiDiMode = False
     TabOrder = 5
     OnClick = RadioButton1Click
-    Caption_UTF7 = '+BeIF0QXoBdkF6g'
   end
   object ButtonAdvanced: TTntButton
     Left = 232

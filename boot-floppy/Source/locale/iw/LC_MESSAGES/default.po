@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
 "POT-Creation-Date: 2004-03-01 20:55\n"
-"PO-Revision-Date: 2004-03-01 20:56+0200\n"
-"Last-Translator: Nir Misgav [Nirro] <nirro@linux-kinneret.org>\n"
+"PO-Revision-Date: 2004-03-13 02:03+0200\n"
+"Last-Translator: Nir Misgav <nirro@linux-kinneret.org>\n"
 "Language-Team: Nir Misgav <nirro@yahoo.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -15,6 +15,8 @@ msgstr ""
 #. FormAbout..Caption
 #. WForm..Button1..Caption
 #: About.dfm:8
+#: WelcomeForm.dfm:528
+#: About.pas:82
 msgid "About"
 msgstr "אודות"
 
@@ -40,8 +42,21 @@ msgstr "אודות"
 #  MainForm..Font.Name
 #  WForm..Font.Name
 #  WForm..Label2..Font.Name
+#  FormAbout..Font.Name
+#  FormAdvanced..Font.Name
+#  FormWarning..Font.Name
+#  parinst..Font.Name
+#  parinst2..Font.Name
+#  ParInst3..Font.Name
+#  MainForm..Font.Name
+#  WForm..Font.Name
+#  WForm..Label2..Font.Name
 #: About.dfm:15
+#: Advanced.dfm:13
+#: fWarning.dfm:13
+#: ParInstall.dfm:12
 #: ParInstall2.dfm:12
+#: ParInstall3.dfm:12
 #: rawwrite.dfm:15
 #: WelcomeForm.dfm:15
 #: WelcomeForm.dfm:142
@@ -49,7 +64,11 @@ msgid "MS Sans Serif"
 msgstr ""
 
 #. FormAbout..Button1..Caption
+#. ParInst3..ButtonClose..Caption
 #: About.dfm:38
+#: ParInstall3.dfm:34
+#: About.pas:83
+#: rawwrite.pas:220
 msgid "Close"
 msgstr "סגור"
 
@@ -60,77 +79,89 @@ msgstr "עריכת הערכים"
 
 #. FormWarning..Caption
 #: fWarning.dfm:6
+#: fWarning.pas:69
 msgid "Warning"
 msgstr "אזהרה"
 
-#. parinst..Caption
+#  parinst..Caption
 #: ParInstall.dfm:5
 msgid "Partial installation wizard"
-msgstr ""
+msgstr "אשף התקנה חלקית"
 
 #. parinst..YesButton..Caption
-#: ParInstall.dfm:31
+#: ParInstall.dfm:32
+#: fWarning.pas:66
 msgid "Yes"
 msgstr "כן"
 
-#. parinst..NoButton..Caption
-#: ParInstall.dfm:40
+#  parinst..NoButton..Caption
+#: ParInstall.dfm:41
 msgid "Not now, thanks"
-msgstr ""
+msgstr "לא עכשיו, תודה"
 
-#. parinst2..Caption
+#  parinst2..Caption
 #: ParInstall2.dfm:5
 msgid "Partial Installation"
-msgstr ""
+msgstr "התקנה חלקית"
 
-#. parinst2..ButtonStart..Caption
-#: ParInstall2.dfm:25
+#  parinst2..ButtonStart..Caption
+#: ParInstall2.dfm:26
 msgid "Start Installation"
-msgstr ""
+msgstr "התחל התקנה"
 
 #. parinst2..ButtonCancel..Caption
-#: ParInstall2.dfm:34
+#: ParInstall2.dfm:36
+#: Advanced.pas:76
+#: fWarning.pas:71
+#: rawwrite.pas:256
 msgid "Cancel"
 msgstr "ביטול"
 
-#. parinst2..TntGroupBox1..Caption
-#: ParInstall2.dfm:43
+#  parinst2..TntGroupBox1..Caption
+#: ParInstall2.dfm:45
 msgid "2. Boot Options"
-msgstr ""
+msgstr "2. אפשרויות איתחול"
 
-#. parinst2..TntGroupBox1..TntCheckBox2..Caption
-#: ParInstall2.dfm:57
-msgid "Desktop shortcut (Windows 95,98,ME)"
-msgstr ""
+#  parinst2..TntGroupBox1..CBDesktop..Caption
+#: ParInstall2.dfm:59
+msgid "Desktop shortcut (Windows 95,98)"
+msgstr "קיצור דרך על שולחן העבודה (חלונות 95, 98)"
 
-#. parinst2..TntGroupBox1..TntCheckBox1..Caption
-#: ParInstall2.dfm:65
+#  parinst2..TntGroupBox1..CBMenu..Caption
+#: ParInstall2.dfm:67
 msgid "Boot Menu (Windows 95,98, NT,2000, XP)"
-msgstr ""
+msgstr "תפריט בזמן האיתחול (חלונות 95, 98, NT, 2000, XP)"
 
-#. parinst2..TntGroupBox2..Caption
-#: ParInstall2.dfm:74
+#  parinst2..TntGroupBox2..Caption
+#: ParInstall2.dfm:76
 msgid "1. Drive Options"
-msgstr ""
+msgstr "1. בחירת כונן"
 
-#. parinst2..TntGroupBox2..ListDrives......Caption
-#: ParInstall2.dfm:91
+#  parinst2..TntGroupBox2..ListDrives......Caption
+#: ParInstall2.dfm:100
 msgid "Drive"
-msgstr ""
+msgstr "כונן"
 
-#. parinst2..TntGroupBox2..ListDrives......Caption
-#: ParInstall2.dfm:94
+#  parinst2..TntGroupBox2..ListDrives......Caption
+#: ParInstall2.dfm:103
 msgid "Free space before inst."
-msgstr ""
+msgstr "שטח פנוי לפני ההתקנה"
 
-#. parinst2..TntGroupBox2..ListDrives......Caption
-#: ParInstall2.dfm:98
+#  parinst2..TntGroupBox2..ListDrives......Caption
+#: ParInstall2.dfm:107
 msgid "Free space after inst."
-msgstr ""
+msgstr "שטח פנוי לאחר ההתקנה"
+
+#  ParInst3..Caption
+#: ParInstall3.dfm:5
+msgid "Installing Kinneret"
+msgstr "מתקין את כנרת"
 
 #. MainForm..Caption
 #. WForm..WriteButton..Caption
 #: rawwrite.dfm:8
+#: WelcomeForm.dfm:510
+#: rawwrite.pas:254
 msgid "Make a bootable floppy"
 msgstr "הכנת תקליטון הפעלה"
 
@@ -164,25 +195,20 @@ msgstr "אתחול המחשב"
 msgid "English"
 msgstr ""
 
-#. WForm..RadioButton1..Caption_UTF7
-#: WelcomeForm.dfm:562
-msgid "+BeIF0QXoBdkF6g"
-msgstr ""
-
 #. WForm..ButtonAdvanced..Hint
-#: WelcomeForm.dfm:569
+#: WelcomeForm.dfm:567
 msgid "Advanced options for editing kernel parameters"
 msgstr "אפשרויות מתקדמות לעריכת הפרמטרים הנשלחים אל הליבה בזמן האיתחול"
 
 #. WForm..ButtonAdvanced..Caption
-#: WelcomeForm.dfm:570
+#: WelcomeForm.dfm:568
 msgid "Advanced"
 msgstr "מתקדם"
 
-#. WForm..TntButton1..Caption
-#: WelcomeForm.dfm:581
+#  WForm..TntButton1..Caption
+#: WelcomeForm.dfm:579
 msgid "Partial installation"
-msgstr ""
+msgstr "התקנה חלקית"
 
 #: About.pas:80
 msgid ""
@@ -318,6 +344,10 @@ msgstr ""
 "לא ניתן לשמור שינויים,\n"
 "אנא וודא שהתקליטון עדיין בכונן ונסה שוב."
 
+#: checkOS.pas:36
+msgid "Unable to find Windows version"
+msgstr "לא ניתן למצוא את גרסת החלונות"
+
 #: fWarning.pas:59
 msgid "Information"
 msgstr "שים לב"
@@ -353,13 +383,26 @@ msgid ""
 "into the hard-drive, but it does not decompressed.\n"
 "therefore, you will be able to fully use Kinneret\n"
 "without the CD in drive, and it will be much faster,\n"
-"but you still won't be able to install anything.\n"
+"but you still won't be able to install new software.\n"
 "\n"
 "A complete installation method will be (hopefuly)\n"
 "available in the future.\n"
 "\n"
 "Do you want to make a partial installation ?"
 msgstr ""
+"מהי התקנה חלקית ?\n"
+"\n"
+"לידיעתך, תקליטור כנרת מכיל כ-2.3 GB\n"
+"של תוכנה מותקנת, המכווצת לתקליטור אחד.\n"
+"בשיטת התקנה זו, כל המידע מועתק את הכונן הקשיח,\n"
+"אך נשאר בצורתו המכווצת.\n"
+"לאחר ההתקנה,  ניתן יהיה להשתמש באופן מלא\n"
+"בכנרת, ללא התקליטור, והיא תהיה מהירה יותר.\n"
+"אך עדיין לא תתאפשר התקנת תוכנות חדשות.\n"
+"\n"
+"אנו מקווים שאפשרות להתקנה מלא תתווסף בעתיד.\n"
+"\n"
+"האם ברצונך לבצע התקנה חלקית ?"
 
 #: ParInstall.pas:59
 msgid ""
@@ -367,28 +410,108 @@ msgid ""
 "Continue at your own risk."
 msgstr ""
 
-#: ParInstall2.pas:44
+#: ParInstall2.pas:46
 msgid "Choose a drive to install GNU/Linux Kinneret :"
 msgstr ""
 
-#: ParInstall2.pas:49
+#: ParInstall2.pas:48
+msgid ""
+"Note: In some cases, a small directory will be created in\n"
+"drive C:, even if you choose another drive."
+msgstr ""
+
+#: ParInstall2.pas:53
 msgid ""
 "In order to start Kinneret, you can always boot with the\n"
 "Kinneret CD, or with a Boot-Floppy. After booting, Kinneret\n"
 "continues to load from the Hard-Drive automatically.\n"
-"However, if you don't want to use the CD at all, You can\n"
+"However, if you rather not use the CD at all, You can\n"
 "choose one or more of the next options (recommended) :"
 msgstr ""
 
-#: ParInstall2.pas:69
+#. GNUGETTEXT
+#: ParInstall2.pas:96
+#: ParInstall2.pas:106
+#: ParInstall2.pas:133
 msgid "%n MB"
 msgstr ""
 
 #. Not enough free space
-#: ParInstall2.pas:116
+#: ParInstall2.pas:142
 msgid ""
 "Not enough free space on drive %s:\n"
 "Choose another one."
+msgstr ""
+
+#. not enough space in C: (rare)
+#: ParInstall3.pas:100
+msgid ""
+"Drive C: is full, Unable to copy files.\n"
+"Free up some space, or try again without Boot Options."
+msgstr ""
+
+#. Copying all files
+#: ParInstall3.pas:110
+msgid ""
+"Error while copying files.\n"
+"Unable to continue."
+msgstr ""
+
+#. Windows NT Create Menu with GRUB
+#: ParInstall3.pas:122
+msgid ""
+"Error, Can't find C:\\boot.ini\n"
+"Unable to install Boot-Menu."
+msgstr ""
+
+#: ParInstall3.pas:136
+msgid ""
+"Error, Can't modify C:\\boot.ini\n"
+"Unable to install Boot-Menu."
+msgstr ""
+
+#. Remove old boot-menu windows NT
+#: ParInstall3.pas:151
+msgid ""
+"An old Boot-Menu was detected on your system,\n"
+"Would you want to remove it ?"
+msgstr ""
+
+#: ParInstall3.pas:165
+msgid "Installation finished successfully."
+msgstr ""
+
+#. Assume there is an error
+#: ParInstall3.pas:285
+msgid ""
+"Another Boot-Menu which is not related to Kinneret was\n"
+"detected on your system.\n"
+"Kinneret boot-menu cannot be installed."
+msgstr ""
+
+#: ParInstall3.pas:292
+msgid ""
+"There is an old Kinneret Boot-Menu installed,\n"
+"Do you want to overwrite it ?"
+msgstr ""
+
+#: ParInstall3.pas:302
+msgid ""
+"It seems that there is an old Kinneret Boot-Menu installed,\n"
+"but it is corrupted. Installation failed."
+msgstr ""
+
+#. result is not error
+#: ParInstall3.pas:319
+msgid ""
+"There is an unknown problem with the Boot-Menu.\n"
+"Installation failed."
+msgstr ""
+
+#: ParInstall3.pas:348
+msgid ""
+"There is an old Kinneret Boot-Menu installed,\n"
+"Do you want to remove it ?"
 msgstr ""
 
 #: rawwrite.pas:100
@@ -484,6 +607,7 @@ msgid "'%s' is not a valid currency value"
 msgstr ""
 
 #: WelcomeForm.pas:75
+#: WelcomeForm.pas:182
 msgid ""
 "Floppy has been successfully written.\n"
 "\n"
@@ -501,12 +625,7 @@ msgstr ""
 "לסגור את כל התוכניות הרצות כרגע,\n"
 "ולאתחל את המחשב מחדש."
 
-#. what OS
-#: WelcomeForm.pas:100
-msgid "Error - Cannot find Windows version"
-msgstr ""
-
-#: WelcomeForm.pas:158
+#: WelcomeForm.pas:139
 msgid ""
 "You are going to reboot the computer.\n"
 "In order to prevent data loss, Please close\n"
@@ -516,7 +635,7 @@ msgstr ""
 "מומלץ לסגור את כל התוכניות הרצות כרגע.\n"
 "האם להמשיך?"
 
-#: WelcomeForm.pas:208
+#: WelcomeForm.pas:189
 msgid ""
 "Welcome to GNU/Linux \"Kinneret\"\n"
 "This program is not an installation Program.\n"
@@ -538,7 +657,7 @@ msgstr ""
 "מהתקליטור, ביכולתך להכין תקליטון הפעלה כאן."
 
 #. Seperating Line to words
-#: WelcomeForm.pas:245
+#: WelcomeForm.pas:226
 msgid ""
 "In order to enter the Advanced options, You must put your boot-floppy\n"
 "(The floppy you can make here) in drive A:"
