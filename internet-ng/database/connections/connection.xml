@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+Sample Connection Description
+This is the file that is packed into the tarball.
+It containes everything needed for auto-regeneration
+of the connection. This file is sent to the connection
+assembler.
+-->
+<connection>
+    <!-- Connection Header -->
+    <name>MyTestConnection</name>
+    <internet-ng>0.1</internet-ng>
+    <created>
+        <date>2001-01-01</date>
+        <time>00:00:00</time>
+    </created>
+    <comment>Created by z9u2k late late at night...</comment>
+
+    <!-- Modules -->
+    
+    <modules name="isp">
+        <file>foo.xml</file>
+        <!--
+            Sometimes, the user must choose a certain
+            server or something like that. To resolv the conflict,
+            the next section holds the element with the attribute that should
+            be used.
+        -->
+        <choises>
+            <!--
+                This will tell the assembler to use the "cables-foo" server,
+                even though "cables-bar" is present as well.
+
+                name is the name attribute of the chosen element.
+            -->
+            <choise xpath="isp/broadband/gateway/valdesc[@type='remotename']"
+                name="cables-foo"/>
+        </choises>
+    </module>
+
+    <module name="driver">
+        <file>bar.xml</file>
+        <ethernet device="eth0"/>
+    </module>
+
+    <!--
+        If this module is missing or any part of it, the missing parts will be
+        asked at each connection.
+    -->
+    <module name="authentication">
+        <username>qux</username>
+        <password>quxx</password>
+    </module>
+</connection>

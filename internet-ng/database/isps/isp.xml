@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sample ISP -->
+<isp>
+    <!-- ISP's name -->
+    <!--
+        The 'lang' attribute indicates the elements are the same,
+        but the values are in different languages. The front-end will
+        choose at runtime which language to use according to the locale.
+    -->
+    <name lang="en">My ISP</name>
+    <name lang="he">ספק השירות שלי</name>
+
+    <!-- ISP's country -->
+    <country lang="en">Foo</country>
+    <country lang="he">לוף</country>
+
+    <!-- Public Servers -->
+	<servers>
+		<server type="pop3">pop.isp.com</server>
+		<server type="smtp">smtp.isp.com</server>
+		<server type="imap">imap.isp.com</server>
+		<server type="ftp">ftp.isp.com</server>
+		<server type="irc">irc.isp.com</server>
+        <!--
+            Note that DNS servers will be written to resolv.conf AT THE ORDER
+            THEY APPEAR! So put the primary first...
+        -->
+        <server type="dns">1.2.3.4</server>
+        <server type="dns">2.3.4.5</server>
+        <server type="manual-proxy">proxy.isp.com:8080</server>
+        <server type="auto-proxy">http://www.isp/com/proxy.pac</server>
+	</servers>
+
+    <!-- Contacting the ISP -->
+	<contact>
+        <valdesc type="webpage">
+            <description lang="en">Homepage</description>
+            <description lang="he">אתר הבית</description>
+            <value>http://www.isp.com/index.jsp</value>
+        </valdesc>
+        <valdesc type="email">
+            <description lang="en">Tech Support</description>
+            <description lang="he">תמיכה טכנית</description>
+            <value>support@isp.com</value>
+        </valdesc>
+        <valdesc type="phone">
+            <description lang="en">Tech Support</description>
+            <description lang="he">תמיכה טכנית</description>
+    		<value>03-1234567</value>
+        </valdesc>
+        <valdesc type="fax">
+            <description lang="en">Sales</description>
+            <description lang="he">מחלקת מכירות</description>
+    		<value>03-2345678</value>
+        </valdesc>
+        <valdesc type="snailmail">
+            <description lang="en">Managment</description>
+            <description lang="he">הנהלה</description>
+            <value>
+                <address lang="en">
+                    1st Foo St., Bar. P.O. Box 12345
+                </address>
+                <address lang="he">
+                    רח' לוף מספר 1, חביתה-סיטי. ת"ד 12345
+                </address>
+            </value>
+        </valdesc>
+	</contact>
+
+    <!-- Special Configuration Parameters -->
+    <config>
+        <!-- DNS Search Group -->
+        <searchgroup>ispsg</searchgroup>
+    </config>
+
+    <!-- Connection Methods Section -->
+
+    <!-- Broadband -->
+
+    <!-- Cables -->
+	<cables>
+        <!-- Access Gateways -->
+		<gateway>
+            <!--
+                Two elements with the 'name' attribute contributes a choise
+                between these two elements. Both of these can resolv the same
+                parameter, but only one is to be chosen. Which of these, is
+                written at the descriptor.
+
+                Every choise containes a description, and a value, where value
+                can be an element, or a value node.
+            -->
+            <valdesc type="remotename" name="cables-foo">
+                <description lang="en">Foo Cabels Company</description>
+                <description lang="he">חברת הכבלים לוף</description>
+                <value>foo.isp.net</value>
+            </valdesc>
+            <valdesc type="remotename" name="cables-bar">
+                <description lang="en">Bar Cabels Company</description>
+                <description lang="he">חברת הכבלים חביתה</description>
+                <value>bar.isp.net</value>
+            </valdesc>
+        </gateway>
+        <!-- Special Parameters -->
+        <special>
+            <searchgroup>fubar</searchgroup>
+        </special>
+        <!-- Username suffix -->
+		<suffix>@Foo</suffix>
+    </cables>
+
+    <!-- ADSL -->
+    <adsl>
+        <!-- Username suffix -->
+		<suffix>@Bar</suffix>
+    </adsl>
+
+    <!-- Dialup Section -->
+
+    <!-- ISDN -->
+    <isdn>
+        <valdesc type="dialin-server">
+            <!-- Usually geographical location -->
+            <description lang="en">Foo</description>
+            <description lang="he">לוף</description>
+            <value>03-4567890</value>
+        </valdesc>
+    </isdn>
+
+    <!-- Dialup -->
+	<dialup>
+        <valdesc type="dialin-server">
+            <description lang="en">Foo</description>
+            <description lang="he">לוף</description>
+            <value>03-4567890</value>
+        </valdesc>
+	</dialup>
+</isp>

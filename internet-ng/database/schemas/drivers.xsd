@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="cable"/>
+            <xs:enumeration value="adsl"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="interface">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="usb"/>
+            <xs:enumeration value="ethernet"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="interfaces">
+        <xs:sequence>
+            <xs:element name="interface" type="interface"
+                minOccurs="1" maxOccurs="2"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="modules">
+        <xs:sequence>
+            <!--- 2.4 Module name --> 
+            <xs:element name="module">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="kernel" type="xs:string"
+                                use="required" fixed="2.4"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <!--- 2.6 Module name --> 
+            <xs:element name="module">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="kernel" type="xs:string"
+                                use="required" fixed="2.6"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="modem">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="hebname" type="xs:string"/>
+                <xs:element name="type" type="type"/>
+                <xs:element name="interfaces" type="interfaces"/>
+
+                <!--- TODO: Optional -->
+                <xs:element name="modules" type="modules"/>
+                
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
