@@ -7,6 +7,8 @@
 /*
  * This file holds the exceptions namespace and all the exception might be
  * thrown from within the application.
+ *
+ * $Revision: 1.2 $
  */
 namespace core {
     namespace exception {
@@ -23,11 +25,10 @@ namespace core {
             /**
              * Constructor.
              *
-             * @param what The reason for the exception.
+             * @param w The reason for the exception.
              */
-            Exception(const std::string &what) throw () :
-                    exception(what.c_str()) {
-                // Nothing to do
+            Exception(const std::string &w) throw () : exception() {
+                reason = w;
             }
 
             /**
@@ -36,6 +37,21 @@ namespace core {
             virtual ~Exception() throw () {
                 // Nothing to do
             }
+
+            /* --- Public Methods --- */
+
+            /**
+             * @return Reson for the exception
+             */
+            virtual const char *what() const throw() {
+                return reason.c_str();
+            }
+
+        private:
+
+            /* --- Data Members --- */
+
+            std::string reason;
         };
 
         /**
@@ -62,6 +78,63 @@ namespace core {
              * Destructor.
              */
             virtual ~NoSuchNamespaceException() throw () {
+                // Nothing to do
+            }
+        };
+
+        /**
+         * Thrown when the requested parameter is valid, but no value could
+         * be found.
+         *
+         * @author z9u2k
+         */
+        class ParameterNotFoundException : public Exception {
+        public:
+            
+            /* --- Constructors --- */
+            
+            /**
+             * Constructor.
+             *
+             * @param what The reason for the exception.
+             */
+            ParameterNotFoundException(const std::string &what) throw () :
+                    Exception(what) {
+                // Nothing to do
+            }
+
+            /**
+             * Destructor.
+             */
+            virtual ~ParameterNotFoundException() throw () {
+                // Nothing to do
+            }
+        };
+
+        /**
+         * Thrown when the requested parameter is invalid.
+         *
+         * @author z9u2k
+         */
+        class NoSuchParamemterExcpetion : public Exception {
+        public:
+            
+            /* --- Constructors --- */
+            
+            /**
+             * Constructor.
+             *
+             * @param what The reason for the exception.
+             */
+            NoSuchParamemterExcpetion(const std::string &what) throw () :
+                    Exception(what) {
+                // Nothing to do
+            }
+
+            /**
+             * Destructor.
+             */
+            virtual ~NoSuchParamemterExcpetion() throw () {
                 // Nothing to do
             }
         };

@@ -11,6 +11,7 @@ namespace core {
          * and from an XML DOM tree.
          *
          * @author z9u2k
+         * $Revision: 1.2 $
          */
         class XMLSerializeable : public XMLReadable, XMLWriteable {
         public:

@@ -10,6 +10,7 @@ namespace core {
          * XML DOM tree.
          *
          * @author z9u2k
+         * $Revision: 1.3 $
          */
         class XMLWriteable {
         public:
@@ -31,7 +32,7 @@ namespace core {
              *
              * @parm document Document to write to.
              */
-            virtual void toXML(DOMDocument *const document) = 0;
+            virtual void toXML(xercesc::DOMDocument *const document) = 0;
         }
     }
 }

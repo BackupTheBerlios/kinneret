@@ -3,7 +3,7 @@
 
 #include <xercesc/dom/DOM.hpp>
 
-#include "../exceptions/Exceptions.h"
+#include "../exception/exception.h"
 
 namespace core {
     namespace xml {
@@ -12,6 +12,7 @@ namespace core {
          * XML DOM tree.
          *
          * @author z9u2k
+         * $Revision: 1.2 $
          */
         class XMLReadable {
         public:
@@ -35,9 +36,9 @@ namespace core {
              * @throws InvalidFormatException When the XML is of an invalid
              *         format and the class cannot load from it.
              */
-            virtual void fromXML(const DOMElement *const root)
-                throw (InvalidFormatException) = 0;
-        }
+            virtual void fromXML(const xercesc::DOMElement *const root)
+                throw (exception::InvalidFormatException) = 0;
+        };
     }
 }
 

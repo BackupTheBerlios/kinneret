@@ -3,7 +3,7 @@
 
 #include <map>
 
-#include "xml/XMLSerializeable.h"
+#include "xml/XMLReadable.h"
 #include "Resolver.h"
 #include "exceptions/Exceptions.h"
 
@@ -13,8 +13,9 @@ namespace core {
      * <code>ConnectionAssembler</code> to create a conection.
      *
      * @author z9u2k
+     * $Revision: 1.2 $
      */
-    class ConnectionDescriptor : public Resolver, XMLSerializeable {
+    class ConnectionDescriptor : public Resolver, XMLReadable {
     public:
 
         /* --- Constructors --- */
@@ -60,18 +61,6 @@ namespace core {
          */
         void assertDescriptor() const
             throw (exceptions::AssertionFailedException);
-
-        /* --- Inherited from XMLSerializeable --- */
-
-        /**
-         * Loads description from a DOM tree.
-         *
-         * @parm root Root elemnt of the document.
-         * @throws InvalidFormatException When the XML is of an invalid
-         *         format and the class cannot load from it.
-         */
-        void fromXML(const DOMElement *const root)
-            throw (InvalidFormatException);
 
     private:
 
