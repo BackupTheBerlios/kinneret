@@ -15,8 +15,6 @@ uses
   Dialogs, StdCtrls, ExtCtrls, Menus,gnugettext, About, gifimage,fWarning,
   Buttons, TntStdCtrls, TntForms, Advanced, ParInstall,checkOS,ShellAPI;
 
-function MyExitWindows(RebootParam: Longword): Boolean;
-
 type
   Cond_type = (start,floppy_made,parinst_made);
   TWForm = class(TTntForm)
@@ -34,6 +32,7 @@ type
     RadioButton3: TTntRadioButton;
     TntButton2: TTntButton;
     LinkLabel: TTntLabel;
+    RadioButton4: TTntRadioButton;
     procedure Button3Click(Sender: TObject);
     procedure WriteButtonClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -46,6 +45,7 @@ type
     procedure TntButton1Click(Sender: TObject);
     procedure RadioButton3Click(Sender: TObject);
     procedure LinkLabelClick(Sender: TObject);
+    procedure RadioButton4Click(Sender: TObject);
   private
     Retranslator:TExecutable;
   public
@@ -80,55 +80,46 @@ procedure TWForm.FormCreate(Sender: TObject);
 begin
   if not getOS then exit;
   Condition:=start;
-  RadioButton1.Caption:='עברית';
   Retranslator:=gnugettext.DefaultInstance.TP_CreateRetranslator;
-  if (osis95=false) then UseLanguage('he')
-  else if (copy(getCurrentLanguage,0,2)='iw') then UseLanguage('iw');
-  if (osis95) and (GetCurrentLanguage<>'iw') then
-  begin
-    RadioButton2.Hide;
-    RadioButton1.Hide;
-  end;
-  if (GetCurrentLanguage='he') or (GetCurrentLanguage='iw') then RadioButton1.Checked:=true
-  else RadioButton2.Checked:=true;
-  TranslateProperties (self);      //GNUGETTEXT
-end;
-
-function MyExitWindows(RebootParam: Longword): Boolean;
-var
-  TTokenHd: THandle;
-  TTokenPvg: TTokenPrivileges;
-  cbtpPrevious: DWORD;
-  rTTokenPvg: TTokenPrivileges;
-  pcbtpPreviousRequired: DWORD;
-  tpResult: Boolean;
-const
-  SE_SHUTDOWN_NAME = 'SeShutdownPrivilege';
-begin
-  if Win32Platform = VER_PLATFORM_WIN32_NT then
-  begin
-    tpResult := OpenProcessToken(GetCurrentProcess(),
-      TOKEN_ADJUST_PRIVILEGES or TOKEN_QUERY,
-      TTokenHd);
-    if tpResult then
+  if (osis95=false) then
+  begin //windows XP
+    if (copy(getCurrentLanguage,0,2)='ru') then UseLanguage('ru')
+    else if (copy(getCurrentLanguage,0,2)='ar') then UseLanguage('ar')
+    else UseLanguage('he');
+  end else begin //windows 9x
+    if (copy(getCurrentLanguage,0,2)='iw') then
     begin
-      tpResult := LookupPrivilegeValue(nil,
-                                       SE_SHUTDOWN_NAME,
-                                       TTokenPvg.Privileges[0].Luid);
-      TTokenPvg.PrivilegeCount := 1;
-      TTokenPvg.Privileges[0].Attributes := SE_PRIVILEGE_ENABLED;
-      cbtpPrevious := SizeOf(rTTokenPvg);
-      pcbtpPreviousRequired := 0;
-      if tpResult then
-        Windows.AdjustTokenPrivileges(TTokenHd,
-                                      False,
-                                      TTokenPvg,
-                                      cbtpPrevious,
-                                      rTTokenPvg,
-                                      pcbtpPreviousRequired);
+      UseLanguage('iw');
+      RadioButton3.Hide;
+      RadioButton4.Hide;
+    end
+    else if (copy(getCurrentLanguage,0,2)='ru') then
+    begin
+      UseLanguage('ru');
+      RadioButton1.Hide;
+      RadioButton4.Hide;
+    end
+   else if (copy(getCurrentLanguage,0,2)='ar') then
+    begin
+      UseLanguage('ac');
+      RadioButton1.Hide;
+      RadioButton3.Hide;
+    end
+    else begin
+      UseLanguage('en');
+      RadioButton1.Hide;
+      RadioButton2.Hide;
+      RadioButton3.Hide;
+      RadioButton4.Hide;
     end;
   end;
-  Result := ExitWindowsEx(RebootParam, 0);
+
+  if (GetCurrentLanguage='he') or (GetCurrentLanguage='iw') then RadioButton1.Checked:=true
+  else if (GetCurrentLanguage='ru') then RadioButton3.Checked:=true
+  else if (GetCurrentLanguage='ar') or (GetCurrentLanguage='ac')then RadioButton4.Checked:=true
+  else RadioButton2.Checked:=true;
+
+  TranslateProperties (self);      //GNUGETTEXT
 end;
 
 
@@ -143,6 +134,23 @@ end;
 procedure TWForm.Button1Click(Sender: TObject);
 begin
   FormAbout.ShowModal;
+end;
+
+procedure TWForm.RadioButton4Click(Sender: TObject);
+begin
+    if osis95 then
+    begin
+      UseLanguage('ac');
+      BidiMode:=bdRightToLeft
+    end
+    else
+    begin
+      UseLanguage('ar');
+      Label2.Alignment:=taRightJustify;
+      LinkLabel.Alignment:=taRightJustify;
+    end;
+    Retranslator.Execute;
+    refreshlabel2;
 end;
 
 procedure TWForm.RadioButton3Click(Sender: TObject);
@@ -260,16 +268,21 @@ begin
 end;
 
 procedure TWForm.LinkLabelClick(Sender: TObject);
+var
+  lang,guide : string;
 begin
   if (getCurrentLanguage='he') or (getCurrentLanguage='iw') then
-    ShellExecute(Handle, 'open',
-    pchar('..\manual\he\first_time.html'), nil, nil, SW_SHOWNORMAL)
-  else if (getCurrentLanguage='ru') then ShellExecute(Handle, 'open',
-    pchar('..\manual\ru\first_time.html'), nil, nil, SW_SHOWNORMAL)
-  else ShellExecute(Handle, 'open',
-    pchar('..\manual\en\first_time.html'), nil, nil, SW_SHOWNORMAL)
+    lang:='he'
+  else if (getCurrentLanguage='ar') or (getCurrentLanguage='ac') then
+    lang:='ar'
+  else lang:=copy(getCurrentLanguage,0,2);
 
-  end;
+  guide:='..\manual\'+lang+'\first_time.html';
+  if fileExists(guide) then
+    ShellExecute(Handle, 'open', pchar(guide), nil, nil, SW_SHOWNORMAL)
+  else ShellExecute(Handle, 'open',
+    pchar('..\manual\he\first_time.html'), nil, nil, SW_SHOWNORMAL)
+end;
 
 end.
 

@@ -170,6 +170,8 @@ end;
 
 procedure TParInst3.FormShow(Sender: TObject);
 begin
+  if (GetCurrentLanguage='iw') or (GetCurrentLanguage='ac') then BidiMode:=bdRightToLeft
+    else Bidimode:=bdLeftToRight;
   LabelWait.Caption:=pWideChar(_('Please wait while installing Kinneret,'+#10#13+
   'this may take several minutes...'));
   Caption:=pWideChar(_('Installing Kinneret'));

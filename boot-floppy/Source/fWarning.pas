@@ -48,8 +48,8 @@ begin
   with FormWarning do begin
     fType:=tType;
     Label1.Caption:=mtext;
-    if GetCurrentLanguage='he' then Label1.Alignment:=taRightJustify
-    else if getCurrentLanguage='iw' then bidimode:=bdRightToLeft
+    if (GetCurrentLanguage='he') or (GetCurrentLanguage='ar') then Label1.Alignment:=taRightJustify
+    else if (getCurrentLanguage='iw') or (GetCurrentLanguage='ac') then bidimode:=bdRightToLeft
     else begin
       Label1.Alignment:=taLeftJustify;
       BidiMode:=bdLeftToRight;

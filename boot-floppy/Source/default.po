@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2004-04-01 14:58\n"
-"PO-Revision-Date: 2004-04-01 14:58\n"
+"POT-Creation-Date: 2004-04-01 17:14\n"
+"PO-Revision-Date: 2004-04-01 17:14\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,7 +16,7 @@ msgstr ""
 #. FormAbout..Caption
 #: About.dfm:8
 #. WForm..Button1..Caption
-#: WelcomeForm.dfm:528
+#: WelcomeForm.dfm:544
 #: About.pas:87
 msgid "About"
 msgstr ""
@@ -39,6 +39,12 @@ msgstr ""
 #: WelcomeForm.dfm:15
 #. WForm..Label2..Font.Name
 #: WelcomeForm.dfm:142
+#. WForm..LinkLabel..Font.Name
+#: WelcomeForm.dfm:516
+#. WForm..RadioButton1..Font.Name
+#: WelcomeForm.dfm:578
+#. WForm..RadioButton3..Font.Name
+#: WelcomeForm.dfm:617
 msgid "MS Sans Serif"
 msgstr ""
 
@@ -64,7 +70,7 @@ msgstr ""
 #. MainForm..Caption
 #: rawwrite.dfm:8
 #. WForm..WriteButton..Caption
-#: WelcomeForm.dfm:510
+#: WelcomeForm.dfm:526
 #: rawwrite.pas:254
 msgid "Make a bootable floppy"
 msgstr ""
@@ -84,44 +90,64 @@ msgstr ""
 msgid "Arial"
 msgstr ""
 
+#. WForm..LinkLabel..Caption
+#: WelcomeForm.dfm:512
+msgid "For detailed user guide press here."
+msgstr ""
+
 #. WForm..Button3..Caption
-#: WelcomeForm.dfm:519
+#: WelcomeForm.dfm:535
 msgid "Exit"
 msgstr ""
 
 #. WForm..Button2..Caption
-#: WelcomeForm.dfm:537
+#: WelcomeForm.dfm:553
 msgid "Reboot"
 msgstr ""
 
 #. WForm..RadioButton2..Caption
-#: WelcomeForm.dfm:547
+#: WelcomeForm.dfm:563
 msgid "English"
 msgstr ""
 
+#. WForm..RadioButton1..Caption
+#: WelcomeForm.dfm:574
+msgid "עברית"
+msgstr ""
+
+#. WForm..RadioButton1..Caption_UTF7
+#: WelcomeForm.dfm:584
+msgid "+BeIF0QXoBdkF6g"
+msgstr ""
+
 #. WForm..ButtonAdvanced..Hint
-#: WelcomeForm.dfm:567
+#: WelcomeForm.dfm:591
 msgid "Advanced options for editing kernel "
 "parameters"
 msgstr ""
 
 #. WForm..ButtonAdvanced..Caption
-#: WelcomeForm.dfm:568
+#: WelcomeForm.dfm:592
 msgid "Advanced"
 msgstr ""
 
 #. WForm..TntButton1..Caption
-#: WelcomeForm.dfm:579
+#: WelcomeForm.dfm:603
 msgid "Hard-Drive Operation"
 msgstr ""
 
-#. WForm..TntRadioButton1..Caption
-#: WelcomeForm.dfm:589
-msgid "Russian"
+#. WForm..RadioButton3..Caption
+#: WelcomeForm.dfm:613
+msgid "русский"
+msgstr ""
+
+#. WForm..RadioButton3..Caption_UTF7
+#: WelcomeForm.dfm:623
+msgid "+BEAEQwRBBEEEOgQ4BDk"
 msgstr ""
 
 #. WForm..TntButton2..Caption
-#: WelcomeForm.dfm:599
+#: WelcomeForm.dfm:630
 msgid "Uninstall Kinneret"
 msgstr ""
 
@@ -523,13 +549,13 @@ msgstr ""
 msgid "'%s' is not a valid currency value"
 msgstr ""
 
-#: WelcomeForm.pas:137
+#: WelcomeForm.pas:155
 msgid "You are going to reboot the computer.\n"
 "In order to prevent data loss, Please close\n"
 "all running programs. Continune ?"
 msgstr ""
 
-#: WelcomeForm.pas:180
+#: WelcomeForm.pas:210
 msgid "Floppy has been successfully written.\n"
 "\nTo restart Kinneret:\n\n"
 "Make sure the Floppy and the CD are still in place,\n"
@@ -537,7 +563,7 @@ msgid "Floppy has been successfully written.\n"
 "And Reboot the computer."
 msgstr ""
 
-#: WelcomeForm.pas:189
+#: WelcomeForm.pas:219
 msgid "Welcome to GNU/Linux Kinneret.\n"
 "This program is not an installation Program,\n"
 "because Kinneret doesn't need to be installed.\n"
@@ -550,7 +576,7 @@ msgid "Welcome to GNU/Linux Kinneret.\n"
 "Hard-Drive."
 msgstr ""
 
-#: WelcomeForm.pas:199
+#: WelcomeForm.pas:229
 msgid "Kinneret was successfully installed.\n"
 "\nIn order to start Kinneret:\n"
 "If you installed a Desktop Shortcut, just launch it, and\n"
@@ -564,7 +590,7 @@ msgid "Kinneret was successfully installed.\n"
 msgstr ""
 
 #. Seperating Line to words
-#: WelcomeForm.pas:237
+#: WelcomeForm.pas:267
 msgid "In order to enter the Advanced options, You must put your boot-floppy\n"
 "(The floppy you can make here) in drive "
 "A:"

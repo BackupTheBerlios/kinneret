@@ -5,41 +5,47 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2004-03-24 22:06\n"
-"PO-Revision-Date: 2004-03-24 22:06\n"
-"Last-Translator: Somebody <your.email@address.com>\n"
+"Project-Id-Version: boot-floppy\n"
+"POT-Creation-Date: 2004-04-01 17:14\n"
+"PO-Revision-Date: 2004-04-01 17:22+0200\n"
+"Last-Translator: Nir Misgav <nirro@linux-kinneret.org>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: dxgettext 1.1.1\n"
 
-#. FormAbout..Caption
+#  FormAbout..Caption
+#  WForm..Button1..Caption
 #: About.dfm:8
-#. WForm..Button1..Caption
-#: WelcomeForm.dfm:528
+#: WelcomeForm.dfm:544
 #: About.pas:87
 msgid "About"
 msgstr ""
 
 #. FormAbout..Font.Name
-#: About.dfm:15
 #. FormAdvanced..Font.Name
-#: Advanced.dfm:13
 #. FormWarning..Font.Name
-#: fWarning.dfm:13
 #. parinst..Font.Name
-#: ParInstall.dfm:11
 #. parinst2..Font.Name
-#: ParInstall2.dfm:11
 #. ParInst3..Font.Name
-#: ParInstall3.dfm:11
 #. MainForm..Font.Name
-#: rawwrite.dfm:15
 #. WForm..Font.Name
-#: WelcomeForm.dfm:15
 #. WForm..Label2..Font.Name
+#. WForm..LinkLabel..Font.Name
+#. WForm..RadioButton1..Font.Name
+#. WForm..RadioButton3..Font.Name
+#: About.dfm:15
+#: Advanced.dfm:13
+#: fWarning.dfm:13
+#: ParInstall.dfm:11
+#: ParInstall2.dfm:11
+#: ParInstall3.dfm:11
+#: rawwrite.dfm:15
+#: WelcomeForm.dfm:15
 #: WelcomeForm.dfm:142
+#: WelcomeForm.dfm:516
+#: WelcomeForm.dfm:578
+#: WelcomeForm.dfm:617
 msgid "MS Sans Serif"
 msgstr ""
 
@@ -63,9 +69,9 @@ msgid "Warning"
 msgstr ""
 
 #. MainForm..Caption
-#: rawwrite.dfm:8
 #. WForm..WriteButton..Caption
-#: WelcomeForm.dfm:510
+#: rawwrite.dfm:8
+#: WelcomeForm.dfm:526
 #: rawwrite.pas:254
 msgid "Make a bootable floppy"
 msgstr ""
@@ -85,56 +91,100 @@ msgstr ""
 msgid "Arial"
 msgstr ""
 
+#. WForm..LinkLabel..Caption
+#: WelcomeForm.dfm:512
+msgid "For detailed user guide press here."
+msgstr ""
+
 #. WForm..Button3..Caption
-#: WelcomeForm.dfm:519
+#: WelcomeForm.dfm:535
 msgid "Exit"
 msgstr ""
 
 #. WForm..Button2..Caption
-#: WelcomeForm.dfm:537
+#: WelcomeForm.dfm:553
 msgid "Reboot"
 msgstr ""
 
 #. WForm..RadioButton2..Caption
-#: WelcomeForm.dfm:547
+#: WelcomeForm.dfm:563
 msgid "English"
 msgstr ""
 
+#. WForm..RadioButton1..Caption
+#: WelcomeForm.dfm:574
+msgid "עברית"
+msgstr ""
+
+#. WForm..RadioButton1..Caption_UTF7
+#: WelcomeForm.dfm:584
+msgid "+BeIF0QXoBdkF6g"
+msgstr ""
+
 #. WForm..ButtonAdvanced..Hint
-#: WelcomeForm.dfm:567
-msgid "Advanced options for editing kernel "
-"parameters"
+#: WelcomeForm.dfm:591
+msgid "Advanced options for editing kernel parameters"
 msgstr ""
 
 #. WForm..ButtonAdvanced..Caption
-#: WelcomeForm.dfm:568
+#: WelcomeForm.dfm:592
 msgid "Advanced"
 msgstr ""
 
 #. WForm..TntButton1..Caption
-#: WelcomeForm.dfm:579
+#: WelcomeForm.dfm:603
 msgid "Hard-Drive Operation"
 msgstr ""
 
+#. WForm..RadioButton3..Caption
+#: WelcomeForm.dfm:613
+msgid "русский"
+msgstr ""
+
+#. WForm..RadioButton3..Caption_UTF7
+#: WelcomeForm.dfm:623
+msgid "+BEAEQwRBBEEEOgQ4BDk"
+msgstr ""
+
+#. WForm..TntButton2..Caption
+#: WelcomeForm.dfm:630
+msgid "Uninstall Kinneret"
+msgstr ""
+
 #: About.pas:85
-msgid "Kinneret's Boot Floppy Maker,\n"
+msgid ""
+"Kinneret's Boot Floppy Maker,\n"
 "And \"HD operation\" wizard.\n"
-"\nVersion: %s,\nDate: %s,\nWritten by: Nir Misgav.\nEmail: %s\n"
+"\n"
+"Version: %s,\n"
+"Date: %s,\n"
+"Written by: Nir Misgav.\n"
+"Email: %s\n"
 "All rights reserved to\n"
 "GNU/Linux Kinneret,\n"
 "http://www.linux-kinneret.org\n"
 "Lincense: GPL.\n"
-"\nFirst version (0.1) was\nbased on: RawWriteWin-0.7,\n"
+"\n"
+"First version (0.1) was\n"
+"based on: RawWriteWin-0.7,\n"
 "Written by: John Newbigin,\n"
-"\nGraphics made with: TGIFImage,\nAuthor: Andres Melander,\n"
+"\n"
+"Graphics made with: TGIFImage,\n"
+"Author: Andres Melander,\n"
 "Ported to D7 by: Finn Tolderlund.\n"
 "License: See TGIFImage.hlp,\n"
 "under section : License.\n"
-"\nUnicode Libraries from:\nTnt Unicode Controls,\n"
+"\n"
+"Unicode Libraries from:\n"
+"Tnt Unicode Controls,\n"
 "by Tnt Software Products.\n"
 "License: Unspecific open source,\n"
 "See: TntUnicode.txt.\n"
-"\n\"HD Operation\" wizard is using:\nGRUBINSTALL ver:9b\nby: Lode Leroy,\n\n"
+"\n"
+"\"HD Operation\" wizard is using:\n"
+"GRUBINSTALL ver:9b\n"
+"by: Lode Leroy,\n"
+"\n"
 "and LOADLIN ver:1.6c\n"
 "by: Hans Lermen."
 msgstr ""
@@ -144,11 +194,12 @@ msgid "Really remove %s ?"
 msgstr ""
 
 #: Advanced.pas:70
-msgid "These options are for advanced users only\n"
+msgid ""
+"These options are for advanced users only\n"
 "You can ruin the boot-floppy easily here.\n"
-"\nYou can change the kernel parameters here,\n"
-"These parameters will be saved in the floppy, for future "
-"boot-ups."
+"\n"
+"You can change the kernel parameters here,\n"
+"These parameters will be saved in the floppy, for future boot-ups."
 msgstr ""
 
 #: Advanced.pas:71
@@ -156,8 +207,7 @@ msgid "Advanced options"
 msgstr ""
 
 #: Advanced.pas:72
-msgid "To add a new key, insert the key name and press "
-"Enter."
+msgid "To add a new key, insert the key name and press Enter."
 msgstr ""
 
 #: Advanced.pas:73
@@ -174,7 +224,7 @@ msgstr ""
 
 #: Advanced.pas:76
 #: fWarning.pas:71
-#: ParInstall2.pas:79
+#: ParInstall2.pas:83
 #: rawwrite.pas:256
 msgid "Cancel"
 msgstr ""
@@ -200,8 +250,7 @@ msgid "Error - You can't enter spaces"
 msgstr ""
 
 #: Advanced.pas:102
-msgid "This key is already in the list, Edit it "
-"instead."
+msgid "This key is already in the list, Edit it instead."
 msgstr ""
 
 #: Advanced.pas:124
@@ -209,12 +258,12 @@ msgid "Save changes and exit ?"
 msgstr ""
 
 #: Advanced.pas:139
-msgid "Unable to save changes,\n"
-"Verify the floppy is in place and try "
-"again."
+msgid ""
+"Unable to save changes,\n"
+"Verify the floppy is in place and try again."
 msgstr ""
 
-#: checkOS.pas:36
+#: checkOS.pas:37
 msgid "Unable to find Windows version"
 msgstr ""
 
@@ -252,20 +301,23 @@ msgid "Hard-Drive Operation Wizard"
 msgstr ""
 
 #: ParInstall.pas:49
-msgid "What is \"Hard-Drive Operation\" ?\n"
-"\nYou can work with GNU/Linux Kinneret from the CD, without\n"
+msgid ""
+"What is \"Hard-Drive Operation\" ?\n"
+"\n"
+"You can work with GNU/Linux Kinneret from the CD, without\n"
 "installing it to the hard-drive.\n"
-"\n\"HD Operation\" can copy the system into the Hard-Drive, and\n"
+"\n"
+"\"HD Operation\" can copy the system into the Hard-Drive, and\n"
 "enable the work from there. This method will improve speed,\n"
 "and performance, and also frees the CD driver for other uses\n"
 "(like listening to music CD's).\n"
-"\nFor your knoledge, \"HD Operation\" is not a complete system\n"
+"\n"
+"For your knoledge, \"HD Operation\" is not a complete system\n"
 "installation, therefore it does not require partitioning and,\n"
 "doesn't allow installation of more progrmas.\n"
 "A \"HD installation\" will be hopefully available in the future.\n"
 "\n"
-"Do you want to make a Hard-Drive Operation "
-"?"
+"Do you want to make a Hard-Drive Operation ?"
 msgstr ""
 
 #: ParInstall.pas:51
@@ -273,87 +325,88 @@ msgid "Not now, thanks"
 msgstr ""
 
 #: ParInstall.pas:63
-msgid "Warning - This installation method is still HIGHLY EXPERIMENTAL.\n"
+msgid ""
+"Warning - This installation method is still HIGHLY EXPERIMENTAL.\n"
 "Continue at your own risk."
 msgstr ""
 
 #: ParInstall2.pas:53
-msgid "You are using Windows Me.\n"
+msgid ""
+"You are using Windows Me.\n"
 "Unfortunately Microsoft disabled Real Dos-Mode in this version,\n"
 "so you won't be able to start Kinneret without the Kinneret CD,\n"
 "or Kinneret Boot-Floppy.\n"
 "\n"
-"To learn more, search Google for : Windows Millenium Real "
-"Dos."
+"To learn more, search Google for : Windows Millenium Real Dos."
 msgstr ""
 
-#: ParInstall2.pas:78
+#: ParInstall2.pas:82
 msgid "Hard-Drive Operation options"
 msgstr ""
 
-#: ParInstall2.pas:80
+#: ParInstall2.pas:84
 msgid "Start Installation"
 msgstr ""
 
-#: ParInstall2.pas:81
-msgid "Choose a drive to install GNU/Linux Kinneret "
-":"
+#: ParInstall2.pas:85
+msgid "Choose a drive to install GNU/Linux Kinneret :"
 msgstr ""
 
-#: ParInstall2.pas:83
-msgid "Note: In some cases, a small directory will be created in\n"
-"drive C:, even if you choose another "
-"drive."
-msgstr ""
-
-#: ParInstall2.pas:88
-msgid "In order to start Kinneret, you can always boot with the\n"
-"Kinneret CD, or with a Boot-Floppy. After booting, Kinneret\n"
-"continues to load from the Hard-Drive automatically.\n"
-"However, if you rather not use the CD at all, You can\n"
-"choose one or more of the next options (recommended) "
-":"
-msgstr ""
-
-#: ParInstall2.pas:89
-msgid "1. Drive Options"
-msgstr ""
-
-#: ParInstall2.pas:90
-msgid "2. Boot Options"
-msgstr ""
-
-#: ParInstall2.pas:91
-msgid "Desktop shortcut (Windows 95,98)"
+#: ParInstall2.pas:87
+msgid ""
+"Note: In some cases, a small directory will be created in\n"
+"drive C:, even if you choose another drive."
 msgstr ""
 
 #: ParInstall2.pas:92
-msgid "Boot Menu (Windows 95,98, NT,2000, XP)"
+msgid ""
+"In order to start Kinneret, you can always boot with the\n"
+"Kinneret CD, or with a Boot-Floppy. After booting, Kinneret\n"
+"continues to load from the Hard-Drive automatically.\n"
+"However, if you rather not use the CD at all, You can\n"
+"choose one or more of the next options (recommended) :"
 msgstr ""
 
 #: ParInstall2.pas:93
-msgid "Drive"
+msgid "1. Drive Options"
 msgstr ""
 
 #: ParInstall2.pas:94
+msgid "2. Boot Options"
+msgstr ""
+
+#: ParInstall2.pas:96
+msgid "Desktop shortcut (Windows 95,98)"
+msgstr ""
+
+#: ParInstall2.pas:97
+msgid "Boot Menu (Windows 95,98, NT,2000, XP)"
+msgstr ""
+
+#: ParInstall2.pas:99
+msgid "Drive"
+msgstr ""
+
+#: ParInstall2.pas:100
 msgid "Free space before inst."
 msgstr ""
 
-#: ParInstall2.pas:95
+#: ParInstall2.pas:101
 msgid "Free space after inst."
 msgstr ""
 
 #. Not enough free space
-#: ParInstall2.pas:183
-msgid "Not enough free space on drive %s:\n"
+#: ParInstall2.pas:189
+msgid ""
+"Not enough free space on drive %s:\n"
 "Choose another one."
 msgstr ""
 
 #. not enough space in C: (rare)
 #: ParInstall3.pas:102
-msgid "Drive C: is full, Unable to copy files.\n"
-"Free up some space, or try again without Boot "
-"Options."
+msgid ""
+"Drive C: is full, Unable to copy files.\n"
+"Free up some space, or try again without Boot Options."
 msgstr ""
 
 #. Copying all files
@@ -363,18 +416,21 @@ msgstr ""
 
 #. Windows NT Create Menu with GRUB
 #: ParInstall3.pas:121
-msgid "Error, Can't find C:\\boot.ini\n"
+msgid ""
+"Error, Can't find C:\\boot.ini\n"
 "Unable to install Boot-Menu."
 msgstr ""
 
 #: ParInstall3.pas:134
-msgid "Error, Can't modify C:\\boot.ini\n"
+msgid ""
+"Error, Can't modify C:\\boot.ini\n"
 "Unable to install Boot-Menu."
 msgstr ""
 
 #. Remove old boot-menu windows NT
 #: ParInstall3.pas:148
-msgid "An old Boot-Menu was detected on your system,\n"
+msgid ""
+"An old Boot-Menu was detected on your system,\n"
 "Would you like to remove it ?"
 msgstr ""
 
@@ -387,7 +443,8 @@ msgid "Installation failed."
 msgstr ""
 
 #: ParInstall3.pas:174
-msgid "Please wait while installing Kinneret,\n"
+msgid ""
+"Please wait while installing Kinneret,\n"
 "this may take several minutes..."
 msgstr ""
 
@@ -397,34 +454,38 @@ msgstr ""
 
 #. Assume there is an error
 #: ParInstall3.pas:288
-msgid "Another Boot-Menu which is not related to Kinneret was\n"
+msgid ""
+"Another Boot-Menu which is not related to Kinneret was\n"
 "detected on your system.\n"
 "Kinneret boot-menu cannot be installed."
 msgstr ""
 
 #: ParInstall3.pas:294
-msgid "There is an old Kinneret Boot-Menu installed,\n"
+msgid ""
+"There is an old Kinneret Boot-Menu installed,\n"
 "would you like to overwrite it ?"
 msgstr ""
 
 #: ParInstall3.pas:304
-msgid "It seems that there is an old Kinneret Boot-Menu installed,\n"
+msgid ""
+"It seems that there is an old Kinneret Boot-Menu installed,\n"
 "but it is corrupted."
 msgstr ""
 
 #. result is not error
 #: ParInstall3.pas:319
-msgid "There is an unknown problem with the "
-"Boot-Menu."
+msgid "There is an unknown problem with the Boot-Menu."
 msgstr ""
 
 #: ParInstall3.pas:347
-msgid "There is an old Kinneret Boot-Menu installed,\n"
+msgid ""
+"There is an old Kinneret Boot-Menu installed,\n"
 "Do you want to remove it ?"
 msgstr ""
 
 #: rawwrite.pas:100
-msgid "Warning - All the data in this floppy will be erased.\n"
+msgid ""
+"Warning - All the data in this floppy will be erased.\n"
 "Do you want to continune ?"
 msgstr ""
 
@@ -434,8 +495,7 @@ msgid "Making disk, Please wait..."
 msgstr ""
 
 #: rawwrite.pas:177
-msgid "Error - Floppy is not found on drive "
-"A:"
+msgid "Error - Floppy is not found on drive A:"
 msgstr ""
 
 #: rawwrite.pas:178
@@ -443,13 +503,11 @@ msgid "Error - The floppy is write protected"
 msgstr ""
 
 #: rawwrite.pas:179
-msgid "Error - The floppy is being used by another "
-"process"
+msgid "Error - The floppy is being used by another process"
 msgstr ""
 
 #: rawwrite.pas:180
-msgid "Error - The floppy is defected, Try another "
-"floppy"
+msgid "Error - The floppy is defected, Try another floppy"
 msgstr ""
 
 #: rawwrite.pas:182
@@ -457,9 +515,9 @@ msgid "Unknown Error - No'-"
 msgstr ""
 
 #: rawwrite.pas:185
-msgid "Error - Unable to write to disk,\n"
-"Please verify that the disk is in drive and not write "
-"protected."
+msgid ""
+"Error - Unable to write to disk,\n"
+"Please verify that the disk is in drive and not write protected."
 msgstr ""
 
 #: rawwrite.pas:200
@@ -489,8 +547,7 @@ msgstr ""
 
 #. Programmer's name for it: SMismatchedArgumentTypes
 #: TntFormatStrUtils.pas:36
-msgid "Argument types for index %d do not match. (%s <> "
-"%s)"
+msgid "Argument types for index %d do not match. (%s <> %s)"
 msgstr ""
 
 #. Programmer's name for it: SMismatchedArgumentCounts
@@ -514,50 +571,60 @@ msgstr ""
 msgid "'%s' is not a valid currency value"
 msgstr ""
 
-#: WelcomeForm.pas:134
-msgid "You are going to reboot the computer.\n"
+#: WelcomeForm.pas:155
+msgid ""
+"You are going to reboot the computer.\n"
 "In order to prevent data loss, Please close\n"
 "all running programs. Continune ?"
 msgstr ""
 
-#: WelcomeForm.pas:177
-msgid "Floppy has been successfully written.\n"
-"\nTo restart Kinneret:\n\n"
+#: WelcomeForm.pas:210
+msgid ""
+"Floppy has been successfully written.\n"
+"\n"
+"To restart Kinneret:\n"
+"\n"
 "Make sure the Floppy and the CD are still in place,\n"
 "Close any running programs\n"
 "And Reboot the computer."
 msgstr ""
 
-#: WelcomeForm.pas:186
-msgid "Welcome to GNU/Linux \"Kinneret\".\n"
+#: WelcomeForm.pas:219
+msgid ""
+"Welcome to GNU/Linux Kinneret.\n"
 "This program is not an installation Program,\n"
 "because Kinneret doesn't need to be installed.\n"
 "To start Kinneret, You should boot the computer\n"
 "from the Kinneret CD.\n"
-"\nIf You can't or don't know how to boot from CD,\n"
+"\n"
+"If You can't or don't know how to boot from CD,\n"
 "You can make a bootable floppy here.\n"
-"\nNEW: You can now make a \"Hard-Drive Operation\",\n"
-"if you want to work with Kinneret from the "
-"Hard-Drive."
-msgstr ""
+"\n"
+"NEW: You can now make a \"Hard-Drive Operation\",\n"
+"if you want to work with Kinneret from the Hard-Drive."
+msgstr "Russian translation is not available yet."
 
-#: WelcomeForm.pas:196
-msgid "Kinneret was successfully installed.\n"
-"\nIn order to start Kinneret:\n"
+#: WelcomeForm.pas:229
+msgid ""
+"Kinneret was successfully installed.\n"
+"\n"
+"In order to start Kinneret:\n"
 "If you installed a Desktop Shortcut, just launch it, and\n"
 "answer 'Ok' on the message.\n"
-"\nIf you installed a Boot-Menu, you should reboot, and\n"
+"\n"
+"If you installed a Boot-Menu, you should reboot, and\n"
 "choose 'GNU/Linux Kinneret' in the Menu that appears\n"
 "on boot time.\n"
-"\nIf you haven't installed any of these boot options,\n"
+"\n"
+"If you haven't installed any of these boot options,\n"
 "just start Kinneret regularly, with the Kinneret CD,\n"
 "or with a Boot-Floppy."
 msgstr ""
 
 #. Seperating Line to words
-#: WelcomeForm.pas:234
-msgid "In order to enter the Advanced options, You must put your boot-floppy\n"
-"(The floppy you can make here) in drive "
-"A:"
+#: WelcomeForm.pas:267
+msgid ""
+"In order to enter the Advanced options, You must put your boot-floppy\n"
+"(The floppy you can make here) in drive A:"
 msgstr ""
 

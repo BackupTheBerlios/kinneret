@@ -55,7 +55,7 @@ end;
 
 procedure Tparinst2.FormShow(Sender: TObject);
 begin
-  if GetCurrentLanguage='he' then begin
+  if (GetCurrentLanguage='he') or (GetCurrentLanguage='ar') then begin
     LabelChoose.Alignment:=taRightJustify;
     LabelBoot.Alignment:=taRightJustify;
     LabelNote.Alignment:=taRightJustify;
@@ -69,15 +69,16 @@ begin
     LBDesktop.Alignment:=taLeftJustify;
     LBMenu.Alignment:=taLeftJustify;
   end;
-  if (GetCurrentLanguage='he') or (GetCurrentLanguage='iw') then
+  if (GetCurrentLanguage='he') or (GetCurrentLanguage='iw')
+  or (GetCurrentLanguage='ar') or (GetCurrentLanguage='ac')then
   begin
     CBDesktop.Left:=320;
     CBMenu.Left:=320;
   end else begin
-  CBDesktop.Left:=16;
+    CBDesktop.Left:=16;
     CBMenu.Left:=16;
   end;
-  if GetCurrentLanguage='iw' then BidiMode:=bdRightToLeft
+  if (GetCurrentLanguage='iw') or (GetCurrentLanguage='ac') then BidiMode:=bdRightToLeft
   else Bidimode:=bdLeftToRight;
   Caption:=pWideChar(_('Hard-Drive Operation options'));
   ButtonCancel.Caption:=pwideChar(_('Cancel'));

@@ -51,9 +51,9 @@ end;
 
 procedure TFormAbout.FormShow(Sender: TObject);
 begin
-    if GetCurrentLanguage='iw' then BidiMode:=bdRightToLeft
+    if (GetCurrentLanguage='iw') or (GetCurrentLanguage='ac') then BidiMode:=bdRightToLeft
     else Bidimode:=bdLeftToRight;
-    if GetCurrentLanguage='he' then memo1.Alignment:=taRightJustify
+    if (GetCurrentLanguage='he') or (GetCurrentLanguage='ar') then memo1.Alignment:=taRightJustify
     else memo1.Alignment:=taLeftJustify;
     memo1.Text:=wideFormat(_('Kinneret''s Boot Floppy Maker,'+#10#13+
     'And "HD operation" wizard.'+#10#13+#10#13+
@@ -83,9 +83,9 @@ begin
     'by: Lode Leroy,'+#10#13+#10#13+
     'and LOADLIN ver:1.6c'+#10#13+
     'by: Hans Lermen.'),[version,date,email]);
-
     Caption:=PWideChar(_('About'));
     Button1.Caption:=PWideChar(_('Close'));
+    memo1.SetFocus;
 end;
 
 end.

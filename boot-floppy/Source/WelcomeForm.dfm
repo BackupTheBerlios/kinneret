@@ -6,7 +6,7 @@ object WForm: TWForm
   BorderStyle = bsDialog
   BorderWidth = 25
   Caption = 'Welcome to GNU/Linux "Kinneret"'
-  ClientHeight = 369
+  ClientHeight = 377
   ClientWidth = 465
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -115,9 +115,9 @@ object WForm: TWForm
   PixelsPerInch = 96
   TextHeight = 13
   object label1: TTntLabel
-    Left = 72
+    Left = 88
     Top = 0
-    Width = 385
+    Width = 369
     Height = 42
     Alignment = taRightJustify
     BiDiMode = bdLeftToRight
@@ -145,7 +145,7 @@ object WForm: TWForm
   end
   object Image1: TImage
     Left = 0
-    Top = 56
+    Top = 48
     Width = 156
     Height = 200
     AutoSize = True
@@ -504,7 +504,7 @@ object WForm: TWForm
   end
   object LinkLabel: TTntLabel
     Left = 176
-    Top = 240
+    Top = 248
     Width = 281
     Height = 17
     Cursor = crHandPoint
@@ -519,18 +519,18 @@ object WForm: TWForm
     OnClick = LinkLabelClick
   end
   object WriteButton: TTntButton
-    Left = 184
-    Top = 288
-    Width = 137
+    Left = 336
+    Top = 296
+    Width = 129
     Height = 33
     Caption = 'Make a bootable floppy'
     TabOrder = 0
     OnClick = WriteButtonClick
   end
   object Button3: TTntButton
-    Left = 0
-    Top = 336
-    Width = 81
+    Left = 80
+    Top = 344
+    Width = 97
     Height = 33
     Caption = 'Exit'
     TabOrder = 1
@@ -538,7 +538,7 @@ object WForm: TWForm
   end
   object Button1: TTntButton
     Left = 0
-    Top = 288
+    Top = 248
     Width = 49
     Height = 25
     Caption = 'About'
@@ -546,8 +546,8 @@ object WForm: TWForm
     OnClick = Button1Click
   end
   object Button2: TTntButton
-    Left = 104
-    Top = 336
+    Left = 80
+    Top = 296
     Width = 97
     Height = 33
     Caption = 'Reboot'
@@ -555,9 +555,9 @@ object WForm: TWForm
     OnClick = Button2Click
   end
   object RadioButton2: TTntRadioButton
-    Left = 56
-    Top = 288
-    Width = 57
+    Left = 0
+    Top = 320
+    Width = 65
     Height = 17
     BiDiMode = bdLeftToRight
     Caption = 'English'
@@ -566,11 +566,12 @@ object WForm: TWForm
     OnClick = RadioButton2Click
   end
   object RadioButton1: TTntRadioButton
-    Left = 56
-    Top = 272
-    Width = 57
+    Left = 0
+    Top = 304
+    Width = 65
     Height = 17
     BiDiMode = bdLeftToRight
+    Caption = #1506#1489#1512#1497#1514
     Font.Charset = HEBREW_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -580,11 +581,12 @@ object WForm: TWForm
     ParentFont = False
     TabOrder = 5
     OnClick = RadioButton1Click
+    Caption_UTF7 = '+BeIF0QXoBdkF6g'
   end
   object ButtonAdvanced: TTntButton
-    Left = 224
-    Top = 336
-    Width = 97
+    Left = 200
+    Top = 344
+    Width = 113
     Height = 33
     Hint = 'Advanced options for editing kernel parameters'
     Caption = 'Advanced'
@@ -594,21 +596,21 @@ object WForm: TWForm
     OnClick = ButtonAdvancedClick
   end
   object TntButton1: TTntButton
-    Left = 344
-    Top = 288
-    Width = 121
+    Left = 336
+    Top = 344
+    Width = 129
     Height = 33
     Caption = 'Hard-Drive Operation'
     TabOrder = 7
     OnClick = TntButton1Click
   end
   object RadioButton3: TTntRadioButton
-    Left = 56
-    Top = 304
-    Width = 57
+    Left = 0
+    Top = 336
+    Width = 65
     Height = 17
     BiDiMode = bdLeftToRight
-    Caption = 'Russian'
+    Caption = #1088#1091#1089#1089#1082#1080#1081
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -618,13 +620,26 @@ object WForm: TWForm
     ParentFont = False
     TabOrder = 8
     OnClick = RadioButton3Click
+    Caption_UTF7 = '+BEAEQwRBBEEEOgQ4BDk'
   end
   object TntButton2: TTntButton
-    Left = 344
-    Top = 336
-    Width = 121
+    Left = 200
+    Top = 296
+    Width = 113
     Height = 33
     Caption = 'Uninstall Kinneret'
     TabOrder = 9
+  end
+  object RadioButton4: TTntRadioButton
+    Left = 0
+    Top = 352
+    Width = 65
+    Height = 17
+    BiDiMode = bdLeftToRight
+    Caption = #65165#65247#65228#65198#65169#65268#65172
+    ParentBiDiMode = False
+    TabOrder = 10
+    OnClick = RadioButton4Click
+    Caption_UTF7 = '+/o3+3/7M/q7+kf70/pQ'
   end
 end
