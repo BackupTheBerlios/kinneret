@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: boot-floppy-0.2b\n"
+"Project-Id-Version: 0.7\n"
 "POT-Creation-Date: 2004-03-01 20:55\n"
-"PO-Revision-Date: 2004-04-02 02:01+0200\n"
+"PO-Revision-Date: 2004-04-02 20:50+0200\n"
 "Last-Translator: Nir Misgav <nirro@linux-kinneret.org>\n"
 "Language-Team: Nir Misgav <nirro@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -20,14 +20,10 @@ msgstr ""
 #  WForm..Button1..Caption
 #  FormAbout..Caption
 #  WForm..Button1..Caption
-#  FormAbout..Caption
-#  WForm..Button1..Caption
-#  FormAbout..Caption
-#  WForm..Button1..Caption
 #. FormAbout..Caption
 #. WForm..Button1..Caption
 #: About.dfm:8
-#: WelcomeForm.dfm:544
+#: WelcomeForm.dfm:528
 #: About.pas:87
 msgid "About"
 msgstr "אודות"
@@ -117,45 +113,6 @@ msgstr "אודות"
 #  MainForm..Font.Name
 #  WForm..Font.Name
 #  WForm..Label2..Font.Name
-#  FormAbout..Font.Name
-#  FormAdvanced..Font.Name
-#  FormWarning..Font.Name
-#  parinst..Font.Name
-#  parinst2..Font.Name
-#  ParInst3..Font.Name
-#  MainForm..Font.Name
-#  WForm..Font.Name
-#  WForm..Label2..Font.Name
-#  FormAbout..Font.Name
-#  FormAdvanced..Font.Name
-#  FormWarning..Font.Name
-#  parinst..Font.Name
-#  parinst2..Font.Name
-#  ParInst3..Font.Name
-#  MainForm..Font.Name
-#  WForm..Font.Name
-#  WForm..Label2..Font.Name
-#  FormAbout..Font.Name
-#  FormAdvanced..Font.Name
-#  FormWarning..Font.Name
-#  parinst..Font.Name
-#  parinst2..Font.Name
-#  ParInst3..Font.Name
-#  MainForm..Font.Name
-#  WForm..Font.Name
-#  WForm..Label2..Font.Name
-#  FormAbout..Font.Name
-#  FormAdvanced..Font.Name
-#  FormWarning..Font.Name
-#  parinst..Font.Name
-#  parinst2..Font.Name
-#  ParInst3..Font.Name
-#  MainForm..Font.Name
-#  WForm..Font.Name
-#  WForm..Label2..Font.Name
-#  WForm..LinkLabel..Font.Name
-#  WForm..RadioButton1..Font.Name
-#  WForm..RadioButton3..Font.Name
 #: About.dfm:15
 #: Advanced.dfm:13
 #: fWarning.dfm:13
@@ -165,14 +122,14 @@ msgstr "אודות"
 #: rawwrite.dfm:15
 #: WelcomeForm.dfm:15
 #: WelcomeForm.dfm:142
-#: WelcomeForm.dfm:516
-#: WelcomeForm.dfm:578
-#: WelcomeForm.dfm:617
 msgid "MS Sans Serif"
-msgstr ""
+msgstr "למדריך מפורט יש ללחוץ כאן."
 
 #  FormAbout..Button1..Caption
 #  ParInst3..ButtonClose..Caption
+#  FormAbout..Button1..Caption
+#  ParInst3..ButtonClose..Caption
+#  FormAbout..Button1..Caption
 #  FormAbout..Button1..Caption
 #  FormAbout..Button1..Caption
 #. FormAbout..Button1..Caption
@@ -186,11 +143,13 @@ msgstr "סגור"
 #  FormAdvanced..ParamList..Hint
 #  FormAdvanced..ParamList..Hint
 #  FormAdvanced..ParamList..Hint
+#  FormAdvanced..ParamList..Hint
 #. FormAdvanced..ParamList..Hint
 #: Advanced.dfm:42
 msgid "Edit the Values here"
 msgstr "עריכת הערכים"
 
+#  FormWarning..Caption
 #  FormWarning..Caption
 #  FormWarning..Caption
 #  FormWarning..Caption
@@ -204,10 +163,12 @@ msgstr "אזהרה"
 #  WForm..WriteButton..Caption
 #  MainForm..Caption
 #  WForm..WriteButton..Caption
+#  MainForm..Caption
+#  WForm..WriteButton..Caption
 #. MainForm..Caption
 #. WForm..WriteButton..Caption
 #: rawwrite.dfm:8
-#: WelcomeForm.dfm:526
+#: WelcomeForm.dfm:510
 #: rawwrite.pas:254
 msgid "Make a bootable floppy"
 msgstr "הכנת תקליטון הפעלה"
@@ -216,8 +177,6 @@ msgstr "הכנת תקליטון הפעלה"
 #  WForm..Caption
 #  WForm..Caption
 #  WForm..Caption
-#  WForm..Caption
-#. WForm..Caption
 #: WelcomeForm.dfm:8
 msgid "Welcome to GNU/Linux \"Kinneret\""
 msgstr "ברוכים הבאים לגנו/לינוקס כנרת"
@@ -225,87 +184,70 @@ msgstr "ברוכים הבאים לגנו/לינוקס כנרת"
 #  WForm..label1..Caption
 #  WForm..label1..Caption
 #  WForm..label1..Caption
-#. WForm..label1..Caption
+#  WForm..label1..Caption
 #: WelcomeForm.dfm:124
 msgid "Welcome to \"Kinneret\""
 msgstr "\"ברוכים הבאים ל-\"כנרת"
 
 #  WForm..label1..Font.Name
 #  WForm..label1..Font.Name
-#  WForm..label1..Font.Name
 #. WForm..label1..Font.Name
 #: WelcomeForm.dfm:128
 msgid "Arial"
-msgstr ""
-
-#  WForm..LinkLabel..Caption
-#: WelcomeForm.dfm:512
-msgid "For detailed user guide press here."
-msgstr ".למדריך מפורט יש ללחוץ כאן"
+msgstr "Arial"
 
 #  WForm..Button3..Caption
+#  WForm..Button3..Caption
 #. WForm..Button3..Caption
-#: WelcomeForm.dfm:535
+#: WelcomeForm.dfm:519
 msgid "Exit"
 msgstr "יציאה"
 
 #  WForm..Button2..Caption
+#  WForm..Button2..Caption
 #. WForm..Button2..Caption
-#: WelcomeForm.dfm:553
+#: WelcomeForm.dfm:537
 msgid "Reboot"
 msgstr "אתחול המחשב"
 
 #  WForm..RadioButton2..Caption
 #  WForm..RadioButton2..Caption
-#. WForm..RadioButton2..Caption
-#: WelcomeForm.dfm:563
+#  WForm..RadioButton2..Caption
+#: WelcomeForm.dfm:547
 msgid "English"
-msgstr ""
-
-#. WForm..RadioButton1..Caption
-#: WelcomeForm.dfm:574
-msgid "עברית"
-msgstr ""
-
-#. WForm..RadioButton1..Caption_UTF7
-#: WelcomeForm.dfm:584
-msgid "+BeIF0QXoBdkF6g"
 msgstr ""
 
 #  WForm..ButtonAdvanced..Hint
 #  WForm..ButtonAdvanced..Hint
 #. WForm..ButtonAdvanced..Hint
-#: WelcomeForm.dfm:591
+#: WelcomeForm.dfm:567
 msgid "Advanced options for editing kernel parameters"
 msgstr "אפשרויות מתקדמות לעריכת הפרמטרים הנשלחים אל הליבה בזמן האיתחול"
 
 #  WForm..ButtonAdvanced..Caption
+#  WForm..ButtonAdvanced..Caption
 #. WForm..ButtonAdvanced..Caption
-#: WelcomeForm.dfm:592
+#: WelcomeForm.dfm:568
 msgid "Advanced"
 msgstr "מתקדם"
 
 #  parinst2..TntGroupBox2..Caption
+#  parinst2..TntGroupBox2..Caption
 #  WForm..TntButton1..Caption
 #. WForm..TntButton1..Caption
-#: WelcomeForm.dfm:603
+#: WelcomeForm.dfm:579
 msgid "Hard-Drive Operation"
 msgstr "הפעלה מכונן קשיח"
 
-#. WForm..RadioButton3..Caption
-#: WelcomeForm.dfm:613
-msgid "русский"
-msgstr ""
-
-#. WForm..RadioButton3..Caption_UTF7
-#: WelcomeForm.dfm:623
-msgid "+BEAEQwRBBEEEOgQ4BDk"
+#. WForm..TntRadioButton1..Caption
+#: WelcomeForm.dfm:589
+msgid "Russian"
 msgstr ""
 
 #  ParInst3..Caption
+#  ParInst3..Caption
 #  WForm..TntButton2..Caption
-#. WForm..TntButton2..Caption
-#: WelcomeForm.dfm:630
+#: WelcomeForm.dfm:599
 msgid "Uninstall Kinneret"
 msgstr "הסרת כנרת"
 
@@ -346,45 +288,45 @@ msgid ""
 "and LOADLIN ver:1.6c\n"
 "by: Hans Lermen."
 msgstr ""
-",מכין תקליטון ההפעלה של כנרת\n"
-".\"ואשף \"הפעלה מכונן קשיח\n"
+"מכין תקליטון ההפעלה של כנרת,\n"
+"ואשף \"הפעלה מכונן קשיח\".\n"
 "\n"
-",%s : גרסה\n"
-",%s :מתאריך\n"
-".נכתב ע\"י: ניר משגב\n"
-",%s :דוא\"ל\n"
+"גרסה: %s\n"
+"מתאריך: %s,\n"
+"נכתב ע\"י: ניר משגב.\n"
+"דוא\"ל: %s,\n"
 "כל הזכויות שמורות\n"
-",לגנו/לינוקס כנרת\n"
+"לגנו/לינוקס כנרת,\n"
 "http://www.linux-kinneret.org\n"
-".GPL :רשיון\n"
+"רשיון: GPL.\n"
 "\n"
-"(הגרסה הראשונה (0.1\n"
-",RawWriteWin-0.7 :מבוססת על\n"
-".John Newbigin :אשר נכתב ע\"י\n"
+"הגרסה הראשונה (0.1)\n"
+"מבוססת על: RawWriteWin-0.7,\n"
+"אשר נכתב ע\"י: John Newbigin.\n"
 "\n"
-",TGIFImage: ספריית גרפיקה\n"
-",Andres Melander :נכתבה ע\"י\n"
-".Finn Torbelund: הוסבה לדלפי 7 ע\"י\n"
-",TGIFImage.hlp רשיון: ראה\n"
-".License :בסעיף\n"
+"ספריית הגרפיקה: TGIFImage,\n"
+"נכתבה ע\"י: Andres Melander,\n"
+"הוסבה לדלפי 7 ע\"י: Finn Torbelund,\n"
+"רשיון: ראה TGIFImage.hlp,\n"
+"בסעיף: License.\n"
 "\n"
-":ספריית יוניקוד\n"
-",Tnt Unicode Controls\n"
-".Tnt Software Products ע\"י\n"
-",(רשיון: פתוח (לא מוגדר\n"
-".TntUnicode.txt :ראה\n"
+"ספריית יוניקוד:\n"
+"Tnt Unicode Controls,\n"
+"ע\"י Tnt Software Products.\n"
+"(רשיון: פתוח (לא מוגדר,\n"
+"ראה: TntUnicode.txt.\n"
 "\n"
-":אשף \"התקנה לכונן קשיח\" נעזר ב\n"
+"אשף \"התקנה לכונן קשיח\" נעזר ב:\n"
 "\n"
-"9b :גרסה GRUBINSTALL\n"
-",Lode Leroy :אשר נכתב ע\"י\n"
+"GRUBINSTALL גרסה: b9\n"
+"אשר נכתב ע\"י: Lode Leroy,\n"
 "\n"
-"1.6c :גרסה LOADLIN -וב\n"
-".Hans Lermen :אשר נכתב ע\"י"
+"וב- LOADLIN גרסה: c1.6\n"
+"אשר נכתב ע\"י: Hans Lermen."
 
 #: Advanced.pas:48
 msgid "Really remove %s ?"
-msgstr "? %s באמת להסיר את"
+msgstr "באמת להסיר את %s ?"
 
 #: Advanced.pas:70
 msgid ""
@@ -394,11 +336,11 @@ msgid ""
 "You can change the kernel parameters here,\n"
 "These parameters will be saved in the floppy, for future boot-ups."
 msgstr ""
-",אפשרויות אלה נועדו למשתמשים מתקדמים\n"
-".ניתן להרוס את התקליטון בקלות כאן\n"
+"אפשרויות אלה נועדו למשתמשים מתקדמים,\n"
+"ניתן להרוס את התקליטון בקלות כאן.\n"
 "\n"
-",באפשרותך לשנות את הפרמטרים שנשלחים אל הליבה\n"
-".פרמטרים אלה יישמרו בתקליטון לאיתחולים עתידיים"
+"באפשרותך לשנות את הפרמטרים הנשלחים אל הליבה,\n"
+"פרמטרים אלה יישמרו בתקליטון לאיתחולים עתידיים."
 
 #: Advanced.pas:71
 msgid "Advanced options"
@@ -406,7 +348,7 @@ msgstr "אפשרויות מתקדמות"
 
 #: Advanced.pas:72
 msgid "To add a new key, insert the key name and press Enter."
-msgstr ".ENTER על מנת להוסיף מפתח, יש להכניס את שם המפתח ולחץ"
+msgstr "על מנת להוסיף מפתח, יש להכניס את שם המפתח ולחץ ENTER."
 
 #: Advanced.pas:73
 msgid "Remove key"
@@ -420,6 +362,7 @@ msgstr ": הוספת מפתח חדש"
 msgid "Remove a selected Key and his Value"
 msgstr "הסרת המפתח שנבחר וערכו"
 
+#  parinst2..ButtonCancel..Caption
 #  parinst2..ButtonCancel..Caption
 #: Advanced.pas:76
 #: fWarning.pas:71
@@ -450,19 +393,19 @@ msgstr "שגיאה - לא ניתן להכניס רווחים"
 
 #: Advanced.pas:102
 msgid "This key is already in the list, Edit it instead."
-msgstr ".המפתח כבר נמצא ברשימה, יש לערוך אותו"
+msgstr "המפתח כבר נצא ברשימה, יש לערוך אותו."
 
 #: Advanced.pas:124
 msgid "Save changes and exit ?"
-msgstr "? לשמור שינויים ולצאת"
+msgstr "לשמור את השינויים ולצאת ?"
 
 #: Advanced.pas:139
 msgid ""
 "Unable to save changes,\n"
 "Verify the floppy is in place and try again."
 msgstr ""
-",לא ניתן לשמור שינויים\n"
-".אנא וודא/י שהתקליטון עדיין בכונן ונסה/י שוב"
+"לא ניתן לשמור שינויים,\n"
+"אנא וודא שהתקליטון עדיין בכונן ונסה שוב."
 
 #: checkOS.pas:37
 msgid "Unable to find Windows version"
@@ -480,6 +423,7 @@ msgstr "ווידוא"
 msgid "No"
 msgstr "לא"
 
+#  parinst..YesButton..Caption
 #  parinst..YesButton..Caption
 #: fWarning.pas:66
 #: ParInstall.pas:50
@@ -521,23 +465,24 @@ msgid ""
 "\n"
 "Do you want to make a Hard-Drive Operation ?"
 msgstr ""
-"? \"מהי \"הפעלה מכונן קשיח\n"
+"מהי \"הפעלה מכונן קשיח\" ?\n"
 "\n"
 "ניתן להפעיל את גנו/לינוקס כנרת מהתקליטור, ללא צורך\n"
-".בהתקנת המערכת לכונן הקשיח\n"
+"בהתקנת המערכת לכונן הקשיח.\n"
 "\n"
-",הפעלה מכונן קשיח\" מעתיקה את המערכת לדיסק הקשיח\"\n"
+"\"הפעלה מכונן קשיח\" מעתיקה את המערכת לדיסק הקשיח,\n"
 "ומאפשרת את הפעלתה משם. שיטת עבודה זו משפרת את\n"
 "תגובתיות ומהירות המערכת, וכן מפנה את כונן התקליטורים\n"
-".(לשימושים אחרים (כגון האזנה לתקליטורי שמע\n"
+"לשימושים אחרים (כגון האזנה לתקליטורי שמע).\n"
 "\n"
-",לידיעתך! \"הפעלה מכונן קשיח\" אינה התקנה של המערכת\n"
+"לידיעתך! \"הפעלה מכונן קשיח\" אינה התקנה של המערכת,\n"
 "לכן אינה דורשת \"חלוקה למחיצות\", ואינה מאפשרת התקנת\n"
-"\"תוכנות נוספות. אנו מקווים לתמוך ב-\"התקנה לכונן קשיח\n"
-".בגרסה עתידית\n"
+"תוכנות נוספות. אנו מקווים לתמוך ב-\"התקנה לכונן קשיח\"\n"
+"בגרסה עתידית.\n"
 "\n"
-"? \"האם ברצונך לאפשר \"הפעלה מכונן קשיח"
+"האם ברצונך לאפשר \"הפעלה מכונן קשיח\" ? "
 
+#  parinst..NoButton..Caption
 #  parinst..NoButton..Caption
 #: ParInstall.pas:51
 msgid "Not now, thanks"
@@ -548,8 +493,8 @@ msgid ""
 "Warning - This installation method is still HIGHLY EXPERIMENTAL.\n"
 "Continue at your own risk."
 msgstr ""
-".אזהרה - תהליך התקנה זה הינו עדיין ניסיוני\n"
-".השימוש באחריותך בלבד"
+"אזהרה - תהליך התקנה זה הינו עדיין ניסיוני.\n"
+"השימוש באחריותך בלבד."
 
 #: ParInstall2.pas:53
 msgid ""
@@ -560,12 +505,22 @@ msgid ""
 "\n"
 "To learn more, search Google for : Windows Millenium Real Dos."
 msgstr ""
+"זוהתה מערכת ההפעלה : חלונות Me.\n"
+"\n"
+"בגרסה זו, מיקרוסופט ביטלה את האפשרות לבצע\n"
+"איתחול במצב Real Dos, לכן לא ניתן יהיה להפעיל\n"
+"את כנרת ללא התקליטור או תקליטון-הפעלה\n"
+"(אפשרויות האיתחול האחרות לא יעבדו).\n"
+"\n"
+"למידע נוסף, חפש/י בגוגל: Windows Millenium Real Dos."
 
+#  WForm..TntButton1..Caption
 #  WForm..TntButton1..Caption
 #: ParInstall2.pas:82
 msgid "Hard-Drive Operation options"
 msgstr "אפשרויות הפעלה מכונן קשיח"
 
+#  parinst2..ButtonStart..Caption
 #  parinst2..ButtonStart..Caption
 #: ParInstall2.pas:84
 msgid "Start Installation"
@@ -573,15 +528,15 @@ msgstr "התחל התקנה"
 
 #: ParInstall2.pas:85
 msgid "Choose a drive to install GNU/Linux Kinneret :"
-msgstr ": נא לבחור כונן להתקנת גנו/לינוקס כנרת"
+msgstr "נא לבחור כונן להתקנת גנו/לינוקס כנרת :"
 
 #: ParInstall2.pas:87
 msgid ""
 "Note: In some cases, a small directory will be created in\n"
 "drive C:, even if you choose another drive."
 msgstr ""
-",C: הערה: במקרים מסויימים, תיקייה קטנה תיווצר בכונן\n"
-".אפילו אם בחרת בכונן אחר"
+"הערה: במקרים מסויימים, תיקייה קטנה תיווצר בכונן :C,\n"
+"אפילו אם בחרת בכונן אחר."
 
 #: ParInstall2.pas:92
 msgid ""
@@ -592,41 +547,48 @@ msgid ""
 "choose one or more of the next options (recommended) :"
 msgstr ""
 "ע\"מ לאתחל את כנרת, ניתן תמיד לאתחל את המחשב\n"
-"בעזרת התקליטור, או ע\"י תקליטון-הפעלה. לאחר\n"
-".האיתחול, כנרת תעלה באופן אוטומטי מהדיסק הקשיח\n"
+"בעזרת התקליטור, או ע\"י תקליטון-הפעלה. לאחר \n"
+"האיתחול, כנרת תעלה באופן אוטומטי מהדיסק הקשיח.\n"
 "אולם, יש באפשרותך לבחור באחת או יותר משיטות\n"
-": (האיתחול הבאות (מומלץ"
+"האיתחול הבאות (מומלץ) :"
 
+#  parinst2..TntGroupBox2..Caption
 #  parinst2..TntGroupBox2..Caption
 #: ParInstall2.pas:93
 msgid "1. Drive Options"
 msgstr "1. בחירת כונן"
 
 #  parinst2..TntGroupBox1..Caption
+#  parinst2..TntGroupBox1..Caption
 #: ParInstall2.pas:94
 msgid "2. Boot Options"
 msgstr "2. אפשרויות איתחול"
 
 #  parinst2..TntGroupBox1..CBDesktop..Caption
+#  parinst2..TntGroupBox1..CBDesktop..Caption
 #: ParInstall2.pas:96
 msgid "Desktop shortcut (Windows 95,98)"
-msgstr "(קיצור דרך על שולחן העבודה (חלונות 95, 98"
+msgstr "קיצור דרך על שולחן העבודה (חלונות 95, 98)"
 
+#  parinst2..TntGroupBox1..CBMenu..Caption
 #  parinst2..TntGroupBox1..CBMenu..Caption
 #: ParInstall2.pas:97
 msgid "Boot Menu (Windows 95,98, NT,2000, XP)"
-msgstr "(XP ,2000, NT ,תפריט בזמן האיתחול (חלונות 95, 98"
+msgstr "תפריט בזמן האיתחול (חלונות 95, 98, NT, 2000, XP)"
 
+#  parinst2..TntGroupBox2..ListDrives......Caption
 #  parinst2..TntGroupBox2..ListDrives......Caption
 #: ParInstall2.pas:99
 msgid "Drive"
 msgstr "כונן"
 
 #  parinst2..TntGroupBox2..ListDrives......Caption
+#  parinst2..TntGroupBox2..ListDrives......Caption
 #: ParInstall2.pas:100
 msgid "Free space before inst."
 msgstr "פנוי לפני ההתקנה"
 
+#  parinst2..TntGroupBox2..ListDrives......Caption
 #  parinst2..TntGroupBox2..ListDrives......Caption
 #: ParInstall2.pas:101
 msgid "Free space after inst."
@@ -641,11 +603,9 @@ msgid ""
 "Not enough free space on drive %s:\n"
 "Choose another one."
 msgstr ""
-"%s: אין מספיק שטח פנוי בכונן\n"
-".בחר בכונן אחר"
+"אין מספיק שטח פנוי בכונן : %s\n"
+"בחר בכונן אחר."
 
-#  not enough space in C: (rare)
-#  not enough space in C: (rare)
 #  not enough space in C: (rare)
 #. not enough space in C: (rare)
 #: ParInstall3.pas:102
@@ -653,19 +613,16 @@ msgid ""
 "Drive C: is full, Unable to copy files.\n"
 "Free up some space, or try again without Boot Options."
 msgstr ""
-".מלא, לא ניתן להעתיק אליו קבצים C: כונן\n"
-".פנה מקום בכונן, או נסה שנית ללא אפשרויות איתחול"
+"כונן C: מלא, לא ניתן להעתיק אליו קבצים.\n"
+"פנה מקום בכונן, או נסה שנית ללא אפשרויות איתחול."
 
-#  Copying all files
-#  Copying all files
 #  Copying all files
 #  Copying all files
 #. Copying all files
 #: ParInstall3.pas:110
 msgid "Error while copying files."
-msgstr ".שגיאה בהעתקת קבצים"
+msgstr "שגיאה בהעתקת קבצים."
 
-#  Windows NT Create Menu with GRUB
 #  Windows NT Create Menu with GRUB
 #  Windows NT Create Menu with GRUB
 #. Windows NT Create Menu with GRUB
@@ -674,18 +631,17 @@ msgid ""
 "Error, Can't find C:\\boot.ini\n"
 "Unable to install Boot-Menu."
 msgstr ""
-"C:\\boot.ini שגיאה, לא מוצא את\n"
-".לא ניתן להתקין תפריט איתחול"
+"שגיאה, לא מוצא את C:\\boot.ini\n"
+"לא ניתן להתקין תפריט איתחול."
 
 #: ParInstall3.pas:134
 msgid ""
 "Error, Can't modify C:\\boot.ini\n"
 "Unable to install Boot-Menu."
 msgstr ""
-",C:\\boot.ini שגיאה, לא ניתן לעדכן את \n"
-".לא ניתן להתקין תפריט איתחול"
+"שגיאה, לא ניתן לעדכן את C:\\boot.ini,\n"
+"לא ניתן להתקין תפריט איתחול."
 
-#  Remove old boot-menu windows NT
 #  Remove old boot-menu windows NT
 #  Remove old boot-menu windows NT
 #  Remove old boot-menu windows NT
@@ -695,32 +651,31 @@ msgid ""
 "An old Boot-Menu was detected on your system,\n"
 "Would you like to remove it ?"
 msgstr ""
-",תפריט איתחול ישן כבר נמצא במערכת\n"
-"? האם ברצונך להסירו"
+"תפריט איתחול ישן כבר נמצא במערכת,\n"
+"האם ברצונך להסירו ?"
 
 #: ParInstall3.pas:164
 msgid "Installation finished successfully."
-msgstr ".ההתקנה הסתיימה בהצלחה"
+msgstr "ההתקנה הסתיימה בהצלחה."
 
 #: ParInstall3.pas:167
 msgid "Installation failed."
-msgstr ".ההתקנה נכשלה"
+msgstr "ההתקנה נכשלה."
 
 #: ParInstall3.pas:174
 msgid ""
 "Please wait while installing Kinneret,\n"
 "this may take several minutes..."
 msgstr ""
-",נא להמתין\n"
-"...ההתקנה עשויה להימשך מספר דקות"
+"נא להמתין,\n"
+"ההתקנה עשויה להימשך מספר דקות..."
 
+#  ParInst3..Caption
 #  ParInst3..Caption
 #: ParInstall3.pas:175
 msgid "Installing Kinneret"
 msgstr "מתקין את כנרת"
 
-#  Assume there is an error
-#  Assume there is an error
 #  Assume there is an error
 #. Assume there is an error
 #: ParInstall3.pas:288
@@ -729,63 +684,61 @@ msgid ""
 "detected on your system.\n"
 "Kinneret boot-menu cannot be installed."
 msgstr ""
-".תפריט איתחול אשר אינו שייך לכנרת זוהה במערכת\n"
-".לא ניתן להתקין את תפריט האיתחול של כנרת"
+"תפריט איתחול אשר אינו שייך לכנרת זהה במערכת.\n"
+"לא ניתן להתקין את תפריט האיתחול של כנרת."
 
 #: ParInstall3.pas:294
 msgid ""
 "There is an old Kinneret Boot-Menu installed,\n"
 "would you like to overwrite it ?"
 msgstr ""
-",תפריט איתחול ישן כבר נמצא במערכת\n"
-"? האם ברצונך לשכתב אותו"
+"תפריט איתחול ישן כבר נמצא במערכת,\n"
+"האם ברצונך לשכתב אותו ?"
 
 #: ParInstall3.pas:304
 msgid ""
 "It seems that there is an old Kinneret Boot-Menu installed,\n"
 "but it is corrupted."
 msgstr ""
-",נראה כי קיים תפריט איתחול של כנרת במערכת\n"
-".אולם הוא פגום"
+"נראה כי קיים תפריט איתחול של כנרת במערכת,\n"
+"אולם הוא פגום."
 
-#  result is not error
 #  result is not error
 #  result is not error
 #. result is not error
 #: ParInstall3.pas:319
 msgid "There is an unknown problem with the Boot-Menu."
-msgstr ".קרתה שגיאה לא מוכרת בתפריט האיתחול"
+msgstr "קרתה שגיאה לא מוכרת בתפריט האיתחול."
 
 #: ParInstall3.pas:347
 msgid ""
 "There is an old Kinneret Boot-Menu installed,\n"
 "Do you want to remove it ?"
 msgstr ""
-",תפריט איתחול ישן כבר נמצא במערכת\n"
-"? האם ברצונך להסירו"
+"תפריט איתחול ישן כבר נמצא במערכת,\n"
+"האם ברצונך להסירו ?"
 
 #: rawwrite.pas:100
 msgid ""
 "Warning - All the data in this floppy will be erased.\n"
 "Do you want to continune ?"
 msgstr ""
-"!אזהרה - כל המידע שבתקליטון יימחק\n"
-"?האם להמשיך"
+"אזהרה - כל המידע שבתקליטון יימחק!\n"
+"האם להמשיך?"
 
-#  read the 1st sector to settle the disk...
 #  read the 1st sector to settle the disk...
 #. read the 1st sector to settle the disk...
 #: rawwrite.pas:145
 msgid "Making disk, Please wait..."
-msgstr "...מכין את התקליטון, נא להמתין"
+msgstr "מכין את התקליטון, נא להמתין..."
 
 #: rawwrite.pas:177
 msgid "Error - Floppy is not found on drive A:"
-msgstr "A: שגיאה - אין תקליטון בכונן"
+msgstr "A: שגיאה - אין תקליטון בכונן."
 
 #: rawwrite.pas:178
 msgid "Error - The floppy is write protected"
-msgstr ".שגיאה - התקליטון מוגן בפני כתיבה"
+msgstr "שגיאה - התקליטון מוגן בפני כתיבה."
 
 #: rawwrite.pas:179
 msgid "Error - The floppy is being used by another process"
@@ -793,11 +746,11 @@ msgstr "שגיאה - הכונן תפוס ע\"י תהליך אחר"
 
 #: rawwrite.pas:180
 msgid "Error - The floppy is defected, Try another floppy"
-msgstr "שגיאה - התקליטון פגום, אנא נסה/י אחר."
+msgstr "שגיאה - התקליטון פגום, אנא נסה/י אחר"
 
 #: rawwrite.pas:182
 msgid "Unknown Error - No'-"
-msgstr "שגיאה לא ידועה - "
+msgstr " - שגיאה לא ידועה "
 
 #: rawwrite.pas:185
 msgid ""
@@ -805,28 +758,29 @@ msgid ""
 "Please verify that the disk is in drive and not write protected."
 msgstr ""
 "שגיאה - אין אפשרות לכתוב לתקליטון.\n"
-".אנא וודא/י שהתקליטון בכונן, ושאינו מוגן מכתיבה "
+"אנא וודא/י שהתקליטון בכונן, ושאינו מוגן מכתיבה."
 
 #: rawwrite.pas:200
 msgid "Error - Cannot find Drive A:"
-msgstr "A: שגיאה - אין גישה לכונן"
+msgstr "שגיאה - אין גישה לכונן :A"
 
 #: rawwrite.pas:218
 msgid "The disk was succesfully written."
-msgstr ".התקליטון הוכן בהצלחה"
+msgstr "התקליטון הוכן בהצלחה."
 
 #: rawwrite.pas:225
 msgid "Operation has faild, Please try again."
-msgstr ".הכנת התקליטון נכשלה, אנא נסה/י שנית"
+msgstr "הכנת התקליטון נכשלה, אנא נסה/י שנית."
 
 #: rawwrite.pas:252
 msgid "Please Insert a floppy to drive A:"
-msgstr "A: נא להכניס תקליטון לכונן"
+msgstr "נא להכניס תקליטון לכונן :A"
 
 #: rawwrite.pas:255
 msgid "Start"
 msgstr "התחל"
 
+#  Programmer's name for it: SInvalidFormatSpecifier
 #  Programmer's name for it: SInvalidFormatSpecifier
 #. Programmer's name for it: SInvalidFormatSpecifier
 #: TntFormatStrUtils.pas:35
@@ -834,12 +788,12 @@ msgid "Invalid Format Specifier: %s"
 msgstr ""
 
 #  Programmer's name for it: SMismatchedArgumentTypes
-#  Programmer's name for it: SMismatchedArgumentTypes
 #. Programmer's name for it: SMismatchedArgumentTypes
 #: TntFormatStrUtils.pas:36
 msgid "Argument types for index %d do not match. (%s <> %s)"
 msgstr ""
 
+#  Programmer's name for it: SMismatchedArgumentCounts
 #  Programmer's name for it: SMismatchedArgumentCounts
 #  Programmer's name for it: SMismatchedArgumentCounts
 #. Programmer's name for it: SMismatchedArgumentCounts
@@ -856,15 +810,11 @@ msgstr ""
 
 #  Programmer's name for it: SInvalidUTF7
 #  Programmer's name for it: SInvalidUTF7
-#  Programmer's name for it: SInvalidUTF7
-#  Programmer's name for it: SInvalidUTF7
 #. Programmer's name for it: SInvalidUTF7
 #: TntSystem.pas:794
 msgid "Invalid UTF7"
 msgstr ""
 
-#  Delphi 5 compatibility
-#  Programmer's name for it: SInvalidCurrency
 #  Delphi 5 compatibility
 #  Programmer's name for it: SInvalidCurrency
 #  Delphi 5 compatibility
@@ -875,17 +825,17 @@ msgstr ""
 msgid "'%s' is not a valid currency value"
 msgstr ""
 
-#: WelcomeForm.pas:155
+#: WelcomeForm.pas:137
 msgid ""
 "You are going to reboot the computer.\n"
 "In order to prevent data loss, Please close\n"
 "all running programs. Continune ?"
 msgstr ""
-",על מנת למנוע איבוד מידע בזמן איתחול המחשב\n"
-".מומלץ לסגור את כל התוכניות הרצות כרגע\n"
-"? האם להמשיך"
+"על מנת למנוע איבוד מידע בזמן איתחול המחשב,\n"
+"מומלץ לסגור את כל התוכניות הרצות כרגע.\n"
+"האם להמשיך?"
 
-#: WelcomeForm.pas:210
+#: WelcomeForm.pas:180
 msgid ""
 "Floppy has been successfully written.\n"
 "\n"
@@ -895,15 +845,15 @@ msgid ""
 "Close any running programs\n"
 "And Reboot the computer."
 msgstr ""
-".התקליטון הוכן בהצלחה\n"
+"התקליטון הוכן בהצלחה.\n"
 "\n"
-":על מנת להפעיל את כנרת, עליך\n"
+"על מנת להפעיל את כנרת, עליך:\n"
 "\n"
-",לוודא שהתקליטון והתקליטור עדיין במקומם\n"
-",לסגור את כל התוכניות הרצות כרגע\n"
-".ולאתחל את המחשב מחדש"
+"לוודא שהתקליטון והתקליטור עדיין במקומם,\n"
+"לסגור את כל התוכניות הרצות כרגע,\n"
+"ולאתחל את המחשב מחדש."
 
-#: WelcomeForm.pas:219
+#: WelcomeForm.pas:189
 msgid ""
 "Welcome to GNU/Linux Kinneret.\n"
 "This program is not an installation Program,\n"
@@ -916,9 +866,21 @@ msgid ""
 "\n"
 "NEW: You can now make a \"Hard-Drive Operation\",\n"
 "if you want to work with Kinneret from the Hard-Drive."
-msgstr ".התרגום לערבית לא זמין עדיין"
+msgstr ""
+"ברוך בואך לגנו/לינוקס כנרת.\n"
+"זוהי אינה תוכנית התקנה, מכיוון שכנרת אינה זקוקה\n"
+"להתקנה.\n"
+"\n"
+"על מנת להפעיל את כנרת יש לאתחל את המחשב מחדש\n"
+"התקליטור.\n"
+"\n"
+"אם אינך רוצה לאתחל מהתקליטור (או לא ידוע לך איך\n"
+"עושים זאת), ביכולתך להכין תקליטון הפעלה כאן.\n"
+"\n"
+"חדש: ניתן לבצע \"הפעלה מכונן קשיח\" כדי להפעיל את\n"
+"כנרת ישירות מהכונן הקשיח, ללא צורך בתקליטור."
 
-#: WelcomeForm.pas:229
+#: WelcomeForm.pas:199
 msgid ""
 "Kinneret was successfully installed.\n"
 "\n"
@@ -934,28 +896,29 @@ msgid ""
 "just start Kinneret regularly, with the Kinneret CD,\n"
 "or with a Boot-Floppy."
 msgstr ""
-".כנרת הותקנה בהצלחה\n"
+"כנרת הותקנה בהצלחה.\n"
 "\n"
-": על מנת להפעיל את כנרת\n"
+"על מנת להפעיל את כנרת :\n"
 "אם התקנת קיצור דרך על שולחן העבודה, עליך\n"
-".להפעיל אותו, ולבחור 'אישור' בהודעה המוצגת\n"
+"להפעיל אותו, ולבחור 'אישור' בהודעה המוצגת.\n"
 "\n"
 "אם התקנת תפריט איתחול, עליך לאתחל את\n"
 "המחשב, ובתפריט שיופיע בזמן האיתחול לבחור\n"
-".GNU/Linux Kinneret - ב\n"
+"ב - GNU/Linux Kinneret.\n"
 "\n"
 "אם לא בחרת באף אחת מאפשרויות אלה, תוכל/י\n"
 "להפעיל את כנרת בדרך הרגילה, באמצעות\n"
-".תקליטור כנרת, או באמצעות תקליטון הפעלה"
+"תקליטור כנרת, או באמצעות תקליטון הפעלה."
 
 #  Seperating Line to words
 #  Seperating Line to words
+#  Seperating Line to words
 #. Seperating Line to words
-#: WelcomeForm.pas:267
+#: WelcomeForm.pas:237
 msgid ""
 "In order to enter the Advanced options, You must put your boot-floppy\n"
 "(The floppy you can make here) in drive A:"
 msgstr ""
-",על מנת להיכנס לאפשרויות מתקדמות\n"
-"A: יש להכניס את תקליטון ההפעלה (שהכנת כאן) לכונן"
+"על מנת להיכנס לאפשרויות מתקדמות,\n"
+"יש להכניס את תקליטון ההפעלה (שהכנת כאן) לכונן :A"
 
