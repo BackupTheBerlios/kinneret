@@ -46,7 +46,7 @@
 <img src="/opt/kinneret/images/star.png">איפה ה... שלי? כמה דברים שחשוב לדעת כדי לא לטבוע
  <name=index14>
  <image=kinneret-cap-s.png>
- מדריכים קצרים לשימוש במספר יישומים הכלולים בכנרת
+<img src="/opt/kinneret/images/star.png">מדריכים קצרים לשימוש במספר יישומים הכלולים בכנרת
   <name=index2>
 <image=kinneret-screwdriver-s.png>
 הגדרת התאמה אישית - מדריכים לאשפי ההגדרות השונים הכלולים בהפצה
@@ -56,7 +56,7 @@
  מדריך יישומים הכלולים ב<b><i>גנו/לינוקס כנרת</b></i>
 מדריך זה מכיל תקצירים שיאפשרו לך ללמוד את עיקרי השימוש בכמה מהתוכנות הכלולות בתקליטור.
  <play=man_games.html>
-מדריך משחקי מחשב 
+<img src="/opt/kinneret/images/star.png">מדריך משחקי מחשב 
 <end>
 
 <menu=index2>
@@ -83,7 +83,7 @@
   <play=free_essay.html>
 תוכנה חופשית - למה ומדוע?
   <http=www.hamakor.org.il>
-<font color=grey>____________________________________________________________</font><br><font color=grey size=2> בשיתוף <i>המקור - עמותה ישראלית לתוכנה חופשית ולקוד מקור פתוח</i> </font>
+<font color=grey>____________________________________________________________</font><br><font color=grey size=2> בשיתוף <i>המקור - עמותה ישראלית לתוכנה חופשית ולקוד מקור פתוח</i> (קישור לאינטרנט)</font>
 <end>
 
 <menu=index41>
