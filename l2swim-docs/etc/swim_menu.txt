@@ -11,7 +11,7 @@
 # FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 # License at http://www.gnu.org/copyleft/gpl.html for more details.
 #
-# Version: 0.7b 5-Oct-2003
+# Version: 0.7c 19-Dec-2003
 # Encoding: [UTF8]
 # Language: Hebrew
 #
@@ -141,12 +141,20 @@
 <menu=arabic>
  ברוך בואך לכנרת!
 מדור זה מכיל חלק ממסמכי <b><i>גנו/לינוקס כנרת</b></i> אשר זמינים בשפה הערבית. אם ברצונך להתנדב לתרגום מסמכים נוספים נא ליצור קשר עם dovix@linux-kinneret.org. <br><br>קישורים המסומנים בכוכבית (<img src="/opt/kinneret/images/star.png">) מומלצים להכרות ראשונית עם המערכת. קישורים המסומנים בסימן קריאה (<img src="/opt/kinneret/images/exclamation.png">) חשובים מאוד לידיעתך. קישורים המסומנים בגלובוס (<img src="/opt/kinneret/images/globe.png">) דורשים חיבור לאינטרנט.<br><br>צוות הפרוייקט מברך אותך על הפעלת תקליטור זה ומאחל לך הנאה ועבודה פוריה!
-  <play=ar/desktop_ready.html>
-   <image=kinneret-floppy-s.png>
-نظام تشغيل للمتسللين(hackers)?
+  <play=ar/tour_kinneret.html>
+<img src="/opt/kinneret/images/star.png">إبحار تعارف في كينيرت - صور
   <play=ar/about_kinneret.html>
   <image=kinneret-cd-s.png>
 ללמוד בכנרת - הכרות ראשונית עם הפרוייקט
+  <play=ar/desktop_ready.html>
+   <image=kinneret-floppy-s.png>
+نظام تشغيل للمتسللين(hackers)?
+  <play=ar/faq_kinneret.html>
+  <image=kinneret-cd-s.png>
+أسئله متكرره كثيرا عن مشروع جنو/ لينوكس كينيرت
+ <play=ar/howto_help.html>
+ <image=kinneret-broom-s.png>
+معلومات للمعنيين في ألأنضمام لمشروع جنو/لينوكس كينيرت
 <play=he/kinneret_license.html>
 <font color=grey>____________________________________________________________</font><br><font color=red size=2>חשוב לדעת!</font><font size=2> <b><i>גנו/לינוקס כנרת</b></i> מסופקת "כפי שהיא", בלא אחריות מסוג כלשהו, בין אם מפורשת ובין אם משתמעת, לרבות, אך מבלי למעט מהאמור, האחריות המשתמעת למסחריות והתאמה למטרה מסוימת. בעלי זכויות היוצרים ו/או מפיצי התוכנה לא ישאו כלפיך באחריות לנזקים, לרבות נזקים כלליים, מיוחדים, משניים או תוצאתיים כלשהם, הנובעים מהשימוש או מאי-היכולת להשתמש בתוכנות המסופקות. </font><font color=red size=2>עליך .לקרוא בעיון את רישיון השימוש המלא ולהסכים לנאמר בו לפני השימוש בהפצה זו </font><img src="/opt/kinneret/images/exclamation.png"> 
   <http=www.linux-kinneret.org/index-ar.html>
