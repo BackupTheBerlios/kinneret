@@ -45,7 +45,7 @@ public:
     void getLink(QString linkname, QString *text, QString *type, QString *imagefile);
     void addSection(pcsection what);
     void addTextToSection(QString name, QString page);
-    void initialize(QString filename);
+    bool initialize(QString filename, QString *startpage);
     QString getMenuName() {return menuname;};
     QString getLanguage() {return menulanguage;};
     QString getDocsPath() {return docspath;};

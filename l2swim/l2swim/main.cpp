@@ -23,7 +23,10 @@
 int main( int argc, char **argv )
 {
   KApplication a( argc, argv, "l2swim");
-  MainWindow *window=new MainWindow( "");
+  QString startpage;
+  if (argc>0) startpage=argv[1];
+    else startpage="";
+  MainWindow *window=new MainWindow("",startpage);
   a.setMainWidget( window );
   window->resize(640,480);
   window->showMaximized();

@@ -83,6 +83,10 @@ msgstr "יציאה"
 msgid "ERROR - Menu file %1 not found."
 msgstr "שגיאה - קובץ תפריט %1 לא נמצא"
 
+#: l2swim.cpp:101
+msgid "Page %1 does not exist."
+msgstr "עמוד %1 לא נמצא"
+
 #: l2swim.cpp:65
 msgid "Print page"
 msgstr "הדפסה"

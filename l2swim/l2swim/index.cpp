@@ -64,7 +64,7 @@ lineType getline(QTextStream* stream, QString *key, QString *value)
 }
 
 // initialize the menu
-void cmenu::initialize(QString filename)
+bool cmenu::initialize(QString filename, QString *startpage)
 {
 // cout<<"starting menu"<<endl;
   QString name;
@@ -77,6 +77,8 @@ void cmenu::initialize(QString filename)
   QString key;
   QString image;
   lineType lType;
+  bool startpageExist=false;
+  QString orig_startpage=*startpage;
   // Read from file and initialize
   QIODevice* fp = new QFile(filename);
   fp->open(IO_ReadOnly);
@@ -133,17 +135,36 @@ void cmenu::initialize(QString filename)
         if (type.compare("null")==0) page+="<FONT COLOR=GREY><U>"+linktext+"</U></FONT><BR><BR>";
         else
         {
+          bool isStartpage=false;
+          if ((!startpage->isEmpty())&&(linkname.compare(*startpage)==0))
+          {
+            isStartpage=true;
+            startpageExist=true;
+          }
           linkname=QString("swim://")+linkname;
           addSection(new csection(linkname,type,image));
+          if ((isStartpage)&&(type.compare("name")==0))
+          {
+            addSection(new csection(QString("swit://startpage"),type,image));
+            *startpage="swit://startpage";
+          }
+          if ((isStartpage)&&(type.compare("play")==0)) *startpage=linkname;
           page+="<a href="""+linkname+""">"+linktext+"</A><BR><BR>";
         }
         lType=getline(filereader,&key,&linkname);
       }
       // Adding "go back" or "Exit"
+      bool isStartpage=false;
+      if ((name.right(name.length()-7).compare(orig_startpage)==0)&&
+          (!orig_startpage.isEmpty())) isStartpage=true;
+      QString startpage_page=page;
       if (menuname.compare(name)!=0) page+="<a href=""swit://goback"">"+i18n("Go back")+"</a><BR><BR>";
       else page+="<a href=""swit://exit"">"+i18n("Exit")+"</a><BR><BR>";
       page+="</P></td></tr></table>";
+      startpage_page+="<a href=""swit://exit"">"+i18n("Exit")+"</a><BR><BR>";
+      startpage_page+="</P></td></tr></table>";
       addTextToSection(name,page);
+      if (isStartpage) addTextToSection("swit://startpage", startpage_page);
       lType=getline(filereader,&key,&name);
       name=QString("swim://")+name;
     }
@@ -158,6 +179,7 @@ void cmenu::initialize(QString filename)
   delete filereader;                 
   fp->close();
   delete fp;
+  return startpageExist;
 }
 
 // Adds information about a section in a linked list.
@@ -184,6 +206,7 @@ void cmenu::addSection(pcsection what)
 void cmenu::getLink(QString linkname, QString *text, QString *type, QString *imagefile)
 {
   pcsection where;
+
   for(where=first;(where!=NULL)&&(linkname.compare(where->linkname)!=0);where=where->next);
   if (where!=NULL)
   {

@@ -7,13 +7,25 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2003-09-02 20:44+0300\n"
+"POT-Creation-Date: 2003-09-14 00:00+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: index.cpp:161
+msgid "Go back"
+msgstr ""
+
+#: index.cpp:162 index.cpp:164
+msgid "Exit"
+msgstr ""
+
+#: index.cpp:177
+msgid "ERROR - Menu file %1 not found."
+msgstr ""
 
 #: l2swim.cpp:25
 msgid ""
@@ -55,26 +67,17 @@ msgstr ""
 msgid "About l2swim"
 msgstr ""
 
-#: l2swim.cpp:96
+#: l2swim.cpp:98
 msgid ""
-"Sorry - Your language menu-file: %1 does not exist, using default language "
-"instead"
+"Your language menu-file: %1 does not exist, using default language instead"
 msgstr ""
 
-#: l2swim.cpp:266
+#: l2swim.cpp:101
+msgid "Page %1 does not exist."
+msgstr ""
+
+#: l2swim.cpp:272
 msgid "ERROR - Image %1 not found"
-msgstr ""
-
-#: index.cpp:143
-msgid "Go back"
-msgstr ""
-
-#: index.cpp:144
-msgid "Exit"
-msgstr ""
-
-#: index.cpp:156
-msgid "ERROR - Menu file %1 not found."
 msgstr ""
 
 #: l2swim.moc.cpp:34 l2swim.moc.cpp:42

@@ -23,12 +23,12 @@ cflags=
 cppflags=
 cxxflags=\s-O0 -g3 -Wall
 ldadd=\s$(LIB_KPARTS) $(LIB_KHTML) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT)
-ldflags=\s      \s
+ldflags=\s       \s
 
 [General]
 AMChanged=false
 author=Nir Misgav
-configure_args=\s--build=i386-linux --host=i386-linux --target=i386-linux\s
+configure_args=\s--build=i386-linux --host=i386-linux --target=i386-linux --prefix=/opt/kde3\s
 email=nirro@yahoo.com
 kdevprj_version=1.3
 lfv_open_groups=Headers,Sources

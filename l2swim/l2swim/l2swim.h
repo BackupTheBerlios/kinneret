@@ -56,7 +56,7 @@ class MainWindow : public KMainWindow
 {
   Q_OBJECT
 public:
-  MainWindow ( const char * name);
+  MainWindow ( const char * name, QString spage);
   ~MainWindow();
   void putImage(QString imagefile);
   void openURL(KURL url,bool push=true,bool forw=false);
@@ -89,7 +89,7 @@ private:
   KParts::ReadOnlyPart* part;
   KHTMLPart *html;
   KHTMLView *htmlview;
-  QString currentimage,currentPage;
+  QString currentimage,currentPage,startpage;
   QString aboutline;
   QString lang;
 };
