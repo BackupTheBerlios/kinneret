@@ -13,8 +13,12 @@
 namespace core {
     namespace resolvers {
         /**
+         * This abstract class represent a generic resolver. It can load
+         * modules, and resolve simple qureies. Resolving complex queries
+         * (i.e. choices) is up to the implementing class.
+         * 
          * @author z9u2k
-         * $Revision: 1.2 $
+         * $Revision: 1.3 $
          */
         class Resolver {
         public:
@@ -47,13 +51,13 @@ namespace core {
             /* --- Public Methods --- */
 
             /**
-             * This method resolvs choises in the module.
+             * This abstract method resolvs choises in the module.
              *
              * @param xpath XPath to the conflict
              * @param name The 'name' attribute of the chosen parameter.
              */
-            void choose(const std::string &xpath, const std::string &name)
-                throw ();
+            virtual void choose(const std::string &xpath,
+                const std::string &name) throw () = 0;
 
             /**
              * Checks whether the given parameter is resolvable by this
@@ -85,6 +89,17 @@ namespace core {
                 throw (core::exception::NoSuchParamemterExcpetion,
                        core::exception::ParameterNotFoundException,
                        xalanc::XalanXPathException);
+        protected:
+
+            /* --- Protected Methods --- */
+
+            /**
+             *
+             */
+            virtual std::string resolvComplex(const std::string &param,
+                const std::string &xpath, const std::string &multi,
+                const std::vector<xercesc::DOMNode*> &xpathResult) const = 0;
+            
         private:
 
             /**
@@ -100,6 +115,20 @@ namespace core {
              */
             xercesc::DOMNode *getParamNode(const std::string &param)
                 const throw ();
+
+            /**
+             * Resolves multiple values with the 'lang' attribute. It first
+             * tries to resolve the current locale (the one in the
+             * configuration), it it fails, it looks from the 'en' locale. If
+             * that fails, it selects the first locale available.
+             *
+             * @param xpathResult The nodes we should choose from.
+             * @return The content of the chosen element in the chosen
+             *         language, at the chosen locale (see
+             *         <code>Config::getEncoding()</code>);
+             */
+            std::string resolvLang(
+                const std::vector<xercesc::DOMNode*> &xpathResult) const;
 
             /* --- Data Members --- */
 
