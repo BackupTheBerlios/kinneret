@@ -35,7 +35,7 @@
 אודות פרוייקט כנרת - מידע כללי על הפצת גנו/לינוקס כנרת
 <null>
 <font color=grey>________________ מדריכים בשפות לועזיות ______________</font>
-<null>
+<name=arabic>
 ﺍﻟﻌﺮﺑﻴﺔ
 <null>
  русский
@@ -130,4 +130,14 @@
 רוצה לעזור בפרוייקט? מידעון למעוניינים להצטרף
 <ftp=ftp.berlios.de/pub/kinneret/release_notes.pdf>
 <font color=grey>____________________________________________________________</font><br><font size=2>תיעוד שינויים ומפרט גרסה (קישור לאינטרנט)</font>
+<end>
+
+<menu=arabic>
+מסמכים בערבית
+מדור זה מכיל חלק ממסמכי גנו/לינוקס כנרת אשר תורגמו לערבית. אם ברצונך לעזור בתרגום נא ליצור קשר עם dovix@linux-kinneret.org.
+   <play=ar/desktop_ready.html>
+   <image=kinneret-floppy-s.png>
+نظام تشغيل للمتسللين(hackers)?
+  <http=www.linux-kinneret.org/index-ar.html>
+ <font color=grey>____________________________________________________________</font><br><font size=2> אתר הבית של הפרויקט - בערבית (קישור לאינטרנט)</font>
 <end>

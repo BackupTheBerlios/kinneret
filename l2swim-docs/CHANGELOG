@@ -10,6 +10,7 @@ This file includes changes since the last upload. It is intended to provide a re
 -- <chapter> now adds an index number. New tag <chapnotoc> doesn't add number and exclude from TOC
 * New explanation file 'MANUAL' for developing swimming guide articles. 17/9/03
 * new guide: apps_list.xml
+* Added support for foreign languages
 
 -------------- v 0.6 ----------------
 * merged all tour files into a single file 2/8/2003 dovix
