@@ -73,16 +73,6 @@
 	</app>
 	<app>
 		<group>ייעודי</group>
-		<title>KMatPlot</title>
-		<class>מתמטיקה</class>
-		<age>2+3</age>
-		<home> http://kmatplot.sourceforge.net/</home>
-		<version>?</version>
-		<kinneret>?</kinneret>
-		<hebrew>?</hebrew>
-	</app>
-	<app>
-		<group>ייעודי</group>
 		<title>QCad</title>
 		<class>שרטוט</class>
 		<age>2+3</age>
@@ -265,7 +255,7 @@
 		<kinneret>0.3</kinneret>
 		<hebrew>קיים</hebrew>
 		<home>http://www.thekompany.com/projects/kivio/</home>
-		<extra>חלק מקייאופיס 1.2</extra>	
+		<extra>חלק מקייאופיס 1.2</extra>
 	</app>
 
 	<app>
@@ -709,33 +699,33 @@
 	</app>
 <app>
 		<group></group>
-		<title></title>
-		<class></class>
+		<title>Enigma</title>
+		<class>משחק</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
-		<home></home>
+		<home>http://www.nongnu.org/enigma/</home>
 	</app>
 <app>
 		<group></group>
-		<title></title>
-		<class></class>
+		<title>Fung-calc</title>
+		<class>מתמתיקה</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
-		<home></home>
+		<home>http://fung-calc.sourceforge.net/</home>
 	</app>
 <app>
 		<group></group>
-		<title></title>
-		<class></class>
+		<title>konversation</title>
+		<class>לקוח IRC</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
-		<hebrew></hebrew>
-		<home></home>
+		<hebrew>יש לתרגם</hebrew>
+		<home>http://konversation.sourceforge.net/</home>
 	</app>
 <app>
 		<group></group>
