@@ -1,0 +1,281 @@
+<!-- Gnu/Linux Kinneret
+# 'Learn to Swim" Interactive Guide - Main Menu
+# (C) 2003 http://www.linux-kinneret.org
+#
+# This program is free software; you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation; either version 2 of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+# License at http://www.gnu.org/copyleft/gpl.html for more details.
+#
+# Version: 0.7j 5-Apr-2004
+# Encoding: [UTF8]
+# Language: Hebrew, English, Arabic, Russian, Ethopian
+#
+# Authored by: dovix, dovix@linux-kinneret.org
+-->
+
+<xml>
+
+<global_config 
+	docspath="/opt/kinneret/l2swim/doc" 
+	imagepath="/opt/kinneret/images" 
+	defaultimage="kinneret-pencil-s.png"
+	defaultdir="rtl"
+	firstpage="mainmenu"/>
+
+<menu name="mainmenu">
+
+<title>
+ברוך בואך לגנו/לינוקס כנרת!
+</title>
+
+<text><![CDATA[
+מדריך זה יעזור לך להכיר חלק ממגוון היישומים והאפשרויות הכלולים במערכת, וילווה אותך לאורך השימוש במערכת. מדריך זה גם מכיל מידע על הפרוייקט וכן יאפשר לך להתוודע לעקרונות הקוד הפתוח והתוכנה החופשית, שבזכותם הפצה זו מתאפשרת. <br><br> צוות הפרוייקט מברך אותך על הפעלת תקליטור זה ומאחל לך הנאה ועבודה פוריה!
+]]></text>
+  
+<link name="index1"><![CDATA[
+<img src="/opt/kinneret/images/star.png">לומדים לשחות בכנרת - מדריכים להכרות עם המערכת
+]]></link>
+
+<link name="index4">
+החופש לבחור - אוסף מאמרים על תוכנה חופשית, קוד פתוח ולינוקס
+ </link>
+ 
+<link name="index5"><![CDATA[
+אודות פרוייקט כנרת - מידע כללי על הפצת <b><i>גנו/לינוקס כנרת</b></i>
+]]></link>
+
+<text><![CDATA[
+<font size=2>קישורים המסומנים בכוכבית (<img src="/opt/kinneret/images/star.png">) מומלצים להכרות ראשונית עם המערכת. קישורים המסומנים בסימן קריאה (<img src="/opt/kinneret/images/exclamation.png">) חשובים מאוד לידיעתך. קישורים המסומנים בגלובוס (<img src="/opt/kinneret/images/globe.png">) דורשים חיבור לאינטרנט.</font>
+<br><br>
+<font color=grey><i>מדריכים בשפות לועזיות:</i></font>
+]]></text>
+
+<link name="arabic">
+إضغط هنا للوثائق في أللغه ألعربيه.
+</link>
+
+<link name="english">
+Click here for English documentation
+</link>
+
+<text><![CDATA[
+<font color=grey>____________________________________________________________</font><BR>
+<font color=red size=2>חשוב לדעת!</font><font size=2> <b><i>גנו/לינוקס כנרת</b></i> מסופקת "כפי שהיא", בלא אחריות מסוג כלשהו, בין אם מפורשת ובין אם משתמעת, לרבות, אך מבלי למעט מהאמור, האחריות המשתמעת למסחריות והתאמה למטרה מסוימת. בעלי זכויות היוצרים ו/או מפיצי התוכנה לא ישאו כלפיך באחריות לנזקים, לרבות נזקים כלליים, מיוחדים, משניים או תוצאתיים כלשהם, הנובעים מהשימוש או מאי-היכולת להשתמש בתוכנות המסופקות. </font>
+]]></text>
+
+<link type="play" name="he/kinneret_license.html" image="kinneret-cap-s.png"><![CDATA[
+<img src="/opt/kinneret/images/exclamation.png"><font color=red size=2>עליך לקרוא בעיון את רישיון השימוש המלא ולהסכים לנאמר בו לפני השימוש בהפצה זו </font> 
+  <http=www.linux-kinneret.org>
+<img src="/opt/kinneret/images/globe.png"><font size=2> אתר הבית של הפרויקט</font>
+]]></link>
+
+</menu>
+
+<menu name="index1" image="kinneret-cap-s.png">
+<title>
+לומדים לשחות בכנרת
+</title>
+
+<text><![CDATA[
+פרק זה יאפשר לך להכיר את <b><i>גנו/לינוקס כנרת</b></i> ולהפיק את המירב ממנה .המדריכים בפרק זה יאפשרו לך לשנות את הגדרות המערכת באופן שיתאימו לצרכיך ולרצונותיך, להתחבר לאינטרנט וכמוכן להכיר את מגוון היישומים הענק.<br><br>פרק זה גם כולל את מדריך ההפעלה הראשונית של גנו/לינוקס כנרת בכדי לאפשר לך להדפיס את המדריך לשימוש חבריך.לאחר מכן מומלץ לך להתוודע לממשק המשתמש של <b><i>גנו/לינוקס כנרת</b></i> וללמוד להשתמש בחלק ממגוון היישומים הכלולים בתקליטור.
+ ]]></text>
+ 
+<link type="play" name="he/tour_kinneret.html"><![CDATA[
+<img src="/opt/kinneret/images/star.png">שייט הכרות בכנרת - צילומי נוף ממדריך התיירים
+]]></link>
+
+<link type="play" name="he/user_interface.html"><![CDATA[
+<img src="/opt/kinneret/images/star.png">איפה ה... שלי? כמה דברים שחשוב לדעת כדי לא לטבוע
+]]></link>
+
+<link type="play" name="he/custom_desktop.html"><![CDATA[
+<img src="/opt/kinneret/images/star.png">התאמה אישית של שולחן העבודה [טיוטה]
+]]></link>
+
+<null><![CDATA[
+<img src="/opt/kinneret/images/star.png">מדריך הגדרה וחיבור לאינטרנט המהיר
+]]></null>
+
+<link name="index14"><![CDATA[
+<img src="/opt/kinneret/images/star.png">אוסף מדריכים ליישומים הכלולים בכנרת
+]]></link>
+ 
+<link name="index15">
+ אוסף מדריכים למפתחים ולשימוש מתקדם בלינוקס
+</link>
+
+<link type="play" name="he/first_time.html"><![CDATA[
+<font color=grey>____________________________________________________________</font><br><font size=2>מדריך הפעלה והגדרת תצורה ראשונית</font>
+]]></link>
+
+</menu>
+
+<menu name="index14" image="kinneret-cap-s.png">
+<title><![CDATA[ 
+ מדריכי יישומים הכלולים ב<b><i>גנו/לינוקס כנרת</b></i>
+]]></title>
+
+<text>
+דף זה מכיל תקצירים שיאפשרו לך ללמוד את עיקרי השימוש בחלק מהתוכנות הכלולות בתקליטור.
+</text>
+
+<link type="play" name="he/man_games.html"><![CDATA[
+<img src="/opt/kinneret/images/star.png">מדריך משחקי מחשב 
+]]></link>
+
+<null>
+מדריך השמעת מוזיקה עם XMMS
+</null>
+
+<null>
+מדריך גלישה באינטרנט עם Mozilla Firebird
+</null>
+
+<link type="play" name="he/man_ooo_basic.html">
+מדריך שימוש בסיסי בערכת היישומים המשרדיים OpenOffice.org [טיוטה]
+</link>
+
+<link type="play" name="he/man_ooo_advanced.html">
+מדריך שימוש מתקדם בערכת היישומים המשרדיים OpenOffice.org
+</link>
+
+<null>
+מדריך עיבוד תמונות עם The Gimp
+</null>
+
+<link type="play" name="he/man_cheese.html">
+מדריך הלחנת מנגינות עם Cheese Tracker
+</link>
+
+<link type="play" name="he/man_kpovmodeler.html">
+מדריך עיצוב תמונות תלת-מימדיות עם KPovModeler
+</link>
+
+</menu>
+
+<!--
+<menu="index15" image="kinneret-cap-s.png">
+מדריכים למפתחים ולשימוש מתקדם ב<b><i>לינוקס</b></i>
+דף זה מכיל מדריכים המיועדים למפתחים ומתרגמי יישומים בלינוקס, וכן לשימוש מתקדם במערכת.
+<play=he/translator_guide.html>
+מדריך לתרגום יישומים בלינוקס 
+<play=pdf/linux_newbie.pdf>
+מדריך למנהל המערכת המתחיל 
+<end>
+
+<menu=index4>
+החופש לבחור (אוסף מאמרים)
+בודאי תהית למה מערכת זאת נקראת "<b><i>גנו/לינוקס כנרת</b></i>" ולא רק "לינוקס כנרת". בודאי תהית גם למה אנחנו מאפשרים הפצה והעתקה של כנרת לכל דורש, ובחינם. פרק זה מנסה לענות על שאלות אלו ולספק מידע נוסף וחשוב בנושא תוכנה חופשית ומערכת ההפעלה גנו/לינוקס.
+  <play=he/linux_history.html>
+ההיסטוריה של לינוקס
+   <play=he/desktop_ready.html>
+   <image=kinneret-floppy-s.png>
+מערכת הפעלה של האקרים?
+ <name=index41>
+הגיגים על מחשבים (סדרת מאמרים)
+  <play=he/free_vs_free.html>
+חופשי זה יותר מבחינם [טיוטה]
+  <play=he/free_essay.html>
+תוכנה חופשית - למה ומדוע?
+  <play=he/gnu_linux.html>
+לינוקס ופרוייקט הגנו
+  <http=www.hamakor.org.il>
+<font color=grey>____________________________________________________________</font><br><font size=2> בשיתוף <i>המקור - עמותה ישראלית לתוכנה חופשית ולקוד מקור פתוח</i></font> <img src="/opt/kinneret/images/globe.png">
+<end>
+
+<menu=index41>
+הגיגים על מחשבים (אוסף מאמרים)
+סדרת מאמרים הכתובה בלשון קלילה וקולחת אשר מבהירים את עקרונות היסוד של תנועת התוכנה החופשית.
+   <play=he/thoughts_1.html>
+<b>מוסר ומחשבים</b> - קצת מחשבות על האבסורדים בעולם המחשבים של היום ומדוע זה אינו מוסרי
+  <play=he/thoughts_2.html>
+<b>תוכנה חופשית</b> - מה זה תוכנה חופשית, מה ההבדל בין זה לבין חינמי, מדוע זה כל כך חשוב
+  <play=he/thoughts_3.html>
+<b>מודלים עסקיים</b> - מודל עסקי של תוכנה קיניינית לעומת תוכנה חופשית, איך עושים כסף מתוכנה חופשית
+  <play=he/thoughts_4.html>
+<b>מערכת ההפעלה גנו/לינוקס</b> - תוכנה חופשית הלכה למעשה, מערכת הפעלה שלמה שכולה חופשית
+  <play=he/thoughts_5.html>
+<b>תוכנה חופשית וחינוך</b> - החופש לחנך את הדור הבא, מדוע רק תוכנה חופשית יכולה לסייע בחינוך הדור הבא
+  <play=he/thoughts_6.html>
+<b>קוד פתוח כשיטת עבודה</b> - קוד פתוח כשיטת עבודה חדשנית וקצת על פטנטים בתוכנה
+ <end>
+
+
+<menu=index5>
+image=kinneret-cd-s.png
+אודות פרוייקט כנרת
+ גנו/לינוקס כנרת הינה מערכת הפעלה ומגוון יישומים המסופקים בערכה אחת ונוחה להפעלה ולשימוש (תקליטור). המערכת אינה מחייבת התקנה ו/או הגדרות מסובכות, ומכילה זיהוי חומרה אוטומטי, אשף התחברות קלה לאינטרנט ומגוון יישומים עשיר ואיכותי וכן תמיכה בעברית (ובעתיד בשפות נוספות).<br><br>בניגוד לתוכנה קניינית אפשר ורצוי להשפיע על תכולת ההפצה בין אם ע"י פרסום הערות/הארות בפורומים שלנו בכדי שנוכל להתייחס אליהן בגרסאות עתידיות ובין אם בהשתתפות בפועל בבניית ההפצה. לפרטים נוספים נא לעיין במידעון.<br><br>מומלץ ואף רצוי לתת עותק של גנו/לינוקס כנרת לחברים - תקליטור זה מכיל תוכנה חופשית ומותר לך להפיץ או לשכפל אותו כרצונך (לפרטים נא לעיין ברישיון השימוש).
+  <play=he/about_kinneret.html>
+  <image=kinneret-cd-s.png>
+ללמוד בכנרת - הכרות ראשונית עם הפרוייקט
+  <play=he/faq_kinneret.html>
+  <image=kinneret-cd-s.png>
+שאלות ותשובות נפוצות אודות הפרוייקט
+ <play=he/howto_help.html>
+ <image=kinneret-broom-s.png>
+רוצה לעזור בפרוייקט? מידעון למעוניינים להצטרף
+<play=he/release_notes.html>
+<font color=grey>____________________________________________________________</font><br><font size=2>תיעוד שינויים ומפרט גרסה</font>
+<end>
+
+<menu=arabic>
+أهلا وسهلا بكم في جنو/لينوكس كينيرت.
+يستضيف هذا ألقسم بعض من وثائق ألنظام ألمتاحه بألإنجليزيه. إذا تريد ألتطوع بترجمة ألوثائق ألإضافيه ألرجاء ألإتصال مع dovix@linux-kinneret.org.<br><br>فريق ألمشروع يرحب بك لإستخدام ألنظام ويتمنى لك ألإستمتاع وألعمل ألمثمر.
+  <play=ar/tour_kinneret.html>
+<img src="/opt/kinneret/images/star.png">إبحار تعارف في كينيرت - صور
+  <play=ar/about_kinneret.html>
+  <image=kinneret-cd-s.png>
+ألتعليم في كينيرت - ألتعرف على ألمشروع
+  <play=ar/desktop_ready.html>
+   <image=kinneret-floppy-s.png>
+نظام تشغيل للمتسللين(hackers)?
+  <play=ar/faq_kinneret.html>
+  <image=kinneret-cd-s.png>
+أسئله متكرره كثيرا عن مشروع جنو/ لينوكس كينيرت
+ <play=ar/howto_help.html>
+ <image=kinneret-broom-s.png>
+معلومات للمعنيين في ألأنضمام لمشروع جنو/لينوكس كينيرت
+<text>
+<font size=2>ألروابط ألمعلمه بنجمه(<img src="/opt/kinneret/images/star.png">) مفضله للتعويد على ألنظام. ألروابط ألمعلمه بعلامة تعجب (<img src="/opt/kinneret/images/exclamation.png">) تحتوي على معلومات مهمه. ألروابط ألمعلمه بكره (<img src="/opt/kinneret/images/globe.png">) أرضيه تتطلب إتصال بألإنترنت.</font>
+<font color=grey>____________________________________________________________</font>
+<font color=red size=2> مهم! </font><font size=2> <b><i>جنو/لينوكس</b></i> كينيرت مزود "كما هو" بدون أي ضمان من أي نوع , إما معبر أو مفهوم ضمنا, يشمل 
+لكن غير محدود ألى ألضمانات ألمداوله للتجاره وألتسويق  وألملاءمه لغرض محدد. </font>
+</text>
+<play=ar/kinneret_license.html>
+<img src="/opt/kinneret/images/exclamation.png"><font color=red size=2>يطلب منك أن تقرأ وتوافق على حرية ألمستخدم ألكامله  قبل إستعمال هذا ألتوزيع.</font> 
+<play=ar/first_time.html>
+<font size=2>مرشد تشغيل وتثبيت أولي</font>
+  <http=www.linux-kinneret.org/index-ar.html>
+<img src="/opt/kinneret/images/globe.png"><font size=2>موقع ألبيت للمشروع في ألغه ألعربيه</font>
+<end>
+
+<menu=english>
+<menudir=ltr>
+Welcome to GNU/Linux Kinneret!
+This section hosts some of the system documents that are available in English. If you would like to volunteer to translate additional documents, please contact dovix@linux-kinneret.org. <br><br>The project team welcomes you for using the system and wishes you enjoyment and fruitful work!
+  <play=en/tour_kinneret.html>
+<img src="/opt/kinneret/images/star.png">Guided cruise in the Kinneret - Screenshots
+  <play=en/user_interface.html>
+<img src="/opt/kinneret/images/star.png">Where's my...? Some important things to keep you afloat
+   <play=en/linux_history.html>
+History of Linux
+ <play=en/about_kinneret.html>
+  <image=kinneret-cd-s.png>
+Learning in the Kinneret - familiarization with the project
+<text>
+<font size=2>Links marked with an asterisk (<img src="/opt/kinneret/images/star.png">) are recommended for familiarization with the system. Links marked with an exclamation mark (<img src="/opt/kinneret/images/exclamation.png">) contain important information.  Links marked with a globe (<img src="/opt/kinneret/images/globe.png">) require an Internet connection.</font>
+<font color=grey>____________________________________________________________</font>
+<font color=red size=2>Important!</font><font size=2> <b><i>GNU/Linux Kinneret</b></i> is provided "as is" without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose.
+</text>
+<play=en/kinneret_license.html>
+<img src="/opt/kinneret/images/exclamation.png"><font color=red size=2>You are requested to read and agree to the full end user license prior to using this distribution. </font>
+<http=www.linux-kinneret.org/index-en.html>
+<img src="/opt/kinneret/images/globe.png"><font size=2> The project homepage - in English</font>
+<end>
+-->
+</xml>

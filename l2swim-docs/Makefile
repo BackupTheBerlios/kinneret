@@ -14,7 +14,7 @@ destdir = $(DESTDIR)/opt/kinneret
 docdirs = he en ar ru
 extradirs = image audio samples pdf
 stylesheet = etc/l2swim.xsl
-menufile = etc/swim_menu.txt
+menufile = etc/swim_menu.txt etc/swim_menu.xml
 cssfile = etc/l2swim.css
 
 srcxml = $(patsubst src/%.xml,%,$(wildcard src/*/*.xml))
