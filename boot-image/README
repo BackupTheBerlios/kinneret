@@ -1,0 +1,58 @@
+These are the files copntained in the Gnu/Linux Kinneret boot image.
+
+about the files - 
+
+syslinux.cfg  =  the syslinux loader configuration file.
+boot.msg      =  the boot message to be displayed, as specified in syslinux.cfg
+f2            =  the file to be displayed upon pressing the F2 key, as specified in syslinux.cfg
+logo.16       =  an lss16 image that is displayed on the first boot message, as specified in boot.msg
+vmlinuz       =  the linux kernel to boot, as specifeid in syslinux.cfg
+iso08f14.psf  =  a psf hebrew font to be used, as specified in syslinux.cfg
+miniroot.gz   =  a gzip'ed ext2 initrd fs.
+README        =  this readme file. should not be contained on the boot image.
+=============================
+
+make yourself a boot image - 
+
+to make a boot image, simply follow these steps - 
+1. make a file to contain the image :
+	$ dd if=/dev/zero of=boot.img bs=1K count=1440
+2. make it an msdos fs :
+	$ mkdosfs boot.img
+3. use syslinux to make it bootable :
+	$ syslinux boot.img
+4. mount the new image :
+	$ mount -o loop -t vfat boot.img /mount/point
+5. copy the appropriate files into the image :
+	$ cp * /mount/point/
+6. umount it, and you're ready to go.
+	$ umount boot.img
+=============================
+
+make changes to the boot image :
+
+changing the kernel :
+simply replace 'vmlinuz' with a new kernel.
+
+changing the initrd fs :
+1. un-gzip the initrd file :
+	$ gzip -d miniroot.gz
+2. mount it :
+	$ mount -o loop -t ext2 miniroot /mount/point
+3. make changes....
+4. umount it :
+	$ umount miniroot
+5. re-gzip it :
+	$ gzip miniroot
+
+making other changes :
+all changes to the message files and configuration files should be documented under syslinux.
+go to http://syslinux.zytor.com/faq.php for more details.
+=============================
+
+tools :
+
+you will need the syslinux tool to make a bootable image.
+you may also wish to download it if you seek to change the image, as it comes with two handy (and essential)
+tools to convert pnm to lss16 and back.
+see http://syslinux.zytor.com/ for more details
