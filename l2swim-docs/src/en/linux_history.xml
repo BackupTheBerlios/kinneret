@@ -87,8 +87,8 @@ Your job is being a professor and researcher: That&apos;s one hell of a good exc
 	<para>
 Soon, commercial vendors moved in. Linux itself was, and is free. What the vendors did was to compile up various software and gather them in a distributable format, more like the other operating systems with which people were more familiar. 		<link href="http://redhat.com">Red Hat</link>
 , Caldera, 		<link href="http://www.debian.org">Debian</link>
-, and some other companies gained substantial amount of response from the users worldwide. With the new Graphical User Interfaces (like X-windows, 		<link href="http://www.kde.org">Gnome</link>
- ו		<link href="http://www.gnome.org">KDE</link>
+, and some other companies gained substantial amount of response from the users worldwide. With the new Graphical User Interfaces (like X-windows, 		<link href="http://www.kde.org">KDE</link>
+ ו		<link href="http://www.gnome.org">Gnome</link>
 ) the Linux distributions became very popular.	</para>
 	<para>Meanwhile, there were amazing things happening with Linux. Besides the PC, Linux was ported to many different platforms. Linux was tweaked to run 3Com&apos;s handheld PalmPilot computer. Clustering technology enabled large number of Linux machines to be combined into a single computing entity, a parallel computer. In April 1996, researchers at Los Alamos National Laboratory used Linux to run 68 PCs as a single parallel processing machine to simulate atomic shock waves.But unlike other Supercomputers costing a fortune, it was rather cheap. The do-it-yourself supercomputer cost only $152,000, including labor (connecting the 68 PCs with cables)-about one tenth the price of a comparable commercial machine. It reached a peak speed of 19 billion calculations per second, making it the 315th most powerful supercomputer in the world. And it was a robust one too. Three months later it still didn&apos;t have to be rebooted.</para>
 	<image>
