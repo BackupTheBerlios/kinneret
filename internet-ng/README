@@ -1,0 +1,11 @@
+README for internet-ng.
+Written 2004-12-24 by z9u2k.
+
+In order to build this CVS module, you have to run:
+
+$ aclocal
+$ autoconf
+$ libtoolize --copy
+$ automake -a -c
+$ ./configure
+$ make
