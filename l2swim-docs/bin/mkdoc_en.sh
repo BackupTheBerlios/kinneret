@@ -14,11 +14,11 @@
 # FOR A PARTICULAR PURPOSE.  See the GNU General Public License at
 # http///www.gnu.org/copyleft/gpl.html for more details.
 
-clear
+# clear
 xsltproc -o ../doc/en/gfdl_license.html ../etc/l2swim.xsl ../src/en/gfdl_license.xml
 xsltproc -o ../doc/en/gpl_license.html ../etc/l2swim.xsl ../src/en/gpl_license.xml
 xsltproc -o ../doc/en/user_interface.html ../etc/l2swim.xsl ../src/en/user_interface.xml
 echo "if all files were compiles successfuly, then:"
-echo "- enter toot mode : su"
+echo "- enter root mode : su"
 echo "- copy the files: cp ../doc/en/*.html /opt/kinneret/l2swim/doc/en/ -f"
 echo "... and same for other languages."

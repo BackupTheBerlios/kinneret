@@ -14,7 +14,7 @@
 # FOR A PARTICULAR PURPOSE.  See the GNU General Public License at
 # http///www.gnu.org/copyleft/gpl.html for more details.
 
-clear
+# clear
 xsltproc -o ../doc/he/tour_office.html ../etc/l2swim.xsl ../src/he/tour_office.xml
 xsltproc -o ../doc/he/tour_edu.html ../etc/l2swim.xsl ../src/he/tour_edu.xml
 xsltproc -o ../doc/he/tour_net.html ../etc/l2swim.xsl ../src/he/tour_net.xml
@@ -47,5 +47,5 @@ xsltproc -o ../doc/he/about_kinneret.html ../etc/l2swim.xsl ../src/he/about_kinn
 xsltproc -o ../doc/he/man_enigma.html ../etc/l2swim.xsl ../src/he/man_enigma.xml
 
 echo "if all files were compiles successfuly, then:"
-echo "- enter toot mode : su"
+echo "- enter root mode : su"
 echo "- copy the files: cp ../doc/he/*.html /opt/kinneret/l2swim/doc/he/ -f"
