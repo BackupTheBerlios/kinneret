@@ -132,16 +132,6 @@
 		<hebrew>?</hebrew>
 	</app>
 	<app>
-		<group>ייעודי</group>
-		<title>nil</title>
-		<class>שעשועים/משחק</class>
-		<age>1+2+3</age>
-		<home>http://nil.sourceforge.net/</home>
-		<version>?</version>
-		<kinneret>?</kinneret>
-		<hebrew>?</hebrew>
-	</app>
-	<app>
 		<group>כללי</group>
 		<title>KDE</title>
 		<class>מנהל חלונות</class>
@@ -195,7 +185,7 @@
 	<app>
 		<group>כללי</group>
 		<title>Pixie</title>
-		<class>עיבוד תמונות</class>
+		<class>עיבוד/קטלוג תמונות</class>
 		<age>?</age>
 		<home>http://www.mosfet.org/pixie/</home>
 		<version>?</version>
@@ -385,18 +375,18 @@
 	<app>
 		<group></group>
 		<title>Mplayer</title>
-		<class></class>
-		<age></age>
+		<class>מולטימדיה</class>
+		<age>1+2+3</age>
 		<version></version>
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
 		<home>http://www.mplayerhq.hu/homepage/</home>
 	</app>
-	
+
 	<app>
 		<group></group>
 		<title>Kplayer</title>
-		<class></class>
+		<class>מולטימדיה-הקרנת סרטים</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -407,17 +397,17 @@
 	<app>
 		<group></group>
 		<title>Quanta Plus</title>
-		<class></class>
+		<class>עורך HTML</class>
 		<age></age>
 		<version>The same as KDE</version>
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
 		<home>http://www.kde.org</home>
-	</app>	
+	</app>
 	<app>
 		<group></group>
 		<title>Karamba</title>
-		<class></class>
+		<class>משנה את שולחן העבודה</class>
 		<age></age>
 		<version>The newest</version>
 		<kinneret>?</kinneret>
@@ -428,49 +418,49 @@
 	<app>
 		<group></group>
 		<title>Konqueror </title>
-		<class></class>
+		<class>דפדפן אינטרנט</class>
 		<age></age>
 		<version>same as KDE</version>
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
 		<home></home>
-	</app>	
-	
-	
+	</app>
+
+
 	<app>
 		<group></group>
 		<title>Kdevelop</title>
-		<class></class>
+		<class>API ל C,C++</class>
 		<age></age>
 		<version>3</version>
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
 		<home>http://www.kdevelop.org</home>
-	</app>	
+	</app>
 	<app>
 		<group></group>
 		<title>KDE-pim</title>
-		<class></class>
+		<class>מנהל מידע אישי</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
 		<home>http://pim.kde.org/</home>
-	</app>	
+	</app>
 	<app>
 		<group></group>
 		<title>KDE games</title>
-		<class></class>
+		<class>משחקים</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
 		<home>http://www.kde.org/kdegames/</home>
-	</app>	
+	</app>
 			<app>
 		<group></group>
 		<title>KDE toys</title>
-		<class></class>
+		<class>משחקים</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -480,7 +470,7 @@
 <app>
 		<group></group>
 		<title>KDE utilities</title>
-		<class></class>
+		<class>שונות</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -496,11 +486,11 @@
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
 		<home></home>
-	</app>	
+	</app>
 <app>
 		<group></group>
 		<title>abiword</title>
-		<class></class>
+		<class>מעבד תמלילים</class>
 		<age></age>
 		<version>1.9x</version>
 		<kinneret>?</kinneret>
@@ -510,7 +500,7 @@
 <app>
 		<group></group>
 		<title>OTS</title>
-		<class></class>
+		<class>פלאג-אין לabiword</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -520,7 +510,7 @@
 <app>
 		<group></group>
 		<title>hspell</title>
-		<class></class>
+		<class>מאיית</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -530,7 +520,7 @@
 <app>
 		<group></group>
 		<title>XFCE4</title>
-		<class></class>
+		<class>שולחן עבודה חליפי</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -540,7 +530,7 @@
 <app>
 		<group></group>
 		<title>Free-pascal</title>
-		<class></class>
+		<class>מהדר פסקל</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -550,7 +540,7 @@
 <app>
 		<group></group>
 		<title>Gcompris</title>
-		<class></class>
+		<class>משחק/לומדה</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -560,7 +550,7 @@
 <app>
 		<group></group>
 		<title>xsltproc </title>
-		<class></class>
+		<class>מהדר XML</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -570,7 +560,7 @@
 <app>
 		<group></group>
 		<title>Powermanga/</title>
-		<class></class>
+		<class>משחק</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -580,7 +570,7 @@
 <app>
 		<group></group>
 		<title>hbasic</title>
-		<class></class>
+		<class>תואם VB</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -590,7 +580,7 @@
 <app>
 		<group></group>
 		<title>firestarter</title>
-		<class></class>
+		<class>firewall</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -600,7 +590,7 @@
 <app>
 		<group></group>
 		<title>XMMS Extras</title>
-		<class></class>
+		<class>תוספים ל XMMS</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -610,7 +600,7 @@
 <app>
 		<group></group>
 		<title>apache</title>
-		<class></class>
+		<class>שרת WEB</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -620,7 +610,7 @@
 <app>
 		<group></group>
 		<title>mySQL</title>
-		<class></class>
+		<class>שרת DB</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -630,7 +620,7 @@
 <app>
 		<group></group>
 		<title>wxWindows</title>
-		<class></class>
+		<class>טולקיט ל C++</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -640,7 +630,7 @@
 <app>
 		<group></group>
 		<title>wxPython</title>
-		<class></class>
+		<class>טולקין לpython</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -650,7 +640,7 @@
 <app>
 		<group></group>
 		<title>DrScheme</title>
-		<class></class>
+		<class>מהדר לסכמה</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -660,7 +650,7 @@
 <app>
 		<group></group>
 		<title>kxmleditor</title>
-		<class></class>
+		<class>עורך XML</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -670,7 +660,7 @@
 <app>
 		<group></group>
 		<title>CheeseTracker</title>
-		<class></class>
+		<class>עורך מוזיקה</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -680,7 +670,7 @@
 <app>
 		<group></group>
 		<title>KTuberling</title>
-		<class></class>
+		<class>משחק</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -690,7 +680,7 @@
 <app>
 		<group></group>
 		<title>Kalbum</title>
-		<class></class>
+		<class>מולטימדיה - קטלוג תמונות</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -699,23 +689,23 @@
 	</app>
 <app>
 		<group></group>
-		<title></title>
-		<class></class>
+		<title>KsplashML</title>
+		<class>מחליף splash</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
-		<home></home>
+		<home>http://www.shadowcom.net/Software/ksplash-ml/</home>
 	</app>
 <app>
 		<group></group>
-		<title></title>
+		<title>Kexi</title>
 		<class></class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
-		<home></home>
+		<home>http://www.koffice.org/kexi/</home>
 	</app>
 <app>
 		<group></group>
