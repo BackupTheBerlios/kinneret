@@ -85,7 +85,6 @@ then
 	exit -1
 fi
 
-#echo "[*isp::vpi*].[*isp::vci*]" >> /etc/ppp/options
 echo "8.48" >> /etc/ppp/options
 if [ $? -ne 0 ]
 then
