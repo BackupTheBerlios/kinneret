@@ -113,6 +113,8 @@ Click here for English documentation
 מערכת הפעלה של האקרים?
  <name=index41>
 הגיגים על מחשבים (סדרת מאמרים)
+  <play=he/free_vs_free.html>
+חופשי זה יותר מבחינם [טיוטה]
   <play=he/free_essay.html>
 תוכנה חופשית - למה ומדוע?
   <play=he/gnu_linux.html>
