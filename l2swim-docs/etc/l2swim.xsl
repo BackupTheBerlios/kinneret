@@ -17,7 +17,8 @@
      http://www.gnu.org/copyleft/gpl.html for more details.
 
      Filename: l2swim.xsl
-     Version: 1.99e (2nd edition) 19-Jan-2003
+     Version: 2.00 (2nd edition) 28-mar-2004
+     HTML 4.01 validated!
      Encoding: [UTF8]
      Language support: Hebrew, Arabic, English, Russian
 
@@ -98,16 +99,16 @@
 				<xsl:choose>
 <!-- TO DO: needs translation -->
 					<xsl:when test="@lang = 'hebrew'">
-מסמך זה עובד ונערך עבור <a href="http://www.linux-kinneret.org">גנו/לינוקס כנרת</a>, תוך שימוש בתוכנה חופשית בלבד.
+מסמך זה עובד ונערך עבור <a href="http://www.linux-kinneret.org">גנו/לינוקס כנרת</a>, תוך שימוש בתוכנה חופשית בלבד. עמוד זה <a href="http://validator.w3.org/check/referer" target="new">תואם לתקנים בינלאומיים</a><IMG SRC="/opt/kinneret/images/globe.png" ALT="(web)"/> המאפשרים צפיה בכל דפדפן תקני.
 					</xsl:when>
 					<xsl:when test="@lang = 'arabic'">
-تم تحرير وتعديل هذا ألملف لخدمة <a href="http://www.linux-kinneret.org">جنو/ لينوكس كينيرت</a>, واسطة إستعمال برامج مجانيه فقط
+تم تحرير وتعديل هذا ألملف لخدمة <a href="http://www.linux-kinneret.org">جنو/ لينوكس كينيرت</a>, واسطة إستعمال برامج مجانيه فقط. עמוד זה <a href="http://validator.w3.org/check/referer" target="new">תואם לתקנים בינלאומיים</a><IMG SRC="/opt/kinneret/images/globe.png" ALT="(web)"/> המאפשרים צפיה בכל דפדפן תקני.
 					</xsl:when>
 					<xsl:when test="@lang = 'russian'">
-This document was edited and formatted for <a href="http://www.linux-kinneret.org">GNU/Linux Kinneret</a> using only free software
+This document was edited and formatted for <a href="http://www.linux-kinneret.org">GNU/Linux Kinneret</a> using only free software. This page <a href="http://validator.w3.org/check/referer" target="new">complies with international standards</a><IMG SRC="/opt/kinneret/images/globe.png" ALT="(web)"/> that ensure comatibility with standard-compliant browsers.
 					</xsl:when>
 					<xsl:when test="@lang = 'english'">
-This document was edited and formatted for <a href="http://www.linux-kinneret.org">GNU/Linux Kinneret</a> using only free software
+This document was edited and formatted for <a href="http://www.linux-kinneret.org">GNU/Linux Kinneret</a> using only free software. This page <a href="http://validator.w3.org/check/referer" target="new">complies with international standards</a><IMG SRC="/opt/kinneret/images/globe.png" ALT="(web)"/> that ensure comatibility with standard-compliant browsers.
 					</xsl:when>
 					<xsl:otherwise>ltr</xsl:otherwise>
 				</xsl:choose>
@@ -149,7 +150,7 @@ Important! GNU/Linux Kinneret is provided "as is" without warranty of any kind, 
 					</xsl:when>
 					<xsl:otherwise>ltr</xsl:otherwise>
 				</xsl:choose>
-				<IMG SRC="/opt/kinneret/images/exclamation.png" />
+				<IMG SRC="/opt/kinneret/images/exclamation.png" ALT="!" />
 			</td></tr></table>
 
 			<!-- ensure there is a border around text so that it does not stick to the browser frame -->
@@ -165,7 +166,7 @@ Important! GNU/Linux Kinneret is provided "as is" without warranty of any kind, 
 </xsl:template>
 
 <xsl:template match="toc">
-	<form name="contents">
+	<form name="contents" action="">
 	<b>	<xsl:choose>
 		<xsl:when test="@lang = 'hebrew'">תוכן</xsl:when>
 		<xsl:when test="@lang = 'arabic'">فهرس</xsl:when>
@@ -192,11 +193,9 @@ Important! GNU/Linux Kinneret is provided "as is" without warranty of any kind, 
 <!-- use only once, at the top of the document -->
 <xsl:template match="title">
   <CENTER>
-  <IMG SRC="/opt/kinneret/images/blue_bar.png" />
-  <FONT COLOR="BLUE">
-  <H1><xsl:apply-templates/></H1>
-  </FONT>
-  <IMG SRC="/opt/kinneret/images/blue_bar.png" />
+  <IMG SRC="/opt/kinneret/images/blue_bar.png" ALT="----------" />
+  <H1><FONT COLOR="BLUE"><xsl:apply-templates/></FONT></H1>
+  <IMG SRC="/opt/kinneret/images/blue_bar.png" ALT="----------" />
   </CENTER>
   <BR/>
 </xsl:template>
@@ -310,13 +309,11 @@ Important! GNU/Linux Kinneret is provided "as is" without warranty of any kind, 
 
 <!-- Box -->
 <xsl:template match="box">
-<p>
 <center>
   <table bgcolor="#99ccff" width="90%" cellpadding="5" cellspacing="0" border="1"><tr><td>
     <xsl:apply-templates/>
   </td></tr></table>
 </center>
-</p>
 </xsl:template>
 
 <!-- List of items (using bullets) -->
@@ -364,7 +361,7 @@ Important! GNU/Linux Kinneret is provided "as is" without warranty of any kind, 
 
 <!-- A globe used to designate an external (Internet) link, following <link> tag -->
 <xsl:template match="web">
-    <IMG SRC="/opt/kinneret/images/globe.png" />
+    <IMG SRC="/opt/kinneret/images/globe.png" ALT="(web)"/>
 </xsl:template>
 
 <!-- ensures a new line after a line of text -->
@@ -377,6 +374,9 @@ Important! GNU/Linux Kinneret is provided "as is" without warranty of any kind, 
   <CENTER>
   <IMG>
     <xsl:attribute name = "SRC">
+      <xsl:value-of select="file" />
+    </xsl:attribute>
+    <xsl:attribute name = "ALT">
       <xsl:value-of select="file" />
     </xsl:attribute>
   </IMG>
@@ -393,12 +393,18 @@ Important! GNU/Linux Kinneret is provided "as is" without warranty of any kind, 
     <xsl:attribute name = "SRC">
       <xsl:value-of select="one" />
     </xsl:attribute>
+    <xsl:attribute name = "ALT">
+      <xsl:value-of select="file" />
+    </xsl:attribute>
   </IMG>
   </td>
   <td>  
   <IMG>
     <xsl:attribute name = "SRC">
       <xsl:value-of select="two" />
+    </xsl:attribute>
+    <xsl:attribute name = "ALT">
+      <xsl:value-of select="file" />
     </xsl:attribute>
   </IMG>
   </td>
@@ -409,12 +415,18 @@ Important! GNU/Linux Kinneret is provided "as is" without warranty of any kind, 
     <xsl:attribute name = "SRC">
       <xsl:value-of select="three" />
     </xsl:attribute>
+    <xsl:attribute name = "ALT">
+      <xsl:value-of select="file" />
+    </xsl:attribute>
   </IMG>
   </td>
   <td>  
   <IMG>
     <xsl:attribute name = "SRC">
       <xsl:value-of select="four" />
+    </xsl:attribute>
+    <xsl:attribute name = "ALT">
+      <xsl:value-of select="file" />
     </xsl:attribute>
   </IMG>
   </td>

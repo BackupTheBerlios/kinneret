@@ -9,9 +9,10 @@
 </head>
 <body dir="rtl" class="rtl"><table width="90%" align="left"><tr><td>
 <CENTER>
-<IMG SRC="/opt/kinneret/images/blue_bar.png"><FONT COLOR="BLUE"><H1>
+<IMG SRC="/opt/kinneret/images/blue_bar.png" ALT="----------"><H1><FONT COLOR="BLUE">
 מדריך עיצוב תמונות תלת-מימדיות עם KPovModeler
-</H1></FONT><IMG SRC="/opt/kinneret/images/blue_bar.png">
+</FONT></H1>
+<IMG SRC="/opt/kinneret/images/blue_bar.png" ALT="----------">
 </CENTER>
 <BR><center><table bgcolor="#99ccff" width="90%" cellpadding="5" cellspacing="0" border="1"><tr><td align="center">
 מדריך זה נכתב ע"י <a target="_blank" href="mailto:costello@linux-kinneret.org">גיא שקד</a>,דצמבר 2003
@@ -20,7 +21,7 @@
 <BR>
 הרשות נתונה בזאת להעתיק, להפיץ ו/או לשנות את המסמך הזה, תחת תנאי רשיון ה GNU לשימוש חופשי במסמכים, גרסה 1.2 או כל גרסה מאוחרת יותר שתפורסם ע"י קרן התוכנה החופשית.
 </td></tr></table></center>
-<br><form name="contents">
+<br><form name="contents" action="">
 <b>תוכן</b>:
 	<select name="url" size="1" OnChange="location.href=form.url.options[form.url.selectedIndex].value" style="font-family:Arial,Helvetica,sans-serif; font-size:10"><option value="#doc_chap
 				1">1.
@@ -50,12 +51,12 @@ KPovModeler היא תוכנה לעיצוב סצינות תלת מימדיות ה
 
 <CENTER><table>
 <tr>
-<td><IMG SRC="../image/man_kpov_1.png"></td>
-<td><IMG SRC="../image/man_kpov_2.png"></td>
+<td><IMG SRC="../image/man_kpov_1.png" ALT=""></td>
+<td><IMG SRC="../image/man_kpov_2.png" ALT=""></td>
 </tr>
 <tr>
-<td><IMG SRC="../image/man_kpov_3.png"></td>
-<td><IMG SRC="../image/man_kpov_4.png"></td>
+<td><IMG SRC="../image/man_kpov_3.png" ALT=""></td>
+<td><IMG SRC="../image/man_kpov_4.png" ALT=""></td>
 </tr>
 </table></CENTER>
 
@@ -67,7 +68,7 @@ KPovModeler היא תוכנה לעיצוב סצינות תלת מימדיות ה
 ממשק המשתמש
 </B></FONT></I></B></p>
 
-<CENTER><IMG SRC="../image/man_kpov_interface.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_interface.png" ALT="../image/man_kpov_interface.png"></CENTER>
 
 <p>
 ממשק המשתמש מתחלק לארבעה אזורים עיקריים -
@@ -135,12 +136,12 @@ KPovModeler היא תוכנה לעיצוב סצינות תלת מימדיות ה
 הסצינה הראשונה שנבנה היא סצינת פתיחה מקובלת למתחילים בעולם התלת מימדי - כדור על משטח. ותראה כך -
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_ball_1.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_ball_1.png" ALT="../image/man_kpov_ball_1.png"></CENTER>
 
 <p>
 כדי ליצור את הסצינה הזו יש ליצור קובץ חדש (כזה נוצר אוטומטית כאשר מפעילים את KPovModeler). בברירת מחדל עץ האובייקטים של קובץ חדש ייראה כך -
 </p>
-<CENTER><IMG SRC="../image/man_kpov_ball_2.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_ball_2.png" ALT="../image/man_kpov_ball_2.png"></CENTER>
 
 <ul>
 <li>
@@ -168,7 +169,7 @@ KPovModeler היא תוכנה לעיצוב סצינות תלת מימדיות ה
 <BR>
 לאחר מכן נוסיף משטח על ידי לחיצה על הכפתור המתאים בתפריט -
 </p>
- <CENTER><IMG SRC="../image/man_kpov_ball_3.png"></CENTER>
+ <CENTER><IMG SRC="../image/man_kpov_ball_3.png" ALT="../image/man_kpov_ball_3.png"></CENTER>
 
 <p>
 המשטח יתווסף לעץ התפריטים מתחת לאובייקט הנבחר (באופן כללי אין משמעות לסדר האובייקטים בעץ התפריטים, מלבד במקרים מיוחדים כמו יחסי חיתוך או הבדל וטרנספורמציות כמו סיבוב והזזה).
@@ -178,7 +179,7 @@ KPovModeler היא תוכנה לעיצוב סצינות תלת מימדיות ה
 אחרי שהוספנו משטח, יש לקבוע איך הוא ייראה, לשם כך קיים חלון הפרטים -
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_ball_4.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_ball_4.png" ALT="../image/man_kpov_ball_4.png"></CENTER>
 
 <p>
 משטח (Plane) הוא אובייקט חד מימדי, הנפרס על כל העולם התלת מימדי בהתאם לכיוון שנקבע, את כיוון המשטח קובעים על ידי ווקטור מאונך למשטח (נורמל - Normal), כלומר - אם נרצה ליצור רצפה - עלינו לספק ווקטור על ציר הY, קיר ייווצר על ידי ווקטור על ציר הX או הZ, ומשטח משופע על ידי ווקטור על ציר הY וגם על ציר הX או הZ. מכיוון שאנחנו מעוניינים ברצפה נשאיר האת הנורמל על ציר הY - 0,1,0
@@ -192,7 +193,7 @@ KPovModeler היא תוכנה לעיצוב סצינות תלת מימדיות ה
 אחרי שקבענו ת צורת המשטח ניתן לו צבע. על מנת לתת צבע לאובייקט צריך להוסיף לו פיגמנט (Pigment) -
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_ball_5.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_ball_5.png" ALT="../image/man_kpov_ball_5.png"></CENTER>
 
 <ul>
 <li>
@@ -210,13 +211,13 @@ KPovModeler היא תוכנה לעיצוב סצינות תלת מימדיות ה
 אל הפיגמנט נוסיף רשימת צבעים (Color List) -
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_ball_6.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_ball_6.png" ALT="../image/man_kpov_ball_6.png"></CENTER>
 
 <p>
 רשימת צבעים מאפשרת ליצור בקלות מראה של משבצות (Checkers) , לבנים (Bricks), או משושים (Hexagon). אנחנו נבחר במשבצות (שהיא גם ברירת המחדל). כדי לקבוע את צבעי המשבצות נוסיף לרשימת הצבעים צבע -
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_ball_7.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_ball_7.png" ALT="../image/man_kpov_ball_7.png"></CENTER>
 
 <p>
 צבע הוא שחור בברירת מחדל, ניתן לשנות אותו על ידי קביעת ערכי הRGB (אדום, ירוק, כחול - Red Green Blue) או לחיצה על הצבע - שתפתח חלון ידידותי לבחירת הצבע הרצוי. במקרה שלנו נקבע את הצבע לאדום על ידי הכנסת 1 בשדה Red.
@@ -234,7 +235,7 @@ KPovModeler היא תוכנה לעיצוב סצינות תלת מימדיות ה
 עכשיו ניקח הפסקה קטנה מהעיצוב, ונצפה במה שעשינו עד עכשיו, על ידי לחיצה על כפתור הרינדור (Rendering) -
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_ball_8.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_ball_8.png" ALT="../image/man_kpov_ball_8.png"></CENTER>
 
 <p>
 ותוך כמה שניות יופיע על המסף המשטח המשובץ שלנו.
@@ -267,7 +268,7 @@ KPovModeler היא תוכנה לעיצוב סצינות תלת מימדיות ה
 נבחר שוב בסצינה (בתוך עץ האובייקטים), ונוסיף כדור -
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_ball_9.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_ball_9.png" ALT="../image/man_kpov_ball_9.png"></CENTER>
 
 <p>
 כדור נקבע על ידי נקודת המרכז, ואורך הרדיוס. ברירת המחדל של כדור היא נקודת המרכז 0,0,0 ורדיוס באורך 0.5. מצב כזה יגרום לכדור שלנו להיות שקוע בתוך המשטח. כדי שהכדור יהיה מעל למשטח נצטרך להרים את הכדור או להוריד את המשטח, במקרה הזה - נרים את מרכז הכדור לנקודה 0,0.5,0, כך הנקודה הנמוכה ביותר שלו תהיה ב0,0,0 - בדיוק על המשטח.
@@ -295,7 +296,7 @@ KPovModeler היא תוכנה לעיצוב סצינות תלת מימדיות ה
 כדי לגרום לכדור להראות אמיתי יותר, נוסיף לו גימור (Finish) -
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_ball_10.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_ball_10.png" ALT="../image/man_kpov_ball_10.png"></CENTER>
 
 <p>
 [את הגימור ניתן להוסיף כאשר הפיגמנט או הכדור עצמו נבחר, אבל לא כאשר בוחרים בצבע, או באובייקט אחר בתוך הפיגמנט]
@@ -317,7 +318,7 @@ KPovModeler היא תוכנה לעיצוב סצינות תלת מימדיות ה
 מעבר לשקיפות זכוכית גם מחזירה חלק מהאור, לכן נסמן תחת הגימור גם Reflection (החזרה), החזרה נקבעת על ידי צבע - ככל שהצבע בהיר יותר - ההחזרה חזקה יותר. במקרה שלנו נסתפק בהחזרה של Red=0.1 Green=0.1 Blue=0.1. בסופו של דבר חלון הפרטים של הגימור ייראה כך -
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_ball_11.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_ball_11.png" ALT="../image/man_kpov_ball_11.png"></CENTER>
 
 <p>
 וזהו, הסצינה מוכנה, נשאר רק לטפל בעניינים טכניים כמו התאורה והמצלמה.
@@ -380,7 +381,7 @@ KPovModeler היא תוכנה לעיצוב סצינות תלת מימדיות ה
 זה הכל - עכשיו כל מה שנשאר זה לרנדר - ותתקבל בדיוק התמונה שפתחה את הפרק הזה -
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_ball_1.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_ball_1.png" ALT="../image/man_kpov_ball_1.png"></CENTER>
 
 <p><I><FONT COLOR="BLUE" SIZE="-1">
 תרגול
@@ -410,7 +411,7 @@ KPovModeler היא תוכנה לעיצוב סצינות תלת מימדיות ה
 אחרי שהבנו את עקרונות העבודה עם Kpovmodeler נעבור לבניית סצינה יותר מורכבת -
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_room_1.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_room_1.png" ALT="../image/man_kpov_room_1.png"></CENTER>
 
 <p>
 שוב נתחיל מקובץ חדש. האובייקט הראשון שניצור יהיה החדר, אותו ניצור על ידי התיבה (Box). תיבה נקבעת על ידי המיקום של שתי פינות נגדיות. החדר שלנו יהיה בגודל 10X10, ובגובה 5. מרכז החדר יהיה ב0,0,0 והרצפה בגובה 0. לכן את הפינות נקבע -
@@ -444,13 +445,13 @@ KPovModeler היא תוכנה לעיצוב סצינות תלת מימדיות ה
 עכשיו נפנה לעצב את הפריט הראשון בסצינה - העט.
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_room_2.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_room_2.png" ALT="../image/man_kpov_room_2.png"></CENTER>
 
 <p>
 נתחיל מחרוט (Cone) -
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_room_3.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_room_3.png" ALT="../image/man_kpov_room_3.png"></CENTER>
 
 <p>
 חרוט מוגדר על ידי שתי נקודות, ושני רדיוסים, למעשה ניתן ליצור בעזרתו גם גליל (אם שני הרדיוסים זהים), או חרוט קטום (אם שני הרדיסים גדולים מאפס) ורק אם רדיוס אחד יהיה שווה לאפס, והשני גדול מאפס יתקבל חרוט.
@@ -468,7 +469,7 @@ KPovModeler היא תוכנה לעיצוב סצינות תלת מימדיות ה
 נמשיך עם גליל (Cylinder) - שיהיה גוף העט -
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_room_4.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_room_4.png" ALT="../image/man_kpov_room_4.png"></CENTER>
 
 <p>
 גליל מוגדר בדומה לחרוט, על ידי שתי נקודות, אבל רק רדיוס אחד.
@@ -514,7 +515,7 @@ KPovModeler היא תוכנה לעיצוב סצינות תלת מימדיות ה
 עכשיו נשארו רק כמה עניינים טכניים - כדי שכל העט שלנו יתנהג כמו גוף אחד ולא כמו ארבעה גופים נפרדים נוסיף איחוד (Union) -
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_room_5.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_room_5.png" ALT="../image/man_kpov_room_5.png"></CENTER>
 
 <p>
 איחוד מאפשר להגדיר מספר פריטים כאובייקט אחד, ההגדרה הזו טובה במיוחד כאשר רוצים לבצע טרנספורמציות )שינוי גודל, סיבוב, הזזה) על כמה חלקים ביחד.
@@ -547,7 +548,7 @@ KPovModeler היא תוכנה לעיצוב סצינות תלת מימדיות ה
 כדי שהעט לא יפריע במהלך העיצוב של האובייקט הבא, נוסיף הכרזה (Decleration) -
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_room_6.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_room_6.png" ALT="../image/man_kpov_room_6.png"></CENTER>
 
 <p>
 הכרזה מאפשרת לנו להגדיר אובייקט מסויים, ולאחר מכן להשתמש בו כמה פעמים שנרצה, מבלי שנצטרך לשכפל בכל פעם את האובייקט. האפשרות הזו חיונית בעיקר כשמשנים מאפיין קטן באובייקט שמופיע יותר מפעם אחת בסצינה, אך עוזרת גם לשמור על הסדר.
@@ -587,7 +588,7 @@ KPovModeler היא תוכנה לעיצוב סצינות תלת מימדיות ה
 את הרגל הזו נעתיק ונדביק עוד שלוש פעמים, כך שיהיו ארבע רגליים, וכל אחת משלוש הרגליים החדשות נזיז למקום אחר בעזרת הtranslate -
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_room_7.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_room_7.png" ALT="../image/man_kpov_room_7.png"></CENTER>
 
 <p>
 Translate מאפשר לנו להזיז אובייקט קיים מבלי לשנות את פרטי הבסיס שלו.
@@ -619,7 +620,7 @@ Translate מאפשר לנו להזיז אובייקט קיים מבלי לשנו
 כדי להוסיף את פלטת הזכוכית נצטרך קודם כל לחתוך חלק מהפלטה הנוכחית. נעשה זאת על ידי אובייקט "הבדל" (Diffrence) -
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_room_8.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_room_8.png" ALT="../image/man_kpov_room_8.png"></CENTER>
 
 <p>
 "הבדל" יוצר אובייקט שמורכב מהאובייקט הראשון שבתוכו, ללא האיזורים שנכללים באובייקט השני.
@@ -645,27 +646,27 @@ Translate מאפשר לנו להזיז אובייקט קיים מבלי לשנו
 ניתן להשתמש בכלי זה לציור תמונות תלת מימדיות שישמשו למסך הטעינה של שולחן העבודה (splash screen) וכן לתמונת הרקע של שולחן העבודה, אולם את זאת נשאיר לפעם אחרת. לבינתיים, תוכל להיעזר בקבצים המצורפים על מנת להגדיל את מגוון התמונות שביכולתך לצייר.
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_tux_1.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_tux_1.png" ALT="../image/man_kpov_tux_1.png"></CENTER>
 
 <p>
  כדי ללמוד איך נבנתה תמונה זו תוכל להסתכל ב opt/kinneret/l2swim/doc/samples/splash.kpm/ המכיל את הסצינה כולה.
 </p>
 
-<CENTER><IMG SRC="../image/man_kpov_tux_2.png"></CENTER>
+<CENTER><IMG SRC="../image/man_kpov_tux_2.png" ALT="../image/man_kpov_tux_2.png"></CENTER>
 
 <p>
  כדי ללמוד איך נבנתה תמונה זו תוכל להסתכל ב opt/kinneret/l2swim/doc/samples/wallpaper.kpm/ המכיל את הסצינה כולה.
 </p>
 
 <table bgcolor="#99ccff" width="100%" cellpadding="5" cellspacing="0" border="0"><tr><td align="center">
-מסמך זה עובד ונערך עבור <a href="http://www.linux-kinneret.org">גנו/לינוקס כנרת</a>, תוך שימוש בתוכנה חופשית בלבד.
+מסמך זה עובד ונערך עבור <a href="http://www.linux-kinneret.org">גנו/לינוקס כנרת</a>, תוך שימוש בתוכנה חופשית בלבד. עמוד זה <a href="http://validator.w3.org/check/referer" target="new">תואם לתקנים בינלאומיים</a><IMG SRC="/opt/kinneret/images/globe.png" ALT="(web)"> המאפשרים צפיה בכל דפדפן תקני.
 					</td></tr></table>
 <table bgcolor="#bbffbb" width="100%" cellpadding="5" cellspacing="0" border="0"><tr><td align="center">
 לינוקס הוא שם רשום של Linus Torvalds; יוניקס הוא שם רשום של ה Open Group בארה"ב ובמדינות נוספות, Windows הוא שם רשום של Microsoft Corporation. כל שאר השמות הרשומים וזכויות היוצרים שייכים לבעליהם.
 					</td></tr></table>
 <table bgcolor="#ffffbb" width="100%" cellpadding="5" cellspacing="0" border="0"><tr><td align="center">
 חשוב לדעת! גנו/לינוקס כנרת מסופקת "כפי שהיא", בלא אחריות מסוג כלשהו, בין אם מפורשת ובין אם משתמעת, לרבות, אך מבלי למעט מהאמור, האחריות המשתמעת למסחריות והתאמה למטרה מסוימת. בעלי זכויות היוצרים ו/או מפיצי התוכנה לא ישאו כלפיך באחריות לנזקים, לרבות נזקים כלליים, מיוחדים, משניים או תוצאתיים כלשהם, הנובעים מהשימוש או מאי-היכולת להשתמש בתוכנות המסופקות. עליך .לקרוא בעיון את רישיון השימוש המלא ולהסכים לנאמר בו לפני השימוש בהפצה זו.
-					<IMG SRC="/opt/kinneret/images/exclamation.png">
+					<IMG SRC="/opt/kinneret/images/exclamation.png" ALT="!">
 </td></tr></table>
 </td></tr></table></body>
 </html>

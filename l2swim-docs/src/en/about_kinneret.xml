@@ -31,7 +31,7 @@ On one end the pupil needs, and sometimes is required, to use software tools to 
 
 <para>
 In order to answer this exact problem, the Kinneret project was born. The project attends three main goals:				
-
+</para>
 <bullets>
 <item>
 Presenting free, quality proven alternatives to the Windows™ operating system and to the commercial software tools that pupils use during their studies.
@@ -43,7 +43,6 @@ Promoting the free software and open source movements in Israel.
 Giving equal opportunity to pupils from all parts of the population in the technological age.
 </item>
 </bullets>
-</para>
 
 <para>
 The main deliverable of the project is a software pack which includes a GNU/Linux based operating system, a collection of office tools such as a word processor, a spreadsheet and a presentation tool, and also a verity of designated software tools in the various fields of studies. All the tools will be running on a designed and comfortable desktop, with maximal Hebrew support. Many wizards will be provided to simplify Internet connection, printer configuration, and access to windows files that will make the initial experience of a Windows user to a pleasent, simple and easy one.
@@ -69,7 +68,7 @@ The pedagogic forum was formed under the Kinneret project in order to satisfy th
 
 <para>
 The goals of the pedagogic forum are:
-
+</para>
 <bullets>
 <item>
 Finding free, adequate alternatives to the commercial software tools being used today in schools.
@@ -84,7 +83,7 @@ Developing lesson skeletons based on usage of the alternatives found.
 In the future, developing learning aids to answer the lesson skeletons which will be written within the forum.
 </item>
 </bullets>
-
+<para>
 The learning programs that will be formed in the forum will be passed for approval to the ministry of education.
 </para>
 
