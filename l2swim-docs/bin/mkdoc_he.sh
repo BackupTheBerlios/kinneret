@@ -15,12 +15,7 @@
 # http///www.gnu.org/copyleft/gpl.html for more details.
 
 # clear
-xsltproc -o ../doc/he/tour_office.html ../etc/l2swim.xsl ../src/he/tour_office.xml
-xsltproc -o ../doc/he/tour_edu.html ../etc/l2swim.xsl ../src/he/tour_edu.xml
-xsltproc -o ../doc/he/tour_net.html ../etc/l2swim.xsl ../src/he/tour_net.xml
-xsltproc -o ../doc/he/tour_media.html ../etc/l2swim.xsl ../src/he/tour_media.xml
-xsltproc -o ../doc/he/tour_games.html ../etc/l2swim.xsl ../src/he/tour_games.xml
-xsltproc -o ../doc/he/tour_admin.html ../etc/l2swim.xsl ../src/he/tour_admin.xml
+xsltproc -o ../doc/he/tour_kinneret.html ../etc/l2swim.xsl ../src/he/tour_kinneret.xml
 xsltproc -o ../doc/he/desktop_ready.html ../etc/l2swim.xsl ../src/he/desktop_ready.xml
 xsltproc -o ../doc/he/faq_kinneret.html ../etc/l2swim.xsl ../src/he/faq_kinneret.xml
 xsltproc -o ../doc/he/fonts_license.html ../etc/l2swim.xsl ../src/he/fonts_license.xml

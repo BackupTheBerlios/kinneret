@@ -16,9 +16,9 @@
      http://www.gnu.org/copyleft/gpl.html for more details.
 
      Filename: l2swim.xsl
-     Version: 0.3b 17-June-2003
+     Version: 0.5 1-August-2003
      Encoding: [UTF8]
-     Language: Hebrew
+     Language support: Hebrew, Arabic, English, Russian
 
      Authored by: dovix, dovix@linux-kinneret.org
      ******************************************************************** -->
@@ -29,9 +29,12 @@
 
 <xsl:template match="document | hebrew | arabic | article">
   <html>
-    <head><title>
-      <xsl:value-of select="./title"/>
-    </title></head>
+    <head>
+       <link title="StyleSheet" rel="stylesheet"  href="../../etc/l2swim.css" type="text/css"/>
+       <title>
+          <xsl:value-of select="./title"/>
+       </title>
+    </head>
     <body dir="rtl">
       <xsl:apply-templates/>
     </body>
