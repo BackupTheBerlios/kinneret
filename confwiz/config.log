@@ -33,9 +33,9 @@ PATH: /usr/bin
 PATH: /usr/local/bin
 PATH: /opt/bin
 PATH: /usr/i686-pc-linux-gnu/gcc-bin/3.2
-PATH: /opt/rar/bin
 PATH: /usr/X11R6/bin
-PATH: /opt/blackdown-jre-1.4.1/bin
+PATH: /opt/blackdown-jdk-1.4.1/bin
+PATH: /opt/blackdown-jdk-1.4.1/jre/bin
 PATH: /usr/qt/3/bin
 PATH: /usr/kde/3.1/bin
 PATH: /usr/qt/2/bin
@@ -69,17 +69,17 @@ configure:2096: checking for i386-linux-gcc
 configure:2122: result: gcc
 configure:2404: checking for C compiler version
 configure:2407: gcc --version </dev/null >&5
-gcc (GCC) 3.2.2
+gcc (GCC) 3.2.3 20030422 (Gentoo Linux 1.4 3.2.3-r1, propolice)
 Copyright (C) 2002 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 configure:2410: $? = 0
 configure:2412: gcc -v </dev/null >&5
-Reading specs from /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.2/specs
-Configured with: /var/tmp/portage/gcc-3.2.2/work/gcc-3.2.2/configure --prefix=/usr --bindir=/usr/i686-pc-linux-gnu/gcc-bin/3.2 --includedir=/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.2/include --datadir=/usr/share/gcc-data/i686-pc-linux-gnu/3.2 --mandir=/usr/share/gcc-data/i686-pc-linux-gnu/3.2/man --infodir=/usr/share/gcc-data/i686-pc-linux-gnu/3.2/info --enable-shared --host=i686-pc-linux-gnu --target=i686-pc-linux-gnu --with-system-zlib --enable-languages=c,c++,ada,f77,objc,java --enable-threads=posix --enable-long-long --disable-checking --enable-cstdio=stdio --enable-clocale=generic --enable-__cxa_atexit --enable-version-specific-runtime-libs --with-gxx-include-dir=/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.2/include/g++-v3 --with-local-prefix=/usr/local --enable-shared --enable-nls --without-included-gettext
+Reading specs from /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/specs
+Configured with: /var/tmp/portage/gcc-3.2.3-r1/work/gcc-3.2.3/configure --prefix=/usr --bindir=/usr/i686-pc-linux-gnu/gcc-bin/3.2 --includedir=/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include --datadir=/usr/share/gcc-data/i686-pc-linux-gnu/3.2 --mandir=/usr/share/gcc-data/i686-pc-linux-gnu/3.2/man --infodir=/usr/share/gcc-data/i686-pc-linux-gnu/3.2/info --enable-shared --host=i686-pc-linux-gnu --target=i686-pc-linux-gnu --with-system-zlib --enable-languages=c,c++,ada,f77,objc,java --enable-threads=posix --enable-long-long --disable-checking --enable-cstdio=stdio --enable-clocale=generic --enable-__cxa_atexit --enable-version-specific-runtime-libs --with-gxx-include-dir=/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3 --with-local-prefix=/usr/local --enable-shared --enable-nls --without-included-gettext
 Thread model: posix
-gcc version 3.2.2
+gcc version 3.2.3 20030422 (Gentoo Linux 1.4 3.2.3-r1, propolice)
 configure:2415: $? = 0
 configure:2417: gcc -V </dev/null >&5
 gcc: argument to `-V' is missing
@@ -153,17 +153,17 @@ configure:3299: checking for i386-linux-g++
 configure:3325: result: g++
 configure:3383: checking for C++ compiler version
 configure:3386: g++ --version </dev/null >&5
-g++ (GCC) 3.2.2
+g++ (GCC) 3.2.3 20030422 (Gentoo Linux 1.4 3.2.3-r1, propolice)
 Copyright (C) 2002 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 configure:3389: $? = 0
 configure:3391: g++ -v </dev/null >&5
-Reading specs from /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.2/specs
-Configured with: /var/tmp/portage/gcc-3.2.2/work/gcc-3.2.2/configure --prefix=/usr --bindir=/usr/i686-pc-linux-gnu/gcc-bin/3.2 --includedir=/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.2/include --datadir=/usr/share/gcc-data/i686-pc-linux-gnu/3.2 --mandir=/usr/share/gcc-data/i686-pc-linux-gnu/3.2/man --infodir=/usr/share/gcc-data/i686-pc-linux-gnu/3.2/info --enable-shared --host=i686-pc-linux-gnu --target=i686-pc-linux-gnu --with-system-zlib --enable-languages=c,c++,ada,f77,objc,java --enable-threads=posix --enable-long-long --disable-checking --enable-cstdio=stdio --enable-clocale=generic --enable-__cxa_atexit --enable-version-specific-runtime-libs --with-gxx-include-dir=/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.2/include/g++-v3 --with-local-prefix=/usr/local --enable-shared --enable-nls --without-included-gettext
+Reading specs from /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/specs
+Configured with: /var/tmp/portage/gcc-3.2.3-r1/work/gcc-3.2.3/configure --prefix=/usr --bindir=/usr/i686-pc-linux-gnu/gcc-bin/3.2 --includedir=/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include --datadir=/usr/share/gcc-data/i686-pc-linux-gnu/3.2 --mandir=/usr/share/gcc-data/i686-pc-linux-gnu/3.2/man --infodir=/usr/share/gcc-data/i686-pc-linux-gnu/3.2/info --enable-shared --host=i686-pc-linux-gnu --target=i686-pc-linux-gnu --with-system-zlib --enable-languages=c,c++,ada,f77,objc,java --enable-threads=posix --enable-long-long --disable-checking --enable-cstdio=stdio --enable-clocale=generic --enable-__cxa_atexit --enable-version-specific-runtime-libs --with-gxx-include-dir=/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3 --with-local-prefix=/usr/local --enable-shared --enable-nls --without-included-gettext
 Thread model: posix
-gcc version 3.2.2
+gcc version 3.2.3 20030422 (Gentoo Linux 1.4 3.2.3-r1, propolice)
 configure:3394: $? = 0
 configure:3396: g++ -V </dev/null >&5
 g++: argument to `-V' missing
@@ -312,7 +312,7 @@ configure:5544: result: not using lib directory suffix
 configure:5600: checking for ld used by GCC
 configure:5664: result: /usr/i686-pc-linux-gnu/bin/ld
 configure:5673: checking if the linker (/usr/i686-pc-linux-gnu/bin/ld) is GNU ld
-GNU ld version 2.13.90.0.18 20030121
+GNU ld version 2.14.90.0.2 20030515
 configure:5685: result: yes
 configure:5690: checking for /usr/i686-pc-linux-gnu/bin/ld option to reload object files
 configure:5697: result: -r
@@ -408,6 +408,1133 @@ configure:6538: checking for dlfcn.h
 configure:6545: result: yes
 configure:6562: checking the maximum length of command line arguments
 configure:6610: result: 32768
+configure:6621: checking command to parse nm output from gcc object
+configure:6706: gcc -c -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2    conftest.c >&5
+conftest.c:5: warning: no previous prototype for `nm_test_func'
+configure:6709: $? = 0
+configure:6713: nm conftest.o \| sed -n -e 's/^.*[ 	]\([ABCDGISTW][ABCDGISTW]*\)[ 	][ 	]*\(\)\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2\3 \3/p' \> conftest.nm
+configure:6716: $? = 0
+configure:6768: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c conftstm.o >&5
+configure:6771: $? = 0
+configure:6809: result: ok
+configure:6813: checking for objdir
+configure:6828: result: .libs
+configure:6880: checking for i386-linux-ranlib
+configure:6909: result: no
+configure:6918: checking for ranlib
+configure:6934: found /usr/bin/ranlib
+configure:6945: result: ranlib
+configure:6960: checking for i386-linux-strip
+configure:6989: result: no
+configure:6998: checking for strip
+configure:7014: found /usr/bin/strip
+configure:7025: result: strip
+configure:7288: checking if gcc static flag  works
+conftest.c:1: warning: return type defaults to `int'
+configure:7311: result: no
+configure:7328: checking if gcc supports -fno-rtti -fno-exceptions
+cc1: warning: ignoring command line option '-fno-rtti'
+cc1: warning: (it is valid for C++ but not the selected language)
+cc1: warning: ignoring command line option '-fno-rtti'
+cc1: warning: (it is valid for C++ but not the selected language)
+configure:7352: result: no
+configure:7367: checking for gcc option to produce PIC
+configure:7520: result: -fPIC
+configure:7527: checking if gcc PIC flag -fPIC works
+configure:7551: result: yes
+configure:7575: checking if gcc supports -c -o file.o
+configure:7616: result: yes
+configure:7642: checking whether the gcc linker (/usr/i686-pc-linux-gnu/bin/ld) supports shared libraries
+configure:8425: result: yes
+configure:8447: checking whether -lc should be explicitly linked in
+configure:8452: gcc -c -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2    conftest.c >&5
+conftest.c:1: warning: `dummy' defined but not used
+configure:8455: $? = 0
+configure:8469: gcc -shared conftest.o  -v -Wl,-soname -Wl,conftest -o conftest 2\>\&1 \| grep  -lc  \>/dev/null 2\>\&1
+configure:8472: $? = 0
+configure:8484: result: no
+configure:8490: checking how to hardcode library paths into programs
+configure:8514: result: immediate
+configure:8528: checking whether stripping libraries is possible
+configure:8533: result: yes
+configure:8540: checking dynamic linker characteristics
+configure:8991: result: GNU/Linux ld.so
+configure:9644: checking if libtool supports shared libraries
+configure:9646: result: yes
+configure:9649: checking whether to build shared libraries
+configure:9670: result: yes
+configure:9673: checking whether to build static libraries
+configure:9677: result: no
+configure:9756: creating libtool
+configure:10481: checking whether the g++ linker (/usr/i686-pc-linux-gnu/bin/ld) supports shared libraries
+configure:11136: result: yes
+configure:11153: g++ -c -Wnon-virtual-dtor -Wno-long-long -Wundef -Wall -pedantic -W -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -ansi -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -Wcast-align -Wconversion -O2 -O0 -Wall -fno-exceptions -fno-check-new  conftest.cc >&5
+configure:11156: $? = 0
+configure:11256: checking for g++ option to produce PIC
+configure:11492: result: -fPIC
+configure:11499: checking if g++ PIC flag -fPIC works
+configure:11523: result: yes
+configure:11547: checking if g++ supports -c -o file.o
+configure:11588: result: yes
+configure:11614: checking whether the g++ linker (/usr/i686-pc-linux-gnu/bin/ld) supports shared libraries
+configure:11636: result: yes
+configure:11658: checking whether -lc should be explicitly linked in
+configure:11663: g++ -c -Wnon-virtual-dtor -Wno-long-long -Wundef -Wall -pedantic -W -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -ansi -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -Wcast-align -Wconversion -O2 -O0 -Wall -fno-exceptions -fno-check-new  conftest.cc >&5
+conftest.cc:1: warning: `int dummy' defined but not used
+configure:11666: $? = 0
+configure:11680: g++ -shared -nostdlib  conftest.o   -v -Wl,-soname -Wl,conftest -o conftest 2\>\&1 \| grep  -lc  \>/dev/null 2\>\&1
+configure:11683: $? = 1
+configure:11695: result: yes
+configure:11701: checking how to hardcode library paths into programs
+configure:11725: result: immediate
+configure:11739: checking whether stripping libraries is possible
+configure:11744: result: yes
+configure:11751: checking dynamic linker characteristics
+configure:12202: result: GNU/Linux ld.so
+configure:13271: checking if gcj supports -fno-rtti -fno-exceptions
+configure:13295: result: no
+configure:13310: checking for gcj option to produce PIC
+configure:13463: result: -fPIC
+configure:13470: checking if gcj PIC flag -fPIC works
+configure:13494: result: no
+configure:13518: checking if gcj supports -c -o file.o
+configure:13559: result: no
+configure:13585: checking whether the gcj linker (/usr/i686-pc-linux-gnu/bin/ld) supports shared libraries
+configure:14368: result: yes
+configure:14390: checking whether -lc should be explicitly linked in
+configure:14395: gcj -c -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2    conftest.java >&5
+gcj: can't specify `-D' without `--main'
+
+configure:14398: $? = 1
+configure:14427: result: yes
+configure:14433: checking how to hardcode library paths into programs
+configure:14457: result: immediate
+configure:14471: checking whether stripping libraries is possible
+configure:14476: result: yes
+configure:14483: checking dynamic linker characteristics
+configure:14934: result: GNU/Linux ld.so
+configure:16479: checking for msgfmt
+configure:16506: result: /usr/bin/msgfmt
+configure:16515: checking for gmsgfmt
+configure:16546: result: /usr/bin/msgfmt
+configure:16565: checking for xgettext
+configure:16592: result: /usr/bin/xgettext
+configure:16691: checking for main in -lutil
+configure:16716: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c -lutil   >&5
+configure:16719: $? = 0
+configure:16722: test -s conftest
+configure:16725: $? = 0
+configure:16737: result: yes
+configure:16743: checking for main in -lcompat
+configure:16768: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c -lcompat   >&5
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/../../../../i686-pc-linux-gnu/bin/ld: cannot find -lcompat
+collect2: ld returned 1 exit status
+configure:16771: $? = 1
+configure: failed program was:
+| #line 16750 "configure"
+| /* confdefs.h.  */
+| 
+| #define PACKAGE_NAME ""
+| #define PACKAGE_TARNAME ""
+| #define PACKAGE_VERSION ""
+| #define PACKAGE_STRING ""
+| #define PACKAGE_BUGREPORT ""
+| #define PACKAGE "confwiz"
+| #define VERSION "0.3.1"
+| #ifdef __cplusplus
+| #include <stdlib.h>
+| #endif
+| #define HAVE_TEMPLATE_REPOSITORY 1
+| #define KDELIBSUFF ""
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| /* end confdefs.h.  */
+| 
+| 
+| int
+| main ()
+| {
+| main ();
+|   ;
+|   return 0;
+| }
+configure:16789: result: no
+configure:16796: checking for crypt in -lcrypt
+configure:16827: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c -lcrypt   >&5
+configure:16830: $? = 0
+configure:16833: test -s conftest
+configure:16836: $? = 0
+configure:16848: result: yes
+configure:16932: checking for socklen_t
+configure:16972: g++ -c -Wnon-virtual-dtor -Wno-long-long -Wundef -Wall -pedantic -W -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -ansi -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -Wcast-align -Wconversion -O2 -O0 -Wall -fno-exceptions -fno-check-new  conftest.cc >&5
+configure:16975: $? = 0
+configure:16978: test -s conftest.o
+configure:16981: $? = 0
+configure:17044: result: socklen_t
+configure:17066: checking for dnet_ntoa in -ldnet
+configure:17097: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c -ldnet   >&5
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/../../../../i686-pc-linux-gnu/bin/ld: cannot find -ldnet
+collect2: ld returned 1 exit status
+configure:17100: $? = 1
+configure: failed program was:
+| #line 17073 "configure"
+| /* confdefs.h.  */
+| 
+| #define PACKAGE_NAME ""
+| #define PACKAGE_TARNAME ""
+| #define PACKAGE_VERSION ""
+| #define PACKAGE_STRING ""
+| #define PACKAGE_BUGREPORT ""
+| #define PACKAGE "confwiz"
+| #define VERSION "0.3.1"
+| #ifdef __cplusplus
+| #include <stdlib.h>
+| #endif
+| #define HAVE_TEMPLATE_REPOSITORY 1
+| #define KDELIBSUFF ""
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define HAVE_CRYPT 1
+| #define ksize_t socklen_t
+| /* end confdefs.h.  */
+| 
+| /* Override any gcc2 internal prototype to avoid an error.  */
+| #ifdef __cplusplus
+| extern "C"
+| #endif
+| /* We use char because int might match the return type of a gcc2
+|    builtin and then its argument prototype would still apply.  */
+| char dnet_ntoa ();
+| int
+| main ()
+| {
+| dnet_ntoa ();
+|   ;
+|   return 0;
+| }
+configure:17118: result: no
+configure:17125: checking for dnet_ntoa in -ldnet_stub
+configure:17156: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c -ldnet_stub   >&5
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/../../../../i686-pc-linux-gnu/bin/ld: cannot find -ldnet_stub
+collect2: ld returned 1 exit status
+configure:17159: $? = 1
+configure: failed program was:
+| #line 17132 "configure"
+| /* confdefs.h.  */
+| 
+| #define PACKAGE_NAME ""
+| #define PACKAGE_TARNAME ""
+| #define PACKAGE_VERSION ""
+| #define PACKAGE_STRING ""
+| #define PACKAGE_BUGREPORT ""
+| #define PACKAGE "confwiz"
+| #define VERSION "0.3.1"
+| #ifdef __cplusplus
+| #include <stdlib.h>
+| #endif
+| #define HAVE_TEMPLATE_REPOSITORY 1
+| #define KDELIBSUFF ""
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define HAVE_CRYPT 1
+| #define ksize_t socklen_t
+| /* end confdefs.h.  */
+| 
+| /* Override any gcc2 internal prototype to avoid an error.  */
+| #ifdef __cplusplus
+| extern "C"
+| #endif
+| /* We use char because int might match the return type of a gcc2
+|    builtin and then its argument prototype would still apply.  */
+| char dnet_ntoa ();
+| int
+| main ()
+| {
+| dnet_ntoa ();
+|   ;
+|   return 0;
+| }
+configure:17177: result: no
+configure:17184: checking for inet_ntoa
+configure:17234: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c  >&5
+configure:17237: $? = 0
+configure:17240: test -s conftest
+configure:17243: $? = 0
+configure:17254: result: yes
+configure:17317: checking for connect
+configure:17367: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c  >&5
+configure:17370: $? = 0
+configure:17373: test -s conftest
+configure:17376: $? = 0
+configure:17387: result: yes
+configure:17451: checking for remove
+configure:17501: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c  >&5
+configure:17504: $? = 0
+configure:17507: test -s conftest
+configure:17510: $? = 0
+configure:17521: result: yes
+configure:17586: checking for shmat
+configure:17636: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c  >&5
+configure:17639: $? = 0
+configure:17642: test -s conftest
+configure:17645: $? = 0
+configure:17656: result: yes
+configure:17737: checking crt_externs.h usability
+configure:17750: gcc -c -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2    conftest.c >&5
+configure:17801:25: crt_externs.h: No such file or directory
+configure:17753: $? = 1
+configure: failed program was:
+| #line 17739 "configure"
+| /* confdefs.h.  */
+| 
+| #define PACKAGE_NAME ""
+| #define PACKAGE_TARNAME ""
+| #define PACKAGE_VERSION ""
+| #define PACKAGE_STRING ""
+| #define PACKAGE_BUGREPORT ""
+| #define PACKAGE "confwiz"
+| #define VERSION "0.3.1"
+| #ifdef __cplusplus
+| #include <stdlib.h>
+| #endif
+| #define HAVE_TEMPLATE_REPOSITORY 1
+| #define KDELIBSUFF ""
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define HAVE_CRYPT 1
+| #define ksize_t socklen_t
+| /* end confdefs.h.  */
+| #include <stdio.h>
+| #if HAVE_SYS_TYPES_H
+| # include <sys/types.h>
+| #endif
+| #if HAVE_SYS_STAT_H
+| # include <sys/stat.h>
+| #endif
+| #if STDC_HEADERS
+| # include <stdlib.h>
+| # include <stddef.h>
+| #else
+| # if HAVE_STDLIB_H
+| #  include <stdlib.h>
+| # endif
+| #endif
+| #if HAVE_STRING_H
+| # if !STDC_HEADERS && HAVE_MEMORY_H
+| #  include <memory.h>
+| # endif
+| # include <string.h>
+| #endif
+| #if HAVE_STRINGS_H
+| # include <strings.h>
+| #endif
+| #if HAVE_INTTYPES_H
+| # include <inttypes.h>
+| #else
+| # if HAVE_STDINT_H
+| #  include <stdint.h>
+| # endif
+| #endif
+| #if HAVE_UNISTD_H
+| # include <unistd.h>
+| #endif
+| #include <crt_externs.h>
+configure:17769: result: no
+configure:17773: checking crt_externs.h presence
+configure:17784: cpp  conftest.c
+configure:17803:25: crt_externs.h: No such file or directory
+configure:17790: $? = 1
+configure: failed program was:
+| #line 17775 "configure"
+| /* confdefs.h.  */
+| 
+| #define PACKAGE_NAME ""
+| #define PACKAGE_TARNAME ""
+| #define PACKAGE_VERSION ""
+| #define PACKAGE_STRING ""
+| #define PACKAGE_BUGREPORT ""
+| #define PACKAGE "confwiz"
+| #define VERSION "0.3.1"
+| #ifdef __cplusplus
+| #include <stdlib.h>
+| #endif
+| #define HAVE_TEMPLATE_REPOSITORY 1
+| #define KDELIBSUFF ""
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define HAVE_CRYPT 1
+| #define ksize_t socklen_t
+| /* end confdefs.h.  */
+| #include <crt_externs.h>
+configure:17809: result: no
+configure:17845: checking for crt_externs.h
+configure:17852: result: no
+configure:17865: checking for _NSGetEnviron
+configure:17915: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c  >&5
+/tmp/ccOeCNtw.o(.text+0x11): In function `main':
+: undefined reference to `_NSGetEnviron'
+/tmp/ccOeCNtw.o(.data+0x0): undefined reference to `_NSGetEnviron'
+collect2: ld returned 1 exit status
+configure:17918: $? = 1
+configure: failed program was:
+| #line 17870 "configure"
+| /* confdefs.h.  */
+| 
+| #define PACKAGE_NAME ""
+| #define PACKAGE_TARNAME ""
+| #define PACKAGE_VERSION ""
+| #define PACKAGE_STRING ""
+| #define PACKAGE_BUGREPORT ""
+| #define PACKAGE "confwiz"
+| #define VERSION "0.3.1"
+| #ifdef __cplusplus
+| #include <stdlib.h>
+| #endif
+| #define HAVE_TEMPLATE_REPOSITORY 1
+| #define KDELIBSUFF ""
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define HAVE_CRYPT 1
+| #define ksize_t socklen_t
+| /* end confdefs.h.  */
+| /* System header to define __stub macros and hopefully few prototypes,
+|     which can conflict with char _NSGetEnviron (); below.
+|     Prefer <limits.h> to <assert.h> if __STDC__ is defined, since
+|     <limits.h> exists even on freestanding compilers.  */
+| #ifdef __STDC__
+| # include <limits.h>
+| #else
+| # include <assert.h>
+| #endif
+| /* Override any gcc2 internal prototype to avoid an error.  */
+| #ifdef __cplusplus
+| extern "C"
+| {
+| #endif
+| /* We use char because int might match the return type of a gcc2
+|    builtin and then its argument prototype would still apply.  */
+| char _NSGetEnviron ();
+| /* The GNU C library defines this for functions which it implements
+|     to always fail with ENOSYS.  Some functions are actually named
+|     something starting with __ and the normal name is an alias.  */
+| #if defined (__stub__NSGetEnviron) || defined (__stub____NSGetEnviron)
+| choke me
+| #else
+| char (*f) () = _NSGetEnviron;
+| #endif
+| #ifdef __cplusplus
+| }
+| #endif
+| 
+| int
+| main ()
+| {
+| return f != _NSGetEnviron;
+|   ;
+|   return 0;
+| }
+configure:17935: result: no
+configure:17953: checking for sys/types.h
+configure:17958: result: yes
+configure:17953: checking for stdint.h
+configure:17958: result: yes
+configure:18092: checking for poll in -lpoll
+configure:18123: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c -lpoll   >&5
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/../../../../i686-pc-linux-gnu/bin/ld: cannot find -lpoll
+collect2: ld returned 1 exit status
+configure:18126: $? = 1
+configure: failed program was:
+| #line 18099 "configure"
+| /* confdefs.h.  */
+| 
+| #define PACKAGE_NAME ""
+| #define PACKAGE_TARNAME ""
+| #define PACKAGE_VERSION ""
+| #define PACKAGE_STRING ""
+| #define PACKAGE_BUGREPORT ""
+| #define PACKAGE "confwiz"
+| #define VERSION "0.3.1"
+| #ifdef __cplusplus
+| #include <stdlib.h>
+| #endif
+| #define HAVE_TEMPLATE_REPOSITORY 1
+| #define KDELIBSUFF ""
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define HAVE_CRYPT 1
+| #define ksize_t socklen_t
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_STDINT_H 1
+| /* end confdefs.h.  */
+| 
+| /* Override any gcc2 internal prototype to avoid an error.  */
+| #ifdef __cplusplus
+| extern "C"
+| #endif
+| /* We use char because int might match the return type of a gcc2
+|    builtin and then its argument prototype would still apply.  */
+| char poll ();
+| int
+| main ()
+| {
+| poll ();
+|   ;
+|   return 0;
+| }
+configure:18144: result: no
+configure:18162: checking CoreAudio/CoreAudio.h usability
+configure:18175: gcc -c -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2    conftest.c >&5
+configure:18228:33: CoreAudio/CoreAudio.h: No such file or directory
+configure:18178: $? = 1
+configure: failed program was:
+| #line 18164 "configure"
+| /* confdefs.h.  */
+| 
+| #define PACKAGE_NAME ""
+| #define PACKAGE_TARNAME ""
+| #define PACKAGE_VERSION ""
+| #define PACKAGE_STRING ""
+| #define PACKAGE_BUGREPORT ""
+| #define PACKAGE "confwiz"
+| #define VERSION "0.3.1"
+| #ifdef __cplusplus
+| #include <stdlib.h>
+| #endif
+| #define HAVE_TEMPLATE_REPOSITORY 1
+| #define KDELIBSUFF ""
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define HAVE_CRYPT 1
+| #define ksize_t socklen_t
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_STDINT_H 1
+| /* end confdefs.h.  */
+| #include <stdio.h>
+| #if HAVE_SYS_TYPES_H
+| # include <sys/types.h>
+| #endif
+| #if HAVE_SYS_STAT_H
+| # include <sys/stat.h>
+| #endif
+| #if STDC_HEADERS
+| # include <stdlib.h>
+| # include <stddef.h>
+| #else
+| # if HAVE_STDLIB_H
+| #  include <stdlib.h>
+| # endif
+| #endif
+| #if HAVE_STRING_H
+| # if !STDC_HEADERS && HAVE_MEMORY_H
+| #  include <memory.h>
+| # endif
+| # include <string.h>
+| #endif
+| #if HAVE_STRINGS_H
+| # include <strings.h>
+| #endif
+| #if HAVE_INTTYPES_H
+| # include <inttypes.h>
+| #else
+| # if HAVE_STDINT_H
+| #  include <stdint.h>
+| # endif
+| #endif
+| #if HAVE_UNISTD_H
+| # include <unistd.h>
+| #endif
+| #include <CoreAudio/CoreAudio.h>
+configure:18194: result: no
+configure:18198: checking CoreAudio/CoreAudio.h presence
+configure:18209: cpp  conftest.c
+configure:18230:33: CoreAudio/CoreAudio.h: No such file or directory
+configure:18215: $? = 1
+configure: failed program was:
+| #line 18200 "configure"
+| /* confdefs.h.  */
+| 
+| #define PACKAGE_NAME ""
+| #define PACKAGE_TARNAME ""
+| #define PACKAGE_VERSION ""
+| #define PACKAGE_STRING ""
+| #define PACKAGE_BUGREPORT ""
+| #define PACKAGE "confwiz"
+| #define VERSION "0.3.1"
+| #ifdef __cplusplus
+| #include <stdlib.h>
+| #endif
+| #define HAVE_TEMPLATE_REPOSITORY 1
+| #define KDELIBSUFF ""
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define HAVE_CRYPT 1
+| #define ksize_t socklen_t
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_STDINT_H 1
+| /* end confdefs.h.  */
+| #include <CoreAudio/CoreAudio.h>
+configure:18234: result: no
+configure:18270: checking for CoreAudio/CoreAudio.h
+configure:18277: result: no
+configure:18295: checking if res_init needs -lresolv
+configure:18323: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c   -lresolv >&5
+configure:18326: $? = 0
+configure:18329: test -s conftest
+configure:18332: $? = 0
+configure:18336: result: yes
+configure:18356: checking if res_init is available
+configure:18382: gcc -c -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2    conftest.c >&5
+configure:18385: $? = 0
+configure:18388: test -s conftest.o
+configure:18391: $? = 0
+configure:18394: result: yes
+configure:18417: checking for killpg in -lucb
+configure:18448: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c -lucb   >&5
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/../../../../i686-pc-linux-gnu/bin/ld: cannot find -lucb
+collect2: ld returned 1 exit status
+configure:18451: $? = 1
+configure: failed program was:
+| #line 18424 "configure"
+| /* confdefs.h.  */
+| 
+| #define PACKAGE_NAME ""
+| #define PACKAGE_TARNAME ""
+| #define PACKAGE_VERSION ""
+| #define PACKAGE_STRING ""
+| #define PACKAGE_BUGREPORT ""
+| #define PACKAGE "confwiz"
+| #define VERSION "0.3.1"
+| #ifdef __cplusplus
+| #include <stdlib.h>
+| #endif
+| #define HAVE_TEMPLATE_REPOSITORY 1
+| #define KDELIBSUFF ""
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define HAVE_CRYPT 1
+| #define ksize_t socklen_t
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_RES_INIT 1
+| #define HAVE_RES_INIT 1
+| /* end confdefs.h.  */
+| 
+| /* Override any gcc2 internal prototype to avoid an error.  */
+| #ifdef __cplusplus
+| extern "C"
+| #endif
+| /* We use char because int might match the return type of a gcc2
+|    builtin and then its argument prototype would still apply.  */
+| char killpg ();
+| int
+| main ()
+| {
+| killpg ();
+|   ;
+|   return 0;
+| }
+configure:18469: result: no
+configure:18542: checking for int
+configure:18567: gcc -c -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2    conftest.c >&5
+configure:18570: $? = 0
+configure:18573: test -s conftest.o
+configure:18576: $? = 0
+configure:18587: result: yes
+configure:18590: checking size of int
+configure:18865: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c  >&5
+configure:18891: warning: no previous prototype for `longval'
+configure:18892: warning: no previous prototype for `ulongval'
+configure:18868: $? = 0
+configure:18870: ./conftest
+configure:18873: $? = 0
+configure:18896: result: 4
+configure:18902: checking for long
+configure:18927: gcc -c -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2    conftest.c >&5
+configure:18930: $? = 0
+configure:18933: test -s conftest.o
+configure:18936: $? = 0
+configure:18947: result: yes
+configure:18950: checking size of long
+configure:19225: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c  >&5
+configure:19252: warning: no previous prototype for `longval'
+configure:19253: warning: no previous prototype for `ulongval'
+configure:19228: $? = 0
+configure:19230: ./conftest
+configure:19233: $? = 0
+configure:19256: result: 4
+configure:19262: checking for char *
+configure:19287: gcc -c -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2    conftest.c >&5
+configure:19290: $? = 0
+configure:19293: test -s conftest.o
+configure:19296: $? = 0
+configure:19307: result: yes
+configure:19310: checking size of char *
+configure:19585: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c  >&5
+configure:19613: warning: no previous prototype for `longval'
+configure:19614: warning: no previous prototype for `ulongval'
+configure:19588: $? = 0
+configure:19590: ./conftest
+configure:19593: $? = 0
+configure:19616: result: 4
+configure:19622: checking for char
+configure:19647: gcc -c -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2    conftest.c >&5
+configure:19650: $? = 0
+configure:19653: test -s conftest.o
+configure:19656: $? = 0
+configure:19667: result: yes
+configure:19670: checking size of char
+configure:19945: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c  >&5
+configure:19974: warning: no previous prototype for `longval'
+configure:19975: warning: no previous prototype for `ulongval'
+configure:19948: $? = 0
+configure:19950: ./conftest
+configure:19953: $? = 0
+configure:19976: result: 1
+configure:19984: checking for dlopen in -ldl
+configure:20015: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c -ldl   >&5
+configure:20018: $? = 0
+configure:20021: test -s conftest
+configure:20024: $? = 0
+configure:20036: result: yes
+configure:20046: checking for shl_unload in -ldld
+configure:20077: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c -ldld   >&5
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/../../../../i686-pc-linux-gnu/bin/ld: cannot find -ldld
+collect2: ld returned 1 exit status
+configure:20080: $? = 1
+configure: failed program was:
+| #line 20053 "configure"
+| /* confdefs.h.  */
+| 
+| #define PACKAGE_NAME ""
+| #define PACKAGE_TARNAME ""
+| #define PACKAGE_VERSION ""
+| #define PACKAGE_STRING ""
+| #define PACKAGE_BUGREPORT ""
+| #define PACKAGE "confwiz"
+| #define VERSION "0.3.1"
+| #ifdef __cplusplus
+| #include <stdlib.h>
+| #endif
+| #define HAVE_TEMPLATE_REPOSITORY 1
+| #define KDELIBSUFF ""
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define HAVE_CRYPT 1
+| #define ksize_t socklen_t
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_RES_INIT 1
+| #define HAVE_RES_INIT 1
+| #define SIZEOF_INT 4
+| #define SIZEOF_LONG 4
+| #define SIZEOF_CHAR_P 4
+| #define SIZEOF_CHAR 1
+| /* end confdefs.h.  */
+| 
+| /* Override any gcc2 internal prototype to avoid an error.  */
+| #ifdef __cplusplus
+| extern "C"
+| #endif
+| /* We use char because int might match the return type of a gcc2
+|    builtin and then its argument prototype would still apply.  */
+| char shl_unload ();
+| int
+| main ()
+| {
+| shl_unload ();
+|   ;
+|   return 0;
+| }
+configure:20098: result: no
+configure:20119: checking for vsnprintf
+configure:20169: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c  >&5
+configure:20172: $? = 0
+configure:20175: test -s conftest
+configure:20178: $? = 0
+configure:20189: result: yes
+configure:20119: checking for snprintf
+configure:20169: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c  >&5
+configure:20172: $? = 0
+configure:20175: test -s conftest
+configure:20178: $? = 0
+configure:20189: result: yes
+configure:20227: checking for X
+configure:20273: cpp  conftest.c
+configure:20279: $? = 0
+configure:20370: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c -lXt  >&5
+configure: In function `main':
+configure:20395: warning: implicit declaration of function `XtMalloc'
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/../../../../i686-pc-linux-gnu/bin/ld: cannot find -lXt
+collect2: ld returned 1 exit status
+configure:20373: $? = 1
+configure: failed program was:
+| #line 20353 "configure"
+| /* confdefs.h.  */
+| 
+| #define PACKAGE_NAME ""
+| #define PACKAGE_TARNAME ""
+| #define PACKAGE_VERSION ""
+| #define PACKAGE_STRING ""
+| #define PACKAGE_BUGREPORT ""
+| #define PACKAGE "confwiz"
+| #define VERSION "0.3.1"
+| #ifdef __cplusplus
+| #include <stdlib.h>
+| #endif
+| #define HAVE_TEMPLATE_REPOSITORY 1
+| #define KDELIBSUFF ""
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define HAVE_CRYPT 1
+| #define ksize_t socklen_t
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_RES_INIT 1
+| #define HAVE_RES_INIT 1
+| #define SIZEOF_INT 4
+| #define SIZEOF_LONG 4
+| #define SIZEOF_CHAR_P 4
+| #define SIZEOF_CHAR 1
+| #define HAVE_VSNPRINTF 1
+| #define HAVE_SNPRINTF 1
+| /* end confdefs.h.  */
+| 
+| int
+| main ()
+| {
+| XtMalloc()
+|   ;
+|   return 0;
+| }
+configure:20524: result: libraries /usr/X11R6/lib, headers /usr/X11R6/include
+configure:20558: checking for IceConnectionNumber in -lICE
+configure:20589: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     -L/usr/X11R6/lib conftest.c -lICE   >&5
+configure:20592: $? = 0
+configure:20595: test -s conftest
+configure:20598: $? = 0
+configure:20610: result: yes
+configure:20624: checking for libXext
+configure:20660: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     -L/usr/X11R6/lib  conftest.c -lXext -lX11  >&5
+configure:20663: $? = 0
+configure:20666: test -s conftest
+configure:20669: $? = 0
+configure:20687: result: yes
+configure:20700: checking for Xinerama
+configure:20774: result: no
+configure:20830: checking for pthread_create in -lpthread
+configure:20861: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c -lpthread   >&5
+configure:20864: $? = 0
+configure:20867: test -s conftest
+configure:20870: $? = 0
+configure:20882: result: yes
+configure:21302: checking for extra includes
+configure:21330: result: no
+configure:21334: checking for extra libs
+configure:21363: result: no
+configure:21369: checking for libz
+configure:21404: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2   -I/usr/X11R6/include   -D_REENTRANT  conftest.c -L/usr/X11R6/lib  -lz  >&5
+configure:21407: $? = 0
+configure:21410: test -s conftest
+configure:21413: $? = 0
+configure:21435: result: -lz
+configure:21448: checking for libpng
+configure:21491: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2   -I/usr/X11R6/include   -D_REENTRANT  conftest.c  -L/usr/X11R6/lib  -lpng -lz -lm -lX11  >&5
+configure:21494: $? = 0
+configure:21497: test -s conftest
+configure:21500: $? = 0
+configure:21523: result: -lpng -lz -lm
+configure:21534: checking for libjpeg6b
+configure:21581: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2   -I/usr/X11R6/include   -D_REENTRANT  conftest.c -L/usr/X11R6/lib  -ljpeg6b -lm >&5
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/../../../../i686-pc-linux-gnu/bin/ld: cannot find -ljpeg6b
+collect2: ld returned 1 exit status
+configure:21584: $? = 1
+configure: failed program was:
+| #line 21550 "configure"
+| /* confdefs.h.  */
+| 
+| #define PACKAGE_NAME ""
+| #define PACKAGE_TARNAME ""
+| #define PACKAGE_VERSION ""
+| #define PACKAGE_STRING ""
+| #define PACKAGE_BUGREPORT ""
+| #define PACKAGE "confwiz"
+| #define VERSION "0.3.1"
+| #ifdef __cplusplus
+| #include <stdlib.h>
+| #endif
+| #define HAVE_TEMPLATE_REPOSITORY 1
+| #define KDELIBSUFF ""
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define HAVE_CRYPT 1
+| #define ksize_t socklen_t
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_RES_INIT 1
+| #define HAVE_RES_INIT 1
+| #define SIZEOF_INT 4
+| #define SIZEOF_LONG 4
+| #define SIZEOF_CHAR_P 4
+| #define SIZEOF_CHAR 1
+| #define HAVE_VSNPRINTF 1
+| #define HAVE_SNPRINTF 1
+| #define HAVE_LIBZ 1
+| #define HAVE_LIBPNG 1
+| /* end confdefs.h.  */
+| /* Override any gcc2 internal prototype to avoid an error.  */
+| struct jpeg_decompress_struct;
+| typedef struct jpeg_decompress_struct * j_decompress_ptr;
+| typedef int size_t;
+| #ifdef __cplusplus
+| extern "C" {
+| #endif
+|     void jpeg_CreateDecompress(j_decompress_ptr cinfo,
+|                                     int version, size_t structsize);
+| #ifdef __cplusplus
+| }
+| #endif
+| /* We use char because int might match the return type of a gcc2
+|     builtin and then its argument prototype would still apply.  */
+| 
+| int
+| main ()
+| {
+| jpeg_CreateDecompress(0L, 0, 0);
+|   ;
+|   return 0;
+| }
+configure:21611: result: no
+configure:21614: checking for libjpeg
+configure:21661: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2   -I/usr/X11R6/include   -D_REENTRANT  conftest.c -L/usr/X11R6/lib  -ljpeg -lm >&5
+configure:21664: $? = 0
+configure:21667: test -s conftest
+configure:21670: $? = 0
+configure:21688: result: -ljpeg
+configure: 21715: ${prefix}/include/jpeglib.h
+configure: 21715: /usr/include/jpeglib.h
+taking that
+configure:21885: checking for Qt
+configure: 21953: /usr/qt/3/include/qstyle.h
+taking that
+tried NO
+configure:22062: rm -rf SunWS_cache; g++ -o conftest -Wnon-virtual-dtor -Wno-long-long -Wundef -Wall -pedantic -W -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -ansi -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -Wcast-align -Wconversion -O2 -O0 -Wall -fno-exceptions -fno-check-new -I/usr/qt/3/include -I/usr/X11R6/include  -DQT_THREAD_SUPPORT  -D_REENTRANT  -L/usr/qt/3/lib -L/usr/X11R6/lib   conftest.cc  -lqt-mt -lpng -lz -lm -ljpeg -ldl  -lXext -lX11 -lSM -lICE  -lpthread 1>&5
+configure:22065: $? = 0
+configure:22124: result: libraries /usr/qt/3/lib, headers /usr/qt/3/include using -mt
+configure:22134: checking if Qt compiles without flags
+configure:22231: rm -rf SunWS_cache; g++ -o conftest -Wnon-virtual-dtor -Wno-long-long -Wundef -Wall -pedantic -W -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -ansi -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -Wcast-align -Wconversion -O2 -O0 -Wall -fno-exceptions -fno-check-new -I/usr/qt/3/include  -DQT_THREAD_SUPPORT  -D_REENTRANT  -L/usr/X11R6/lib conftest.cc -lqt-mt -lpng -lz -lm -ljpeg -ldl  -lXext -lX11 -lSM -lICE  -lXext -lX11  1>&5
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/../../../../i686-pc-linux-gnu/bin/ld: cannot find -lqt-mt
+collect2: ld returned 1 exit status
+configure:22234: $? = 1
+configure: failed program was:
+#include "confdefs.h"
+#include <qglobal.h>
+#include <qapplication.h>
+#include <qcursor.h>
+#include <qstylefactory.h>
+#include <private/qucomextra_p.h>
+#if ! (QT_VERSION >= 0x030100)
+#error 1
+#endif
+
+int main() {
+    (void)QStyleFactory::create(QString::null);
+    QCursor c(Qt::WhatsThisCursor);
+    return 0;
+}
+configure:22267: result: no
+configure:22305: checking for moc
+configure:22374: result: /usr/qt/3/bin/moc
+configure:22382: checking for uic
+configure:22433: result: /usr/qt/3/bin/uic
+configure:22461: checking whether uic supports -L 
+configure:22472: /usr/qt/3/bin/uic -L /nonexistant conftest.ui >/dev/null
+configure:22475: $? = 0
+configure:22487: result: yes
+configure:22499: checking whether uic supports -nounload 
+configure:22510: /usr/qt/3/bin/uic -nounload  conftest.ui >/dev/null
+configure:22513: $? = 0
+configure:22525: result: yes
+configure:22561: checking if Qt needs -ljpeg
+configure:22603: rm -rf SunWS_cache; g++ -o conftest -Wnon-virtual-dtor -Wno-long-long -Wundef -Wall -pedantic -W -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -ansi -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -Wcast-align -Wconversion -O2 -O0 -Wall -fno-exceptions -fno-check-new -I/usr/qt/3/include -I/usr/X11R6/include   -DQT_THREAD_SUPPORT  -D_REENTRANT  conftest.cc -L/usr/X11R6/lib -L/usr/qt/3/lib -lqt-mt -lpng -lz -lm  -ldl -lXext -lX11 -lSM -lICE 1>&5
+configure:22606: $? = 0
+configure:22609: test -s conftest
+configure:22612: $? = 0
+configure:22639: result: no
+configure:22665: checking for rpath
+configure:22691: result: yes
+configure:22694: checking for KDE
+configure: 22745: /usr/kde/3.1/include/ksharedptr.h
+taking that
+configure: 22775: /usr/kde/3.1/lib/libkio.la
+taking that
+configure: 22793: /usr/kde/3.1/lib/kde3/plugins/designer/kdewidgets.la
+taking that
+configure:22863: result: libraries /usr/kde/3.1/lib, headers /usr/kde/3.1/include
+configure:22900: checking if UIC has KDE plugins available
+configure:22927: /usr/qt/3/bin/uic -L /usr/kde/3.1/lib/kde3/plugins/designer -nounload -impl actest.h actest.ui > actest.cpp
+configure:22930: $? = 0
+configure:22942: result: yes
+configure:22981: checking for KDE paths
+configure:23541: result: defaults
+configure:23561: checking for dcopidl
+configure:23620: result: /usr/kde/3.1/bin/dcopidl
+configure:23627: checking for dcopidl2cpp
+configure:23686: result: /usr/kde/3.1/bin/dcopidl2cpp
+configure:23693: checking for mcopidl
+configure:23752: result: /usr/kde/3.1/bin/mcopidl
+configure:23759: checking for artsc-config
+configure:23818: result: /usr/kde/3.1/bin/artsc-config
+configure:23825: checking for kde-config
+configure:23876: result: /usr/kde/3.1/bin/kde-config
+configure:23883: checking for meinproc
+configure:23934: result: /usr/kde/3.1/bin/meinproc
+configure: 23953: /usr/kde/3.1/share/apps/ksgmltools2/customization/kde-chunk.xsl
+taking that
+configure:24118: checking if confwiz should be compiled
+configure:24130: result: yes
+configure:24118: checking if doc should be compiled
+configure:24130: result: yes
+configure:24118: checking if po should be compiled
+configure:24130: result: yes
+configure:24118: checking if scripts should be compiled
+configure:24130: result: yes
+configure:24250: creating ./config.status
+
+## ---------------------- ##
+## Running config.status. ##
+## ---------------------- ##
+
+This file was extended by config.status, which was
+generated by GNU Autoconf 2.57.  Invocation command line was
+
+  CONFIG_FILES    = 
+  CONFIG_HEADERS  = 
+  CONFIG_LINKS    = 
+  CONFIG_COMMANDS = 
+  $ ./config.status 
+
+on mainbrain
+
+config.status:698: creating config.h
+config.status:839: config.h is unchanged
+config.status:945: executing default-1 commands
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -440,6 +1567,19 @@ ac_cv_env_host_alias_value=i386-linux
 ac_cv_env_target_alias_set=set
 ac_cv_env_target_alias_value=i386-linux
 ac_cv_exeext=
+ac_cv_func__NSGetEnviron=no
+ac_cv_func_connect=yes
+ac_cv_func_inet_ntoa=yes
+ac_cv_func_remove=yes
+ac_cv_func_shmat=yes
+ac_cv_func_snprintf=yes
+ac_cv_func_vsnprintf=yes
+ac_cv_have_dlfcn=yes
+ac_cv_have_kde='have_kde=yes     ac_kde_includes=/usr/kde/3.1/include ac_kde_libraries=/usr/kde/3.1/lib'
+ac_cv_have_qt='have_qt=yes     ac_qt_includes=/usr/qt/3/include ac_qt_libraries=/usr/qt/3/lib'
+ac_cv_have_xinerama=no
+ac_cv_header_CoreAudio_CoreAudio_h=no
+ac_cv_header_crt_externs_h=no
 ac_cv_header_dlfcn_h=yes
 ac_cv_header_inttypes_h=yes
 ac_cv_header_memory_h=yes
@@ -453,22 +1593,63 @@ ac_cv_header_sys_types_h=yes
 ac_cv_header_unistd_h=yes
 ac_cv_host=i386-pc-linux-gnu
 ac_cv_host_alias=i386-linux
+ac_cv_lib_ICE_IceConnectionNumber=yes
+ac_cv_lib_compat_main=no
+ac_cv_lib_crypt_crypt=yes
+ac_cv_lib_dl_dlopen=yes
+ac_cv_lib_dld_shl_unload=no
+ac_cv_lib_dnet_dnet_ntoa=no
+ac_cv_lib_dnet_stub_dnet_ntoa=no
+ac_cv_lib_jpeg_6b=no
+ac_cv_lib_jpeg_normal=-ljpeg
+ac_cv_lib_png='-lpng -lz -lm'
+ac_cv_lib_poll_poll=no
+ac_cv_lib_pthread_pthread_create=yes
+ac_cv_lib_ucb_killpg=no
+ac_cv_lib_util_main=yes
+ac_cv_lib_z=-lz
 ac_cv_objext=o
+ac_cv_path_GMSGFMT=/usr/bin/msgfmt
+ac_cv_path_MSGFMT=/usr/bin/msgfmt
+ac_cv_path_XGETTEXT=/usr/bin/xgettext
 ac_cv_path_install='/bin/install -c'
 ac_cv_prog_AWK=gawk
 ac_cv_prog_CC=gcc
 ac_cv_prog_CPP=cpp
 ac_cv_prog_CXX=g++
 ac_cv_prog_CXXCPP='g++ -E'
+ac_cv_prog_ac_ct_RANLIB=ranlib
+ac_cv_prog_ac_ct_STRIP=strip
 ac_cv_prog_cc_g=yes
 ac_cv_prog_cc_stdc=
 ac_cv_prog_cxx_g=yes
 ac_cv_prog_egrep='grep -E'
 ac_cv_prog_make_make_set=yes
+ac_cv_sizeof_char=1
+ac_cv_sizeof_char_p=4
+ac_cv_sizeof_int=4
+ac_cv_sizeof_long=4
+ac_cv_socklen_t=socklen_t
 ac_cv_target=i386-pc-linux-gnu
 ac_cv_target_alias=i386-linux
+ac_cv_type_char=yes
+ac_cv_type_char_p=yes
+ac_cv_type_int=yes
+ac_cv_type_long=yes
 am_cv_CC_dependencies_compiler_type=gcc3
 am_cv_CXX_dependencies_compiler_type=gcc3
+kde_cv_all_paths='kde_have_all_paths="yes" 	kde_htmldir="\${prefix}/share/doc/HTML" 	kde_appsdir="\${prefix}/share/applnk" 	kde_icondir="\${prefix}/share/icons" 	kde_sounddir="\${prefix}/share/sounds" 	kde_datadir="\${prefix}/share/apps" 	kde_locale="\${prefix}/share/locale" 	kde_cgidir="\${exec_prefix}/cgi-bin" 	kde_confdir="\${prefix}/share/config" 	kde_mimedir="\${prefix}/share/mimelnk" 	kde_toolbardir="\${prefix}/share/toolbar" 	kde_wallpaperdir="\${prefix}/share/wallpapers" 	kde_templatesdir="\${prefix}/share/templates" 	kde_bindir="\${exec_prefix}/bin" 	kde_servicesdir="\${prefix}/share/services" 	kde_servicetypesdir="\${prefix}/share/servicetypes" 	kde_moduledir="\${libdir}/kde3"    kde_styledir="\${libdir}/kde3/plugins/styles" 	kde_widgetdir="/usr/kde/3.1/lib/kde3/plugins/designer" 	kde_result=defaults'
+kde_cv_have_libXext=yes
+kde_cv_have_x='have_x=yes          kde_x_includes=/usr/X11R6/include kde_x_libraries=/usr/X11R6/lib'
+kde_cv_path=/usr/kde/3.1/bin/meinproc
+kde_cv_path_artsc_config=/usr/kde/3.1/bin/artsc-config
+kde_cv_path_dcopidl=/usr/kde/3.1/bin/dcopidl
+kde_cv_path_dcopidl2cpp=/usr/kde/3.1/bin/dcopidl2cpp
+kde_cv_path_kde_config=/usr/kde/3.1/bin/kde-config
+kde_cv_path_mcopidl=/usr/kde/3.1/bin/mcopidl
+kde_cv_path_meinproc=/usr/kde/3.1/bin/meinproc
+kde_cv_path_moc=/usr/qt/3/bin/moc
+kde_cv_path_uic=/usr/qt/3/bin/uic
 kde_cv_prog_cxx_Wno_long_long=yes
 kde_cv_prog_cxx_Wnon_virtual_dtor=yes
 kde_cv_prog_cxx_Wundef=yes
@@ -476,15 +1657,34 @@ kde_cv_prog_cxx_fexceptions=yes
 kde_cv_prog_cxx_fno_check_new=yes
 kde_cv_prog_cxx_fno_exceptions=yes
 kde_cv_prog_cxx_frepo=yes
+kde_cv_prog_uic_L=yes
+kde_cv_prog_uic_nounload=yes
+kde_cv_qt_direct=no
+kde_cv_qt_jpeg=no
+kde_cv_uic_plugins=yes
 lt_cv_deplibs_check_method=pass_all
 lt_cv_file_magic_cmd='$MAGIC_CMD'
-lt_cv_file_magic_test_file='/lib/libc.so.6 /lib/libc-2.3.1.so'
+lt_cv_file_magic_test_file='/lib/libc.so.6 /lib/libc-2.3.2.so'
 lt_cv_ld_reload_flag=-r
+lt_cv_objdir=.libs
 lt_cv_path_LD=/usr/i686-pc-linux-gnu/bin/ld
 lt_cv_path_NM=nm
 lt_cv_path_SED=/bin/sed
+lt_cv_prog_compiler_c_o=yes
+lt_cv_prog_compiler_c_o_CXX=yes
+lt_cv_prog_compiler_c_o_GCJ=no
+lt_cv_prog_compiler_rtti_exceptions=no
 lt_cv_prog_gnu_ld=yes
+lt_cv_sys_global_symbol_pipe='sed -n -e '\''s/^.*[ 	]\([ABCDGISTW][ABCDGISTW]*\)[ 	][ 	]*\(\)\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2\3 \3/p'\'''
+lt_cv_sys_global_symbol_to_c_name_address='sed -n -e '\''s/^: \([^ ]*\) $/  {\"\1\", (lt_ptr) 0},/p'\'' -e '\''s/^[BCDEGRST] \([^ ]*\) \([^ ]*\)$/  {"\2", (lt_ptr) \&\2},/p'\'''
+lt_cv_sys_global_symbol_to_cdecl='sed -n -e '\''s/^. .* \(.*\)$/extern int \1;/p'\'''
 lt_cv_sys_max_cmd_len=32768
+lt_lt_cv_prog_compiler_c_o='"yes"'
+lt_lt_cv_prog_compiler_c_o_CXX='"yes"'
+lt_lt_cv_prog_compiler_c_o_GCJ='"no"'
+lt_lt_cv_sys_global_symbol_pipe='"sed -n -e '\''s/^.*[ 	]\\([ABCDGISTW][ABCDGISTW]*\\)[ 	][ 	]*\\(\\)\\([_A-Za-z][_A-Za-z0-9]*\\)\$/\\1 \\2\\3 \\3/p'\''"'
+lt_lt_cv_sys_global_symbol_to_c_name_address='"sed -n -e '\''s/^: \\([^ ]*\\) \$/  {\\\"\\1\\\", (lt_ptr) 0},/p'\'' -e '\''s/^[BCDEGRST] \\([^ ]*\\) \\([^ ]*\\)\$/  {\"\\2\", (lt_ptr) \\&\\2},/p'\''"'
+lt_lt_cv_sys_global_symbol_to_cdecl='"sed -n -e '\''s/^. .* \\(.*\\)\$/extern int \\1;/p'\''"'
 
 ## ----------------- ##
 ## Output variables. ##
@@ -495,7 +1695,7 @@ AMDEPBACKSLASH='\'
 AMDEP_FALSE='#'
 AMDEP_TRUE=''
 AMTAR='${SHELL} /home/z9u2K/projects/kinneret/cvs/confwiz/admin/missing --run tar'
-ARTSCCONFIG=''
+ARTSCCONFIG='/usr/kde/3.1/bin/artsc-config'
 AUTOCONF='${SHELL} /home/z9u2K/projects/kinneret/cvs/confwiz/admin/missing --run autoconf'
 AUTODIRS=''
 AUTOHEADER='${SHELL} /home/z9u2K/projects/kinneret/cvs/confwiz/admin/missing --run autoheader'
@@ -506,15 +1706,15 @@ CCDEPMODE='depmode=gcc3'
 CFLAGS='-ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2  '
 CONF_FILES=' $(top_srcdir)/./admin/configure.in.min $(top_srcdir)/configure.in.in'
 CPP='cpp'
-CPPFLAGS=''
+CPPFLAGS=' -DQT_THREAD_SUPPORT  -D_REENTRANT'
 CXX='g++'
 CXXCPP='g++ -E'
 CXXDEPMODE='depmode=gcc3'
 CXXFLAGS='-Wnon-virtual-dtor -Wno-long-long -Wundef -Wall -pedantic -W -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -ansi -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -Wcast-align -Wconversion -O2 -O0 -Wall -fno-exceptions -fno-check-new'
-DCOPIDL2CPP=''
-DCOPIDL=''
-DCOP_DEPENDENCIES=''
-DEFS=''
+DCOPIDL2CPP='/usr/kde/3.1/bin/dcopidl2cpp'
+DCOPIDL='/usr/kde/3.1/bin/dcopidl'
+DCOP_DEPENDENCIES='$(DCOPIDL)'
+DEFS='-DHAVE_CONFIG_H'
 DEPDIR='.deps'
 ECHO='echo'
 ECHO_C=''
@@ -523,66 +1723,66 @@ ECHO_T=''
 EGREP='grep -E'
 EXEEXT=''
 FRAMEWORK_COREAUDIO=''
-GMSGFMT=''
+GMSGFMT='/usr/bin/msgfmt'
 INSTALL_DATA='${INSTALL} -m 644'
 INSTALL_PROGRAM='${INSTALL} $(INSTALL_STRIP_FLAG)'
 INSTALL_SCRIPT='${INSTALL}'
 INSTALL_STRIP_PROGRAM='${SHELL} $(install_sh) -c -s'
-KDECONFIG=''
+KDECONFIG='/usr/kde/3.1/bin/kde-config'
 KDE_EXTRA_RPATH=''
-KDE_INCLUDES=''
-KDE_LDFLAGS=''
+KDE_INCLUDES='-I/usr/kde/3.1/include'
+KDE_LDFLAGS='-L/usr/kde/3.1/lib'
 KDE_MT_LDFLAGS=''
-KDE_MT_LIBS=''
-KDE_PLUGIN=''
-KDE_RPATH=''
+KDE_MT_LIBS='-lpthread'
+KDE_PLUGIN='-avoid-version -module -no-undefined $(KDE_RPATH) $(KDE_MT_LDFLAGS)'
+KDE_RPATH='-R $(kde_libraries) -R $(qt_libraries) -R $(x_libraries)'
 KDE_USE_CLOSURE_FALSE='#'
 KDE_USE_CLOSURE_TRUE=''
 KDE_USE_FINAL_FALSE=''
 KDE_USE_FINAL_TRUE='#'
-KDE_XSL_STYLESHEET=''
+KDE_XSL_STYLESHEET='/usr/kde/3.1/share/apps/ksgmltools2/customization/kde-chunk.xsl'
 LDFLAGS=''
 LIBCOMPAT=''
-LIBCRYPT=''
-LIBDL=''
-LIBJPEG=''
+LIBCRYPT='-lcrypt'
+LIBDL='-ldl'
+LIBJPEG='-ljpeg'
 LIBOBJS=''
-LIBPNG=''
-LIBPTHREAD=''
-LIBRESOLV=''
+LIBPNG='-lpng -lz -lm'
+LIBPTHREAD='-lpthread'
+LIBRESOLV='-lresolv'
 LIBS=''
-LIBSM=''
+LIBSM='-lSM -lICE'
 LIBSOCKET=''
-LIBTOOL=''
+LIBTOOL='$(SHELL) $(top_builddir)/libtool --silent'
 LIBUCB=''
-LIBUTIL=''
+LIBUTIL='-lutil'
 LIBXINERAMA=''
-LIBZ=''
-LIB_KAB=''
-LIB_KABC=''
-LIB_KDECORE=''
-LIB_KDEPRINT=''
-LIB_KDEUI=''
-LIB_KFILE=''
+LIBZ='-lz'
+LIB_KAB='-lkab'
+LIB_KABC='-lkabc'
+LIB_KDECORE='-lkdecore'
+LIB_KDEPRINT='-lkdeprint'
+LIB_KDEUI='-lkdeui'
+LIB_KFILE='-lkio'
 LIB_KFM=''
-LIB_KHTML=''
-LIB_KIO=''
-LIB_KPARTS=''
-LIB_KSPELL=''
-LIB_KSYCOCA=''
+LIB_KHTML='-lkhtml'
+LIB_KIO='-lkio'
+LIB_KPARTS='-lkparts'
+LIB_KSPELL='-lkspell'
+LIB_KSYCOCA='-lkio'
 LIB_POLL=''
 LIB_QPE=''
-LIB_QT=''
-LIB_SMB=''
-LIB_X11=''
-LIB_XEXT=''
+LIB_QT='-lqt-mt  $(LIBPNG) -lXext $(LIB_X11) $(LIBSM) -lpthread'
+LIB_SMB='-lsmb'
+LIB_X11='-lX11 $(LIBSOCKET)'
+LIB_XEXT='-lXext'
 LN_S='ln -s'
 LTLIBOBJS=''
 MAKEINFO='${SHELL} /home/z9u2K/projects/kinneret/cvs/confwiz/admin/missing --run makeinfo'
-MCOPIDL=''
-MEINPROC=''
-MOC=''
-MSGFMT=''
+MCOPIDL='/usr/kde/3.1/bin/mcopidl'
+MEINPROC='/usr/kde/3.1/bin/meinproc'
+MOC='/usr/qt/3/bin/moc'
+MSGFMT='/usr/bin/msgfmt'
 NOOPT_CFLAGS='-O0'
 NOOPT_CXXFLAGS='-O0'
 NOREPO='-fno-repo'
@@ -595,16 +1795,16 @@ PACKAGE_TARNAME=''
 PACKAGE_VERSION=''
 PATH_SEPARATOR=':'
 QTE_NORTTI=''
-QT_INCLUDES=''
-QT_LDFLAGS=''
-RANLIB=''
+QT_INCLUDES='-I/usr/qt/3/include'
+QT_LDFLAGS='-L/usr/qt/3/lib'
+RANLIB='ranlib'
 REPO='-frepo'
 SET_MAKE=''
 SHELL='/bin/sh'
-STRIP=''
-TOPSUBDIRS=''
-UIC=''
-UIC_TR=''
+STRIP='strip'
+TOPSUBDIRS=' confwiz doc po scripts'
+UIC='/usr/qt/3/bin/uic -L $(kde_widgetdir) -nounload'
+UIC_TR='tr2i18n'
 USER_INCLUDES=''
 USER_LDFLAGS=''
 USE_EXCEPTIONS='-fexceptions'
@@ -612,17 +1812,17 @@ USE_RTTI=''
 USE_THREADS=''
 VERSION='0.3.1'
 WOVERLOADED_VIRTUAL=''
-XGETTEXT=''
+XGETTEXT='/usr/bin/xgettext'
 X_EXTRA_LIBS=''
-X_INCLUDES=''
-X_LDFLAGS=''
+X_INCLUDES='-I/usr/X11R6/include'
+X_LDFLAGS='-L/usr/X11R6/lib'
 X_PRE_LIBS=''
 ac_ct_CC=''
 ac_ct_CXX=''
-ac_ct_RANLIB=''
-ac_ct_STRIP=''
-all_includes=''
-all_libraries=''
+ac_ct_RANLIB='ranlib'
+ac_ct_STRIP='strip'
+all_includes='-I/usr/kde/3.1/include -I/usr/qt/3/include -I/usr/X11R6/include '
+all_libraries='-L/usr/X11R6/lib -L/usr/qt/3/lib -L/usr/kde/3.1/lib '
 am__include='include'
 am__quote=''
 bindir='${exec_prefix}/bin'
@@ -632,7 +1832,7 @@ build_cpu='i386'
 build_os='linux-gnu'
 build_vendor='pc'
 datadir='${prefix}/share'
-exec_prefix='NONE'
+exec_prefix='${prefix}'
 host='i386-pc-linux-gnu'
 host_alias='i386-linux'
 host_cpu='i386'
@@ -641,27 +1841,27 @@ host_vendor='pc'
 includedir='${prefix}/include'
 infodir='${prefix}/info'
 install_sh='/home/z9u2K/projects/kinneret/cvs/confwiz/admin/install-sh'
-kde_appsdir=''
-kde_bindir=''
-kde_confdir=''
-kde_datadir=''
-kde_htmldir=''
-kde_icondir=''
-kde_includes=''
-kde_libraries=''
-kde_libs_htmldir=''
-kde_libs_prefix=''
-kde_locale=''
-kde_mimedir=''
-kde_moduledir=''
-kde_qtver=''
-kde_servicesdir=''
-kde_servicetypesdir=''
-kde_sounddir=''
-kde_styledir=''
-kde_templatesdir=''
-kde_wallpaperdir=''
-kde_widgetdir=''
+kde_appsdir='${prefix}/share/applnk'
+kde_bindir='${exec_prefix}/bin'
+kde_confdir='${prefix}/share/config'
+kde_datadir='${prefix}/share/apps'
+kde_htmldir='${prefix}/share/doc/HTML'
+kde_icondir='${prefix}/share/icons'
+kde_includes='/usr/kde/3.1/include'
+kde_libraries='/usr/kde/3.1/lib'
+kde_libs_htmldir='/usr/kde/3.1/share/doc/HTML'
+kde_libs_prefix='/usr/kde/3.1'
+kde_locale='${prefix}/share/locale'
+kde_mimedir='${prefix}/share/mimelnk'
+kde_moduledir='${libdir}/kde3'
+kde_qtver='3'
+kde_servicesdir='${prefix}/share/services'
+kde_servicetypesdir='${prefix}/share/servicetypes'
+kde_sounddir='${prefix}/share/sounds'
+kde_styledir='${libdir}/kde3/plugins/styles'
+kde_templatesdir='${prefix}/share/templates'
+kde_wallpaperdir='${prefix}/share/wallpapers'
+kde_widgetdir='/usr/kde/3.1/lib/kde3/plugins/designer'
 libdir='${exec_prefix}/lib'
 libexecdir='${exec_prefix}/libexec'
 localstatedir='${prefix}/var'
@@ -669,8 +1869,8 @@ mandir='${prefix}/man'
 oldincludedir='/usr/include'
 prefix='/usr/kde/3.1'
 program_transform_name='s,^,i386-linux-,'
-qt_includes=''
-qt_libraries=''
+qt_includes='/usr/qt/3/include'
+qt_libraries='/usr/qt/3/lib'
 sbindir='${exec_prefix}/sbin'
 sharedstatedir='${prefix}/com'
 sysconfdir='${prefix}/etc'
@@ -679,24 +1879,35 @@ target_alias='i386-linux'
 target_cpu='i386'
 target_os='linux-gnu'
 target_vendor='pc'
-x_includes='NONE'
-x_libraries='NONE'
+x_includes='/usr/X11R6/include'
+x_libraries='/usr/X11R6/lib'
 
 ## ----------- ##
 ## confdefs.h. ##
 ## ----------- ##
 
+#define HAVE_CRYPT 1
 #define HAVE_DLFCN_H 1
 #define HAVE_INTTYPES_H 1
+#define HAVE_LIBJPEG 1
+#define HAVE_LIBPNG 1
+#define HAVE_LIBPTHREAD 1
+#define HAVE_LIBZ 1
 #define HAVE_MEMORY_H 1
+#define HAVE_RES_INIT 1
+#define HAVE_RES_INIT 1
+#define HAVE_SNPRINTF 1
+#define HAVE_STDINT_H 1
 #define HAVE_STDINT_H 1
 #define HAVE_STDLIB_H 1
 #define HAVE_STRINGS_H 1
 #define HAVE_STRING_H 1
 #define HAVE_SYS_STAT_H 1
 #define HAVE_SYS_TYPES_H 1
+#define HAVE_SYS_TYPES_H 1
 #define HAVE_TEMPLATE_REPOSITORY 1
 #define HAVE_UNISTD_H 1
+#define HAVE_VSNPRINTF 1
 #define KDELIBSUFF ""
 #define PACKAGE "confwiz"
 #define PACKAGE_BUGREPORT ""
@@ -704,116 +1915,18 @@ x_libraries='NONE'
 #define PACKAGE_STRING ""
 #define PACKAGE_TARNAME ""
 #define PACKAGE_VERSION ""
+#define SIZEOF_CHAR 1
+#define SIZEOF_CHAR_P 4
+#define SIZEOF_INT 4
+#define SIZEOF_LONG 4
 #define STDC_HEADERS 1
 #define VERSION "0.3.1"
+#define ksize_t socklen_t
 #endif
 #ifdef __cplusplus
 #include <stdlib.h>
 
-configure: caught signal 13
-configure: exit 1
-
-## ---------------------- ##
-## Running config.status. ##
-## ---------------------- ##
-
-This file was extended by config.status, which was
-generated by GNU Autoconf 2.57.  Invocation command line was
-
-  CONFIG_FILES    = scripts/Makefile
-  CONFIG_HEADERS  = 
-  CONFIG_LINKS    = 
-  CONFIG_COMMANDS = 
-  $ ./config.status 
-
-on mainbrain
-
-config.status:945: executing default-1 commands
-
-## ---------------------- ##
-## Running config.status. ##
-## ---------------------- ##
-
-This file was extended by config.status, which was
-generated by GNU Autoconf 2.57.  Invocation command line was
-
-  CONFIG_FILES    = doc/Makefile
-  CONFIG_HEADERS  = 
-  CONFIG_LINKS    = 
-  CONFIG_COMMANDS = 
-  $ ./config.status 
-
-on mainbrain
-
-config.status:945: executing default-1 commands
-
-## ---------------------- ##
-## Running config.status. ##
-## ---------------------- ##
-
-This file was extended by config.status, which was
-generated by GNU Autoconf 2.57.  Invocation command line was
-
-  CONFIG_FILES    = doc/en/Makefile
-  CONFIG_HEADERS  = 
-  CONFIG_LINKS    = 
-  CONFIG_COMMANDS = 
-  $ ./config.status 
-
-on mainbrain
-
-config.status:945: executing default-1 commands
-
-## ---------------------- ##
-## Running config.status. ##
-## ---------------------- ##
-
-This file was extended by config.status, which was
-generated by GNU Autoconf 2.57.  Invocation command line was
-
-  CONFIG_FILES    = po/Makefile
-  CONFIG_HEADERS  = 
-  CONFIG_LINKS    = 
-  CONFIG_COMMANDS = 
-  $ ./config.status 
-
-on mainbrain
-
-config.status:945: executing default-1 commands
-
-## ---------------------- ##
-## Running config.status. ##
-## ---------------------- ##
-
-This file was extended by config.status, which was
-generated by GNU Autoconf 2.57.  Invocation command line was
-
-  CONFIG_FILES    = confwiz/Makefile
-  CONFIG_HEADERS  = 
-  CONFIG_LINKS    = 
-  CONFIG_COMMANDS = 
-  $ ./config.status 
-
-on mainbrain
-
-config.status:945: executing default-1 commands
-
-## ---------------------- ##
-## Running config.status. ##
-## ---------------------- ##
-
-This file was extended by config.status, which was
-generated by GNU Autoconf 2.57.  Invocation command line was
-
-  CONFIG_FILES    = Makefile
-  CONFIG_HEADERS  = 
-  CONFIG_LINKS    = 
-  CONFIG_COMMANDS = 
-  $ ./config.status 
-
-on mainbrain
-
-config.status:945: executing default-1 commands
+configure: exit 0
 
 ## ---------------------- ##
 ## Running config.status. ##
