@@ -149,7 +149,7 @@ document.write(""+dayname+", "+monthname+" "+date+", "+yearname);
         <tr>
           <td> 
             <p>
-GNU/Linux Kinneret is free software. We invite you to freely download a ready-to-burn CD image. You may choose from several download mirrors that contain identical copies of the system. If you encounter slow downloads or can't connect, please try another mirror. Download size is approximately 650 MBytes. We recommend that you use a fast Internet connection (cable or xDSL). The download will take about two hours using a 750MBit connection.
+GNU/Linux Kinneret is free software. We invite you to freely download a ready-to-burn CD image. You may choose from several download mirrors that contain identical copies of the system. If you encounter slow downloads or can't connect, please try another mirror. Download size is approximately 650 MBytes. We recommend that you use a fast Internet connection (cable or xDSL). The download will take about two hours using a 750KBit connection.
 <p>
 We recommend to use a download manager so that download can proceed from the point it was stopped in case of disconnect.This feature is not supported by all download sites.<br>A free utility for Windows operating system can be downloaded <a href="http://francis.dupont.free.fr/downloadplus/" class="orange_white" target="new"> from this site</a>. Instructions are available from that site as well.  
 <p>

@@ -276,9 +276,9 @@ http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange
 </tr>
 <TR>
   <TD>2</td>
-  <TD><a href="http://bdcomp.8m.com" class="orange_white" target="new">בי די מחשבים</a></td>
-  <TD><a href="http://bdcomp.8m.com/services/buylinux.html" class="orange_white" target="new">0.6</a></td>
-  <TD><a href="http://bdcomp.8m.com/services/buylinux.html" class="orange_white" target="new">0.7.2</a></td>
+  <TD><a href="http://www.bdcomp.co.il" class="orange_white" target="new">בי די מחשבים</a></td>
+  <TD><a href="http://www.bdcomp.co.il/services/buylinux.html" class="orange_white" target="new">0.6</a></td>
+  <TD><a href="http://www.bdcomp.co.il/services/buylinux.html" class="orange_white" target="new">0.7.2</a></td>
   <TD>10 ש"ח</td>
   <TD></td>
 </tr>
