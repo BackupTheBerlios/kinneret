@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boot-floppy-0.2b\n"
 "POT-Creation-Date: 2004-03-01 20:55\n"
-"PO-Revision-Date: 2004-03-24 18:54+0200\n"
+"PO-Revision-Date: 2004-03-24 22:06+0200\n"
 "Last-Translator: Nir Misgav [Nirro] <nirro@linux-kinneret.org>\n"
 "Language-Team: Nir Misgav <nirro@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -22,9 +22,13 @@ msgstr ""
 #  WForm..Button1..Caption
 #  FormAbout..Caption
 #  WForm..Button1..Caption
+#  FormAbout..Caption
+#  WForm..Button1..Caption
+#. FormAbout..Caption
+#. WForm..Button1..Caption
 #: About.dfm:8
 #: WelcomeForm.dfm:528
-#: About.pas:82
+#: About.pas:87
 msgid "About"
 msgstr "אודות"
 
@@ -104,6 +108,24 @@ msgstr "אודות"
 #  MainForm..Font.Name
 #  WForm..Font.Name
 #  WForm..Label2..Font.Name
+#  FormAbout..Font.Name
+#  FormAdvanced..Font.Name
+#  FormWarning..Font.Name
+#  parinst..Font.Name
+#  parinst2..Font.Name
+#  ParInst3..Font.Name
+#  MainForm..Font.Name
+#  WForm..Font.Name
+#  WForm..Label2..Font.Name
+#  FormAbout..Font.Name
+#  FormAdvanced..Font.Name
+#  FormWarning..Font.Name
+#  parinst..Font.Name
+#  parinst2..Font.Name
+#  ParInst3..Font.Name
+#  MainForm..Font.Name
+#  WForm..Font.Name
+#  WForm..Label2..Font.Name
 #: About.dfm:15
 #: Advanced.dfm:13
 #: fWarning.dfm:13
@@ -120,8 +142,9 @@ msgstr ""
 #  ParInst3..ButtonClose..Caption
 #  FormAbout..Button1..Caption
 #  FormAbout..Button1..Caption
+#. FormAbout..Button1..Caption
 #: About.dfm:38
-#: About.pas:83
+#: About.pas:88
 #: ParInstall3.pas:177
 #: rawwrite.pas:220
 msgid "Close"
@@ -130,6 +153,7 @@ msgstr "סגור"
 #  FormAdvanced..ParamList..Hint
 #  FormAdvanced..ParamList..Hint
 #  FormAdvanced..ParamList..Hint
+#. FormAdvanced..ParamList..Hint
 #: Advanced.dfm:42
 msgid "Edit the Values here"
 msgstr "עריכת הערכים"
@@ -137,6 +161,7 @@ msgstr "עריכת הערכים"
 #  FormWarning..Caption
 #  FormWarning..Caption
 #  FormWarning..Caption
+#. FormWarning..Caption
 #: fWarning.dfm:6
 #: fWarning.pas:69
 msgid "Warning"
@@ -157,6 +182,7 @@ msgstr "הכנת תקליטון הפעלה"
 #  WForm..Caption
 #  WForm..Caption
 #  WForm..Caption
+#. WForm..Caption
 #: WelcomeForm.dfm:8
 msgid "Welcome to GNU/Linux \"Kinneret\""
 msgstr "\"ברוכים הבאים לגנו/לינוקס \"כנרת"
@@ -171,6 +197,7 @@ msgstr "\"ברוכים הבאים ל-\"כנרת"
 #  WForm..label1..Font.Name
 #  WForm..label1..Font.Name
 #  WForm..label1..Font.Name
+#. WForm..label1..Font.Name
 #: WelcomeForm.dfm:128
 msgid "Arial"
 msgstr ""
@@ -196,6 +223,7 @@ msgstr ""
 
 #  WForm..ButtonAdvanced..Hint
 #  WForm..ButtonAdvanced..Hint
+#. WForm..ButtonAdvanced..Hint
 #: WelcomeForm.dfm:567
 msgid "Advanced options for editing kernel parameters"
 msgstr "אפשרויות מתקדמות לעריכת הפרמטרים הנשלחים אל הליבה בזמן האיתחול"
@@ -208,28 +236,28 @@ msgstr "מתקדם"
 
 #  parinst2..TntGroupBox2..Caption
 #  WForm..TntButton1..Caption
+#. WForm..TntButton1..Caption
 #: WelcomeForm.dfm:579
 msgid "Hard-Drive Operation"
 msgstr "הפעלה מכונן קשיח"
 
-#: About.pas:80
+#: About.pas:85
 msgid ""
-"Kinneret's Boot Floppy Maker\n"
+"Kinneret's Boot Floppy Maker,\n"
+"And \"HD operation\" wizard.\n"
 "\n"
 "Version: %s,\n"
 "Date: %s,\n"
 "Written by: Nir Misgav.\n"
 "Email: %s\n"
 "All rights reserved to\n"
-"GNU/Linux Kinneret.\n"
+"GNU/Linux Kinneret,\n"
 "http://www.linux-kinneret.org\n"
+"Lincense: GPL.\n"
 "\n"
-"Lincense: GPL\n"
-"(Not include TGIFImage).\n"
-"\n"
-"Based on: RawWriteWin-0.7,\n"
+"First version (0.1) was\n"
+"based on: RawWriteWin-0.7,\n"
 "Written by: John Newbigin,\n"
-"License: GPL.\n"
 "\n"
 "Graphics made with: TGIFImage,\n"
 "Author: Andres Melander,\n"
@@ -241,24 +269,30 @@ msgid ""
 "Tnt Unicode Controls,\n"
 "by Tnt Software Products.\n"
 "License: Unspecific open source,\n"
-"See: TntUnicode.txt."
+"See: TntUnicode.txt.\n"
+"\n"
+"\"HD Operation\" wizard is using:\n"
+"GRUBINSTALL ver:9b\n"
+"by: Lode Leroy,\n"
+"\n"
+"and LOADLIN ver:1.6c\n"
+"by: Hans Lermen."
 msgstr ""
-"מכין תקליטון ההפעלה של כנרת\n"
+",מכין תקליטון ההפעלה של כנרת\n"
+".\"ואשף \"הפעלה מכונן קשיח\n"
 "\n"
 ",%s : גרסה\n"
 ",%s :מתאריך\n"
 ".נכתב ע\"י: ניר משגב\n"
 ",%s :דוא\"ל\n"
 "כל הזכויות שמורות\n"
-".לגנו/לינוקס כנרת\n"
+",לגנו/לינוקס כנרת\n"
 "http://www.linux-kinneret.org\n"
-"\n"
-"GPL :רשיון\n"
-".(TGIFImage לא כולל)\n"
-"\n"
-",RawWriteWin-0.7 :מבוסס על\n"
-",John Newbigin :אשר נכתב ע\"י\n"
 ".GPL :רשיון\n"
+"\n"
+"(הגרסה הראשונה (0.1\n"
+",RawWriteWin-0.7 :מבוססת על\n"
+".John Newbigin :אשר נכתב ע\"י\n"
 "\n"
 ",TGIFImage: ספריית גרפיקה\n"
 ",Andres Melander :נכתבה ע\"י\n"
@@ -270,7 +304,15 @@ msgstr ""
 ",Tnt Unicode Controls\n"
 ".Tnt Software Products ע\"י\n"
 ",(רשיון: פתוח (לא מוגדר\n"
-".TntUnicode.txt :ראה"
+".TntUnicode.txt :ראה\n"
+"\n"
+":אשף \"התקנה לכונן קשיח\" נעזר ב\n"
+"\n"
+"9b :גרסה GRUBINSTALL\n"
+",Lode Leroy :אשר נכתב ע\"י\n"
+"\n"
+"1.6c :גרסה LOADLIN -וב\n"
+".Hans Lermen :אשר נכתב ע\"י"
 
 #: Advanced.pas:48
 msgid "Really remove %s ?"
@@ -422,7 +464,7 @@ msgstr ""
 ".(לשימושים אחרים (כגון האזנה לתקליטורי שמע\n"
 "\n"
 ",לידיעתך! \"הפעלה מכונן קשיח\" אינה התקנה של המערכת\n"
-"ולכן אינה דורשת \"חלוקה למחיצות\", ואינה מאפשרת התקנת\n"
+"לכן אינה דורשת \"חלוקה למחיצות\", ואינה מאפשרת התקנת\n"
 "\"תוכנות נוספות. אנו מקווים לתמוך ב-\"התקנה לכונן קשיח\n"
 ".בגרסה עתידית\n"
 "\n"
@@ -525,6 +567,7 @@ msgstr "פנוי לאחר ההתקנה"
 #  Not enough free space
 #  Not enough free space
 #  Not enough free space
+#. Not enough free space
 #: ParInstall2.pas:183
 msgid ""
 "Not enough free space on drive %s:\n"
@@ -536,6 +579,7 @@ msgstr ""
 #  not enough space in C: (rare)
 #  not enough space in C: (rare)
 #  not enough space in C: (rare)
+#. not enough space in C: (rare)
 #: ParInstall3.pas:102
 msgid ""
 "Drive C: is full, Unable to copy files.\n"
@@ -548,6 +592,7 @@ msgstr ""
 #  Copying all files
 #  Copying all files
 #  Copying all files
+#. Copying all files
 #: ParInstall3.pas:110
 msgid "Error while copying files."
 msgstr ".שגיאה בהעתקת קבצים"
@@ -555,6 +600,7 @@ msgstr ".שגיאה בהעתקת קבצים"
 #  Windows NT Create Menu with GRUB
 #  Windows NT Create Menu with GRUB
 #  Windows NT Create Menu with GRUB
+#. Windows NT Create Menu with GRUB
 #: ParInstall3.pas:121
 msgid ""
 "Error, Can't find C:\\boot.ini\n"
@@ -575,6 +621,7 @@ msgstr ""
 #  Remove old boot-menu windows NT
 #  Remove old boot-menu windows NT
 #  Remove old boot-menu windows NT
+#. Remove old boot-menu windows NT
 #: ParInstall3.pas:148
 msgid ""
 "An old Boot-Menu was detected on your system,\n"
@@ -607,6 +654,7 @@ msgstr "מתקין את כנרת"
 #  Assume there is an error
 #  Assume there is an error
 #  Assume there is an error
+#. Assume there is an error
 #: ParInstall3.pas:288
 msgid ""
 "Another Boot-Menu which is not related to Kinneret was\n"
@@ -719,6 +767,7 @@ msgstr ""
 
 #  Programmer's name for it: SMismatchedArgumentTypes
 #  Programmer's name for it: SMismatchedArgumentTypes
+#. Programmer's name for it: SMismatchedArgumentTypes
 #: TntFormatStrUtils.pas:36
 msgid "Argument types for index %d do not match. (%s <> %s)"
 msgstr ""
@@ -732,6 +781,7 @@ msgstr ""
 
 #  Programmer's name for it: SBufferOverflow
 #  Programmer's name for it: SBufferOverflow
+#. Programmer's name for it: SBufferOverflow
 #: TntSystem.pas:793
 msgid "Buffer overflow"
 msgstr ""
@@ -740,6 +790,7 @@ msgstr ""
 #  Programmer's name for it: SInvalidUTF7
 #  Programmer's name for it: SInvalidUTF7
 #  Programmer's name for it: SInvalidUTF7
+#. Programmer's name for it: SInvalidUTF7
 #: TntSystem.pas:794
 msgid "Invalid UTF7"
 msgstr ""
@@ -750,6 +801,8 @@ msgstr ""
 #  Programmer's name for it: SInvalidCurrency
 #  Delphi 5 compatibility
 #  Programmer's name for it: SInvalidCurrency
+#. Delphi 5 compatibility
+#. Programmer's name for it: SInvalidCurrency
 #: TntSysUtils.pas:45
 msgid "'%s' is not a valid currency value"
 msgstr ""
@@ -841,6 +894,7 @@ msgstr ""
 
 #  Seperating Line to words
 #  Seperating Line to words
+#. Seperating Line to words
 #: WelcomeForm.pas:234
 msgid ""
 "In order to enter the Advanced options, You must put your boot-floppy\n"

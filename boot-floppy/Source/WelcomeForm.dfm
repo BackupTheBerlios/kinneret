@@ -145,7 +145,7 @@ object WForm: TWForm
   end
   object Image1: TImage
     Left = 0
-    Top = 16
+    Top = 32
     Width = 156
     Height = 200
     AutoSize = True
@@ -522,7 +522,7 @@ object WForm: TWForm
   end
   object Button1: TTntButton
     Left = 8
-    Top = 232
+    Top = 256
     Width = 49
     Height = 25
     Caption = 'About'
@@ -530,9 +530,9 @@ object WForm: TWForm
     OnClick = Button1Click
   end
   object Button2: TTntButton
-    Left = 112
+    Left = 184
     Top = 304
-    Width = 105
+    Width = 137
     Height = 33
     Caption = 'Reboot'
     TabOrder = 3
@@ -540,7 +540,7 @@ object WForm: TWForm
   end
   object RadioButton2: TTntRadioButton
     Left = 64
-    Top = 248
+    Top = 272
     Width = 57
     Height = 17
     BiDiMode = bdLeftToRight
@@ -551,7 +551,7 @@ object WForm: TWForm
   end
   object RadioButton1: TTntRadioButton
     Left = 64
-    Top = 232
+    Top = 256
     Width = 57
     Height = 17
     BiDiMode = bdLeftToRight
@@ -560,9 +560,9 @@ object WForm: TWForm
     OnClick = RadioButton1Click
   end
   object ButtonAdvanced: TTntButton
-    Left = 232
-    Top = 304
-    Width = 105
+    Left = 184
+    Top = 256
+    Width = 137
     Height = 33
     Hint = 'Advanced options for editing kernel parameters'
     Caption = 'Advanced'

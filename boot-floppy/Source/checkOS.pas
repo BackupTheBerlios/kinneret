@@ -10,6 +10,7 @@ var
 
 function getOs() : boolean;
 function MyDesktopFolder : string;
+function GetWindowsDrive: TFileName;
 
 implementation
 
@@ -52,5 +53,15 @@ begin
  if pidl <> nil then Malloc.Free(pidl);
 end;
 
+function GetWindowsDrive: TFileName;
+var
+  WinDir: array [0..MAX_PATH-1] of char;
+begin
+  SetString(Result, WinDir, GetWindowsDirectory(WinDir, MAX_PATH));
+  if Result = '' then
+    raise Exception.Create(SysErrorMessage(GetLastError));
+  if (copy(result,1,2)<>':\') then result:='C:\'
+  else result:=copy(result,0,3);
+end;
 end.
 

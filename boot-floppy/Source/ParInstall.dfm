@@ -1,9 +1,9 @@
 object parinst: Tparinst
-  Left = 380
+  Left = 370
   Top = 185
   BorderStyle = bsToolWindow
   ClientHeight = 339
-  ClientWidth = 345
+  ClientWidth = 355
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,12 +19,12 @@ object parinst: Tparinst
   object explanation: TTntLabel
     Left = 24
     Top = 32
-    Width = 297
+    Width = 305
     Height = 217
     AutoSize = False
   end
   object YesButton: TTntButton
-    Left = 184
+    Left = 192
     Top = 280
     Width = 129
     Height = 33

@@ -44,8 +44,8 @@ end;
 procedure TFormAbout.FormCreate(Sender: TObject);
 begin
   TranslateProperties (self);      //GNUGETTEXT
-  date:='28/2/04';
-  version:='0.7';
+  date:='24/3/04';
+  version:='0.7.3';
   email:='nirro@linux-kinneret.org';
 end;
 
@@ -55,19 +55,19 @@ begin
     else Bidimode:=bdLeftToRight;
     if GetCurrentLanguage='he' then memo1.Alignment:=taRightJustify
     else memo1.Alignment:=taLeftJustify;
-    memo1.Text:=wideFormat(_('Kinneret''s Boot Floppy Maker'+#10#13#10#13+
+    memo1.Text:=wideFormat(_('Kinneret''s Boot Floppy Maker,'+#10#13+
+    'And "HD operation" wizard.'+#10#13+#10#13+
     'Version: %s,'+#10#13+
     'Date: %s,'+#10#13+
     'Written by: Nir Misgav.'+#10#13+
     'Email: %s'+#10#13+
     'All rights reserved to'+#10#13+
-    'GNU/Linux Kinneret.'+#10#13+
-    'http://www.linux-kinneret.org'+#10#13#10#13+
-    'Lincense: GPL'+#10#13+
-    '(Not include TGIFImage).'+#10#13#10#13+
-    'Based on: RawWriteWin-0.7,'+#10#13+
-    'Written by: John Newbigin,'+#10#13+
-    'License: GPL.'+#10#13#10#13+
+    'GNU/Linux Kinneret,'+#10#13+
+    'http://www.linux-kinneret.org'+#10#13+
+    'Lincense: GPL.'+#10#13+#10#13+
+    'First version (0.1) was'+#10#13+
+    'based on: RawWriteWin-0.7,'+#10#13+
+    'Written by: John Newbigin,'+#10#13+#10#13+
     'Graphics made with: TGIFImage,'+#10#13+
     'Author: Andres Melander,'+#10#13+
     'Ported to D7 by: Finn Tolderlund.'+#10#13+
@@ -77,7 +77,12 @@ begin
     'Tnt Unicode Controls,'+#10#13+
     'by Tnt Software Products.'+#10#13+
     'License: Unspecific open source,'+#10#13+
-    'See: TntUnicode.txt.'),[version,date,email]);
+    'See: TntUnicode.txt.'+#10#13+#10#13+
+    '"HD Operation" wizard is using:'+#10#13+
+    'GRUBINSTALL ver:9b'+#10#13+
+    'by: Lode Leroy,'+#10#13+#10#13+
+    'and LOADLIN ver:1.6c'+#10#13+
+    'by: Hans Lermen.'),[version,date,email]);
 
     Caption:=PWideChar(_('About'));
     Button1.Caption:=PWideChar(_('Close'));
