@@ -1,5 +1,8 @@
 This file includes changes since the last upload. It is intended to provide a reference for translators/authors/remastering.
 
+-------------- v 0.5.0final ----------------
+* 
+
 -------------- v 0.5.0beta ----------------
 * Updated ~/etc/l2swim.xsl (no impact on translations - enhanced tags and html output) 5/7/03 dovix
 * updated ~/etc/swim_menu_he.txt 28/06/03 dovix
@@ -11,7 +14,8 @@ This file includes changes since the last upload. It is intended to provide a re
 * updated ~/src/he/linux_history.xml 5/7/03 dovix (some spelling and syntax errors)
 * removed ~/src/he/tour*.xml 5/7/03 dovix (replaced with one page tour for each topic)
 * new ~/src/he/tour*.xml 5/7/03 dovix (new one page tour for each topic and new screenshots)
-* new ~/src/he/apps_list.xml 5/7/03 dovix
+* new ~/src/he/apps_list.xml 5/7/03 dovix - still not final
+* new ~/src/he/kinneret_credits.xml 5/7/03 dovix - still not final
 * new ~/src/he/first_time.xml 5/7/03 dovix
 * updated all screen captures to a maximum width of 550 pixels (no impact on translations)
 * new ~/src/he/about_kinneret.xml 15/7/03 dovix

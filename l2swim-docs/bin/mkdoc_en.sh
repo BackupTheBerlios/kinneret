@@ -18,6 +18,8 @@
 xsltproc -o ../doc/en/gfdl_license.html ../etc/l2swim.xsl ../src/en/gfdl_license.xml
 xsltproc -o ../doc/en/gpl_license.html ../etc/l2swim.xsl ../src/en/gpl_license.xml
 xsltproc -o ../doc/en/user_interface.html ../etc/l2swim.xsl ../src/en/user_interface.xml
+xsltproc -o ../doc/en/linux_history.html ../etc/l2swim.xsl ../src/en/linux_history.xml
+xsltproc -o ../doc/en/about_kinneret.html ../etc/l2swim.xsl ../src/en/about_kinneret.xml
 echo "if all files were compiles successfuly, then:"
 echo "- enter root mode : su"
 echo "- copy the files: cp ../doc/en/*.html /opt/kinneret/l2swim/doc/en/ -f"
