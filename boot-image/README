@@ -53,6 +53,6 @@ go to http://syslinux.zytor.com/faq.php for more details.
 tools :
 
 you will need the syslinux tool to make a bootable image.
-you may also wish to download it if you seek to change the image, as it comes with two handy (and essential)
+you may also wish to download it if you seek to change the lss16 pic, as it comes with two handy (and essential)
 tools to convert pnm to lss16 and back.
 see http://syslinux.zytor.com/ for more details
