@@ -629,6 +629,7 @@ object WForm: TWForm
     Width = 113
     Height = 33
     Caption = 'Uninstall Kinneret'
+    Enabled = False
     TabOrder = 9
   end
   object RadioButton4: TTntRadioButton
