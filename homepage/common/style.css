@@ -1,6 +1,6 @@
 A:link				{text-decoration: none;}
 A:visited				{text-decoration: none;}
-A:hover				{color: #0066cc}  
+A:hover				{color: #0066CC;}  
 
 A.orange_white:link		{color: #FF3300;background-color: transparent;text-decoration: none;}
 A.orange_white:visited	{color: #FF3300;background-color: transparent;text-decoration: none;}
@@ -15,3 +15,51 @@ TD					{FONT-FAMILY: Sans-Serif; FONT-SIZE: 12px;}
 BODY				{FONT-FAMILY: Sans-Serif; FONT-SIZE: 12px; margin:0px;}
 P					{FONT-FAMILY: Sans-Serif; FONT-SIZE: 12px}
 DIV					{FONT-FAMILY: Sans-Serif; FONT-SIZE: 12px}
+
+#rtllist
+{
+	position: absolute;
+	right: 1em;
+	top: 1em;
+	left: 50%;
+}
+
+#ltrlist
+{
+	position: absolute;
+	right: 50%;
+	top: 1em;
+	left: 1em;
+}
+
+#footer
+{
+	position: fixed;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	text-align: center;
+}
+
+*[dir="rtl"] ul, *[dir="rtl"] ol, *[dir="rtl"] dl 
+{	
+	margin: 0 1em 0 0;
+	padding: 0;
+}
+
+*[dir="rtl"] li 
+{
+	margin: 0.25em 1em 0.25em 0;
+	padding: 0;
+}
+
+*[dir="ltr"] ul, *[dir="ltr"] ol, *[dir="ltr"] dl 
+{	margin: 0 0 0 1em;
+	padding: 0;
+}
+
+*[dir="ltr"] li 
+{
+	margin: 0.25em 0 0.25em 1em;
+	padding: 0;
+}
