@@ -5,9 +5,70 @@
 <title>GNU/Linux Kinneret - Freedom is our secret!</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link REL="StyleSheet" HREF="common/style.css" TYPE="text/css">
+
+<script language="JavaScript1.2" type="text/javascript">
+
+// PUT THE URL'S OF YOUR IMAGES INTO THIS ARRAY...
+var Slides = new Array('common/shot1.jpg','common/shot2.jpg','common/shot3.jpg');
+
+// DO NOT EDIT BELOW THIS LINE!
+function CacheImage(ImageSource) { // TURNS THE STRING INTO AN IMAGE OBJECT
+   var ImageObject = new Image();
+   ImageObject.src = ImageSource;
+   return ImageObject;
+}
+
+function ShowSlide(Direction) {
+   if (SlideReady) {
+      NextSlide = CurrentSlide + Direction;
+      // THIS WILL DISABLE THE BUTTONS (IE-ONLY)
+      document.SlideShow.Previous.disabled = (NextSlide == 0);
+      document.SlideShow.Next.disabled = (NextSlide == 
+(Slides.length-1));    
+ if ((NextSlide >= 0) && (NextSlide < Slides.length)) {
+            document.images['Screen'].src = Slides[NextSlide].src;
+            CurrentSlide = NextSlide++;
+            Message = 'Picture ' + (CurrentSlide+1) + ' of ' + 
+Slides.length;
+            self.defaultStatus = Message;
+            if (Direction == 1) CacheNextSlide();
+      }
+      return true;
+   }
+}
+
+function Download() {
+   if (Slides[NextSlide].complete) {
+      SlideReady = true;
+      self.defaultStatus = Message;
+   }
+   else setTimeout("Download()", 100); // CHECKS DOWNLOAD STATUS EVERY 100 MS
+   return true;
+}
+
+function CacheNextSlide() {
+   if ((NextSlide < Slides.length) && (typeof Slides[NextSlide] == 
+'string'))
+{ // ONLY CACHES THE IMAGES ONCE
+      SlideReady = false;
+      self.defaultStatus = 'Downloading next picture...';
+      Slides[NextSlide] = CacheImage(Slides[NextSlide]);
+      Download();
+   }
+   return true;
+}
+
+function StartSlideShow() {
+   CurrentSlide = -1;
+   Slides[0] = CacheImage(Slides[0]);
+   SlideReady = true;
+   ShowSlide(1);
+}
+</script>
+
 </head>
 
-<body bgcolor="#FFFFFF" text="#0066cc" link="#FFFFFF" alink="#000080" vlink="#FFFFFF">
+<body bgcolor="#FFFFFF" text="#0066cc" link="#FFFFFF" alink="#000080" vlink="#FFFFFF" onLoad="StartSlideShow()">
 
 <script language="JavaScript1.2" type="text/javascript">
 
@@ -64,7 +125,7 @@ document.body.style.background="url('common/wallpaper.jpg') white center no-repe
               <tr>
                 <td STYLE="background-color:#1F2AB9" width="450">&nbsp;
 <font color='#FFFFFF'>
-<script type="text/JavaScript">
+<script language="JavaScript1.2" type="text/javascript">
 <!--//
 var now = new Date();
 var day = now.getDay();
@@ -146,15 +207,31 @@ document.write(""+dayname+", "+monthname+" "+date+", "+yearname);
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td>
+            <p><span style="font-weight: bold;">Screenshots:</span></p>
+<!--
 <img src="common/kinneret-tux.png" width="129" height="171" alt="Tux">
+-->
+
+<form name="SlideShow" action="">
+<table>
+<tbody><tr>
+   <td colspan="2"><img src="" name="Screen" height="101" width="135" alt=""></td>
+</tr>
+<tr>
+   <td><input disabled="disabled" name="Previous" value="Prev" onclick="ShowSlide(-1)" type="button"></td>
+   <td align="right"><input name="Next" value="Next" onclick="ShowSlide(1)" type="button"></td>
+</tr></tbody>
+</table>
+</form>
+
 </td>
 </tr>
         <tr>
           <td>
-            <p><span style="font-weight: bold;">What's new?</span></p>
+            <span style="font-weight: bold;">What's new?</span><br><br>
 
 
-<script type="text/javascript">
+<script language="JavaScript1.2" type="text/javascript">
 
 /******************************************
 * Scrollable content script II- © Dynamic Drive (www.dynamicdrive.com)
@@ -234,13 +311,6 @@ moveupvar=setTimeout("moveup()",20)
 
 }
 
-function getcontent_height(){
-if (iens6)
-contentheight=crossobj.offsetHeight
-else if (ns4)
-document.nscontainer.document.nscontent.visibility="show"
-}
-window.onload=getcontent_height
 </script>
 
           </td>
@@ -251,7 +321,7 @@ window.onload=getcontent_height
       <table width="500" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td> 
-            <p><img src="common/kinneret-tux.png" width="29" height="38" alt="Tux" align="center"><b>Welcome to the GNU/Linux Kinneret home</b></p> 
+            <p><img src="common/kinneret-tux.png" width="29" height="38" alt="Tux" align="middle"><b>Welcome to the GNU/Linux Kinneret home</b></p> 
             <p>GNU/Linux Kinneret is an operating system and a variety of applications supplied in a single package that is easy to operate and use (CD). The system does not mandate installation and/or complicated setup, and includes automatic hardware recognition, a wizard that facilitates easy connection to the Internet, as well as a rich and high-quality range of applications with maximum Hebrew support (with more languages to be supported later on).</p>
             <p>Among the applications provided in the CD we can count office aplications (word processor, spreadsheet, presentations and more), Internet applications (browser, email, instant messaging, chat and more), multimedia applications (playing music, watching movies, image editors and more) as well as a variety of games. GNU/Linux Kinneret is intended to serve first and foremost pupils in the Israeli education system, and therefore it includes a range of educational software, learning aids and development environments that are needed throughout the studies.</p>
             <p>The system can be downloaded for free (as in speech and as in beer) from the Internet. The goals of the project are presenting free, quality proven alternatives to the Windows™ operating system and to the commercial software tools that pupils use during their studies, promoting the free software and open source movements in Israel and giving equal opportunity to pupils from all parts of the population in the technological age.</p>
