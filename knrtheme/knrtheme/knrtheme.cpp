@@ -178,7 +178,7 @@ QString knrtheme::quickHelp() const
 	return i18n("The Kinneret's theme manager,\n"
 	"Written by: Nir Misgav\n"
 	"Version: %1\n"
-	"Date: %2").arg("0.7b2").arg("16/12/03");
+	"Date: %2").arg("0.7.1").arg("06/01/04");
 }
 
 
