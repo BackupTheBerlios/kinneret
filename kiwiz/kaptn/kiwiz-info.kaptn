@@ -10,7 +10,7 @@ start "Kiwiz - Information"-> main;
 #------------- Main -----------------------
 main :framed :horizontal -> main_logo main_pane;
 
-main_logo -> @icon("/home/dovix/iwiz/128x128/apps/hwinfo.png");
+main_logo -> @icon("/opt/kinneret/kiwiz/icons/128x128/hwinfo.png");
 
 main_pane -> main_logs main_buttons;
 
@@ -18,7 +18,7 @@ main_logs :tabbed :reverse -> database system;
 
 main_buttons -> main_buttons_close;
 
-main_buttons_close :horizontal -> @icon("/home/dovix/iwiz/32x32/actions/gohome.png") @close="Close"; 
+main_buttons_close :horizontal -> @icon("/opt/kinneret/kiwiz/icons/32x32/gohome.png") @close="Close"; 
 
 #------------- Database -----------------------
 database "Database" -> database_info database_detail;
@@ -28,11 +28,11 @@ database_info -> @text ("Supported modems and ISPs in the dialer database");
 database_detail :tabbed :reverse -> database_info_modem database_info_isp;
 
 database_info_modem :horizontal "Modems" -> database_info_modem_icon database_info_modem_text;
-database_info_modem_icon -> @icon("/home/dovix/iwiz/64x64/devices/nfs_unmount.png");
+database_info_modem_icon -> @icon("/opt/kinneret/kiwiz/icons/64x64/nfs_unmount.png");
 database_info_modem_text -> @list(`lines=$(internet --listhws broadband | wc -l) && lines=$(echo $lines -1 | bc) && internet --listhws broadband | tail -n $lines`);
 
 database_info_isp :horizontal "ISPs" -> database_info_isp_icon database_info_isp_text;
-database_info_isp_icon -> @icon("/home/dovix/iwiz/64x64/filesystems/connect_to_network.png");
+database_info_isp_icon -> @icon("/opt/kinneret/kiwiz/icons/64x64/connect_to_network.png");
 database_info_isp_text -> @list(`lines=$(internet --listisps | wc -l) && lines=$(echo $lines -1 | bc) && internet --listisps | tail -n $lines`);
 
 #------------- System -----------------------
@@ -44,10 +44,10 @@ system_info -> @text ("Information about hardware identified in this computer");
 system_detail :tabbed :reverse -> system_info_usb system_info_pci;
 
 system_info_usb :horizontal "USB devices" -> system_info_usb_icon system_info_usb_text;
-system_info_usb_icon -> @icon("/home/dovix/iwiz/64x64/apps/input_devices_settings.png");
+system_info_usb_icon -> @icon("/opt/kinneret/kiwiz/icons/64x64/input_devices_settings.png");
 system_info_usb_text -> @list(`lsusb`);
 
 system_info_pci :horizontal "PCI devices" -> system_info_pci_icon system_info_pci_text;
-system_info_pci_icon -> @icon("/home/dovix/iwiz/64x64/apps/hardware.png");
+system_info_pci_icon -> @icon("/opt/kinneret/kiwiz/icons/64x64/hardware.png");
 system_info_pci_text -> @list(`lspci`);
 

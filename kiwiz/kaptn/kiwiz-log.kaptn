@@ -10,7 +10,7 @@ start "Kiwiz - Log viewer"-> main;
 #------------- Main -----------------------
 main :framed :horizontal -> main_logo main_pane;
 
-main_logo -> @icon("/home/dovix/iwiz/128x128/actions/filefind.png");
+main_logo -> @icon("/opt/kinneret/kiwiz/icons/128x128/filefind.png");
 
 main_pane -> main_logs main_buttons;
 
@@ -18,7 +18,7 @@ main_logs :tabbed :reverse -> connect disconnect;
 
 main_buttons -> main_buttons_close;
 
-main_buttons_close :horizontal -> @icon("/home/dovix/iwiz/32x32/actions/gohome.png") @close="Close"; 
+main_buttons_close :horizontal -> @icon("/opt/kinneret/kiwiz/icons/32x32/gohome.png") @close="Close"; 
 
 #------------- Connect -----------------------
 connect "Connect Logs" -> connect_info connect_log;
@@ -28,11 +28,11 @@ connect_info -> @text ("Log files of latest connect attempt");
 connect_log :tabbed :reverse -> connect_log_out connect_log_err;
 
 connect_log_out :horizontal "Application messages" -> connect_log_out_icon connect_log_out_text;
-connect_log_out_icon -> @icon("/home/dovix/iwiz/64x64/apps/agt_action_success.png");
+connect_log_out_icon -> @icon("/opt/kinneret/kiwiz/icons/64x64/agt_action_success.png");
 connect_log_out_text -> @list(`cat /tmp/kiwiz_connect.log`);
 
 connect_log_err :horizontal "Error messages" -> connect_log_err_icon connect_log_err_text;
-connect_log_err_icon -> @icon("/home/dovix/iwiz/64x64/apps/agt_action_fail.png");
+connect_log_err_icon -> @icon("/opt/kinneret/kiwiz/icons/64x64/agt_action_fail.png");
 connect_log_err_text -> @list(`cat /tmp/kiwiz_connect.err`);
 
 #------------- Disconnect -----------------------
@@ -44,10 +44,10 @@ disconnect_info -> @text ("Log files of latest disconnect attempt");
 disconnect_log :tabbed :reverse -> disconnect_log_out disconnect_log_err;
 
 disconnect_log_out :horizontal "Application messages" -> disconnect_log_out_icon disconnect_log_out_text;
-disconnect_log_out_icon -> @icon("/home/dovix/iwiz/64x64/apps/agt_action_success.png");
+disconnect_log_out_icon -> @icon("/opt/kinneret/kiwiz/icons/64x64/agt_action_success.png");
 disconnect_log_out_text -> @list(`cat /tmp/kiwiz_disconnect.log`);
 
 disconnect_log_err :horizontal "Error messages" -> disconnect_log_err_icon disconnect_log_err_text;
-disconnect_log_err_icon -> @icon("/home/dovix/iwiz/64x64/apps/agt_action_fail.png");
+disconnect_log_err_icon -> @icon("/opt/kinneret/kiwiz/icons/64x64/agt_action_fail.png");
 disconnect_log_err_text -> @list(`cat /tmp/kiwiz_disconnect.err`);
 

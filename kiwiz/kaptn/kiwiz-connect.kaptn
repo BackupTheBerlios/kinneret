@@ -10,7 +10,7 @@ start "Kiwiz - Dialer"-> main;
 #------------- Main -----------------------
 main :framed :horizontal -> main_logo main_pane;
 
-main_logo -> @icon("/home/dovix/iwiz/128x128/apps/kppp.png");
+main_logo -> @icon("/opt/kinneret/kiwiz/icons/128x128/kppp.png");
 
 main_pane -> main_options main_buttons;
 
@@ -24,9 +24,9 @@ main_password_value :beside "Connection password [TBD]" -> " --password " @passw
 
 main_buttons :horizontal -> main_connect main_close;
 
-main_connect :horizontal -> @icon("/home/dovix/iwiz/32x32/actions/launch.png") @exec(main_connect_play)="Go";
+main_connect :horizontal -> @icon("/opt/kinneret/kiwiz/icons/32x32/launch.png") @exec(main_connect_play)="Go";
 
-main_connect_play -> "echo "main_connection" > /tmp/kiwiz_connect.inf; internet --connect="main_connection" > /tmp/kiwiz_connect.log 2> /tmp/kiwiz_connect.err ; kaptain kiwiz-status.kaptn";
+main_connect_play -> "echo "main_connection" > /tmp/kiwiz_connect.inf; internet --connect="main_connection" > /tmp/kiwiz_connect.log 2> /tmp/kiwiz_connect.err ; kaptain /opt/kinneret/kiwiz/kaptn/kiwiz-status.kaptn";
 #main_connect_play -> "echo "main_connection" "main_password_value"";
 
-main_close :horizontal -> @icon("/home/dovix/iwiz/32x32/actions/gohome.png") @close="Close";
+main_close :horizontal -> @icon("/opt/kinneret/kiwiz/icons/32x32/gohome.png") @close="Close";

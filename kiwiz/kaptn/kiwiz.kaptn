@@ -20,11 +20,11 @@ dialer_actions :framed :horizontal -> dialer_connect_pane dialer_right_pane;
 #dialer_connect_list -> @combo(`lines=$(internet --listcons | wc -l) && lines=$(echo $lines -1 | bc) && internet --listcons | tail -n $lines`);
 
 dialer_connect_pane -> dialer_connect_icon dialer_connect_button;
-dialer_connect_icon -> @icon("/home/dovix/iwiz/128x128/apps/kppp.png");
+dialer_connect_icon -> @icon("/opt/kinneret/kiwiz/icons/128x128/kppp.png");
 dialer_connect_button -> @action(dialer_connect_play)="Connect";
 
 #dialer_connect_play -> "internet --connect="dialer_connect_list"";
-dialer_connect_play -> "kaptain kiwiz-connect.kaptn";
+dialer_connect_play -> "kaptain /opt/kinneret/kiwiz/kaptn/kiwiz-connect.kaptn";
 
 dialer_right_pane :framed -> dialer_disconnect_pane dialer_bottom_pane;
 
@@ -34,25 +34,25 @@ dialer_right_pane :framed -> dialer_disconnect_pane dialer_bottom_pane;
 #dialer_connect_status="Connected";
 
 dialer_disconnect_pane :horizontal -> dialer_disconnect_icon dialer_disconnect_button;
-dialer_disconnect_icon -> @icon("/home/dovix/iwiz/64x64/apps/network.png");
+dialer_disconnect_icon -> @icon("/opt/kinneret/kiwiz/icons/64x64/network.png");
 dialer_disconnect_button -> @action(dialer_disconnect_play)="Disconnect";
 
-dialer_disconnect_play -> "kaptain kiwiz-disconnect.kaptn";
-#dialer_disconnect_play -> "internet --kill="default" "> /tmp/kiwiz_disconnect.log 2> /tmp/kiwiz_disconnect.err ; rm /tmp/kiwiz_connect.inf -f ; kaptain kiwiz-status.kaptn";
+dialer_disconnect_play -> "kaptain /opt/kinneret/kiwiz/kaptn/kiwiz-disconnect.kaptn";
+#dialer_disconnect_play -> "internet --kill="default" "> /tmp/kiwiz_disconnect.log 2> /tmp/kiwiz_disconnect.err ; rm /tmp/kiwiz_connect.inf -f ; kaptain /opt/kinneret/kiwiz/kaptn/kiwiz-status.kaptn";
 
 dialer_bottom_pane :horizontal :framed -> dialer_status_pane dialer_accounts_pane;
 
 dialer_status_pane -> dialer_status_icon dialer_status_button;
-dialer_status_icon -> @icon("/home/dovix/iwiz/32x32/actions/search.png");
+dialer_status_icon -> @icon("/opt/kinneret/kiwiz/icons/32x32/search.png");
 dialer_status_button -> @action(dialer_status_play)="Status";
 
-dialer_status_play -> "kaptain kiwiz-status.kaptn";
+dialer_status_play -> "kaptain /opt/kinneret/kiwiz/kaptn/kiwiz-status.kaptn";
 
 dialer_accounts_pane -> dialer_accounts_icon dialer_accounts_button;
-dialer_accounts_icon -> @icon("/home/dovix/iwiz/32x32/apps/agt_family.png");
+dialer_accounts_icon -> @icon("/opt/kinneret/kiwiz/icons/32x32/agt_family.png");
 dialer_accounts_button -> @action(dialer_accounts_play)="Accounts";
 
-dialer_accounts_play -> "kaptain kiwiz-account.kaptn";
+dialer_accounts_play -> "kaptain /opt/kinneret/kiwiz/kaptn/kiwiz-account.kaptn";
 
 
 #------------- Advanced-----------------------
@@ -63,32 +63,32 @@ advanced_info -> @text ("Tools to troubleshoot connection problems");
 advanced_actions :framed :horizontal -> advanced_log_pane advanced_right_pane;
 
 advanced_log_pane -> advanced_log_icon advanced_log_button;
-advanced_log_icon -> @icon("/home/dovix/iwiz/128x128/actions/filefind.png");
+advanced_log_icon -> @icon("/opt/kinneret/kiwiz/icons/128x128/filefind.png");
 advanced_log_button -> @action(advanced_log_play)="Activity log";
 
-advanced_log_play -> "kaptain kiwiz-log.kaptn";
+advanced_log_play -> "kaptain /opt/kinneret/kiwiz/kaptn/kiwiz-log.kaptn";
 
 advanced_right_pane :framed -> advanced_info_pane advanced_bottom_pane;
 
 advanced_info_pane :horizontal -> advanced_info_icon advanced_info_button;
-advanced_info_icon -> @icon("/home/dovix/iwiz/64x64/apps/hwinfo.png");
+advanced_info_icon -> @icon("/opt/kinneret/kiwiz/icons/64x64/hwinfo.png");
 advanced_info_button -> @action(advanced_info_play)="Information";
 
-advanced_info_play -> "kaptain kiwiz-info.kaptn";
+advanced_info_play -> "kaptain /opt/kinneret/kiwiz/kaptn/kiwiz-info.kaptn";
 
 advanced_bottom_pane :horizontal :framed -> advanced_edit_pane advanced_update_pane;
 
 advanced_edit_pane -> advanced_edit_icon advanced_edit_button;
-advanced_edit_icon -> @icon("/home/dovix/iwiz/32x32/apps/background.png");
+advanced_edit_icon -> @icon("/opt/kinneret/kiwiz/icons/32x32/background.png");
 advanced_edit_button -> @action(advanced_edit_play)="Edit";
 
-advanced_edit_play -> "kaptain kiwiz-edit.kaptn";
+advanced_edit_play -> "kaptain /opt/kinneret/kiwiz/kaptn/kiwiz-edit.kaptn";
 
 advanced_update_pane -> advanced_update_icon advanced_update_button;
-advanced_update_icon -> @icon("/home/dovix/iwiz/32x32/apps/fileshare.png");
+advanced_update_icon -> @icon("/opt/kinneret/kiwiz/icons/32x32/fileshare.png");
 advanced_update_button -> @action(advanced_update_play)="Update";
 
-advanced_update_play -> "kaptain kiwiz-update.kaptn";
+advanced_update_play -> "kaptain /opt/kinneret/kiwiz/kaptn/kiwiz-update.kaptn";
 
 #------------- help -----------------------
 help :horizontal "Help" -> help_about help_right_pane;
@@ -98,13 +98,13 @@ help_about -> @text ("Kinneret's Internet Connection Wizard\nVersion 0.31.1\nWri
 help_right_pane :framed -> help_manual help_license;
 
 help_manual -> help_manual_icon  help_manual_button;
-help_manual_icon -> @icon("/home/dovix/iwiz/64x64/apps/khelpcenter.png");
+help_manual_icon -> @icon("/opt/kinneret/kiwiz/icons/64x64/khelpcenter.png");
 help_manual_button -> @action(help_manual_play)="Manual";
 
 help_manual_play -> "ls -l";
 
 help_license -> help_license_icon  help_license_button;
-help_license_icon -> @icon("/home/dovix/iwiz/64x64/apps/sisadmin.png");
+help_license_icon -> @icon("/opt/kinneret/kiwiz/icons/64x64/sisadmin.png");
 help_license_button -> @action(help_license_play)="License";
 
 help_license_play -> "ls -l";

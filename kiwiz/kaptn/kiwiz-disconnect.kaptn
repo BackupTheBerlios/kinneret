@@ -10,7 +10,7 @@ start "Kiwiz - Disconnect"-> main;
 #------------- Main -----------------------
 main :framed :horizontal -> main_logo main_pane;
 
-main_logo -> @icon("/home/dovix/iwiz/128x128/apps/network.png");
+main_logo -> @icon("/opt/kinneret/kiwiz/icons/128x128/network.png");
 
 main_pane -> main_options main_buttons;
 
@@ -20,9 +20,9 @@ main_connection = `cat /tmp/kiwiz_connect.inf`;
 
 main_buttons :horizontal -> main_connect main_close;
 
-main_connect :horizontal -> @icon("/home/dovix/iwiz/32x32/actions/launch.png") @exec(main_connect_play)="Go";
+main_connect :horizontal -> @icon("/opt/kinneret/kiwiz/icons/32x32/launch.png") @exec(main_connect_play)="Go";
 
-main_connect_play -> "internet --kill="main_connection" > /tmp/kiwiz_disconnect.log 2> /tmp/kiwiz_disconnect.err ; rm /tmp/kiwiz_connect.inf -f ; kaptain kiwiz-status.kaptn";
+main_connect_play -> "internet --kill="main_connection" > /tmp/kiwiz_disconnect.log 2> /tmp/kiwiz_disconnect.err ; rm /tmp/kiwiz_connect.inf -f ; kaptain /opt/kinneret/kiwiz/kaptn/kiwiz-status.kaptn";
 
 
-main_close :horizontal -> @icon("/home/dovix/iwiz/32x32/actions/gohome.png") @close="Close";
+main_close :horizontal -> @icon("/opt/kinneret/kiwiz/icons/32x32/gohome.png") @close="Close";
