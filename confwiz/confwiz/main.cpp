@@ -148,6 +148,6 @@ int main(int argc, char *argv[])
 	p.clearArguments();
 	p << "/usr/kinneret/bin/swim";
 	p.start();	
-
+	while (p.isRunning());
 	return 0;
 }
