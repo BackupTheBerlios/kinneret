@@ -6,7 +6,4 @@
 		<type>adsl</type>
 		<interface>usb</interface>
 	</hardware>
-
-	<vpi></vpi>
-	<vci></vci>
 </hw>

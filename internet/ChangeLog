@@ -1,3 +1,7 @@
+16-Jan-2004
+-----------
+* Fixed restore bugs in ISP and Authentication modules.
+
 v0.2 to v0.3.1
 --------------
 * Added LAN support

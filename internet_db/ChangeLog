@@ -1,3 +1,18 @@
+16-Jan-2004
+===========
+* Updated ISRASERVE after they've changed some servers and access methods
+* Fixed cables PPtP dialer (again). Should work now though... :P
+
+
+25-Sep-2003
+===========
+* Added Terayon TJ715x and Alcatel SpeedTouch Home (Hacked - PPPoE)
+* Tweaked DHCP client test
+
+v0.2-rc1 to v0.2
+================
+* Bezeqint does support Cables
+
 v0.1 to v0.2-rc1
 ------------
 * Added support for PPPoATM
