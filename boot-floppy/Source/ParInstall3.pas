@@ -135,7 +135,7 @@ begin
   end;
   source.free;
   destination.free;
-  if not error then LabelWait.Caption:=pWideChar(_('Installation finished successfully'));
+  if not error then LabelWait.Caption:=pWideChar(_('Installation finished successfully.'));
   ButtonClose.Enabled:=true;
 end;
 
