@@ -79,6 +79,8 @@ Click here for English documentation
 מדריך השמעת מוזיקה עם XMMS
 <null>
 מדריך גלישה באינטרנט עם Mozilla Firebird
+<play=he/man_ooo_basic.html>
+מדריך שימוש בסיסי בערכת היישומים המשרדיים OpenOffice.org [טיוטה]
 <play=he/man_ooo_advanced.html>
 מדריך שימוש מתקדם בערכת היישומים המשרדיים OpenOffice.org [טיוטה]
 <null>

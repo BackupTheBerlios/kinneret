@@ -5,7 +5,7 @@
 </title>
 
 <copy>
-גרסה 1.4, אוקטובר 2003 - פברואר 2004
+גרסה 1.5, אוקטובר 2003 - פברואר 2004
 <newl/>
 נכתב ע"י צוות פרוייקט גנו/לינוקס כנרת (c) כל הזכויות שמורות
 <newl/>
@@ -55,6 +55,9 @@
 יובל בריק - אחראי פורום תמיכה ותסריטים למפתחים
 </item>
 <item>
+שלומי לובטון - אתר http://kazit.berlios.de - עזרה בתיקון סקריפט ההתחברות לכבלים
+</item>
+<item>
 איגור חנין
 </item>
 <item>
@@ -97,7 +100,7 @@
 </section>
 <bullets>
 <item>
-שושנה פורבס - הלוגו של ההפצה, מדריך אופן אופיס
+שושנה פורבס - אתר http://www.xslf.com - הלוגו של ההפצה, בדיקות איכות, מדריך אופן אופיס
 </item>
 <item>
 DigDug
@@ -131,7 +134,7 @@ DigDug
 קובי בויאנגו - תרגום TuxPaint
 </item>
 <item>
-ritzpaz - תרגום Katoob
+טל נורדן - תרגום Katoob
 </item>
 </bullets>
 
@@ -183,10 +186,13 @@ ritzpaz - תרגום Katoob
 
 <bullets>
 <item>
-עו"ד חיים רביה
+עו"ד חיים רביה - אתר http://www.law.co.il
 </item>
 <item>
 יהודה דרורי - אתר http://www.whatsup.org.il
+</item>
+<item>
+מאיר קריחלי - אתר http://www.whatsup.org.il
 </item>
 <item>
 שחר שמש ודורון אופק - שת"פ משרד החינוך ב"המקור"  
@@ -197,11 +203,7 @@ ritzpaz - תרגום Katoob
 <item>
 צפריר כהן
 </item>
-<item>
-שלומי לובטון
-</item>
 </bullets>
-
 <section>
 ארוח הפרוייקט
 </section>

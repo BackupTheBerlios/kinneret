@@ -1,0 +1,43 @@
+Filename				Author		Status	Notes
+----------------------  		------------		------------	----------------------------------------------------------------------		
+about_kinneret		team		Done
+apps_list				wliad			Work
+custom_desktop		cool_dany	Work
+desktop_ready			shlomil		Done
+faq_kinneret			team		Done
+first_time				dovix		Hold		need to update to reflect latest changes
+fonts_license			team		delete	currently not used as found free fonts
+free_essay			n/a			Done
+gfdl_license			n/a			Done	May find license translated in Internet
+gnu_linux				n/a			Done	May find license translated in Internet
+gpl_license			n/a			Done	May find license translated in Internet
+howto_help			team		Hold
+kinneret_credits		dovix		Work		ongoing updates	
+kinneret_license		team		Draft	needs to be approved by Haim Ravia
+linux_history			n/a			Done			
+man_cheese			CooL_SPoT	Work		need to update against actual app in Kinneret
+man_firebird			dovix		Work		not done yet
+man_games			team		Done
+man_kpovmodeler		costello		Done
+man_ooo_advanced	xslf			Done	may be updated in the future with new chapters
+man_ooo_basic		bizna		Work		needs to be edited - dovix
+non_gpl				n/a			Draft	needs to be approved by Haim Ravia
+rachel_kinneret		dovix		Done	no need to translate
+release_notes			dovix		Work		changes every release, no need to translate
+social_contract		dovix		Draft	need to be approved by project team
+thoughts_1			hary_i		Done
+thoughts_2			hary_i		Done
+thoughts_3			hary_i		Done
+thoughts_4			hary_i		Done
+thoughts_5			hary_i		Done
+thoughts_6			hary_i		Done
+tour_kinneret			dovix		Done	may need to update before 1.0 with new apps/looks
+user_interface			dovix		Hold		need to update due to desktop changes in 0.7.3
+why_linux				CooL_SPoT	Cancel	removed from swimming guide
+
+
+Work - still being updated - do not translate
+Hold - old "Final" document that is awaiting to be updated for next release - do not translate
+Draft - document finished, but awaiting approval/final review - recommend not to translate
+Final - Document up to date, no changes planned till next stable release - can translate
+Cancel = no longer included in Kinneret
