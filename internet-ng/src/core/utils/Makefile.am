@@ -5,5 +5,6 @@ lib_la_SOURCES = \
 	Config.h \
 	Config.cpp \
 	utils.h \
-	utils.cpp
+	utils.cpp \
+	xts.h
 INCLUDES = -I$(top_srcdir)/src
