@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<isp>
+	<name>012.net</name>
+	<cname>012</cname>
+	<dns1>212.117.129.3</dns1>
+	<dns2>212.117.128.6</dns2>
+
+	<support>
+		<homepage>http://www.012.net</homepage>
+		<tech>03-9291212</tech>
+		<join>1-800-800-012</join>
+	</support>
+
+	<email>
+		<pop3>pop.012.net.il</pop3>
+		<smtp>smtp.012.net.il</smtp>
+		<suffix>012.net.il</suffix>
+	</email>
+
+	<broadband>
+		<gateway>
+			<cable>
+				<remotename>cablelns.012.net.il</remotename>
+			</cable>
+		</gateway>
+	</broadband>
+
+	<dialup>
+		<server loc="Jerusalem">02-5692888</server>
+		<server loc="Center">03-9299012</server>
+		<server loc="North">04-8138555</server>
+		<server loc="Sharon">09-8605012</server>
+		<server loc="South">08-9308012</server>
+	</dialup>
+</isp>

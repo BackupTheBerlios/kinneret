@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hw>
+	<name>RCA Digital Cable Modem</name>
+
+	<hardware>
+		<type>cable</type>
+		<interface>ethernet</interface>
+	</hardware>
+</hw>

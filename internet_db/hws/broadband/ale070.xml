@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hw>
+	<name>ALE070</name>
+
+	<hardware>
+		<type>adsl</type>
+		<interface>usb</interface>
+	</hardware>
+
+	<vpi></vpi>
+	<vci></vci>
+</hw>

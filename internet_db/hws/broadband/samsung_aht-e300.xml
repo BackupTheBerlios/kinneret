@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hw>
+	<name>Samsung AHT-E300</name>
+
+	<hardware>
+		<type>adsl</type>
+		<interface>ethernet</interface>
+	</hardware>
+
+	<vpn>
+		<type>pppoe</type>
+		<address>0.0.0.0</address>
+		<remotename>0.0.0.0</remotename>
+	</vpn>
+</hw>

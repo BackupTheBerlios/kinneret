@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<isp>
+	<name>Internet Zahav</name>
+	<cname>zahav</cname>
+	<dns1>192.116.202.222</dns1>
+	<dns2>192.116.192.9</dns2>
+
+	<support>
+		<homepage>http://www.zahav.net.il</homepage>
+		<tech>03-5763000</tech>
+		<join>1-800-200-300</join>
+	</support>
+
+	<email>
+		<pop3>in.zahav.net.il</pop3>
+		<smtp>out.zahav.net.il</smtp>
+		<suffix>zahav.net.il</suffix>
+	</email>
+
+	<broadband>
+		<gateway>
+			<cable>
+				<remotename>pns.inter.net.il</remotename>
+			</cable>
+		</gateway>
+		<usrsuffix type="adsl">IInzahav</usrsuffix>
+	</broadband>
+
+	<dialup>
+		<server loc="Jerusalem">02-6771777</server>
+		<server loc="Ramat Gan">03-7535000</server>
+		<server loc="Petah Tiqwa">03-9110000</server>
+		<server loc="Rishon LeZion">03-9638999</server>
+		<server loc="Haifa">04-8479999</server>
+		<server loc="Herzeliya">09-9603333</server>
+		<server loc="Rehovot">08-9448444</server>
+		<server loc="Ashkelon">08-6776777</server>
+		<server loc="Mizra">04-6428999</server>
+	</dialup>
+
+	<isdn>
+		<server loc="Jerusalem">02-6771777</server>
+		<server loc="Ramat Gan">03-7535000</server>
+		<server loc="Petah Tiqwa">03-9110000</server>
+		<server loc="Rihon LeZion">03-9638999</server>
+		<server loc="Haifa">04-8479999</server>
+		<server loc="Herzeliya">09-9603333</server>
+		<server loc="Rehovot">08-9448444</server>
+		<server loc="Ashkelon">08-6776777</server>
+		<server loc="Mizra">04-6428999</server>
+	</isdn>
+</isp>

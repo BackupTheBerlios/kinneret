@@ -1,0 +1,2 @@
+#!ppp0
+pptp [*hw::adsl::gateway*] --quirks=BEZEQ_ISRAEL debug user [*auth::usr*] remotename [*hw::adsl::remotename*] defaultroute mru 1452 mtu 1452 noauth

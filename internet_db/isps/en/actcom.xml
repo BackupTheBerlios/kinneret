@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<isp>
+	<name>Actcom</name>
+	<cname>actcom</cname>
+
+	<dns1>192.114.47.4</dns1>
+	<dns2>192.114.47.52</dns2>
+
+	<support>
+		<homepage>http://www.actcom.net.il</homepage>
+		<tech>04-8300101</tech>
+		<join>1-800-300-123</join>
+	</support>
+
+	<email>
+		<pop3>pop.actcom.net.il</pop3>
+		<smtp>mail.actcom.net.il</smtp>
+		<suffix>actcom.net.il</suffix>
+	</email>
+
+	<broadband>
+		<gateway>
+			<cable>
+				<remotename>[*auth::usr*].c.actcom.net.il</remotename>
+			</cable>
+		</gateway>
+		<usrsuffix type="adsl">IActcom</usrsuffix>
+		<usrsuffix type="cable">CActcom</usrsuffix>
+	</broadband>
+
+	<isdn>
+		<server loc="The Center">03-6074000</server>
+		<server loc="The North">04-8319800</server>
+	</isdn>
+
+	<dialup>
+		<server loc="Jerusalem">02-6774444</server>
+		<server loc="The Center">03-6941000</server>
+		<server loc="The North">04-8319000</server>
+		<server loc="The North 2">04-6952000</server>
+		<server loc="The Sharon">09-7612000</server>
+		<server loc="The South">08-9482900</server>
+	</dialup>
+</isp>

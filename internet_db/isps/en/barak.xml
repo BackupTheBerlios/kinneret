@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<isp>
+	<name>Barak</name>
+	<cname>barak</cname>
+	<dns1>212.150.48.169</dns1>
+	<dns2>206.49.94.234</dns2>
+
+	<support>
+		<homepage>http://www.barak.net.il</homepage>
+		<tech>03-9001333</tech>
+		<join>1-800-013-013</join>
+	</support>
+
+	<email>
+		<pop3>mail.barak-online.net</pop3>
+		<smtp>mail.barak-online.net</smtp>
+		<suffix>barak-online.net</suffix>
+	</email>
+
+	<dialup>
+		<server loc="Jerusalem">02-6775111</server>
+		<server loc="Jerusalem2">02-5310666</server>
+		<server loc="Rosh HaAyin">	03-9281111</server>
+		<server loc="Tel-Aviv">03-6909111</server>
+		<server loc="Haifa">04-8816111</server>
+		<server loc="Hadera">04-6348222</server>
+		<server loc="Kefar Saba">09-7643111</server>
+		<server loc="Nataniya">09-8600000</server>
+		<server loc="Be'er Sheva">08-6201888</server>
+		<server loc="Yavne">08-9429429</server>
+	</dialup>
+
+	<isdn>
+		<server loc="Jerusalem">02-6775111</server>
+		<server loc="Jerusalem2">02-5310666</server>
+		<server loc="Rosh HaAyin">03-9281111</server>
+		<server loc="Tel-Aviv">03-6909111</server>
+		<server loc="Haifa">04-8816111</server>
+		<server loc="Hadera">04-6348222</server>
+		<server loc="Kefar Saba">09-7643111</server>
+		<server loc="Nataniya">09-8600000</server>
+		<server loc="Be'er Sheva">08-6201888</server>
+		<server loc="Yavne">08-9429429</server>
+	</isdn>
+</isp>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<isp>
+	<name>NetVision</name>
+	<cname>netvision</cname>
+
+	<dns1>194.90.1.5</dns1>
+	<dns2>212.143.212.143</dns2>
+
+	<email>
+		<pop3>mail.netvision.net.il</pop3>
+		<smtp>mailgw.netvision.net.il</smtp>
+		<suffix>netvision.net.il</suffix>
+	</email>
+
+	<support>
+		<homepage>http://www.netvision.net.il</homepage>
+		<tech>04-8560570</tech>
+		<join>1-800-65-65-65</join>
+	</support>
+
+	<broadband>
+		<gateway>
+			<cable>
+				<remotename>cable.netvision.net.il</remotename>
+				<searchgroup>gc</searchgroup>
+			</cable>
+		</gateway>
+	</broadband>
+
+	<isdn>
+		<server loc="Jerusalem">02-6596666</server>
+		<server loc="Tel-Aviv">03-5113000</server>
+		<server loc="Haifa">04-8601000</server>
+		<server loc="Rechovot">08-9360000</server>
+		<server loc="Herzeliya">09-9529999</server>
+	</isdn>
+
+	<dialup>
+		<server loc="Jerusalem">02-6596666</server>
+		<server loc="Tel-Aviv">03-5113000</server>
+		<server loc="Haifa">04-8601000</server>
+		<server loc="Rechovot">08-9360000</server>
+		<server loc="Herzeliya">09-9529999</server>
+	</dialup>
+</isp>

@@ -1,0 +1,89 @@
+#!ppp0
+
+# Based on a script from the CABLE-DHCP-PPTP-HOWTO
+
+# Save resolv.conf
+cp /etc/resolv.conf /etc/resolv.conf.sv
+
+# Get address from DHCP server
+if [ -x `which dhcpcd` ]
+then
+	dhcpcd
+fi
+
+# See if we already have DHCP client running
+PS=`ps -ax | grep /sbin/dhclient | grep [*hw::eth*] | awk "{print \\$1}"`
+if [ " " != " $PS" ]
+then
+	# If so, kill it
+	echo "Killing DHCP client for [*hw::eth*] " $PS
+	kill -KILL $PS
+else
+	echo "No DHCP client running for [*hw::eth*] (good)"
+fi
+
+# See if we already have a pptp client running
+PS=`ps -ax | grep pptp | awk "{print \\$1}"`
+if [ " " != " $PS" ] ; then
+	# If so, kill it
+	echo "Killing PPtP client " $PS
+	kill -KILL $PS
+else
+	echo "No PPtP client running (good)"
+fi
+
+# See if we got an address from DHCP server
+INET=`/sbin/ifconfig [*hw::eth*] | grep inet | grep addr | awk "{print \\$2}" | awk -F: "{print \\$2}"`
+echo "IP address from cable modem is " $INET
+
+# If we didn't, we must have a DHCP client running, try to kill it again and quit.
+if [ " " == " $INET" ]
+then
+	PS=`ps -ax | grep /sbin/dhclient | grep [*hw::eth*] | awk "{print \\$1}"`
+	if [ " " != " $PS" ]
+	then
+		echo "Killing DHCP client for [*hw::eth*] " $PS
+		kill -KILL $PS
+
+		echo "Giving up."
+		exit 1
+	fi
+fi
+
+# Gateway
+{*
+%non_debian%{CABLEGW=`cat /etc/dhcpc/dhcpcd-[*hw::eth*].info | grep GATEWAY | cut -d"=" -f2`};
+%debian%{CABLEGW=`grep routers /var/lib/dhcp/dhclient.leases | tail -n 1| cut -d ";" -f1 | cut -d ' ' -f5`};
+*}
+
+# Add route
+echo "Adding route via " $CABLEGW
+/sbin/route add -host [*isp::cable::gateway*] gw $CABLEGW dev [*hw::eth*]
+
+echo "Starting PPtP"
+pptp [*isp::cable::gateway*] user [*auth::usr*] debug remotename [*isp::cable::remotename*] mtu 1452 mru 1452 noauth defaultroute
+
+echo -n "Waiting 10 seconds for IP"
+counter=1
+while [ $counter -lt 10 ]
+do
+	echo -n .
+	sleep 1
+	counter=`expr $counter + 1`
+done
+
+echo
+
+# New gateway
+NEWGW=$(/sbin/ifconfig [*dialer::iface*] | grep inet | cut -d":" -f3 | tail -1 | cut -d" " -f1)
+
+echo "Deleting old default route"
+/sbin/route del default dev [*hw::eth*]
+
+echo "Setting default route to " $NEWGW
+/sbin/route add default gw $NEWGW
+
+echo "Fixing resolv.conf"
+cp /etc/resolv.conf.sv /etc/resolv.conf
+
+# Surf the web...

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<isp>
+	<name>Bezeq International@net</name>
+	<cname>bezeqint</cname>
+
+	<dns1>192.115.106.31</dns1>
+	<dns2>192.115.106.35</dns2>
+
+	<email>
+		<pop3>mail.bezeqint.net</pop3>
+		<smtp>mail.bezeqint.net</smtp>
+		<suffix>bezeqint.net</suffix>
+	</email>
+
+	<support>
+		<homepage>http://www.bezeqint.net</homepage>
+		<tech>03-9203000</tech>
+		<join>1-800-64-64-00</join>
+	</support>
+
+	<broadband>
+		<usrsuffix type="adsl">IBezint</usrsuffix>
+	</broadband>
+
+	<isdn>
+	</isdn>
+
+	<dialup>
+		<server loc="Jerusalem">02-5414888</server>
+		<server loc="Tel Aviv">03-7251111</server>
+		<server loc="Petah Tikwa">03-9277777</server>
+		<server loc="Haifa">04-8137777</server>
+		<server loc="The Sharon">09-7755555</server>
+		<server loc="The South">08-9126666</server>
+		<server loc="Anywhere">136014</server>
+	</dialup>
+</isp>
