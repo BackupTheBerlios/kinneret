@@ -1,0 +1,17 @@
+A:link				{text-decoration: none;}
+A:visited				{text-decoration: none;}
+A:hover				{color: #0066cc}  
+
+A.orange_white:link		{color: #FF3300;background-color: transparent;text-decoration: none;}
+A.orange_white:visited	{color: #FF3300;background-color: transparent;text-decoration: none;}
+A.orange_white:hover		{color: #3300CC;background-color: transparent;text-decoration: none;}
+
+A.white_blue:link		{color: white;background-color: transparent;text-decoration: none;}
+A.white_blue:visited		{color: white;background-color: transparent;text-decoration: none;}
+A.white_blue:hover		{color: #FF3300;background-color: transparent;text-decoration: none;}
+
+FONT				{FONT-FAMILY: Sans-Serif; FONT-SIZE: 12px}
+TD					{FONT-FAMILY: Sans-Serif; FONT-SIZE: 12px}
+BODY				{FONT-FAMILY: Sans-Serif; FONT-SIZE: 12px; margin:0px;}
+P					{FONT-FAMILY: Sans-Serif; FONT-SIZE: 12px}
+DIV					{FONT-FAMILY: Sans-Serif; FONT-SIZE: 12px}
