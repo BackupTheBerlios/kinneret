@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!-- 
+   - Schema for resolvers.
+   -
+   - Author: z9u2k
+   - $Revision: 1.1 $
+  -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Common Types -->
+    <xs:include schemaLocation="types.xsd"/>
+
+    <!-- Simple Types -->
+
+    <!-- Valid failure values -->
+    <xs:simpleType name="validFailures">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="error"/>
+            <xs:enumeration value="ask"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Valid multi values -->
+    <xs:simpleType name="validMulti">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="error"/>
+            <xs:enumeration value="locale"/>
+            <xs:enumeration value="nth"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Complex Types -->
+
+    <!-- Param -->
+    <xs:complexType name="param">
+        <xs:attribute name="name" type="xs:string"/>
+        <xs:attribute name="xpath" type="xs:string"/>
+        <xs:attribute name="failure" type="validFailures" default="error"/>
+        <xs:attribute name="multi" type="validMulti" default="error"/>
+    </xs:complexType>
+
+    <!-- Document -->
+    <xs:element name="resolver">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="namespace" type="xs:string"/>
+                <xs:element name="param" type="param" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
