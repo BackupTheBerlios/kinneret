@@ -1,2 +1,6 @@
 #!ppp0
 pptp [*hw::adsl::gateway*] debug user [*auth::usr*] remotename [*hw::adsl::remotename*] defaultroute mru 1452 mtu 1452 noauth
+if [ $? -ne 0 ]
+then
+	exit -1
+fi

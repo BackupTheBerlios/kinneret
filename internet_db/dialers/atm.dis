@@ -1,2 +1,7 @@
 /sbin/ifconfig ppp0 down
 killall pppd
+
+if [ $? -ne 0 ]
+then
+	exit -1
+fi

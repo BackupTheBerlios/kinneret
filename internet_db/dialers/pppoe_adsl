@@ -2,5 +2,13 @@
 
 # make sure interface is DOWN
 ifconfig [*hw::eth*] down
+if [ $? -ne 0 ]
+then
+	exit -1
+fi
 
 adsl-start
+if [ $? -ne 0 ]
+then
+	exit -1
+fi

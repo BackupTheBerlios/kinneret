@@ -1,2 +1,11 @@
 /sbin/ifconfig ppp0 down
+if [ $? -ne 0 ]
+then
+	exit -1
+fi
+
 killall pptp
+if [ $? -ne 0 ]
+then
+	exit -1
+fi
