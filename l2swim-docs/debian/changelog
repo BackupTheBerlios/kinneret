@@ -1,3 +1,9 @@
+l2swim-docs (0.7.3-1) unstable; urgency=low
+
+  * Second Release, view CHANGELOG inside the package for details.
+
+ -- Nir Misgav <nirro@linux-kinneret.org>  Fri,  14 Aug 2004 12:41:09 +0200
+
 l2swim-docs (0.7.2.90-1) unstable; urgency=low
 
   * Initial Release.
