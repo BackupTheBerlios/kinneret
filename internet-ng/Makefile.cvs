@@ -1,0 +1,8 @@
+default: all
+
+all:
+	aclocal
+	autoconf
+	libtoolize --copy
+	automake -a -c
+
