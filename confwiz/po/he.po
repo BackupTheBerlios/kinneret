@@ -1,0 +1,654 @@
+# translation of he.po to
+# translation of he.po to
+# translation of he.po to
+# translation of he.po to
+# translation of he.po to Hebrew
+# Itay 'z9u2K' Duvdevani <z9u2K@bezeqint.net>, 2003
+# The-Q <the-q@myrealbox.com>, 2003
+msgid ""
+msgstr ""
+"Project-Id-Version: he\n"
+"POT-Creation-Date: 2003-04-17 15:45+0300\n"
+"PO-Revision-Date: 2003-04-17 15:50+0300\n"
+"Last-Translator: Itay 'z9u2K' Duvdevani <z9u2K@bezeqint.net>\n"
+"Language-Team: Hebrew <livrix@il.org>\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0\n"
+
+#: main.cpp:35
+msgid "Configuration Wizard"
+msgstr "אשף ההגדרות"
+
+#: main.cpp:62 configwizard.cpp:1534
+msgid "partition"
+msgstr "מחיצת עבודה"
+
+#: main.cpp:63 configwizard.cpp:1539
+msgid "swap"
+msgstr "קובץ החלפה"
+
+#: main.cpp:64 configwizard.cpp:1544
+msgid "homedir"
+msgstr "ספריית הבית"
+
+#: main.cpp:65 configwizard.cpp:1547
+msgid "conclusion"
+msgstr "סיכום פעולה"
+
+#: main.cpp:66 configwizard.cpp:1552
+msgid "fonts"
+msgstr "גופנים"
+
+#: main.cpp:67 configwizard.cpp:1556
+msgid "whatsnext?"
+msgstr "מה הלאה?"
+
+#: main.cpp:111 confwiz.moc.cpp:34 confwiz.moc.cpp:42
+msgid "Confwiz"
+msgstr "אשף הגדרת <i>גנו/לינוקס-כנרת</i>"
+
+#: configwizard.ui.h:49
+msgid "Cannot open /etc/fstab"
+msgstr "שגיאה בפתיחת etc/fstab/"
+
+#: configwizard.ui.h:53
+msgid "Device"
+msgstr "מחיצה"
+
+#: configwizard.ui.h:54
+msgid "Size"
+msgstr "גודל"
+
+#: configwizard.ui.h:55
+msgid "Free (% In Use)"
+msgstr "שטח פנוי (% בשימוש)"
+
+#: configwizard.ui.h:85
+msgid "Cannot get device status, skipping"
+msgstr "שגיאה בהשגת מצב ההתקן, מדלג"
+
+#: configwizard.ui.h:89 configwizard.ui.h:90
+msgid "N/A"
+msgstr "לא-זמין"
+
+#: configwizard.ui.h:91
+msgid "N/A (N/A)"
+msgstr "לא-זמין (לא-זמין)"
+
+#: configwizard.ui.h:155
+msgid "Cannot get device status"
+msgstr "שגיאה בהשגת מצב התקן, מדלג"
+
+#: configwizard.ui.h:204
+msgid "Cannot get memory status"
+msgstr "שגיאה בהשגת מצב הזיכרון"
+
+#: configwizard.ui.h:227
+msgid ""
+"You have not have enough free space on any of your hard drives,\n"
+"You need at least 460MB free."
+msgstr ""
+"אין לך מספיק מקום פנוי על אף אחת מהמחיצות שנמצאו.\n"
+"נדרשים לפחות 460 מגה-בייטים של שטח דיסק פנויים."
+
+#: configwizard.ui.h:291
+msgid ""
+"You have not selected a partition,\n"
+"please go back and select one."
+msgstr "לא נבחר התקן. יש לחזור ולבחור אחד."
+
+#: configwizard.ui.h:312
+msgid "Name"
+msgstr "שם"
+
+#: configwizard.ui.h:364
+msgid "Path"
+msgstr "נתיב"
+
+#: configwizard.ui.h:425
+msgid "Choose a directory the containes *.ttf files"
+msgstr "יש לבחור תיקיה בה נמצאים גופני TrueType בעלי סיומת ttf."
+
+#: configwizard.ui.h:439
+msgid "Are you sure you want to remove the directory\n"
+msgstr "אתם בטוחים כי ברצונכם למחוק את המחיצה\n"
+
+#: configwizard.ui.h:440
+msgid ""
+"\n"
+"From the list?"
+msgstr ""
+"\n"
+"מהרשימה?"
+
+#: configwizard.ui.h:442
+msgid "Are you sure?"
+msgstr "האם אתם בטוחים?"
+
+#: help.cpp:134
+msgid "htmlhelp"
+msgstr ""
+"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\"><b><u>אשף ההגדרות - עזרה</u></b></font></font></p>"
+"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\"><u>סוגי הגדרות</u></font></font></p>"
+"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\"><b>אוטומטית</b></font><font size=\"3\"> - בוחרת את המחיצה עם המקום הפנוי הרב ביותר, קובעת את ספריית המסמכים לשורשה ויוצרת קובץ החלפה כך שישארו לפחות 100 מ&quot;ב פנויים על המחיצה ובכל מקרה לא יותר גדול מ- 256 מ&quot;ב. ממולץ ביותר לבחור באפשרות זו.</font></font></p>"
+"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\"><b>ללא</b></font><font size=\"3\"> - לא מתבצעות הגדרות כלל, לא תיווצר תיקיית בית, קובץ החלפה או אינדקס גופנים. אפשרות זו לא מאפשרת שמירה של מסמכים והגדרות ואינה ממולצת כיוון שהיא תגרום לביצועים עלובים מצד המערכת על מערכות שאינן חזקות יחסית.</font></font></p>"
+"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\"><b>מתקדם</b></font><font size=\"3\"> - מאפשר קביעה ידנית של מחיצת העבודה, תיקיית העבודה וגודל קובץ ההחלפה. אפשרות זו ממולצת לשימושם של מומחים בלבד.</font></font></p>"
+"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\"><u>שיטת מספור הכוננים והמחיצות תחת לינוקס</u></font></font></p>"
+"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\">בלינוקס מספור הכוננים והמחיצות אינו כמו בחלונות ע&quot;פ אותיות (C, D וכו'). בלינוקס, המספור מבוצע לפי המבנה הפיסי של המחשב ושל הדיסק. כל כונן קשיח מקבל קידומת hd. קידומת זו מציינת כי מדובר בכונן קשיח. לאחר מכן באה אחת מארבע האותיות a, b, c וא d, המסמלות את המקום אליו מחובר הכונ הקשיח למחשב. hda הוא הכונן הראשון המחובר לבקר ה- IDE ונקרא גם ה- Primary Master. הכונן hdb הוא הכונן השני ומכונה גם Primary Slave, המספור רץ כך ש- c ו- d מסמלים את ה- Secondary Master ו- Secondary Slave בהתאמה. לאחר מכן באה סיפרה, המסמלת את המחיצה בדיסק החל מהסיפרה 1. hda1 היא המחיצה הראשונה על הדיסק הראשון. hda2 היא המחיצה השניה על הדיסק הראשון. hdb4 היא המחיצה הרביעית על הדיסק השני.</font></font></p>"
+"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\"><u>איך להמיר מהצגת לינוקס (hda1) להצגת חלונות (C, D)</u></font><font size=\"3\">?</font></font></p>"
+"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\">אין שיטה בדוקה, כיוון שחלונות ממפה את הכוננים כראות עיניה וללא התחשבות בסדרם הפיסי של הכוננים והמחיצות. ברוב מערכות החלונות, המספור הרץ של מחיצות חלונות יתאים למספור הרץ של מחיצות הלינוקס, כלומר כונן C יהיה hda1, כונן D יהיה hda2 או hdb1 (תלוי במספר המחיצות על הדיסק הראשון). למרות זאת, ייתכנו מערכות בהן שיטה זו אינה תעבוד כיוון שחלונות מיפתה את המחיצות אחרת, במערכות כאלה לא ניתן להמיר באופן פשוט את התצוגות ויש לנחש באיזה מחיצה מדובר ע&quot;פ תוכנה. אשף ההגדרות מציג את הייצוג </font><font size=\"3\"><b>המשוער</b></font><font size=\"3\"> של מחיצות החלונות ע&quot;פ שיטת המספור הרץ שאמורה להתאים לרוב המערכות.</font></font></p>"
+"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\"><u>אשף ההגדרות האישיות</u></font></font></p>"
+"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\">אשף זה יאפשר התאמה אישית של &quot;כנרת&quot; לאופייך. צבעי המערכת, צליליה, טפט שולחן העבודה וכו'. שלב זה אינו חובה וניתן לדלג עליו ע&quot;י ניקוי התיבה המתאימה בשלב האחרון.</font></font></p>"
+
+#: help.cpp:135
+msgid "Return"
+msgstr "חזרה"
+
+#: pleasewait.cpp:102
+msgid "Configuring..."
+msgstr "מגדיר הגדרות..."
+
+#: pleasewait.cpp:103
+msgid "Please wait, configuring..."
+msgstr "אנא המתינו, מגדיר הגדרות מערכת..."
+
+#: configwizard.cpp:1519
+msgid "Welcome to Kinneret!"
+msgstr "ברוכים הבאים ל<i>גנו/לינוקס כנרת</i>!"
+
+#: configwizard.cpp:1520
+msgid ""
+"nicemeeting_main\n"
+"here we will put the \"nice to meet you\" text at runtime."
+msgstr ""
+"פרוייקט <i>גנו/לינוקס כנרת</i> נולד מתוך הבנת האתגר שעידן המיחשוב במערכת "
+"החינוך מעמיד בפני תלמידי בתי הספר בישראל.<br>מחד גיסא, מערכת החינוך כופה על "
+"התלמידים קניית תוכנות באלפי שקלים (או העתקה בלתי-חוקית שלהן), ומאידך גיסא, "
+"לא מוצעות לתלמיד חלופות ראויות מבחינת קלות הפעלה, התקנה ותמיכה בעברית."
+"<br><br>מתוך הבעיה הנ\"ל נולד הרעיון של יצירת תקליטור שיכיל מערכת הפעלה מסוג "
+"<i>גנו/לינוקס</i> שלא תחייב התקנה לדיסק קשיח, הקלדת פקודות או הבנה במחשבים! "
+"<i>גנו/לינוקס כנרת</i> תציג לתלמיד הישראלי  סביבת עבודה ידידותית, מעוצבת, "
+"קלה לשימוש ולתפעול, שעונה על כל צרכיו - החל מכיתה א' - עד סיום התיכון, ואף "
+"מעבר!<br><br>פרוייקט <i>כנרת</i> מתעתד להציג לתלמידים בארץ אלטרנטיבה חופשית "
+"(וחינמית) איכותית למערכות הפעלה ויישומים מסחריים בהם הם משתמשים, שתאפשר "
+"לתלמידים מכל שכבות האוכלוסיה הזדמנות שווה בחינוך הטכנולוגי ולקדם את תנועת "
+"התוכנה החופשית וקוד-מקור פתוח בישראל.<br><br>אם ברצונך לעזור בקידום הפרוייקט "
+"או לקבל מידע נוסף ועזרה, אנו מזמינים אותך לבקר באתר הפרוייקט בכתובת http://"
+"www.linux-kinneret.org. נשמח לקבל כל עזרה (גם כזו שאינה תיכנותית, כגון "
+"תרגומים, כתיבת תיעוד ובדיקות איכות) שיש באפשרותך לתרום לפרוייקט."
+"<br><br>לידיעתך! גרסה זו היא גירסת פיתוח ניסיונית ולא מושלמת. אנו ממליצים "
+"למשתמשים לא מנוסים להמתין לשחרור הגרסה הרשמית והמלאה. מידע אודות שחרור הגרסה "
+"הרשמית יפורסם באתר הפרוייקט."
+
+#: configwizard.cpp:1522
+msgid "nicetomeet"
+msgstr "נעים להכיר"
+
+#: configwizard.cpp:1523
+msgid ""
+"this is your license, and this is your <a href=\"/home/z9u2K/projects/"
+"kinneret/licenses/gpl_heb.html\">GPL</a>."
+msgstr ""
+"<b><i>שימוש והפצה </b></i><br><br>1.<br>  כל רכיבי התוכנה שנכתבו ע\"י צוות "
+"מתנדבי <i>גנו/לינוקס כנרת</i> אשר נכללים בהפצה זו הם רכיבי תוכנה חופשית; הנך "
+"מורשה להפיצם מחדש ו/או לשנות אותם ע\"פ תנאי הרשיון הציבורי הכללי של GNU כפי "
+"שפורסם ע\"י קרן התוכנה החופשית; בין אם גרסא 2 של הרשיון, ובין אם (לפי "
+"בחירתך) כל גרסא מאוחרת שלו. תרגום עברי, שאינו מחייב מבחינה משפטית, של רשיון "
+"זה ניתן לקרוא <a href=/usr/licenses/gpl_heb.html>כאן</a>. את הנוסח האנגלי, "
+"המחייב מבחינה משפטית ניתן לקרוא <a href=/usr/licenses/gpl.html>כאן</a>. את "
+"קוד המקור של רכיבים אלו ניתן להוריד מאתר הפרוייקט בכתובת http://developer."
+"berlios.de/projects/kinneret <br><br>2.<br> כל המסמכים, התיעוד, והמדריכים "
+"שנכתבו ע\"י צוות מתנדבי <i>גנו/לינוקס כנרת</i> אשר נכללים בהפצה זו מופצים "
+"תחת הרשיון לשימוש חופשי במסמכים (GFDL) של קרן התוכנה החופשית (GNU). תרגום "
+"עברי, שאינו מחייב מבחינה משפטית, ניתן לקרא <a href=/usr/licenses/gfdl_heb."
+"html>כאן</a>. את הנוסח האנגלי, המחייב מבחינה משפטית ניתן לקרא <a href=/usr/"
+"licenses/gfdl.html>כאן</a>. <br><br> 3.<br> רכיבי תוכנה ומסמכים רבים שנכללים "
+"בהפצה זו של  <i>גנו/לינוקס כינרת</i> לא נכתבו ע\"י צוות המתנדבים של <i>גנו/"
+"לינוקס כינרת</i>. רובם הגדול של רכיבים ומסמכים אלו מופצים גם הם ע\"פ רשיונות "
+"ה-GPL וה-GFDL בהתאמה, עם זאת, רכיבים מסויימים (כמו גופנים או תוספים (Plug-"
+"in) לדפדפן) עלולים להיות מורשים ברשיונות אחרים. לפני כל שינוי, עריכה או הפצה "
+"מחדש של אחד או יותר מהרכיבים הכלולים בהפצה יש לוודא את הרשיון תחתיו רכיבים "
+"אלו מופצים בקובץ [קובץ שיכיל מיפוי של כל הרכיבים, והרישוי שלהם, הבעלים "
+"החוקיים, ומיקום קוד המקור במידה והרישוי הוא GPL]. קובץ זה מכיל גם את הפרטים "
+"בנוגע להשגת קוד המקור של הרכיבים המופצים תחת רשיון ה-GPL שלא נכתבו ע\"י צוות "
+"מתנדבי <i>גנו/לינוקס כינרת</i>. <br><br> <b><i>העדר אחריות</b></i><br><br> 4."
+"<br> גנו/לינוקס כינרת מופצת בתקווה שתהיה מועילה, אבל בלא אחריות כלשהי; "
+"ואפילו לא האחריות המשתמעת בדבר מסחריותה או התאמתה למטרה מסויימת. לפרטים "
+"נוספים, ראה את הרשיון הציבורי הכללי של GNU. <br><br> <b><i>קניין רוחני</b></"
+"i><br><br> 5.<br> כל הזכויות לרכיבים השונים הכלולים הפצת<i>גנו/לינוקס כינרת</"
+"i> שייכות ליוצריהם והן מוגנות בהתאם לחוקי קניין רוחני וזכויות יוצרים אשר "
+"תקפים לגבי מוצרי תוכנה."
+
+#: configwizard.cpp:1524
+msgid "license"
+msgstr "רשיון שימוש"
+
+#: configwizard.cpp:1525
+msgid "setuptype_main"
+msgstr ""
+"יש באפשרותך להפעיל את <i>גנו/לינוקס כנרת</i> מהתקליטור וללא התקנה או הגדרות "
+"כלשהן, על-מנת להתרשם מיכולות המערכת. <br> <br>על-מנת לאפשר לעבודתך עם <i>גנו/"
+"לינוקס כינרת</i> להיות יעילה ככל האפשר, וכן לאפשר לך לשמור הגדרות התאמה-"
+"אישית וכן מסמכים לכונן הקשיח, עליך להקדיש מספר דקות מעטות להשלמת פעולת אשף "
+"זה. <br><br>אשף זה יופיע בכל הפעלה של המערכת עד להשלמת פעולתו. לאחר מכן לא "
+"תידרש הפעלה חוזרת של האשף בעליית המערכת. <br><br>נא לבחור באחת מהאפשרויות "
+"הבאות בכדי להמשיך:"
+
+#: configwizard.cpp:1526
+msgid "setuptype"
+msgstr "סוג התקנה"
+
+#: configwizard.cpp:1527
+msgid "auto"
+msgstr "קביעת הגדרות מהירה (מומלץ)"
+
+#: configwizard.cpp:1528
+msgid "noconfig"
+msgstr "דילוג על שלב ההגדרות (לא מומלץ - גם אם ברצונך רק להתנסות עם המערכת)"
+
+#: configwizard.cpp:1529
+msgid "expert"
+msgstr "קביעת הגדרות מפורטות (לא מומלץ - מיועד למשתמשי לינוקס מנוסים בלבד)"
+
+#: configwizard.cpp:1530
+msgid "express?expert?manual?"
+msgstr "בחירת אופן ביצוע ההגדרות הבסיסיות"
+
+#: configwizard.cpp:1531 configwizard.cpp:1535 configwizard.cpp:1540
+#: configwizard.cpp:1545 configwizard.cpp:1548 configwizard.cpp:1553
+msgid "sidemenu"
+msgstr "תפריט צד"
+
+#: configwizard.cpp:1532
+msgid "partition_main"
+msgstr ""
+"<i>גנו/לינוקס כינרת</i> סרקה את המערכת שלך, ומצאה את המחיצות הבאות התואמות "
+"למערכת ההפעלה \"חלונות\":"
+
+#: configwizard.cpp:1533
+msgid "partition_sub"
+msgstr ""
+"יש לבחור את המחיצה שבה יישמרו קבצי ההגדרות והמסמכים שלך. <br><br>כבר בחרנו "
+"עבורך את המחיצה בעלת המקום הפנוי הרב ביותר, שיאפשר לך לאחסן את כל מסמכיך. יש "
+"באפשרותך לסמן מחיצה אחרת בעזרת לחיצה עם העכבר. בכדי לעבור לשלב הבא יש לבחור ב"
+"\"המשך\". <br><br>מיפוי המחיצה (או המחיצות) מוצג לפי הנוסח הלינוקסי בנוסף "
+"למיפוי החלונאי <b>המשוער</b>. ניתן לקבל מידע נוסף על כך על-ידי לחיצה על "
+"כפתור \"עזרה\"."
+
+#: configwizard.cpp:1536
+msgid "swap_main"
+msgstr ""
+"זהו השלב בו עליך לקבוע את גוד קובץ ההחלפה (swap) שיווצר.\n"
+"קובץ ההחלפה מרחיב את הזיכרון הזמין למערכת, לכן, ממולץ בחום כי יווצר אחד. "
+"גודל קובץ ההחלפה הממולץ הוא פי שתיים מגודל הזיכרון הפנימי.\n"
+"אם אין ברצונך ליצור קובץ החלפה, יש להכניס אפס."
+
+#: configwizard.cpp:1537
+msgid "swap_sub"
+msgstr "גודל קובץ ההחלפה הרצוי:"
+
+#: configwizard.cpp:1538
+msgid "MB"
+msgstr "מ\"ב"
+
+#: configwizard.cpp:1541
+msgid "dir_main"
+msgstr ""
+"ספריה בשם kinneret תיווצר בשורש של המחיצה הנבחרת. ספרייה זו תשמש לאיחסון "
+"קבצי הגדרות וקבצי מערכת אחרים. אין לבצע שינויים בתוכן ספריה זו על-מנת להבטיח "
+"פעולה תקינה של המערכת. <br> <br>בנוסף לספריה זו יש באפשרותך לבחור/ליצור את "
+"ספריית ברירת המחדל לשמירת מסמכים (\"תיקיית הבית\")"
+
+#: configwizard.cpp:1542
+msgid "Create"
+msgstr "צור"
+
+#: configwizard.cpp:1543
+msgid "<selected partition>/"
+msgstr "<המחיצה שנבחרה>/"
+
+#: configwizard.cpp:1546
+msgid "conclusion_main"
+msgstr ""
+"הנתיב לספריית הבית שלך ב<i>גנו/לינוקס כינרת</i> הוא /home/knoppix/docs/. "
+"ספרייה זו תשמש כברירת המחדל לשמירת קבציך האישיים. יש באפשרותך לגשת לכל "
+"הקבצים שיישמרו בספריה זו גם תחת \"חלונות\". <br><br>מסיבות אבטחה, תיקיית "
+"הבית והמחיצה בה היא נמצאת, הם המקומות היחידים אליהם יש לך הרשאת כתיבה, לכן, "
+"לא כדאי לנסות לשמור קבצים במקומות אחרים - הם לא יישמרו לאחר איתחול מחדש."
+
+#: configwizard.cpp:1549
+msgid "fonts_main"
+msgstr ""
+"כנרת מסוגלת לייבא גופנים ממחיצת חלונות קיימת. כנרת אף מסוגלת לייבא גופנים "
+"שאינם מותקנים תחת חלונות, כל עוד הם זמינים לה ונמצאים בפורמט TrueType, כלומר "
+"בעלי סיומת ttf.\n"
+"כנרת סרקה את המערכת וכללה את תיקיית הגופנים הסטנדרטית של חלונות (אם נמצאה). "
+"באפשרותך להוסיף ולהסיר תיקיות כרצונך."
+
+#: configwizard.cpp:1550
+msgid "remove_dir"
+msgstr "הסר"
+
+#: configwizard.cpp:1551
+msgid "add_dir"
+msgstr "הוסף"
+
+#: configwizard.cpp:1554
+msgid "whatsnext_main"
+msgstr ""
+"בודאי יש לך שאלות רבות הנוגעות ל<i>גנו/לינוקס כינרת</i>: מה אפשר לעשות איתה? "
+"איך להשתמש ביישומים הכלולים בה? מה זה <i>גנו/לינוקס</i>? <br>לשם כך, הכנו "
+"בעבורך מדריך מיוחד שיאפשר לך להתמצא בקלות ולהפיק את המיטב מהמערכת החדשה שלך. "
+"<br><br>למדריך קראנו \"לומדים לשחות בכינרת\". המדריך מתאים הן למשתמשים "
+"מתחילים והן למשתמשים מנוסים. המדריך ייפתח עם סיום אשף זה. ניתן להגיע למדריך "
+"זה גם ע\"י הקשה על הצלמית \"לומדים לשחות בכינרת\" משולחן העבודה שלך. <br> "
+"<br> אם ברצונך לקבוע הגדרות אישיות, כמו טפט שולחן העבודה, ערכות נושא וכו', "
+"יש לסמן את תיבת הסימון \"פתח אשף הגדרות אישיות לאחר סיום\" (באופשר כברירת "
+"מחדל). לאחר סיום האשף ולפני פתיחת אשף \"לומדים לשחות\" יפתח אשף ההגדרות "
+"האישיות שיתאים את המערכת לפי העדפותיך. אם אין ברצונך לקבוע הגדרות אישיות, יש "
+"לנקות את תיבת הסימון הנ\"ל.<br><br>צוות הפרוייקט מברך אותך על הפעלת תקליטור "
+"זה ומאחל לך הנאה ועבודה פוריה!"
+
+#: configwizard.cpp:1555
+msgid "run_pref_wiz"
+msgstr "הרץ את אשף ההתאמה האישית לאחר סיום אשף זה (מומלץ)"
+
+#: dirview.moc.cpp:34 dirview.moc.cpp:42
+msgid "DirectoryView"
+msgstr "תצוגת ספרייה"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr ": Name of the Translator: Yuval Q Brik, Dovix & Itay 'z9u2K' Duvdevani"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr ""
+"_: Email of the Translator: the-q@myrealbox.com, dovix@linux-kinneret.org, "
+"z9u2k@linux-kinneret.org"
+
+#~ msgid "nicemeeting_main"
+#~ msgstr ""
+#~ "פרוייקט <i>גנו/לינוקס כנרת</i> נולד מתוך הבנת האתגר שעידן המיחשוב במערכת "
+#~ "החינוך מעמיד בפני תלמידי בתי הספר בישראל. מחד גיסא, מערכת החינוך כופה על "
+#~ "התלמידים קניית תוכנות באלפי שקלים (או העתקה בלתי-חוקית שלהן), ומאידך "
+#~ "גיסא, לא מוצעות לתלמיד חלופות ראויות מבחינת קלות הפעלה, התקנה ותמיכה "
+#~ "בעברית.\n"
+#~ "\n"
+#~ "מתוך הבעיה הנ\"ל נולד הרעיון של יצירת תקליטור שיכיל מערכת הפעלה מסוג "
+#~ "<i>גנו/לינוקס</i> שלא תחייב התקנה לדיסק קשיח, הקלדת פקודות או הבנה "
+#~ "במחשבים! <i>גנו/לינוקס</i> כינרת תציג לתלמיד הישראלי  סביבת עבודה "
+#~ "ידידותית, מעוצבת, קלה לשימוש ולתפעול, שעונה על כל צרכיו - החל מכיתה א' - "
+#~ "עד סיום התיכון, ואף מעבר!\n"
+#~ "\n"
+#~ "פרוייקט <i>כנרת</i> מתעתד להציג לתלמידים בארץ אלטרנטיבה חופשית (וחינמית) "
+#~ "איכותית למערכות הפעלה ויישומים מסחריים בהם הם משתמשים, שתאפשר לתלמידים "
+#~ "מכל שכבות האוכלוסיה הזדמנות שווה בחינוך הטכנולוגי ולקדם את תנועת התוכנה "
+#~ "החופשית וקוד-מקור פתוח בישראל.\n"
+#~ "\n"
+#~ "אם ברצונך לעזור בקידום הפרוייקט או לקבל מידע נוסף ועזרה, אנו מזמינים אותך "
+#~ "לבקר באתר הפרוייקט בכתובת http://kinneret.miloberi.com. נשמח לקבל כל עזרה "
+#~ "(גם כזו שאינה תיכנותית, כגון תרגומים, כתיבת תיעוד ובדיקות איכות) שיש "
+#~ "באפשרותך לתרום לפרוייקט.\n"
+#~ "\n"
+#~ "לידיעתך! גרסה זו היא גירסת פיתוח ניסיונית ולא מושלמת. אנו ממליצים "
+#~ "למשתמשים לא מנוסים להמתין לשחרור הגרסה הרשמית והמלאה. מידע אודות שחרור "
+#~ "הגרסה הרשמית יפורסם באתר הפרוייקט בכתובת http://kinneret.miloberi.com"
+
+#~ msgid "Welcome"
+#~ msgstr "ברוכים הבאים"
+
+#~ msgid "Hard-disk Space"
+#~ msgstr "כונן קשיח"
+
+#~ msgid "Working Partition"
+#~ msgstr "מחיצת עבודה"
+
+#~ msgid "Virtual Memory"
+#~ msgstr "זיכרון ווירטואלי"
+
+#~ msgid "Home Directory"
+#~ msgstr "תיקיית הבית"
+
+#~ msgid "Finish"
+#~ msgstr "סיום"
+
+#~ msgid "textLabel3"
+#~ msgstr "ללא טקסט"
+
+#~ msgid ""
+#~ "Welcome to \"GNU/Linux Kinneret\"!\n"
+#~ "\"GNU/Linux Kinneret\" welcomes you for the first time!\n"
+#~ "\n"
+#~ "In order for your work with \"GNU/Linux Kinneret\" to be as productive as "
+#~ "possible, we need you to deticate a small amount of time to complete this "
+#~ "wizard.\n"
+#~ "\n"
+#~ "Until you'll complete this wizard, you won't be able to save your work. "
+#~ "Therefore, Quiting the wizard before it is finished is not recommended. "
+#~ "It will pop-up every time you'll start \"GNU/Linux Kinneret\" until you "
+#~ "will finish it successfully.\n"
+#~ "\n"
+#~ "It is highly recommended to complete the wizard BEFORE working with \"GNU/"
+#~ "Linux Kinneret\" for the first time.\n"
+#~ "\n"
+#~ "Click \"Next\" to advance to the next step.\n"
+#~ "Click \"Back\" to go to the previous step."
+#~ msgstr ""
+#~ "ברוכים הבאים ל\"גנו/לינוקס-כנרת\"! \n"
+#~ "אני הוא טוקס (tux), המדריך שלכם ב\"גנו/לינוקס כנרת\". אתם יכולים לראות "
+#~ "אותי בפינת המסך.\n"
+#~ "\"גנו/לינוקס-כנרת\" מברכת אותך לרגל הפעלתה הראשונה על מחשב זה! \n"
+#~ "\n"
+#~ "על מנת לאפשר לעבודתך עם \"גנו/לינוקס-כנרת\" להיות יעילה ככל האפשר, עליך "
+#~ "להקדיש זמן מועט בו נשלים את פעולת אשף זה. \n"
+#~ "\n"
+#~ "עד אשר יסיים אשף זה את פעולתו, לא נוכל לשמור את עבודותיך, לכן, יציאה מאשף "
+#~ "זה לפני שסיים את פעולתו אינה ממולצת. אשף זה יופיע בכל פעם שיתבצע איתחול "
+#~ "\"גנו/לינוקס-כנרת\" - עד להשלמת האשף. \n"
+#~ "\n"
+#~ "מומלץ מאוד לסיים ולהגדיר את המערכת בעזרת אשף זה לפני התחלת העבודה עם "
+#~ "\"גנו/לינוקס-כנרת\" בפעם הראשונה. \n"
+#~ "\n"
+#~ "לחיצה על \"הבא\" תמשיך לשלב הבא. \n"
+#~ "לחיצה על \"הקודם\" תחזור לשלב הקודם."
+
+#~ msgid "Step 1 - Welcome!"
+#~ msgstr "שלב ראשון - ברוכים הבאים!"
+
+#~ msgid ""
+#~ "Kinneret is a CD-ROM based operating system, which means, all of the "
+#~ "system's files are on this CD-ROM.\n"
+#~ "\n"
+#~ "CD-ROMs are not writeable, therefore, you cannot store anything on it and "
+#~ "everything you have changed/created will be lost when you reboot the "
+#~ "computer (much like a Word document cannot be restored if it wasn't saved "
+#~ "and the computer was shut down).\n"
+#~ "\n"
+#~ "In order for you to be able to save your work, \"GNU/Linux Kinneret\" "
+#~ "must have a place to store it's data. The best place is your hard drive.\n"
+#~ "\n"
+#~ "Because \"GNU/Linux Kinneret\" does not want to limit you to one "
+#~ "operating system type, and would like to stay comply with Microsoft "
+#~ "Windows, The best will be to create a special directory on your Microsoft "
+#~ "Windows partition that will use \"GNU/Linux Kinneret\" to store your data "
+#~ "and will be accessible from Microsoft Windows.\n"
+#~ "\n"
+#~ "If you do not have a Microsoft Windows partition on you hard drive, this "
+#~ "wizard will guid you through all the stages of creating one.\n"
+#~ "\n"
+#~ "Click \"Next\" the advance to the next step."
+#~ msgstr ""
+#~ "\"גנו/לינוקס כנרת\" היא מערכת הפעלה מבוססת תקליטור.\n"
+#~ "\n"
+#~ "לא ניתן לשכתב תקליטורים, כלומר, לא ניתן לכתוב דבר נוסף על תקליטור \"גנו/"
+#~ "לינוקס כנרת\", וכל דבר ששונה, או נוצר, במהלך העבודה עם \"גנו/לינוקס כנרת"
+#~ "\", יאבד עם איתחול המחשב מחדש (דומה מאוד למצב בו לא ניתן לשחזר מסמך שאינו "
+#~ "נשמר לפני שכובה המחשב).\n"
+#~ "\n"
+#~ "בכדי לאפשר ל\"גנו/לינוקס-כנרת\" לשמור את המסמכיך, \"גנו/לינוקס-כנרת\" "
+#~ "חייבת מקום שאליו תוכל לכתוב. המקום הטוב ביותר הוא הדיסק הקשיח שלך.\n"
+#~ "\n"
+#~ "מכיוון שצוות \"גנו/לינוקס-כנרת\" לא רוצה להגביל אותך למערכת הפעלה אחת "
+#~ "ומעוניין להישאר תואמת לחלונות, הפתרון הטוב ביותר הוא יצירת ספרייה מיוחדת "
+#~ "על מחיצת חלונות שתשמש את \"גנו/לינוקס כנרת\" לשמירת מידע. ספרייה זו תיהיה "
+#~ "נגישה מחלונות.\n"
+#~ "אם אין על מחשבך מחיצת חלונות, אשף הזה ידריך אותך בשלבים ליצירת מחיצה "
+#~ "שכזו.\n"
+#~ "\n"
+#~ "לחיצה על \"הבא\" תמשיך לשלב הבא."
+
+#~ msgid "Step 2 - Why do I need to create this directory?"
+#~ msgstr "שלב שני - מדוע יש צורך ביצירת ספריה?"
+
+#~ msgid ""
+#~ "\"GNU/Linux Kinneret\" has scaned your system and found these partition, "
+#~ "that comply with Microsoft Windows' operating systems:"
+#~ msgstr ""
+#~ "\"גנו/לינוקס-כנרת\" סרקה את המערכת שלך, ומצאה את המחיצות הבאות התואמות "
+#~ "למערכת ההפעלה \"חלונות\":"
+
+#~ msgid ""
+#~ "Please choose the partition you would like to create the \"GNU/Linux "
+#~ "Kinneret\" configuration directory in.\n"
+#~ "\n"
+#~ "All of you preferences, documents and system configuration will be saved "
+#~ "to partition you have selected, so we suggest that you choose a partition "
+#~ "with alot of free space.\n"
+#~ "\n"
+#~ "After you choose a partition, click on it to select it, and click the "
+#~ "\"Next\" button to continue."
+#~ msgstr ""
+#~ "יש לבחור את המחיצה שאליה יותקנו קבצי ההגדרות ומסמכיך.\n"
+#~ "\n"
+#~ "כל הגדרותיך, מסמכיך והגדרות המערכת ישמרו לתוך המחיצה הנבחרת. לכן, אנו "
+#~ "ממליצים לבחור מחיצה בעלת מקום פנוי רב.\n"
+#~ "\n"
+#~ "לאחר שבחרת מחיצה, יש ללחוץ עליה על מנת לבוחרה.\n"
+#~ "\n"
+#~ "לחיצה על \"הבא\" תמשיך לשלב הבא."
+
+#~ msgid "Step 3 - Choosing a Windows partition"
+#~ msgstr "שלב שלישי - בחירת מחיצת \"חלונות\""
+
+#~ msgid ""
+#~ "\"GNU/Linux Kinneret\" will make use of all the available RAM your "
+#~ "computer have in order to speed things up. But sometimes (like when "
+#~ "launching a large program) the RAM is not enough and the system must have "
+#~ "more memory.\n"
+#~ "\n"
+#~ "Since you don't want you to go to the store and buy more RAM, \"GNU/Linux "
+#~ "Kinneret\" will use a know trick in order to enlarge the amout of "
+#~ "available memory, it will use some of you hard-drive space as working "
+#~ "memory (sometimes called a swap file).\n"
+#~ "\n"
+#~ "IT IS HIGHLY RECOMMENDED THAT YOU CREATE A SWAP FILE!\n"
+#~ "\n"
+#~ "The swap file will be created on the partition you have already selected. "
+#~ "As large is the swap file, as fast as the system will be (up to a certain "
+#~ "limit).\n"
+#~ "\n"
+#~ "Below, you are requested to enter the size of the swap file. If you do "
+#~ "not understand anything of what's writte above, leave it as is (just make "
+#~ "sure you have enough free space on the selected partition).\n"
+#~ "\n"
+#~ "If you know the amout of available RAM you machine have, we recommend the "
+#~ "size of 2xRAM (for example, if you're computer have 64MB RAM, we "
+#~ "recommend the amount of 128MB of swap file).\n"
+#~ "\n"
+#~ "Note: This math applies to systems with less then 512MB. Systems that "
+#~ "have 512MB RAM or more won't need a swap file larger then 512MB under "
+#~ "every-day use."
+#~ msgstr ""
+#~ "\"גנו/לינוקס-כנרת\" תעשה שימוש בכל זיכרון המטמון (RAM) הזמין במחשבך על "
+#~ "מנת לבצע פעולות במהירות. לפעמים, זיכרון זה אינו מספיק והמערכת חייבת "
+#~ "זיכרון נוסף. מכיוון שאין בכוונתך לצאת כעת לחנות ולרכוש זיכרון נוסף, \"גנו/"
+#~ "לינוקס-כנרת\" תוכל להשתמש בחלק מהמקום הפנוי שבדיסק הקשיח שלך לשם הרחבת "
+#~ "הזיכרון הזמין (נקרא לעיתים קובץ החלפה, או בלעז, swap).\n"
+#~ "\n"
+#~ "מומלץ ביותר ליצור את קובץ ההחלפה!\n"
+#~ "\n"
+#~ "קובץ ההחלפה יווצר על המחיצה שאותה כבר בחרת. ככל שקובץ ההחלפה יהיה גדול "
+#~ "יותר, כך המערכת תהייה מהירה יותר (עד לגבול מסויים, כמובן).\n"
+#~ "\n"
+#~ "בשלב זה עליך לבחור את גודל קובץ ההחלפה הרצוי לך. אם לא הבנת דבר מהכתוב "
+#~ "למעלה, גודל ברירת המחדל יתאים (אך עליך לוודא כי יש מספיק מקום פנוי על "
+#~ "הדיסק הקשיח).\n"
+#~ "\n"
+#~ "אם ידועה לך כמות זיכרון המטמון הזמינה למחשבך, אנו ממליצים לבחור את גודל "
+#~ "קובץ ההחלפה כגודל זיכרון המטמון כפול 2 (לדוגמא: אם כמות הזיכרון הזמינה "
+#~ "הינה 64 מגה בייט של זיכרון מטמון, גודל קובץ ההחלפה הממולץ יהיה 128 מגה "
+#~ "בייט).\n"
+#~ "\n"
+#~ "הערה: החישוב הנ\"ל תקף לגבי מערכות אשר זיכרון המטמון שלהם נמוך מ- 512 מ"
+#~ "\"ב. מערכות בעלות 512 מ\"ב זיכרון מטמון ומעלה לא יזדקקו לקובץ החלפה גדול "
+#~ "מ- 512 מ\"ב תחת שימוש יום-יומי. לחיצה על \"הבא\" תמשיך לשלב הבא."
+
+#~ msgid ""
+#~ "Size of swap file to create (enter 0 if you don't want a swap file, "
+#~ "default is 256Megabytes):"
+#~ msgstr "גודל קובץ ההחלפה (0 לביטול קובץ החלפה. ברירת מחדל: 256 מ\"ב):"
+
+#~ msgid "Step 4 - Creating a swap file"
+#~ msgstr "שלב רביעי - יצירת קובץ החלפה (swap)"
+
+#~ msgid ""
+#~ "Please selecet the directory that you would like to save your documents "
+#~ "to:"
+#~ msgstr "יש לבחור את התיקיית ברירת המחדל לשמרית מסמכים (\"תיקיית הבית\"):"
+
+#~ msgid "Step 5 - Selecting the home directory"
+#~ msgstr "שלב חמישי - בחירת ספריית בית"
+
+#~ msgid ""
+#~ "A directory named 'kinneret' was created at the root of the partition you "
+#~ "have selected. This directory holds two files, the configuration file, "
+#~ "and the swap file (named .config and .swap - the '.' (period) means it is "
+#~ "a hidden/system file and they sould never be touched).\n"
+#~ "\n"
+#~ "All of your documents will be saved to the directory you have selected on "
+#~ "the partition you have selected. They will be accessible from Windows by "
+#~ "openning 'My Computer', clicking the partition you have selected and "
+#~ "navigating to the directory you have selected.\n"
+#~ "\n"
+#~ "From now on, we will refer to that directory as your home directory. For "
+#~ "security reasons, your home directory (and the partition it is at) is the "
+#~ "only place you have write premission to (and the only place where files "
+#~ "continue to exist after a reboot), so don't try to save files to other "
+#~ "location - because they won't be saved.\n"
+#~ "\n"
+#~ "The wizard will now quit and will bring up the \"First Time Wizard\" "
+#~ "which will answer all of your questions and will supply you with "
+#~ "important information about the way \"GNU/Linux Kinneret\" and other UNIX "
+#~ "systems work.\n"
+#~ "\n"
+#~ "Enjoy,\n"
+#~ "The \"GNU/Linux Kinneret\" Team."
+#~ msgstr ""
+#~ "ספרייה בשם 'kinneret' נוצרה תחת השורש של המחיצה שאותה בחרת. תיקייה זו "
+#~ "מכילה שני קבצים, קובץ הגדרות וקובץ החלפה (שמות הקבצים הם: config. ו- ."
+#~ "swap - בעולם \"גנו/לינוקס\", נקודה לפני שם קובץ מציינת כי הקובץ הוא מערכת "
+#~ "מוסתר וכי אין לעורכו, לשכתבו או למוחקו).\n"
+#~ "\n"
+#~ "כל מסמכיך ישמרו לתוך התיקיה שנבחרה. ניתן לגשת אליהם מ\"חלונות\" על ידי "
+#~ "פתיחת \"המחשב שלי\", פתיחת המחיצה אותה בחרת, וניווט לתיקיה אותה בחרת. "
+#~ "מעתה ואילך, נקרא לתיקיה זו \"תיקיית הבית\" שלך. מסיבות אבטחה, תיקיית הבית "
+#~ "והמחיצה בה היא נמצאת, הם המקומות היחידים אליהם יש לך הרשאת כתיבה (והמקום "
+#~ "היחידי בו קבצים ממשיכים להתקיים לאחר כיבוי המחשב), כך שלא כדאי לנסות "
+#~ "לשמור קבצים למקומות אחרים - הם פשוט לא ישמרו.\n"
+#~ "\n"
+#~ "האשף כעט יסגר, ובמקומו יופיע \"אשף הפעם הראשונה\" שיענה על כל שאלותיך "
+#~ "ויספק מידע חשוב לגבי הדרך בה \"גנו/לינוקס-כנרת\" ומערכות מבוססות UNIX "
+#~ "אחרות פועלות.\n"
+#~ "\n"
+#~ "מאחלים הנאה,\n"
+#~ "צוות \"גנו/לינוקס-כנרת\"."
+
+#~ msgid "Step 6 - Operation Completed Successfully"
+#~ msgstr "שלב שישי - התהליך הושלם בהצלחה"
+

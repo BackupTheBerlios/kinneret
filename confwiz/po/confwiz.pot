@@ -1,0 +1,263 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2003-04-17 15:45+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.cpp:35
+msgid "Configuration Wizard"
+msgstr ""
+
+#: main.cpp:62 configwizard.cpp:1534
+msgid "partition"
+msgstr ""
+
+#: main.cpp:63 configwizard.cpp:1539
+msgid "swap"
+msgstr ""
+
+#: main.cpp:64 configwizard.cpp:1544
+msgid "homedir"
+msgstr ""
+
+#: main.cpp:65 configwizard.cpp:1547
+msgid "conclusion"
+msgstr ""
+
+#: main.cpp:66 configwizard.cpp:1552
+msgid "fonts"
+msgstr ""
+
+#: main.cpp:67 configwizard.cpp:1556
+msgid "whatsnext?"
+msgstr ""
+
+#: main.cpp:111 confwiz.moc.cpp:34 confwiz.moc.cpp:42
+msgid "Confwiz"
+msgstr ""
+
+#: configwizard.ui.h:49
+msgid "Cannot open /etc/fstab"
+msgstr ""
+
+#: configwizard.ui.h:53
+msgid "Device"
+msgstr ""
+
+#: configwizard.ui.h:54
+msgid "Size"
+msgstr ""
+
+#: configwizard.ui.h:55
+msgid "Free (% In Use)"
+msgstr ""
+
+#: configwizard.ui.h:85
+msgid "Cannot get device status, skipping"
+msgstr ""
+
+#: configwizard.ui.h:89 configwizard.ui.h:90
+msgid "N/A"
+msgstr ""
+
+#: configwizard.ui.h:91
+msgid "N/A (N/A)"
+msgstr ""
+
+#: configwizard.ui.h:155
+msgid "Cannot get device status"
+msgstr ""
+
+#: configwizard.ui.h:204
+msgid "Cannot get memory status"
+msgstr ""
+
+#: configwizard.ui.h:227
+msgid ""
+"You have not have enough free space on any of your hard drives,\n"
+"You need at least 460MB free."
+msgstr ""
+
+#: configwizard.ui.h:291
+msgid ""
+"You have not selected a partition,\n"
+"please go back and select one."
+msgstr ""
+
+#: configwizard.ui.h:312
+msgid "Name"
+msgstr ""
+
+#: configwizard.ui.h:364
+msgid "Path"
+msgstr ""
+
+#: configwizard.ui.h:425
+msgid "Choose a directory the containes *.ttf files"
+msgstr ""
+
+#: configwizard.ui.h:439
+msgid "Are you sure you want to remove the directory\n"
+msgstr ""
+
+#: configwizard.ui.h:440
+msgid ""
+"\n"
+"From the list?"
+msgstr ""
+
+#: configwizard.ui.h:442
+msgid "Are you sure?"
+msgstr ""
+
+#: help.cpp:134
+msgid "htmlhelp"
+msgstr ""
+
+#: help.cpp:135
+msgid "Return"
+msgstr ""
+
+#: pleasewait.cpp:102
+msgid "Configuring..."
+msgstr ""
+
+#: pleasewait.cpp:103
+msgid "Please wait, configuring..."
+msgstr ""
+
+#: configwizard.cpp:1519
+msgid "Welcome to Kinneret!"
+msgstr ""
+
+#: configwizard.cpp:1520
+msgid ""
+"nicemeeting_main\n"
+"here we will put the \"nice to meet you\" text at runtime."
+msgstr ""
+
+#: configwizard.cpp:1522
+msgid "nicetomeet"
+msgstr ""
+
+#: configwizard.cpp:1523
+msgid ""
+"this is your license, and this is your <a href=\"/home/z9u2K/projects/"
+"kinneret/licenses/gpl_heb.html\">GPL</a>."
+msgstr ""
+
+#: configwizard.cpp:1524
+msgid "license"
+msgstr ""
+
+#: configwizard.cpp:1525
+msgid "setuptype_main"
+msgstr ""
+
+#: configwizard.cpp:1526
+msgid "setuptype"
+msgstr ""
+
+#: configwizard.cpp:1527
+msgid "auto"
+msgstr ""
+
+#: configwizard.cpp:1528
+msgid "noconfig"
+msgstr ""
+
+#: configwizard.cpp:1529
+msgid "expert"
+msgstr ""
+
+#: configwizard.cpp:1530
+msgid "express?expert?manual?"
+msgstr ""
+
+#: configwizard.cpp:1531 configwizard.cpp:1535 configwizard.cpp:1540
+#: configwizard.cpp:1545 configwizard.cpp:1548 configwizard.cpp:1553
+msgid "sidemenu"
+msgstr ""
+
+#: configwizard.cpp:1532
+msgid "partition_main"
+msgstr ""
+
+#: configwizard.cpp:1533
+msgid "partition_sub"
+msgstr ""
+
+#: configwizard.cpp:1536
+msgid "swap_main"
+msgstr ""
+
+#: configwizard.cpp:1537
+msgid "swap_sub"
+msgstr ""
+
+#: configwizard.cpp:1538
+msgid "MB"
+msgstr ""
+
+#: configwizard.cpp:1541
+msgid "dir_main"
+msgstr ""
+
+#: configwizard.cpp:1542
+msgid "Create"
+msgstr ""
+
+#: configwizard.cpp:1543
+msgid "<selected partition>/"
+msgstr ""
+
+#: configwizard.cpp:1546
+msgid "conclusion_main"
+msgstr ""
+
+#: configwizard.cpp:1549
+msgid "fonts_main"
+msgstr ""
+
+#: configwizard.cpp:1550
+msgid "remove_dir"
+msgstr ""
+
+#: configwizard.cpp:1551
+msgid "add_dir"
+msgstr ""
+
+#: configwizard.cpp:1554
+msgid "whatsnext_main"
+msgstr ""
+
+#: configwizard.cpp:1555
+msgid "run_pref_wiz"
+msgstr ""
+
+#: dirview.moc.cpp:34 dirview.moc.cpp:42
+msgid "DirectoryView"
+msgstr ""
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr ""
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr ""

@@ -1,0 +1,23 @@
+Installing confwiz into knoppix:
+You will need an uncompressed and writeable copy of knoppix.
+
+The installation process is not the regulat Autoconf/Automake.
+
+Installation procedure:
+1. chroot into knoppix
+2. Extract confwiz-x.y.z.tar.gz to a temporary directory (/tmp/)
+3. cd into that directory
+4. as root, run ./configure --with-qt-dir=/usr/share/qt3 --prefix=/usr
+5. as root run 'make' followed by 'make install'
+	NOTE: uic may report socket error. In that case, you will have to
+	activate KDE as user 'knoppix' and through Konsole run 'sudo make' followed by
+	'sudo make install'
+6. 'make install' copied confwiz, confwiz.mo and other files. Verify these files:
+/usr/bin/confwiz
+/usr/share/locale/he/LC_MESSAGES/confwiz.mo
+/etc/skel/.kde/Autostart/confwiz.desktop (must be there in final remaster, will be copied to /home/knoppix/ at boot)
+/usr/kinneret/bin/config.sh
+/usr/kinneret/bin/findfonts.sh
+/usr/kinneret/bin/ttf.sh
+7. After creating KNOPPIX compressed fs, and before burnning kinneret, put knoppix.sh that
+is in scripts/ in the KNOPPIX directory next to the KNOPPIX fs.

@@ -1,0 +1,41 @@
+Kinneret's Configuration Wizard Version 0.1 Beta
+------------------------------------------------
+
+Description:
+The wizrad is a one-time wizard that makes the home
+directory of the user saveable, and load TrueType fonts from
+a Windows partition.
+
+The wizard createsa sub directory named 'kinneret' in the root
+of the selected vfat partition. In this directory, two files are
+created:
+.config - a 100MB ext3 filesystem
+.swap - no more then 256MB of swap file
+
+during boot, the script knoppix.sh mounts .config
+to /home/knoppix/ and activates the swap file.
+After the X server boots, a script loads the TrueType fonts.
+
+How it works:
+At boot time, the script knoppix.sh searches all the vfat partitions for a subdirectory
+name 'kinneret'. If it can't find it, it creates a file in /tmp/ name foundhome and writes '0'
+to it. If it finds 'kinneret', it runs fsck on .config, activates .swap and mounts .config to
+/home/knoppix/. Afterwards it returns control to Knoppix's boot script.
+
+Once KDE is up, confwiz.desktop that is in /home/knoppix/.kde/Autostart/ is called and launches
+/usr/bin/confwiz. 'confwiz' does on of the two, if /tmp/foundhome does not exist, it simply launches
+/usr/kinneret/bin/ttf.sh that erases the content of /home/knoppix/.fonts, scans the directories listed in
+/home/knoppix/.fontsdirs and re-create symbolic links to all the *.ttf it finds in these directories in
+/home/knoppix/.fontsdirs. Then it indexes the fonts with the regulat tools of xfs, adds /home/knoppix/.fonts
+to xfs's fonts path and re-starts xfs. If confwiz finds /tmp/foundhome, it does not launches ttf.sh, but
+it srarts in wizard mode. The wizard collects parameters and then passes them to /usr/kinneret/bin/config.sh.
+config.sh creates the kinneret directory, mounts it to ~/ and activates the swap.
+NOTE: tune2fs causes a temporary freeze for some reason.
+After config.sh finishes, confwiz calls /usr/kinneret/bin/findfonts.sh that searches through all of the
+vfat partitions available for /windows/fonts or /winnt/fonts. It appends directories that it find
+to /tmp/.fontsdirs. confwiz then reads /tmp/.fontsdirs and allows the user to make changes in it through
+a listbox interface. Once the user clicks next, confwiz creates ~/.fontsdirs and calles ttf.sh to load
+the fonts. After the wizard is completed, confiwz launches /usr/kinneret/bin/pref if the checkbox was selected,
+and after pref finishes, it launched /usr/kinneret/bin/swim. After 'swim' is done, confwiz exists.
+
+For instruction on how to merge confwiz into knoppix, refer to INSTALL.
