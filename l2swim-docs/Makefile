@@ -1,29 +1,37 @@
 # Swimming Guide documents Makefile,
 # Written by Nir Misgav, Dec 2003.
 # All Rights Reserved to GNU/Linux Kinneret
+# Version 0.2
 #
 # Available rules :
-# make (or make html)
+# make (or make newer) : make only new documents
+# make all 
 # make install
-# make clean
-# make uninstall
+# make clean : clean all documents from source.
+# make uninstall 
 
 destdir = /opt/kinneret
 docdirs = he en ar ru
 extradirs = image audio
-stylesheet = ./etc/l2swim.xsl
+stylesheet = etc/l2swim.xsl
+menufile = etc/swim_menu.txt
+cssfile = etc/l2swim.css
 
 srcxml = $(patsubst src/%.xml,%,$(wildcard src/*/*.xml))
-srcdoc = $(wildcard doc/*/*.*)
+srchtml = $(wildcard doc/*/*.html)
+srcdoc = $(patsubst doc/CVS/%,,$(wildcard doc/*/*.*))
 srcimages = $(patsubst etc/image/%,%,$(wildcard etc/image/*.*))
 
-html:
+.PHONY: newer all clean install uninstall
+	
+newer:
 	(for i in $(docdirs); do \
 		mkdir ./doc/$$i -p; \
 	done; )
+
 # make only newer xml's.
 	(for i in $(srcxml); do \
-	if [[ src/$$i.xml -nt doc/$$i.html ]]; then \
+	if [[  src/$$i.xml -nt doc/$$i.html || etc/l2swim.xsl -nt doc/$$i.html ]]; then \
 		if xsltproc -o ./doc/$$i.html \
 		$(stylesheet) ./src/$$i.xml; then \
 			echo "$$i.xml parsed. success."; \
@@ -31,6 +39,18 @@ html:
 	fi; \
 	done; )
 
+all:
+	(for i in $(docdirs); do \
+		mkdir doc/$$i -p; \
+	done; )
+	
+	(for i in $(srcxml); do \
+	if xsltproc -o ./doc/$$i.html \
+	$(stylesheet) ./src/$$i.xml; then \
+		echo "$$i.xml parsed. success."; \
+	fi; \
+	done; )
+	
 install:
 #Make all directories
 	mkdir $(destdir)/l2swim/etc -p
@@ -41,24 +61,23 @@ install:
 
 #Copy all docs
 	(for i in $(srcdoc); do \
-		cp ./$$i $(destdir)/l2swim/$$i -f; \
+		cp -f $$i $(destdir)/l2swim/$$i; \
 	done; )
 
 #Copy the images file outside l2swim
 	(for i in $(srcimages); do \
-		cp ./etc/image/$$i $(destdir)/images -f; \
+		cp -f etc/image/$$i $(destdir)/images; \
 	done; )
 
 #Copy the menu file
-	cp ./etc/swim_menu.txt $(destdir)/l2swim/etc -f;
+	cp -f $(menufile) $(cssfile) $(destdir)/l2swim/etc;
 
 uninstall:
-	rm -r $(destdir)/l2swim;
-	rm -r $(destdir)/images;
+	rm -r -f $(destdir)/l2swim $(destdir)/images;
 
 clean:
-	(for i in $(docdirs); do \
-		rm -r ./doc/$$i; \
-	done; )
+	rm -f $(srchtml);
+	
+
 
 
