@@ -4,6 +4,7 @@ AM_PROG_LIBTOOL
 AC_PROG_CXX
 AC_PROG_INSTALL
 AC_CHECK_XERCES
+AC_CHECK_XALAN
 AC_OUTPUT(Makefile \
           src/Makefile \
           src/core/Makefile \
