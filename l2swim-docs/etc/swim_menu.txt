@@ -11,7 +11,7 @@
 # FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 # License at http://www.gnu.org/copyleft/gpl.html for more details.
 #
-# Version: 0.7d 20-Dec-2003
+# Version: 0.7e 2-Jan-2004
 # Encoding: [UTF8]
 # Language: Hebrew, English, Arabic, Russian, Ethopian
 #
@@ -65,7 +65,7 @@ Click here for English documentation
 <img src="/opt/kinneret/images/star.png">איפה ה... שלי? כמה דברים שחשוב לדעת כדי לא לטבוע
   <null>
 <img src="/opt/kinneret/images/star.png">מדריך חיבור ושימוש באינטרנט
-<null>
+<play=he/custom_desktop.html>
 התאמה אישית של שולחן העבודה
 <null>
 <img src="/opt/kinneret/images/exclamation.png">מדריך לאבטחת המערכת
