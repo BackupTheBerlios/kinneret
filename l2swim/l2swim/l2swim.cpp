@@ -26,8 +26,9 @@
 MainWindow::MainWindow ( const char* name, const QString spage) : KMainWindow ( 0L, name )
 {
   aboutline=i18n("<b><big><big>Learn To Swim (l2swim)</b></big></big><br><br>An interactive information center.<br>Version: %1<br>Date: %2<br>Programmed by : Nir Misgav<br>Email: %3<br>License: GPL<br>All rights reserved to <i><b>GNU/Linux Kinneret.</i></b>")
-      .arg("0.7.0").arg("8/12/03").arg("nirro@linux-kinneret.org");
+      .arg("0.7.1").arg("17/12/03").arg("nirro@linux-kinneret.org");
   cmdStartpage=spage;
+	
 //  cout<<"menu initialized"<<endl;
   setCaption(i18n("Learn to swim"));
   hbox = new QHBox(this);

@@ -24,9 +24,9 @@ int main( int argc, char **argv )
 {
   KApplication a( argc, argv, "l2swim");
   QString cmdStartpage;
-  if (argc>0) cmdStartpage=argv[1];
+  if ((argc>1)&&(argv[1][0]!='-')) cmdStartpage=argv[1];
     else cmdStartpage="";
-  MainWindow *window=new MainWindow("",cmdStartpage);
+	MainWindow *window=new MainWindow("",cmdStartpage);
   a.setMainWidget( window );
   window->show();
   
