@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modem>
+    <name>ALE</name>
+    <type>adsl</type>
+    <interfaces>
+        <interface>usb</interface>
+    </interfaces>
+    <supports>
+        <name>ALE-070</name>
+        <name>ALE-130</name>
+    </supports>
+    <unsupported/>
+</modem>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modem>
+	<name>PPPoE ADSL Modem</name>
+    <hebname></hebname>
+    <type>adsl</type>
+    <interfaces>
+        <interface>ethernet</interface>
+    </interfaces>
+	<vpn>
+		<dialer>pppoe</dialer>
+		<address>0.0.0.0</address>
+		<remotename>0.0.0.0</remotename>
+	</vpn>
+    <supports>
+        <name>Samsung AHT-E300</name>
+	    <name>Alcatel SpeedTouch Home (PPPoE)</name>
+    </supports>
+</modem>

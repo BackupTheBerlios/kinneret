@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!-- 
+   - Schema for connection descriptor.
+   -
+   - Author: z9u2k
+   - $Revision: 1.1 $
+  -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Authentication section -->
+    
+    <xs:complexType name="auth">
+        <xs:all>
+            <xs:element name="username" type="xs:string"/>
+            <xs:element name="password" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+
+    <!-- Document -->
+
+    <xs:element name="connection">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="name"        type="xs:string"/>
+                <xs:element name="internet-ng" type="xs:string"/>
+                <xs:element name="created"     type="xs:date"/>
+                <xs:element name="isp"         type="xs:string"/>
+                <xs:element name="modem"       type="xs:string"/>
+                <xs:element name="script"      type="xs:string"/>
+                <xs:element name="authentication"
+                    type="auth" minOccurs="0" maxOccurs="1"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
