@@ -9,9 +9,23 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>708</width>
-            <height>670</height>
+            <width>751</width>
+            <height>698</height>
         </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>5</hsizetype>
+            <vsizetype>5</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+    <property name="maximumSize">
+        <size>
+            <width>32767</width>
+            <height>32767</height>
+        </size>
     </property>
     <property name="palette">
         <palette>
@@ -276,37 +290,47 @@
             <cstring>page</cstring>
         </property>
         <attribute name="title">
-            <string>nicetomeet</string>
+            <string>Nice To Meet</string>
         </attribute>
         <vbox>
             <property name="name">
                 <cstring>unnamed</cstring>
             </property>
-            <widget class="QLabel">
+            <widget class="QTextEdit">
                 <property name="name">
-                    <cstring>textNiceMeeting</cstring>
+                    <cstring>textEdit1</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>true</bool>
                 </property>
                 <property name="sizePolicy">
                     <sizepolicy>
-                        <hsizetype>5</hsizetype>
-                        <vsizetype>5</vsizetype>
+                        <hsizetype>7</hsizetype>
+                        <vsizetype>3</vsizetype>
                         <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
+                        <verstretch>1</verstretch>
                     </sizepolicy>
                 </property>
-                <property name="font">
-                    <font>
-                    </font>
-                </property>
-                <property name="margin">
-                    <number>0</number>
+                <property name="textFormat">
+                    <enum>RichText</enum>
                 </property>
                 <property name="text">
-                    <string>nicemeeting_main
-here we will put the "nice to meet you" text at runtime.</string>
+                    <string>&lt;I&gt;GNU/Linux Kinneret&lt;/I&gt; is a CD based (LiveCD) Operating System (OS)  and a large collection of applications. The system does not require any complicated configuration, or installation, and features an automatic hardware detection, friendly configuration wizards, a large collection of quality applications and a full built-in Hebrew support (and other languages soon).&lt;BR/&gt; 
+&lt;BR/&gt; 
+Among the application you will find: Office Suits (Word processors, Spread sheets, Presentation editor etc.), Internet applications (Web-browsers, E-mail clients, Instant messengers, Chat clients etc.), Multimedia applications (Audio players, Video players, Image manipulators and editors etc.) and a collection of fun games.&lt;BR/&gt; 
+&lt;I&gt;GNU/Linux Kinneret&lt;/I&gt; is aimed in the first place to the students in the Israeli educational system. Therefore, it includes a large collection of educational programs, learning aids and development environments the are required throughout the year.&lt;BR/&gt; 
+&lt;BR/&gt; 
+The project will allow equality in the technological education of all low-socioeconomy status students by offering a high-quality free (of charge, too) alternative to the proprietary software that are used by the student throughout the learning process. The project also aims at promoting the Free-Software and Open-Source movements in Israel.&lt;BR/&gt; 
+&lt;BR/&gt; 
+If you would like to contribute to the project, or get help and more information, we invite you to out project website, located at: http://www.linux-kinneret.org. We'd be glad to get any kind of help (including help that does not involve programming, such as translating, documentation writing and quality assurance).&lt;BR/&gt; 
+&lt;BR/&gt; 
+NOTICE! This version is a development version and still experimental. We reccomend unexperienced users to wait to the official and full version. Information about the release of our official version will be published at the project's site.</string>
                 </property>
-                <property name="alignment">
-                    <set>WordBreak|AlignTop</set>
+                <property name="linkUnderline">
+                    <bool>false</bool>
+                </property>
+                <property name="readOnly">
+                    <bool>true</bool>
                 </property>
             </widget>
             <spacer>
@@ -321,85 +345,176 @@ here we will put the "nice to meet you" text at runtime.</string>
                 </property>
                 <property name="sizeHint">
                     <size>
-                        <width>22</width>
-                        <height>80</height>
+                        <width>20</width>
+                        <height>16</height>
                     </size>
                 </property>
             </spacer>
-            <widget class="QGroupBox">
+            <widget class="QLayoutWidget">
                 <property name="name">
-                    <cstring>groupBox1</cstring>
+                    <cstring>layout26</cstring>
                 </property>
-                <property name="title">
-                    <string>font_size</string>
-                </property>
-                <vbox>
+                <hbox>
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QLabel">
+                    <widget class="QButtonGroup">
                         <property name="name">
-                            <cstring>textLabel1</cstring>
+                            <cstring>langGroup</cstring>
                         </property>
-                        <property name="text">
-                            <string>font_size_text</string>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>1</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
                         </property>
-                        <property name="alignment">
-                            <set>WordBreak|AlignTop</set>
+                        <property name="title">
+                            <string>Language</string>
                         </property>
-                    </widget>
-                    <widget class="QLayoutWidget">
-                        <property name="name">
-                            <cstring>layout86</cstring>
-                        </property>
-                        <hbox>
+                        <vbox>
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="QPushButton">
+                            <widget class="QRadioButton">
                                 <property name="name">
-                                    <cstring>fontInc</cstring>
+                                    <cstring>langHe</cstring>
                                 </property>
                                 <property name="text">
-                                    <string>Increase</string>
+                                    <string>Hebrew</string>
+                                </property>
+                                <property name="checked">
+                                    <bool>true</bool>
                                 </property>
                             </widget>
-                            <widget class="QPushButton">
+                            <widget class="QRadioButton">
                                 <property name="name">
-                                    <cstring>fontDec</cstring>
+                                    <cstring>langRu</cstring>
                                 </property>
                                 <property name="text">
-                                    <string>Decrese</string>
+                                    <string>Russian</string>
+                                </property>
+                            </widget>
+                            <widget class="QRadioButton">
+                                <property name="name">
+                                    <cstring>langAr</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Arabic</string>
+                                </property>
+                            </widget>
+                            <widget class="QRadioButton">
+                                <property name="name">
+                                    <cstring>langEn</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>English</string>
+                                </property>
+                            </widget>
+                        </vbox>
+                    </widget>
+                    <widget class="QGroupBox">
+                        <property name="name">
+                            <cstring>fontGroup</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>1</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="title">
+                            <string>Font Size</string>
+                        </property>
+                        <vbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel1</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>For those of you the default font size is too small/large, we've supplied two buttons for increasing and decreasing the interface's font size.</string>
+                                </property>
+                                <property name="alignment">
+                                    <set>WordBreak|AlignTop</set>
                                 </property>
                             </widget>
                             <spacer>
                                 <property name="name">
-                                    <cstring>spacer19</cstring>
+                                    <cstring>spacer20</cstring>
                                 </property>
                                 <property name="orientation">
-                                    <enum>Horizontal</enum>
+                                    <enum>Vertical</enum>
                                 </property>
                                 <property name="sizeType">
-                                    <enum>Expanding</enum>
+                                    <enum>Minimum</enum>
                                 </property>
                                 <property name="sizeHint">
                                     <size>
-                                        <width>220</width>
-                                        <height>21</height>
+                                        <width>20</width>
+                                        <height>30</height>
                                     </size>
                                 </property>
                             </spacer>
-                            <widget class="QLabel">
+                            <widget class="QLayoutWidget">
                                 <property name="name">
-                                    <cstring>textCurFontSize</cstring>
+                                    <cstring>layout86</cstring>
                                 </property>
-                                <property name="text">
-                                    <string>12</string>
-                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QPushButton">
+                                        <property name="name">
+                                            <cstring>fontInc</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Increase</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QPushButton">
+                                        <property name="name">
+                                            <cstring>fontDec</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Decrese</string>
+                                        </property>
+                                    </widget>
+                                    <spacer>
+                                        <property name="name">
+                                            <cstring>spacer19</cstring>
+                                        </property>
+                                        <property name="orientation">
+                                            <enum>Horizontal</enum>
+                                        </property>
+                                        <property name="sizeType">
+                                            <enum>Expanding</enum>
+                                        </property>
+                                        <property name="sizeHint">
+                                            <size>
+                                                <width>220</width>
+                                                <height>20</height>
+                                            </size>
+                                        </property>
+                                    </spacer>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textCurFontSize</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Current Font Size: 12</string>
+                                        </property>
+                                    </widget>
+                                </hbox>
                             </widget>
-                        </hbox>
+                        </vbox>
                     </widget>
-                </vbox>
+                </hbox>
             </widget>
             <widget class="QLayoutWidget">
                 <property name="name">
@@ -422,7 +537,7 @@ here we will put the "nice to meet you" text at runtime.</string>
                         <property name="sizeHint">
                             <size>
                                 <width>0</width>
-                                <height>48</height>
+                                <height>20</height>
                             </size>
                         </property>
                     </spacer>
@@ -454,7 +569,7 @@ here we will put the "nice to meet you" text at runtime.</string>
             <cstring>page</cstring>
         </property>
         <attribute name="title">
-            <string>license</string>
+            <string>License</string>
         </attribute>
         <vbox>
             <property name="name">
@@ -489,7 +604,7 @@ here we will put the "nice to meet you" text at runtime.</string>
                         <property name="sizeHint">
                             <size>
                                 <width>151</width>
-                                <height>21</height>
+                                <height>20</height>
                             </size>
                         </property>
                     </spacer>
@@ -523,6 +638,14 @@ here we will put the "nice to meet you" text at runtime.</string>
                     </attribute>
                 </widget>
             </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>checkAgree</cstring>
+                </property>
+                <property name="text">
+                    <string>I agree to the terms above</string>
+                </property>
+            </widget>
             <widget class="QLayoutWidget">
                 <property name="name">
                     <cstring>layout8_2</cstring>
@@ -544,7 +667,7 @@ here we will put the "nice to meet you" text at runtime.</string>
                         <property name="sizeHint">
                             <size>
                                 <width>0</width>
-                                <height>48</height>
+                                <height>20</height>
                             </size>
                         </property>
                     </spacer>
@@ -576,142 +699,85 @@ here we will put the "nice to meet you" text at runtime.</string>
             <cstring>page</cstring>
         </property>
         <attribute name="title">
-            <string>express?expert?manual?</string>
+            <string>Configuration Type</string>
         </attribute>
         <vbox>
             <property name="name">
                 <cstring>unnamed</cstring>
             </property>
-            <widget class="QLabel">
+            <widget class="QTextEdit">
                 <property name="name">
-                    <cstring>textSetupType</cstring>
+                    <cstring>textEdit2</cstring>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>7</hsizetype>
+                        <vsizetype>7</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <property name="textFormat">
+                    <enum>RichText</enum>
+                </property>
+                <property name="text">
+                    <string>&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;/head&gt;&lt;body style="font-size:12pt;font-family:Nachlieli"&gt;
+&lt;p&gt;&lt;span style="font-style:italic"&gt;GNU/Linux Kinneret&lt;/span&gt; allows you to use it without installation or configuration, in order to experience with the system.&lt;br /&gt;&lt;br /&gt;In order to allow your work with &lt;span style="font-style:italic"&gt;GNU/Linux Kinneret&lt;/span&gt; to be as productive as possible, and allowing you to save you documents, preferences and data to your hard-drive, you'll have to dedicate a few minutes to complete this wizard.&lt;br /&gt;&lt;br /&gt;The wizard will be activated each time you'll boot &lt;span style="font-style:italic"&gt;GNU/Linux Kinneret&lt;/span&gt;, until you'll create the necessary files (by choosing Automatic or Expert configuration). After the files were successfully created the wizard will stop &amp;quot;popping-up&amp;quot; during boot-up.&lt;br /&gt;&lt;br /&gt;Please select your preferred configuration options:&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+</string>
+                </property>
+            </widget>
+            <widget class="QButtonGroup">
+                <property name="name">
+                    <cstring>groupSetupType</cstring>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>5</hsizetype>
+                        <vsizetype>5</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
                 </property>
                 <property name="font">
                     <font>
                     </font>
                 </property>
-                <property name="text">
-                    <string>setuptype_main</string>
+                <property name="title">
+                    <string>Configuration Types</string>
                 </property>
-                <property name="alignment">
-                    <set>WordBreak|AlignTop</set>
-                </property>
-            </widget>
-            <widget class="QLayoutWidget">
-                <property name="name">
-                    <cstring>layout35</cstring>
-                </property>
-                <hbox>
+                <vbox>
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QButtonGroup">
+                    <widget class="QRadioButton">
                         <property name="name">
-                            <cstring>groupSetupType</cstring>
+                            <cstring>radioAuto</cstring>
                         </property>
-                        <property name="sizePolicy">
-                            <sizepolicy>
-                                <hsizetype>0</hsizetype>
-                                <vsizetype>0</vsizetype>
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                            </sizepolicy>
+                        <property name="text">
+                            <string>Automatic (Recommended)</string>
                         </property>
-                        <property name="font">
-                            <font>
-                            </font>
+                        <property name="checked">
+                            <bool>true</bool>
                         </property>
-                        <property name="title">
-                            <string>setuptype</string>
-                        </property>
-                        <hbox>
-                            <property name="name">
-                                <cstring>unnamed</cstring>
-                            </property>
-                            <widget class="QLayoutWidget">
-                                <property name="name">
-                                    <cstring>layout34</cstring>
-                                </property>
-                                <hbox>
-                                    <property name="name">
-                                        <cstring>unnamed</cstring>
-                                    </property>
-                                    <widget class="QLayoutWidget">
-                                        <property name="name">
-                                            <cstring>layout33</cstring>
-                                        </property>
-                                        <vbox>
-                                            <property name="name">
-                                                <cstring>unnamed</cstring>
-                                            </property>
-                                            <widget class="QRadioButton">
-                                                <property name="name">
-                                                    <cstring>radioAuto</cstring>
-                                                </property>
-                                                <property name="text">
-                                                    <string>auto</string>
-                                                </property>
-                                                <property name="checked">
-                                                    <bool>true</bool>
-                                                </property>
-                                            </widget>
-                                            <widget class="QRadioButton">
-                                                <property name="name">
-                                                    <cstring>radioNoConfig</cstring>
-                                                </property>
-                                                <property name="text">
-                                                    <string>noconfig</string>
-                                                </property>
-                                            </widget>
-                                            <widget class="QRadioButton">
-                                                <property name="name">
-                                                    <cstring>radioExpert</cstring>
-                                                </property>
-                                                <property name="text">
-                                                    <string>expert</string>
-                                                </property>
-                                            </widget>
-                                        </vbox>
-                                    </widget>
-                                    <spacer>
-                                        <property name="name">
-                                            <cstring>spacer4</cstring>
-                                        </property>
-                                        <property name="orientation">
-                                            <enum>Horizontal</enum>
-                                        </property>
-                                        <property name="sizeType">
-                                            <enum>Expanding</enum>
-                                        </property>
-                                        <property name="sizeHint">
-                                            <size>
-                                                <width>158</width>
-                                                <height>41</height>
-                                            </size>
-                                        </property>
-                                    </spacer>
-                                </hbox>
-                            </widget>
-                        </hbox>
                     </widget>
-                    <spacer>
+                    <widget class="QRadioButton">
                         <property name="name">
-                            <cstring>spacer13</cstring>
+                            <cstring>radioNoConfig</cstring>
                         </property>
-                        <property name="orientation">
-                            <enum>Horizontal</enum>
+                        <property name="text">
+                            <string>No Configuration (Not Recommended)</string>
                         </property>
-                        <property name="sizeType">
-                            <enum>Expanding</enum>
+                    </widget>
+                    <widget class="QRadioButton">
+                        <property name="name">
+                            <cstring>radioExpert</cstring>
                         </property>
-                        <property name="sizeHint">
-                            <size>
-                                <width>253</width>
-                                <height>51</height>
-                            </size>
+                        <property name="text">
+                            <string>Expert Mode (Only for Linux know-hows)</string>
                         </property>
-                    </spacer>
-                </hbox>
+                    </widget>
+                </vbox>
             </widget>
             <spacer>
                 <property name="name">
@@ -725,8 +791,8 @@ here we will put the "nice to meet you" text at runtime.</string>
                 </property>
                 <property name="sizeHint">
                     <size>
-                        <width>51</width>
-                        <height>213</height>
+                        <width>20</width>
+                        <height>0</height>
                     </size>
                 </property>
             </spacer>
@@ -751,7 +817,7 @@ here we will put the "nice to meet you" text at runtime.</string>
                         <property name="sizeHint">
                             <size>
                                 <width>682</width>
-                                <height>48</height>
+                                <height>20</height>
                             </size>
                         </property>
                     </spacer>
@@ -775,7 +841,7 @@ here we will put the "nice to meet you" text at runtime.</string>
             <cstring>page</cstring>
         </property>
         <attribute name="title">
-            <string>partition</string>
+            <string>Partition</string>
         </attribute>
         <hbox>
             <property name="name">
@@ -810,7 +876,7 @@ here we will put the "nice to meet you" text at runtime.</string>
                     <enum>Sunken</enum>
                 </property>
                 <property name="text">
-                    <string>sidemenu</string>
+                    <string>Side Menu</string>
                 </property>
                 <property name="alignment">
                     <set>AlignCenter</set>
@@ -818,7 +884,7 @@ here we will put the "nice to meet you" text at runtime.</string>
             </widget>
             <widget class="QLayoutWidget">
                 <property name="name">
-                    <cstring>layout38</cstring>
+                    <cstring>layout186</cstring>
                 </property>
                 <vbox>
                     <property name="name">
@@ -833,7 +899,11 @@ here we will put the "nice to meet you" text at runtime.</string>
                             </font>
                         </property>
                         <property name="text">
-                            <string>partition_main</string>
+                            <string>In this step you will have to choose the partition that will be used to store your documents and configuration files.&lt;BR/&gt; 
+&lt;I&gt;GNU/Linux Kinneret&lt;/I&gt; scanned you hard-drive(s), and found the following usable partitions:</string>
+                        </property>
+                        <property name="textFormat">
+                            <enum>RichText</enum>
                         </property>
                         <property name="alignment">
                             <set>WordBreak|AlignTop</set>
@@ -851,19 +921,26 @@ here we will put the "nice to meet you" text at runtime.</string>
                             <bool>true</bool>
                         </property>
                     </widget>
-                    <widget class="QLabel">
+                    <widget class="QTextEdit">
                         <property name="name">
-                            <cstring>textSetPartition</cstring>
+                            <cstring>textEdit3</cstring>
                         </property>
-                        <property name="font">
-                            <font>
-                            </font>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>7</hsizetype>
+                                <vsizetype>1</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="textFormat">
+                            <enum>RichText</enum>
                         </property>
                         <property name="text">
-                            <string>partition_sub</string>
-                        </property>
-                        <property name="alignment">
-                            <set>WordBreak|AlignTop</set>
+                            <string>&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;/head&gt;&lt;body style="font-size:12pt;font-family:Nachlieli"&gt;
+&lt;p&gt;We already choosen the partitions with the largest free-space. In order to change out selection, click a different partition.&lt;br /&gt;&lt;br /&gt;Partitions mapping id presented in it's Unix form, in addition to it's &lt;span style="font-weight:600"&gt;estimated&lt;/span&gt; Windows-ish name. You can get more information about partition mapping by clicking on the &amp;quot;help&amp;quot; button.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+</string>
                         </property>
                     </widget>
                     <widget class="QLayoutWidget">
@@ -887,7 +964,7 @@ here we will put the "nice to meet you" text at runtime.</string>
                                 <property name="sizeHint">
                                     <size>
                                         <width>0</width>
-                                        <height>48</height>
+                                        <height>20</height>
                                     </size>
                                 </property>
                             </spacer>
@@ -913,7 +990,7 @@ here we will put the "nice to meet you" text at runtime.</string>
             <cstring>page</cstring>
         </property>
         <attribute name="title">
-            <string>swap</string>
+            <string>Swap File</string>
         </attribute>
         <hbox>
             <property name="name">
@@ -948,7 +1025,7 @@ here we will put the "nice to meet you" text at runtime.</string>
                     <enum>Sunken</enum>
                 </property>
                 <property name="text">
-                    <string>sidemenu</string>
+                    <string>Side Menu</string>
                 </property>
                 <property name="alignment">
                     <set>AlignCenter</set>
@@ -956,28 +1033,32 @@ here we will put the "nice to meet you" text at runtime.</string>
             </widget>
             <widget class="QLayoutWidget">
                 <property name="name">
-                    <cstring>layout43</cstring>
+                    <cstring>layout209</cstring>
                 </property>
                 <vbox>
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QLabel">
+                    <widget class="QTextEdit">
                         <property name="name">
-                            <cstring>textSwapFile</cstring>
+                            <cstring>textEdit7</cstring>
                         </property>
-                        <property name="font">
-                            <font>
-                            </font>
-                        </property>
-                        <property name="text">
-                            <string>swap_main</string>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>7</hsizetype>
+                                <vsizetype>7</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>1</verstretch>
+                            </sizepolicy>
                         </property>
                         <property name="textFormat">
-                            <enum>AutoText</enum>
+                            <enum>RichText</enum>
                         </property>
-                        <property name="alignment">
-                            <set>WordBreak|AlignTop</set>
+                        <property name="text">
+                            <string>&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;/head&gt;&lt;body style="font-size:12pt;font-family:Nachlieli"&gt;
+&lt;p&gt;In this step you will have to specify the size of the to-be-created swap file.&lt;br /&gt;The swap file expands the memory that is available to the system, thus increasing performance. Therefore, it is highly recommended that you create a swap file, if you don't have a swap partition already (Notice: Creating the swap file might take a little while, but on the next time you will run &lt;span style="font-style:italic"&gt;GNU/Linux Kinneret&lt;/span&gt; you will notice a high improvement in performance. The recommended swap size is two time your cache memory (RAM) and it's importance increases when you have little RAM).&lt;br /&gt;If you do not wish a swap file, enter zero.&lt;br /&gt;&lt;br /&gt;Note: The maximal swap size is 4G, or 4096MB.&lt;br /&gt;Any value above 4096MB will be reduced to 4096MB. If the partition you have selected does not have enough room for the specified swap size, the wizard will adjust the swap size to the partition and a message will be displayed.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+</string>
                         </property>
                     </widget>
                     <spacer>
@@ -993,7 +1074,7 @@ here we will put the "nice to meet you" text at runtime.</string>
                         <property name="sizeHint">
                             <size>
                                 <width>21</width>
-                                <height>0</height>
+                                <height>90</height>
                             </size>
                         </property>
                     </spacer>
@@ -1022,7 +1103,7 @@ here we will put the "nice to meet you" text at runtime.</string>
                                             </font>
                                         </property>
                                         <property name="text">
-                                            <string>swap_sub</string>
+                                            <string>Please enter the desired swap size:</string>
                                         </property>
                                         <property name="alignment">
                                             <set>AlignTop</set>
@@ -1049,7 +1130,7 @@ here we will put the "nice to meet you" text at runtime.</string>
                                                 <property name="sizeHint">
                                                     <size>
                                                         <width>0</width>
-                                                        <height>21</height>
+                                                        <height>20</height>
                                                     </size>
                                                 </property>
                                             </spacer>
@@ -1095,7 +1176,7 @@ here we will put the "nice to meet you" text at runtime.</string>
                                                 <property name="sizeHint">
                                                     <size>
                                                         <width>0</width>
-                                                        <height>21</height>
+                                                        <height>20</height>
                                                     </size>
                                                 </property>
                                             </spacer>
@@ -1125,7 +1206,7 @@ here we will put the "nice to meet you" text at runtime.</string>
             <cstring>page</cstring>
         </property>
         <attribute name="title">
-            <string>homedir</string>
+            <string>Home Directory</string>
         </attribute>
         <hbox>
             <property name="name">
@@ -1160,7 +1241,7 @@ here we will put the "nice to meet you" text at runtime.</string>
                     <enum>Sunken</enum>
                 </property>
                 <property name="text">
-                    <string>sidemenu</string>
+                    <string>Side Menu</string>
                 </property>
                 <property name="alignment">
                     <set>AlignCenter</set>
@@ -1168,25 +1249,32 @@ here we will put the "nice to meet you" text at runtime.</string>
             </widget>
             <widget class="QLayoutWidget">
                 <property name="name">
-                    <cstring>layout46</cstring>
+                    <cstring>layout211</cstring>
                 </property>
                 <vbox>
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QLabel">
+                    <widget class="QTextEdit">
                         <property name="name">
-                            <cstring>textSelectDir</cstring>
+                            <cstring>textEdit8</cstring>
                         </property>
-                        <property name="font">
-                            <font>
-                            </font>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>7</hsizetype>
+                                <vsizetype>1</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="textFormat">
+                            <enum>RichText</enum>
                         </property>
                         <property name="text">
-                            <string>dir_main</string>
-                        </property>
-                        <property name="alignment">
-                            <set>AlignTop</set>
+                            <string>&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;/head&gt;&lt;body style="font-size:12pt;font-family:Nachlieli"&gt;
+&lt;p&gt;A directory name 'kinneret' will be created at the root of the partition you have selected. This directory will hold system data and configuration files. Do not make changed to the content of this directory!&lt;br /&gt;&lt;br /&gt;In addition to that directory you can select / create your default directory for saving your data and documents (your &amp;quot;home directory&amp;quot;).&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+</string>
                         </property>
                     </widget>
                     <widget class="DirectoryView">
@@ -1195,7 +1283,7 @@ here we will put the "nice to meet you" text at runtime.</string>
                         </property>
                         <property name="sizePolicy">
                             <sizepolicy>
-                                <hsizetype>7</hsizetype>
+                                <hsizetype>1</hsizetype>
                                 <vsizetype>7</vsizetype>
                                 <horstretch>0</horstretch>
                                 <verstretch>0</verstretch>
@@ -1256,7 +1344,7 @@ here we will put the "nice to meet you" text at runtime.</string>
                                     <enum>Sunken</enum>
                                 </property>
                                 <property name="text">
-                                    <string>&lt;selected partition&gt;/</string>
+                                    <string>/</string>
                                 </property>
                             </widget>
                             <widget class="QLabel">
@@ -1281,193 +1369,7 @@ here we will put the "nice to meet you" text at runtime.</string>
             <cstring>page</cstring>
         </property>
         <attribute name="title">
-            <string>fonts</string>
-        </attribute>
-        <hbox>
-            <property name="name">
-                <cstring>unnamed</cstring>
-            </property>
-            <widget class="QLabel">
-                <property name="name">
-                    <cstring>side5</cstring>
-                </property>
-                <property name="sizePolicy">
-                    <sizepolicy>
-                        <hsizetype>1</hsizetype>
-                        <vsizetype>5</vsizetype>
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                    </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                    <size>
-                        <width>150</width>
-                        <height>0</height>
-                    </size>
-                </property>
-                <property name="font">
-                    <font>
-                    </font>
-                </property>
-                <property name="frameShape">
-                    <enum>StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                    <enum>Sunken</enum>
-                </property>
-                <property name="text">
-                    <string>sidemenu</string>
-                </property>
-                <property name="alignment">
-                    <set>AlignCenter</set>
-                </property>
-            </widget>
-            <widget class="QLayoutWidget">
-                <property name="name">
-                    <cstring>layout38</cstring>
-                </property>
-                <vbox>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="QLabel">
-                        <property name="name">
-                            <cstring>textConclusion_2</cstring>
-                        </property>
-                        <property name="font">
-                            <font>
-                            </font>
-                        </property>
-                        <property name="text">
-                            <string>fonts_main</string>
-                        </property>
-                        <property name="textFormat">
-                            <enum>AutoText</enum>
-                        </property>
-                        <property name="alignment">
-                            <set>WordBreak|AlignTop</set>
-                        </property>
-                    </widget>
-                    <widget class="KListView">
-                        <property name="name">
-                            <cstring>FontsDirs</cstring>
-                        </property>
-                    </widget>
-                    <widget class="QLayoutWidget">
-                        <property name="name">
-                            <cstring>layout37</cstring>
-                        </property>
-                        <hbox>
-                            <property name="name">
-                                <cstring>unnamed</cstring>
-                            </property>
-                            <spacer>
-                                <property name="name">
-                                    <cstring>spacer17</cstring>
-                                </property>
-                                <property name="orientation">
-                                    <enum>Horizontal</enum>
-                                </property>
-                                <property name="sizeType">
-                                    <enum>Expanding</enum>
-                                </property>
-                                <property name="sizeHint">
-                                    <size>
-                                        <width>450</width>
-                                        <height>41</height>
-                                    </size>
-                                </property>
-                            </spacer>
-                            <widget class="KPushButton">
-                                <property name="name">
-                                    <cstring>remove_font_dir</cstring>
-                                </property>
-                                <property name="sizePolicy">
-                                    <sizepolicy>
-                                        <hsizetype>5</hsizetype>
-                                        <vsizetype>0</vsizetype>
-                                        <horstretch>0</horstretch>
-                                        <verstretch>0</verstretch>
-                                    </sizepolicy>
-                                </property>
-                                <property name="font">
-                                    <font>
-                                    </font>
-                                </property>
-                                <property name="text">
-                                    <string>remove_dir</string>
-                                </property>
-                            </widget>
-                            <widget class="KPushButton">
-                                <property name="name">
-                                    <cstring>add_font_dir</cstring>
-                                </property>
-                                <property name="sizePolicy">
-                                    <sizepolicy>
-                                        <hsizetype>5</hsizetype>
-                                        <vsizetype>0</vsizetype>
-                                        <horstretch>0</horstretch>
-                                        <verstretch>0</verstretch>
-                                    </sizepolicy>
-                                </property>
-                                <property name="font">
-                                    <font>
-                                    </font>
-                                </property>
-                                <property name="text">
-                                    <string>add_dir</string>
-                                </property>
-                            </widget>
-                        </hbox>
-                    </widget>
-                    <widget class="QLayoutWidget">
-                        <property name="name">
-                            <cstring>layout27_3</cstring>
-                        </property>
-                        <hbox>
-                            <property name="name">
-                                <cstring>unnamed</cstring>
-                            </property>
-                            <spacer>
-                                <property name="name">
-                                    <cstring>spacer10_3</cstring>
-                                </property>
-                                <property name="orientation">
-                                    <enum>Horizontal</enum>
-                                </property>
-                                <property name="sizeType">
-                                    <enum>Expanding</enum>
-                                </property>
-                                <property name="sizeHint">
-                                    <size>
-                                        <width>0</width>
-                                        <height>51</height>
-                                    </size>
-                                </property>
-                            </spacer>
-                            <widget class="QLabel">
-                                <property name="name">
-                                    <cstring>tux6_2</cstring>
-                                </property>
-                                <property name="pixmap">
-                                    <pixmap>image0</pixmap>
-                                </property>
-                                <property name="scaledContents">
-                                    <bool>false</bool>
-                                </property>
-                            </widget>
-                        </hbox>
-                    </widget>
-                </vbox>
-            </widget>
-        </hbox>
-    </widget>
-    <widget class="QWidget">
-        <property name="name">
-            <cstring>page</cstring>
-        </property>
-        <attribute name="title">
-            <string>conclusion</string>
+            <string>TrueType Fonts Import</string>
         </attribute>
         <hbox>
             <property name="name">
@@ -1502,7 +1404,7 @@ here we will put the "nice to meet you" text at runtime.</string>
                     <enum>Sunken</enum>
                 </property>
                 <property name="text">
-                    <string>sidemenu</string>
+                    <string>Side Menu</string>
                 </property>
                 <property name="alignment">
                     <set>AlignCenter</set>
@@ -1510,7 +1412,7 @@ here we will put the "nice to meet you" text at runtime.</string>
             </widget>
             <widget class="QLayoutWidget">
                 <property name="name">
-                    <cstring>layout31</cstring>
+                    <cstring>layout38</cstring>
                 </property>
                 <vbox>
                     <property name="name">
@@ -1518,42 +1420,31 @@ here we will put the "nice to meet you" text at runtime.</string>
                     </property>
                     <widget class="QLabel">
                         <property name="name">
-                            <cstring>textConclusion</cstring>
+                            <cstring>textConclusion_2</cstring>
                         </property>
                         <property name="font">
                             <font>
                             </font>
                         </property>
                         <property name="text">
-                            <string>conclusion_main</string>
+                            <string>&lt;I&gt;GNU/Linux Kinneret&lt;/I&gt; is able to import TrueType fonts from an existing Windows partition. &lt;I&gt;Kinneret&lt;/I&gt; is also able to import non-Windows fonts, as long as they are TrueType (have the .ttf extension).&lt;BR/&gt; 
+&lt;I&gt;Kinneret&lt;/I&gt; have scanned and added the fonts that are in your standart Windows fonts directory (if it was found). You can add and remove font directories as you wish.</string>
                         </property>
                         <property name="textFormat">
-                            <enum>AutoText</enum>
+                            <enum>RichText</enum>
                         </property>
                         <property name="alignment">
                             <set>WordBreak|AlignTop</set>
                         </property>
                     </widget>
-                    <spacer>
+                    <widget class="KListView">
                         <property name="name">
-                            <cstring>spacer9</cstring>
+                            <cstring>FontsDirs</cstring>
                         </property>
-                        <property name="orientation">
-                            <enum>Vertical</enum>
-                        </property>
-                        <property name="sizeType">
-                            <enum>Expanding</enum>
-                        </property>
-                        <property name="sizeHint">
-                            <size>
-                                <width>41</width>
-                                <height>0</height>
-                            </size>
-                        </property>
-                    </spacer>
+                    </widget>
                     <widget class="QLayoutWidget">
                         <property name="name">
-                            <cstring>layout27</cstring>
+                            <cstring>layout37</cstring>
                         </property>
                         <hbox>
                             <property name="name">
@@ -1561,7 +1452,74 @@ here we will put the "nice to meet you" text at runtime.</string>
                             </property>
                             <spacer>
                                 <property name="name">
-                                    <cstring>spacer10</cstring>
+                                    <cstring>spacer17</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>450</width>
+                                        <height>20</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                            <widget class="KPushButton">
+                                <property name="name">
+                                    <cstring>remove_font_dir</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>1</hsizetype>
+                                        <vsizetype>5</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="font">
+                                    <font>
+                                    </font>
+                                </property>
+                                <property name="text">
+                                    <string>Remove</string>
+                                </property>
+                            </widget>
+                            <widget class="KPushButton">
+                                <property name="name">
+                                    <cstring>add_font_dir</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>1</hsizetype>
+                                        <vsizetype>5</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="font">
+                                    <font>
+                                    </font>
+                                </property>
+                                <property name="text">
+                                    <string>Add</string>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QLayoutWidget">
+                        <property name="name">
+                            <cstring>layout27_3</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer10_3</cstring>
                                 </property>
                                 <property name="orientation">
                                     <enum>Horizontal</enum>
@@ -1572,13 +1530,13 @@ here we will put the "nice to meet you" text at runtime.</string>
                                 <property name="sizeHint">
                                     <size>
                                         <width>0</width>
-                                        <height>51</height>
+                                        <height>20</height>
                                     </size>
                                 </property>
                             </spacer>
                             <widget class="QLabel">
                                 <property name="name">
-                                    <cstring>tux6</cstring>
+                                    <cstring>tux6_2</cstring>
                                 </property>
                                 <property name="pixmap">
                                     <pixmap>image0</pixmap>
@@ -1598,7 +1556,7 @@ here we will put the "nice to meet you" text at runtime.</string>
             <cstring>page</cstring>
         </property>
         <attribute name="title">
-            <string>whatsnext?</string>
+            <string>Conclusion</string>
         </attribute>
         <hbox>
             <property name="name">
@@ -1606,7 +1564,7 @@ here we will put the "nice to meet you" text at runtime.</string>
             </property>
             <widget class="QLabel">
                 <property name="name">
-                    <cstring>side6</cstring>
+                    <cstring>side5</cstring>
                 </property>
                 <property name="sizePolicy">
                     <sizepolicy>
@@ -1633,7 +1591,7 @@ here we will put the "nice to meet you" text at runtime.</string>
                     <enum>Sunken</enum>
                 </property>
                 <property name="text">
-                    <string>sidemenu</string>
+                    <string>Side Menu</string>
                 </property>
                 <property name="alignment">
                     <set>AlignCenter</set>
@@ -1641,71 +1599,150 @@ here we will put the "nice to meet you" text at runtime.</string>
             </widget>
             <widget class="QLayoutWidget">
                 <property name="name">
-                    <cstring>layout30</cstring>
+                    <cstring>layout31</cstring>
                 </property>
                 <vbox>
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textConclusion</cstring>
+                        </property>
+                        <property name="font">
+                            <font>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>A home directory was configured for you in &lt;I&gt;Kinneret&lt;/I&gt;, this directory will be your default place to save documents and data. The little house icon in the quick-launch bar will allow you to access this directory easily. Any file that will be written in this directory will be accessible from bot Windows and &lt;I&gt;Kinneret&lt;/I&gt;.&lt;BR/&gt; 
+&lt;BR/&gt; 
+For your security, the home directory, and the partition it is on, are the only place you have write access to. Therefore, you shouldn't write data to any other place, they won't be saved after a reboot.</string>
+                        </property>
+                        <property name="textFormat">
+                            <enum>AutoText</enum>
+                        </property>
+                        <property name="alignment">
+                            <set>WordBreak|AlignTop</set>
+                        </property>
+                    </widget>
+                    <spacer>
+                        <property name="name">
+                            <cstring>spacer9</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>20</width>
+                                <height>0</height>
+                            </size>
+                        </property>
+                    </spacer>
                     <widget class="QLayoutWidget">
                         <property name="name">
-                            <cstring>layout29</cstring>
+                            <cstring>layout27</cstring>
                         </property>
-                        <vbox>
+                        <hbox>
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="QLabel">
-                                <property name="name">
-                                    <cstring>textWhatsNext</cstring>
-                                </property>
-                                <property name="font">
-                                    <font>
-                                    </font>
-                                </property>
-                                <property name="text">
-                                    <string>whatsnext_main</string>
-                                </property>
-                                <property name="textFormat">
-                                    <enum>AutoText</enum>
-                                </property>
-                                <property name="alignment">
-                                    <set>WordBreak|AlignTop</set>
-                                </property>
-                            </widget>
                             <spacer>
                                 <property name="name">
-                                    <cstring>spacer9_2</cstring>
+                                    <cstring>spacer10</cstring>
                                 </property>
                                 <property name="orientation">
-                                    <enum>Vertical</enum>
+                                    <enum>Horizontal</enum>
                                 </property>
                                 <property name="sizeType">
                                     <enum>Expanding</enum>
                                 </property>
                                 <property name="sizeHint">
                                     <size>
-                                        <width>41</width>
-                                        <height>380</height>
+                                        <width>0</width>
+                                        <height>20</height>
                                     </size>
                                 </property>
                             </spacer>
-                            <widget class="QCheckBox">
+                            <widget class="QLabel">
                                 <property name="name">
-                                    <cstring>checkPrefWiz</cstring>
+                                    <cstring>tux6</cstring>
                                 </property>
-                                <property name="enabled">
+                                <property name="pixmap">
+                                    <pixmap>image0</pixmap>
+                                </property>
+                                <property name="scaledContents">
                                     <bool>false</bool>
                                 </property>
-                                <property name="text">
-                                    <string>run_pref_wiz</string>
-                                </property>
-                                <property name="checked">
-                                    <bool>true</bool>
-                                </property>
                             </widget>
-                        </vbox>
+                        </hbox>
                     </widget>
+                </vbox>
+            </widget>
+        </hbox>
+    </widget>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>page</cstring>
+        </property>
+        <attribute name="title">
+            <string>What's Next?</string>
+        </attribute>
+        <hbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout27</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textWhatsNext</cstring>
+                        </property>
+                        <property name="font">
+                            <font>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>You must have a lot of questions about &lt;I&gt;GNU/Linux Kinneret&lt;/I&gt;: What can I do with it? How do I use the application that comes with it? What's &lt;I&gt;GNU/Linux&lt;/I&gt;?&lt;BR/&gt; 
+&lt;BR/&gt; 
+For that purpose we have created the Learn to Swim Guide (or The Swimming Guide) that will allow you to easily get familiar with the system and getting to work with it.&lt;BR/&gt; 
+The guide contains a collection of articles and guides in many subjects. You can activate the guide by double-clicking on the "Learn to Swim" icon on your desktop.&lt;BR/&gt; 
+&lt;BR/&gt; 
+The project team congratulates you for your new system, and wishes you a lot of joy and productivity while working with the system!</string>
+                        </property>
+                        <property name="textFormat">
+                            <enum>RichText</enum>
+                        </property>
+                        <property name="alignment">
+                            <set>WordBreak|AlignTop</set>
+                        </property>
+                    </widget>
+                    <spacer>
+                        <property name="name">
+                            <cstring>spacer9_2</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>20</width>
+                                <height>320</height>
+                            </size>
+                        </property>
+                    </spacer>
                     <widget class="QLayoutWidget">
                         <property name="name">
                             <cstring>layout27_2</cstring>
@@ -1727,7 +1764,7 @@ here we will put the "nice to meet you" text at runtime.</string>
                                 <property name="sizeHint">
                                     <size>
                                         <width>0</width>
-                                        <height>51</height>
+                                        <height>20</height>
                                     </size>
                                 </property>
                             </spacer>
@@ -1837,6 +1874,36 @@ here we will put the "nice to meet you" text at runtime.</string>
         <receiver>configwizard</receiver>
         <slot>onFontInc()</slot>
     </connection>
+    <connection>
+        <sender>langAr</sender>
+        <signal>clicked()</signal>
+        <receiver>configwizard</receiver>
+        <slot>onLangAr()</slot>
+    </connection>
+    <connection>
+        <sender>langEn</sender>
+        <signal>clicked()</signal>
+        <receiver>configwizard</receiver>
+        <slot>onLangEn()</slot>
+    </connection>
+    <connection>
+        <sender>langHe</sender>
+        <signal>clicked()</signal>
+        <receiver>configwizard</receiver>
+        <slot>onLangHe()</slot>
+    </connection>
+    <connection>
+        <sender>langRu</sender>
+        <signal>clicked()</signal>
+        <receiver>configwizard</receiver>
+        <slot>onLangRu()</slot>
+    </connection>
+    <connection>
+        <sender>checkAgree</sender>
+        <signal>clicked()</signal>
+        <receiver>configwizard</receiver>
+        <slot>onLicense()</slot>
+    </connection>
 </connections>
 <includes>
     <include location="local" impldecl="in declaration">khtml_part.h</include>
@@ -1855,14 +1922,20 @@ here we will put the "nice to meet you" text at runtime.</string>
     <slot>onRemoveFontDir()</slot>
     <slot>onHelp()</slot>
     <slot>newSwap( int size )</slot>
-    <slot>openURLRequest( const KURL &amp;url, const KParts::URLArgs &amp; )</slot>
+    <slot>openURLRequest( const KURL &amp; url, const KParts::URLArgs &amp; )</slot>
     <slot>onLicenseBack()</slot>
     <slot>onFontInc()</slot>
     <slot>onFontDec()</slot>
+    <slot>onLangHe()</slot>
+    <slot>onLangRu()</slot>
+    <slot>onLangAr()</slot>
+    <slot>onLangEn()</slot>
+    <slot>onLicense()</slot>
 </slots>
 <functions>
     <function access="private" specifier="non virtual">init()</function>
     <function access="private" specifier="non virtual">destroy()</function>
+    <function specifier="non virtual">setGlobalLang( const QString &amp; lang )</function>
 </functions>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>

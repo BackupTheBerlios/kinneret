@@ -25,6 +25,7 @@ main.o: main.cpp /usr/kde/3.1/include/kcmdlineargs.h \
   /usr/include/gconv.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/stdarg.h \
   /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+  /usr/include/bits/stdio.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/gthr.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/gthr-default.h \
   /usr/include/pthread.h /usr/include/sched.h /usr/include/time.h \
@@ -110,7 +111,7 @@ main.o: main.cpp /usr/kde/3.1/include/kcmdlineargs.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cmath \
   /usr/include/math.h /usr/include/bits/huge_val.h \
   /usr/include/bits/nan.h /usr/include/bits/mathdef.h \
-  /usr/include/bits/mathcalls.h \
+  /usr/include/bits/mathcalls.h /usr/include/bits/mathinline.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/cmath.tcc \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/limits \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/cpu_limits.h \
@@ -155,14 +156,16 @@ main.o: main.cpp /usr/kde/3.1/include/kcmdlineargs.h \
   /usr/include/sys/resource.h /usr/include/bits/resource.h \
   /usr/include/unistd.h /usr/include/bits/posix_opt.h \
   /usr/include/bits/environments.h /usr/include/bits/confname.h \
-  /usr/include/getopt.h /usr/kde/3.1/include/khtmlview.h confwiz.h \
-  ../config.h /usr/kde/3.1/include/kapp.h \
+  /usr/include/getopt.h /usr/kde/3.1/include/khtmlview.h \
+  /usr/kde/3.1/include/kmessagebox.h /usr/kde/3.1/include/kguiitem.h \
+  /usr/kde/3.1/include/kicontheme.h /usr/qt/3/include/qstringlist.h \
+  /usr/qt/3/include/qstrlist.h /usr/kde/3.1/include/kglobal.h \
+  /usr/kde/3.1/include/kinstance.h /usr/kde/3.1/include/kstdguiitem.h \
+  confwiz.h ../config.h /usr/kde/3.1/include/kapp.h \
   /usr/kde/3.1/include/kapplication.h /usr/kde/3.1/include/kdeversion.h \
   /usr/qt/3/include/qapplication.h /usr/qt/3/include/qdesktopwidget.h \
   /usr/qt/3/include/qasciidict.h /usr/qt/3/include/qtranslator.h \
-  /usr/qt/3/include/qstrlist.h /usr/qt/3/include/qstringlist.h \
-  /usr/kde/3.1/include/kinstance.h configwizard.h \
-  /usr/qt/3/include/qvariant.h /usr/qt/3/include/qwizard.h \
+  configwizard.h /usr/qt/3/include/qvariant.h /usr/qt/3/include/qwizard.h \
   /usr/qt/3/include/qdialog.h /usr/kde/3.1/include/khtml_part.h \
   /usr/kde/3.1/include/dom/html_document.h \
   /usr/kde/3.1/include/dom/dom_doc.h /usr/kde/3.1/include/dom/dom_node.h \
@@ -215,6 +218,7 @@ main.cpp :
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/stdarg.h :
 /usr/include/bits/stdio_lim.h :
 /usr/include/bits/sys_errlist.h :
+/usr/include/bits/stdio.h :
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/gthr.h :
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/gthr-default.h :
 /usr/include/pthread.h :
@@ -321,6 +325,7 @@ main.cpp :
 /usr/include/bits/nan.h :
 /usr/include/bits/mathdef.h :
 /usr/include/bits/mathcalls.h :
+/usr/include/bits/mathinline.h :
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/cmath.tcc :
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/limits :
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/cpu_limits.h :
@@ -398,6 +403,14 @@ main.cpp :
 /usr/include/bits/confname.h :
 /usr/include/getopt.h :
 /usr/kde/3.1/include/khtmlview.h :
+/usr/kde/3.1/include/kmessagebox.h :
+/usr/kde/3.1/include/kguiitem.h :
+/usr/kde/3.1/include/kicontheme.h :
+/usr/qt/3/include/qstringlist.h :
+/usr/qt/3/include/qstrlist.h :
+/usr/kde/3.1/include/kglobal.h :
+/usr/kde/3.1/include/kinstance.h :
+/usr/kde/3.1/include/kstdguiitem.h :
 confwiz.h :
 ../config.h :
 /usr/kde/3.1/include/kapp.h :
@@ -407,9 +420,6 @@ confwiz.h :
 /usr/qt/3/include/qdesktopwidget.h :
 /usr/qt/3/include/qasciidict.h :
 /usr/qt/3/include/qtranslator.h :
-/usr/qt/3/include/qstrlist.h :
-/usr/qt/3/include/qstringlist.h :
-/usr/kde/3.1/include/kinstance.h :
 configwizard.h :
 /usr/qt/3/include/qvariant.h :
 /usr/qt/3/include/qwizard.h :

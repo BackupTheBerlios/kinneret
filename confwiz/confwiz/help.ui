@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>523</width>
-            <height>414</height>
+            <width>629</width>
+            <height>669</height>
         </rect>
     </property>
     <property name="palette">
@@ -294,7 +294,27 @@
                         <enum>AlwaysOff</enum>
                     </property>
                     <property name="text">
-                        <string>htmlhelp</string>
+                        <string>&lt;B&gt;&lt;U&gt;Configuration Wizard - Help&lt;/U&gt;&lt;/B&gt;&lt;BR/&gt; 
+&lt;BR/&gt; 
+&lt;U&gt;Configuration types&lt;/U&gt;&lt;BR/&gt; 
+&lt;BR/&gt; 
+&lt;I&gt;Automatic&lt;/I&gt; - Selects the partitions with the largest free space, sets your home directory to it's root, imports TrueType fonts from an existing Windows partition and creates a swap file so that at least 300M stays free, and not larger then 256M. It is highly recommended to select this option.&lt;BR/&gt; 
+&lt;BR/&gt; 
+&lt;I&gt;No Configuration&lt;/I&gt; - No configuration is made at all, not home directory is created, and no swap file or TrueType index is made.&lt;BR/&gt; 
+&lt;BR/&gt; 
+&lt;I&gt;Expert Mode&lt;/I&gt; - Allows manual configuration of the working partition, the home directory, the swap file and the TrueType fonts index. This option is recommended for the use of Linux / Computers experts only.&lt;BR/&gt; 
+&lt;BR/&gt; 
+&lt;U&gt;Partition mapping under Linux&lt;/U&gt;&lt;BR/&gt; 
+In Linux, the partition mapping and naming method is different then the method known to Windows users (C, D etc).&lt;BR/&gt; 
+In Linux, the naming is made by the physical structure and layout of the partitions. Each hard-drive gets the prefix hd, to indicate it is a hard-drive.&lt;BR/&gt; 
+Afterward, each physical drive gets a letter, a, b, c, or d, by their order, e.g., the first drive on the first IDE device (the Primary Master) gets the suffix a. the Secondary Master gets the letter b. the Primary Slave and the Secondary Slave gets the letters c and d respectively.&lt;BR/&gt; 
+The string ends with a digit, representing the number of partition (starting from 1). Therefore, hda1 will be the first partition on the first hard-drive connected to the Primary IDE device. hda2 will be the second partition on the hard-drive. hdb4 will be the fourth partition on the Secondary Master etc.&lt;BR/&gt; 
+&lt;BR/&gt; 
+&lt;U&gt;How do I translate Linux mapping (hda1, hdc10 etc) to Windows mapping (C, D etc)?&lt;/U&gt;&lt;BR/&gt; 
+There is not way of doing it directly because Windows maps drives without relation to their physical order.&lt;BR/&gt; 
+In most Windows systems, incremental numbering of Windows style partitons will match the incremental numbering of Linux partitions, meaning, hda1 will be drive C, drive D will be either hda2 or hdb1 (depending on the number of partitions on hda)&lt;BR/&gt; 
+&lt;BR/&gt; 
+Please note that this method will not work on all system, since Windows allows the user to manually change letters of drives, and sometimes put the CD-ROM(s) in the middle of the hard-drives and not at the end (so C and D might be hard-drives, E will be a CD-ROM and F will be another hard-drive). The method above should work for most system, but that is NOT guaranteed.</string>
                     </property>
                 </widget>
                 <widget class="QLayoutWidget">

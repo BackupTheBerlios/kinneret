@@ -14,16 +14,20 @@ cd $MNT_PT
 mkdir kinneret
 
 # create swap
-if [ $SWAP_SIZE -gt 0 ]
+# but only if not partitions were found
+if [ -n "`swapon -s | grep partition`" ]
 then
-	echo "SWAP_FILE" > /tmp/.progress
-	dd if=/dev/zero of="${MNT_PT}/kinneret/.swap" bs=1M count=$SWAP_SIZE;
+	if [ $SWAP_SIZE -gt 0 ]
+	then
+		echo "SWAP_FILE" > /tmp/.progress
+		dd if=/dev/zero of="${MNT_PT}/kinneret/.swap" bs=1M count=$SWAP_SIZE;
 
-	echo "CREATE_SWAP" > /tmp/.progress
-	mkswap "${MNT_PT}/kinneret/.swap"
+		echo "CREATE_SWAP" > /tmp/.progress
+		mkswap "${MNT_PT}/kinneret/.swap"
 
-	echo "SWAP_ON" > /tmp/.progress
-	swapon "${MNT_PT}/kinneret/.swap"
+		echo "SWAP_ON" > /tmp/.progress
+		swapon "${MNT_PT}/kinneret/.swap"
+	fi
 fi
 
 # create the ext3 file

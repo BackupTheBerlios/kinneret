@@ -12,6 +12,12 @@ From 0.3.1 to 0.5.1
 * Linux partitions (ext[2|3], reiserfs) are mounted as well
 * NTFS drives are mapped as well to ~/partitions (x)
 
+23 Aug 2003:
+* Added interface languge selection option
+
+25 Aug 2003:
+* Added "Agree to license" issue
+
 (x) - Commented out, NTFS driver can destroy partitions
 
 From 0.3b to 0.3.1

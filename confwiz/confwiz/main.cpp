@@ -27,6 +27,7 @@
 #include <kprocess.h>
 #include <khtmlview.h>
 #include <qfont.h>
+#include <kmessagebox.h>
 
 #include "confwiz.h"
 #include "configwizard.h"
@@ -66,12 +67,11 @@ void InitWizard(configwizard *wizard)
 	// Set side-menus
 	QString q_stage[] =
 	{
-		QString(tr2i18n("partition")),
-		QString(tr2i18n("swap")),
-		QString(tr2i18n("homedir")),
-		QString(tr2i18n("conclusion")),
-		QString(tr2i18n("fonts")),
-		QString(tr2i18n("whatsnext?"))
+		QString(tr2i18n("Partition")),
+		QString(tr2i18n("Swap File")),
+		QString(tr2i18n("Home Directory")),
+		QString(tr2i18n("TrueType Fonts Import")),
+		QString(tr2i18n("Conclusion")),
 	};
 
 	QLabel *q_index[] =
@@ -80,8 +80,7 @@ void InitWizard(configwizard *wizard)
 		wizard->side2,
 		wizard->side3,
 		wizard->side4,
-		wizard->side5,
-		wizard->side6
+		wizard->side5
 	};
 
 	const int count = 5;
@@ -91,10 +90,10 @@ void InitWizard(configwizard *wizard)
 
 		for (int j = 0 ; j < count ; j++)
 		{
-			if (j == i) qs += QString("<b>") + q_stage[j] + QString("</b>");
+			if (j == i) qs += QString("<B>") + q_stage[j] + QString("</B>");
 			else qs += q_stage[j];
 
-			qs += QString("<br>");
+			qs += QString("<BR/>");
 		}
 		q_index[i]->setText(qs);
 	}
@@ -125,39 +124,34 @@ int main(int argc, char *argv[])
 	KCmdLineArgs::addCmdLineOptions(options); // Add our own options.
 
 	KApplication a;
-	configwizard *wizard = new configwizard();
+	configwizard *wizard = 0;
 
-	InitWizard(wizard);
+	// Yes, I am aware of the fact that this is REALLY UGLY!
+	// The thingie with the reveresed layouts made me do it...
+	// couldn't find a way to change the Wizard's layout without
+	// destroying and rebuilding it...
 
-	a.setMainWidget(wizard);
-	wizard->show();
-
-	a.exec();
-
+	// if you have an idea for me, send me a mail...
+	
+	do
+	{
+		if (wizard) delete wizard;
+		wizard = new configwizard();
+		
+		InitWizard(wizard);
+		a.setMainWidget(wizard);
+		wizard->show();
+		a.exec();
+	} while (wizard->result() == 42);
+	
 	// only if wizard was completed
 	if (wizard->result() != QDialog::Rejected)
-	{
 		system("sudo /opt/kinneret/bin/ttf.sh");	// load fonts
-	}
-
-	KProcess p;
-
-	if (wizard->checkPrefWiz->isChecked() == true && wizard->result() != QDialog::Rejected)
+	else
 	{
-		// run preferance wizard...
-		p.clearArguments();
-		p << "/opt/kinneret/bin/prefwiz";
-		p.start();
-
-		// wait for completetion...
-		while (p.isRunning());
+		KMessageBox::error(0, QString(tr2i18n("You have canceled the wizard, Kinneret will now shutdown.")));
+		return 9;		// wizard canceled, kinneret will shutdown.
 	}
 
-	// run swim wizard...
-	p.clearArguments();
-	p << "/opt/kinneret/bin/swim";
-	p.start();	
-	while (p.isRunning());
-	
 	return 0;
 }

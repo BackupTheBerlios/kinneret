@@ -223,9 +223,15 @@ install_location=$$(kde_icondir)/locolor/16x16/apps/confwiz.png
 type=DATA
 
 [po/Makefile.am]
-files=po/he.po,po/he.gmo,po/confwiz.pot
+files=po/he.po,po/he.gmo,po/confwiz.pot,po/ar.po,po/ru.po
 sub_dirs=
 type=po
+
+[po/ar.po]
+dist=false
+install=false
+install_location=
+type=PO
 
 [po/confwiz.pot]
 dist=true
@@ -240,6 +246,12 @@ install_location=
 type=DATA
 
 [po/he.po]
+dist=false
+install=false
+install_location=
+type=PO
+
+[po/ru.po]
 dist=false
 install=false
 install_location=

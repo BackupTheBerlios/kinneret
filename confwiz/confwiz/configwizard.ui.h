@@ -27,6 +27,7 @@
 #include <kurl.h>
 #include <klocale.h>
 #include <khtmlview.h>
+#include <kconfig.h>
 
 void configwizard::init()
 {
@@ -36,7 +37,7 @@ void configwizard::init()
 		KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot create KHTML object!")));
 		return;
 	}
-	
+
 	kHTML->view()->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding, TRUE);
 	KLocale locale("");
 	KURL url = "/opt/kinneret/l2swim/doc/" + locale.language().left(2) + "/kinneret_license.html";
@@ -47,6 +48,16 @@ void configwizard::init()
 
 	connect(kHTML->browserExtension(), SIGNAL(openURLRequest(const KURL&, const KParts::URLArgs&)),
 		this, SLOT(openURLRequest(const KURL &, const KParts::URLArgs&)));
+
+	langHe->setChecked(false);
+	langAr->setChecked(false);
+	langRu->setChecked(false);
+	langEn->setChecked(false);
+
+	if (KGlobal::locale()->language() == QString::fromLatin1("en_US"))	langEn->setChecked(true);
+	if (KGlobal::locale()->language() == QString::fromLatin1("he"))		langHe->setChecked(true);
+	if (KGlobal::locale()->language() == QString::fromLatin1("ar"))		langAr->setChecked(true);
+	if (KGlobal::locale()->language() == QString::fromLatin1("ru"))		langRu->setChecked(true);
 }
 
 void configwizard::destroy()
@@ -57,7 +68,7 @@ void configwizard::destroy()
 void configwizard::onSelect()
 {
 //	const int page_nicetomeet	= 0;
-//	const int page_license		= 1;
+	const int page_license		= 1;
 //	const int page_setuptype	= 2;
 	const int page_partition	= 3;
 	const int page_swap			= 4;
@@ -68,30 +79,34 @@ void configwizard::onSelect()
 
 	const int nToKeepFree = 300;	// how many megs to keep free
 	static QString qDefaultHome;
-			
+
+	// license!
+	if (currentPage() == QWizard::page(page_license))
+		nextButton()->setEnabled(checkAgree->isChecked());
+
 	// see if that's the 3rd page, if it is,
 	// fill the list box with vfat and partitions.
 	if (currentPage() == QWizard::page(page_partition))
 	{
 		static int nVFATs = 0;
-		
+
 		if (par_list->childCount() == 0)
 		{
 			// Why oh why did the trolltech people re-wrote the standart library??
 			std::ifstream fstab("/etc/fstab", std::ios::in);
 			char szLine[0x300];
-	
+
 			if (!fstab.is_open())
 			{
 				KMessageBox::error(parentWidget(),
 								   QString(tr2i18n("Cannot open /etc/fstab")));
 				return;
 			}
-	
+
 			par_list->addColumn(QString(tr2i18n("Device")), 150);
 			par_list->addColumn(QString(tr2i18n("Size")), 150);
 			par_list->addColumn(QString(tr2i18n("Free (% In Use)")), 150);
-			
+
 			char Letter[2] = { 'C', 0 };	// first drive is C
 
 			QListViewItem *pMaxFreeSpace = 0;
@@ -107,9 +122,9 @@ void configwizard::onSelect()
 					char *dev = strstr(szLine, "/dev/");
 					char device[20];
 					char *devptr = device;
-		
+
 					while (isalnum(*dev) || *dev == '/') *devptr++ = *dev++;
-		
+
 					*devptr = 0;
 
 					// Mount the device as rw
@@ -124,12 +139,12 @@ void configwizard::onSelect()
 						KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot get information about disk usage!")));
 						return;
 					}
-					
+
 					std::ifstream df("/tmp/.df");
 
 					if (!df.is_open())
 					{
-						KMessageBox::error(parentWidget(), 
+						KMessageBox::error(parentWidget(),
 							QString(tr2i18n("Cannot get device status, skipping")));
 						continue;
 					}
@@ -150,7 +165,7 @@ void configwizard::onSelect()
 							qs = qs.simplifyWhiteSpace();
 
 							dfdev = qs.left(qs.find(' '));
-							
+
 							qs = qs.remove(0, qs.find(' ') + 1);    // device
 							qs = qs.remove(0, qs.find(' ') + 1);    // fs
 
@@ -181,16 +196,16 @@ void configwizard::onSelect()
 							mntpt = qs.left(qs.find(' '));
 						}
 					}
-                
+
 					df.close();
-					
+
 					// guess the letter of the drive...
 					QListViewItem *vi = new QListViewItem(par_list, mntpt + QString(" (") + QString(Letter) + QString(":)"), size, free, dfdev);
 					Letter[0]++;
 
 					if (par_list->childCount() == 0) vi->setSelected(true);
 					else vi->setSelected(false);
-             
+
 					par_list->insertItem(vi);
 
 					// find the partition with the largest free space and mark it yellow
@@ -205,7 +220,7 @@ void configwizard::onSelect()
 			// pMaxFreeSpace holds a pointer to the partition with the largest free space, mark it.
 			par_list->setCurrentItem(pMaxFreeSpace);
 			par_list->setSelected(pMaxFreeSpace, true);
-						
+
 			fstab.close();
 			unlink("/tmp/.df");
 		}
@@ -221,7 +236,7 @@ void configwizard::onSelect()
 
 			radioNoConfig->setChecked(true);
 		}
-		
+
 		// Okay, now we'll see what the user have choose in the previous
 		// level and act accordingly...
 		if (radioAuto->isChecked())
@@ -230,26 +245,26 @@ void configwizard::onSelect()
 			// docs_path = Home dir
 			// selected item in par_list = mountpoint
 			// swap_size's value = swap size
-			
+
 			// Find the partition with the largest free space
 			std::map<unsigned long, QString> partitions;		// free sapce (bytes), mountpoint
-			
+
 			// Get size and freespace
 			if (system("df -t vfat -B 1M > /tmp/.df"))
 			{
 				KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot get information about disk usage!")));
 				return;
 			}
-			
+
 			std::ifstream df("/tmp/.df");
-			
+
 			if (!df.is_open())
 			{
-				KMessageBox::error(parentWidget(), 
+				KMessageBox::error(parentWidget(),
 					   QString(tr2i18n("Cannot get device status")));
 				return;
 			}
-			
+
 			// first line...
 			char szLine[0x300];
 			df.getline(szLine, 0x300);
@@ -264,24 +279,24 @@ void configwizard::onSelect()
 
 				QString qs(szLine);
 				qs = qs.simplifyWhiteSpace();
-					
+
 				unsigned long size = 0;
-					
+
 				qs = qs.remove(0, qs.find(' ') + 1);    // Filesystem
 				qs = qs.remove(0, qs.find(' ') + 1);    // 1M-blocks
 				qs = qs.remove(0, qs.find(' ') + 1);    // Used
-					
+
 				QString qsFree = qs.left(qs.find(' '));
 				size = qsFree.toULong();
-					
+
 				qs = qs.remove(0, qs.find(' ') + 1);    // Available
 				qs = qs.remove(0, qs.find(' ') + 1);    // Use%
-					
+
 				partitions[size] = qs.left(qs.find(' '));
 
 				if (size > sz) sz = size;
 			}
-              
+
 			df.close();
 			unlink("/tmp/.df");
 
@@ -358,7 +373,7 @@ void configwizard::onSelect()
 
 			// Again, we already made sure we can use at least 356 megs and leave nToKeepFree
 			// free.
-			
+
 			unlink("/tmp/.meminfo");
 
 			// So now swap holds the size of the swap size...
@@ -397,19 +412,15 @@ void configwizard::onSelect()
 
 				fonts.close();
 			}
-			
+
 			// Now jump to conclusion and let it to do all the configuration...
 			QWizard::showPage(QWizard::page(page_conclusion));
-			
+
 			return;
 		}
-				
+
 		else if (radioNoConfig->isChecked())
 		{
-			// disable pesonal pref
-			checkPrefWiz->setChecked(false);
-			checkPrefWiz->setEnabled(false);
-
 			// jump to 'what next?'
 			QWizard::showPage(QWizard::page(page_whatsnext));
 		}
@@ -426,7 +437,7 @@ void configwizard::onSelect()
 			KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot get information about disk usage!")));
 			return;
 		}
-		
+
 		std::ifstream df("/tmp/.df");
 
 		if (!df.is_open())
@@ -453,7 +464,7 @@ void configwizard::onSelect()
 			qs = qs.simplifyWhiteSpace();
 			QString qDev = qs.left(qs.find(' '));
 			qs = qs.remove(0, qs.find(' ') + 1);    // Filesystem
-			
+
 			if (qDev == vi->text(3))
 			{
 				qs = qs.remove(0, qs.find(' ') + 1);    // 1M-blocks
@@ -463,7 +474,7 @@ void configwizard::onSelect()
 				lFreeOnPartition = qsFree.toLong();
 			}
 		}
-		
+
 		df.close();
 		unlink("/tmp/.df");
 
@@ -498,21 +509,21 @@ void configwizard::onSelect()
 		{
 			KMessageBox::information(parentWidget(),
 				QString(tr2i18n("You have not selected a partition,\nplease go back and select one.")));
-			
+
 			// disable "next"
 			nextButton()->setEnabled(false);
-			
+
 			return;
         }
-		
+
 		else nextButton()->setEnabled(true);
 
 		QListViewItem *vi = qpl.first();
-		qDefaultHome = vi->text(0).left(vi->text(0).find(' ')) + QString("/");	
+		qDefaultHome = vi->text(0).left(vi->text(0).find(' ')) + QString("/");
 		docs_path->setText(qDefaultHome);
 
 		qsHome = qDefaultHome;
-	
+
 		// So the custom widget thing didn't turned up as I wanted it to...
 		// well, it's only my first KDE app...
 		// I couldn't make the Qt Designed to connect the slots right,
@@ -524,22 +535,24 @@ void configwizard::onSelect()
 		Directory *root = new Directory(dir_list, qDefaultHome);
 		root->setOpen(true);
 	}
-	
+
 	if (currentPage() == QWizard::page(page_conclusion))
 	{
 		// if the user did not selected a home directory and was not in express mode...
 		if (docs_path->text() == qDefaultHome && !radioAuto->isChecked())
-			KMessageBox::information(parentWidget(), tr2i18n("home_dir_warning"));
+			KMessageBox::information(parentWidget(), tr2i18n("You have not selected a home directory.\n"
+			"In this case, the wizard set it to the root of your selected partition.\n"
+			"To change that, click the 'Back' button."));
 		else backButton()->setEnabled(false);
-		
+
 		// okay.. now, change some stuff...
 		QString qHome = docs_path->text();
-		
+
 		// Get the selected partition's mountpoint
 		QPtrList<QListViewItem> qpl = par_list->selectedItems();
 		QListViewItem *vi = qpl.first();
 		QString qMnt = vi->text(0).left(vi->text(0).find(' '));
-		
+
 		// Run the script...
 		char swapsize[5];
 		sprintf(swapsize, "%d", swap_size->value());
@@ -549,7 +562,7 @@ void configwizard::onSelect()
 		pw->blinker->start(1000);		// a sec
 		pw->nLed = 0;
 		connect(pw->blinker, SIGNAL(timeout()), pw, SLOT(onTimer()));
-		
+
 		pw->show();
 		nextButton()->setEnabled(false);
 
@@ -559,7 +572,7 @@ void configwizard::onSelect()
 
 		while (p.isRunning())
 			KApplication::kApplication()->processEvents();
-			
+
 		delete pw;
 
 		// nextButton()->setEnabled(true);
@@ -604,7 +617,7 @@ void configwizard::onSelect()
 			fonts.close();
 		}
     }
-	
+
 	if (currentPage() == QWizard::page(page_whatsnext))
 	{
 		// create ~/.fontsdirs - will be loaded by knoppix.sh at boot time
@@ -619,7 +632,7 @@ void configwizard::onSelect()
 				KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot search for TTF fonts!")));
 				return;
 			}
-			
+
 			while (vi)
 			{
 				fonts << vi->text(0) << std::endl;
@@ -627,7 +640,7 @@ void configwizard::onSelect()
 			}
 
 			fonts.close();
-		}		
+		}
 
 		backButton()->setEnabled(false);
 	}
@@ -647,13 +660,13 @@ void configwizard::onCreateDir()
 		KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot create directory!")));
 		return;
 	}
-	
+
 	docs_path->setText(docs_path->text() + lineCreate->text());
 
 	// Update tree
 	QListViewItem *p = dir_list->firstChild();
 	delete p;
-	
+
 	Directory *root = new Directory(dir_list, qsHome);
 	root->setOpen(true);
 
@@ -706,7 +719,7 @@ void configwizard::onHelp()
 		((QWidget*)obj)->setPalette(pal);
 	}
 	delete l; // delete the list, not the objects
-	
+
 	hlp->exec();
 }
 
@@ -744,7 +757,7 @@ void configwizard::onFontInc()
 
 	QString qCutSize = QString(tr2i18n("Current font size: %1")).arg(fnt.pointSize());
 	textCurFontSize->setText(qCutSize);
-	
+
 	QObjectList *l = queryList("QWidget");
 	QObjectListIt it(*l);
 	QObject *obj;
@@ -777,4 +790,58 @@ void configwizard::onFontDec()
 		((QWidget*)obj)->setFont(fnt);
 	}
 	delete l; // delete the list, not the objects
+}
+
+
+void configwizard::onLangHe()
+{
+	setGlobalLang("he");
+	KApplication::kApplication()->setReverseLayout(true);
+}
+
+
+void configwizard::onLangRu()
+{
+	setGlobalLang("ru");
+	KApplication::kApplication()->setReverseLayout(false);
+}
+
+
+void configwizard::onLangAr()
+{
+	setGlobalLang("ar");
+	KApplication::kApplication()->setReverseLayout(true);
+}
+
+
+void configwizard::onLangEn()
+{
+	setGlobalLang("en_US");
+	KApplication::kApplication()->setReverseLayout(false);
+}
+
+
+void configwizard::setGlobalLang(const QString &lang)
+{
+	KConfigBase *config = reinterpret_cast<KConfigBase*>(KGlobal::config());
+	config->setGroup("Locale");
+	config->writeEntry("Language", QString::fromLatin1(lang), true, true);
+	config->sync();
+
+	KGlobal::locale()->setLanguage(QString::fromLatin1(lang));
+	
+	emit languageChange();
+
+	QString qCutSize = QString(tr2i18n("Current font size: %1")).arg(font().pointSize());
+	textCurFontSize->setText(qCutSize);
+
+	done(42);	// The answer to the ultimate question of life, the universe and everything
+}
+
+
+
+
+void configwizard::onLicense()
+{
+	nextButton()->setEnabled(checkAgree->isChecked());
 }

@@ -100,13 +100,13 @@ echo "${BLUE}Linking partitions...${NORMAL}"
 rm -fr /home/knoppix/partitions/*
 
 letter="103"	# C in octal
-#for mntpt in `cat /etc/fstab | grep -F "`echo -e "fat\nntfs"`" | cut -b 6-9`
-for mntpt in `cat /etc/fstab | grep fat | cut -b 6-9`
+#for mntpt in `cat /etc/fstab | grep -F "`echo -e "vfat\nntfs"`" | cut -b 6-9`
+for mntpt in `cat /etc/fstab | grep vfat | cut -b 6-9`
 do
 	echo -e "${BLUE}Linking /mnt/${mntpt} to \\${letter}...${NORMAL}"
 	slash=\\
 	to=`echo -e "${slash}${letter}"`
-	ln -s /mnt/$mntpt/ "/home/knoppix/partitions/лерп ${to}"
+	ln -s /mnt/$mntpt/ "/home/knoppix/partitions/пїЅпїЅ${to}"
 
 	let letter++
 done
