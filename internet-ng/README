@@ -1,11 +1,10 @@
 README for internet-ng.
 Written 2004-12-24 by z9u2k.
 
-In order to build this CVS module, you have to run:
+In order to build the CVS module, you must run:
+$ gmake -f Makefile.cvs
 
-$ aclocal
-$ autoconf
-$ libtoolize --copy
-$ automake -a -c
+Before you can:
 $ ./configure
-$ make
+$ gmake
+
