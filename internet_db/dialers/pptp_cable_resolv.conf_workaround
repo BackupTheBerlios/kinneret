@@ -10,7 +10,7 @@ then
 fi
 
 # Get address from DHCP server
-if [ -x `which dhcpcd` ]
+if [ "`which dhcpcd >/dev/null`" ]
 then
 	dhcpcd
 	if [ $? -ne 0 ]
@@ -19,7 +19,7 @@ then
 	fi
 
 	DHCPCLIENT="`which dhcpcd`"
-elif [ -x `which dhcpd3` ]
+elif [ "`which dhcpd3 2>/dev/null`" ]
 then
 	dhcpd3
 	if [ $? -ne 0 ]
@@ -28,7 +28,7 @@ then
 	fi
 
 	DHCPCLIENT="`which dhcpd3`"
-elif [ -x `which dhclient` ]
+elif [ "`which dhclient 2>/dev/null`" ]
 then
 	dhclient
 	if [ $? -ne 0 ]
