@@ -89,7 +89,7 @@ private:
   KParts::ReadOnlyPart* part;
   KHTMLPart *html;
   KHTMLView *htmlview;
-  QString currentimage,currentPage,startpage;
+  QString currentimage,currentPage,cmdStartpage;
   QString aboutline;
   QString lang;
 };

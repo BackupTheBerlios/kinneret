@@ -45,13 +45,13 @@ public:
     void getLink(QString linkname, QString *text, QString *type, QString *imagefile);
     void addSection(pcsection what);
     void addTextToSection(QString name, QString page);
-    bool initialize(QString filename, QString *startpage);
+    bool initialize(QString filename, QString cmdStartpage, QString *startpage);
     QString getMenuName() {return menuname;};
-    QString getLanguage() {return menulanguage;};
+//    QString getLanguage() {return menulanguage;};
     QString getDocsPath() {return docspath;};
     QString getDefaultImage() {return imagepath+defaultimage;};  
     
 private:
     csection* first;
-    QString menuname, docspath, defaultimage, imagepath, menulanguage;
+    QString menuname, docspath, defaultimage, imagepath, menulanguage,defaultdir;
 };

@@ -64,7 +64,7 @@ lineType getline(QTextStream* stream, QString *key, QString *value)
 }
 
 // initialize the menu
-bool cmenu::initialize(QString filename, QString *startpage)
+bool cmenu::initialize(QString filename, QString cmdStartpage, QString *startpage)
 {
 // cout<<"starting menu"<<endl;
   QString name;
@@ -78,7 +78,7 @@ bool cmenu::initialize(QString filename, QString *startpage)
   QString image;
   lineType lType;
   bool startpageExist=false;
-  QString orig_startpage=*startpage;
+//  QString orig_startpage=*startpage;
   // Read from file and initialize
   QIODevice* fp = new QFile(filename);
   fp->open(IO_ReadOnly);
@@ -86,12 +86,15 @@ bool cmenu::initialize(QString filename, QString *startpage)
   filereader->setEncoding(QTextStream::UnicodeUTF8);
 
   // Reading initial settings docspath and image and language!!
+  defaultdir="ltr";
   while(((lType=getline(filereader,&key,&name))==tKey)&&(key.compare("menu")!=0))
   {
     if (key.compare("docspath")==0) docspath=name;
     else if (key.compare("defaultimage")==0) defaultimage=name;
     else if (key.compare("imagepath")==0) imagepath=name;
     else if (key.compare("menulanguage")==0) menulanguage=name;
+    else if ((key.compare("defaultdir")==0)
+      &&((name.compare("rtl")==0)||(name.compare("ltr")==0))) defaultdir=name;
   }
   if (docspath[docspath.length()-1]!='/') docspath.append('/');
   if (imagepath[imagepath.length()-1]!='/') imagepath.append('/');
@@ -106,10 +109,20 @@ bool cmenu::initialize(QString filename, QString *startpage)
     while ((lType!=tEof)&&(lType!=tError))
     {
       lType=getline(filereader,&key,&title);
-      page="<table width=""90%""><tr><td>";
+      // Defining html head.
+      page="<!DOCTYPE HTML PUBLIC ""-//W3C//DTD HTML 4.01 Transitional//EN"">";
+      page+="<html><head><meta http-equiv=""Content-Type"" content=""text/html; charset=UTF-8""></head>";
+      QString menudir=defaultdir;
+      if ((lType==tKey)&&(key.compare("menudir")==0))
+      {
+        if ((title.compare("rtl")==0)||(title.compare("ltr")==0)) menudir=title;
+        lType=getline(filereader,&key,&title);
+      } 
+      // defining html body, including direction.
+      page+="<body dir="""+menudir+""">";
+      page+="<table width=""90%""><tr><td>";
       page+="<H1>"+title+"</H1></FONT><BR>";
       lType=getline(filereader,&key,&description);
-
       // Read description
       while(lType==tText)
       {
@@ -136,7 +149,8 @@ bool cmenu::initialize(QString filename, QString *startpage)
         else
         {
           bool isStartpage=false;
-          if ((!startpage->isEmpty())&&(linkname.compare(*startpage)==0))
+          // Check if the link is same as desired startpage.
+          if ((!cmdStartpage.isEmpty())&&(linkname.compare(cmdStartpage)==0))
           {
             isStartpage=true;
             startpageExist=true;
@@ -155,8 +169,8 @@ bool cmenu::initialize(QString filename, QString *startpage)
       }
       // Adding "go back" or "Exit"
       bool isStartpage=false;
-      if ((name.right(name.length()-7).compare(orig_startpage)==0)&&
-          (!orig_startpage.isEmpty())) isStartpage=true;
+      if ((name.right(name.length()-7).compare(cmdStartpage)==0)&&
+          (!cmdStartpage.isEmpty())) isStartpage=true;
       QString startpage_page=page;
       if (menuname.compare(name)!=0) page+="<a href=""swit://goback"">"+i18n("Go back")+"</a><BR><BR>";
       else page+="<a href=""swit://exit"">"+i18n("Exit")+"</a><BR><BR>";

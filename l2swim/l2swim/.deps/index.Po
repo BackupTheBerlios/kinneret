@@ -24,8 +24,8 @@ index.o index.o: index.cpp index.h /usr/lib/qt3/include/qstring.h \
   /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
   /usr/include/bits/wchar.h /usr/include/gconv.h \
   /usr/lib/gcc-lib/i486-suse-linux/3.3/include/stdarg.h \
-  /usr/include/bits/sys_errlist.h /usr/lib/qt3/include/qfile.h \
-  /opt/kde3/include/klocale.h
+  /usr/include/bits/sys_errlist.h /usr/include/bits/stdio.h \
+  /usr/lib/qt3/include/qfile.h /opt/kde3/include/klocale.h
 
 index.h:
 
@@ -122,6 +122,8 @@ index.h:
 /usr/lib/gcc-lib/i486-suse-linux/3.3/include/stdarg.h:
 
 /usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
 
 /usr/lib/qt3/include/qfile.h:
 

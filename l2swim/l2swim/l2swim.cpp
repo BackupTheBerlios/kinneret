@@ -23,8 +23,8 @@
 MainWindow::MainWindow ( const char* name, const QString spage) : KMainWindow ( 0L, name )
 {
   aboutline=i18n("<b><big><big>Learn To Swim (l2swim)</b></big></big><br><br>An interactive information center.<br>Version: %1<br>Date: %2<br>Programmed by : Nir Misgav<br>Email: %3<br>License: GPL<br>All rights reserved to <i><b>GNU/Linux Kinneret.</i></b>")
-      .arg("0.6rc2").arg("14/9/03").arg("nirro@linux-kinneret.org");
-  startpage=spage;
+      .arg("0.6rc3").arg("18/9/03").arg("nirro@linux-kinneret.org");
+  cmdStartpage=spage;
 //  cout<<"menu initialized"<<endl;
   setCaption(i18n("Learn to swim"));
   hbox = new QHBox(this);
@@ -84,24 +84,24 @@ void MainWindow::firstload()
 {
   KLocale locale("");
   lang=locale.language().left(2);
-  bool langexist=true;
+//  bool langexist=true;
   menufile=QString("/opt/kinneret/l2swim/etc/swim_menu_"+lang+".txt");
-  QString lastmenufile=menufile;
+//  QString lastmenufile=menufile;
   if (!QFile(menufile).exists())
-  {
-    langexist=false;
+//  {
+//    langexist=false;
     menufile=QString("/opt/kinneret/l2swim/etc/swim_menu.txt");
-  }
+//  }
   menu=new cmenu();
-  QString orig_startpage=startpage;
-  bool startpageExist=menu->initialize(menufile,&startpage);
-  if (!menu->getLanguage().isNull()) lang=menu->getLanguage();
+  QString startpage;
+  bool startpageExist=menu->initialize(menufile,cmdStartpage,&startpage);
+//  if (!menu->getLanguage().isNull()) lang=menu->getLanguage();
   if (!startpageExist) openURL(KURL(menu->getMenuName()),false);
   else openURL(KURL(QString(startpage)),false);
-  if (!langexist) KMessageBox::information(this,i18n("Your language menu-file: %1 does not exist, using default language instead").arg(lastmenufile)
-    ,i18n("Sorry"),"LangMenuFile");
+//  if (!langexist) KMessageBox::information(this,i18n("Your language menu-file: %1 does not exist, using default language instead").arg(lastmenufile)
+//    ,i18n("Sorry"),"LangMenuFile");
   if((!startpage.isEmpty())&&(!startpageExist))
-      KMessageBox::error(this,i18n("Page %1 does not exist.").arg(orig_startpage));
+      KMessageBox::error(this,i18n("Page %1 does not exist.").arg(cmdStartpage));
 }
 
 void MainWindow::show()
@@ -166,8 +166,6 @@ void MainWindow::openURL(KURL url,bool push,bool forw)
         history.push(currentPage);
         toolbar->setItemEnabled(TOOLBAR_ID_BACK,true);
       }
-      if ((lang=="he")||(lang=="ar"))
-      page=QString("<html><head><meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8""></head><body dir=""rtl"">")+page+"</body></html>";
       html->begin();
       html->write(page);
       html->end();
