@@ -270,8 +270,8 @@ var
 begin
   toAdd:=false;
   result:=true; //Assume there is an error
-  configsysFile := getWindowsDrive+'config.sys';
-  autoexecFile := getWindowsDrive+'autoexec.bat';
+  configsysFile := getWindowsDrive+'\config.sys';
+  autoexecFile := getWindowsDrive+'\autoexec.bat';
   try
     configsys := TStringList.Create;
     autoexec := TStringList.Create;
@@ -330,8 +330,8 @@ var
   configsysFile,autoexecFile : string;
   confstart,confend,autostart,autoend,i : integer;
 begin
-  configsysFile := getWindowsDrive+'c:\config.sys';
-  autoexecFile := getWindowsDrive+'autoexec.bat';
+  configsysFile := getWindowsDrive+'\config.sys';
+  autoexecFile := getWindowsDrive+'\autoexec.bat';
   try
     configsys := TStringList.Create;
     autoexec := TStringList.Create;

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
 "POT-Creation-Date: 2004-03-01 20:55\n"
-"PO-Revision-Date: 2004-03-24 23:33+0200\n"
+"PO-Revision-Date: 2004-03-25 14:39+0200\n"
 "Last-Translator: Nir Misgav <nirro@linux-kinneret.org>\n"
 "Language-Team: Nir Misgav <nirro@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -277,7 +277,7 @@ msgstr ""
 "http://www.linux-kinneret.org\n"
 "רשיון: GPL.\n"
 "\n"
-"הגרסה הראשונה (0.1(\n"
+"הגרסה הראשונה (0.1)\n"
 "מבוססת על: RawWriteWin-0.7,\n"
 "אשר נכתב ע\"י: John Newbigin.\n"
 "\n"
@@ -295,10 +295,10 @@ msgstr ""
 "\n"
 "אשף \"התקנה לכונן קשיח\" נעזר ב:\n"
 "\n"
-"GRUBINSTALL גרסה: 9b\n"
+"GRUBINSTALL גרסה: b9\n"
 "אשר נכתב ע\"י: Lode Leroy,\n"
 "\n"
-"וב- LOADLIN גרסה: 1.6c\n"
+"וב- LOADLIN גרסה: c1.6\n"
 "אשר נכתב ע\"י: Hans Lermen."
 
 #: Advanced.pas:48
@@ -512,7 +512,7 @@ msgid ""
 "Note: In some cases, a small directory will be created in\n"
 "drive C:, even if you choose another drive."
 msgstr ""
-"הערה: במקרים מסויימים, תיקייה קטנה תיווצר בכונן C:,\n"
+"הערה: במקרים מסויימים, תיקייה קטנה תיווצר בכונן :C,\n"
 "אפילו אם בחרת בכונן אחר."
 
 #: ParInstall2.pas:88
@@ -772,7 +772,7 @@ msgstr ""
 
 #  Programmer's name for it: SMismatchedArgumentCounts
 #  Programmer's name for it: SMismatchedArgumentCounts
-#. Programmer's name for it: SMismatchedArgumentCounts
+#  Programmer's name for it: SMismatchedArgumentCounts
 #: TntFormatStrUtils.pas:37
 msgid "Number of format specifiers do not match."
 msgstr ""
@@ -887,12 +887,12 @@ msgstr ""
 
 #  Seperating Line to words
 #  Seperating Line to words
-#. Seperating Line to words
+#  Seperating Line to words
 #: WelcomeForm.pas:234
 msgid ""
 "In order to enter the Advanced options, You must put your boot-floppy\n"
 "(The floppy you can make here) in drive A:"
 msgstr ""
 "על מנת להיכנס לאפשרויות מתקדמות,\n"
-"יש להכניס את תקליטון ההפעלה (שהכנת כאן) לכונן A:"
+"יש להכניס את תקליטון ההפעלה (שהכנת כאן) לכונן :A"
 

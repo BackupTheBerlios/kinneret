@@ -79,7 +79,7 @@ begin
   ButtonCancel.Caption:=pwideChar(_('Cancel'));
   ButtonStart.Caption:=pWideChar(_('Start Installation'));
   LabelChoose.Caption:=pwidechar(_('Choose a drive to install GNU/Linux Kinneret :'));
-  LabelNote.Caption:=pwideChar(_('Note: In some cases, a small directory will be created in'+#10#13+
+  LabelNote.Caption:=pwidechar(_('Note: In some cases, a small directory will be created in'+#10#13+
   'drive C:, even if you choose another drive.'));
   LabelBoot.Caption:=pwidechar(_('In order to start Kinneret, you can always boot with the'+#10#13+
   'Kinneret CD, or with a Boot-Floppy. After booting, Kinneret'+#10#13+

@@ -7,7 +7,7 @@ object WForm: TWForm
   BorderWidth = 30
   Caption = 'Welcome to GNU/Linux "Kinneret"'
   ClientHeight = 337
-  ClientWidth = 489
+  ClientWidth = 481
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -115,7 +115,7 @@ object WForm: TWForm
   PixelsPerInch = 96
   TextHeight = 13
   object label1: TTntLabel
-    Left = 112
+    Left = 104
     Top = 0
     Width = 369
     Height = 42
@@ -131,7 +131,7 @@ object WForm: TWForm
     ParentFont = False
   end
   object Label2: TTntLabel
-    Left = 192
+    Left = 184
     Top = 64
     Width = 289
     Height = 177
@@ -503,7 +503,7 @@ object WForm: TWForm
     Transparent = True
   end
   object WriteButton: TTntButton
-    Left = 352
+    Left = 344
     Top = 256
     Width = 137
     Height = 33
@@ -514,7 +514,7 @@ object WForm: TWForm
   object Button3: TTntButton
     Left = 8
     Top = 304
-    Width = 89
+    Width = 137
     Height = 33
     Caption = 'Exit'
     TabOrder = 1
@@ -530,7 +530,7 @@ object WForm: TWForm
     OnClick = Button1Click
   end
   object Button2: TTntButton
-    Left = 184
+    Left = 176
     Top = 304
     Width = 137
     Height = 33
@@ -560,7 +560,7 @@ object WForm: TWForm
     OnClick = RadioButton1Click
   end
   object ButtonAdvanced: TTntButton
-    Left = 184
+    Left = 176
     Top = 256
     Width = 137
     Height = 33
@@ -572,7 +572,7 @@ object WForm: TWForm
     OnClick = ButtonAdvancedClick
   end
   object TntButton1: TTntButton
-    Left = 352
+    Left = 344
     Top = 304
     Width = 137
     Height = 33

@@ -60,8 +60,8 @@ begin
   SetString(Result, WinDir, GetWindowsDirectory(WinDir, MAX_PATH));
   if Result = '' then
     raise Exception.Create(SysErrorMessage(GetLastError));
-  if (copy(result,1,2)<>':\') then result:='C:\'
-  else result:=copy(result,0,3);
+  if (copy(result,1,2)<>':\') then result:='C:'
+  else result:=copy(result,0,2);
 end;
 end.
 
