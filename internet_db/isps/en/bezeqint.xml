@@ -23,6 +23,11 @@
 	</proxy>
 
 	<broadband>
+		<gateway>
+			<cable>
+				<remotename>matav.bezeqint.net</remotename>
+			</cable>
+		</gateway>
 		<usrsuffix type="adsl">@IBezint</usrsuffix>
 	</broadband>
 
