@@ -29,5 +29,7 @@ tour_kinneret.xml	High		Nizar Abed	pending review
 user_interface.xml	High		TBD
 why_linux.xml		---		---			(not used)
 apps_list.xml		Medium	TBD			(new) Not finalized
-man_games.xml		Medium	(new) 		Not finalized
+man_games.xml		Medium	TBD 		
 release_notes.xml	TBD		(new) 		Low priority
+man_firebird        TBD       (new)          Not finalized
+man_ooo_advanced    TBD       (new)          Not finalized
