@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
-"POT-Creation-Date: 2003-07-30 14:36+0300\n"
-"PO-Revision-Date: 2003-07-30 14:39+0300\n"
+"POT-Creation-Date: 2003-08-13 14:51+0300\n"
+"PO-Revision-Date: 2003-08-13 14:52+0300\n"
 "Last-Translator: Itay 'z9u2K' Duvdevani <z9u2K@bezeqint.net>\n"
 "Language-Team: Hebrew <livrix@il.org>\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +27,7 @@ msgstr "מבצע..."
 msgid "Connect"
 msgstr "התחבר"
 
-#: idialer.ui.h:83
+#: idialer.ui.h:84
 msgid ""
 "\n"
 "Initializing..."
@@ -35,13 +35,13 @@ msgstr ""
 "\n"
 "מגדיר הגדרות מערכת..."
 
-#: idialer.ui.h:89
+#: idialer.ui.h:88
 msgid "Cannot initialize connection!"
 msgstr "שגיאה בעת אתחול מערכת!"
 
-#: idialer.ui.h:91 idialer.ui.h:106 idialer.ui.h:121 idialer.ui.h:136
-#: idialer.ui.h:162 idialer.ui.h:183 idialer.ui.h:204 idialer.ui.h:225
-#: idialer.ui.h:244 idialer.ui.h:265 idialer.ui.h:277
+#: idialer.ui.h:90 idialer.ui.h:101 idialer.ui.h:111 idialer.ui.h:124
+#: idialer.ui.h:150 idialer.ui.h:171 idialer.ui.h:192 idialer.ui.h:213
+#: idialer.ui.h:232 idialer.ui.h:253 idialer.ui.h:265
 msgid ""
 "\n"
 "Failed."
@@ -49,7 +49,7 @@ msgstr ""
 "\n"
 "נכשל."
 
-#: idialer.ui.h:98
+#: idialer.ui.h:95
 msgid ""
 "\n"
 "Booting..."
@@ -57,11 +57,11 @@ msgstr ""
 "\n"
 "מאתחל..."
 
-#: idialer.ui.h:104
+#: idialer.ui.h:99
 msgid "Cannot boot connection!"
 msgstr "שגיאה בעת אתחול חיבור!"
 
-#: idialer.ui.h:113
+#: idialer.ui.h:105
 msgid ""
 "\n"
 "Connecting..."
@@ -69,11 +69,11 @@ msgstr ""
 "\n"
 "מתחבר..."
 
-#: idialer.ui.h:119
+#: idialer.ui.h:109
 msgid "Cannot connect!"
 msgstr "שגיאה בעת התחברות!"
 
-#: idialer.ui.h:128
+#: idialer.ui.h:118
 msgid ""
 "\n"
 "Disconnecting..."
@@ -81,51 +81,51 @@ msgstr ""
 "\n"
 "מתנתק..."
 
-#: idialer.ui.h:134
+#: idialer.ui.h:122
 msgid "Cannot disconnect!"
 msgstr "שגיאה בעת התנתקות!"
 
-#: idialer.ui.h:142
+#: idialer.ui.h:130
 msgid "Advanced"
 msgstr "מתקדם"
 
-#: idialer.ui.h:146 idialer.ui.h:301
+#: idialer.ui.h:134 idialer.ui.h:289
 msgid "List ISPs"
 msgstr "הצג רשימת ספקים"
 
-#: idialer.ui.h:160 idialer.ui.h:367
+#: idialer.ui.h:148 idialer.ui.h:355
 msgid "Cannot get ISPs list!"
 msgstr "שגיאה בקבלת רשימת ספקים"
 
-#: idialer.ui.h:167 idialer.ui.h:310
+#: idialer.ui.h:155 idialer.ui.h:298
 msgid "List Hardwares"
 msgstr "הצג רשימת מודמים"
 
-#: idialer.ui.h:181
+#: idialer.ui.h:169
 msgid "Cannot get hardwares list!"
 msgstr "שגיאה בעת קבלת רשימת חומרה"
 
-#: idialer.ui.h:188 idialer.ui.h:324 idialer.ui.h:426
+#: idialer.ui.h:176 idialer.ui.h:312 idialer.ui.h:412
 msgid "Get Info on Hardware"
 msgstr "הצג מידע אודות חומרה"
 
-#: idialer.ui.h:202 idialer.ui.h:223
+#: idialer.ui.h:190 idialer.ui.h:211
 msgid "Cannot get hardware info!"
 msgstr "שגיאה בעת קבלת מידע אודות חומרה"
 
-#: idialer.ui.h:209 idialer.ui.h:348 idialer.ui.h:442
+#: idialer.ui.h:197 idialer.ui.h:336 idialer.ui.h:428
 msgid "Get Info on ISP"
 msgstr "הצג מידע אודות ספק"
 
-#: idialer.ui.h:230 idialer.ui.h:372
+#: idialer.ui.h:218 idialer.ui.h:360
 msgid "Delete Current Connection"
 msgstr "מחק חיבור נוכחי"
 
-#: idialer.ui.h:232
+#: idialer.ui.h:220
 msgid "Are you sure you want to delete current connection?"
 msgstr "האם אתם בטוחים כי ברצונכם למחוק את החיבור הנוכחי?"
 
-#: idialer.ui.h:235 idialer.ui.h:256
+#: idialer.ui.h:223 idialer.ui.h:244
 msgid ""
 "\n"
 "Canceled by user."
@@ -133,27 +133,27 @@ msgstr ""
 "\n"
 "בוטל ע\"י המשתמש."
 
-#: idialer.ui.h:242
+#: idialer.ui.h:230
 msgid "Cannot delete connection!"
 msgstr "שגיאה בעת מחיקת חיבור!"
 
-#: idialer.ui.h:251 idialer.ui.h:381
+#: idialer.ui.h:239 idialer.ui.h:369
 msgid "Set Current Connection as Default"
 msgstr "קבע חיבור נוכחי כברירת מחדל"
 
-#: idialer.ui.h:253
+#: idialer.ui.h:241
 msgid "Are you sure you want to set current connection to default?"
 msgstr "האם אתם בטוחים כי ברצונכם לקבוע חיבור נוכחי כברירת מחדל?"
 
-#: idialer.ui.h:263 idialer.ui.h:275
+#: idialer.ui.h:251 idialer.ui.h:263
 msgid "Cannot set connection to default!"
 msgstr "שגיאה בעת קביעת חיבור כברירת מחדל!"
 
-#: idialer.ui.h:270 idialer.ui.h:390
+#: idialer.ui.h:258 idialer.ui.h:378
 msgid "Extract a Script from Current Connection"
 msgstr "שלוף סקריפט מתוך חיבור"
 
-#: idialer.ui.h:285
+#: idialer.ui.h:273
 msgid ""
 "\n"
 "Done."
@@ -161,13 +161,17 @@ msgstr ""
 "\n"
 "בוצע."
 
-#: idialer.ui.h:343
+#: idialer.ui.h:331
 msgid "Cannot get hardware list!"
 msgstr "שגיאה בעת קבלת רשימת חומרה!"
 
-#: main.cpp:26 main.cpp:39
+#: main.cpp:26 main.cpp:38
 msgid "Idial"
 msgstr "כלי החיוג לאינטרנט"
+
+#: main.cpp:53
+msgid "Must be root!"
+msgstr "אינך רץ כמשתמש על! עליך להיות משתמש העל (root)."
 
 #: _translatorinfo.cpp:1
 msgid ""

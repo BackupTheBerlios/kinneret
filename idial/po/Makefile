@@ -1,6 +1,5 @@
 # Makefile.in generated automatically by automake 1.5 from Makefile.am.
-# Generated automatically from Makefile.in by config.pl.
-# KDE tags expanded automatically by am_edit - $Revision: 1.2 $ 
+# KDE tags expanded automatically by am_edit - $Revision: 1.3 $ 
 
 # Copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001
 # Free Software Foundation, Inc.
@@ -23,7 +22,7 @@ SHELL = /bin/sh
 
 srcdir = .
 top_srcdir = ..
-VPATH = .
+
 prefix = /usr/kde/3.1
 exec_prefix = ${prefix}
 
@@ -44,10 +43,10 @@ pkglibdir = $(libdir)/idial
 pkgincludedir = $(includedir)/idial
 top_builddir = ..
 
-ACLOCAL = ${SHELL} /home/z9u2K/projects/kinneret/cvs/idial/admin/missing --run aclocal
-AUTOCONF = ${SHELL} /home/z9u2K/projects/kinneret/cvs/idial/admin/missing --run autoconf
-AUTOMAKE = ${SHELL} /home/z9u2K/projects/kinneret/cvs/idial/admin/missing --run automake
-AUTOHEADER = ${SHELL} /home/z9u2K/projects/kinneret/cvs/idial/admin/missing --run autoheader
+ACLOCAL = aclocal-1.4
+AUTOCONF = autoconf
+AUTOMAKE = automake-1.4
+AUTOHEADER = autoheader
 
 INSTALL = /bin/install -c -p
 INSTALL_PROGRAM = ${INSTALL} $(INSTALL_STRIP_FLAG)
@@ -67,11 +66,11 @@ host_alias = i386-linux
 host_triplet = i386-pc-linux-gnu
 target_alias = i386-linux
 target_triplet = i386-pc-linux-gnu
-AMTAR = ${SHELL} /home/z9u2K/projects/kinneret/cvs/idial/admin/missing --run tar
+AMTAR = @AMTAR@
 ARTSCCONFIG = /usr/kde/3.1/bin/artsc-config
 AS = @AS@
 AUTODIRS = 
-AWK = gawk
+AWK = @AWK@
 CC = gcc
 CONF_FILES =  $(top_srcdir)/./admin/configure.in.min $(top_srcdir)/configure.in.in
 CPP = cpp
@@ -80,7 +79,7 @@ CXXCPP = g++ -E
 DCOPIDL = /usr/kde/3.1/bin/dcopidl
 DCOPIDL2CPP = /usr/kde/3.1/bin/dcopidl2cpp
 DCOP_DEPENDENCIES = $(DCOPIDL)
-DEPDIR = .deps
+DEPDIR = @DEPDIR@
 DLLTOOL = @DLLTOOL@
 DOXYGEN = @DOXYGEN@
 DOXYGEN_PROJECT_NAME = @DOXYGEN_PROJECT_NAME@
@@ -97,7 +96,7 @@ GLLIB = @GLLIB@
 GMSGFMT = /usr/bin/msgfmt
 IDL = @IDL@
 IDL_DEPENDENCIES = @IDL_DEPENDENCIES@
-INSTALL_STRIP_PROGRAM = ${SHELL} $(install_sh) -c -s
+INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
 JAR = @JAR@
 JAVAC = @JAVAC@
 JAVAH = @JAVAH@
@@ -211,10 +210,10 @@ X_LDFLAGS = -L/usr/X11R6/lib
 X_PRE_LIBS = 
 all_includes = -I/usr/kde/3.1/include -I/usr/qt/3/include -I/usr/X11R6/include 
 all_libraries = -L/usr/X11R6/lib -L/usr/qt/3/lib -L/usr/kde/3.1/lib 
-am__include = include
-am__quote = 
+am__include = @am__include@
+am__quote = @am__quote@
 idldir = @idldir@
-install_sh = /home/z9u2K/projects/kinneret/cvs/idial/admin/install-sh
+install_sh = @install_sh@
 jni_includes = @jni_includes@
 kde_appsdir = ${prefix}/share/applnk
 kde_bindir = ${exec_prefix}/bin

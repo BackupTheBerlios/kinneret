@@ -35,9 +35,8 @@ static KCmdLineOptions options[] =
 
 int main(int argc, char *argv[])
 {
-
-  KAboutData aboutData( "idial", I18N_NOOP("Idial"),
-    VERSION, description, KAboutData::License_GPL,
+	KAboutData aboutData( "idial", I18N_NOOP("Idial"),
+	VERSION, description, KAboutData::License_GPL,
     "(c) 2003, Itay 'z9u2K' Duvdevani", 0, 0, "z9u2k@linux-kinneret.org");
   aboutData.addAuthor("Itay 'z9u2K' Duvdevani",0, "z9u2k@linux-kinneret.org");
   KCmdLineArgs::init( argc, argv, &aboutData );
@@ -46,7 +45,14 @@ int main(int argc, char *argv[])
   KApplication a;
   idialer *idial = new idialer();
   a.setMainWidget(idial);
-  idial->show();  
+  idial->show();
+
+  // R U root ?
+  if (system("[ \"`whoami`\" == \"root\" ]"))
+	{
+		KMessageBox::error(0, tr2i18n("Must be root!"));
+		return -1;
+	}
 
   return a.exec();
 }
