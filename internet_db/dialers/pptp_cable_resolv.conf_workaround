@@ -2,49 +2,30 @@
 
 # Based on a script from the CABLE-DHCP-PPTP-HOWTO
 
+
+error_exit()
+{
+     echo "ERROR:$1"
+     exit -1
+}
+
+
 # Save resolv.conf
 cp /etc/resolv.conf /etc/resolv.conf.sv
 if [ $? -ne 0 ]
 then
-	exit -1
+     error_exit "resolve.conf not found"
 fi
 
-# Get address from DHCP server
-if [ "`which dhcpcd >/dev/null`" ]
-then
-	dhcpcd
-	if [ $? -ne 0 ]
-	then
-		exit -1
-	fi
 
-	DHCPCLIENT="`which dhcpcd`"
-elif [ "`which dhcpd3 2>/dev/null`" ]
-then
-	dhcpd3
-	if [ $? -ne 0 ]
-	then
-		exit -1
-	fi
+W_DHCPCD="`which dhcpcd`"
+W_DHCLIENT="`which dhclient`"
+W_PUMP="`which pump`"
 
-	DHCPCLIENT="`which dhcpd3`"
-elif [ "`which dhclient 2>/dev/null`" ]
-then
-	dhclient
-	if [ $? -ne 0 ]
-	then
-		exit -1
-	fi
 
-	DHCPCLIENT="`which dhclient`"
-else
-	echo "Cannot find DHCP client!"
-	exit -1
-fi
-
-# See if we already have DHCP client running
-PS=`ps ax | grep ${DHCPCLIENT} | grep [*hw::eth*] | awk "{print \\$1}"`
-if [ " " != " $PS" ]
+# See if we already have DHCP client running 
+PS=`ps ax | egrep "pump|dhcpcd|dhclient" | grep [*hw::eth*] | awk "{print \\$1}"`
+if [ -n "$PS" ]
 then
 	# If so, kill it
 	echo "Killing DHCP client for [*hw::eth*] " $PS
@@ -53,9 +34,63 @@ else
 	echo "No DHCP client running for [*hw::eth*] (good)"
 fi
 
+
+# Start DHCP client
+if [ -n "$W_DHCPCD" ]
+then
+	$W_DHCPCD [*hw::eth*]
+     DH_RET=$?
+	DHCPCLIENT="$W_DHCPCD"
+     DHCPCLIENT_NAME="dhcpcd"
+elif [ -n "$W_DHCLIENT" ]
+then
+	$W_DHCLIENT [*hw::eth*]
+     DH_RET=$?
+	DHCPCLIENT="$W_DHCLIENT"
+     DHCPCLIENT_NAME="dhclient"
+elif [ -n "$W_PUMP" ]
+then
+	$W_PUMP -i [*hw::eth*]
+     DH_RET=$?
+	DHCPCLIENT="$W_PUMP"
+     DHCPCLIENT_NAME="pump"
+else
+     error_exit "no dhcp client found"
+fi
+
+if [ $DH_RET -ne 0 ]
+then
+     error_exit "failed executing $DHCPCLIENT"
+fi
+echo "DHCP client $DHCPCLIENT_NAME started succesfully."
+
+# detect PPTP executable name
+
+W_PPTP="`which pptp`"
+W_PPTP_LINUX="`which pptp-linux`"
+
+#$PPTP_EXEC="${W_PPTP}${W_PPTP_LINUX}"
+#
+#if [ -z "$W_PPTP_LINUX" ]
+#then
+#	error_exit "couldn't locate PPTP executable"
+#fi 
+
+if [ -n "$W_PPTP" ]
+then
+     PPTP_EXEC="$W_PPTP"
+elif [ -n "$W_PPTP_LINUX" ]
+then
+     PPTP_EXEC="$W_PPTP_LINUX"
+else
+     error_exit "could not locate PPTP executable"
+fi
+
+
 # See if we already have a pptp client running
-PS=`ps ax | grep pptp | awk "{print \\$1}"`
-if [ " " != " $PS" ] ; then
+PS="`ps ax | grep pptp | awk "{print \\$1}"`"
+if [ -n "$PS" ]
+then
 	# If so, kill it
 	echo "Killing PPtP client " $PS
 	kill -KILL $PS
@@ -63,82 +98,113 @@ else
 	echo "No PPtP client running (good)"
 fi
 
-# See if we got an address from DHCP server
-INET=`/sbin/ifconfig [*hw::eth*] | grep inet | grep addr | awk "{print \\$2}" | awk -F: "{print \\$2}"`
-echo "IP address from cable modem is " $INET
 
-# If we didn't, we must have a DHCP client running, try to kill it again and quit.
-if [ " " == " $INET" ]
-then
-	PS=`ps -ax | grep ${DHCPCLIENT} | grep [*hw::eth*] | awk "{print \\$1}"`
-	if [ " " != " $PS" ]
-	then
-		echo "Killing DHCP client for [*hw::eth*] " $PS
-		kill -KILL $PS
-
-		echo "Giving up."
-		exit 1
-	fi
-fi
+# getting INET IP
+#INET=`/sbin/ifconfig [*hw::eth*] | grep inet | grep addr | awk "{print \\$2}" | awk -F: "{print \\$2}"`
+#echo "IP address from cable modem is " $INET
+#if [ -n "$INET" ]
+#then
+#     error_exit "Can get IP."
+#fi
 
 # Gateway
-if [ "${DHCPCLIENT}" == "`which dhclient`" ]
+echo "Fetching gateway using $DHCPCLIENT_NAME..."
+case "$DHCPCLIENT_NAME" in
+     "dhcpcd" )
+          CABLEGW=`cat /etc/dhcpc/dhcpcd-[*hw::eth*].info | grep GATEWAY | cut -d"=" -f2`
+     ;;
+     "dhclient" )
+          CABLEGW=`grep routers /var/lib/dhcp/dhclient.leases | tail -n 1| cut -d ";" -f1 | cut -d ' ' -f5`
+     ;;
+     "pump" )
+          CABLEGW=`$W_PUMP -s | grep Gateway | cut -d':' -f2`
+     ;;
+     * )
+          error_exit "WTF?!?!?"
+     ;;
+esac
+
+if [ -z "$CABLEGW" ]
 then
-	CABLEGW=`grep routers /var/lib/dhcp/dhclient.leases | tail -n 1| cut -d ";" -f1 | cut -d ' ' -f5`
-elif [ "${DHCPCLIENT}" == "`which dhcpcd`" ]
-	CABLEGW=`cat /etc/dhcpc/dhcpcd-[*hw::eth*].info | grep GATEWAY | cut -d"=" -f2`
-elif [ "${DHCPCLIENT}" == "`which dhcpd3`" ]
-	CABLEGW=`grep routers /var/lib/dhcp/dhclient.leases | tail -n 1| cut -d ";" -f1 | cut -d ' ' -f5`
+	error_exit "failed fetcing Gateway"
 fi
+
+echo "Gateway is $CABLEGW";
 
 # Add route
 echo "Adding route via " $CABLEGW
 /sbin/route add -host [*isp::cable::gateway*] gw $CABLEGW dev [*hw::eth*]
 if [ $? -ne 0 ]
 then
-	exit -1
+	error_exit "failed adding route via $CABLEGW"
 fi
 
+
+
+#set remotename option
+REMOTE_NAME_OPT="remotename [*isp::cable::remotename*]"
+
+#if username contains @CActcom or @cactcom then set REMOTE_NAME_OPT to ""
+USER_SUFIX="[*auth::usr*]"
+USER_SUFIX=${USER_SUFIX//*@??ctcom}
+if [ -z "$USER_SUFIX" ]
+then
+	REMOTE_NAME_OPT=""
+fi
+
+echo "remotename option=$REMOTE_NAME_OPT"
+
 echo "Starting PPtP"
-pptp [*isp::cable::gateway*] user [*auth::usr*] debug remotename [*isp::cable::remotename*] mtu 1452 mru 1452 noauth defaultroute
+$PPTP_EXEC [*isp::cable::gateway*] user [*auth::usr*] debug $REMOTE_NAME_OPT mtu 1452 mru 1452 noauth defaultroute
 if [ $? -ne 0 ]
 then
-	exit -1
+     error_exit "PPTP execution failed"
 fi
 
 echo -n "Waiting 10 seconds for IP"
 counter=1
-while [ $counter -lt 10 ]
+IF_RES=1
+while [ "$counter" -lt "20" -a "$IF_RES" -ne "0" ]
 do
 	echo -n .
-	sleep 1
+	sleep 2
+     /sbin/ifconfig ppp0 2&> /dev/null
+     IF_RES=$?
 	counter=`expr $counter + 1`
 done
 
-echo
+echo "Connected ..."
 
 # New gateway
 NEWGW=$(/sbin/ifconfig [*dialer::iface*] | grep inet | cut -d":" -f3 | tail -1 | cut -d" " -f1)
+
+if [ -z "$NEWGW" ] 
+then
+	error_exit "Could not fetch new gateway"
+fi
+
+
+echo "New Gateway:$NEWGW"
 
 echo "Deleting old default route"
 /sbin/route del default dev [*hw::eth*]
 if [ $? -ne 0 ]
 then
-	exit -1
+	error_exit "could not delete old default route"
 fi
 
 echo "Setting default route to " $NEWGW
 /sbin/route add default gw $NEWGW
 if [ $? -ne 0 ]
 then
-	exit -1
+	error_exit "could not set new default route"
 fi
 
-echo "Fixing resolv.conf"
-cp /etc/resolv.conf.sv /etc/resolv.conf
-if [ $? -ne 0 ]
-then
-	exit -1
-fi
+#echo "Fixing resolv.conf"
+#cp /etc/resolv.conf.sv /etc/resolv.conf
+#if [ $? -ne 0 ]
+#then
+#	exit -1
+#fi
 
 # Surf the web...
