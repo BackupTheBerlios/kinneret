@@ -1,5 +1,8 @@
-From 0.3.1 to 0.5.1
+From 0.3.1 to 0.7.2
 -------------------------------
+17 Jan 2004:
+* Review of Hebrew translation (dovix)
+
 21 Aug 2003:
 * Added font control buttons in first page
 * Fixed swap size calculation

@@ -5,28 +5,29 @@
 # translation of he.po to Hebrew
 # Itay 'z9u2K' Duvdevani <z9u2K@bezeqint.net>, 2003.
 # The-Q <the-q@myrealbox.com>, 2003.
+# dovix <dovix2003@yahoo.com>, 2004.
 msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "POT-Creation-Date: 2003-08-22 16:29+0300\n"
-"PO-Revision-Date: 2003-12-13 16:46+0200\n"
-"Last-Translator: Itay 'z9u2K' Duvdevani <z9u2K@bezeqint.net>\n"
-"Language-Team: Hebrew <livrix@il.org>\n"
+"PO-Revision-Date: 2004-01-17 20:15+0200\n"
+"Last-Translator: dovix <dovix2003@yahoo.com>\n"
+"Language-Team: Hebrew <he@li.org>\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.2\n"
 
 #: configwizard.ui.h:37
 msgid "Cannot create KHTML object!"
-msgstr "שגיאה בעת יצירת אובייקט KHTML!"
+msgstr "נכשל ניסיון ליצור אובייקט KHTML!"
 
 #: configwizard.ui.h:102
 msgid "Cannot open /etc/fstab"
-msgstr "שגיאה בפתיחת etc/fstab/"
+msgstr "פתיחת הקובץ etc/fstab/ נכשלה"
 
 #: configwizard.ui.h:106
 msgid "Device"
-msgstr "מחיצה"
+msgstr "התקן"
 
 #: configwizard.ui.h:107
 msgid "Size"
@@ -38,11 +39,11 @@ msgstr "שטח פנוי (% בשימוש)"
 
 #: configwizard.ui.h:139 configwizard.ui.h:255 configwizard.ui.h:440
 msgid "Cannot get information about disk usage!"
-msgstr "שגיאה בעת קבלת מידע אודות ניצול שטח הכוננים הקשיחים!"
+msgstr "נכשל ניסיון לקרוא מידע אודות ניצול שטח הכוננים הקשיחים!"
 
 #: configwizard.ui.h:148
 msgid "Cannot get device status, skipping"
-msgstr "שגיאה בהשגת מצב ההתקן, מדלג"
+msgstr "נכשל ניסיון לקרוא את מצב ההתקן, מדלג"
 
 #: configwizard.ui.h:152 configwizard.ui.h:153
 msgid "N/A"
@@ -57,20 +58,20 @@ msgid ""
 "System does not have any type of Windows partitions on it.\n"
 "The wizard will now exit."
 msgstr ""
-"לא נמצאו מחיצות מסוג חלונות (VFAT) על המערכת,\n"
-"האשף כעת יצא."
+"לא נמצאו מחיצות חלונות נתמכות (VFAT) במערכת זו.\n"
+"פעולת האשף תסתיים כעת."
 
 #: configwizard.ui.h:264 configwizard.ui.h:449
 msgid "Cannot get device status"
-msgstr "שגיאה בהשגת מצב התקן, מדלג"
+msgstr "נכשל ניסיון לקרוא את מצב ההתקן"
 
 #: configwizard.ui.h:308
 msgid "Cannot get information about RAM!"
-msgstr "שגיאה בעת קבלת מידע אותו זיכרון המטמון (RAM)!"
+msgstr "נכשל ניסיון לקרוא מידע אודות הזיכרון הראשי (RAM)!"
 
 #: configwizard.ui.h:317
 msgid "Cannot get memory status"
-msgstr "שגיאה בהשגת מצב הזיכרון"
+msgstr "נכשל ניסיון לקרוא את מצב הזיכרון"
 
 #: configwizard.ui.h:341
 msgid ""
@@ -83,7 +84,7 @@ msgstr ""
 #: configwizard.ui.h:388 configwizard.ui.h:397 configwizard.ui.h:592
 #: configwizard.ui.h:601 configwizard.ui.h:635
 msgid "Cannot search for TTF fonts!"
-msgstr "שגיאה בעת חיפוש גופני TrueType!"
+msgstr "נכשל חיפוש גופני TrueType!"
 
 #: configwizard.ui.h:392 configwizard.ui.h:596
 msgid "Path"
@@ -93,17 +94,19 @@ msgstr "נתיב"
 msgid ""
 "You do not have enough free space on the selected partition,\n"
 "Please go back and select another."
-msgstr "לא נבחרה מחיצה, יש לחזור ולבחור אחת."
+msgstr ""
+"במחיצה שנבחרה אין מספיק מקום פנוי,\n"
+"יש לחזור אחורה ולבחור מחיצה אחרת."
 
 #: configwizard.ui.h:506
 msgid "Swap file too big, swap size reduced to %1"
-msgstr "קובץ ההחלפה גדול מדי למחיצה שנבחרה, משנה את גודלו ל- %1 מ\"ב."
+msgstr "קובץ ההחלפה גדול מדי, גודל הקובץ ישונה ל- %1 מ\"ב."
 
 #: configwizard.ui.h:514
 msgid ""
 "You have not selected a partition,\n"
 "please go back and select one."
-msgstr "לא נבחרה מחיצה, יש לחזור ולבחור אחת."
+msgstr "לא נבחרה מחיצה, יש לחזור ולבחור מחיצה אחת לפחות."
 
 #: configwizard.ui.h:537
 msgid "Name"
@@ -115,21 +118,21 @@ msgid ""
 "In this case, the wizard set it to the root of your selected partition.\n"
 "To change that, click the 'Back' button."
 msgstr ""
-"לא נבחרה תיקיית בית.\n"
-"במקרה זה תיקיית הבית נקבעה לשורש המחיצה אותה בחרת,\n"
+"לא נבחרה ספריית בית.\n"
+"במקרה זה ספריית הבית נקבעה לשורש המחיצה אותה בחרת,\n"
 "על-מנת לשנות בחירה זו יש ללחוץ על \"חזור\"."
 
 #: configwizard.ui.h:663
 msgid "Cannot create directory!"
-msgstr "שגיאה בעת יצירת סיפריה!"
+msgstr "נכשל ניסון ליצור את הסיפריה!"
 
 #: configwizard.ui.h:687
 msgid "Choose a directory the containes *.ttf files"
-msgstr "יש לבחור תיקיה בה נמצאים גופני TrueType בעלי סיומת ttf."
+msgstr "יש לבחור ספריה בה נמצאים גופני TrueType בעלי סיומת ttf."
 
 #: configwizard.ui.h:701
 msgid "Are you sure you want to remove the directory\n"
-msgstr "האם אתם בטוחים כי ברצונכם למחוק את המחיצה\n"
+msgstr "האם ברצונך למחוק את הספריה\n"
 
 #: configwizard.ui.h:702
 msgid ""
@@ -141,7 +144,7 @@ msgstr ""
 
 #: configwizard.ui.h:704
 msgid "Are you sure?"
-msgstr "האם אתם בטוחים?"
+msgstr "האם הפעולה מאושרת?"
 
 #: configwizard.ui.h:761 configwizard.ui.h:784 configwizard.ui.h:838
 #: main.cpp:64
@@ -162,7 +165,7 @@ msgstr "קובץ החלפה"
 
 #: main.cpp:72 configwizard.cpp:1320
 msgid "Home Directory"
-msgstr "תיקיית הבית"
+msgstr "ספריית הבית"
 
 #: main.cpp:73 configwizard.cpp:1325
 msgid "TrueType Fonts Import"
@@ -178,11 +181,11 @@ msgstr "אשף הגדרת <i>גנו/לינוקס-כנרת</i>"
 
 #: main.cpp:153
 msgid "You have canceled the wizard, Kinneret will now shutdown."
-msgstr "האשף בוטל ע\"י המשתמש, \"כנרת\" כעת תסגור עצמה."
+msgstr "פעולת האשף בוטלה ע\"י המשתמש, \"כנרת\" כעת תסגור עצמה."
 
 #: pleasewait.ui.h:36
 msgid "Creating directory... [1/13]"
-msgstr "יוצר תיקייה... [1/13]"
+msgstr "יוצר ספרייה... [1/13]"
 
 #: pleasewait.ui.h:39
 msgid "Allocating swap file... [2/13]"
@@ -198,7 +201,7 @@ msgstr "מפעיל קובץ החלפה... [4/13]"
 
 #: pleasewait.ui.h:48
 msgid "Allocating home file... [5/13]"
-msgstr "מקצה מקום לתיקיית הבית... [5/13]"
+msgstr "מקצה מקום לספריית הבית... [5/13]"
 
 #: pleasewait.ui.h:51
 msgid "Searching for a free device... [6/13]"
@@ -206,7 +209,7 @@ msgstr "מחפש אחר התקן זמין... [6/13]"
 
 #: pleasewait.ui.h:54
 msgid "Creating home file system... [7/13]"
-msgstr "יוצר מערכת קבצים בקובץ תיקיית הבית... [7/13]"
+msgstr "יוצר מערכת קבצים עבור ספריית הבית... [7/13]"
 
 #: pleasewait.ui.h:57
 msgid "Tunning home gile system... [8/13]"
@@ -290,7 +293,7 @@ msgstr ""
 "><I>אוטומטית</I> - בוחרת את המחיצה עם המקום הפנוי הרב ביותר, קובעת את ספריית "
 "המסמכים לשורשה, מייבאת גופני TrueType ממחיצת חלונות קיימת ויוצרת קובץ החלפה "
 "כך שישארו לפחות 300 מ\"ב פנויים על המחיצה ובכל מקרה לא יותר גדול מ- 256 מ"
-"\"ב. ממולץ ביותר לבחור באפשרות זו. <BR/> <BR/><I>ללא</I> - לא מתבצעות הגדרות "
+"\"ב. מומלץ ביותר לבחור באפשרות זו. <BR/> <BR/><I>ללא</I> - לא מתבצעות הגדרות "
 "כלל, לא תיווצר תיקיית בית, קובץ החלפה או אינדקס גופנים. אפשרות זו לא מאפשרת "
 "שמירה של מסמכים והגדרות ואינה ממולצת כיוון שהיא תגרום לביצועים עלובים מצד "
 "המערכת על מערכות שאינן חזקות יחסית. <BR/> <BR/><I>מתקדם</I> - מאפשר קביעה "
@@ -324,21 +327,21 @@ msgstr "חזרה"
 msgid "Configuring..."
 msgstr ""
 "איתחול קבצים והגדרות הנדרשים להפעלת המערכת \n"
-"אנא המתינו, מגדיר הגדרות מערכת - יש להמתין דקות אחדות (תלוי במהירות המחשב "
-"שלך) לאיתחול קבצים והגדרות הנדרשים להפעלת המערכת. העכבר עלול להגיב באיטיות "
+"יש להמתין בעת הגדרת תצורת המערכת - פעולה זו תימשך דקות אחדות (תלוי במהירות המחשב "
+"שלך) במהלכה יאותחלו קבצים ויבוצעו הגדרות הנדרשות להפעלת המערכת. העכבר עלול להגיב באיטיות "
 "בשלב זה"
 
 #: pleasewait.cpp:111
 msgid "Please wait, configuring..."
-msgstr "אנא המתינו, מגדיר הגדרות מערכת... (פעולה זו עלולה להימשך זמן מה)."
+msgstr "יש להמתין בעת הגדרת תצורת המערכת... (פעולה זו עלולה להימשך זמן מה)."
 
 #: pleasewait.cpp:112
 msgid "Creating Directory... [1/13]"
-msgstr "יוצר תיקייה... [1/13]"
+msgstr "יוצר ספרייה... [1/13]"
 
 #: configwizard.cpp:1285
 msgid "Welcome to Kinneret!"
-msgstr "ברוכים הבאים ל<i>גנו/לינוקס כנרת</i>!"
+msgstr "ברוך בואך ל<i>גנו/לינוקס כנרת</i>!"
 
 #: configwizard.cpp:1286
 msgid ""
@@ -398,22 +401,22 @@ msgstr "עברית"
 
 #: configwizard.cpp:1289
 msgid "Russian"
-msgstr "רוסית"
+msgstr "русский"
 
 #: configwizard.cpp:1290
 msgid "Arabic"
-msgstr "ערבית"
+msgstr "ﺍﻟﻌﺮﺑﻴﺔ"
 
 #: configwizard.cpp:1291
 msgid "English"
-msgstr "אנגלית"
+msgstr "English"
 
 #: configwizard.cpp:1293
 msgid ""
 "For those of you the default font size is too small/large, we've supplied "
 "two buttons for increasing and decreasing the interface's font size."
 msgstr ""
-"לאילו מכם שגופן ברירת המחדל גדול\\קטן מדי, הוספנו את האפשרות להגדיל ולהקטין "
+"לאלו מכם שגופן ברירת המחדל גדול\\קטן מדי, הוספנו את האפשרות להגדיל ולהקטין "
 "את גודל גופן הממשק."
 
 #: configwizard.cpp:1294
@@ -434,7 +437,7 @@ msgstr "נעים להכירך"
 
 #: configwizard.cpp:1298
 msgid "Back to Kinneret's License"
-msgstr "בחזרה לרשיון \"כנרת\""
+msgstr "בחזרה לרשיון \"גנו/לינוקס כנרת\""
 
 #: configwizard.cpp:1299
 msgid "I agree to the terms above"
@@ -467,23 +470,23 @@ msgstr ""
 
 #: configwizard.cpp:1302
 msgid "Configuration Types"
-msgstr "סוגי הגדרות"
+msgstr "אפשרויות הפעלה"
 
 #: configwizard.cpp:1303
 msgid "Automatic (Recommended)"
-msgstr "אוטומטית (ממולץ, ההגדרות ייקבעו על-פי נתוני המערכת)"
+msgstr "אוטומטית (מומלצת, ההגדרות ייקבעו על-פי נתוני המערכת)"
 
 #: configwizard.cpp:1304
 msgid "No Configuration (Not Recommended)"
-msgstr "ללא הגדרות (לא מומלץ, גם אם ברצונך רק להתנסות עם המערכת)"
+msgstr "ללא הגדרות (לא מומלצת, גם אם ברצונך רק להתנסות עם המערכת)"
 
 #: configwizard.cpp:1305
 msgid "Expert Mode (Only for Linux know-hows)"
-msgstr "מומחה (רק לבעלי היכרות בלינוקס או בעלי ידע במחשבים)"
+msgstr "מומחה (רק לבעלי היכרות  עם לינוקס או בעלי ידע במחשבים)"
 
 #: configwizard.cpp:1306
 msgid "Configuration Type"
-msgstr "סוג הגדרות"
+msgstr "אפשרות הפעלה"
 
 #: configwizard.cpp:1307 configwizard.cpp:1311 configwizard.cpp:1316
 #: configwizard.cpp:1321 configwizard.cpp:1326
@@ -542,7 +545,7 @@ msgstr ""
 
 #: configwizard.cpp:1313
 msgid "Please enter the desired swap size:"
-msgstr "יש להכניס את גודל קובץ ההחלפה המבוקש:"
+msgstr "יש לקבוע את גודל קובץ ההחלפה המבוקש:"
 
 #: configwizard.cpp:1314
 msgid "MB"
@@ -559,7 +562,7 @@ msgstr ""
 "ספריה בשם kinneret תיווצר בשורש של המחיצה הנבחרת. ספרייה זו תשמש לאיחסון "
 "קבצי הגדרות וקבצי מערכת אחרים. אין לבצע שינויים בתוכן ספריה זו על-מנת להבטיח "
 "פעולה תקינה של המערכת.<br/>&nbsp;<br/>בנוסף לספריה זו יש באפשרותך לבחור/"
-"ליצור את ספריית ברירת המחדל לשמירת מסמכים (&quot;תיקיית הבית&quot;)<br/>"
+"ליצור את ספריית ברירת המחדל לשמירת מסמכים (&quot;ספריית הבית&quot;)<br/>"
 
 #: configwizard.cpp:1318
 msgid "Create"
@@ -578,10 +581,10 @@ msgid ""
 "directory (if it was found). You can add and remove font directories as you "
 "wish."
 msgstr ""
-"כנרת מסוגלת לייבא גופנים ממחיצת חלונות קיימת. כנרת אף מסוגלת לייבא גופנים "
-"שאינם מותקנים תחת חלונות, כל עוד הם זמינים לה ונמצאים בפורמט TrueType, כלומר "
-"בעלי סיומת ttf.<br/>כנרת סרקה את המערכת וכללה את תיקיית הגופנים הסטנדרטית של "
-"חלונות (אם נמצאה). באפשרותך להוסיף ולהסיר תיקיות כרצונך.<br/>"
+"גנו/לינוקס כנרת מסוגלת לייבא גופנים ממחיצת חלונות קיימת. גנו/לינוקס כנרת אף מסוגלת לייבא "
+"גופנים שאינם מותקנים תחת חלונות, כל עוד הם זמינים לה ונמצאים בפורמט TrueType, כלומר "
+"בעלי סיומת ttf.<br/>גנו/לינוקס כנרת סרקה את המערכת וכללה את ספריית הגופנים הסטנדרטית "
+"של חלונות (אם נמצאה). באפשרותך להוסיף ולהסיר ספריות כרצונך.<br/>"
 
 #: configwizard.cpp:1327
 msgid ""
@@ -594,10 +597,10 @@ msgid ""
 "Therefore, you shouldn't write data to any other place, they won't be saved "
 "after a reboot."
 msgstr ""
-"הוגדרה עבורך תיקיית בית ב<i>גנו/לינוקס כנרת </i>שתשמש כברירת המחדל לשמירת "
+"הוגדרה עבורך ספריית בית ב<i>גנו/לינוקס כנרת </i>שתשמש כברירת המחדל לשמירת "
 "קבציך האישיים. סמל &quot;בית&quot; בשורת המשימות יאפשר לך להגיע בקלות לספריה "
 "זו. יש באפשרותך לגשת לכל הקבצים שיישמרו בספריה זו גם תחת &quot;חלונות&quot;. "
-"<br/>&nbsp;<br/>מסיבות אבטחה, תיקיית הבית והמחיצה בה היא נמצאת, הם המקומות "
+"<br/>&nbsp;<br/>מסיבות אבטחה, ספריית הבית והמחיצה בה היא נמצאת, הם המקומות "
 "היחידים אליהם יש לך הרשאת כתיבה, לכן, לא כדאי לנסות לשמור קבצים במקומות "
 "אחרים - הם לא יישמרו לאחר איתחול מחדש.<br/>"
 
@@ -617,8 +620,8 @@ msgstr ""
 "איך להשתמש ביישומים הכלולים בה? מה זה <i>גנו/לינוקס</i>?<br/>&nbsp;<br/>לשם "
 "כך, הכנו בעבורך מדריך מיוחד שיאפשר לך להתמצא בקלות ולהפיק את המיטב מהמערכת "
 "החדשה שלך. <br/>למדריך קראנו &quot;מדריך השחייה&quot; והוא מכיל אוסף מאמרים "
-"בנושאים מגוונים. המדריך ייפתח עם סיום אשף זה. ניתן להגיע למדריך זה גם ע&quot;"
-"י הקשה על הסמל &quot;לומדים לשחות בכנרת&quot; משולחן העבודה שלך.<br/>&nbsp;"
+"בנושאים מגוונים. ניתן להגיע למדריך זה ע&quot;י הקשה על הסמל &quot;מדריך השחייה&quot; "
+"על שולחן העבודה שלך.<br/>&nbsp;"
 "<br/>צוות הפרוייקט מברך אותך על הפעלת תקליטור זה ומאחל לך הנאה ועבודה פוריה!"
 "<br/>"
 
@@ -634,15 +637,17 @@ msgstr "תצוגת ספרייה"
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
-msgstr ": Name of the Translator: Dovix & Itay 'z9u2K' Duvdevani"
+msgstr ""
+"Itay 'z9u2K' Duvdevani\n "
+"Dovix"
 
 #: _translatorinfo.cpp:3
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
 msgstr ""
-"_: Email of the Translator: dovix@linux-kinneret.org, z9u2k@linux-kinneret."
-"org"
+"z9u2k@linux-kinneret.org\n "
+"dovix@linux-kinneret.org"
 
 #~ msgid "home_dir_warning"
 #~ msgstr ""
