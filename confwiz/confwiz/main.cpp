@@ -99,8 +99,8 @@ int main(int argc, char *argv[])
 	// Before doing anything, see if the wizard should run...
 	// The startup script will create the file /etc/foundhome
 	// and will put 0 in it if it couldn't find the home directory.
-	#warning ADD NOT!!
-	if (/*!*/QFile::exists(QString("/tmp/foundhome")))
+//	#warning ADD NOT!!
+	if (!QFile::exists(QString("/tmp/foundhome")))
 	{
 		system("sudo /opt/kinneret/bin/ttf.sh");	// load fonts
 		return 0;
