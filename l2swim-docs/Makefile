@@ -11,10 +11,14 @@ html:
 	(for i in $(docdirs); do \
 		mkdir ./doc/$$i -p; \
 	done; )
-
+# make only newer xml's.
 	(for i in $(srcxml); do \
-		xsltproc -o ./doc/$$i.html \
-		$(stylesheet) ./src/$$i.xml; \
+	if [[ src/$$i.xml -nt doc/$$i.html ]]; then \
+		if xsltproc -o ./doc/$$i.html \
+		$(stylesheet) ./src/$$i.xml; then \
+			echo "$$i.xml parsed. success."; \
+		fi; \
+	fi; \
 	done; )
 
 install:
