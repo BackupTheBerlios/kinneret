@@ -5,19 +5,18 @@
 # fix#1 correct parsing of pump output to get cable gateway - dovix 15/1/04
 # fix#2 restore resolv.conf at end since starting DHCP client overrides it - dovix 16/1/04
 # fix#3 correction to waiting for IP step - dovix 16/1/04
+# fix#4 added check for dhcpcd's dynamic file - z9u2k 27/5/2004
 
-error_exit()
-{
-     echo "ERROR:$1"
-     exit -1
+error_exit() {
+    echo "ERROR:$1"
+    exit -1
 }
 
 
 # Save resolv.conf
 cp /etc/resolv.conf /etc/resolv.conf.sv
-if [ $? -ne 0 ]
-then
-     error_exit "resolve.conf not found"
+if [ $? -ne 0 ]; then
+    error_exit "resolve.conf not found"
 fi
 
 
@@ -25,45 +24,39 @@ W_DHCPCD="`which dhcpcd`"
 W_DHCLIENT="`which dhclient`"
 W_PUMP="`which pump`"
 
-
 # See if we already have DHCP client running 
 PS=`ps ax | egrep "pump|dhcpcd|dhclient" | grep [*hw::eth*] | awk "{print \\$1}"`
-if [ -n "$PS" ]
-then
+if [ -n "$PS" ]; then
 	# If so, kill it
 	echo "Killing DHCP client for [*hw::eth*] " $PS
 	kill -KILL $PS
 else
-	echo "No DHCP client running for [*hw::eth*] (good)"
+    echo "No DHCP client running for [*hw::eth*] (good)"
 fi
 
 
 # Start DHCP client
-if [ -n "$W_DHCPCD" ]
-then
-	$W_DHCPCD [*hw::eth*]
-     DH_RET=$?
+if [ -n "$W_DHCPCD" ]; then
+    $W_DHCPCD [*hw::eth*]
+    DH_RET=$?
 	DHCPCLIENT="$W_DHCPCD"
-     DHCPCLIENT_NAME="dhcpcd"
-elif [ -n "$W_DHCLIENT" ]
-then
+    DHCPCLIENT_NAME="dhcpcd"
+elif [ -n "$W_DHCLIENT" ]; then
 	$W_DHCLIENT [*hw::eth*]
-     DH_RET=$?
+    DH_RET=$?
 	DHCPCLIENT="$W_DHCLIENT"
-     DHCPCLIENT_NAME="dhclient"
-elif [ -n "$W_PUMP" ]
-then
+    DHCPCLIENT_NAME="dhclient"
+elif [ -n "$W_PUMP" ]; then
 	$W_PUMP -i [*hw::eth*]
-     DH_RET=$?
+    DH_RET=$?
 	DHCPCLIENT="$W_PUMP"
-     DHCPCLIENT_NAME="pump"
+    DHCPCLIENT_NAME="pump"
 else
-     error_exit "no dhcp client found"
+    error_exit "no dhcp client found"
 fi
 
-if [ $DH_RET -ne 0 ]
-then
-     error_exit "failed executing $DHCPCLIENT"
+if [ $DH_RET -ne 0 ]; then
+    error_exit "failed executing $DHCPCLIENT"
 fi
 echo "DHCP client $DHCPCLIENT_NAME started succesfully."
 
@@ -72,65 +65,53 @@ echo "DHCP client $DHCPCLIENT_NAME started succesfully."
 W_PPTP="`which pptp`"
 W_PPTP_LINUX="`which pptp-linux`"
 
-#$PPTP_EXEC="${W_PPTP}${W_PPTP_LINUX}"
-#
-#if [ -z "$W_PPTP_LINUX" ]
-#then
-#	error_exit "couldn't locate PPTP executable"
-#fi 
-
-if [ -n "$W_PPTP" ]
-then
-     PPTP_EXEC="$W_PPTP"
-elif [ -n "$W_PPTP_LINUX" ]
-then
-     PPTP_EXEC="$W_PPTP_LINUX"
+if [ -n "$W_PPTP" ]; then
+    PPTP_EXEC="$W_PPTP"
+elif [ -n "$W_PPTP_LINUX" ]; then
+    PPTP_EXEC="$W_PPTP_LINUX"
 else
-     error_exit "could not locate PPTP executable"
+    error_exit "could not locate PPTP executable"
 fi
 
 
 # See if we already have a pptp client running
 PS="`ps ax | grep pptp | awk "{print \\$1}"`"
-if [ -n "$PS" ]
-then
-	# If so, kill it
-	echo "Killing PPtP client " $PS
-	kill -KILL $PS
+if [ -n "$PS" ]; then
+    # If so, kill it
+    echo "Killing PPtP client " $PS
+    kill -KILL $PS
 else
-	echo "No PPtP client running (good)"
+    echo "No PPtP client running (good)"
 fi
-
-
-# getting INET IP
-#INET=`/sbin/ifconfig [*hw::eth*] | grep inet | grep addr | awk "{print \\$2}" | awk -F: "{print \\$2}"`
-#echo "IP address from cable modem is " $INET
-#if [ -n "$INET" ]
-#then
-#     error_exit "Can get IP."
-#fi
 
 # Gateway
 echo "Fetching gateway using $DHCPCLIENT_NAME..."
 case "$DHCPCLIENT_NAME" in
-     "dhcpcd" )
-          CABLEGW=`cat /etc/dhcpc/dhcpcd-[*hw::eth*].info | grep GATEWAY | cut -d"=" -f2`
-     ;;
-     "dhclient" )
-          CABLEGW=`grep routers /var/lib/dhcp/dhclient.leases | tail -n 1| cut -d ";" -f1 | cut -d ' ' -f5`
-     ;;
-     "pump" )
-# fix#1 pump output has 'Gateway:' and 'Gateways:' so need specific search string    
-          CABLEGW=`$W_PUMP -s | grep Gateway: | cut -d':' -f2`
-     ;;
-     * )
-          error_exit "WTF?!?!?"
-     ;;
+    "dhcpcd" )
+        for path in "/etc/dhcpc" "/var/lib/dhcpc" "invalid"; do
+            if [ -f ${path}/dhcpcd-[*hw::eth*].info ]; then
+                CABLEGW=`cat ${path}/dhcpcd-[*hw::eth*].info | grep GATEWAY | cut -d"=" -f2`
+                break;
+            fi
+        done
+
+        if [ $path == "invalid" ]; then
+            error_exit "Could not find dhcpcd's info file.";
+        fi
+    ;;
+    "dhclient" )
+        CABLEGW=`grep routers /var/lib/dhcp/dhclient.leases | tail -n 1| cut -d ";" -f1 | cut -d ' ' -f5`
+    ;;
+    "pump" )
+        CABLEGW=`$W_PUMP -s | grep Gateway: | cut -d':' -f2`
+    ;;
+    * )
+        error_exit "BUG: Reached unreachable code, please report."
+    ;;
 esac
 
-if [ -z "$CABLEGW" ]
-then
-	error_exit "failed fetcing Gateway"
+if [ -z "$CABLEGW" ]; then
+    error_exit "failed fetcing Gateway"
 fi
 
 echo "Gateway is $CABLEGW";
@@ -138,9 +119,8 @@ echo "Gateway is $CABLEGW";
 # Add route
 echo "Adding route via " $CABLEGW
 /sbin/route add -host [*isp::cable::gateway*] gw $CABLEGW dev [*hw::eth*]
-if [ $? -ne 0 ]
-then
-	error_exit "failed adding route via $CABLEGW"
+if [ $? -ne 0 ]; then
+    error_exit "failed adding route via $CABLEGW"
 fi
 
 
@@ -151,18 +131,16 @@ REMOTE_NAME_OPT="remotename [*isp::cable::remotename*]"
 #if username contains @CActcom or @cactcom then set REMOTE_NAME_OPT to ""
 USER_SUFIX="[*auth::usr*]"
 USER_SUFIX=${USER_SUFIX//*@??ctcom}
-if [ -z "$USER_SUFIX" ]
-then
-	REMOTE_NAME_OPT=""
+if [ -z "$USER_SUFIX" ]; then
+    REMOTE_NAME_OPT=""
 fi
 
 echo "remotename option=$REMOTE_NAME_OPT"
 
 echo "Starting PPtP"
 $PPTP_EXEC [*isp::cable::gateway*] user [*auth::usr*] debug $REMOTE_NAME_OPT mtu 1452 mru 1452 noauth defaultroute
-if [ $? -ne 0 ]
-then
-     error_exit "PPTP execution failed"
+if [ $? -ne 0 ]; then
+    error_exit "PPTP execution failed"
 fi
 
 # fix#3 correct message to indicate correct wait time
@@ -170,14 +148,12 @@ echo -n "Waiting 20 seconds for IP"
 counter=1
 IF_RES=1
 # fix#3 change comparison from "less than" to "less than or equal"
-while [ "$counter" -le "20" -a "$IF_RES" -ne "0" ]
-do
-	echo -n .
-	sleep 2
-# fix#3 use netstat to identify ppp0 process as ifconfig shows it before IP assigned
-     netstat -n -r | grep ppp0 > /dev/null
-     IF_RES=$?
-	counter=`expr $counter + 1`
+while [ "$counter" -le "20" -a "$IF_RES" -ne "0" ]; do
+    echo -n .
+    sleep 2
+    netstat -n -r | grep ppp0 > /dev/null
+    IF_RES=$?
+    counter=`expr $counter + 1`
 done
 
 echo "Connected ..."
@@ -185,8 +161,7 @@ echo "Connected ..."
 # New gateway
 NEWGW=$(/sbin/ifconfig [*dialer::iface*] | grep inet | cut -d":" -f3 | tail -1 | cut -d" " -f1)
 
-if [ -z "$NEWGW" ] 
-then
+if [ -z "$NEWGW" ]; then
 	error_exit "Could not fetch new gateway"
 fi
 
@@ -195,23 +170,20 @@ echo "New Gateway:$NEWGW"
 
 echo "Deleting old default route"
 /sbin/route del default dev [*hw::eth*]
-if [ $? -ne 0 ]
-then
+if [ $? -ne 0 ]; then
 	error_exit "could not delete old default route"
 fi
 
 echo "Setting default route to " $NEWGW
 /sbin/route add default gw $NEWGW
-if [ $? -ne 0 ]
-then
+if [ $? -ne 0 ]; then
 	error_exit "could not set new default route"
 fi
 
 # fix#2 need to recover file since starting DHCP client overrides ISP values
 echo "Fixing resolv.conf"
 cp /etc/resolv.conf.sv /etc/resolv.conf
-if [ $? -ne 0 ]
-then
+if [ $? -ne 0 ]; then
 	exit -1
 fi
 
