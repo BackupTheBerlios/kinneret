@@ -1,5 +1,9 @@
+v0.2 to v0.3.1
+--------------
+* Added LAN support
+
 v0.1 to v0.2-rc1
-------------
+----------------
 * Bugfixes
 * Added support for proxy
 * Added support for server name (for huji, tau and technion)

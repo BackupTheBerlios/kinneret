@@ -160,6 +160,58 @@ int main(int argc, char *argv[])
 		
 			MakeFromDesc(desc, db, Conf, CmdLine);
 		}
+
+		if (CmdLine.clMethod.strOpt == "lan")
+		{
+			desc.conMethod = LANSlave;
+			
+			// Debian
+			if (CmdLine.clDebian.strOpt == "yes") desc.bDebianBased = true;
+			else if (CmdLine.clDebian.strOpt == "no") desc.bDebianBased = false;
+
+			if (CmdLine.bVerbose)
+			{
+				cout << "Will build scripts for ";
+				if (desc.bDebianBased == false) cout << "non-";
+
+				cout << "Debian based systems\n";
+			}
+
+			// ISP
+			desc.strISP = CmdLine.clISP.strOpt;
+			db.getISPPath(desc.strISP);		// will throw an exception of ISP is invalid
+
+			// Eth
+			desc.strEth = CmdLine.clDevice.strOpt;
+			if ((desc.strEth.length() != 4) ||(desc.strEth[0] != 'e') || (desc.strEth[1] != 't') ||
+					(desc.strEth[2] != 'h') || (!isdigit(desc.strEth[3])))
+						throw Error("--dev must be of the form: ethn!");
+
+			// LAN
+			if (CmdLine.clLANIP.strOpt == string("dhcp"))
+			{
+				desc.strLANIP = string("");
+				desc.bLANDHCP = true;
+			}
+
+			else
+			{
+				desc.strLANIP = CmdLine.clLANIP.strOpt;
+				desc.bLANDHCP = false;
+			}
+			
+			desc.strLANMask = 		CmdLine.clLANMask.strOpt;
+			desc.strLANBroadcast =	CmdLine.clLANBroadcast.strOpt;
+			desc.strLANGateway =	CmdLine.clLANGateway.strOpt;
+
+			// Connection name
+			if (FileExists(Conf.strDBPath + "connections/" + CmdLine.clName.strOpt + ".tar.gz"))
+				throw Error("Connection name must be unique");
+
+			desc.strConnectionName = CmdLine.clName.strOpt;
+
+			MakeFromDesc(desc, db, Conf, CmdLine);
+		}
 	}
 
 	catch (Error &error)

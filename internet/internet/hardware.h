@@ -140,6 +140,45 @@ public:
 	inline string getDriver() const { return strDriver; }
 };
 
+class LAN : public Hardware
+{
+public:
+private:
+protected:
+	bool						bDHCP;
+	string						strEth;		// "eth0", "eth1" etc.
+	Ethernet::AddressMethod		ifaceIP;
+
+public:
+	LAN(const Database *const db) throw (Error) :
+		Hardware(db),
+		bDHCP(false),
+		strEth(""),
+		ifaceIP() {}
+	virtual ~LAN() {}
+
+	virtual void MakeInit(ostream &stream) const;
+	virtual void MakeBoot(ostream &stream) const;
+
+	virtual void Load(string strName) throw (Error) { if (0) { cout << strName; } }
+
+	inline string getEth() const { return strEth; }
+	inline void setEth(const string &e) { strEth = e; }
+
+	inline bool getDHCP() const { return bDHCP; }
+	inline void setDHCP(const bool &d) { bDHCP = d; }
+
+	inline string getIP()				const { return ifaceIP.strIP;			}
+	inline string getMask()				const { return ifaceIP.strMask;			}
+	inline string getBroadcast()		const { return ifaceIP.strBroadcast;	}
+	inline string getGateway()			const { return ifaceIP.strGateway;		}
+
+	inline void setIP(const string &s)			{ ifaceIP.strIP			= s; }
+	inline void setMask(const string &s)		{ ifaceIP.strMask		= s; }
+	inline void setBroadcast(const string &s)	{ ifaceIP.strBroadcast	= s; }
+	inline void setGateway(const string &s)		{ ifaceIP.strGateway	= s; }
+};
+
 #endif
 
 

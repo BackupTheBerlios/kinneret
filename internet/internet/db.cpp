@@ -333,5 +333,11 @@ string Database::getModemByName(string name, HardwareType ht) const throw (Error
 	throw Error("No such hardware");
 }
 
+string Database::strPath;
+string Database::getPath()
+{
+	return Database::strPath;
+}
+
 
 

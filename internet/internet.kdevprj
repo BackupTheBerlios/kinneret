@@ -26,7 +26,7 @@ ldadd=-lxml2
 ldflags=\s               \s
 
 [General]
-AMChanged=true
+AMChanged=false
 author=Itay 'z9u2K' Duvdevani
 configure_args=\s--build=i386-linux --host=i386-linux --target=i386-linux --enable-debug\s
 email=z9u2k@linux-kinneret.org
@@ -110,7 +110,7 @@ install_location=
 type=DATA
 
 [internet/Makefile.am]
-files=internet/main.cpp,internet/isp.h,internet/dialer.h,internet/authentication.h,internet/hardware.h,internet/db.h,internet/db.cpp,internet/isp.cpp,internet/ethernet.cpp,internet/xml.h,internet/xml.cpp,internet/usb.cpp,internet/dialer.cpp,internet/connection.h,internet/connection.cpp,internet/authentication.cpp,internet/parse.h,internet/parse.cpp,internet/wizard.h,internet/wizard.cpp,internet/help.h,internet/help.cpp,internet/hardware.cpp,internet/internet.conf,internet/mklib.sh,internet/internet.h,internet/error.cpp,internet/cmdline.cpp,internet/config.cpp,internet/internet.cpp,internet/info.cpp,internet/manage.cpp
+files=internet/main.cpp,internet/isp.h,internet/dialer.h,internet/authentication.h,internet/hardware.h,internet/db.h,internet/db.cpp,internet/isp.cpp,internet/ethernet.cpp,internet/xml.h,internet/xml.cpp,internet/usb.cpp,internet/dialer.cpp,internet/connection.h,internet/connection.cpp,internet/authentication.cpp,internet/parse.h,internet/parse.cpp,internet/wizard.h,internet/wizard.cpp,internet/help.h,internet/help.cpp,internet/hardware.cpp,internet/internet.conf,internet/mklib.sh,internet/internet.h,internet/error.cpp,internet/cmdline.cpp,internet/config.cpp,internet/internet.cpp,internet/info.cpp,internet/manage.cpp,internet/lan.cpp
 sub_dirs=docs
 type=prog_main
 
@@ -254,6 +254,12 @@ dist=true
 install=false
 install_location=
 type=HEADER
+
+[internet/lan.cpp]
+dist=true
+install=false
+install_location=
+type=SOURCE
 
 [internet/main.cpp]
 dist=true

@@ -114,7 +114,7 @@ wizard.o: wizard.cpp \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/istream.tcc \
   /usr/include/unistd.h /usr/include/bits/posix_opt.h \
   /usr/include/bits/environments.h /usr/include/bits/confname.h \
-  /usr/include/getopt.h db.h internet.h \
+  /usr/include/getopt.h internet.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/fstream \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/basic_file.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/fstream.tcc \
@@ -122,7 +122,7 @@ wizard.o: wizard.cpp \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_tree.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_map.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_multimap.h \
-  isp.h xml.h /usr/include/libxml2/libxml/parser.h \
+  db.h isp.h xml.h /usr/include/libxml2/libxml/parser.h \
   /usr/include/libxml2/libxml/tree.h \
   /usr/include/libxml2/libxml/xmlversion.h \
   /usr/include/libxml2/libxml/xmlregexp.h \
@@ -281,7 +281,6 @@ wizard.cpp :
 /usr/include/bits/environments.h :
 /usr/include/bits/confname.h :
 /usr/include/getopt.h :
-db.h :
 internet.h :
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/fstream :
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/basic_file.h :
@@ -290,6 +289,7 @@ internet.h :
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_tree.h :
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_map.h :
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_multimap.h :
+db.h :
 isp.h :
 xml.h :
 /usr/include/libxml2/libxml/parser.h :

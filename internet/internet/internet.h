@@ -115,7 +115,7 @@ public:
 	bool	bIs;		// is given in command line
 	string	strOpt;		// option attached
 
-	CLPair() : bIs(false), strOpt("") {}
+	CLPair(string s = "") : bIs(false), strOpt(s) {}
 	virtual ~CLPair() {}
 };
 
@@ -155,6 +155,11 @@ public:
 	CLPair		clServer;
 	CLPair		clPasswd;
 	CLPair		clName;
+
+	CLPair		clLANIP;
+	CLPair		clLANMask;
+	CLPair		clLANBroadcast;
+	CLPair		clLANGateway;
 
 	// Info mode
 	bool		bListISPs;
@@ -209,7 +214,8 @@ enum HardwareType		// Sub-directories
 enum ConnectionMethod
 {
 	ADSL,
-	Cable
+	Cable,
+	LANSlave
 };
 
 enum SingleInterface
@@ -235,6 +241,13 @@ public:
 	string				strPasswd;
 	string				strServer;		// for special cases, like huji
 	string				strConnectionName;
+
+	// LAN stuff
+	string				strLANIP;
+	string				strLANMask;
+	string				strLANBroadcast;
+	string				strLANGateway;
+	bool				bLANDHCP;
 
 	Description() {}
 	~Description() {}

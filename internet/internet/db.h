@@ -22,11 +22,12 @@
 class Database
 {
 private:
-	string		strPath;
-	Language	nLang;
+	Language		nLang;
 	
 protected:
 public:
+	static string	strPath;
+
 	Database(string path, Language lang = English)
 	{
 		strPath = path;
@@ -47,7 +48,7 @@ public:
 	string ResolveDialer(ISP *isp, Hardware *hw, HardwareType ht) const throw (Error);
 
 	inline Language getLang() const { return nLang;   }
-	inline string getPath()   const { return strPath; }
+	static string getPath();
 
 	inline void setLang(const Language &lang)	{ nLang = lang;		}
 	inline void setPath(const string &path)		{ strPath = path;	}

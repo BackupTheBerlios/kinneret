@@ -136,6 +136,9 @@ void InfoHW(const Database &db, string strHW) throw (Error)
 		case Cable:
 			cout << "Cable";
 			break;
+
+		default:
+			break;
 		}
 
 		cout << endl;

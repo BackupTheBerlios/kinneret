@@ -85,134 +85,272 @@ int DoWizard(const ConfigFile &conf, const CommandLine &cmdline) throw (Error)
 		vec.clear();
 		vec.push_back("ADSL");
 		vec.push_back("Cables");
+		vec.push_back("LAN");
 		j = SelectFromList(vec);
-		desc.conMethod = (j == 1) ? ADSL : Cable;
 
-		cout << endl;
-
-		// Modem
-		cout << "Please select your modem from the list:\n";
-		vec = db.ListHWs(Broadband);
-		j = SelectFromList(vec);
-		desc.strModem = vec[j - 1];
-		db.getModemByName(desc.strModem, Broadband);	// again, for the exception
-
-		cout << endl;
-
-		// Dual?
-		string strModemFile = db.getModemByName(desc.strModem, Broadband);
-		Hardware::MinorType minor = getHardwareType(strModemFile, Broadband, &db);
-		if (minor == Hardware::Unknown) throw Error("Invalid modem");
-		switch (minor)
+		switch (j)
 		{
-		case Hardware::BBDual:
-			cout << "Your modem is connected to the computer through...\n";
-			vec.clear();
-			vec.push_back("Ethernet");
-			vec.push_back("USB");
+		case 1:
+			desc.conMethod = ADSL;
+			break;
+
+		case 2:
+			desc.conMethod = Cable;
+			break;
+
+		case 3:
+			desc.conMethod = LANSlave;
+			break;
+		}
+
+		cout << endl;
+
+		if (desc.conMethod == ADSL || desc.conMethod == Cable)
+		{
+			// Modem
+			cout << "Please select your modem from the list:\n";
+			vec = db.ListHWs(Broadband);
 			j = SelectFromList(vec);
-			desc.interInterface = (j == 1) ? interEthernet : interUSB;
+			desc.strModem = vec[j - 1];
+			db.getModemByName(desc.strModem, Broadband);	// again, for the exception
 
 			cout << endl;
-			break;
 
-		case Hardware::BBUSB:
-			desc.interInterface = interUSB;
-			break;
-
-		case Hardware::BBEth:
-			desc.interInterface = interEthernet;
-			break;
-
-		default:
-			break;
-		}
-
-		// Eth
-		cout << "Which ethernet device your modem occupies?\n";
-		vec.clear();
-
-		// list eths
-		int ret = system("cat /proc/net/dev | grep eth | cut -b 3-6 > /tmp/.eths");
-
-		ifstream eths("/tmp/.eths");
-		if (!eths || ret != 0) throw Error("Cannot query ethernet interfaces");
-
-		while (!eths.eof())
-		{
-			char szBuffer[0xFF];
-			eths.getline(szBuffer, 0xFF);
-			if (strlen(szBuffer))
+			// Dual?
+			string strModemFile = db.getModemByName(desc.strModem, Broadband);
+			Hardware::MinorType minor = getHardwareType(strModemFile, Broadband, &db);
+			if (minor == Hardware::Unknown) throw Error("Invalid modem");
+			switch (minor)
 			{
-				szBuffer[4] = 0;
-				vec.push_back(szBuffer);
+			case Hardware::BBDual:
+				cout << "Your modem is connected to the computer through...\n";
+				vec.clear();
+				vec.push_back("Ethernet");
+				vec.push_back("USB");
+				j = SelectFromList(vec);
+				desc.interInterface = (j == 1) ? interEthernet : interUSB;
+
+				cout << endl;
+				break;
+
+			case Hardware::BBUSB:
+				desc.interInterface = interUSB;
+				break;
+
+			case Hardware::BBEth:
+				desc.interInterface = interEthernet;
+				break;
+
+			default:
+				break;
 			}
-		}
 
-		eths.close();
-		j = SelectFromList(vec);
+			// Eth
+			cout << "Which ethernet device your modem occupies?\n";
+			vec.clear();
 
-		desc.strEth = vec[j - 1];
+			// list eths
+			int ret = system("cat /proc/net/dev | grep eth | cut -b 3-6 > /tmp/.eths");
 
-		cout << endl;
+			ifstream eths("/tmp/.eths");
+			if (!eths || ret != 0) throw Error("Cannot query ethernet interfaces");
 
-		cout << "Username: ";
-		cin >> desc.strUsername;
+			while (!eths.eof())
+			{
+				char szBuffer[0xFF];
+				eths.getline(szBuffer, 0xFF);
+				if (strlen(szBuffer))
+				{
+					szBuffer[4] = 0;
+					vec.push_back(szBuffer);
+				}
+			}
 
-		system("stty -echo");
-		cout << "Password: ";
-		cin >> desc.strPasswd;
-		system("stty echo");
+			eths.close();
+			j = SelectFromList(vec);
 
-		cout << endl << endl;
+			desc.strEth = vec[j - 1];
 
-		// Server
-		cout << "Do you need to enter a server name?\n";
-		vec.clear();
-		vec.push_back("Yes");
-		vec.push_back("No");
-		j = SelectFromList(vec);
-		if (j == 1)
-		{
-			cout << "Server: ";
-			cin >> desc.strServer;
-		}
+			cout << endl;
 
-		// Connection name
-		char szBuffer[0xFF];
-		cin.getline(szBuffer, 0xFF);
-		do
-		{
-			cout << "Connetion Name (Unique!): ";
+			cout << "Username: ";
+			cin >> desc.strUsername;
+
+			system("stty -echo");
+			cout << "Password: ";
+			cin >> desc.strPasswd;
+			system("stty echo");
+
+			cout << endl << endl;
+
+			// Server
+			cout << "Do you need to enter a server name?\n";
+			vec.clear();
+			vec.push_back("Yes");
+			vec.push_back("No");
+			j = SelectFromList(vec);
+			if (j == 1)
+			{
+				cout << "Server: ";
+				cin >> desc.strServer;
+			}
+
+			// Connection name
+			char szBuffer[0xFF];
 			cin.getline(szBuffer, 0xFF);
-			desc.strConnectionName = string(szBuffer);
-		} while (FileExists(conf.strDBPath + "connections/" + desc.strConnectionName + ".tar.gz"));
+			do
+			{
+				cout << "Connetion Name (Unique!): ";
+				cin.getline(szBuffer, 0xFF);
+				desc.strConnectionName = string(szBuffer);
+			} while (FileExists(conf.strDBPath + "connections/" + desc.strConnectionName + ".tar.gz"));
 
-		cout << endl;
+			cout << endl;
 
-		cout << "You are about to create:\n";
-		cout << "Scripts for ";
-		if (!desc.bDebianBased) cout << "non-";
-		cout << "Debian based systems, for ";
+			cout << "You are about to create:\n";
+			cout << "Scripts for ";
+			if (!desc.bDebianBased) cout << "non-";
+			cout << "Debian based systems, for ";
 
-		cout << ((desc.conMethod == ADSL) ? "ADSL" : "Cable") << ", ";
-		cout << "to " << desc.strISP << "," << endl;
-		cout << "Using " << desc.strModem << ", on " << desc.strEth << endl;
-		cout << "that is connected to ";
-		cout << ((desc.interInterface == interUSB) ? "a USB port." : "an Ethernet card.");
-		cout << endl;
-		cout << "\nIs this correct [yn] ? ";
+			cout << ((desc.conMethod == ADSL) ? "ADSL" : "Cable") << ", ";
+			cout << "to " << desc.strISP << "," << endl;
+			cout << "Using " << desc.strModem << ", on " << desc.strEth << endl;
+			cout << "that is connected to ";
+			cout << ((desc.interInterface == interUSB) ? "a USB port." : "an Ethernet card.");
+			cout << endl;
+			cout << "\nIs this correct [yn] ? ";
 
-		char c;
-		do
+			char c;
+			do
+			{
+				cin >> c;
+			} while (c != 'n' && c != 'y');
+			if (c == 'n') throw Error("Canceled by user");
+
+			MakeFromDesc(desc, db, conf, cmdline);
+
+			cout << "Done.\n\n";
+		}
+
+		else if (desc.conMethod == LANSlave)
 		{
-			cin >> c;
-		} while (c != 'n' && c != 'y');
-		if (c == 'n') throw Error("Canceled by user");
+			// Eth
+			cout << "Which ethernet device your modem occupies?\n";
+			vec.clear();
 
-		MakeFromDesc(desc, db, conf, cmdline);
+			// list eths
+			int ret = system("cat /proc/net/dev | grep eth | cut -b 3-6 > /tmp/.eths");
 
-		cout << "Done.\n\n";
+			ifstream eths("/tmp/.eths");
+			if (!eths || ret != 0) throw Error("Cannot query ethernet interfaces");
+
+			while (!eths.eof())
+			{
+				char szBuffer[0xFF];
+				eths.getline(szBuffer, 0xFF);
+				if (strlen(szBuffer))
+				{
+					szBuffer[4] = 0;
+					vec.push_back(szBuffer);
+				}
+			}
+
+			eths.close();
+			j = SelectFromList(vec);
+
+			desc.strEth = vec[j - 1];
+
+			cout << endl;
+
+			// Address
+			cout << "Static address, or obtained by DHCP?\n";
+			vec.clear();
+			vec.push_back("Static (Manual)");
+			vec.push_back("From DHCP");
+			j = SelectFromList(vec);
+			if (j == 1)
+			{
+				char szBuffer[0xFF];
+				
+				desc.bLANDHCP = false;
+				cout << "IP address of interface: ";
+				cin >> desc.strLANIP;
+				char c;
+				cin.get(c);
+
+				// Mask
+				cout << "IP mask [default: 255.255.255.0]: ";
+				cin.getline(szBuffer, 0xFF);
+				desc.strLANMask = string(szBuffer);
+				if (strlen(szBuffer) == 0) desc.strLANMask = string("255.255.255.0");
+
+				// Broadcast
+				cout << "Broadcast address [default: 255.255.255.255]: ";
+				cin.getline(szBuffer, 0xFF);
+				desc.strLANBroadcast = string(szBuffer);
+				if (strlen(szBuffer) == 0) desc.strLANBroadcast = string("255.255.255.255");
+			}
+
+			else
+			{
+				char c;
+				cin.get(c);
+				desc.strLANIP = string("");
+				desc.bLANDHCP = true;
+			}
+
+			char szBuffer[0xFF];
+
+			// Gateway
+			cout << "Gateway [default: 192.168.0.1]: ";
+			cin.getline(szBuffer, 0xFF);
+			desc.strLANGateway = string(szBuffer);
+			if (desc.strLANGateway.empty()) desc.strLANGateway = string("192.168.0.1");
+
+			cout << endl << endl;
+
+			// Connection name
+			do
+			{
+				cout << "Connetion Name (Unique!): ";
+				cin.getline(szBuffer, 0xFF);
+				desc.strConnectionName = string(szBuffer);
+			} while (FileExists(conf.strDBPath + "connections/" + desc.strConnectionName + ".tar.gz"));
+
+			cout << endl;
+
+			///////////////////////////
+			cout << "You are about to create:\n";
+			cout << "Scripts for ";
+			if (!desc.bDebianBased) cout << "non-";
+			cout << "Debian based systems, for LAN connectio, " << endl;
+			cout << "to " << desc.strISP << "," << endl;
+			cout << "Using " << desc.strEth << endl;
+			cout << "through " << desc.strLANGateway << endl;
+			cout << "the interface will have ";
+
+			if (desc.bLANDHCP) cout << "it's address from a DHCP server";
+			else
+			{
+				cout << "the static address " << desc.strLANIP;
+				cout << " with the network mask " << desc.strLANMask << endl;
+				cout << "The interface will use the broadcast address " << desc.strLANBroadcast << endl;
+			}
+			
+			cout << "\nIs this correct [yn] ? ";
+
+			char c;
+			do
+			{
+				cin >> c;
+			} while (c != 'n' && c != 'y');
+			if (c == 'n') throw Error("Canceled by user");
+
+			////////////
+			MakeFromDesc(desc, db, conf, cmdline);
+
+			cout << "Done.\n\n";
+		}
 	}
 
 	catch (...)

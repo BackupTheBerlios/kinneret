@@ -42,6 +42,10 @@ CommandLine::CommandLine() :
 	clServer(),
 	clPasswd(),
 	clName(),
+	clLANIP(),
+	clLANMask("255.255.255.0"),
+	clLANBroadcast("255.255.255.255"),
+	clLANGateway("192.168.0.1"),
 	bListISPs(false),
 	bListConnections(false),
 	bShowDefault(false),
@@ -61,6 +65,7 @@ CommandLine::CommandLine() :
 
 	clMethod.Add("adsl");
 	clMethod.Add("cable");
+	clMethod.Add("lan");
 
 	clIFace.Add("eth");
 	clIFace.Add("usb");
@@ -102,6 +107,11 @@ void CommandLine::Parse(int argc, char *argv[]) throw (Error)
 		{ "passwd",			1, 0, 'p'  },
 		{ "name",			1, 0, 'n'  },
 
+		{ "ip",				1, 0, 0x0D },
+		{ "mask",			1, 0, 0x0E },
+		{ "broadcast",		1, 0, 0x0F },
+		{ "gateway",		1, 0, 0x10 },
+
 		// Get information
 		{ "listisps",		0, 0, 'l'  },
 		{ "listcons",		0, 0, 'C'  },
@@ -142,29 +152,35 @@ void CommandLine::Parse(int argc, char *argv[]) throw (Error)
 		// So this way of writing switch statement is non-standart,
 		// but it makes the code look much better ;)
 			
-		case 'v':  bVerbose			= true;									break;
-		case 'q':  bQuite			= true;									break;
-		case 'w':  bWizard			= true;									break;
-		case 'b':  clDebian.bIs		= true; clDebian.strOpt		= optarg;	break;
-		case 'i':  clISP.bIs		= true; clISP.strOpt		= optarg;	break;
-		case 'm':  clMethod.bIs		= true; clMethod.strOpt		= optarg;	break;
-		case 'M':  clModem.bIs		= true; clModem.strOpt		= optarg;	break;
-		case 'd':  clDevice.bIs		= true; clDevice.strOpt		= optarg;	break;
-		case 'u':  clUsername.bIs	= true; clUsername.strOpt	= optarg;	break;
-		case 0x0C: clServer.bIs		= true; clServer.strOpt		= optarg;	break;
-		case 'p':  clPasswd.bIs		= true; clPasswd.strOpt		= optarg;	break;
-		case 'n':  clName.bIs		= true; clName.strOpt		= optarg;	break;
-		case 'l':  bListISPs		= true;									break;
-		case 'H':  clListHWs.bIs	= true; clListHWs.strOpt	= optarg;	break;
-		case 'C':  bListConnections	= true;									break;
-		case 'f':  bForce			= true;									break;
-		case 0x08: clExtract.bIs	= true; clExtract.strOpt	= optarg;	break;
-		case 0x01: clDelete.bIs		= true; clDelete.strOpt		= optarg;	break;
-		case 0x02: clSetDefault.bIs	= true; clSetDefault.strOpt	= optarg;	break;
-		case 0x03: bShowDefault		= true;									break;
-		case 0x09: clIFace.bIs		= true; clIFace.strOpt		= optarg;	break;
-		case 0x0A: clHWInfo.bIs		= true; clHWInfo.strOpt		= optarg;	break;
-		case 0x0B: clISPInfo.bIs	= true; clISPInfo.strOpt	= optarg;	break;
+		case 'v':  bVerbose				= true;										break;
+		case 'q':  bQuite				= true;										break;
+		case 'w':  bWizard				= true;										break;
+		case 'b':  clDebian.bIs			= true; clDebian.strOpt			= optarg;	break;
+		case 'i':  clISP.bIs			= true; clISP.strOpt			= optarg;	break;
+		case 'm':  clMethod.bIs			= true; clMethod.strOpt			= optarg;	break;
+		case 'M':  clModem.bIs			= true; clModem.strOpt			= optarg;	break;
+		case 'd':  clDevice.bIs			= true; clDevice.strOpt			= optarg;	break;
+		case 'u':  clUsername.bIs		= true; clUsername.strOpt		= optarg;	break;
+		case 0x0C: clServer.bIs			= true; clServer.strOpt			= optarg;	break;
+		case 'p':  clPasswd.bIs			= true; clPasswd.strOpt			= optarg;	break;
+		case 'n':  clName.bIs			= true; clName.strOpt			= optarg;	break;
+
+		case 0x0D: clLANIP.bIs			= true; clLANIP.strOpt			= optarg;	break;
+		case 0x0E: clLANMask.bIs		= true; clLANMask.strOpt		= optarg;	break;
+		case 0x0F: clLANBroadcast.bIs	= true; clLANBroadcast.strOpt	= optarg;	break;
+		case 0x10: clLANGateway.bIs		= true; clLANGateway.strOpt		= optarg;	break;
+		
+		case 'l':  bListISPs			= true;										break;
+		case 'H':  clListHWs.bIs		= true; clListHWs.strOpt		= optarg;	break;
+		case 'C':  bListConnections		= true;										break;
+		case 'f':  bForce				= true;										break;
+		case 0x08: clExtract.bIs		= true; clExtract.strOpt		= optarg;	break;
+		case 0x01: clDelete.bIs			= true; clDelete.strOpt			= optarg;	break;
+		case 0x02: clSetDefault.bIs		= true; clSetDefault.strOpt		= optarg;	break;
+		case 0x03: bShowDefault			= true;										break;
+		case 0x09: clIFace.bIs			= true; clIFace.strOpt			= optarg;	break;
+		case 0x0A: clHWInfo.bIs			= true; clHWInfo.strOpt			= optarg;	break;
+		case 0x0B: clISPInfo.bIs		= true; clISPInfo.strOpt		= optarg;	break;
 
 		// Special cases, optarg can be null, set to default
 		case 0x04: clConnect.bIs	= true; clConnect.strOpt	= optarg ? optarg : string("default"); break;
@@ -221,21 +237,30 @@ void CommandLine::Parse(int argc, char *argv[]) throw (Error)
 	// Create mode
 	if (bCreateMode)
 	{
-		// Validate lists if we are not in any mode
-		if (!clDebian.bIs)		throw ErrorMissingArg("debian");
-		if (!clISP.bIs)			throw ErrorMissingArg("isp");
-		if (!clMethod.bIs)		throw ErrorMissingArg("method");
-		if (!clModem.bIs)		throw ErrorMissingArg("modem");
-		if (!clDevice.bIs)		throw ErrorMissingArg("dev");
-		if (!clUsername.bIs)	throw ErrorMissingArg("username");
-		if (!clPasswd.bIs)		throw ErrorMissingArg("passwd");
+		if (!clMethod.Valid())	throw ErrorInvalidArgValue("method", clMethod.vList);
+		if (!clDebian.Valid())	throw ErrorInvalidArgValue("debian", clDebian.vList);
 		if (!clName.bIs)		throw ErrorMissingArg("name");
 		
-		if (!clDebian.Valid())	throw ErrorInvalidArgValue("debian", clDebian.vList);
-		if (!clMethod.Valid())	throw ErrorInvalidArgValue("method", clMethod.vList);
+		if (clMethod.strOpt == string("adsl") || clMethod.strOpt == string("cable"))
+		{
+			// Validate lists if we are not in any mode
+			if (!clISP.bIs)			throw ErrorMissingArg("isp");
+			if (!clModem.bIs)		throw ErrorMissingArg("modem");
+			if (!clDevice.bIs)		throw ErrorMissingArg("dev");
+			if (!clUsername.bIs)	throw ErrorMissingArg("username");
+			if (!clPasswd.bIs)		throw ErrorMissingArg("passwd");
+			
+			if (clIFace.bIs && !clIFace.Valid())
+				throw ErrorInvalidArgValue("iface", clIFace.vList);
+		}
 
-		if (clIFace.bIs && !clIFace.Valid())
-			throw ErrorInvalidArgValue("iface", clIFace.vList);
+		else if (clMethod.strOpt == string("lan"))
+		{
+			// Validate lists if we are not in any mode
+			if (!clLANIP.bIs)		throw ErrorMissingArg("ip");
+			if (!clISP.bIs)			throw ErrorMissingArg("isp");
+			if (!clDevice.bIs)		throw ErrorMissingArg("dev");
+		}
 	}
 }
 

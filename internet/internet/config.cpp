@@ -67,6 +67,8 @@ void ConfigFile::LoadConfig(string conf) throw (Error)
 		}
 	}
 
+	strDBPath += string("/");
+
 	confile.close();
 }
 

@@ -20,6 +20,7 @@ using namespace std;
 
 #include "connection.h"
 #include "parse.h"
+#include "db.h"
 
 Connection::Connection(Hardware *hw, ISP *isp, Authentication *auth, Dialer *dial)
 {
@@ -27,11 +28,6 @@ Connection::Connection(Hardware *hw, ISP *isp, Authentication *auth, Dialer *dia
 	pISP = isp;
 	pAuth = auth;
 	pDialer = dial;
-
-	if (!pHardware)	cerr << "ERROR: Invalid hardware module!\n";
-	if (!pISP)		cerr << "ERROR: Invalid ISP module!\n";
-	if (!pAuth)		cerr << "ERROR: Invalid authentication module!\n";
-	if (!pDialer)	cerr << "ERROR: Invalid dialer module!\n";
 }
 
 void Connection::MakeScript(ScriptType type) throw (Error)
@@ -48,21 +44,37 @@ void Connection::MakeScript(ScriptType type) throw (Error)
 
 		stream << "#!/bin/bash\n" << endl;
 
-		stream << "### HARDWARE ###" << endl;
-		pHardware->MakeInit(stream);
-		stream << "### end of HARDWARE ###" << endl;
+		if (pHardware)
+		{
+			stream << "### HARDWARE ###" << endl;
+			pHardware->MakeInit(stream);
+			stream << "### end of HARDWARE ###" << endl;
+		}
+		else stream << "### Skipping HARDWARE ###" << endl;
 
-		stream << "### ISP ###" << endl;
-		pISP->MakeInit(stream);
-		stream << "### end of ISP ###" << endl;
+		if (pISP)
+		{
+			stream << "### ISP ###" << endl;
+			pISP->MakeInit(stream);
+			stream << "### end of ISP ###" << endl;
+		}
+		else stream << "### Skipping ISP ###" << endl;
 
-		stream << "### AUTHENTICATION ###" << endl;
-		pAuth->MakeInit(stream);
-		stream << "### end of AUTHENTICATION ###" << endl;
+		if (pAuth)
+		{
+			stream << "### AUTHENTICATION ###" << endl;
+			pAuth->MakeInit(stream);
+			stream << "### end of AUTHENTICATION ###" << endl;
+		}
+		else stream << "### Skipping AUTHENTICATON ###" << endl;
 
-		stream << "### DIALER ###" << endl;
-		pDialer->MakeInit(stream);
-		stream << "### end of DIALER ###" << endl;
+		if (pDialer)
+		{
+			stream << "### DIALER ###" << endl;
+			pDialer->MakeInit(stream);
+			stream << "### end of DIALER ###" << endl;
+		}
+		else stream << "### Skipping DIALER ###" << endl;
 
 		stream << "exit 0";
 		break;
@@ -72,9 +84,13 @@ void Connection::MakeScript(ScriptType type) throw (Error)
 		
 		stream << "#!/bin/bash\n" << endl;
 
-		stream << "### HARDWARE ###" << endl;
-		pHardware->MakeBoot(stream);
-		stream << "### end of HARDWARE ###" << endl;
+		if (pHardware)
+		{
+			stream << "### HARDWARE ###" << endl;
+			pHardware->MakeBoot(stream);
+			stream << "### end of HARDWARE ###" << endl;
+		}
+		else stream << "### Skipping HARDWARE ###" << endl;
 
 		stream << "exit 0";
 		break;
@@ -84,9 +100,13 @@ void Connection::MakeScript(ScriptType type) throw (Error)
 		
 		stream << "#!/bin/bash\n" << endl;
 
-		stream << "### DIALER ###" << endl;
-		pDialer->MakeConnect(stream);
-		stream << "### end of DIALER ###" << endl;
+		if (pDialer)
+		{
+			stream << "### DIALER ###" << endl;
+			pDialer->MakeConnect(stream);
+			stream << "### end of DIALER ###" << endl;
+		}
+		else stream << "### Skipping DIALER ###" << endl;
 
 		stream << "exit 0";
 		break;
@@ -96,9 +116,13 @@ void Connection::MakeScript(ScriptType type) throw (Error)
 		
 		stream << "#!/bin/bash\n" << endl;
 
-		stream << "### DIALER ###" << endl;
-		pDialer->MakeDisconnect(stream);
-		stream << "### end of DIALER ###" << endl;
+		if (pDialer)
+		{
+			stream << "### DIALER ###" << endl;
+			pDialer->MakeDisconnect(stream);
+			stream << "### end of DIALER ###" << endl;
+		}
+		else stream << "### Skipping DIALER ###" << endl;
 
 		stream << "exit 0";
 		break;
@@ -151,7 +175,7 @@ void Connection::Install() throw (Error)
 
 	// compress to tarball and place at <path>/connections/
 	string strTar("tar -C /tmp/iwiz/ -czf '");
-	strTar += pDialer->getDatabase()->getPath() + string("connections/") + strName + string(".tar.gz' . > /dev/null");
+	strTar += Database::getPath() + string("connections/") + strName + string(".tar.gz' . > /dev/null");
 	if (system(strTar.c_str()) != 0) throw ErrorSystem();
 }
 
