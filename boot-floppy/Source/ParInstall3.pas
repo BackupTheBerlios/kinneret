@@ -43,6 +43,11 @@ var
 begin
   error:=false;
   cdrom:='..\';
+  if (CreateMenu or CreateShortcut) and diskFree(2)<2097152 {2MB} then
+  begin
+    error:=true;
+    labelWait.Caption:=pwidechar(_('Drive C: is full, Unable to copy files.'));
+  end;
   source:=TStringList.Create;
   destination:=TStringList.Create;
   // ADDING FILES TO COPY
@@ -69,8 +74,9 @@ begin
     source.Add(cdrom+'\boot\VMLINUZ');
     destination.add('c:\boot\VMLINUZ');
   end;
-  if (FileOperation (source, destination , FO_COPY, FOF_ALLOWUNDO or FOF_NOCONFIRMATION))
-  or not filesExist(destination)
+  if not error and (not filesExist(source) or
+  (FileOperation (source, destination , FO_COPY, FOF_ALLOWUNDO or FOF_NOCONFIRMATION))
+  or not filesExist(destination)))
   then begin
     error:=true;
     LabelWait.Caption:=pWideChar(_('Error while copying files.'+#10#13+
