@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <driver>
 	<name lang="en">PPPoE ADSL Modem</name>
+    <comment lang="en">
+        Generic ethernet ADSL modem that uses PPPoE for communication.
+    </comment>
     <type>adsl</type>
     <interface type="ethernet"/>
-    <vpn protocol="pppeo"/>
+    <vpn protocol="pppoe"/>
     <supported>
         <modem>Samsung AHT-E300</modem>
 	    <modem>Alcatel SpeedTouch Home (PPPoE)</modem>

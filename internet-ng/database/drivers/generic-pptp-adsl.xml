@@ -2,6 +2,9 @@
 <driver>
     <name lang="en">PPtP ADSL Modem</name>
     <type>adsl</type>
+    <comment lang="en">
+        Generic ethernet ADSL modem that uses PPtP for communication.
+    </comment>
     <interface type="ethernet"/>
     <vpn protocol="pptp">
         <address>10.0.0.138</address>

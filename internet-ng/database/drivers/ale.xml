@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <driver>
     <name lang="en">ALE</name>
+    <comment lang="en">
+        This driver is not supported.
+    </comment>
     <type>adsl</type>
     <interface type="usb"/>
     <supported>
