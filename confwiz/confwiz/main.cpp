@@ -42,7 +42,7 @@ static KCmdLineOptions options[] =
 
 void InitWizard(configwizard *wizard)
 {
-	wizard->setFinishEnabled(reinterpret_cast<QWizard*>(wizard)->page(8), true);
+	wizard->setFinishEnabled(wizard->QWizard::page(8), true);
 	wizard->showFullScreen();
 
 	// Set the currect palette for all objects

@@ -49,9 +49,9 @@ void configwizard::destroy()
 
 void configwizard::onSelect()
 {
-	const int page_nicetomeet	= 0;
-	const int page_license		= 1;
-	const int page_setuptype	= 2;
+//	const int page_nicetomeet	= 0;
+//	const int page_license		= 1;
+//	const int page_setuptype	= 2;
 	const int page_partition	= 3;
 	const int page_swap			= 4;
 	const int page_homedir		= 5;
@@ -64,7 +64,7 @@ void configwizard::onSelect()
 			
 	// see if that's the 3rd page, if it is,
 	// fill the list box with vfat and partitions.
-	if (currentPage() == reinterpret_cast<QWizard*>(this)->page(page_partition))
+	if (currentPage() == QWizard::page(page_partition))
 	{
 		static int nVFATs = 0;
 		
@@ -342,7 +342,7 @@ void configwizard::onSelect()
 			swap_size->setValue(swap);
 			
 			// Now jump to conclusion and let it to do all the configuration...
-			reinterpret_cast<QWizard*>(this)->showPage(reinterpret_cast<QWizard*>(this)->page(page_conclusion));
+			QWizard::showPage(QWizard::page(page_conclusion));
 			
 			return;
 		}
@@ -354,12 +354,12 @@ void configwizard::onSelect()
 			checkPrefWiz->setEnabled(false);
 
 			// jump to 'what next?'
-			reinterpret_cast<QWizard*>(this)->showPage(reinterpret_cast<QWizard*>(this)->page(page_whatsnext));
+			QWizard::showPage(QWizard::page(page_whatsnext));
 		}
 		// for expert we don't need to do anything...
 	}
 
-	if (currentPage() == reinterpret_cast<QWizard*>(this)->page(page_swap))
+	if (currentPage() == QWizard::page(page_swap))
 	{
 		// find how much free megs we have on the selected partition
 		// and report if it has less then nToKeepFree+100 megs free.
@@ -417,7 +417,7 @@ Please go back and select another.")));
 	}
 
 	// fill the directory tree
-	if (currentPage() == reinterpret_cast<QWizard*>(this)->page(page_homedir) && dir_list->childCount() == 0)
+	if (currentPage() == QWizard::page(page_homedir) && dir_list->childCount() == 0)
 	{
 		// verify that on the selected partition we have enough room for home+swap+nToKeepFree
 		if (lFreeOnPartition < 100 + nToKeepFree + swap_size->value())
@@ -463,7 +463,7 @@ Please go back and select another.")));
 		root->setOpen(true);
 	}
 	
-	if (currentPage() == reinterpret_cast<QWizard*>(this)->page(page_conclusion))
+	if (currentPage() == QWizard::page(page_conclusion))
 	{
 		// if the user did not selected a home directory and was not in express mode...
 		if (docs_path->text() == qDefaultHome && !radioAuto->isChecked())
@@ -502,7 +502,7 @@ Please go back and select another.")));
 		delete pw;
     }
 
-    if (currentPage() == reinterpret_cast<QWizard*>(this)->page(page_fonts) && FontsDirs->childCount() == 0)
+    if (currentPage() == QWizard::page(page_fonts) && FontsDirs->childCount() == 0)
 	{
 		// automaticlly search for fonts...
 		system("/opt/kinneret/bin/findfonts.sh");
@@ -530,7 +530,7 @@ Please go back and select another.")));
 		}
     }
 	
-	if (currentPage() == reinterpret_cast<QWizard*>(this)->page(page_whatsnext))
+	if (currentPage() == QWizard::page(page_whatsnext))
 	{
 		// create ~/.fontsdirs - will be loaded by knoppix.sh at boot time
 		if (FontsDirs->childCount())
@@ -629,6 +629,7 @@ void configwizard::onHelp()
 
 void configwizard::newSwap(int size)
 {
+	if (0) { std::cout << size << std::endl; } // stupid warnings...
 }
 
 
