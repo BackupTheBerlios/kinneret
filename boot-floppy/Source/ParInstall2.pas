@@ -148,7 +148,10 @@ begin
       if DrivesArray[Item.index].DriveFreeSpace-KnoppixSize>0 then
       begin
         for i:=0 to ListDrives.Items.Count-1 do
+        begin
           ListDrives.Items.item[i].SubItems[1]:='';
+          if i<>item.Index then ListDrives.Items.Item[i].checked:=false;
+        end;
         Item.SubItems[1]:=wideformat('%n MB',
                 [DrivesArray[Item.index].DriveFreeSpace-knoppixSize]);
         ChosenDrive:=DrivesArray[Item.index].DriveLetter;
@@ -162,8 +165,9 @@ begin
             [DrivesArray[Item.Index].DriveLetter]));
       end;
     end else begin  //Uncheck
-      Item.SubItems[1]:='';
-      ButtonStart.Enabled:=false;
+//      Item.SubItems[1]:='';
+//      ButtonStart.Enabled:=false;
+        item.Checked:=true;
     end;
   end;
 
