@@ -505,13 +505,13 @@ s,@PACKAGE@,idial,;t t
 s,@VERSION@,0.2-rc1,;t t
 s,@EXEEXT@,,;t t
 s,@OBJEXT@,o,;t t
-s,@ACLOCAL@,${SHELL} /home/z9u2K/projects/idial/admin/missing --run aclocal,;t t
-s,@AUTOCONF@,${SHELL} /home/z9u2K/projects/idial/admin/missing --run autoconf,;t t
-s,@AUTOMAKE@,${SHELL} /home/z9u2K/projects/idial/admin/missing --run automake,;t t
-s,@AUTOHEADER@,${SHELL} /home/z9u2K/projects/idial/admin/missing --run autoheader,;t t
-s,@MAKEINFO@,${SHELL} /home/z9u2K/projects/idial/admin/missing --run makeinfo,;t t
-s,@AMTAR@,${SHELL} /home/z9u2K/projects/idial/admin/missing --run tar,;t t
-s,@install_sh@,/home/z9u2K/projects/idial/admin/install-sh,;t t
+s,@ACLOCAL@,${SHELL} /home/z9u2K/projects/kinneret/cvs/idial/admin/missing --run aclocal,;t t
+s,@AUTOCONF@,${SHELL} /home/z9u2K/projects/kinneret/cvs/idial/admin/missing --run autoconf,;t t
+s,@AUTOMAKE@,${SHELL} /home/z9u2K/projects/kinneret/cvs/idial/admin/missing --run automake,;t t
+s,@AUTOHEADER@,${SHELL} /home/z9u2K/projects/kinneret/cvs/idial/admin/missing --run autoheader,;t t
+s,@MAKEINFO@,${SHELL} /home/z9u2K/projects/kinneret/cvs/idial/admin/missing --run makeinfo,;t t
+s,@AMTAR@,${SHELL} /home/z9u2K/projects/kinneret/cvs/idial/admin/missing --run tar,;t t
+s,@install_sh@,/home/z9u2K/projects/kinneret/cvs/idial/admin/install-sh,;t t
 s,@INSTALL_STRIP_PROGRAM@,${SHELL} $(install_sh) -c -s,;t t
 s,@AWK@,gawk,;t t
 s,@SET_MAKE@,,;t t
