@@ -1,5 +1,5 @@
 # Makefile.in generated automatically by automake 1.4-p6 from Makefile.am
-# KDE tags expanded automatically by am_edit - $Revision: 1.10 $ 
+# KDE tags expanded automatically by am_edit - $Revision: 1.11 $ 
 
 # Copyright (C) 1994, 1995-8, 1999, 2001 Free Software Foundation, Inc.
 # This Makefile.in is free software; the Free Software Foundation

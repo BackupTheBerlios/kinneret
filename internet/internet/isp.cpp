@@ -212,7 +212,12 @@ void ISP::MakeInit(ostream &stream) const
 
 void ISP::MakeBoot(ostream &stream) const { stream << endl; }
 void ISP::MakeConnect(ostream &stream) const { stream << endl; }
-void ISP::MakeDisconnect(ostream &stream) const { stream << endl; }
+void ISP::MakeDisconnect(ostream &stream) const
+{
+	stream << "# restore" << endl;
+	stream << "cp /etc/resolv.conf.bak /etc/resolv.conf" << endl;
+}
+
 void ISP::MakeDone(ostream &stream) const { stream << endl; }
 
 
