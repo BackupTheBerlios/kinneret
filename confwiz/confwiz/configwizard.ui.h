@@ -31,6 +31,12 @@
 void configwizard::init()
 {
 	kHTML = new KHTMLPart(widgetStack);
+	if (!kHTML)
+	{
+		KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot create KHTML object!")));
+		return;
+	}
+	
 	kHTML->view()->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding, TRUE);
 	KLocale locale("");
 	KURL url = "/opt/kinneret/l2swim/doc/" + locale.language().left(2) + "/kinneret_license.html";
@@ -56,8 +62,8 @@ void configwizard::onSelect()
 	const int page_partition	= 3;
 	const int page_swap			= 4;
 	const int page_homedir		= 5;
-	const int page_conclusion	= 6;
-	const int page_fonts		= 7;
+	const int page_fonts		= 6;
+	const int page_conclusion	= 7;
 	const int page_whatsnext	= 8;
 
 	const int nToKeepFree = 300;	// how many megs to keep free
@@ -113,7 +119,12 @@ void configwizard::onSelect()
 //					system(qCmd);
 
 					// Get size and freespace
-					system("df -Th > /tmp/.df");
+					if (system("df -Th > /tmp/.df"))
+					{
+						KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot get information about disk usage!")));
+						return;
+					}
+					
 					std::ifstream df("/tmp/.df");
 
 					if (!df.is_open())
@@ -224,7 +235,12 @@ void configwizard::onSelect()
 			std::map<unsigned long, QString> partitions;		// free sapce (bytes), mountpoint
 			
 			// Get size and freespace
-			system("df -t vfat -B 1M > /tmp/.df");
+			if (system("df -t vfat -B 1M > /tmp/.df"))
+			{
+				KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot get information about disk usage!")));
+				return;
+			}
+			
 			std::ifstream df("/tmp/.df");
 			
 			if (!df.is_open())
@@ -272,7 +288,11 @@ void configwizard::onSelect()
 			QListViewItem *vi = par_list->findItem(partitions[sz], 0, BeginsWith);
 			par_list->setSelected(vi, TRUE);
 
-			system("cat /proc/meminfo | grep MemTotal > /tmp/.meminfo");
+			if (system("cat /proc/meminfo | grep MemTotal > /tmp/.meminfo"))
+			{
+				KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot get information about RAM!")));
+				return;
+			}
 
 			std::ifstream meminfo("/tmp/.meminfo");
 
@@ -343,6 +363,40 @@ void configwizard::onSelect()
 
 			// So now swap holds the size of the swap size...
 			swap_size->setValue(swap);
+
+			// automaticlly search for fonts...
+			if (system("/opt/kinneret/bin/findfonts.sh"))
+			{
+				KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot search for TTF fonts!")));
+				return;
+			}
+
+			FontsDirs->addColumn(QString(tr2i18n("Path")), 400);
+
+			std::ifstream fonts("/tmp/.fontsdirs");
+			if (!fonts)
+			{
+				KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot search for TTF fonts!")));
+				return;
+			}
+
+			if (fonts.is_open())
+			{
+				char szLine[0x300];
+
+				while (!fonts.eof())
+				{
+					fonts.getline(szLine, 0x300);
+
+					if (szLine[0])
+					{
+						QListViewItem *vi = new QListViewItem(FontsDirs, szLine);
+						FontsDirs->insertItem(vi);
+					}
+				}
+
+				fonts.close();
+			}
 			
 			// Now jump to conclusion and let it to do all the configuration...
 			QWizard::showPage(QWizard::page(page_conclusion));
@@ -367,7 +421,12 @@ void configwizard::onSelect()
 		// find how much free megs we have on the selected partition
 		// and report if it has less then nToKeepFree+100 megs free.
 		// Get size and freespace
-		system("df -t vfat -B 1M > /tmp/.df");
+		if (system("df -t vfat -B 1M > /tmp/.df"))
+		{
+			KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot get information about disk usage!")));
+			return;
+		}
+		
 		std::ifstream df("/tmp/.df");
 
 		if (!df.is_open())
@@ -411,8 +470,8 @@ void configwizard::onSelect()
 		if (lFreeOnPartition < 100 + nToKeepFree)
 		{
 			KMessageBox::error(parentWidget(),
-				   QString(tr2i18n("You do not have enough free space on the selected partition,\n\
-Please go back and select another.")));
+				   QString(tr2i18n("You do not have enough free space on the selected partition,\n"
+								"Please go back and select another.")));
 
 			nextButton()->setEnabled(false);
 		}
@@ -501,18 +560,31 @@ Please go back and select another.")));
 		while (p.isRunning())
 			KApplication::kApplication()->processEvents();
 			
-		nextButton()->setEnabled(true);
 		delete pw;
+
+		// nextButton()->setEnabled(true);
+		// instate of waiting to the user, move automaticlly to next page
+		QWizard::showPage(QWizard::page(page_whatsnext));
+		return;
     }
 
     if (currentPage() == QWizard::page(page_fonts) && FontsDirs->childCount() == 0)
 	{
 		// automaticlly search for fonts...
-		system("/opt/kinneret/bin/findfonts.sh");
+		if (system("/opt/kinneret/bin/findfonts.sh"))
+		{
+			KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot search for TTF fonts!")));
+			return;
+		}
 
 		FontsDirs->addColumn(QString(tr2i18n("Path")), 400);
 
 		std::ifstream fonts("/tmp/.fontsdirs");
+		if (!fonts)
+		{
+			KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot search for TTF fonts!")));
+			return;
+		}
 
 		if (fonts.is_open())
 		{
@@ -542,6 +614,11 @@ Please go back and select another.")));
 			int i = 1;
 
 			std::ofstream fonts("/home/knoppix/.fontsdirs");
+			if (!fonts)
+			{
+				KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot search for TTF fonts!")));
+				return;
+			}
 			
 			while (vi)
 			{
@@ -565,7 +642,11 @@ void configwizard::folderSelected(const QString &qs)
 void configwizard::onCreateDir()
 {
 	QString qCmd = QString("sudo mkdir '") + docs_path->text() + lineCreate->text() + QString("'");
-	system(qCmd);
+	if (system(qCmd))
+	{
+		KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot create directory!")));
+		return;
+	}
 	
 	docs_path->setText(docs_path->text() + lineCreate->text());
 
@@ -644,9 +725,12 @@ void configwizard::openURLRequest( const KURL &url, const KParts::URLArgs & )
 
 void configwizard::onLicenseBack()
 {
-	KLocale locale("");
-	KURL url = "/opt/kinneret/l2swim/doc/" + locale.language().left(2) + "/kinneret_license.html";
-	kHTML->openURL(url);
+	if (kHTML)
+	{
+		KLocale locale("");
+		KURL url = "/opt/kinneret/l2swim/doc/" + locale.language().left(2) + "/kinneret_license.html";
+		kHTML->openURL(url);
+	}
 }
 
 

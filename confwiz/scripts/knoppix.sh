@@ -62,6 +62,24 @@ do
 	mount -t vfat -o defaults,rw,user,uid=1000,codepage=1255,iocharset=cp1255 /dev/$dir /mnt/$dir 2>&1
 done
 
+# mount all ext2 directories RW
+for dir in `cat /etc/fstab | grep ext2 | cut -b 6-9`
+do
+	mount -t ext2 -o defaults,rw,user,uid=1000 /dev/$dir /mnt/$dir 2>&1
+done
+
+# mount all ext3 directories RW
+for dir in `cat /etc/fstab | grep ext3 | cut -b 6-9`
+do
+	mount -t ext3 -o defaults,rw,user,uid=1000 /dev/$dir /mnt/$dir 2>&1
+done
+
+# mount all ReiserFS directories RW
+for dir in `cat /etc/fstab | grep reiserfs | cut -b 6-9`
+do
+	mount -t reiserfs -o defaults,rw,user,uid=1000 /dev/$dir /mnt/$dir 2>&1
+done
+
 # Scan directories
 for dir in `cat /etc/fstab | grep vfat | cut -b 6-9`
 do
@@ -82,6 +100,7 @@ echo "${BLUE}Linking partitions...${NORMAL}"
 rm -fr /home/knoppix/partitions/*
 
 letter="103"	# C in octal
+#for mntpt in `cat /etc/fstab | grep -F "`echo -e "fat\nntfs"`" | cut -b 6-9`
 for mntpt in `cat /etc/fstab | grep fat | cut -b 6-9`
 do
 	echo -e "${BLUE}Linking /mnt/${mntpt} to \\${letter}...${NORMAL}"

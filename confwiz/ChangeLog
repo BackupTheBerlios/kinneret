@@ -4,6 +4,16 @@ From 0.3.1 to 0.5.1
 * Added font control buttons in first page
 * Fixed swap size calculation
 
+22 Aug 2003:
+* Removed fonts step from automatic mode
+* Page conclusion automaticly transits to What's Next
+* Added wide-range error checking
+* Letter mapping is made even if home was not found
+* Linux partitions (ext[2|3], reiserfs) are mounted as well
+* NTFS drives are mapped as well to ~/partitions (x)
+
+(x) - Commented out, NTFS driver can destroy partitions
+
 From 0.3b to 0.3.1
 -------------------------------
 28 Jun 2003:
