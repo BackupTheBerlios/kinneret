@@ -8,6 +8,13 @@
 </head>
 
 <body bgcolor="#FFFFFF" text="#0066cc" link="#FFFFFF" alink="#000080" vlink="#FFFFFF">
+<?php
+$tmp = file("hits-counter.txt");
+$dls = $tmp[0]+1;
+$fp = fopen("hits-counter.txt", "w");
+fwrite($fp, $dls);
+fclose($fp);
+?>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr> 
     <td colspan="2">

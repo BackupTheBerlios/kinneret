@@ -164,7 +164,7 @@ The download page contains information about <b>online shops that sell GNU/Linux
 $tmp = file("hits-counter.txt");
 $counter = $tmp[0];
 ?>
-	    <a href="download2-en.php" class="orange_white">Click here to download the iso and signature files</a> - <b><?=$counter ?></b> hits since 28-February-2004<br>
+	    <a href="download3-en.php" class="orange_white">Click here to download the iso and signature files</a> - <b><?=$counter ?></b> hits since 28-February-2004<br>
 
 	    <table width="400" border="0" cellspacing="0" cellpadding="0">
               <tr>

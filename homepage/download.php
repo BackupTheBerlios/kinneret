@@ -163,7 +163,7 @@ document.write("יום "+dayname+", "+date+" ב"+monthname+", "+yearname);
 $tmp = file("hits-counter.txt");
 $counter = $tmp[0];
 ?>
-	    <a href="download2.php" class="orange_white">להורדת המערכת וקובץ בדיקת התקינות</a> - <b><?=$counter ?></b> צפיות החל מתאריך 28 בפברואר 2004 <br>
+	    <a href="download3.php" class="orange_white">להורדת המערכת וקובץ בדיקת התקינות</a> - <b><?=$counter ?></b> צפיות החל מתאריך 28 בפברואר 2004 <br>
 <a href="ftp://ftp.berlios.de/pub/kinneret/how_to_install.pdf" class="orange_white">מדריך הפעלה והגדרת תצורה ראשונית - לגרסה היציבה (פורמט PDF)</a>
 
 	    <table width="400" border="0" cellspacing="0" cellpadding="0">
