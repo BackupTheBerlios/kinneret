@@ -18,6 +18,7 @@
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
 #include <klocale.h>
+#include <kmessagebox.h>
 
 #include "idial.h"
 #include "idialer.h"
@@ -51,7 +52,7 @@ int main(int argc, char *argv[])
   if (system("[ \"`whoami`\" == \"root\" ]"))
 	{
 		KMessageBox::error(0, tr2i18n("Must be root!"));
-		return -1;
+		exit(-1);
 	}
 
   return a.exec();
