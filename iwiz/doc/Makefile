@@ -1,7 +1,9 @@
-# Makefile.in generated automatically by automake 1.4-p5 from Makefile.am
-# KDE tags expanded automatically by am_edit - $Revision: 1.2 $ 
+# Makefile.in generated automatically by automake 1.5 from Makefile.am.
+# Generated automatically from Makefile.in by config.pl.
+# KDE tags expanded automatically by am_edit - $Revision: 1.3 $ 
 
-# Copyright (C) 1994, 1995-8, 1999, 2001 Free Software Foundation, Inc.
+# Copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001
+# Free Software Foundation, Inc.
 # This Makefile.in is free software; the Free Software Foundation
 # gives unlimited permission to copy and/or distribute it,
 # with or without modifications, as long as this notice is preserved.
@@ -11,14 +13,15 @@
 # even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 # PARTICULAR PURPOSE.
 
-####### kdevelop will overwrite this part!!! (begin)##########
 
+
+####### kdevelop will overwrite this part!!! (begin)##########
 
 SHELL = /bin/sh
 
 srcdir = .
 top_srcdir = ..
-
+VPATH = .
 prefix = /usr/kde/3.1
 exec_prefix = ${prefix}
 
@@ -34,26 +37,22 @@ infodir = ${prefix}/info
 mandir = ${prefix}/man
 includedir = ${prefix}/include
 oldincludedir = /usr/include
-
-DESTDIR =
-
 pkgdatadir = $(datadir)/iwiz
 pkglibdir = $(libdir)/iwiz
 pkgincludedir = $(includedir)/iwiz
-
 top_builddir = ..
 
-ACLOCAL = aclocal
-AUTOCONF = autoconf
-AUTOMAKE = automake
-AUTOHEADER = autoheader
+ACLOCAL = ${SHELL} /home/z9u2K/projects/kinneret/cvs/iwiz/admin/missing --run aclocal
+AUTOCONF = ${SHELL} /home/z9u2K/projects/kinneret/cvs/iwiz/admin/missing --run autoconf
+AUTOMAKE = ${SHELL} /home/z9u2K/projects/kinneret/cvs/iwiz/admin/missing --run automake
+AUTOHEADER = ${SHELL} /home/z9u2K/projects/kinneret/cvs/iwiz/admin/missing --run autoheader
 
 INSTALL = /bin/install -c -p
-INSTALL_PROGRAM = ${INSTALL} $(INSTALL_STRIP_FLAG) $(AM_INSTALL_PROGRAM_FLAGS)
+INSTALL_PROGRAM = ${INSTALL} $(INSTALL_STRIP_FLAG)
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_SCRIPT = ${INSTALL}
+INSTALL_HEADER = $(INSTALL_DATA)
 transform = s,^,i386-linux-,
-
 NORMAL_INSTALL = :
 PRE_INSTALL = :
 POST_INSTALL = :
@@ -66,11 +65,11 @@ host_alias = i386-linux
 host_triplet = i386-pc-linux-gnu
 target_alias = i386-linux
 target_triplet = i386-pc-linux-gnu
-AMTAR = @AMTAR@
+AMTAR = ${SHELL} /home/z9u2K/projects/kinneret/cvs/iwiz/admin/missing --run tar
 ARTSCCONFIG = /usr/kde/3.1/bin/artsc-config
 AS = @AS@
 AUTODIRS = 
-AWK = @AWK@
+AWK = gawk
 CC = gcc
 CONF_FILES =  $(top_srcdir)/./admin/configure.in.min $(top_srcdir)/configure.in.in
 CPP = cpp
@@ -79,7 +78,7 @@ CXXCPP = g++ -E
 DCOPIDL = /usr/kde/3.1/bin/dcopidl
 DCOPIDL2CPP = /usr/kde/3.1/bin/dcopidl2cpp
 DCOP_DEPENDENCIES = $(DCOPIDL)
-DEPDIR = @DEPDIR@
+DEPDIR = .deps
 DLLTOOL = @DLLTOOL@
 DOXYGEN = @DOXYGEN@
 DOXYGEN_PROJECT_NAME = @DOXYGEN_PROJECT_NAME@
@@ -96,7 +95,7 @@ GLLIB = @GLLIB@
 GMSGFMT = /usr/bin/msgfmt
 IDL = @IDL@
 IDL_DEPENDENCIES = @IDL_DEPENDENCIES@
-INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+INSTALL_STRIP_PROGRAM = ${SHELL} $(install_sh) -c -s
 JAR = @JAR@
 JAVAC = @JAVAC@
 JAVAH = @JAVAH@
@@ -162,7 +161,6 @@ LIB_SMB = -lsmb
 LIB_X11 = -lX11 $(LIBSOCKET)
 LIB_XEXT = -lXext
 LN_S = ln -s
-MAKEINFO = makeinfo
 MCOPIDL = /usr/kde/3.1/bin/mcopidl
 MEINPROC = /usr/kde/3.1/bin/meinproc
 MICO_INCLUDES = @MICO_INCLUDES@
@@ -200,7 +198,7 @@ USER_LDFLAGS =
 USE_EXCEPTIONS = -fexceptions
 USE_RTTI = 
 USE_THREADS = 
-VERSION = 0.1
+VERSION = 0.2-rc1
 WOVERLOADED_VIRTUAL = 
 XGETTEXT = /usr/bin/xgettext
 XPMINC = @XPMINC@
@@ -211,10 +209,10 @@ X_LDFLAGS = -L/usr/X11R6/lib
 X_PRE_LIBS = 
 all_includes = -I/usr/kde/3.1/include -I/usr/qt/3/include -I/usr/X11R6/include 
 all_libraries = -L/usr/X11R6/lib -L/usr/qt/3/lib -L/usr/kde/3.1/lib 
-am__include = @am__include@
-am__quote = @am__quote@
+am__include = include
+am__quote = 
 idldir = @idldir@
-install_sh = @install_sh@
+install_sh = /home/z9u2K/projects/kinneret/cvs/iwiz/admin/install-sh
 jni_includes = @jni_includes@
 kde_appsdir = ${prefix}/share/applnk
 kde_bindir = ${exec_prefix}/bin
@@ -237,7 +235,6 @@ kde_styledir = ${libdir}/kde3/plugins/styles
 kde_templatesdir = ${prefix}/share/templates
 kde_wallpaperdir = ${prefix}/share/wallpapers
 kde_widgetdir = /usr/kde/3.1/lib/kde3/plugins/designer
-libdir = ${exec_prefix}/lib
 micodir = @micodir@
 qt_includes = /usr/qt/3/include
 qt_libraries = /usr/qt/3/lib
@@ -245,35 +242,44 @@ x_includes = /usr/X11R6/include
 x_libraries = /usr/X11R6/lib
 
 SUBDIRS = en 
+subdir = doc
 mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
-CONFIG_HEADER = ../config.h
-CONFIG_CLEAN_FILES = 
-DIST_COMMON =  Makefile.am Makefile.in
+CONFIG_HEADER = $(top_builddir)/config.h
+CONFIG_CLEAN_FILES =
+DIST_SOURCES =
 
-
-#>- DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
-#>+ 4
-KDE_DIST=Makefile.am Makefile.in 
-
-DISTFILES= $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
-
-
-TAR = tar
-GZIP_ENV = --best
-#>- all: all-redirect
+RECURSIVE_TARGETS = info-recursive dvi-recursive install-info-recursive \
+	uninstall-info-recursive all-recursive install-data-recursive \
+	install-exec-recursive installdirs-recursive install-recursive \
+	uninstall-recursive check-recursive installcheck-recursive
+DIST_COMMON = Makefile.am Makefile.in
+DIST_SUBDIRS = $(SUBDIRS)
+#>- all: all-recursive
 #>+ 1
-all: docs-am  all-redirect
+all: docs-am  all-recursive
+
 .SUFFIXES:
-$(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
-#>- 	cd $(top_srcdir) && $(AUTOMAKE) --gnu doc/Makefile
-#>+ 2
-	cd $(top_srcdir) && $(AUTOMAKE) --gnu doc/Makefile
+
+mostlyclean-libtool:
+	-rm -f *.lo
+
+clean-libtool:
+	-rm -rf .libs _libs
+
+distclean-libtool:
+	-rm -f libtool
+$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
+#>- 	cd $(top_srcdir) && \
+#>- 	  $(AUTOMAKE) --gnu  doc/Makefile
+#>+ 3
+	cd $(top_srcdir) && \
+	  $(AUTOMAKE) --gnu  doc/Makefile
 	cd $(top_srcdir) && perl admin/am_edit doc/Makefile.in
-
-Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status $(BUILT_SOURCES)
-	cd $(top_builddir) \
-	  && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
-
+Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+	cd $(top_builddir) && \
+	  CONFIG_HEADERS= CONFIG_LINKS= \
+	  CONFIG_FILES=$(subdir)/$@ $(SHELL) ./config.status
+uninstall-info-am:
 
 # This directory's subdirectories are mostly independent; you can cd
 # into them and run `make' without going through this Makefile.
@@ -281,12 +287,7 @@ Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status $(BUILT_SOURCES)
 # (1) if the variable is set in `config.status', edit `config.status'
 #     (which will cause the Makefiles to be regenerated when you run `make');
 # (2) otherwise, pass the desired values on the `make' command line.
-
-
-
-all-recursive install-data-recursive install-exec-recursive \
-installdirs-recursive install-recursive uninstall-recursive  \
-check-recursive installcheck-recursive info-recursive dvi-recursive:
+$(RECURSIVE_TARGETS):
 	@set fnord $(MAKEFLAGS); amf=$$2; \
 	dot_seen=no; \
 	target=`echo $@ | sed s/-recursive//`; \
@@ -309,11 +310,16 @@ mostlyclean-recursive clean-recursive distclean-recursive \
 maintainer-clean-recursive:
 	@set fnord $(MAKEFLAGS); amf=$$2; \
 	dot_seen=no; \
-	rev=''; list='$(SUBDIRS)'; for subdir in $$list; do \
-	  rev="$$subdir $$rev"; \
-	  test "$$subdir" != "." || dot_seen=yes; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	rev=''; for subdir in $$list; do \
+	  if test "$$subdir" = "."; then :; else \
+	    rev="$$subdir $$rev"; \
+	  fi; \
 	done; \
-	test "$$dot_seen" = "no" && rev=". $$rev"; \
+	rev="$$rev ."; \
 	target=`echo $@ | sed s/-recursive//`; \
 	for subdir in $$rev; do \
 	  echo "Making $$target in $$subdir"; \
@@ -332,56 +338,60 @@ tags-recursive:
 
 tags: TAGS
 
-ID: $(HEADERS) $(SOURCES) $(LISP)
-	list='$(SOURCES) $(HEADERS)'; \
-	unique=`for i in $$list; do echo $$i; done | \
-	  awk '    { files[$$0] = 1; } \
+ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
+	list='$(SOURCES) $(HEADERS) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '    { files[$$0] = 1; } \
 	       END { for (i in files) print i; }'`; \
-	here=`pwd` && cd $(srcdir) \
-	  && mkid -f$$here/ID $$unique $(LISP)
+	mkid -fID $$unique $(LISP)
 
-TAGS: tags-recursive $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) $(LISP)
+TAGS: tags-recursive $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) \
+		$(TAGS_FILES) $(LISP)
 	tags=; \
 	here=`pwd`; \
 	list='$(SUBDIRS)'; for subdir in $$list; do \
-   if test "$$subdir" = .; then :; else \
+	  if test "$$subdir" = .; then :; else \
 	    test -f $$subdir/TAGS && tags="$$tags -i $$here/$$subdir/TAGS"; \
-   fi; \
+	  fi; \
 	done; \
-	list='$(SOURCES) $(HEADERS)'; \
-	unique=`for i in $$list; do echo $$i; done | \
-	  awk '    { files[$$0] = 1; } \
+	list='$(SOURCES) $(HEADERS) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '    { files[$$0] = 1; } \
 	       END { for (i in files) print i; }'`; \
 	test -z "$(ETAGS_ARGS)$$unique$(LISP)$$tags" \
-	  || (cd $(srcdir) && etags $(ETAGS_ARGS) $$tags  $$unique $(LISP) -o $$here/TAGS)
+	  || etags $(ETAGS_ARGS) $$tags  $$unique $(LISP)
 
-mostlyclean-tags:
-
-clean-tags:
+GTAGS:
+	here=`CDPATH=: && cd $(top_builddir) && pwd` \
+	  && cd $(top_srcdir) \
+	  && gtags -i $(GTAGS_ARGS) $$here
 
 distclean-tags:
-	-rm -f TAGS ID
+	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH
 
-maintainer-clean-tags:
+DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 
-distdir = $(top_builddir)/$(PACKAGE)-$(VERSION)/$(subdir)
-
-subdir = doc
+top_distdir = ..
+distdir = $(top_distdir)/$(PACKAGE)-$(VERSION)
 
 distdir: $(DISTFILES)
-	here=`cd $(top_builddir) && pwd`; \
-	top_distdir=`cd $(top_distdir) && pwd`; \
-	distdir=`cd $(distdir) && pwd`; \
-	cd $(top_srcdir) \
-	  && $(AUTOMAKE) --include-deps --build-dir=$$here --srcdir-name=$(top_srcdir) --output-dir=$$top_distdir --gnu doc/Makefile
 	@for file in $(DISTFILES); do \
-	  d=$(srcdir); \
+	  if test -f $$file; then d=.; else d=$(srcdir); fi; \
+	  dir=`echo "$$file" | sed -e 's,/[^/]*$$,,'`; \
+	  if test "$$dir" != "$$file" && test "$$dir" != "."; then \
+	    $(mkinstalldirs) "$(distdir)/$$dir"; \
+	  fi; \
 	  if test -d $$d/$$file; then \
-	    cp -pr $$d/$$file $(distdir)/$$file; \
+	    cp -pR $$d/$$file $(distdir) \
+	    || exit 1; \
 	  else \
 	    test -f $(distdir)/$$file \
-	    || ln $$d/$$file $(distdir)/$$file 2> /dev/null \
-	    || cp -p $$d/$$file $(distdir)/$$file || :; \
+	    || cp -p $$d/$$file $(distdir)/$$file \
+	    || exit 1; \
 	  fi; \
 	done
 	for subdir in $(SUBDIRS); do \
@@ -389,85 +399,101 @@ distdir: $(DISTFILES)
 	    test -d $(distdir)/$$subdir \
 	    || mkdir $(distdir)/$$subdir \
 	    || exit 1; \
-	    chmod 777 $(distdir)/$$subdir; \
-	    (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) top_distdir=../$(top_distdir) distdir=../$(distdir)/$$subdir distdir) \
+	    (cd $$subdir && \
+	      $(MAKE) $(AM_MAKEFLAGS) \
+	        top_distdir="$(top_distdir)" \
+	        distdir=../$(distdir)/$$subdir \
+	        distdir) \
 	      || exit 1; \
 	  fi; \
 	done
-info-am:
-info: info-recursive
-dvi-am:
-dvi: dvi-recursive
 check-am: all-am
 check: check-recursive
-installcheck-am:
-installcheck: installcheck-recursive
-install-exec-am:
-install-exec: install-exec-recursive
-
-install-data-am:
-install-data: install-data-recursive
-
-install-am: all-am
-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
-install: install-recursive
-uninstall-am:
-uninstall: uninstall-recursive
 all-am: Makefile
-all-redirect: all-recursive
-install-strip:
-	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
 installdirs: installdirs-recursive
 installdirs-am:
 
+install: install-recursive
+install-exec: install-exec-recursive
+install-data: install-data-recursive
+uninstall: uninstall-recursive
 
+install-am: all-am
+	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+
+installcheck: installcheck-recursive
+install-strip:
+	$(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
+	  `test -z '$(STRIP)' || \
+	    echo "INSTALL_PROGRAM_ENV=STRIPPROG='$(STRIP)'"` install
 mostlyclean-generic:
 
 clean-generic:
 
 distclean-generic:
-	-rm -f Makefile $(CONFIG_CLEAN_FILES)
-	-rm -f config.cache config.log stamp-h stamp-h[0-9]*
+	-rm -f Makefile $(CONFIG_CLEAN_FILES) stamp-h stamp-h[0-9]*
 
 maintainer-clean-generic:
-mostlyclean-am:  mostlyclean-tags mostlyclean-generic
-
-mostlyclean: mostlyclean-recursive
-
-clean-am:  clean-tags clean-generic mostlyclean-am
-
+	@echo "This command is intended for maintainers to use"
+	@echo "it deletes files that may require special tools to rebuild."
 #>- clean: clean-recursive
 #>+ 1
 clean: kde-rpo-clean  clean-recursive
 
-distclean-am:  distclean-tags distclean-generic clean-am
-	-rm -f libtool
+clean-am: clean-generic clean-libtool mostlyclean-am
 
 distclean: distclean-recursive
 
-maintainer-clean-am:  maintainer-clean-tags maintainer-clean-generic \
-		distclean-am
-	@echo "This command is intended for maintainers to use;"
-	@echo "it deletes files that may require special tools to rebuild."
+distclean-am: clean-am distclean-generic distclean-libtool \
+	distclean-tags
+
+dvi: dvi-recursive
+
+dvi-am:
+
+info: info-recursive
+
+info-am:
+
+install-data-am:
+
+install-exec-am:
+
+install-info: install-info-recursive
+
+install-man:
+
+installcheck-am:
 
 maintainer-clean: maintainer-clean-recursive
 
-.PHONY: install-data-recursive uninstall-data-recursive \
-install-exec-recursive uninstall-exec-recursive installdirs-recursive \
-uninstalldirs-recursive all-recursive check-recursive \
-installcheck-recursive info-recursive dvi-recursive \
-mostlyclean-recursive distclean-recursive clean-recursive \
-maintainer-clean-recursive tags tags-recursive mostlyclean-tags \
-distclean-tags clean-tags maintainer-clean-tags distdir info-am info \
-dvi-am dvi check check-am installcheck-am installcheck install-exec-am \
-install-exec install-data-am install-data install-am install \
-uninstall-am uninstall all-redirect all-am all installdirs-am \
-installdirs mostlyclean-generic distclean-generic clean-generic \
-maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+maintainer-clean-am: distclean-am maintainer-clean-generic
+
+mostlyclean: mostlyclean-recursive
+
+mostlyclean-am: mostlyclean-generic mostlyclean-libtool
+
+uninstall-am: uninstall-info-am
+
+uninstall-info: uninstall-info-recursive
+
+.PHONY: $(RECURSIVE_TARGETS) GTAGS all all-am check check-am clean \
+	clean-generic clean-libtool clean-recursive distclean \
+	distclean-generic distclean-libtool distclean-recursive \
+	distclean-tags distdir dvi dvi-am dvi-recursive info info-am \
+	info-recursive install install-am install-data install-data-am \
+	install-data-recursive install-exec install-exec-am \
+	install-exec-recursive install-info install-info-am \
+	install-info-recursive install-man install-recursive \
+	install-strip installcheck installcheck-am installdirs \
+	installdirs-am installdirs-recursive maintainer-clean \
+	maintainer-clean-generic maintainer-clean-recursive mostlyclean \
+	mostlyclean-generic mostlyclean-libtool mostlyclean-recursive \
+	tags tags-recursive uninstall uninstall-am uninstall-info-am \
+	uninstall-info-recursive uninstall-recursive
 
 
 ####### kdevelop will overwrite this part!!! (end)############
-
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:
@@ -475,9 +501,10 @@ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
 #>+ 2
 docs-am:
 
-#>+ 5
+#>+ 6
 force-reedit:
-		cd $(top_srcdir) && $(AUTOMAKE) --gnu doc/Makefile
+		cd $(top_srcdir) && \
+	  $(AUTOMAKE) --gnu  doc/Makefile
 	cd $(top_srcdir) && perl admin/am_edit doc/Makefile.in
 
 

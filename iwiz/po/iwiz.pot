@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: iwiz\n"
-"POT-Creation-Date: 2003-07-21 14:13+0300\n"
+"POT-Creation-Date: 2003-07-23 11:47+0300\n"
 "PO-Revision-Date: 2003-07-21 14:13+0300\n"
 "Last-Translator: Itay 'z9u2K' Duvdevani <z9u2K@bezeqint.net>\n"
 "Language-Team: Hebrew <livrix@il.org>\n"
@@ -14,6 +14,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.1\n"
+
+#: iwizard.ui.h:33
+msgid "Cannot query ISPs"
+msgstr ""
+
+#: iwizard.ui.h:77
+msgid "Cannot query hardware"
+msgstr ""
+
+#: iwizard.ui.h:117
+msgid "Cannot query ethernet devices"
+msgstr ""
+
+#: iwizard.ui.h:164 iwizard.ui.h:234
+msgid "Cannot get modem type"
+msgstr ""
+
+#: iwizard.ui.h:205
+msgid "Cannot resolve modem type"
+msgstr ""
 
 #: main.cpp:40 main.cpp:48 iwiz.moc.cpp:34 iwiz.moc.cpp:42
 msgid "Iwiz"
@@ -23,30 +43,44 @@ msgstr ""
 msgid "Cannot open /tmp/.cons"
 msgstr ""
 
-#: main.cpp:177
+#: main.cpp:185
 msgid ""
 "Unable to create connection.\n"
 "/tmp/internet_dump containes the output from the tool,\n"
 "please report a bug and include this file."
 msgstr ""
 
-#: main.cpp:182
+#: main.cpp:190
 msgid "Connection created successfuly"
 msgstr ""
 
-#: main.cpp:190
+#: main.cpp:198
 msgid "Unable to set connection to default."
 msgstr ""
 
-#: main.cpp:193
+#: main.cpp:201
 msgid "Connection set to default"
 msgstr ""
 
-#: iwizard.cpp:417
-msgid "Welcome"
+#: rename.cpp:69
+msgid "Rename Connection"
+msgstr ""
+
+#: rename.cpp:70
+msgid ""
+"The name you have selected for the connection is not unique. Please enter a "
+"unique name:"
+msgstr ""
+
+#: rename.cpp:71
+msgid "Rename"
 msgstr ""
 
 #: iwizard.cpp:418
+msgid "Welcome"
+msgstr ""
+
+#: iwizard.cpp:419
 msgid ""
 "Welcome to the Internet configuration wizard.\n"
 "This wizard will help you to set up your connection to the internet from "
@@ -68,61 +102,61 @@ msgid ""
 "org) before you do."
 msgstr ""
 
-#: iwizard.cpp:426
+#: iwizard.cpp:427
 msgid "Welcome to the Internet Configuration Wizard!"
 msgstr ""
 
-#: iwizard.cpp:427
+#: iwizard.cpp:428
 msgid "How do you connect to the internet?"
 msgstr ""
 
-#: iwizard.cpp:429
+#: iwizard.cpp:430
 msgid "LAN"
 msgstr ""
 
-#: iwizard.cpp:430
+#: iwizard.cpp:431
 msgid ""
 "Local Area Network. Choose this if you are not connecting directly to the "
 "internet, but do it through a gateway instate."
 msgstr ""
 
-#: iwizard.cpp:431
+#: iwizard.cpp:432
 msgid "ADSL"
 msgstr ""
 
-#: iwizard.cpp:432
+#: iwizard.cpp:433
 msgid "Asymetric Digital Subscriptor Line"
 msgstr ""
 
-#: iwizard.cpp:433
+#: iwizard.cpp:434
 msgid "Cable"
 msgstr ""
 
-#: iwizard.cpp:434
+#: iwizard.cpp:435
 msgid "TV Cable"
 msgstr ""
 
-#: iwizard.cpp:435
+#: iwizard.cpp:436
 msgid "ISDN"
 msgstr ""
 
-#: iwizard.cpp:436
+#: iwizard.cpp:437
 msgid "ISDN is a fast connection over special telephone lines"
 msgstr ""
 
-#: iwizard.cpp:437
+#: iwizard.cpp:438
 msgid "Analog (Dial-up)"
 msgstr ""
 
-#: iwizard.cpp:438
+#: iwizard.cpp:439
 msgid "A regular connection made from a regualt analog telephone line"
 msgstr ""
 
-#: iwizard.cpp:439
+#: iwizard.cpp:440
 msgid "Connection Type"
 msgstr ""
 
-#: iwizard.cpp:440
+#: iwizard.cpp:441
 msgid ""
 "Debian system handle differently network from other Linuxes, In order to "
 "setup the connection right, the wizard needs to know if your distribution if "
@@ -131,27 +165,27 @@ msgid ""
 "What system are you running this wizard on?"
 msgstr ""
 
-#: iwizard.cpp:444
-msgid "Debian based Linux"
-msgstr ""
-
 #: iwizard.cpp:445
-msgid "Choose this if your Linux is based on Debian."
+msgid "Debian based Linux (Debian, Knoppix, Kinneret, etc...)"
 msgstr ""
 
 #: iwizard.cpp:446
-msgid "Non-Debian based Linux"
+msgid "Choose this if your Linux is based on Debian."
 msgstr ""
 
 #: iwizard.cpp:447
-msgid "Choose this if your Linux is not based on Debian."
+msgid "Non-Debian based Linux (Mandrake, RedHat etc...)"
 msgstr ""
 
 #: iwizard.cpp:448
-msgid "Debian, or non-Debian?"
+msgid "Choose this if your Linux is not based on Debian."
 msgstr ""
 
 #: iwizard.cpp:449
+msgid "Debian, or non-Debian?"
+msgstr ""
+
+#: iwizard.cpp:450
 msgid ""
 "Here is a list if known Israeli Internet Service Providers (ISPs). If your "
 "is not on the list, please report to us, and we'll have it added.\n"
@@ -159,155 +193,129 @@ msgid ""
 "Please pick your ISP from the list below."
 msgstr ""
 
-#: iwizard.cpp:452
+#: iwizard.cpp:453
 msgid "A List of ISPs. Pick the one you use."
 msgstr ""
 
-#: iwizard.cpp:453
+#: iwizard.cpp:454
 msgid "Internet Service Provider (ISP)"
 msgstr ""
 
-#: iwizard.cpp:454
+#: iwizard.cpp:455
 msgid ""
 "Here is a list of modems. Choose the modem that is connected to your "
 "computer."
 msgstr ""
 
-#: iwizard.cpp:455
+#: iwizard.cpp:456
 msgid "Pick your modem from the list."
 msgstr ""
 
-#: iwizard.cpp:456
+#: iwizard.cpp:457
 msgid "Modem"
 msgstr ""
 
-#: iwizard.cpp:457
+#: iwizard.cpp:458
 msgid ""
 "You will now have to specify some parameters about your modem and the way it "
 "is connected to your computer"
 msgstr ""
 
-#: iwizard.cpp:458
+#: iwizard.cpp:459
 msgid "Choose interface:"
 msgstr ""
 
-#: iwizard.cpp:459
+#: iwizard.cpp:460
 msgid "Through Ethernet Card"
 msgstr ""
 
-#: iwizard.cpp:460
+#: iwizard.cpp:461
 msgid "Through USB"
 msgstr ""
 
-#: iwizard.cpp:461
+#: iwizard.cpp:462
 msgid "Ethernet"
 msgstr ""
 
-#: iwizard.cpp:462
+#: iwizard.cpp:463
 msgid "Which card your modems connects to?"
 msgstr ""
 
-#: iwizard.cpp:463
+#: iwizard.cpp:464
 msgid "USB"
 msgstr ""
 
-#: iwizard.cpp:464
+#: iwizard.cpp:465
 msgid ""
 "What is the module name that has to be loaded into the kernel to make the "
 "modem active (without the .o suffix)?"
 msgstr ""
 
-#: iwizard.cpp:465
+#: iwizard.cpp:466
 msgid "CDCEther"
 msgstr ""
 
-#: iwizard.cpp:466
+#: iwizard.cpp:467
 msgid "After the modem is activated, which network interface will it occupy?"
 msgstr ""
 
-#: iwizard.cpp:467
+#: iwizard.cpp:468
 msgid "eth0"
 msgstr ""
 
-#: iwizard.cpp:468
+#: iwizard.cpp:469
 msgid "Modem's Interface"
 msgstr ""
 
-#: iwizard.cpp:469
-msgid "Username:"
+#: iwizard.cpp:470
+msgid "Server:"
 msgstr ""
 
 #: iwizard.cpp:471
-msgid "Password:"
+msgid "(Apply mainly to universities)"
 msgstr ""
 
 #: iwizard.cpp:472
-msgid "Remember Password (TODO)"
-msgstr ""
-
-#: iwizard.cpp:473
-msgid "Connect on Startup (TODO)"
+msgid "Username:"
 msgstr ""
 
 #: iwizard.cpp:474
-msgid "Auto reconnect if connection dorpped (TODO)"
+msgid "Password:"
 msgstr ""
 
 #: iwizard.cpp:475
+msgid "Remember Password (TODO)"
+msgstr ""
+
+#: iwizard.cpp:476
+msgid "Connect on Startup (TODO)"
+msgstr ""
+
+#: iwizard.cpp:477
+msgid "Auto reconnect if connection dorpped (TODO)"
+msgstr ""
+
+#: iwizard.cpp:478
 msgid ""
 "The connection's name is a unique name given to this connection. It will be "
 "used to identify this connection, in case you have more then one. Please "
 "make sure the name you have selected is unique."
 msgstr ""
 
-#: iwizard.cpp:476
+#: iwizard.cpp:479
 msgid "Connection Name:"
 msgstr ""
 
-#: iwizard.cpp:477
+#: iwizard.cpp:480
 msgid "My Connection"
 msgstr ""
 
-#: iwizard.cpp:478
+#: iwizard.cpp:481
 msgid "Set as default conection"
 msgstr ""
 
-#: iwizard.cpp:479
+#: iwizard.cpp:482
 msgid "Username, password and connection name"
-msgstr ""
-
-#: iwizard.ui.h:33
-msgid "Cannot query ISPs"
-msgstr ""
-
-#: iwizard.ui.h:77
-msgid "Cannot query hardware"
-msgstr ""
-
-#: iwizard.ui.h:117
-msgid "Cannot query ethernet devices"
-msgstr ""
-
-#: iwizard.ui.h:164 iwizard.ui.h:227
-msgid "Cannot get modem type"
-msgstr ""
-
-#: iwizard.ui.h:205
-msgid "Cannot resolve modem type"
-msgstr ""
-
-#: rename.cpp:69
-msgid "Rename Connection"
-msgstr ""
-
-#: rename.cpp:70
-msgid ""
-"The name you have selected for the connection is not unique. Please enter a "
-"unique name:"
-msgstr ""
-
-#: rename.cpp:71
-msgid "Rename"
 msgstr ""
 
 #: _translatorinfo.cpp:1

@@ -242,7 +242,7 @@ What system are you running this wizard on?</string>
                                     <cstring>radioDebian</cstring>
                                 </property>
                                 <property name="text">
-                                    <string>Debian based Linux</string>
+                                    <string>Debian based Linux (Debian, Knoppix, Kinneret, etc...)</string>
                                 </property>
                                 <property name="checked">
                                     <bool>true</bool>
@@ -256,7 +256,7 @@ What system are you running this wizard on?</string>
                                     <cstring>radioNonDebian</cstring>
                                 </property>
                                 <property name="text">
-                                    <string>Non-Debian based Linux</string>
+                                    <string>Non-Debian based Linux (Mandrake, RedHat etc...)</string>
                                 </property>
                                 <property name="whatsThis" stdset="0">
                                     <string>Choose this if your Linux is not based on Debian.</string>

@@ -1,1 +1,6 @@
-
+v0.2-rc1
+========
+* Remeber password
+* Auto connect
+* Reconnect if connection dropped
+* If ADSL is selected, don't display Cables modems and vice-versa
