@@ -275,6 +275,85 @@ Alt-X : חזרה מיידית לתפריט הראשי.
 </section>
 <quatro><one>"../image/man_games_lb2_1.jpg"</one><two>"../image/man_games_lb2_2.jpg"</two><three>"../image/man_games_lb2_3.jpg"</three><four>"../image/man_games_lb2_4.jpg"</four></quatro>
 
+<chapter>
+כח האנימה (Power Manga)
+</chapter>
+<para>
+משחק ממכר שבו נלחמים במגוון כלי טייס שמגיעים מהחלל. גרפיקה מדהימה!
+</para>
+
+<section>
+מהלך המשחק
+</section>
+<para>
+לאחר הקדמה קצרה (שניתן לדלג עליה ע"י לחיצה על Esc) יופיע התפריט הראשי. מעבר בין האופציות מתבצע ע"י החיצים למטה ולמעלה ובחירה ע"י מקש Enter. יש לבחור באופציה Play בכדי להתחיל במשחק.
+</para>
+<para>
+ניתן לנוע לכל הכיוונים ע"י מקשי החיצים ולירות עם מקש הרווח. מטרת המשחק היא להשמיד את כלי הטיס של החייזרים ולהיזהר מפגיעות בחללית שלך.
+</para>
+
+<section>
+הפסקת המשחק
+</section>
+<para>
+על-מנת להפסיק את המשחק יש ללחוץ על Esc, שיוביל לתפריט הראשי של המשחק. כדי לצאת מהמשחק יש לבחור באפשרות Exit בתפריט הראשי.
+</para>
+
+<section>
+תמונות מסך
+</section>
+<quatro><one>"../image/man_games_pm_1.jpg"</one><two>"../image/man_games_pm_2.jpg"</two><three>"../image/man_games_pm_3.jpg"</three><four>"../image/man_games_pm_4.jpg"</four></quatro>
+
+<chapter>
+בועות קפואות (Frozen Bubble)
+</chapter>
+<image><file>"../image/man_games_jnb_logo.jpg"</file></image>
+<para>
+משחק פשוט אך ממכר שבו יש לירות כדורים על מנת ליצור רצפי צבע שיגרמו לנפילת כדורים ארצה.
+</para>
+
+<section>
+מהלך המשחק
+</section>
+<para>
+
+</para>
+
+<section>
+הפסקת המשחק
+</section>
+<para>
+
+</para>
+
+<section>
+מקשי הפעלה
+</section>
+<para>
+
+</para>
+
+
+<para>
+<bullets>
+<item>
+
+</item>
+<item>
+
+</item>
+<item>
+
+</item>
+</bullets>
+</para>
+
+
+<section>
+תמונות מסך
+</section>
+<quatro><one>"../image/man_games_jnb_1.jpg"</one><two>"../image/man_games_jnb_2.jpg"</two><three>"../image/man_games_jnb_3.jpg"</three><four>"../image/man_games_jnb_4.jpg"</four></quatro>
+
 <copy>
 מסמך זה עובד ונערך ע"י תוכנה חופשית בלבד. המסמך נכתב כקובץ XML בעזרת עורך התמלילים Katoob והומר ל HTML בעזרת המעבד xsltptoc תוך שימוש בתבנית XSLT שנכתבה בעזרת Katoob, על מערכת ההפעלה GNU/Linux. 
 </copy>

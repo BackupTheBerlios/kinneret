@@ -196,18 +196,9 @@
 שבירת לבנים LBreakout2
 </section>
 <para>
-משחק קלסי שבו המשתמש אמור להכות במחבט, ולפגוע בלבנים על מנת להפילן מבלי
-לאבד את הכדור.
+משחק קלסי שבו המשתמש אמור להכות במחבט, ולפגוע בלבנים על מנת להפילן מבלי לאבד את הכדור.
 </para>
 <image><file>"../image/tour5games_lbreakout2.png"</file></image>
-
-<section>
-סלעים ויהלומים Rocks 'n' Diamonds
-</section>
-<para>
-משחק פשוט אך ממכר שבו יש לירות כדורים על מנת ליצור רצפי צבע שיגרמו לנפילת כדורים ארצה.
-</para>
-<image><file>"../image/tour5games_rocks.png"</file></image>
 
 <section>
 כח האנימה Power Manga
@@ -221,7 +212,7 @@
 אניגמה Enigma
 </section>
 <para>
-גרסא מחודשת לאוקסייד, משחק פאזל שהיה פופולארי מאד באטארי ST, שבו יש לגלות צמדים תואמים של אבני צבע. <link href="man_enigma.html">הוראות שימוש במשחק</link>
+גרסא מחודשת לאוקסייד, משחק פאזל שהיה פופולארי מאד באטארי, שבו יש לגלות צמדים תואמים של אבני צבע. <link href="man_enigma.html">הוראות שימוש במשחק</link>
 </para>
 <image><file>"../image/tour5games_enigma.png"</file></image>
 
