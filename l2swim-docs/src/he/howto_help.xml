@@ -27,7 +27,7 @@
 קצת היסטוריה
 </chapter>
 <para>
-אם קראת את ה-<link href="faq_kinneret.html"> FAQ (שאלות נפוצות)</link> שלנו (ואנחנו מקווים שקראת) ידוע לך בוודאי שהפרוייקט הוקם בפורום קוד פתוח בפורטל הלינוקס העברי - whatsup. אם יש לך זמן פנוי מומלץ לקרוא את הדיון המקורי <link href="http://www.whatsup.co.il/modules.php?op=modload&amp;name=Forum&amp;file=viewtopic&amp;topic=1064&amp;forum=12">כאן</link>. למרות שמדובר בדיון ארוך באופן יחסי זו הדרך הטובה ביותר להבין איך נולד ועוצב הרעיון והפרוייקט.
+אם קראת את ה-<link href="faq_kinneret.html"> FAQ (שאלות נפוצות)</link> שלנו (ואנחנו מקווים שקראת) ידוע לך בוודאי שהפרוייקט הוקם בפורום קוד פתוח בפורטל הלינוקס העברי - whatsup. אם יש לך זמן פנוי מומלץ לקרוא את הדיון המקורי <link href="http://www.whatsup.co.il/modules.php?op=modload&amp;name=Forum&amp;file=viewtopic&amp;topic=1064&amp;forum=12">כאן</link><web/>. למרות שמדובר בדיון ארוך באופן יחסי זו הדרך הטובה ביותר להבין איך נולד ועוצב הרעיון והפרוייקט.
 </para>
 
 
@@ -35,7 +35,7 @@
 צוות ההיגוי
 </chapter>
 <para>
-במהלך התגבשות הפרוייקט היה ברור שיש צורך בגוף מכוון, שידחוף את כנרת קדימה, לצורך כך התאגדו שישה מהמשתתפים הפעילים בדיונים הראשוניים, שהביעו נכונות לתרום ולהתחייב לפרוייקט. ההחלטה הראשונה הצוות הייתה חלוקה לקבוצות עבודה, כשכל חבר קיבל קבוצה, ואיתה נושא לטיפולו. צוות ההיגוי גם קובע מועדים לפגישות מקוונות ב-IRC. קישורים: <link href="http://www.linux-kinneret.org/modules.php?name=News&amp;file=article&amp;sid=3"> ההודעה בדבר הקמת צוות ההיגוי</link> ו<link href="http://kinneret.miloberi.com/modules.php?name=Content&amp;pa=showpage&amp;pid=1"> דף קשר לחברי צוות ההיגוי</link>.
+במהלך התגבשות הפרוייקט היה ברור שיש צורך בגוף מכוון, שידחוף את כנרת קדימה, לצורך כך התאגדו שישה מהמשתתפים הפעילים בדיונים הראשוניים, שהביעו נכונות לתרום ולהתחייב לפרוייקט. ההחלטה הראשונה הצוות הייתה חלוקה לקבוצות עבודה, כשכל חבר קיבל קבוצה, ואיתה נושא לטיפולו. צוות ההיגוי גם קובע מועדים לפגישות מקוונות ב-IRC. קישורים: <link href="http://www.linux-kinneret.org/main/modules.php?name=News&amp;file=article&amp;sid=3"> ההודעה בדבר הקמת צוות ההיגוי</link><web/> ו<link href="http://www.linux-kinneret.org/main/modules.php?name=Content&amp;pa=showpage&amp;pid=1"> דף קשר לחברי צוות ההיגוי</link><web/>.
 </para>
 
 <chapter>
@@ -70,8 +70,8 @@
 <para>
 רוב העבודה על כנרת מתבצעת בפורומים שבאתר.
 מדי פעם, כאשר נושא עקרוני עולה לדיון, מכונסת פגישה מקוונת ב-IRC. הפגישות מתקיימות על שרת מאקרון הישראלי irc.macron.co.il:6667 בערוץ kinneret# בד"כ בשעות הערב. הודעות על פגישות מקוונות מתפרסמות ב<link href="http://www.linux-kinneret.org">אתר הבית
-</link> שלנו.
-חבילות להורדה וכלי פיתוח אחרים אפשר למצוא ב<link href="http://developer.berlios.de/projects/kinneret">אתר הפיתוח</link>
+</link><web/> שלנו.
+חבילות להורדה וכלי פיתוח אחרים אפשר למצוא ב<link href="http://developer.berlios.de/projects/kinneret">אתר הפיתוח</link><web/>
 ב-berliOS, חממת פיתוח גרמנית לפרוייקטים בקוד פתוח. קוד ומסמכים בפיתוח ניתן למצוא בשרתי ה-cvs וה ftp באתר הנ"ל.
 </para>
 

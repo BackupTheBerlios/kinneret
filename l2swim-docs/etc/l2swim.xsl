@@ -17,7 +17,7 @@
      http://www.gnu.org/copyleft/gpl.html for more details.
 
      Filename: l2swim.xsl
-     Version: 1.99a (2nd edition) 16-September-2003
+     Version: 1.99b (2nd edition) 18-September-2003
      Encoding: [UTF8]
      Language support: Hebrew, Arabic, English, Russian
 
@@ -83,13 +83,62 @@
 			<table bgcolor="#99ccff" width="100%" cellpadding="5" cellspacing="0" border="0"><tr><td align="center">
 				<xsl:choose>
 <!-- TO DO: needs translation -->
-					<xsl:when test="@lang = 'hebrew'">מסמך זה עובד ונערך עבור <a href="http://www.linux-kinneret.org">גנו/לינוקס כנרת</a>, תוך שימוש בתוכנה חופשית בלבד.</xsl:when>
-					<xsl:when test="@lang = 'arabic'">מסמך זה עובד ונערך עבור <a href="http://www.linux-kinneret.org">גנו/לינוקס כנרת</a>, תוך שימוש בתוכנה חופשית בלבד.</xsl:when>
-					<xsl:when test="@lang = 'russian'">This document was edited and formatted for <a href="http://www.linux-kinneret.org">GNU/Linux Kinneret</a> using only free software</xsl:when>
-					<xsl:when test="@lang = 'english'">This document was edited and formatted for <a href="http://www.linux-kinneret.org">GNU/Linux Kinneret</a> using only free software</xsl:when>
+					<xsl:when test="@lang = 'hebrew'">
+מסמך זה עובד ונערך עבור <a href="http://www.linux-kinneret.org">גנו/לינוקס כנרת</a>, תוך שימוש בתוכנה חופשית בלבד.
+					</xsl:when>
+					<xsl:when test="@lang = 'arabic'">
+מסמך זה עובד ונערך עבור <a href="http://www.linux-kinneret.org">גנו/לינוקס כנרת</a>, תוך שימוש בתוכנה חופשית בלבד.
+					</xsl:when>
+					<xsl:when test="@lang = 'russian'">
+This document was edited and formatted for <a href="http://www.linux-kinneret.org">GNU/Linux Kinneret</a> using only free software
+					</xsl:when>
+					<xsl:when test="@lang = 'english'">
+This document was edited and formatted for <a href="http://www.linux-kinneret.org">GNU/Linux Kinneret</a> using only free software
+					</xsl:when>
 					<xsl:otherwise>ltr</xsl:otherwise>
 				</xsl:choose>
 			</td></tr></table>
+
+			<table bgcolor="#bbffbb" width="100%" cellpadding="5" cellspacing="0" border="0"><tr><td align="center">
+				<xsl:choose>
+<!-- TO DO: needs translation -->
+					<xsl:when test="@lang = 'hebrew'">
+Linux הוא שם רשום של Linus Torvalds; Unix הוא שם רשום של ה Open Group בארה"ב ובמדינות נוספות, Windows הוא שם רשום של Microsoft Corporation. כל שאר השמות הרשומים וזכויות היוצרים שייכים לבעליהם.
+					</xsl:when>
+					<xsl:when test="@lang = 'arabic'">
+לינוקס הוא שם רשום של Linus Torvalds; יוניקס הוא שם רשום של ה Open Group בארה"ב ובמדינות נוספות, Windows הוא שם רשום של Microsoft Corporation. כל שאר השמות הרשומים וזכויות היוצרים שייכים לבעליהם.
+					</xsl:when>
+					<xsl:when test="@lang = 'russian'">
+Linux is a registered trademark by Linus Torvalds. Unix is a registered trademark by the Open Group is the US and other countries. Windows is a registered trademarks of Microsoft corp. All other trademarks and copyrights belong to the respective owners.
+					</xsl:when>
+					<xsl:when test="@lang = 'english'">
+Linux is a registered trademark by Linus Torvalds. Unix is a registered trademark by the Open Group is the US and other countries. Windows is a registered trademarks of Microsoft corp. All other trademarks and copyrights belong to the respective owners.
+					</xsl:when>
+					<xsl:otherwise>ltr</xsl:otherwise>
+				</xsl:choose>
+			</td></tr></table>
+
+			<table bgcolor="#ffffbb" width="100%" cellpadding="5" cellspacing="0" border="0"><tr><td align="center">
+				<xsl:choose>
+<!-- TO DO: needs translation -->
+					<xsl:when test="@lang = 'hebrew'">
+חשוב לדעת! גנו/לינוקס כנרת מסופקת "כפי שהיא", בלא אחריות מסוג כלשהו, בין אם מפורשת ובין אם משתמעת, לרבות, אך מבלי למעט מהאמור, האחריות המשתמעת למסחריות והתאמה למטרה מסוימת. בעלי זכויות היוצרים ו/או מפיצי התוכנה לא ישאו כלפיך באחריות לנזקים, לרבות נזקים כלליים, מיוחדים, משניים או תוצאתיים כלשהם, הנובעים מהשימוש או מאי-היכולת להשתמש בתוכנות המסופקות. עליך .לקרוא בעיון את רישיון השימוש המלא ולהסכים לנאמר בו לפני השימוש בהפצה זו.
+					</xsl:when>
+					<xsl:when test="@lang = 'arabic'">
+חשוב לדעת! גנו/לינוקס כנרת מסופקת "כפי שהיא", בלא אחריות מסוג כלשהו, בין אם מפורשת ובין אם משתמעת, לרבות, אך מבלי למעט מהאמור, האחריות המשתמעת למסחריות והתאמה למטרה מסוימת. בעלי זכויות היוצרים ו/או מפיצי התוכנה לא ישאו כלפיך באחריות לנזקים, לרבות נזקים כלליים, מיוחדים, משניים או תוצאתיים כלשהם, הנובעים מהשימוש או מאי-היכולת להשתמש בתוכנות המסופקות. עליך .לקרוא בעיון את רישיון השימוש המלא ולהסכים לנאמר בו לפני השימוש בהפצה זו.
+					</xsl:when>
+					<xsl:when test="@lang = 'russian'">
+Important! GNU/Linux Kinneret is provided "as is" without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose. You are requested to read and agree to the full end user license prior to using this distribution.
+					</xsl:when>
+					<xsl:when test="@lang = 'english'">
+Important! GNU/Linux Kinneret is provided "as is" without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose. You are requested to read and agree to the full end user license prior to using this distribution.
+					</xsl:when>
+					<xsl:otherwise>ltr</xsl:otherwise>
+				</xsl:choose>
+				<IMG SRC="/opt/kinneret/images/exclamation.png" />
+			</td></tr></table>
+
+
 		</body>
 
 	</html>
@@ -287,7 +336,7 @@
   </ol>
 </xsl:template>
 
-<!-- A web link, can be used in midle of text -->
+<!-- A link or email, can be used in middle of text -->
 <xsl:template match="link">
   <a target="_blank">
     <xsl:attribute name="href">
@@ -295,6 +344,11 @@
     </xsl:attribute>
     <xsl:value-of select="."/>
   </a>
+</xsl:template>
+
+<!-- A globe used to designate an external (Internet) link, following <link> tag -->
+<xsl:template match="web">
+    <IMG SRC="/opt/kinneret/images/globe.png" />
 </xsl:template>
 
 <!-- ensures a new line after a line of text -->

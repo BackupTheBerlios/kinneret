@@ -8,7 +8,7 @@
 <copy>
 מאת <link href="mailto:dovix@linux-kinneret.org">דוביקס</link>, יולי-אוגוסט 2003
 <newl/>
-כל הזכויות שמורות (c) לפרוייקט <link href="http://www.linux-kinneret.org">גנו/לינוקס כנרת</link>
+כל הזכויות שמורות (c) לפרוייקט <link href="http://www.linux-kinneret.org">גנו/לינוקס כנרת</link><web/>
 <newl/>
 הרשות נתונה בזאת להעתיק, להפיץ ו/או לשנות את המסמך הזה, תחת תנאי רשיון ה GNU לשימוש חופשי במסמכים, גרסה 1.2 או כל גרסה מאוחרת יותר שתפורסם ע"י קרן התוכנה החופשית.
 </copy>
@@ -239,6 +239,8 @@
 היישומון KFloppy מאפשר לפרמט תקליטונים לשימוש הן במערכות לינוקס והן במערכות חלונות.
 </para>
 <image><file>../image/tour6admin_kfloppy.png</file></image>
+
+<newl/>
 
 </main>
 

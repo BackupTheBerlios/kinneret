@@ -1,14 +1,13 @@
 Filename		Assigned to	Status		Notes
 ----------------------  --------------  --------------  -------------		
-swim_menu_ar.txt	TBD
-about_kinneret.xml	Zoabi Nadeem	pending merge	to be done by dovix	
-desktop_ready.xml	Nizar Abed      DONE		
-faq_kinneret.xml	Nizar Abed      in progress	
-first_time.xml		Zoabi Nadeem?	waiting for ok	
-fonts_license.xml	Nizar Abed    	DONE 
-free_essay.xml		Nizar Abed      in progress	
-gfdl_license.xml	dovix				Need to check if exists	
-gpl_license.xml		dovix				Need to check if exists
+swim_menu.txt		TBD				Not finalized		about_kinneret.xml	Zoabi Nadeem	pending review		
+desktop_ready.xml	Nizar Abed      DONE
+faq_kinneret.xml	Nizar Abed      in progress
+first_time.xml		Zoabi Nadeem?	waiting for ok
+fonts_license.xml	Nizar Abed    	DONE
+free_essay.xml		Nizar Abed      in progress
+gfdl_license.xml	TBD	
+gpl_license.xml		TBD
 howto_help.xml		Nizar Abed	in progress
 kinneret_credits.xml	dovix				Not finalized
 kinneret_license.xml	Nizar Abed      in progress

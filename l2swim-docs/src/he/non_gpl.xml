@@ -23,13 +23,13 @@
 בתקליטור זה כלולות תוכנות משלושה מקורות שונים:
 <bullets>
 <item>
-תוכנות שנכתבו ע"י צוות גנו/לינוקס כנרת: את קוד המקור של רכיבים אלו ניתן להוריד מאתר הפרוייקט שכתובתו <link href="http://www.linux-kinneret.org">http://www.linux-kinneret.org</link>
+תוכנות שנכתבו ע"י צוות גנו/לינוקס כנרת: את קוד המקור של רכיבים אלו ניתן להוריד מאתר הפרוייקט שכתובתו <link href="http://www.linux-kinneret.org">http://www.linux-kinneret.org</link><web/>
 </item>
 <item>
-תוכנות שנכללו בהפצת 'קנופיקס' עליה התבססנו בבנית תקליטור זה: פרטים לגבי השגת קוד המקור של תוכנות שרשיונן מחייב זאת ניתן למצוא <link href="http://www.knoppix.net/forum/viewtopic.php?t=3192">כאן</link> 
+תוכנות שנכללו בהפצת 'קנופיקס' עליה התבססנו בבנית תקליטור זה: פרטים לגבי השגת קוד המקור של תוכנות שרשיונן מחייב זאת ניתן למצוא <link href="http://www.knoppix.net/forum/viewtopic.php?t=3192">כאן</link><web/> 
 </item>
 <item>
-קוד המקור של כל התוכנות שנוספו ע"י צוות גנו/לינוקס כנרת ואשר רשיונן מחייב נגישות לקוד, ניתן להורדה מאתרי מראה של <link href="http://www.debian.org">דביאן</link> ו/או באתרי הפרוייקטים שקישורים אליהם מסופקים <link href="http://cvs.berlios.de/cgi-bin/viewcvs.cgi/*checkout*/kinneret/docs/applist/Kinneret_app_list.xml">כאן</link>
+קוד המקור של כל התוכנות שנוספו ע"י צוות גנו/לינוקס כנרת ואשר רשיונן מחייב נגישות לקוד, ניתן להורדה מאתרי מראה של <link href="http://www.debian.org">דביאן</link><web/> ו/או באתרי הפרוייקטים שקישורים אליהם מסופקים <link href="apps_list.html">כאן</link>
 </item>
 </bullets>
 </para>

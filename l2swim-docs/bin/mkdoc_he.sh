@@ -42,6 +42,7 @@ xsltproc -o ../doc/he/about_kinneret.html ../etc/l2swim.xsl ../src/he/about_kinn
 xsltproc -o ../doc/he/man_games.html ../etc/l2swim.xsl ../src/he/man_games.xml
 xsltproc -o ../doc/he/release_notes.html ../etc/l2swim.xsl ../src/he/release_notes.xml
 xsltproc -o ../doc/he/apps_list.html ../etc/l2swim.xsl ../src/he/apps_list.xml
+xsltproc -o ../doc/he/man_cheese.html ../etc/l2swim.xsl ../src/he/man_cheese.xml
 
 echo "if all files were compiles successfuly, then:"
 echo "- enter root mode : su"

@@ -15,19 +15,23 @@ Please see the CHANGELOG file.
 ***************************************************************************
 2. Installation instructions for remastering the Kinneret CD
 
-The instructions here are for version 0.6 (Kinneret).
+The instructions here are for version 0.7.
 
-Since the build process is not yet automated, precompiled document files are provided. Also, since the l2swim application does not yet support locales, a symbolic link has to be created in order for the application to work.
+Since the build process is not yet automated, precompiled document files are provided. Please note the use of one menu for all locales (new)
 
 - su
 - {enter root password}
 - cd {to the cvs directory where you imported the l2swim-docs directory
 - cp l2swim-docs/etc/swim_menu*.txt /opt/kinneret/l2swim/etc/
-- ln -s /opt/kinneret/l2swim/etc/swim_menu_he.txt /opt/kinneret/l2swim/etc/swim_menu.txt
 - cp l2swim-docs/doc/he/* /opt/kinneret/l2swim/doc/he/
+- cp l2swim-docs/doc/ar/* /opt/kinneret/l2swim/doc/ar/
+- cp l2swim-docs/doc/en/* /opt/kinneret/l2swim/doc/en/
+- cp l2swim-docs/doc/ru/* /opt/kinneret/l2swim/doc/ru/
 - cp l2swim-docs/doc/image/* /opt/kinneret/l2swim/doc/image/
 
-You also need to make sure you have a compiled binary in /opt/kinneret/bin and additional image files in /opt/kinneret/images. You can find a precompiled binary in the 'tmp' directory and the image files in the 'etc/image/ directory.
+You also need to make sure you have a compiled binary in /opt/kinneret/bin and additional image files in /opt/kinneret/images. You can find the image files in the 'etc/image/ directory.
+
+Authors only: You can find a precompiled binary in the 'tmp' directory.
 ***************************************************************************
 
 3. List of directories and their contents
@@ -55,12 +59,12 @@ tmp
 
 4. To-do list
 
-- add trabslations to the xsl including for toc (dovix)
+- add trabslations to the xsl (including for toc) and menu (dovix)
 - New screenshots (dovix)
-- Add Arabic translation (nizar)
+- Add Arabic translation (nizar, nadeem)
 - Add Russian translation (phazeman)
-- Add manuals for the various applications in Kinneret (dovix)
-- Add list of included applications (ronen/dovix)
+- Add manuals for the various applications in Kinneret (dovix,danny,ronen)
+- Update list of included applications (ronen)
 - Add list of non-GPL licensed modules (costello/dovix)
 - Manual for translators (dovix)
 - Build wizard script (Q)
