@@ -36,11 +36,13 @@ void configwizard::onSelect()
 
 	const int nToKeepFree = 300;	// how many megs to keep free
 	static QString qDefaultHome;
-		
+			
 	// see if that's the 3rd page, if it is,
 	// fill the list box with vfat and partitions.
 	if (currentPage() == reinterpret_cast<QWizard*>(this)->page(page_partition))
 	{
+		static int nVFATs = 0;
+		
 		if (par_list->childCount() == 0)
 		{
 			// Why oh why did the trolltech people re-wrote the standart library??
@@ -62,12 +64,14 @@ void configwizard::onSelect()
 
 			QListViewItem *pMaxFreeSpace = 0;
 			float fFreeSpace = 0;
-	
+
 			while (!fstab.eof())
 			{
 				fstab.getline(szLine, 0x300);
 				if (strstr(szLine, "vfat"))
 				{
+					nVFATs++;
+
 					char *dev = strstr(szLine, "/dev/");
 					char device[20];
 					char *devptr = device;
@@ -167,6 +171,17 @@ void configwizard::onSelect()
 						
 			fstab.close();
 			unlink("/tmp/.df");
+		}
+
+		if (nVFATs == 0)
+		{
+			// System does not have any vfat partitions,
+			// the wizard should exit.
+			KMessageBox::error(parentWidget(),
+				QString(tr2i18n("System does not have any type of Windows partitions on it.\n"
+					"The wizard will now exit.")));
+
+			radioNoConfig->setChecked(true);
 		}
 		
 		// Okay, now we'll see what the user have choose in the previous

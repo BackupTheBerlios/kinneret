@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2003-04-30 14:09+0300\n"
+"POT-Creation-Date: 2003-05-28 13:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,75 +31,81 @@ msgstr ""
 msgid "Free (% In Use)"
 msgstr ""
 
-#: configwizard.ui.h:92
+#: configwizard.ui.h:96
 msgid "Cannot get device status, skipping"
 msgstr ""
 
-#: configwizard.ui.h:96 configwizard.ui.h:97
+#: configwizard.ui.h:100 configwizard.ui.h:101
 msgid "N/A"
 msgstr ""
 
-#: configwizard.ui.h:98
+#: configwizard.ui.h:102
 msgid "N/A (N/A)"
 msgstr ""
 
-#: configwizard.ui.h:191 configwizard.ui.h:332
+#: configwizard.ui.h:181
+msgid ""
+"System does not have any type of Windows partitions on it.\n"
+"The wizard will now exit."
+msgstr ""
+
+#: configwizard.ui.h:206 configwizard.ui.h:347
 msgid "Cannot get device status"
 msgstr ""
 
-#: configwizard.ui.h:240
+#: configwizard.ui.h:255
 msgid "Cannot get memory status"
 msgstr ""
 
-#: configwizard.ui.h:264
+#: configwizard.ui.h:279
 msgid ""
 "You have not have enough free space on any of your hard drives,\n"
 "You need at least 660MB free."
 msgstr ""
 
-#: configwizard.ui.h:370
+#: configwizard.ui.h:385
 msgid ""
 "You do not have enough free space on the selected partition,\n"
 "Please go back and select another."
 msgstr ""
 
-#: configwizard.ui.h:389
+#: configwizard.ui.h:404
 msgid "Swap file too big, swap size reduced to %1"
 msgstr ""
 
-#: configwizard.ui.h:397
+#: configwizard.ui.h:412
 msgid ""
 "You have not selected a partition,\n"
 "please go back and select one."
 msgstr ""
 
-#: configwizard.ui.h:418
+#: configwizard.ui.h:433
 msgid "Name"
 msgstr ""
 
-#: configwizard.ui.h:427
+#: configwizard.ui.h:442
 msgid "home_dir_warning"
 msgstr ""
 
-#: configwizard.ui.h:467
+#: configwizard.ui.h:482
 msgid "Path"
 msgstr ""
 
-#: configwizard.ui.h:534
+#: configwizard.ui.h:549
 msgid "Choose a directory the containes *.ttf files"
 msgstr ""
 
-#: configwizard.ui.h:548
+#: configwizard.ui.h:563
 msgid "Are you sure you want to remove the directory\n"
 msgstr ""
 
-#: configwizard.ui.h:549
+#: configwizard.ui.h:564
 msgid ""
 "\n"
 "From the list?"
 msgstr ""
 
-#: configwizard.ui.h:551
+#: configwizard.ui.h:566
 msgid "Are you sure?"
 msgstr ""
 
@@ -107,31 +113,31 @@ msgstr ""
 msgid "Configuration Wizard"
 msgstr ""
 
-#: main.cpp:62 configwizard.cpp:1514
+#: main.cpp:62
 msgid "partition"
 msgstr ""
 
-#: main.cpp:63 configwizard.cpp:1519
+#: main.cpp:63
 msgid "swap"
 msgstr ""
 
-#: main.cpp:64 configwizard.cpp:1524
+#: main.cpp:64
 msgid "homedir"
 msgstr ""
 
-#: main.cpp:65 configwizard.cpp:1527
+#: main.cpp:65
 msgid "conclusion"
 msgstr ""
 
-#: main.cpp:66 configwizard.cpp:1532
+#: main.cpp:66
 msgid "fonts"
 msgstr ""
 
-#: main.cpp:67 configwizard.cpp:1536
+#: main.cpp:67
 msgid "whatsnext?"
 msgstr ""
 
-#: main.cpp:112 confwiz.moc.cpp:34 confwiz.moc.cpp:42
+#: main.cpp:112
 msgid "Confwiz"
 msgstr ""
 
@@ -189,139 +195,6 @@ msgstr ""
 
 #: pleasewait.ui.h:74
 msgid "Working... [N/A]"
-msgstr ""
-
-#: help.cpp:134
-msgid "htmlhelp"
-msgstr ""
-
-#: help.cpp:135
-msgid "Return"
-msgstr ""
-
-#: pleasewait.cpp:110
-msgid "Configuring..."
-msgstr ""
-
-#: pleasewait.cpp:111
-msgid "Please wait, configuring..."
-msgstr ""
-
-#: pleasewait.cpp:112
-msgid "Creating Directory... [1/13]"
-msgstr ""
-
-#: configwizard.cpp:1499
-msgid "Welcome to Kinneret!"
-msgstr ""
-
-#: configwizard.cpp:1500
-msgid ""
-"nicemeeting_main\n"
-"here we will put the \"nice to meet you\" text at runtime."
-msgstr ""
-
-#: configwizard.cpp:1502
-msgid "nicetomeet"
-msgstr ""
-
-#: configwizard.cpp:1503
-msgid ""
-"this is your license, and this is your <a href=\"/home/z9u2K/projects/"
-"kinneret/licenses/gpl_heb.html\">GPL</a>."
-msgstr ""
-
-#: configwizard.cpp:1504
-msgid "license"
-msgstr ""
-
-#: configwizard.cpp:1505
-msgid "setuptype_main"
-msgstr ""
-
-#: configwizard.cpp:1506
-msgid "setuptype"
-msgstr ""
-
-#: configwizard.cpp:1507
-msgid "auto"
-msgstr ""
-
-#: configwizard.cpp:1508
-msgid "noconfig"
-msgstr ""
-
-#: configwizard.cpp:1509
-msgid "expert"
-msgstr ""
-
-#: configwizard.cpp:1510
-msgid "express?expert?manual?"
-msgstr ""
-
-#: configwizard.cpp:1511 configwizard.cpp:1515 configwizard.cpp:1520
-#: configwizard.cpp:1525 configwizard.cpp:1528 configwizard.cpp:1533
-msgid "sidemenu"
-msgstr ""
-
-#: configwizard.cpp:1512
-msgid "partition_main"
-msgstr ""
-
-#: configwizard.cpp:1513
-msgid "partition_sub"
-msgstr ""
-
-#: configwizard.cpp:1516
-msgid "swap_main"
-msgstr ""
-
-#: configwizard.cpp:1517
-msgid "swap_sub"
-msgstr ""
-
-#: configwizard.cpp:1518
-msgid "MB"
-msgstr ""
-
-#: configwizard.cpp:1521
-msgid "dir_main"
-msgstr ""
-
-#: configwizard.cpp:1522
-msgid "Create"
-msgstr ""
-
-#: configwizard.cpp:1523
-msgid "<selected partition>/"
-msgstr ""
-
-#: configwizard.cpp:1526
-msgid "conclusion_main"
-msgstr ""
-
-#: configwizard.cpp:1529
-msgid "fonts_main"
-msgstr ""
-
-#: configwizard.cpp:1530
-msgid "remove_dir"
-msgstr ""
-
-#: configwizard.cpp:1531
-msgid "add_dir"
-msgstr ""
-
-#: configwizard.cpp:1534
-msgid "whatsnext_main"
-msgstr ""
-
-#: configwizard.cpp:1535
-msgid "run_pref_wiz"
-msgstr ""
-
-#: dirview.moc.cpp:34 dirview.moc.cpp:42
-msgid "DirectoryView"
 msgstr ""
 
 #: _translatorinfo.cpp:1
