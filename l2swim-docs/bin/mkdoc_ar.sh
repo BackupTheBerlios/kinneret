@@ -23,6 +23,7 @@ xsltproc -o ../doc/ar/free_essay.html ../etc/l2swim.xsl ../src/ar/free_essay.xml
 xsltproc -o ../doc/ar/howto_help.html ../etc/l2swim.xsl ../src/ar/howto_help.xml
 xsltproc -o ../doc/ar/kinneret_license.html ../etc/l2swim.xsl ../src/ar/kinneret_license.xml
 xsltproc -o ../doc/ar/about_kinneret.html ../etc/l2swim.xsl ../src/ar/about_kinneret.xml
+xsltproc -o ../doc/ar/first_time.html ../etc/l2swim.xsl ../src/ar/first_time.xml
 
 echo "if all files were compiles successfuly, then:"
 echo "- enter root mode : su"

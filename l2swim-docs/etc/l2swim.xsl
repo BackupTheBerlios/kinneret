@@ -102,7 +102,7 @@
 מסמך זה עובד ונערך עבור <a href="http://www.linux-kinneret.org">גנו/לינוקס כנרת</a>, תוך שימוש בתוכנה חופשית בלבד. עמוד זה <a href="http://validator.w3.org/check/referer" target="new">תואם לתקנים בינלאומיים</a><IMG SRC="/opt/kinneret/images/globe.png" ALT="(web)"/> המאפשרים צפיה בכל דפדפן תקני.
 					</xsl:when>
 					<xsl:when test="@lang = 'arabic'">
-تم تحرير وتعديل هذا ألملف لخدمة <a href="http://www.linux-kinneret.org">جنو/ لينوكس كينيرت</a>, واسطة إستعمال برامج مجانيه فقط. עמוד זה <a href="http://validator.w3.org/check/referer" target="new">תואם לתקנים בינלאומיים</a><IMG SRC="/opt/kinneret/images/globe.png" ALT="(web)"/> המאפשרים צפיה בכל דפדפן תקני.
+تم تحرير وتعديل هذا ألملف لخدمة <a href="http://www.linux-kinneret.org">جنو/ لينوكس كينيرت</a>, بواسطة إستعمال برامج مجانيه فقط. هذه ألصفحه <a href="http://validator.w3.org/check/referer" target="new">تلائم ألضوابط ألعالميه </a><IMG SRC="/opt/kinneret/images/globe.png" ALT="(web)"/> وألتي يمكن مشاهدتها بواسطة كل متصفح قانوني.
 					</xsl:when>
 					<xsl:when test="@lang = 'russian'">
 This document was edited and formatted for <a href="http://www.linux-kinneret.org">GNU/Linux Kinneret</a> using only free software. This page <a href="http://validator.w3.org/check/referer" target="new">complies with international standards</a><IMG SRC="/opt/kinneret/images/globe.png" ALT="(web)"/> that ensure comatibility with standard-compliant browsers.
