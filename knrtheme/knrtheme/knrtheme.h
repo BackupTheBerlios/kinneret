@@ -17,7 +17,7 @@
 #include <qlabel.h>
 #include "theme.h"
 #include <qlayout.h>
-#include <qvector.h>
+#include <qptrvector.h>
 #include <qmultilineedit.h>
 #include <qtimer.h>
 #include <kbuttonbox.h>
@@ -25,7 +25,7 @@
 #include <kdialogbase.h>
 
 class knrtheme: public KCModule
-{
+{                                                                                                            
 	Q_OBJECT
 
 public:
@@ -56,7 +56,7 @@ private:
 	KListBox *mThemesList;
 	QLabel *mPreview;
 	QTextEdit *mText;
-	QVector<theme> mThemesVector;
+	QPtrVector<theme> mThemesVector;
 	KButtonBox *bbox;
 	QPushButton *mBtnCreate;
 	QPushButton *mBtnDelete;
