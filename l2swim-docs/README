@@ -10,6 +10,9 @@ This file contains:
 ***************************************************************************
 1. Changelog
 
+Version 0.5
+- Added many documents and manuals
+
 Version 0.3
 -  All source documents are now XML and are connverted to HTML with xsltproc using an appropriate XSL stylsheet
 - Added a screenshots chapter
