@@ -152,9 +152,9 @@ document.write(""+dayname+", "+monthname+" "+date+", "+yearname);
             <p>
 		Download page for GNU/Linux Kinneret will display in a few seconds
 <?php
-$tmp = file("06counter.txt");
+$tmp = file("hits-counter.txt");
 $dls = $tmp[0]+1;
-$fp = fopen("06counter.txt", "w");
+$fp = fopen("hits-counter.txt", "w");
 fwrite($fp, $dls);
 fclose($fp);
 ?>

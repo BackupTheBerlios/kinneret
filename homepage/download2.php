@@ -158,9 +158,9 @@ document.write("יום "+dayname+", "+date+" ב"+monthname+", "+yearname);
             <p>
 		עמוד ההורדות של גנו/לינוקס כנרת יופיע בתוך מספר שניות
 <?php
-$tmp = file("06counter.txt");
+$tmp = file("hits-counter.txt");
 $dls = $tmp[0]+1;
-$fp = fopen("06counter.txt", "w");
+$fp = fopen("hits-counter.txt", "w");
 fwrite($fp, $dls);
 fclose($fp);
 ?>
