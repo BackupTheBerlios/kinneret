@@ -11,7 +11,7 @@
 # of the file in /home/knoppix/.fonts
 #
 # After the sym-links have been created and the scan was completed,
-# the script makes /home/knoppix/.fonts a fonts directory, adds it 
+# the script makes /home/knoppix/.fonts a fonts directory, adds it
 # to the fonts path of the X Server and re-loads the fonts server, thus making
 # the new fonts available to the user.
 #
@@ -28,22 +28,22 @@ do
 	# directory exists?
 	# yes, add font path,
 	# no, skip it.
-	DIR95="$CURDEV/windows/fonts"
-	DIRNT="$CURDEV/winnt/fonts"
+	DIR95="${CURDEV}/windows/fonts"
+	DIRNT="${CURDEV}/winnt/fonts"
 
-	if [ -e "$DIR95" ]
+	if [ -e "${DIR95}" ]
 	then
-		DIR=$DIR95
-	elif [ -e "$DIRNT" ]
+		DIR="${DIR95}"
+	elif [ -e "${DIRNT}" ]
 	then
-		DIR=$DIRNT
+		DIR="${DIRNT}"
 	else
 		DIR=""
 	fi
 
-	if [ "$DIR" != "" ]
+	if [ "${DIR}" != "" ]
 	then
-		echo "$DIR" >> /tmp/.fontsdirs
+		echo "${DIR}" >> /tmp/.fontsdirs
 	fi
 done
 

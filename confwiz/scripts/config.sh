@@ -17,25 +17,25 @@ mkdir kinneret
 if [ $SWAP_SIZE -gt 0 ]
 then
 	echo "SWAP_FILE" > /tmp/.progress
-	dd if=/dev/zero of="$MNT_PT/kinneret/.swap" bs=1M count=$SWAP_SIZE;
+	dd if=/dev/zero of="${MNT_PT}/kinneret/.swap" bs=1M count=$SWAP_SIZE;
 
 	echo "CREATE_SWAP" > /tmp/.progress
-	mkswap "$MNT_PT/kinneret/.swap"
+	mkswap "${MNT_PT}/kinneret/.swap"
 
 	echo "SWAP_ON" > /tmp/.progress
-	swapon "$MNT_PT/kinneret/.swap"
+	swapon "${MNT_PT}/kinneret/.swap"
 fi
 
 # create the ext3 file
 echo "HOME_FILE" > /tmp/.progress
-dd if=/dev/zero of="$MNT_PT/kinneret/.config" bs=1M count=$HOME_SIZE
+dd if=/dev/zero of="${MNT_PT}/kinneret/.config" bs=1M count=$HOME_SIZE
 
 echo "DEVICE_SEARCH" > /tmp/.progress
 devnum=-1
 while [[ $? -ne 0 && $devnum -lt 8 || $devnum -eq -1 ]]
 do
 	let devnum++
-	losetup /dev/loop$devnum "$MNT_PT/kinneret/.config"
+	losetup /dev/loop$devnum "${MNT_PT}/kinneret/.config"
 done
 
 if [ $? -ne 0 ]
@@ -70,7 +70,7 @@ losetup -d /dev/loop$devnum
 
 echo "ACTIVATE_HOME" > /tmp/.progress
 # mount ext3 to /home/knoppix
-mount "$MNT_PT/kinneret/.config" /home/knoppix -t ext3 -o defaults,rw,loop 2>&1 > /dev/null
+mount "${MNT_PT}/kinneret/.config" /home/knoppix -t ext3 -o defaults,rw,loop 2>&1 > /dev/null
 
 echo "FINISH" > /tmp/.progress
 # change premissions

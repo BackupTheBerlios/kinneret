@@ -30,7 +30,7 @@ maphome()
 		swapon $d/kinneret/.swap
 	fi
 
-	mount "$d/kinneret/.config" /home/knoppix -t ext3 -o rw,loop 2>&1 > /dev/null
+	mount "${d}/kinneret/.config" /home/knoppix -t ext3 -o rw,loop 2>&1 > /dev/null
 	chown -R knoppix:knoppix /home/knoppix
 	HOMEFOUND="yes"
 }
@@ -63,13 +63,13 @@ done
 # Scan directories
 for dir in `cat /etc/fstab | grep vfat | cut -b 6-9`
 do
-	if [ -z "$HOMEFOUND" ]
+	if [ -z "${HOMEFOUND}" ]
 	then
 		checkdir $dir
 	fi
 done
 
-if [ -z "$HOMEFOUND" ]
+if [ -z "${HOMEFOUND}" ]
 then
 	echo "${BLUE}Cannot find Kinneret's Home partition, will run wizard at startup.${NORMAL}"
 	echo "0" > /tmp/foundhome

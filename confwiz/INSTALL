@@ -16,8 +16,8 @@ Installation procedure:
 /usr/bin/confwiz
 /usr/share/locale/he/LC_MESSAGES/confwiz.mo
 /etc/skel/.kde/Autostart/confwiz.desktop (must be there in final remaster, will be copied to /home/knoppix/ at boot)
-/usr/kinneret/bin/config.sh
-/usr/kinneret/bin/findfonts.sh
-/usr/kinneret/bin/ttf.sh
+/opt/kinneret/bin/config.sh
+/opt/kinneret/bin/findfonts.sh
+/opt/kinneret/bin/ttf.sh
 7. After creating KNOPPIX compressed fs, and before burnning kinneret, put knoppix.sh that
 is in scripts/ in the KNOPPIX directory next to the KNOPPIX fs.
