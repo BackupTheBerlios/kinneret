@@ -29,7 +29,7 @@
 				<remotename>vpn.huji.ac.il</remotename>
 			</cable>
 		</gateway>
-		<usrsuffix type="adsl">huji</usrsuffix>
+		<usrsuffix type="adsl">%[*auth::server*]@huji</usrsuffix>
 	</broadband>
 
 	<isdn>

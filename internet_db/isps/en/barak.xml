@@ -21,6 +21,15 @@
 		<manual>proxy.barak.net.il:8080</manual>
 	</proxy>
 
+	<broadband>
+		<gateway>
+			<cable>
+				<remotename>matav.barak.net.il</remotename>
+			</cable>
+		</gateway>
+		<usrsuffix type="adsl">@IBarak</usrsuffix>
+	</broadband>
+
 	<dialup>
 		<server loc="Jerusalem">02-6775111</server>
 		<server loc="Jerusalem2">02-5310666</server>

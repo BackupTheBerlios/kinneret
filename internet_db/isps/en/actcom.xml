@@ -28,8 +28,8 @@
 				<remotename>[*auth::usr*].c.actcom.net.il</remotename>
 			</cable>
 		</gateway>
-		<usrsuffix type="adsl">IActcom</usrsuffix>
-		<usrsuffix type="cable">CActcom</usrsuffix>
+		<usrsuffix type="adsl">@IActcom</usrsuffix>
+		<usrsuffix type="cable">@CActcom</usrsuffix>
 	</broadband>
 
 	<isdn>

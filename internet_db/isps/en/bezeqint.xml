@@ -23,7 +23,7 @@
 	</proxy>
 
 	<broadband>
-		<usrsuffix type="adsl">IBezint</usrsuffix>
+		<usrsuffix type="adsl">@IBezint</usrsuffix>
 	</broadband>
 
 	<isdn>

@@ -28,7 +28,7 @@
 				<remotename>ccdis3.technion.ac.il</remotename>
 			</cable>
 		</gateway>
-		<usrsuffix type="adsl">technion</usrsuffix>
+		<usrsuffix type="adsl">@technion</usrsuffix>
 	</broadband>
 
 	<isdn>

@@ -27,7 +27,7 @@
 				<remotename>pns.inter.net.il</remotename>
 			</cable>
 		</gateway>
-		<usrsuffix type="adsl">IInzahav</usrsuffix>
+		<usrsuffix type="adsl">@IInzahav</usrsuffix>
 	</broadband>
 
 	<dialup>

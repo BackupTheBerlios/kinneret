@@ -25,7 +25,7 @@
 	</proxy>
 
 	<broadband>
-		<usrsuffix type="adsl">tau</usrsuffix>
+		<usrsuffix type="adsl">@tau</usrsuffix>
 	</broadband>
 
 	<isdn>
