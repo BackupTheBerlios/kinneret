@@ -11,7 +11,7 @@
 # FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 # License at http://www.gnu.org/copyleft/gpl.html for more details.
 #
-# Version: 0.7h 27-mar-2004
+# Version: 0.7i 2-Apr-2004
 # Encoding: [UTF8]
 # Language: Hebrew, English, Arabic, Russian, Ethopian
 #
@@ -168,6 +168,8 @@ Click here for English documentation
 </text>
 <play=ar/kinneret_license.html>
 <img src="/opt/kinneret/images/exclamation.png"><font color=red size=2>يطلب منك أن تقرأ وتوافق على حرية ألمستخدم ألكامله  قبل إستعمال هذا ألتوزيع.</font> 
+<play=ar/first_time.html>
+<font size=2>مرشد تشغيل وتثبيت أولي</font>
   <http=www.linux-kinneret.org/index-ar.html>
 <img src="/opt/kinneret/images/globe.png"><font size=2>موقع ألبيت للمشروع في ألغه ألعربيه</font>
 <end>
