@@ -11,7 +11,7 @@
 # FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 # License at http://www.gnu.org/copyleft/gpl.html for more details.
 #
-# Version: 0.7e 2-Jan-2004
+# Version: 0.7f 16-Jan-2004
 # Encoding: [UTF8]
 # Language: Hebrew, English, Arabic, Russian, Ethopian
 #
@@ -91,12 +91,16 @@ Click here for English documentation
 <img src="/opt/kinneret/images/star.png">מדריך עורכי מסמכים 
 <null>
 <font color=grey>____________________ מדריכים ליישומים __________________</font>
- <null>
+  <play=he/man_firebird.html>
+מדריך גלישה באינטרנט עם Mozilla Firebird
+<null>
 מדריך השמעת מוזיקה עם XMMS
 <null>
 מדריך עיבוד תמונות עם The Gimp
  <play=he/man_cheese.html>
 מדריך הלחנת מנגינות עם Cheese Tracker
+  <play=he/man_ooo_advanced.html>
+מדריך שימוש מתקדם בערכת היישומים המשרדיים OpenOffice.org
 <end>
 
 <menu=index4>

@@ -2,20 +2,21 @@ Filename			Priority	Assigned to		Status		Notes
 ----------------------  	--------------	--------------  	--------------  -------------		
 swim_menu.txt		High		TBD			Not finalized
 about_kinneret.xml	High		Zoabi Nadeem	pending review		
-desktop_ready.xml	High		Nizar Abed		pending review
-faq_kinneret.xml		High		Nizar Abed		pending review
+desktop_ready.xml	High		Nizar Abed	pending review
+faq_kinneret.xml	High		Nizar Abed	pending review
 first_time.xml		High		TBD			
-fonts_license.xml		TBD		Nizar Abed    	pending review
-free_essay.xml		Low		Nizar Abed		in progress
-gfdl_license.xml		Medium?	TBD	
-gpl_license.xml		Medium?	TBD
-howto_help.xml		High		Nizar Abed		pending review
-kinneret_credits.xml	Low		TBD
-kinneret_license.xml	High		Nizar Abed		pending review
-linux_history.xml		Low		TBD			Low priority
+fonts_license.xml	TBD		Nizar Abed    	pending review
+free_essay.xml		Low		Nizar Abed	in progress
+gfdl_license.xml	Medium?	TBD	
+gpl_license.xml	Medium?	TBD
+howto_help.xml		High		Nizar Abed	pending review
+kinneret_credits.xmlLow		TBD
+kinneret_license.xmlHigh		Nizar Abed	pending review
+linux_history.xml	Low		TBD			Low priority
 man_cheese.xml		Low		TBD			Not finalized
 man_xmms.xml		Low		TBD			Not finalized
-non_gpl.xml			Medium	TBD
+man_firebird        Low       TBD            Not finalized
+non_gpl.xml		Medium	TBD
 rachel_kinneret.xml	---		---			No translation needed
 social_contract.xml	Low		TBD			Low priority
 thoughts_1.xml		Low		TBD			Low priority
@@ -24,7 +25,7 @@ thoughts_3.xml		Low		TBD			Low priority
 thoughts_4.xml		Low		TBD			Low priority
 thoughts_5.xml		Low		TBD			Low priority
 thoughts_6.xml		Low		TBD			Low priority
-tour_kinneret.xml		High		Nizar Abed		pending review
+tour_kinneret.xml	High		Nizar Abed	pending review
 user_interface.xml	High		TBD
 why_linux.xml		---		---			(not used)
 apps_list.xml		Medium	TBD			(new) Not finalized

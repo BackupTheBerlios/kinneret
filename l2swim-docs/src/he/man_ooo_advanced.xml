@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<article lang="hebrew">
+<title>
+מדריך שימוש מתקדם בערכת היישומים המשרדיים OpenOffice.org ("משרד פתוח")
+</title>
+
+<copy>
+מדריך זה מכיל מאמרים שנכתבו ע"י שושנה פורבס, ינואר 2004
+<newl/>
+המאמרים המקוריים זמינים באתר האינטרנט <link href="http://www.xslf.com/">xslf.com</link>
+<newl/>
+כל הזכויות למדריך שמורות למחברת
+<newl/>
+הרישיון למסמך זה עדיין לא נקבע, לפיכך אין לבצע שינויים ו/או להפיץ מאמר זה במקומות אחרים ללא אישור המחברת.
+</copy>
+
+<toc lang="hebrew"/>
+
+<main>
+
+<para>
+אופן אופיס הינה חבילת תוכנות משרדיות דומה לאופיס של מיקרוסופט. אופן אופיס כוללת בתוכה מעבד תמלילים שנקרא writer, גליון עבודה שנקרא Calc, תוכנת ליצירת מצגת שנקראת Impress ותוכנת שרטוט שנקראת Draw. מדריך זה כולל אוסף מאמרים מונחי-משימה המסבירים שלב אחרי שלב כיצד לבצע משימות שונות בערכה.
+</para>
+
+<chapter>
+המרת מספר רב של קבצים מפורמט אחד לפורמט אחר עם אופן אופיס
+</chapter>
+
+<para>
+לפעמים יש הרבה קבצים בפורמט אחד, שאנחנו רוצים להמיר לפורמט אחר, וזה לא ממש מעשי לפתוח כל קובץ בנפרד ולשמור בפורמט הרצוי.
+למזלנו, יש מקרו לאופן אופיס שמאפשר לעשות זאת אוטומטית.
+</para>
+<para>
+הערה: צילומי המסך במדריך הזה לקוחים מגירסת הלינוקס, אבל יעבדו ללא שינוי גם בגרסאות למקינטוש וחלונות.
+</para>
+
+<section >
+שלב 1
+</section>
+<para>
+<link href="http://www.ooomacros.org/files.php?type=macro#DocumentConverter/">הורידו את המקרו</link> מאתר המקרואים (יש מילה עברית לזה?) של אופן אופיס, ופרסו את הקובץ הדחוס
+</para>
+
+<section>
+שלב 2
+</section>
+<para>
+פתחו את הקובץ עם אופן אופיס, ואשרו את הודעת האזהרה על המקרו
+</para>
+<image><file>../image/man_ooo_doc_con01.gif</file></image>
+
+<section>
+שלב 3
+</section>
+<para>
+לחצו על הכפתור Document Converter
+</para>
+<image><file>../image/man_ooo_doc_con02.gif</file></image>
+
+<section>
+שלב 4
+</section>
+<para>
+בחרו את התיקייה בה נמצאים הקבצים שאתם רוצים להמיר. אם אתם רוצים שהקבצים המומרים ישמרו באותה תיקייה, אל תבחרו כלום בתור תיקיית היעד. אם אתם רוצים שהקבצים ישמרו בתיקייה אחרת, בחרו אותה.
+<newl/>
+לחצו Next.
+</para>
+<image><file>../image/man_ooo_doc_con03.gif</file></image>
+
+<section>
+שלב 5
+</section>
+<para>
+בחרו את סוג הקבצים הכללי אותם אתם רוצים להמיר.
+<newl/>
+לחצו Next
+</para>
+<image><file>../image/man_ooo_doc_con04.gif</file></image>
+
+<section>
+שלב 6
+</section>
+<para>
+בחרו את הפורמט המדוייק של קבצי המקור.
+<newl/>
+לחצו Next
+</para>
+<image><file>../image/man_ooo_doc_con05.gif</file></image>
+
+<section>
+שלב 7
+</section>
+<para>
+בחרו את הפורמט אליו אתם רוצים להמיר את הקבצים
+<newl/>
+לחצו Next
+</para>
+<image><file>../image/man_ooo_doc_con06.gif</file></image>
+
+<section>
+שלב 8
+</section>
+<para>
+המקרו יציג לכם את סיכום הפעולות שהוא יעשה: כמה קבצים הוא ימיר, איפה הוא ישמור אותם וכו'.
+<newl/>
+לחצו Next כדי להתקדם להמרה עצמה.
+</para>
+<image><file>../image/man_ooo_doc_con07.gif</file></image>
+
+<section>
+שלב 9
+</section>
+<para>
+פעולת ההמרה תתחיל, כשהמקרו מציג לכם איזה קובץ הוא ממיר, וכמה עוד נשאר.
+תלוי בכמות הקבצים שבחרתם, הפעולה עשוייה לארוך זמן מה.
+</para>
+<image><file>../image/man_ooo_doc_con08.gif</file></image>
+<para>
+כשההמרה תסתיים, לחצו Finish.
+</para>
+<image><file>../image/man_ooo_doc_con09.gif</file></image>
+<para>
+השתמשתי בשיטה זו בשביל להמיר כמעט אלף קבצים בעברית לטקסט פשוט, כדי לעזור בפתרון <link href="http://www.mozilla.org.il/board/viewtopic.php?t=325">באג 86999</link> במוזילה (הייתי זקוקה ללפחות 10 מגה של טקסט עברי). דיון על הבאג והשפעותיו אפשר למצוא <link href="http://bugzilla.mozilla.org/show_bug.cgi?id=86999">בפורום מוזילה ישראל</link>.
+</para><chapter>
+
+</chapter>
+<para>
+
+<newl/>
+
+</para>
+
+<section>
+
+</section>
+
+<para>
+
+<bullets>
+<item>
+
+</item>
+<item>
+
+</item>
+</bullets>
+
+<newl/>
+
+</para>
+
+<section>
+
+</section>
+
+<para>
+
+</para>
+
+</main>
+
+</article>
