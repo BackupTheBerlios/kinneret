@@ -13,7 +13,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, Menus,gnugettext, About, gifimage,fWarning,
-  Buttons, TntStdCtrls, TntForms, Advanced;
+  Buttons, TntStdCtrls, TntForms, Advanced, ParInstall;
 
 function MyExitWindows(RebootParam: Longword): Boolean;
 
@@ -29,6 +29,7 @@ type
     RadioButton1: TTntRadioButton;
     RadioButton2: TTntRadioButton;
     ButtonAdvanced: TTntButton;
+    TntButton1: TTntButton;
     procedure Button3Click(Sender: TObject);
     procedure WriteButtonClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -38,6 +39,7 @@ type
     procedure RadioButton1Click(Sender: TObject);
     procedure refreshlabel2();
     procedure ButtonAdvancedClick(Sender: TObject);
+    procedure TntButton1Click(Sender: TObject);
   private
     Retranslator:TExecutable;
   public
@@ -243,6 +245,11 @@ begin
         '(The floppy you can make here) in drive A:')));
   end;
 
+end;
+
+procedure TWForm.TntButton1Click(Sender: TObject);
+begin
+  parinst.ShowModal();
 end;
 
 end.

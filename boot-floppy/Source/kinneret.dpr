@@ -20,7 +20,8 @@ uses
   About in 'About.pas' {FormAbout},
   fWarning in 'fWarning.pas' {FormWarning},
   gnugettext in 'gnugettext.pas',
-  Advanced in 'Advanced.pas' {FormAdvanced};
+  Advanced in 'Advanced.pas' {FormAdvanced},
+  ParInstall in 'ParInstall.pas' {parinst};
 
 {$R *.RES}
 
@@ -32,5 +33,6 @@ begin
   Application.CreateForm(TFormAbout, FormAbout);
   Application.CreateForm(TFormWarning, FormWarning);
   Application.CreateForm(TFormAdvanced, FormAdvanced);
+  Application.CreateForm(Tparinst, parinst);
   Application.Run;
 end.

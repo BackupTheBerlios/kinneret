@@ -573,4 +573,13 @@ object WForm: TWForm
     TabOrder = 6
     OnClick = ButtonAdvancedClick
   end
+  object TntButton1: TTntButton
+    Left = 352
+    Top = 248
+    Width = 137
+    Height = 33
+    Caption = 'Partial installation'
+    TabOrder = 7
+    OnClick = TntButton1Click
+  end
 end
