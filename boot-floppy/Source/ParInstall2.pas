@@ -4,8 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, FileCtrl, ExtCtrls, TntStdCtrls,gnuGetText,drives,
-  ComCtrls, TntComCtrls;
+  Dialogs, StdCtrls, ExtCtrls, TntStdCtrls,gnuGetText,drives,
+  ComCtrls, TntComCtrls, fWarning;
 
 type
   Tparinst2 = class(TForm)
@@ -17,11 +17,12 @@ type
     TntGroupBox2: TTntGroupBox;
     LabelChoose: TTntLabel;
     LabelBoot: TTntLabel;
-    LabelFree: TTntLabel;
-    TntListView1: TTntListView;
+    ListDrives: TTntListView;
     procedure FormShow(Sender: TObject);
-    procedure DriveComboBox1Change(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure ListDrivesMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure ButtonCancelClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,6 +33,7 @@ var
   parinst2: Tparinst2;
   knoppixSize : double;
   drivesArray : TDriveInfoArray;
+  chosenDrive : string;
 
 implementation
 
@@ -39,48 +41,92 @@ implementation
 
 procedure Tparinst2.FormShow(Sender: TObject);
 begin
-  LabelChoose.Caption:=pwidechar(_('Install GNU/Linux Kinneret on drive :'));
-end;
-
-procedure Tparinst2.DriveComboBox1Change(Sender: TObject);
-var
-  Drive: char;
-  DriveNum: byte;
-  FreeSpace: double;
-begin
-
-  DriveNum:=ord(Drive)-96;
-  FreeSpace:=diskfree(DriveNum)/1048576;
-
-  if FreeSpace<knoppixSize then
-  begin
-    LabelFree.Caption:=pwideChar(_('No space in this Drive'));
-    buttonStart.Enabled:=false;
-  end
-  else begin
-    LabelFree.caption:=wideFormat(_('Drive %s:'+#10#13+#10#13+
-    'Free space before installation : %n MB'+#10#13+
-    'Installation size : %n MB'+#10+#13+
-    'Free space after installation : %n MB'),
-    [Drive,FreeSpace,knoppixSize,FreeSpace-knoppixSize]);
-    buttonStart.Enabled:=true;
-  end;
+  LabelChoose.Caption:=pwidechar(_('Choose a drive to install GNU/Linux Kinneret :'));
+  LabelBoot.Caption:=pwidechar(_('In order to start Kinneret, you can always boot with the'+#10#13+
+  'Kinneret CD, or with a Boot-Floppy. After booting, Kinneret'+#10#13+
+  'continues to load from the Hard-Drive automatically.'+#10#13+
+  'However, if you don''t want to use the CD at all, You can'+#10#13+
+  'choose one or more of the next options (recommended) :'));
 end;
 
 procedure Tparinst2.FormCreate(Sender: TObject);
 var
   f : THandle;
   i : Integer;
+  DriveItem :TtntListItem;
 begin
+  ChosenDrive:='';
   {get KNOPPIX SIZE}
-  f:=CreateFile('D:\KNOPPIX\knoppix', GENERIC_READ, FILE_SHARE_READ, nil, OPEN_EXISTING, 0, 0);
-  knoppixSize:=GetFileSize(f,nil)/1024;
+  f:=CreateFile('C:\KNOPPIX\knoppix', GENERIC_READ, FILE_SHARE_READ, nil, OPEN_EXISTING, 0, 0);
+  knoppixSize:=GetFileSize(f,nil)/1048576;
   closeHandle(f);
   GetAllFixedDrives(DrivesArray);
   for i:=low(DrivesArray) to high(DrivesArray) do
   begin
-//    ComboDrives.AddItem(DrivesArray[i].DriveLetter,nil);
+      DriveItem := ListDrives.Items.Add;
+      DriveItem.Caption := wideformat('%s:  ',
+                [DrivesArray[i].DriveLetter]);
+      DriveItem.SubItems.Add(wideformat(_('%n MB'),
+                [DrivesArray[i].DriveFreeSpace]));
+      DriveItem.SubItems.add('');
   end;
+  for i:=low(DrivesArray) to high(DrivesArray) do
+  begin
+    if DrivesArray[i].DriveFreeSpace-KnoppixSize>0 then
+    begin
+      DriveItem:=ListDrives.Items.Item[i];
+      DriveItem.Checked:=true;
+      DriveItem.SubItems[1]:=wideformat(_('%n MB'),
+                [DrivesArray[DriveItem.index].DriveFreeSpace-knoppixSize]);
+      ButtonStart.Enabled:=true;
+      ChosenDrive:=DrivesArray[DriveItem.index].DriveLetter;
+      break;
+    end;
+  end;
+ // ListDrives.
+end;
+
+procedure Tparinst2.ListDrivesMouseUp(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+var
+  Item: TListItem; 
+  HitTest: THitTests;
+  i : integer;
+  DriveItem : TtntListItem;
+begin
+  Item := ListDrives.GetItemAt(x, y);
+  HitTest := ListDrives.GetHitTestInfoAt(x, y);
+  if (Item <> nil) and (HitTest = [htOnStateIcon]) then
+  begin 
+    if item.Checked=true then
+    begin
+      if DrivesArray[Item.index].DriveFreeSpace-KnoppixSize>0 then
+      begin
+        for i:=0 to ListDrives.Items.Count-1 do
+          ListDrives.Items.item[i].SubItems[1]:='';
+        Item.SubItems[1]:=wideformat(_('%n MB'),
+                [DrivesArray[Item.index].DriveFreeSpace-knoppixSize]);
+        ChosenDrive:=DrivesArray[Item.index].DriveLetter;
+        ButtonStart.Enabled:=true;
+      end else
+      begin    //Not enough free space
+        Item.Checked:=false;
+        ButtonStart.Enabled:=false;
+        showWarning(ERR, WideFormat(_('Not enough free space on drive %s:'+#10#13+
+                                      'Choose another one.'),
+            [DrivesArray[Item.Index].DriveLetter]));
+      end;
+    end else begin   //Uncheck
+      Item.SubItems[1]:='';
+      ButtonStart.Enabled:=false;
+    end;
+  end;
+
+end;
+
+procedure Tparinst2.ButtonCancelClick(Sender: TObject);
+begin
+  close;
 end;
 
 end.

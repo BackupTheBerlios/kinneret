@@ -26,6 +26,7 @@ type
     { Public declarations }
   version: string;
   date: string;
+  email: string;
   end;
 
 var
@@ -45,6 +46,7 @@ begin
   TranslateProperties (self);      //GNUGETTEXT
   date:='28/4/04';
   version:='0.7';
+  email:='nirro@linux-kinneret.org';
 end;
 
 procedure TFormAbout.FormShow(Sender: TObject);
@@ -57,7 +59,7 @@ begin
     'Version: %s,'+#10#13+
     'Date: %s,'+#10#13+
     'Written by: Nir Misgav.'+#10#13+
-    'Email: nirro@yahoo.com'+#10#13+
+    'Email: %s'+#10#13+
     'All rights reserved to'+#10#13+
     'GNU/Linux Kinneret.'+#10#13+
     'http://www.linux-kinneret.org'+#10#13#10#13+
@@ -75,7 +77,7 @@ begin
     'Tnt Unicode Controls,'+#10#13+
     'by Tnt Software Products.'+#10#13+
     'License: Unspecific open source,'+#10#13+
-    'See: TntUnicode.txt.'),[version,date]);
+    'See: TntUnicode.txt.'),[version,date,email]);
 
     Caption:=PWideChar(_('About'));
     Button1.Caption:=PWideChar(_('Close'));

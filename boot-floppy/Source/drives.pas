@@ -11,8 +11,8 @@ dtNetwork, dtCDROM, dtRAMDisk);
 type TDriveInfo = record
    DriveLetter: string;
    DriveType: TDriveType;
-   DriveSize: single;  //size in Kilobytes
-   DriveFreeSpace: single; //free space in Kilobytes
+   DriveSize: double;  //size in Kilobytes
+   DriveFreeSpace: double; //free space in Kilobytes
 end;
 
 type TDriveInfoArray = array of TDriveInfo;
@@ -63,8 +63,8 @@ begin
       SetLength(DriveInfoArray, Length(DriveInfoArray) + 1);
       DriveInfoArray[Length(DriveInfoArray) - 1].DriveLetter := Chr(x);
       DriveInfoArray[Length(DriveInfoArray) - 1].DriveType :=DriveType(Chr(x));
-      DriveInfoArray[Length(DriveInfoArray) - 1].DriveSize := DiskSize(x -64) / 1024;  //size in KB
-      DriveInfoArray[Length(DriveInfoArray) - 1].DriveFreeSpace :=DiskFree(x - 64) / 1024;  //size in KB
+      DriveInfoArray[Length(DriveInfoArray) - 1].DriveSize := DiskSize(x -64) / 1048576;  //size in MB
+      DriveInfoArray[Length(DriveInfoArray) - 1].DriveFreeSpace :=DiskFree(x - 64) / 1048576;  //size in MB
     end;
   end;
 end;
@@ -84,8 +84,8 @@ begin
     begin
       SetLength(DriveInfoArray, Length(DriveInfoArray) + 1);
       DriveInfoArray[Length(DriveInfoArray) - 1].DriveLetter := Chr(x);
-      DriveInfoArray[Length(DriveInfoArray) - 1].DriveSize := DiskSize(x -64) / 1024;  //size in KB
-      DriveInfoArray[Length(DriveInfoArray) - 1].DriveFreeSpace :=DiskFree(x - 64) / 1024;  //size in KB
+      DriveInfoArray[Length(DriveInfoArray) - 1].DriveSize := DiskSize(x -64) / 1048576;  //size in MB
+      DriveInfoArray[Length(DriveInfoArray) - 1].DriveFreeSpace :=DiskFree(x - 64) / 1048576;  //size in MB
     end;
   end;
 end;

@@ -55,12 +55,14 @@ end;
 procedure Tparinst.YesButtonClick(Sender: TObject);
 
 begin
-  if not showWarning(WRN, pWideChar(_('Warning - This installation method is still HIGHLY EXPERIMENTAL'+#10#13+
-  'Do you want to continune ?'))) then close;
-  hide;
-  parinst2.Show;
+  if showWarning(WRN, pWideChar(_('Warning - This installation method is still HIGHLY EXPERIMENTAL.'+#10#13+
+  'Continue at your own risk.'))) then
+  begin
+    hide;
+    parinst2.ShowModal;
 //  if(FileOperation ('D:\KNOPPIX\knoppix', 'C:\KNOPPIX\knoppix', FO_COPY, FOF_ALLOWUNDO or FOF_NOCONFIRMATION	))
 //    then showWarning(ERR,pWideChar(_('Error while copying files')));
+  end;
   close;
 end;
 

@@ -1,13 +1,13 @@
 object FormAbout: TFormAbout
   Left = 288
   Top = 244
-  Width = 245
-  Height = 287
   AutoSize = True
   BorderIcons = [biSystemMenu]
-  BorderStyle = bsSizeToolWin
+  BorderStyle = bsToolWindow
   BorderWidth = 10
   Caption = 'About'
+  ClientHeight = 233
+  ClientWidth = 217
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

@@ -69,7 +69,7 @@ begin
       Caption:=pWideChar(_('Warning'));
       messagebeep(MB_ICONEXCLAMATION);
       ButtonCancel.Caption:=pWideChar(_('Cancel'));
-      ButtonContinune.Caption:=pWideChar(_('Continune'));
+      ButtonContinune.Caption:=pWideChar(_('Continue'));
     end else if fType=ERR then begin
       pic:=IDI_ERROR;
       Caption:=pWideChar(_('Error'));

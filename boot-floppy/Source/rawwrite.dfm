@@ -1,13 +1,13 @@
 object MainForm: TMainForm
   Left = 460
   Top = 366
-  Width = 345
-  Height = 239
   AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
-  BorderStyle = bsSizeToolWin
+  BorderStyle = bsToolWindow
   BorderWidth = 20
   Caption = 'Make a bootable floppy'
+  ClientHeight = 165
+  ClientWidth = 297
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
