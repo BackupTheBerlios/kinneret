@@ -15,8 +15,8 @@
      FOR A PARTICULAR PURPOSE.  See the GNU General Public License at
      http://www.gnu.org/copyleft/gpl.html for more details.
 
-     Filename: image_template.xsl
-     Version: 0.3a 17-May-2003
+     Filename: l2swim.xsl
+     Version: 0.3b 17-June-2003
      Encoding: [UTF8]
      Language: Hebrew
 
@@ -65,22 +65,19 @@
 <!-- document subtitle, underlined, blue and right justified -->
 <!-- use to designate sections within the document, usually followed by some text -->
 <xsl:template match="subtitle">
-  <BLOCKQUOTE>
-  <P>
+  <p>
   <U>
   <FONT COLOR="BLUE">
   <B><xsl:apply-templates/></B>
   </FONT>
   </U>
-  </P>
-  </BLOCKQUOTE>
+  </p>
 </xsl:template>
 
 <!-- document level 2 subtitle, bold, italics, blue and right justified -->
 <!-- use to designate sections within the document, usually followed by some text -->
 <xsl:template match="subtitle2">
-  <BLOCKQUOTE>
-  <P>
+  <p>
   <B>
   <I>
   <FONT COLOR="BLUE">
@@ -88,15 +85,13 @@
   </FONT>
   </I>
   </B>
-  </P>
-  </BLOCKQUOTE>
+  </p>
 </xsl:template>
 
 <!-- document level 3 subtitle, underlined, italics, blue and right justified -->
 <!-- use to designate sections within the document, usually followed by some text -->
 <xsl:template match="subtitle3">
-  <BLOCKQUOTE>
-  <P>
+  <p>
   <U>
   <I>
   <FONT COLOR="BLUE" SIZE="-1">
@@ -104,18 +99,16 @@
   </FONT>
   </I>
   </U>
-  </P>
-  </BLOCKQUOTE>
+  </p>
 </xsl:template>
 
 <!-- A paragraph of text terminated with a new line -->
 <xsl:template match="para">
-  <BLOCKQUOTE>
-  <P>
+  <p>
+  <blockquote>
     <xsl:apply-templates/>
-  </P>
-  </BLOCKQUOTE>
-  <BR/>
+  </blockquote>
+  </p>
 </xsl:template>
 
 <!-- A quote, centered, italicized and within "" -->
@@ -162,12 +155,13 @@
 
 <!-- Box -->
 <xsl:template match="box">
+<p>
 <center>
   <table bgcolor="#99ccff" width="90%" cellpadding="5" cellspacing="0" border="1"><tr><td>
     <xsl:apply-templates/>
   </td></tr></table>
 </center>
-<br/>
+</p>
 </xsl:template>
 
 <!-- List of items (using bullets) -->  

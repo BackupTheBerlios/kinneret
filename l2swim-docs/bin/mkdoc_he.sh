@@ -46,6 +46,7 @@ xsltproc -o ../doc/he/non_gpl.html ../etc/l2swim.xsl ../src/he/non_gpl.xml
 xsltproc -o ../doc/he/why_linux.html ../etc/l2swim.xsl ../src/he/why_linux.xml
 xsltproc -o ../doc/he/user_interface.html ../etc/l2swim.xsl ../src/he/user_interface.xml
 xsltproc -o ../doc/he/linux_history.html ../etc/l2swim.xsl ../src/he/linux_history.xml
+xsltproc -o ../doc/he/kinneret_credits.html ../etc/l2swim.xsl ../src/he/kinneret_credits.xml
 
 echo "if all files were compiles successfuly, then:"
 echo "- enter toot mode : su"
