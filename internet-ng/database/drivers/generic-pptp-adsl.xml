@@ -3,14 +3,14 @@
    - Generic ADSL PPtP modem.
    -
    - Author: z9u2k
-   - $Revision: 1.2 $
+   - $Revision: 1.3 $
    -->
 <driver>
     <name lang="en">PPtP ADSL Modem</name>
-    <type>adsl</type>
     <comment lang="en">
         Generic ethernet ADSL modem that uses PPtP for communication.
     </comment>
+    <type>adsl</type>
     <interface type="ethernet"/>
     <vpn protocol="pptp">
         <address>10.0.0.138</address>
