@@ -92,6 +92,8 @@ begin
     if createShortcut then begin
       source.Add(cdrom+'\boot\Kinneret.pif.9x');
       destination.add(MyDesktopFolder+'\Kinneret.pif');
+      source.Add(cdrom+'\boot\kinneret.ico.9x');
+      destination.add('c:\boot\Kinneret.ico');
     end;
 
   end;
