@@ -33,7 +33,7 @@ maphome()
 	mount "${d}/kinneret/.config" /home/knoppix -t ext3 -o rw,loop 2>&1 > /dev/null
 
 	echo "${BLUE}Linking partitions...${NORMAL}"
-	rm -fr /home/z9u2K/partitions/*
+	rm -fr /home/knoppix/partitions/*
 
 	letter="103"	# C in octal
 	for mntpt in `cat /etc/fstab | grep fat | cut -b 6-9`
@@ -41,7 +41,7 @@ maphome()
 		echo -e "${BLUE}Linking /mnt/${mntpt} to \\${letter}...${NORMAL}"
 		slash=\\
 		to=`echo -e "${slash}${letter}"`
-		ln -s /mnt/$mntpt/ "/home/z9u2K/partitions/λεπο ${to}"
+		ln -s /mnt/$mntpt/ "/home/knoppix/partitions/λεπο ${to}"
 
 		let letter++
 	done
