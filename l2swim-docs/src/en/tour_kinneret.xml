@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<article lang="english">
+
+<title>
+Guided cruise in the Kinneret - Screenshots
+</title>
+
+<copy>
+Version   1.2, December 2003
+
+<newl/>
+By <link href="mailto:dovix@linux-kinneret.org">Dovix</link>
+<newl/>
+Translated by <link href="mailto:kamberd@pob.huji.ac.il">Dotan Kamber</link >
+<newl/>
+All rights reserved to <link href="http://www.linux-kinneret.org">GNU/Linux-Kinneret</link>
+<newl/>
+Permission is hereby granted to copy, distribute and/or modify this document according to the GNU license for free use of documents, version 1.2 or any later version published by the Free Software Foundation.
+</copy>
+
+<toc lang="english"/>
+
+<main>
+
+<para>
+GNU/Linux-Kinneret incorporates dozens of high quality general-purpose and educational applications meant to serve Israel's pupils during their studies term. This distribution also provides a variety of applications for the leisure hours and other daily tasks. This document provides several sample screenshots from the full array of applications, for your enjoyment.
+</para>
+<para>
+Detailed information about more of the applications in this distribution is available in the <link href="apps_list.html">full application list</link>
+</para>
+
+<chapter>
+Educational software, learning aids, guides and software development environments
+</chapter>
+
+<para>
+GNU/Linux-Kinneret emphasises on the needs of Israel's pupils, and therefore this distribution incorporates a wide assortment of educational softwares and learning aids required during the school years up to the high-school and even beyond. The assortment of software titles includes development environments in a variety of of programming languages that are being thought in schools and other learning aids. Several guides and reference materials in a variety of different subjects is included as well.
+</para>
+
+<section>
+Equation editor- KFormula
+</section>
+<para>
+KFormula is an easy to use equation editor. It enables easy typing of Greek symbols, smart pointer which moves according to the context, advanced syntax marking, last changes UNDO option and an option to export the result to a text editor.
+</para>
+<image><file>../image/tour2edu_kformula.png</file></image>
+
+<section>
+Learning aid software for geometry- KGeo
+</section>
+<para>
+KGeo is used as a learning aid in engineering classes where it enables visualisation of the studied concepts in order to ease perception.
+</para>
+<image><file>../image/tour2edu_kgeo.png</file></image>
+
+<section>
+ C and Pascal development environment- RHide
+</section>
+<para>
+Development environment aimed to teach the basics of program development.
+</para>
+<image><file>../image/tour2edu_rhide.png</file></image>
+
+<section>
+Software translation applet- KBabel
+</section>
+<para>
+KBabel is an important tool enabling easy translation of Linux dedicated softwares.
+</para>
+<image><file>../image/tour2edu_kbabel.png</file></image>
+
+<chapter>
+Office aids and applications
+</chapter>
+
+<para>
+GNU/Linux Kinneret includes not one but two office software suites - KOffice - The official suite of the KDE desktop environment, and OpenOffice - A suite fully compatible with Microsoft(TM) Office(TM) user interface and file formats. These applications and other office tools fully support Hebrew as well as other languages both in the interface and in the documents.
+</para>
+
+<section>
+The word processor- KWord
+</section>
+<para>
+KWord word processor enables easy multi-languages files handling with full support of Hebrew, English, Russian and Arabic. The user interface is available in many languages. KWord is fully integrated with the desktop and the other modules in the KOffice suite. There's an option to import and export different file formats, including PDF, as well as support for different encodings.
+</para>
+<image><file>../image/tour1office_kword.png</file></image>
+
+<section>
+The spreadsheet- KSpread
+</section>
+<para>
+KSpread is an easy to use Spreadsheet with many options, enabling data entry, calculations and presentation of data.
+</para>
+<image><file>../image/tour1office_kspread.png</file></image>
+
+<section>
+Presentation creator- KPresenter
+</section>
+<para>
+KPresenter makes it easy to create presentations using advanced graphic tools and multiple layouts. Among its features you can find support for images, effects, HTML presentations creation for easy sharing on the web and many other tools to edit the presentation components.
+</para>
+<image><file>../image/tour1office_kpresenter.png</file></image>
+
+<section>
+The office applications suite- Open Office
+</section>
+<para>
+Open Office incorporates a collection of office applications enabling work with Microsoft(TM) Office(TM) files. the suite includes word processor, spreadsheet, presentation creator, image editor and an equation editor. 
+</para>
+<image><file>../image/tour1office_open.png</file></image>
+
+<section>
+Scientific calculator- KCalc
+</section>
+<para>
+KCalc enables to perform different mathematical calculations on the computer screen using the keyboard or the mouse for data entry.
+</para>
+<image><file>../image/tour1office_kcalc.png</file></image>
+
+<chapter>
+Internet applications.
+</chapter>
+
+<para>
+In the modern times the computer gains an ever growing importance in the world we live in. The age of information is intensifying the importance of the computer even more, therefor GNU/Linux Kinneret provides a variety of applications meant to assist the pupil to connect to the Internet, starting from a web browser and E-mail client to file sharing and instant messaging applications. Since the Linux operating system gives security a high priority we have included in the CD a  Firewall application and an Internet Connection Wizard specially written and configured for use in Israel. 
+</para>
+
+<section>
+Web browser- Konqueror
+</section>
+<para>
+Konqueror is a multi-purpose application, serving both as a web browser and as the KDE desktop environment disk explorer. The software emphasises on performance, ease of use, natural integration in the working environment and standards compatibility.
+</para>
+<image><file>../image/tour3net_konqueror.png</file></image>
+
+<para>
+As a disk explorer Konqueror enables previews of files as small icons and even displays the content of compressed archives as demonstrated in the followings screenshot.
+</para>
+<image><file>../image/tour3net_konqueror_file.png</file></image>
+
+<section>
+The E-mail client- KMail
+</section>
+<para>
+KMail enables correspondence in many languages, including Hebrew, mail importing from different Windows(TM) software and naturally integrates in the KDE working environment.
+</para>
+<image><file>../image/tour3net_kmail.png</file></image>
+
+<chapter>
+Multimedia software
+</chapter>
+
+<para>
+After the homework duties are over, GNU/Linux Kinneret invites the pupils to use the system for leisure time needs, from CD playing to artistic expression with the different drawing applications adjusted for different ages and needs.
+</para>
+
+<section>
+The kids drawing suite- TuxPaint
+</section>
+<para>
+TuxPaint was built especially for a very young audience, thus it enables children to express themselves with a very simple interface and magical tools to add special effects.
+</para>
+<image><file>../image/tour4media_tuxpaint.png</file></image>
+
+<section>
+The music player- XMMS
+</section>
+<para>
+XMMS enables playing music from files or directly from the CD according to a user defined play list. XMMS enables personal selection of the applications "skin" and supports data retrieval about the played track from the Internet database CDDB.
+</para>
+<image><file>../image/tour4media_xmms.png</file></image>
+
+<chapter>
+Games
+</chapter>
+
+<para>
+The games included in the GNU/Linux Kinneret CD were selected according to the criterion of excellence, measured foremost by its level of interest and satisfaction. Many of the games demonstrate the system abilities with light, sound and color, providing many hours of enjoyment for the leisure hours.
+</para>
+
+<section>
+Frozen Bubble
+</section>
+<para>
+A simple yet very addictive game in which the player fires colored bubbles in order to complete color sequences that will make the bubbles on the ceiling fall down.
+</para>
+<image><file>../image/tour5games_frozenbubble.png</file></image>
+
+<section>
+LBreakout2
+</section>
+<para>
+Classic game in which the player is supposed to break a brick wall with paddle and ball.
+</para>
+<image><file>../image/tour5games_lbreakout2.png</file></image>
+
+<section>
+Power Manga
+</section>
+<para>
+A highly addictive game in which the player is supposed to fight space intruders. Amazing graphics!
+</para>
+<image><file>../image/tour5games_powermanga.png</file></image>
+
+<section>
+Enigma
+</section>
+<para>
+A new version of Oxide, an ATARI age popular game in which the goal is to discover matching pairs of colored stones.
+</para>
+<image><file>../image/tour5games_enigma.png</file></image>
+
+<chapter>
+System administration tools.
+</chapter>
+
+<para>
+Though GNU/Linux Kinneret is running from the CD there is an option to save its definitions to the hard disc. The variety of available administration tools enable friendly configuration of the system to the specific hardware and user demands. We hope the system administration tools included in GNU/Linux Kinneret will ease the use of the system and will present a friendly dimension of the Linux operating system.
+</para>
+
+<section>
+Control center- KControl
+</section>
+<para>
+KControl is the main tool to configure the KDE desktop environment. KControl enables the control of both visual and system characteristics. The control centre is easy to use and features advanced personal adaptation ensuring ultimate comfort to the user.
+</para>
+<image><file>../image/tour6admin_kcontrol.png</file></image>
+
+<section>
+Free disc space monitor- KDiskFree
+</section>
+<para>
+KDiskFree displays the available free space on each of the partitions in the computer drives. 
+</para>
+<image><file>../image/tour6admin_kdiskfree.png</file></image>
+
+<section>
+Floppy formating applet- KFloppy
+</section>
+<para>
+KFloppy enables formating of floppy discs to be used both in Windows(TM) and Linux based systems.
+</para>
+<image><file>../image/tour6admin_kfloppy.png</file></image>
+
+<newl/>
+
+</main>
+
+</article>

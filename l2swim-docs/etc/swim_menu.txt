@@ -11,7 +11,7 @@
 # FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 # License at http://www.gnu.org/copyleft/gpl.html for more details.
 #
-# Version: 0.7g 7-feb-2004
+# Version: 0.7h 27-mar-2004
 # Encoding: [UTF8]
 # Language: Hebrew, English, Arabic, Russian, Ethopian
 #
@@ -176,6 +176,8 @@ Click here for English documentation
 <menudir=ltr>
 Welcome to GNU/Linux Kinneret!
 This section hosts some of the system documents that are available in English. If you would like to volunteer to translate additional documents, please contact dovix@linux-kinneret.org. <br><br>The project team welcomes you for using the system and wishes you enjoyment and fruitful work!
+  <play=en/tour_kinneret.html>
+<img src="/opt/kinneret/images/star.png">Guided cruise in the Kinneret - Screenshots
   <play=en/user_interface.html>
 <img src="/opt/kinneret/images/star.png">Where's my...? Some important things to keep you afloat
    <play=en/linux_history.html>
