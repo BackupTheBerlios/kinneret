@@ -1,0 +1,32 @@
+#!/usr/bin/kaptain
+#
+# kiwiz version 0.31 using kaptain grammer (C) 2004 by Dovix, dovix2003@linux-kinneret.org
+# released under the terms of the GNU General Public License, version 2
+# http://www.fsf.org/copyleft/gpl.txt
+#
+
+start "Kiwiz - Dialer"-> main;
+
+#------------- Main -----------------------
+main :framed :horizontal -> main_logo main_pane;
+
+main_logo -> @icon("/home/dovix/iwiz/128x128/apps/kppp.png");
+
+main_pane -> main_options main_buttons;
+
+main_options :framed -> main_connection main_password;
+main_connection :horizontal "Connection to dial" -> !connect_default | connect_other; 
+connect_default "Default" -> "default";
+connect_other :beside "Other"-> @combo(`lines=$(internet --listcons | wc -l) && lines=$(echo $lines -1 | bc) && internet --listcons | tail -n $lines`);
+
+main_password -> main_password_value;
+main_password_value :beside "Connection password [TBD]" -> " --password " @password | !@;
+
+main_buttons :horizontal -> main_connect main_close;
+
+main_connect :horizontal -> @icon("/home/dovix/iwiz/32x32/apps/agt_action_success.png") @exec(main_connect_play)="Go";
+
+main_connect_play -> "internet --connect="main_connection" > /tmp/kiwiz_connect.log 2> /tmp/kiwiz_connect.err ; kaptain kiwiz-log.kaptn";
+#main_connect_play -> "echo "main_connection" "main_password_value"";
+
+main_close :horizontal -> @icon("/home/dovix/iwiz/32x32/apps/agt_action_fail.png") @close="Cancel";
