@@ -28,21 +28,16 @@
 				<remotename>192.117.195.250</remotename>
 			</cable>
 		</gateway>
-		<usrsuffix type="adsl">@IIsraserv</usrsuffix>
+		<usrsuffix type="adsl">%israsrv@IInzahav</usrsuffix>
+		<usrsuffix type="cable">%israsrv</usrsuffix>
 	</broadband>
-<!--
-	<isdn>
-		<server loc="The Center">03-6074000</server>
-		<server loc="The North">04-8319800</server>
-	</isdn>
-
 	<dialup>
-		<server loc="Jerusalem">02-6774444</server>
-		<server loc="The Center">03-6941000</server>
-		<server loc="The North">04-8319000</server>
-		<server loc="The North 2">04-6952000</server>
-		<server loc="The Sharon">09-7612000</server>
-		<server loc="The South">08-9482900</server>
+		<server loc="Jerusalem">02-6771777</server>
+		<server loc="Ramat Gan">03-7535000</server>
+		<server loc="Petah Titva">03-9110000</server>
+		<server loc="Rishon LeZion">03-9638999</server>
+		<server loc="Haifa">04-8479999</server>
+		<server loc="Rehovot">08-9448444</server>
+		<server loc="Herzeliya">09-9603333</server>
 	</dialup>
--->
 </isp>
