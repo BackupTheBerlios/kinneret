@@ -1,0 +1,5 @@
+#!/bin/bash
+export resulution=`xwininfo -root | grep geometry | cut -c 13-15`
+karamba /opt/kinneret/karamba/The$resulution.theme
+
+
