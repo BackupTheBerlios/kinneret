@@ -19,6 +19,7 @@
 # 5a. add error handling for all commands, especially Internet
 # 5b. add check that necessary commands exist (e.g. kdialog)
 # 6. translation
+# 7. add more stations
 
 ##########################################################
 # Main menu
@@ -33,11 +34,11 @@ fi
 
 case "$MyStation" in
   1)
-  xterm -iconic -title Radius100 -e mplayer http://213.8.143.164/audiomedia &;;
+  xterm -iconic -title Radius100 -e mplayer -nocache http://213.8.143.164/audiomedia &;;
   2)
-  xterm -iconic -title Glz -e mplayer http://213.8.138.13/glz-stream &;;
+  xterm -iconic -title Glz -e mplayer -nocache http://213.8.138.13/glz-stream &;;
   3)
-  xterm -iconic -title GGlz -e mplayer http://213.8.138.13/gglz &;;
+  xterm -iconic -title GGlz -e mplayer -nocache http://213.8.138.13/gglz &;;
   *)
   echo "bad choice";; 
 esac
