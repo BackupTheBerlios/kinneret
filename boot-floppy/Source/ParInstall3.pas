@@ -54,12 +54,10 @@ begin
   begin
     source.Add(cdrom+'\boot\menu.lst');
     destination.add('c:\boot\menu.lst');
-    source.Add(cdrom+'\boot\ntfsinstall.exe');
-    destination.add('c:\boot\ntfsinstall.exe');
-    source.Add(cdrom+'\boot\ntfsinstall.txt');
-    destination.add('c:\boot\ntfsinstall.txt');
-    source.Add(cdrom+'\boot\ntfsinstall.bat');
-    destination.add('c:\boot\ntfsinstall.bat');
+    source.Add(cdrom+'\boot\grubinstall.exe');
+    destination.add('c:\boot\grubinstall.exe');
+    source.Add(cdrom+'\boot\grubinstall.bat');
+    destination.add('c:\boot\grubinstall.bat');
     source.Add(cdrom+'\boot\stage1');
     destination.add('c:\boot\stage1');
     source.Add(cdrom+'\boot\stage2');
@@ -98,7 +96,7 @@ begin
       error:=true;
     end else begin
       copyFile('c:\boot.ini','c:\boot\boot.ini.old',false);
-      ShellExecute(Handle, 'open',PChar('c:\boot\ntfsinstall.bat'),nil, nil, SW_HIDE);
+      ShellExecute(Handle, 'open',PChar('c:\boot\grubinstall.bat'),nil, nil, SW_HIDE);
       attribute:=GetFileAttributes(pchar('c:\boot.ini'));
       SetFileAttributes(pchar('c:\boot.ini'), attribute and not FILE_ATTRIBUTE_READONLY	);
       BootIni := TIniFile.Create('c:\boot.ini');
