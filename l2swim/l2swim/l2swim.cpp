@@ -23,7 +23,7 @@
 MainWindow::MainWindow ( const char * name ) : KMainWindow ( 0L, name )
 {
   aboutline=i18n("<b><big><big>Learn To Swim (l2swim)</b></big></big><br><br>An interactive information center.<br>Version: %1<br>Date: %2<br>Programmed by : Nir Misgav<br>Email: %3<br>License: GPL<br>All rights reserved to <i><b>GNU/Linux Kinneret.</i></b>")
-      .arg("0.3b2").arg("27/6/03").arg("nirro@yahoo.com");
+      .arg("0.6rc1").arg("2/9/03").arg("nirro@linux-kinneret.org");
 
 //  cout<<"menu initialized"<<endl;
   setCaption(i18n("Learn to swim"));
