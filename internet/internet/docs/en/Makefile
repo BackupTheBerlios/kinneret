@@ -1,6 +1,5 @@
 # Makefile.in generated automatically by automake 1.4-p6 from Makefile.am
-# Generated automatically from Makefile.in by config.pl.
-# KDE tags expanded automatically by am_edit - $Revision: 1.8 $ 
+# KDE tags expanded automatically by am_edit - $Revision: 1.9 $ 
 
 # Copyright (C) 1994, 1995-8, 1999, 2001 Free Software Foundation, Inc.
 # This Makefile.in is free software; the Free Software Foundation
@@ -21,7 +20,7 @@ SHELL = /bin/sh
 
 srcdir = .
 top_srcdir = ../../..
-VPATH = .
+
 prefix = /usr/local
 exec_prefix = ${prefix}
 
@@ -203,7 +202,7 @@ USER_LDFLAGS =
 USE_EXCEPTIONS = -fexceptions
 USE_RTTI = 
 USE_THREADS = @USE_THREADS@
-VERSION = 0.2
+VERSION = 0.3.1
 WOVERLOADED_VIRTUAL = -Woverloaded-virtual
 XGETTEXT = @XGETTEXT@
 XPMINC = @XPMINC@

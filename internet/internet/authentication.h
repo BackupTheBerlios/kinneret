@@ -17,11 +17,13 @@
 #ifndef INTERNET_AUTH_H_
 #define INTERNET_AUTH_H_
 
+#include "internet.h"
+
 #include <iostream>
 #include <string>
 using namespace std;
 
-class Authentication
+class Authentication : public Module
 {
 private:
 	string		strUsername;		// auth::usr
@@ -30,7 +32,7 @@ private:
 protected:
 public:
 
-	Authentication() : strUsername(""), strPasswd(""), strServer("") {}
+	Authentication() : Module(), strUsername(""), strPasswd(""), strServer("") {}
 	Authentication(string usr, string passwd, string serv) : strUsername(usr),
 		strPasswd(passwd), strServer(serv) {}
 	~Authentication() {}
@@ -39,7 +41,11 @@ public:
 	string getPasswd()		const { return strPasswd;	}
 	string getServer()		const { return strServer;	}
 
-	void MakeInit(ostream &stream);
+	void MakeInit(ostream &stream) const;
+	void MakeBoot(ostream &stream) const;
+	void MakeConnect(ostream &stream) const;
+	void MakeDisconnect(ostream &stream) const;
+	void MakeDone(ostream &stream) const;
 };
 
 #endif

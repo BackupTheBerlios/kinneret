@@ -69,5 +69,9 @@ void USB::Load(string name) throw (Error)
 	xmlCleanupParser();
 }
 
+void USB::MakeConnect(ostream &stream) const { stream << endl; }
+void USB::MakeDisconnect(ostream &stream) const { stream << endl; }
+void USB::MakeDone(ostream &stream) const { stream << endl; }
+
 
 

@@ -29,6 +29,7 @@ using namespace std;
 #include <getopt.h>
 
 #include <stdlib.h>
+#include <config.h>
 
 /////////////////////////////////
 // Error hirarchy - for excetions
@@ -259,6 +260,20 @@ public:
 
 	Description() {}
 	~Description() {}
+};
+
+// Abstract class for modules
+class Module
+{
+public:
+	Module() {}
+	virtual ~Module() {}
+
+	virtual void MakeInit(ostream &stream) const = 0;
+	virtual void MakeBoot(ostream &stream) const = 0;
+	virtual void MakeConnect(ostream &stream) const = 0;
+	virtual void MakeDisconnect(ostream &stream) const = 0;
+	virtual void MakeDone(ostream &stream) const = 0;
 };
 
 // Utilities

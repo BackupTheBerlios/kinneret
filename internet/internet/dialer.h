@@ -24,7 +24,7 @@
 #include "hardware.h"
 #include "db.h"
 
-class Dialer
+class Dialer : public Module
 {
 private:
 	const Database	*const pDB;
@@ -32,12 +32,13 @@ private:
 	string		strConnect;
 	string		strDisconnect;
 	string		strInit;
+	string		strDone;
 	string		strIFace;		// ppp0 || ippp0 (from the dialer's first line), dialer::iface
 	
 	bool		bDebian;
 protected:
 public:
-	Dialer(const Database *const db) : pDB(db), bDebian(true) {}
+	Dialer(const Database *const db) : Module(), pDB(db), bDebian(true) {}
 	~Dialer() {}
 
 	void LoadDialer(string strName) throw (Error);
@@ -48,8 +49,10 @@ public:
 	inline void setDebian(const bool &d) { bDebian = d; }
 
 	void MakeInit(ostream &stream) const;
+	void MakeBoot(ostream &stream) const;
 	void MakeConnect(ostream &stream) const;
 	void MakeDisconnect(ostream &stream) const;
+	void MakeDone(ostream &stream) const;
 };
 
 #endif

@@ -19,11 +19,6 @@
 
 #include "xml.h"
 
-void Ethernet::MakeInit(ostream &stream) const
-{
-	stream << endl;
-}
-
 void Ethernet::MakeBoot(ostream &stream) const
 {
 	if (!ipInterface.strIP.empty() || !ipInterface.strMask.empty() ||
@@ -144,6 +139,11 @@ void Ethernet::Load(string name) throw (Error)
 
 	xmlCleanupParser();
 }
+
+void Ethernet::MakeInit(ostream &stream) const { stream << endl; }
+void Ethernet::MakeConnect(ostream &stream) const { stream << endl; }
+void Ethernet::MakeDisconnect(ostream &stream) const { stream << endl; }
+void Ethernet::MakeDone(ostream &stream) const { stream << endl; }
 
 
 

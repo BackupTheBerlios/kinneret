@@ -26,6 +26,7 @@ void PrintHelp()
 	"Options list:"																	"\n"
 	"Modifiers:"																	"\n"
 	"--help (-h):				This help screen"									"\n"
+	"--version (-V)				Version"											"\n"
 	"--verbose (-v):				Be verbose"										"\n"
 	"--quite (-q):				Be quite (no output)"								"\n"
 	"--wizard (-w):				Starts in wizard mode"								"\n"
@@ -86,6 +87,8 @@ void PrintHelp()
 	"					presented, initializes 'default'"							"\n"
 	"--boot=<name>				Executes the boot script of <name>,"				"\n"
 	"					if name not presented, boots 'defaults'"					"\n"
+	"NOTE: --boot and --init are obsolete and shouldn't be used on connection that"	"\n"
+	"      were created using version 0.3.1 and above."								"\n"
 	"\n";
 }
 

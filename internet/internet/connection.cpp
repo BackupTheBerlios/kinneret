@@ -37,62 +37,29 @@ void Connection::MakeScript(ScriptType type) throw (Error)
 	ostringstream stream;
 	string strName;
 
+	const int nModules = 4;
+	const Module *pModules[] =
+	{
+		pHardware, pISP, pAuth, pDialer
+	};
+
+	const char *Names[] =
+	{
+		"Hardware", "ISP", "Authentication", "Dialer"
+	};
+
 	switch (type)
 	{
 	case Init:
 		strName = string("init");
 
-		stream << "#!/bin/bash\n" << endl;
-
-		if (pHardware)
-		{
-			stream << "### HARDWARE ###" << endl;
-			pHardware->MakeInit(stream);
-			stream << "### end of HARDWARE ###" << endl;
-		}
-		else stream << "### Skipping HARDWARE ###" << endl;
-
-		if (pISP)
-		{
-			stream << "### ISP ###" << endl;
-			pISP->MakeInit(stream);
-			stream << "### end of ISP ###" << endl;
-		}
-		else stream << "### Skipping ISP ###" << endl;
-
-		if (pAuth)
-		{
-			stream << "### AUTHENTICATION ###" << endl;
-			pAuth->MakeInit(stream);
-			stream << "### end of AUTHENTICATION ###" << endl;
-		}
-		else stream << "### Skipping AUTHENTICATON ###" << endl;
-
-		if (pDialer)
-		{
-			stream << "### DIALER ###" << endl;
-			pDialer->MakeInit(stream);
-			stream << "### end of DIALER ###" << endl;
-		}
-		else stream << "### Skipping DIALER ###" << endl;
-
-		stream << "exit 0";
+		stream << "#!/bin/bash" << endl;
 		break;
 
 	case Boot:
 		strName = string("boot");
-		
-		stream << "#!/bin/bash\n" << endl;
 
-		if (pHardware)
-		{
-			stream << "### HARDWARE ###" << endl;
-			pHardware->MakeBoot(stream);
-			stream << "### end of HARDWARE ###" << endl;
-		}
-		else stream << "### Skipping HARDWARE ###" << endl;
-
-		stream << "exit 0";
+		stream << "#!/bin/bash" << endl;
 		break;
 
 	case Connect:
@@ -100,33 +67,82 @@ void Connection::MakeScript(ScriptType type) throw (Error)
 		
 		stream << "#!/bin/bash\n" << endl;
 
-		if (pDialer)
+		stream << "### init ###" << endl;
+		for (int i = 0 ; i < nModules ; i++)
 		{
-			stream << "### DIALER ###" << endl;
-			pDialer->MakeConnect(stream);
-			stream << "### end of DIALER ###" << endl;
+			if (pModules[i])
+			{
+				stream << "### " << Names[i] << " (init) ###" << endl;
+				pModules[i]->MakeInit(stream);
+				stream << "### end of " << Names[i] << " ###\n" << endl;
+			}
+			else stream << "### Skipping " << Names[i] << " (init) ###\n" << endl;
 		}
-		else stream << "### Skipping DIALER ###" << endl;
 
-		stream << "exit 0";
+		stream << "### boot ###" << endl;
+		for (int i = 0 ; i < nModules ; i++)
+		{
+			if (pModules[i])
+			{
+				stream << "### " << Names[i] << " (boot) ###" << endl;
+				pModules[i]->MakeBoot(stream);
+				stream << "### end of " << Names[i] << " ###\n" << endl;
+			}
+			else stream << "### Skipping " << Names[i] << " (boot) ###\n" << endl;
+		}
+
+		stream << "### connect ###" << endl;
+		for (int i = 0 ; i < nModules ; i++)
+		{
+			if (pModules[i])
+			{
+				stream << "### " << Names[i] << " (connect) ###" << endl;
+				pModules[i]->MakeConnect(stream);
+				stream << "### end of " << Names[i] << " ###\n" << endl;
+			}
+			else stream << "### Skipping " << Names[i] << " (connect) ###\n" << endl;
+		}
+
 		break;
 
 	case Disconnect:
 		strName = string("disconnect");
-		
+
 		stream << "#!/bin/bash\n" << endl;
 
-		if (pDialer)
+		stream << "### disconnect ###" << endl;
+		for (int i = 0 ; i < nModules ; i++)
 		{
-			stream << "### DIALER ###" << endl;
-			pDialer->MakeDisconnect(stream);
-			stream << "### end of DIALER ###" << endl;
+			if (pModules[i])
+			{
+				stream << "### " << Names[i] << " (disconnect) ###" << endl;
+				pModules[i]->MakeDisconnect(stream);
+				stream << "### end of " << Names[i] << " ###\n" << endl;
+			}
+			else stream << "### Skipping " << Names[i] << " (disconnect) ###\n" << endl;
 		}
-		else stream << "### Skipping DIALER ###" << endl;
 
-		stream << "exit 0";
+		stream << "### done ###" << endl;
+		for (int i = 0 ; i < nModules ; i++)
+		{
+			if (pModules[i])
+			{
+				stream << "### " << Names[i] << " (done) ###" << endl;
+				pModules[i]->MakeDone(stream);
+				stream << "### end of " << Names[i] << " ###\n" << endl;
+			}
+			else stream << "### Skipping " << Names[i] << " (done) ###\n" << endl;
+		}
+		break;
+		
+	case Done:
+		strName = string("done");
+
+		stream << "#!/bin/bash\n" << endl;
 		break;
 	}
+
+	stream << "exit 0";
 
 	// Parse stream
 	string strScript = Parse(stream.str(), pISP, pAuth, pHardware, pDialer);
@@ -153,6 +169,7 @@ void Connection::Make() throw (Error)
 		MakeScript(Boot);
 		MakeScript(Connect);
 		MakeScript(Disconnect);
+//		MakeScript(Done);
 	}
 
 	catch (...)

@@ -24,14 +24,15 @@ using namespace std;
 #include "isp.h"
 #include "authentication.h"
 #include "dialer.h"
+#include "internet.h"
 
 class Connection
 {
 private:
-	Hardware			*pHardware;
-	ISP					*pISP;
-	Authentication		*pAuth;
-	Dialer				*pDialer;
+	Hardware		*pHardware;
+	ISP				*pISP;
+	Authentication	*pAuth;
+	Dialer			*pDialer;
 
 	string				strName;
 
@@ -46,7 +47,8 @@ public:
 		Init,				// One-time scripts (e.g. pap-secrets)
 		Boot,				// Boot-time configuration (e.g. ifconfig eth0 up)
 		Connect,
-		Disconnect
+		Disconnect,
+		Done
 	};
 
 	Connection(Hardware *hw, ISP *isp, Authentication *auth, Dialer *dial);

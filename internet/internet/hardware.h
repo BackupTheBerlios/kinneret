@@ -25,7 +25,7 @@ using namespace std;
 #include "db.h"
 
 class Database;
-class Hardware
+class Hardware : public Module
 {
 private:
 protected:
@@ -53,11 +53,8 @@ public:
 		Unknown
 	};
 	
-	Hardware(const Database *const db) throw (Error) : strName(""), pDB(db) {}
+	Hardware(const Database *const db) throw (Error) : Module(), strName(""), pDB(db) {}
 	virtual ~Hardware() {}
-
-	virtual void MakeInit(ostream &stream) const = 0;
-	virtual void MakeBoot(ostream &stream) const = 0;
 
 	virtual void Load(string strName) throw (Error) = 0;
 
@@ -105,8 +102,11 @@ public:
 		strRemotename("") {}
 	virtual ~Ethernet() {}
 
-	virtual void MakeInit(ostream &stream) const;
-	virtual void MakeBoot(ostream &stream) const;
+	void MakeInit(ostream &stream) const;
+	void MakeBoot(ostream &stream) const;
+	void MakeConnect(ostream &stream) const;
+	void MakeDisconnect(ostream &stream) const;
+	void MakeDone(ostream &stream) const;
 
 	virtual void Load(string name) throw (Error);
 
@@ -132,8 +132,11 @@ public:
 	USB(const Database *const db) throw (Error) : Ethernet(db), strDriver("") {}
 	virtual ~USB() {}
 
-	virtual void MakeInit(ostream &stream) const;
-	virtual void MakeBoot(ostream &stream) const;
+	void MakeInit(ostream &stream) const;
+	void MakeBoot(ostream &stream) const;
+	void MakeConnect(ostream &stream) const;
+	void MakeDisconnect(ostream &stream) const;
+	void MakeDone(ostream &stream) const;
 
 	virtual void Load(string strName) throw (Error);
 
@@ -157,8 +160,11 @@ public:
 		ifaceIP() {}
 	virtual ~LAN() {}
 
-	virtual void MakeInit(ostream &stream) const;
-	virtual void MakeBoot(ostream &stream) const;
+	void MakeInit(ostream &stream) const;
+	void MakeBoot(ostream &stream) const;
+	void MakeConnect(ostream &stream) const;
+	void MakeDisconnect(ostream &stream) const;
+	void MakeDone(ostream &stream) const;
 
 	virtual void Load(string strName) throw (Error) { if (0) { cout << strName; } }
 
@@ -192,8 +198,11 @@ public:
 		strATDT("") {}
 	virtual ~AnalogModem() {}
 
-	virtual void MakeInit(ostream &stream) const;
-	virtual void MakeBoot(ostream &stream) const;
+	void MakeInit(ostream &stream) const;
+	void MakeBoot(ostream &stream) const;
+	void MakeConnect(ostream &stream) const;
+	void MakeDisconnect(ostream &stream) const;
+	void MakeDone(ostream &stream) const;
 
 	virtual void Load(string strName) throw (Error) { if (0) { cout << strName; } }
 

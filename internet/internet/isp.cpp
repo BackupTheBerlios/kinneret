@@ -192,7 +192,7 @@ void ISP::ParseProxy(xmlDocPtr doc, xmlNodePtr cur)
 	}
 }
 
-void ISP::MakeInit(ostream &stream)
+void ISP::MakeInit(ostream &stream) const
 {
 	stream << "# backup" << endl;
 	stream << "cp /etc/resolv.conf /etc/resolv.conf.bak" << endl;
@@ -209,6 +209,11 @@ void ISP::MakeInit(ostream &stream)
 
 	stream << "echo \"nameserver " << getDNS2() << "\" >> /etc/resolv.conf" << endl;
 }
+
+void ISP::MakeBoot(ostream &stream) const { stream << endl; }
+void ISP::MakeConnect(ostream &stream) const { stream << endl; }
+void ISP::MakeDisconnect(ostream &stream) const { stream << endl; }
+void ISP::MakeDone(ostream &stream) const { stream << endl; }
 
 
 

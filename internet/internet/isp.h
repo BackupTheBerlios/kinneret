@@ -22,7 +22,7 @@
 #include "xml.h"
 
 class Database;
-class ISP
+class ISP : public Module
 {
 private:
 	string					strName;		// isp::name
@@ -93,7 +93,12 @@ public:
 	inline string				getIMAP()				const { return strIMAP;				}
 
 	void LoadISP(string name) throw (Error);
-	void MakeInit(ostream &stream);
+
+	void MakeInit(ostream &stream) const;
+	void MakeBoot(ostream &stream) const;
+	void MakeConnect(ostream &stream) const;
+	void MakeDisconnect(ostream &stream) const;
+	void MakeDone(ostream &stream) const;
 };
 
 #endif

@@ -100,6 +100,7 @@ void CommandLine::Parse(int argc, char *argv[]) throw (Error)
 		
 		// Modifiers
 		{ "help",			0, 0, 'h'  },
+		{ "version",		0, 0, 'V'  },
 		{ "verbose",		0, 0, 'v'  },
 		{ "quite",			0, 0, 'q'  },
 		{ "wizard",			0, 0, 'w'  },
@@ -148,7 +149,7 @@ void CommandLine::Parse(int argc, char *argv[]) throw (Error)
 		// Terminate
 		{ 0,				0, 0,  0   }
 	};
-	const char *short_options = "hvqwb:i:m:a:M:d:u:p:n:lH:Cc::k::f";
+	const char *short_options = "hVvqwb:i:m:a:M:d:u:p:n:lH:Cc::k::f";
 
 	// Let's parse the command line!
 	int next_opt;
@@ -165,6 +166,9 @@ void CommandLine::Parse(int argc, char *argv[]) throw (Error)
 
 		// So this way of writing switch statement is non-standart,
 		// but it makes the code look much better ;)
+		case 'V':
+			cout << "Israeli Internet Tool " << VERSION << "." << endl;
+			break;
 			
 		case 'v':  bVerbose				= true;										break;
 		case 'q':  bQuite				= true;										break;

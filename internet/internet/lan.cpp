@@ -17,11 +17,7 @@
 #include "hardware.h"
 #include "db.h"
 
-void LAN::MakeInit(ostream &stream) const
-{
-	stream << endl;
-}
-
+void LAN::MakeInit(ostream &stream) const { stream << endl; }
 void LAN::MakeBoot(ostream &stream) const
 {
 	if (!bDHCP && (!getIP().empty() || !getMask().empty() || !getBroadcast().empty() || !getGateway().empty()))
@@ -50,4 +46,8 @@ void LAN::MakeBoot(ostream &stream) const
 	
 	stream << endl;
 }
+
+void LAN::MakeConnect(ostream &stream)		const { stream << endl; }
+void LAN::MakeDisconnect(ostream &stream)	const { stream << endl; }
+void LAN::MakeDone(ostream &stream)			const { stream << endl; }
 

@@ -45,7 +45,7 @@ void DoCleanup()
 	};
 
 	for (int i = 0 ; files[i] ; i++) unlink(files[i]);
-	system("rm -fr /tmp/iwiz");
+	system("rm -fr /tmp/iwiz/*");
 }
 
 int main(int argc, char *argv[])

@@ -16,12 +16,8 @@
  ***************************************************************************/
 #include "hardware.h"
 
-void AnalogModem::MakeInit(ostream &stream) const
-{
-	stream << endl;
-}
-
-void AnalogModem::MakeBoot(ostream &stream) const
-{
-	stream << endl;
-}
+void AnalogModem::MakeInit(ostream &stream)			const { stream << endl; }
+void AnalogModem::MakeBoot(ostream &stream)			const { stream << endl; }
+void AnalogModem::MakeConnect(ostream &stream)		const { stream << endl; }
+void AnalogModem::MakeDisconnect(ostream &stream)	const { stream << endl; }
+void AnalogModem::MakeDone(ostream &stream)			const { stream << endl; }
