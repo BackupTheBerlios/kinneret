@@ -1,12 +1,16 @@
+27-May-2004 z9u2k
+=================
+* Fixed cabels dhcp code to identify dhcpcd's file on different systems
+
 27-Feb-2004 - dovix
-===========
+===================
 * Created generic cable definition file
-* added definition for SB5100 - not tested but should work like sb4xxx
-* fixed pptp server for Barak
-* fixed pptp served for 012 and added 012-aztv as they use a different server
-(temporary work around)
-* added sl28xx - has eth/usb but currently reported to work only with eth -
-left usb for further tests
+* Added definition for SB5100 - not tested but should work like sb4xxx
+* Fixed pptp server for Barak
+* Fixed pptp served for 012 and added 012-aztv as they use a different server
+  (temporary work around)
+* Added sl28xx - has eth/usb but currently reported to work only with eth -
+  left usb for further tests
 
 16-Jan-2004
 ===========
