@@ -211,8 +211,8 @@ end;
 procedure TWForm.ButtonAdvancedClick(Sender: TObject);
 begin
     if fileExists('a:\syslinux.cfg') then FormAdvanced.ShowModal
-    else showmessage('In order to enter the Advanced options, You must put your boot-floppy'+#10#13+
-        '(The floppy you can make here) in drive A:');
+    else showmessage(_('In order to enter the Advanced options, You must put your boot-floppy'+#10#13+
+        '(The floppy you can make here) in drive A:'));
 end;
 
 end.

@@ -1,6 +1,6 @@
 object WForm: TWForm
-  Left = 259
-  Top = 167
+  Left = 285
+  Top = 258
   AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsDialog

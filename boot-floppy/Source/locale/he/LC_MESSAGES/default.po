@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2003-03-22 23:59\n"
-"PO-Revision-Date: 2003-05-06 04:09+0200\n"
+"Project-Id-Version: boot-floppy-0.2b\n"
+"POT-Creation-Date: 2003-05-11 22:30\n"
+"PO-Revision-Date: 2003-05-12 11:52+0200\n"
 "Last-Translator: Nir Misgav <nirro@hotmail.com>\n"
 "Language-Team: Nir Misgav <nirro@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -14,176 +14,162 @@ msgstr ""
 
 #. FormAbout..Caption
 #. WForm..Button1..Caption
-#: About.dfm:10
-#: About.pas:50
-#: WelcomeForm.dfm:527
+#: Source/About.dfm:10
 msgid "About"
 msgstr "אודות"
 
-#. Programmer's name for it: bClose
+#. FormAbout..Font.Name
+#. FormAdvanced..Font.Name
+#. FormWarning..Font.Name
+#. MainForm..Font.Name
+#. WForm..Font.Name
+#. WForm..Label2..Font.Name
+#: Source/About.dfm:15
+#: Source/rawwrite.dfm:15
+#: Source/WelcomeForm.dfm:15
+#: Source/WelcomeForm.dfm:142
+msgid "MS Sans Serif"
+msgstr ""
+
 #. FormAbout..Button1..Caption
-#: About.dfm:152
-#: About.pas:51
-#: rawwrite.pas:48
+#: Source/About.dfm:40
 msgid "Close"
 msgstr "סגור"
 
-#. Programmer's name for it: mWarning
-#: fWarning.pas:36
-msgid "Warning - All the data in this floppy will be erased.\n"
-"Do you want to continune ?"
-msgstr "!אזהרה - כל המידע שבתקליטון יימחק\n"
-"?האם להמשיך"
+msgid "Confirm"
+msgstr "נא לאשר"
 
-#. FormWarning..Caption
-#: fWarning.dfm:6
-#: fWarning.pas:55
-msgid "Warning"
-msgstr "אזהרה"
-
-#. Programmer's name for it: bCancel
-#. FormWarning..ButtonCancel..Caption
-#: fWarning.dfm:49
-#: fWarning.pas:56
-#: rawwrite.pas:47
-msgid "Cancel"
-msgstr "ביטול"
-
-#. FormWarning..ButtonContinune..Caption
-#: fWarning.dfm:58
-#: fWarning.pas:57
-msgid "Continune"
-msgstr "המשך"
-
-#. Programmer's name for it: bOk
-#: rawwrite.pas:46
 msgid "OK"
 msgstr "אישור"
 
-#. Programmer's name for it: mWriting
-#: rawwrite.pas:49
-msgid "Making disk, Please wait..."
-msgstr "...מכין את התקליטון, אנא המתן"
+#. FormAdvanced..Caption
+#: Source/Advanced.dfm:7
+msgid "Advanced options"
+msgstr "אפשרויות מתקדמות"
 
-#. Programmer's name for it: mSucceed
-#: rawwrite.pas:50
-msgid "The disk was succesfully written."
-msgstr ".התקליטון הוכן בהצלחה"
+#. FormAdvanced..Label1..Caption
+#: Source/Advanced.dfm:34
+msgid "Insert a new key name"
+msgstr "הוספת מפתח חדש"
 
-#. Programmer's name for it: mFailed
-#: rawwrite.pas:51
-msgid "Operation has faild, Please try again."
-msgstr ".הכנת התקליטון נכשלה, אנא נסה שנית"
+#. FormAdvanced..ParamList..Hint
+#: Source/Advanced.dfm:41
+msgid "Edit the Values here"
+msgstr "עריכת הערכים"
 
-#. Programmer's name for it: error19
-#: rawwrite.pas:52
-msgid "Error - The floppy is write protected"
-msgstr ".שגיאה - התקליטון מוגן בפני כתיבה"
+#. FormAdvanced..ButtonAdd..Hint
+#: Source/Advanced.dfm:55
+msgid "Add a new Key"
+msgstr "הוספת מפתח חדש"
 
-#. Programmer's name for it: error21
-#: rawwrite.pas:53
-msgid "Error - Floppy is not found on drive A:"
-msgstr "A: שגיאה - אין תקליטון בכונן"
+#. FormAdvanced..ButtonAdd..Caption
+#: Source/Advanced.dfm:56
+msgid "Add"
+msgstr "הוספה"
 
-#. Programmer's name for it: error32
-#: rawwrite.pas:54
-msgid "Error - The floppy is being used by another process"
-msgstr "שגיאה - הכונן תפוס ע\"י תהליך אחר"
+#. FormAdvanced..ButtonRemove..Hint
+#: Source/Advanced.dfm:67
+msgid "Remove a selected Key and his Value"
+msgstr "הסרת המפתח שנבחר וערכו"
 
-#. Programmer's name for it: errorWin
-#: rawwrite.pas:55
-msgid "Error - Cannot find Windows version"
-msgstr ""
+#. FormAdvanced..ButtonRemove..Caption
+#: Source/Advanced.dfm:68
+msgid "Remove"
+msgstr "הסרה"
 
-#. Programmer's name for it: errorWin95
-#: rawwrite.pas:57
-msgid "Error - Unable to write to disk,\n"
-"Please verify that the disk is in drive and not write protected."
-msgstr "שגיאה - אין אפשרות לכתוב לתקליטון.\n"
-".אנא וודא שהתקליטון בכונן, ושאינו מוגן מכתיבה "
+#. FormAdvanced..ButtonSave..Hint
+#: Source/Advanced.dfm:79
+msgid "Save changes and exit"
+msgstr "שמירת השינויים ויציאה"
 
-#. Programmer's name for it: errorNoDrive
-#: rawwrite.pas:58
-msgid "Error - Cannot find Drive A:"
-msgstr "A: שגיאה - אין גישה לכונן"
+#. FormAdvanced..ButtonSave..Caption
+#: Source/Advanced.dfm:80
+msgid "Save && Exit"
+msgstr "שמירה ויציאה"
 
-#. Programmer's name for it: mInsert
-#: rawwrite.pas:59
-msgid "Please Insert a floppy to drive A:"
-msgstr "A: אנא הכנס תקליטון לכונן"
+#. FormAdvanced..ButtonCancel..Hint
+#: Source/Advanced.dfm:91
+msgid "Exit without saving"
+msgstr "יציאה ללא שמירה"
 
-#. Programmer's name for it: bStart
-#: rawwrite.pas:60
-msgid "Start"
-msgstr "התחל"
+#. FormAdvanced..ButtonCancel..Caption
+#. FormWarning..ButtonCancel..Caption
+#: Source/Advanced.dfm:92
+#: Source/rawwrite.pas:258
+msgid "Cancel"
+msgstr "ביטול"
 
-#. Programmer's name for it: errorunknown
-#: rawwrite.pas:61
-msgid "Unknown Error - No'-"
-msgstr "שגיאה לא ידועה - "
+#. FormWarning..Caption
+#: Source/fWarning.dfm:6
+msgid "Warning"
+msgstr "אזהרה"
+
+#. FormWarning..ButtonContinune..Caption
+#: Source/fWarning.dfm:58
+msgid "Continune"
+msgstr "המשך"
 
 #. MainForm..Caption
 #. WForm..WriteButton..Caption
-#: WelcomeForm.dfm:509
-#: rawwrite.dfm:10
-#: rawwrite.pas:296
+#: Source/rawwrite.dfm:10
 msgid "Make a bootable floppy"
 msgstr "הכנת תקליטון הפעלה"
 
-#: WelcomeForm.pas:75
-msgid ""
-"Welcome to GNU/Linux \"Kinneret\"\n"
-"This program is not an installation Program.\n"
-"Kinneret doesn't need to be installed.\n"
-"To start Kinneret, You should boot the computer\n"
-"from the Kinneret CD.\n"
-"\n"
-"If You can't or don't know how to boot from CD,\n"
-"You can make a bootable floppy here."
-msgstr ""
-".\"ברוך בואך לגנו/לינוקס \"כנרת\n"
-",זוהי אינה תוכנית התקנה\n"
-".מכיוון שכנרת אינה זקוקה להתקנה\n"
-"\n"
-"על מנת להפעיל את כנרת יש לאתחל את המחשב\n"
-".מחדש מהתקליטור\n"
-"\n"
-"אם אינך יכול/ה או אינך יודע/ת  איך לאתחל\n"
-".מהתקליטור, ביכולתך להכין תקליטון הפעלה כאן"
+#. WForm..Caption
+#: Source/WelcomeForm.dfm:8
+msgid "Welcome to GNU/Linux \"Kinneret\""
+msgstr "\"ברוכים הבאים לגנו/לינוקס \"כנרת"
 
-#: WelcomeForm.pas:78
-msgid ""
-"You are going to reboot the computer.\n"
-"In order to prevent data loss, Please close\n"
-"all running programs. Continune ?"
-msgstr ""
-",על מנת למנוע איבוד מידע בזמן איתחול המחשב\n"
-".מומלץ לסגור את כל התוכניות הרצות כרגע\n"
-"? האם להמשיך"
+#. WForm..label1..Caption
+#: Source/WelcomeForm.dfm:124
+msgid "Welcome to \"Kinneret\""
+msgstr "\"ברוכים הבאים ל-\"כנרת"
 
-#: WelcomeForm.pas:83
-msgid ""
-"Floppy has been successfully written.\n"
-"\n"
-"To restart Kinneret:\n"
-"\n"
-"Make sure the Floppy and the CD are still in place,\n"
-"Close any running programs\n"
-"And Reboot the computer."
+#. WForm..label1..Font.Name
+#: Source/WelcomeForm.dfm:128
+msgid "Arial"
 msgstr ""
-".התקליטון הוכן בהצלחה\n"
-"\n"
-":על מנת להפעיל את כנרת, עליך\n"
-"\n"
-",לוודא שהתקליטון והתקליטור עדיין במקומם\n"
-",לסגור את כל התוכניות הרצות כרגע\n"
-".ולאתחל את המחשב מחדש"
 
-#: About.pas:73
+#. WForm..Button3..Caption
+#: Source/WelcomeForm.dfm:519
+msgid "Exit"
+msgstr "יציאה"
+
+#. WForm..Button2..Caption
+#: Source/WelcomeForm.dfm:537
+msgid "Reboot"
+msgstr "אתחול המחשב"
+
+#. WForm..RadioButton2..Caption
+#: Source/WelcomeForm.dfm:547
+msgid "English"
+msgstr ""
+
+#. WForm..RadioButton1..Caption
+#: Source/WelcomeForm.dfm:558
+msgid "עברית"
+msgstr ""
+
+#. WForm..RadioButton1..Caption_UTF7
+#: Source/WelcomeForm.dfm:562
+msgid "+BeIF0QXoBdkF6g"
+msgstr ""
+
+#. WForm..ButtonAdvanced..Hint
+#: Source/WelcomeForm.dfm:569
+msgid "Advanced options for editing kernel parameters"
+msgstr "אפשרויות מתקדמות לעריכת הפרמטרים הנשלחים אל הליבה בזמן האיתחול"
+
+#. WForm..ButtonAdvanced..Caption
+#: Source/WelcomeForm.dfm:570
+msgid "Advanced"
+msgstr "מתקדם"
+
+#: Source/About.pas:74
 msgid ""
 "Kinneret's Boot Floppy Maker\n"
 "\n"
-"Version: 0.2b,\n"
+"Version: %s,\n"
 "Date: 4/5/2003,\n"
 "Written by: Nir Misgav.\n"
 "Email: nirro@yahoo.com\n"
@@ -212,7 +198,7 @@ msgid ""
 msgstr ""
 "מכין תקליטון ההפעלה של כנרת\n"
 "\n"
-",0.2b : גרסא\n"
+",%s : גרסא\n"
 ",מתאריך: 4/5/2003\n"
 ".נכתב ע\"י: ניר משגב\n"
 "nirro@yahoo.com :דוא\"ל\n"
@@ -239,23 +225,167 @@ msgstr ""
 ",(רשיון: פתוח (לא מוגדר\n"
 ".TntUnicode.txt :ראה"
 
-#. WForm..Caption
-#: WelcomeForm.dfm:8
-msgid "Welcome to GNU/Linux \"Kinneret\""
-msgstr "\"ברוכים הבאים לגנו/לינוקס \"כנרת"
+#: Source/Advanced.pas:49
+msgid "Really remove %s ?"
+msgstr "? %s באמת להסיר את"
 
-#. WForm..label1..Caption
-#: WelcomeForm.dfm:123
-msgid "Welcome to \"Kinneret\""
-msgstr "\"ברוכים הבאים ל-\"כנרת"
+#: Source/Advanced.pas:75
+msgid ""
+"These options are for advanced users only\n"
+"You can ruin the boot-floppy easily here.\n"
+"\n"
+"You can change the kernel parameters here,\n"
+"These parameters will be saved in the floppy, for future boot-ups."
+msgstr ""
+",אפשרויות אלה נועדו למשתמשים מתקדמים\n"
+".ניתן להרוס את התקליטון בקלות כאן\n"
+"\n"
+",באפשרותך לשנות את הפרמטרים שנשלחים אל הליבה\n"
+".פרמטרים אלה יישמרו בתקליטון לאיתחולים עתידיים"
 
-#. WForm..Button3..Caption
-#: WelcomeForm.dfm:518
-msgid "Exit"
-msgstr "יציאה"
+#. Seperating Line to words
+#: Source/Advanced.pas:103
+msgid "Unable to load settings,\n"
+"Verify the floppy is in place and try again."
+msgstr ",לא ניתן לטעון את ההגדרות\n"
+".אנא וודא שהתקליטון בכונן ונסה שוב"
 
-#. WForm..Button2..Caption
-#: WelcomeForm.dfm:536
-msgid "Reboot"
-msgstr "אתחול המחשב"
+#: Source/Advanced.pas:113
+msgid "You must insert a key name."
+msgstr ".חובה להכניס שם מפתח"
+
+#: Source/Advanced.pas:119
+msgid "This key is already in the list, Edit it instead."
+msgstr ".המפתח כבר נמצא ברשימה, יש לערוך אותו"
+
+#: Source/Advanced.pas:146
+msgid "Save changes and exit ?"
+msgstr "?לשמור שינויים ולצאת"
+
+#: Source/Advanced.pas:161
+msgid "Unable to save changes,\n"
+"Verify the floppy is in place and try again."
+msgstr ",לא ניתן לשמור שינויים\n"
+".אנא וודא שהתקליטון עדיין בכונן ונסה שוב"
+
+#: Source/rawwrite.pas:100
+msgid "Warning - All the data in this floppy will be erased.\n"
+"Do you want to continune ?"
+msgstr "!אזהרה - כל המידע שבתקליטון יימחק\n"
+"?האם להמשיך"
+
+#. read the 1st sector to settle the disk...
+#: Source/rawwrite.pas:147
+msgid "Making disk, Please wait..."
+msgstr "...מכין את התקליטון, אנא המתן"
+
+#: Source/rawwrite.pas:179
+msgid "Error - Floppy is not found on drive A:"
+msgstr "A: שגיאה - אין תקליטון בכונן"
+
+#: Source/rawwrite.pas:180
+msgid "Error - The floppy is write protected"
+msgstr ".שגיאה - התקליטון מוגן בפני כתיבה"
+
+#: Source/rawwrite.pas:181
+msgid "Error - The floppy is being used by another process"
+msgstr "שגיאה - הכונן תפוס ע\"י תהליך אחר"
+
+#: Source/rawwrite.pas:182
+msgid "Error - The floppy is defected, Try another floppy"
+msgstr "שגיאה - התקליטון פגום, אנא נסה אחר."
+
+#: Source/rawwrite.pas:184
+msgid "Unknown Error - No'-"
+msgstr "שגיאה לא ידועה - "
+
+#: Source/rawwrite.pas:187
+msgid "Error - Unable to write to disk,\n"
+"Please verify that the disk is in drive and not write protected."
+msgstr "שגיאה - אין אפשרות לכתוב לתקליטון.\n"
+".אנא וודא שהתקליטון בכונן, ושאינו מוגן מכתיבה "
+
+#: Source/rawwrite.pas:202
+msgid "Error - Cannot find Drive A:"
+msgstr "A: שגיאה - אין גישה לכונן"
+
+#: Source/rawwrite.pas:220
+msgid "The disk was succesfully written."
+msgstr ".התקליטון הוכן בהצלחה"
+
+#: Source/rawwrite.pas:227
+msgid "Operation has faild, Please try again."
+msgstr ".הכנת התקליטון נכשלה, אנא נסה שנית"
+
+#: Source/rawwrite.pas:254
+msgid "Please Insert a floppy to drive A:"
+msgstr "A: אנא הכנס תקליטון לכונן"
+
+#: Source/rawwrite.pas:257
+msgid "Start"
+msgstr "התחל"
+
+#. Programmer's name for it: SBufferOverflow
+#: Source/TntSysUtils.pas:1053
+msgid "Buffer overflow"
+msgstr ""
+
+#. Programmer's name for it: SInvalidUTF7
+#: Source/TntSysUtils.pas:1054
+msgid "Invalid UTF7"
+msgstr ""
+
+#: Source/WelcomeForm.pas:73
+msgid ""
+"Floppy has been successfully written.\n"
+"\n"
+"To restart Kinneret:\n"
+"\n"
+"Make sure the Floppy and the CD are still in place,\n"
+"Close any running programs\n"
+"And Reboot the computer."
+msgstr ""
+".התקליטון הוכן בהצלחה\n"
+"\n"
+":על מנת להפעיל את כנרת, עליך\n"
+"\n"
+",לוודא שהתקליטון והתקליטור עדיין במקומם\n"
+",לסגור את כל התוכניות הרצות כרגע\n"
+".ולאתחל את המחשב מחדש"
+
+#. what OS
+#: Source/WelcomeForm.pas:98
+msgid "Error - Cannot find Windows version"
+msgstr ""
+
+#: Source/WelcomeForm.pas:156
+msgid ""
+"You are going to reboot the computer.\n"
+"In order to prevent data loss, Please close\n"
+"all running programs. Continune ?"
+msgstr ""
+",על מנת למנוע איבוד מידע בזמן איתחול המחשב\n"
+".מומלץ לסגור את כל התוכניות הרצות כרגע\n"
+"? האם להמשיך"
+
+#: Source/WelcomeForm.pas:208
+msgid ""
+"Welcome to GNU/Linux \"Kinneret\"\n"
+"This program is not an installation Program.\n"
+"Kinneret doesn't need to be installed.\n"
+"To start Kinneret, You should boot the computer\n"
+"from the Kinneret CD.\n"
+"\n"
+"If You can't or don't know how to boot from CD,\n"
+"You can make a bootable floppy here."
+msgstr ""
+".\"ברוך בואך לגנו/לינוקס \"כנרת\n"
+",זוהי אינה תוכנית התקנה\n"
+".מכיוון שכנרת אינה זקוקה להתקנה\n"
+"\n"
+"על מנת להפעיל את כנרת יש לאתחל את המחשב\n"
+".מחדש מהתקליטור\n"
+"\n"
+"אם אינך יכול/ה או אינך יודע/ת  איך לאתחל\n"
+".מהתקליטור, ביכולתך להכין תקליטון הפעלה כאן"
 

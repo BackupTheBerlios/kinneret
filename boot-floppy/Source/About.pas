@@ -49,8 +49,8 @@ begin
     else Bidimode:=bdLeftToRight;
     if GetCurrentLanguage='he' then memo1.Alignment:=taRightJustify
     else memo1.Alignment:=taLeftJustify;
-    memo1.Text:=PWideChar(_('Kinneret''s Boot Floppy Maker'+#10#13#10#13+
-    'Version: 0.2b,'+#10#13+
+    memo1.Text:=format(_('Kinneret''s Boot Floppy Maker'+#10#13#10#13+
+    'Version: %s,'+#10#13+
     'Date: 4/5/2003,'+#10#13+
     'Written by: Nir Misgav.'+#10#13+
     'Email: nirro@yahoo.com'+#10#13+
@@ -71,7 +71,7 @@ begin
     'Tnt Unicode Controls,'+#10#13+
     'by Tnt Software Products.'+#10#13+
     'License: Unspecific open source,'+#10#13+
-    'See: TntUnicode.txt.'));
+    'See: TntUnicode.txt.'),['0.2b']);
 
     Caption:=PWideChar(_('About'));
     Button1.Caption:=PWideChar(_('Close'));

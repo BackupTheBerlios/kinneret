@@ -4,26 +4,25 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, CheckLst, TntCheckLst, Grids, ValEdit, strutils, gnugettext;
+  Dialogs, StdCtrls, CheckLst, ValEdit, TntForms, Grids, strutils, gnugettext,
+  TntStdCtrls;
 
 type
-  TFormAdvanced = class(TForm)
+  TFormAdvanced = class(TTntForm)
     ParamList: TValueListEditor;
-    ButtonAdd: TButton;
-    ButtonRemove: TButton;
-    ButtonSave: TButton;
-    ButtonCancel: TButton;
-    EditKey: TEdit;
-    Explanation: TLabel;
-    Label1: TLabel;
+    ButtonRemove: TTntButton;
+    ButtonSave: TTntButton;
+    ButtonCancel: TTntButton;
+    EditKey: TTntEdit;
+    Explanation: TTntLabel;
     procedure ButtonRemoveClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
-    procedure ButtonAddClick(Sender: TObject);
     procedure ButtonCancelClick(Sender: TObject);
     procedure ButtonSaveClick(Sender: TObject);
     procedure AddKey;
     procedure EditKeyKeyPress(Sender: TObject; var Key: Char);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,7 +44,7 @@ var
 begin
         toRemove:=ParamList.Strings[ParamList.Row-1];
         if toRemove[Length(toRemove)]='=' then toRemove:=leftstr(toRemove,Length(toRemove)-1);
-        if MessageDlg(pWideChar(_('Really remove ')+toRemove+' ?'),
+        if MessageDlg(format(_('Really remove %s ?'),[toRemove]),
         mtConfirmation, [mbOk, mbCancel], 0) = mrOk then
                 ParamList.DeleteRow(ParamList.row);
 end;
@@ -67,13 +66,23 @@ var
   key: string;
   i: integer;
 begin
+    if GetCurrentLanguage='iw' then BidiMode:=bdRightToLeft
+    else Bidimode:=bdLeftToRight;
+    if GetCurrentLanguage='he' then Explanation.Alignment:=taRightJustify
+    else Explanation.Alignment:=taLeftJustify;
     FileName := 'A:\SYSLINUX.CFG';	{ set the file name }
     Explanation.Caption:=pWideChar(_('These options are for advanced users only'+#10#13+
     'You can ruin the boot-floppy easily here.'+#10#13#10#13+
     'You can change the kernel parameters here,'+#10#13+
     'These parameters will be saved in the floppy, for future boot-ups.'));
-
-
+    Caption:=(_('Advanced options'));
+    EditKey.Hint:=pWideChar(_('To add a new key, insert the key name and press Enter.'));
+    ButtonRemove.Caption:=pWideChar(_('Remove'));
+    ButtonRemove.Hint:=pWideChar(_('Remove a selected Key and his Value'));
+    ButtonCancel.Caption:=pWideChar(_('Cancel'));
+    ButtonCancel.Hint:=pWideChar(_('Exit without saving'));
+    ButtonSave.Caption:=pWideChar(_('Save && Exit'));
+    ButtonSave.Hint:=pWideChar(_('Save changes and exit'));
     Strings:=TStringList.Create;
     try
         Strings.LoadFromFile(Filename); { load from file }
@@ -107,9 +116,13 @@ end;
 procedure TFormAdvanced.AddKey;
 var
         i : integer;
+        Error : Boolean;
 
 begin
-        if EditKey.Text='' then showmessage(pWideChar(_('You must insert a key name.')))
+        if EditKey.Text='' then showmessage(pWideChar(_('You must insert a key name.')));
+        Error:=false;
+        for i:=0 to Length(EditKey.text) do if EditKey.Text[i]=' ' then Error:=TRUE;
+        if Error then showmessage('Error - You can''t enter spaces')
         else begin
             if ParamList.FindRow(EditKey.Text,i) then
             begin
@@ -124,11 +137,6 @@ begin
                 EditKey.Text:='';
             end;
         end;
-end;
-
-procedure TFormAdvanced.ButtonAddClick(Sender: TObject);
-begin
-        AddKey;
 end;
 
 procedure TFormAdvanced.ButtonCancelClick(Sender: TObject);
@@ -169,6 +177,12 @@ begin
         Key:=#0;
         AddKey;
     end;
+    if key=' ' then key:=#13;
+end;
+
+procedure TFormAdvanced.FormCreate(Sender: TObject);
+begin
+  TranslateProperties (self);      //GNUGETTEXT
 end;
 
 end.
