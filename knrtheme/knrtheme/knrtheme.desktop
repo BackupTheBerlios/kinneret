@@ -1,9 +1,9 @@
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
-DocPath=kcontrol/icons/index.html
-Icon=icons
-Exec=kcmshell icons
+DocPath=
+Icon=
+Exec=kcmshell knrtheme
 
 X-KDE-ModuleType=Library
 X-KDE-Library=knrtheme
