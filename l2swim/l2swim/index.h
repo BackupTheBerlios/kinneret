@@ -18,40 +18,27 @@
  ***********************************l****************************************/
  
 #include <qstring.h>
-#include <qmime.h>
-#include <qfile.h>
+//#include <qmime.h>
 #include <qtextstream.h>
-#include <klocale.h>
-
-class csection
-{
-  public:
-    csection(QString name, QString tp, QString im) {linkname=name; ; image=im; stype=tp; next=NULL;};
-    ~csection() {delete next;};
-    QString image;
-    QString stype;
-    QString htmltext;
-    QString linkname;
-    csection* next;
-} ;
-typedef csection* pcsection;
+//#include <klocale.h>
+#include <qdom.h>
+#include <qfile.h>
 
 class cmenu
 {
 public:
 
-    ~cmenu() {delete first;};
-    cmenu() {first=NULL;};
-    void getLink(QString linkname, QString *text, QString *type, QString *imagefile);
-    void addSection(pcsection what);
-    void addTextToSection(QString name, QString page);
-    bool initialize(QString filename, QString cmdStartpage, QString *startpage);
-    QString getMenuName() {return menuname;};
+//    ~cmenu();
+    cmenu(QString filename,bool *success);
+    bool getLink(QString linkname, QString *text, QString *type, QString *imagefile);
+//    void addSection(pcsection what);
+//    void addTextToSection(QString name, QString page);
+//    bool initialize(QString filename, QString cmdStartpage, QString *startpage);
+    QString getFirstPage() {return QString("swim://")+firstPage;};
 //    QString getLanguage() {return menulanguage;};
-    QString getDocsPath() {return docspath;};
-    QString getDefaultImage() {return imagepath+defaultimage;};  
-    
+    QString getDocsPath() {return docsPath;};
+    QString getDefaultImage() {return imagePath+defaultImage;};  
 private:
-    csection* first;
-    QString menuname, docspath, defaultimage, imagepath, menulanguage,defaultdir;
+     QDomDocument* menusDoc;
+     QString firstPage, docsPath, defaultImage, imagePath, defaultDir;
 };

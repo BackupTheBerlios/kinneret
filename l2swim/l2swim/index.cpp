@@ -18,53 +18,86 @@
  ***************************************************************************/
 
 #include "index.h"
+#include <qdom.h>
+#include <iostream>
 
-// Generic function to read from a file (stream)
-// pass empty lines, # lines, and spaces at start line.
+using namespace std;
 
-enum lineType{tText,tKey,tError,tEof};
-
-lineType getline(QTextStream* stream, QString *key, QString *value)
-{                                    
-  QString temp=stream->readLine();
-  *key="";
-  *value="";
-  if (temp.isNull()) return tEof;
-  temp = temp.stripWhiteSpace();
-  while ( (temp.isEmpty()) || (temp[0]=='#')  )
-  {
-    temp = stream->readLine();
-    if (temp.isNull()) return tEof;
-    temp = temp.stripWhiteSpace();
-  }
-  // case of <key=value>
-  if ((temp[0]=='<')&&(temp[temp.length()-1]=='>')&&
-            (temp.contains('>')==1)&&(temp.contains('<')==1)&&
-            (temp.contains('=')<=1))
-  {
-    temp=temp.mid(1,temp.length()-2);
-    if (temp.contains('=')==0)
-    {
-       *key=temp;
-//       cout<<"only key="<<*key<<endl;
-       return tKey;
-    }
-    else
-    {
-      *key=temp.left(temp.find('='));
-      *value=temp.right(temp.length()-temp.find('=')-1);
-//      cout<<"key="<<*key<<" value="<<*value<<endl;
-      return tKey;
-    }
-  }
-  // case of plain text;
-  *value=temp;
-//  cout<<"text="<<*value<<endl;
-  return tText;
+cmenu::cmenu(QString filename,bool *success)
+{
+	cout<<"starting"<<endl;
+	menusDoc=new QDomDocument("swim_menu");
+	QFile f( filename );
+	if ( !f.open( IO_ReadOnly ) ) 
+	{
+		*success=false;
+		cout<<filename<<" not found"<<endl;
+		return;
+	}
+	QString errorMsg;
+	int errorLine, errorColumn;
+	if ( !menusDoc->setContent( &f, false, &errorMsg,&errorLine,&errorColumn ) ) 
+	{
+		f.close();
+		cout<<"Error in parsing menu"<<endl<<errorMsg<<", Line: "<<errorLine<<" ,Column: "<<errorColumn<<endl;
+		*success=false;
+		return;
+	}
+	f.close();
+	*success=true;
+	//root element
+	QDomElement docElem = menusDoc->documentElement();
+	
+	cout<<docElem.tagName()<<endl;
+	
+	// assigning global configuration
+	QDomNode globalNode = docElem.firstChild();
+	cout<<globalNode.nodeName()<<endl;
+	if((!globalNode.isNull())&&(globalNode.nodeName().compare("global_config")==0))
+	{
+		QDomElement globalElement=globalNode.toElement();
+		
+		defaultImage=globalElement.attribute("defaultimage");
+		defaultDir=globalElement.attribute("defaultdir","ltr");
+		docsPath=globalElement.attribute("docspath","");
+		imagePath=globalElement.attribute("imagepath","");
+		firstPage=globalElement.attribute("firstpage");
+		cout<<defaultImage<<endl<<defaultDir<<endl<<docsPath<<endl<<imagePath<<endl<<firstPage<<endl;
+		if (docsPath[docsPath.length()-1]!='/') docsPath.append('/');
+		if (imagePath[imagePath.length()-1]!='/') imagePath.append('/');
+	}
+	
+	// expanding the tree (add the plays to the menus level, because of the images problem)
+	QDomNode menuNode = docElem.firstChild();
+	while( !menuNode.isNull() ) 
+	{
+		if((menuNode.nodeName().compare("menu")==0)&&(menuNode.isElement()))
+		{
+			// if no firstpage defined, take the first menu you see.
+			cout<<menuNode.nodeName()<<endl;
+			if (firstPage.isNull()) firstPage=menuNode.toElement().attribute("name");
+			
+			QDomNode linkNode=menuNode.firstChild();
+			QDomElement linkElem;
+			while(!linkNode.isNull())
+			{
+				linkElem=linkNode.toElement();
+				if ((!linkElem.isNull()) && (linkElem.tagName().compare("link")) && (linkElem.attribute("type","menu").compare("play")==0))
+				{
+					QDomElement append = menusDoc->createElement("play");
+					if (!linkElem.attribute("image").isNull()) append.setAttribute("image", linkElem.attribute("image"));
+					// add this to the menus level.
+					docElem.appendChild( append );
+				}
+				linkNode = linkNode.nextSibling();	
+			}
+		}
+		menuNode = menuNode.nextSibling();
+	}
 }
 
 // initialize the menu
-bool cmenu::initialize(QString filename, QString cmdStartpage, QString *startpage)
+/*bool cmenu::initialize(QString filename, QString cmdStartpage, QString *startpage)
 {         
 // cout<<"starting menu"<<endl;
   QString name;
@@ -194,7 +227,7 @@ bool cmenu::initialize(QString filename, QString cmdStartpage, QString *startpag
       name=QString("swim://")+name;
     }
   }
-  // menu file probably does't exist
+  // menu file probably doesn't exist
   else
   {
     menuname="swim://notexist";
@@ -205,32 +238,56 @@ bool cmenu::initialize(QString filename, QString cmdStartpage, QString *startpag
   fp->close();
   delete fp;
   return startpageExist;
-}
-
-// Adds information about a section in a linked list.
-void cmenu::addSection(pcsection what)
-{
-  if (first==NULL) first=what;
-  else
-
-  {
-    pcsection where;
-    for(where=first;where->next!=NULL;where=where->next)
-    if (where->linkname.compare(what->linkname)==0)
-    {
-      delete what;
-      return;
-    }
-    // after the for
-    where->next=what;
-  }
-//  cout<<what->linkname<<" , "<<what->stype<<endl;
-}
+}*/
 
 // Gets the type of the link (currently: name, play, exec, http)    
-void cmenu::getLink(QString linkname, QString *text, QString *type, QString *imagefile)
+bool cmenu::getLink(QString linkname, QString *text, QString *type, QString *imagefile)
 {
-  pcsection where;
+	QDomElement docElem = menusDoc->documentElement();
+
+	QDomNode node = docElem.firstChild();
+	while( !node.isNull() ) 
+	{
+		if (((node.nodeName().compare("menu")==0) || (node.nodeName().compare("play")==0)) 
+		&& ((node.isElement()) && ((node.toElement().attribute("name").compare(linkname)==0)))) break;
+		node = node.nextSibling();
+	}
+	if (node.isNull()) return false;
+  
+	QDomElement element = node.toElement();
+	
+	*imagefile=imagePath+element.attribute("image",defaultImage);
+	*type=element.attribute("type","menu");  
+	
+	if (element.tagName().compare("menu")==0) //this is a menu
+	{
+		//found the correct menu
+		//initializing pagetext (html)
+  
+		*text=QString("<!DOCTYPE HTML PUBLIC ""-//W3C//DTD HTML 4.01 Transitional//EN"">");
+		*text+=QString("<html><head><meta http-equiv=""Content-Type"" content=""text/html; charset=UTF-8"">");
+		*text+=QString("<style type=""text/css"">body {margin: 2em 5%;}</style></head>");
+		// menu properties
+		QString menudir=element.attribute("dir",defaultDir);
+		*text+="<body dir="""+menudir+""">";
+  
+		node=node.firstChild();
+		while (!node.isNull())
+		{
+			element = node.toElement(); // try to convert the node to an element.
+			if(element.isNull()) break;
+			if ((element.tagName().compare("text")==0)) *text+=element.text()+"<BR><BR>";
+			else if ((element.tagName().compare("title")==0)) *text+="<H1>"+element.text()+"</H1><BR>";
+			else if ((element.tagName().compare("link")==0)) 
+				*text+="<A HREF=""swim://"+element.attribute("name")+""">"+element.text()+"</A><BR><BR>";
+			else if ((element.tagName().compare("null")==0)) *text+="<FONT COLOR=GREY><U>"+element.text()+"</U></FONT><BR><BR>";
+			node=node.nextSibling();
+		}
+		*text+="</body>";
+	}	
+	return true;
+}
+/*  pcsection where;
 
   for(where=first;(where!=NULL)&&(linkname.compare(where->linkname)!=0);where=where->next);
 
@@ -246,14 +303,7 @@ void cmenu::getLink(QString linkname, QString *text, QString *type, QString *ima
     type=NULL;
     imagefile=NULL;
     text=NULL;
-  }
-}
+  }*/
 
-void cmenu::addTextToSection(QString name, QString page)
-{
-  pcsection where;
-  for(where=first;(where!=NULL)&&(name.compare(where->linkname)!=0);where=where->next);
-  if(where!=NULL) where->htmltext=page;
-}
     
 

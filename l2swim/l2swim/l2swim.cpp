@@ -21,6 +21,9 @@
 #include <kapp.h>
 #include <ktoolbarbutton.h>
 #include <qtimer.h>
+#include <iostream>
+
+using namespace std;
 
 // Showing the main widget.
 MainWindow::MainWindow ( const char* name, const QString spage) : KMainWindow ( 0L, name )
@@ -87,24 +90,13 @@ void MainWindow::firstload()
 {
   KLocale locale("");
   lang=locale.language().left(2);
-//  bool langexist=true;
-  menufile=QString("/opt/kinneret/l2swim/etc/swim_menu_"+lang+".txt");
-//  QString lastmenufile=menufile;
-  if (!QFile(menufile).exists())
-//  {
-//    langexist=false;
-    menufile=QString("/opt/kinneret/l2swim/etc/swim_menu.txt");
-//  }
-  menu=new cmenu();
-  QString startpage;
-  bool startpageExist=menu->initialize(menufile,cmdStartpage,&startpage);
-//  if (!menu->getLanguage().isNull()) lang=menu->getLanguage();
-  if (!startpageExist) openURL(KURL(menu->getMenuName()),false);
-  else openURL(KURL(QString(startpage)),false);
-//  if (!langexist) KMessageBox::information(this,i18n("Your language menu-file: %1 does not exist, using default language instead").arg(lastmenufile)
-//    ,i18n("Sorry"),"LangMenuFile");
-  if((!cmdStartpage.isEmpty())&&(!startpageExist))
-      KMessageBox::error(this,i18n("Page %1 does not exist.").arg(cmdStartpage));
+  menufile=QString("/opt/kinneret/l2swim/etc/swim_menu_"+lang+".xml");
+  if (!QFile(menufile).exists()) menufile=QString("/opt/kinneret/l2swim/etc/swim_menu.xml");
+  if (QFile(menufile).exists()) cout<<"file exists"<<endl;
+  bool success;
+  menu=new cmenu(menufile,&success);
+  if (success==false) cout<<"unsuccessful"<<endl;
+  openURL(KURL(menu->getFirstPage()),false);
 }
 
 void MainWindow::show()
@@ -115,7 +107,7 @@ void MainWindow::show()
 
 void MainWindow::home()
 {
-  openURL(KURL(menu->getMenuName()),true);
+  openURL(KURL(menu->getFirstPage()),true);
 }
 
 void MainWindow::fzoomin()
@@ -151,7 +143,7 @@ void MainWindow::openURL(KURL url,bool push,bool forw)
     future.clear();
     toolbar->setItemEnabled(TOOLBAR_ID_FORW,false);
   }
-  if(url.url().compare(menu->getMenuName())==0)
+  if(url.url().compare(menu->getFirstPage())==0)
       toolbar->setItemEnabled(TOOLBAR_ID_HOME,false);
       else toolbar->setItemEnabled(TOOLBAR_ID_HOME,true);
   if ((url.url().left(7).compare("swim://")==0)||
@@ -160,9 +152,9 @@ void MainWindow::openURL(KURL url,bool push,bool forw)
     //internal link
     link=url.url().right(url.url().length()-7);
     QString page,type,imagefile;
-    menu->getLink(url.url(),&page,&type,&imagefile);
+    menu->getLink(link,&page,&type,&imagefile);
     putImage(imagefile);
-    if (type.compare("name")==0)
+    if (type.compare("menu")==0)
     {
       if (push)
       {
