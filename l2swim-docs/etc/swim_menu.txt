@@ -11,7 +11,7 @@
 # FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 # License at http://www.gnu.org/copyleft/gpl.html for more details.
 #
-# Version: 0.7a 14-Sep-2003
+# Version: 0.7b 5-Oct-2003
 # Encoding: [UTF8]
 # Language: Hebrew
 #
@@ -82,7 +82,7 @@
 <img src="/opt/kinneret/images/star.png">מדריך עורכי מסמכים 
 <null>
 <font color=grey>____________________ מדריכים ליישומים __________________</font>
-<null>
+ <play=he/man_xmms.html>
 מדריך השמעת מוזיקה עם XMMS
 <null>
 מדריך עיבוד תמונות עם The Gimp

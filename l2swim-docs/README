@@ -29,7 +29,7 @@ Since the build process is not yet automated, precompiled document files are pro
 - cp l2swim-docs/doc/ru/* /opt/kinneret/l2swim/doc/ru/
 - cp l2swim-docs/doc/image/* /opt/kinneret/l2swim/doc/image/
 
-You also need to make sure you have a compiled binary in /opt/kinneret/bin and additional image files in /opt/kinneret/images. You can find the image files in the 'etc/image/ directory.
+You also need to make sure you have a compiled binary in the path (e.g. /usr/bin) and additional image files in /opt/kinneret/images. You can find the image files in the 'etc/image/ directory.
 
 Authors only: You can find a precompiled binary in the 'tmp' directory.
 ***************************************************************************
