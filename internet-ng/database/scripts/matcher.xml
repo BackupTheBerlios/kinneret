@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+   - This file tells the descriptor which script is to be used. It matches a
+   - driver to a script.
+   -
+   - TODO: Support exceptions, like bezeqint ADSL, if needed.
+   -
+   - Author: z9u2k
+   - $Revision: 1.1 $
+   -->
+<matcher>
+    <match driver="generic-pptp-cable.xml" script="generic-pptp-cable"/>
+</matcher>
