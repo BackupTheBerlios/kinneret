@@ -87,7 +87,7 @@
 מסמך זה עובד ונערך עבור <a href="http://www.linux-kinneret.org">גנו/לינוקס כנרת</a>, תוך שימוש בתוכנה חופשית בלבד.
 					</xsl:when>
 					<xsl:when test="@lang = 'arabic'">
-מסמך זה עובד ונערך עבור <a href="http://www.linux-kinneret.org">גנו/לינוקס כנרת</a>, תוך שימוש בתוכנה חופשית בלבד.
+تم تحرير وتعديل هذا ألملف لخدمة <a href="http://www.linux-kinneret.org">جنو/ لينوكس كينيرت</a>, واسطة إستعمال برامج مجانيه فقط
 					</xsl:when>
 					<xsl:when test="@lang = 'russian'">
 This document was edited and formatted for <a href="http://www.linux-kinneret.org">GNU/Linux Kinneret</a> using only free software
@@ -152,7 +152,7 @@ Important! GNU/Linux Kinneret is provided "as is" without warranty of any kind, 
 	<form name="contents">
 	<b>	<xsl:choose>
 		<xsl:when test="@lang = 'hebrew'">תוכן</xsl:when>
-		<xsl:when test="@lang = 'arabic'">תוכן</xsl:when>
+		<xsl:when test="@lang = 'arabic'">فهرس</xsl:when>
 		<xsl:when test="@lang = 'russian'">Contents</xsl:when>
 		<xsl:when test="@lang = 'english'">Contents</xsl:when>
 		<xsl:otherwise>Contents</xsl:otherwise>

@@ -1,31 +1,31 @@
-Filename		Assigned to	Status		Notes
-----------------------  --------------  --------------  -------------		
-swim_menu.txt		TBD				Not finalized		about_kinneret.xml	Zoabi Nadeem	pending review		
-desktop_ready.xml	Nizar Abed      DONE
-faq_kinneret.xml	Nizar Abed      in progress
-first_time.xml		Zoabi Nadeem?	waiting for ok
-fonts_license.xml	Nizar Abed    	DONE
-free_essay.xml		Nizar Abed      in progress
-gfdl_license.xml	TBD	
-gpl_license.xml		TBD
-howto_help.xml		Nizar Abed	in progress
-kinneret_credits.xml	dovix				Not finalized
-kinneret_license.xml	Nizar Abed      in progress
-linux_history.xml	TBD				Low priority
-man_cheese.xml		---				(document deleted)
-man_enigma.xml		---				(document deleted)
-man_xmms.xml		---				(document deleted)
-non_gpl.xml		TBD
-rachel_kinneret.xml	N/A				No translation needed
-social_contract.xml	TBD				Low priority
-thoughts_1.xml          TBD                             Low priority
-thoughts_2.xml          TBD                             Low priority
-thoughts_3.xml          TBD                             Low priority
-thoughts_4.xml          TBD                             Low priority
-thoughts_5.xml          TBD                             Low priority
-tour_kinneret.xml	Nizar Abed	in progress	------------
-user_interface.xml	Zoabi Nadeem?   waiting for ok
-why_linux.xml		---				(not used)
-apps_list.xml		TBD				(new) Not finalized
-man_games.xml		TBD				(new) Not finalized
+Filename		Priority	Assigned to	Status		Notes
+----------------------  --------------	--------------  --------------  -------------		
+swim_menu.txt		High		TBD				Not finalized
+about_kinneret.xml	High		Zoabi Nadeem	pending review		
+desktop_ready.xml	---		Nizar Abed      DONE
+faq_kinneret.xml	Medium		Nizar Abed      in progress
+first_time.xml		High		Zoabi Nadeem?	waiting for ok
+fonts_license.xml	---		Nizar Abed    	DONE
+free_essay.xml		Low		Nizar Abed      in progress
+gfdl_license.xml	Medium?		TBD	
+gpl_license.xml		Medium?		TBD
+howto_help.xml		High		Nizar Abed	in progress
+kinneret_credits.xml	Low		TBD
+kinneret_license.xml	High		Nizar Abed      in progress
+linux_history.xml	Low		TBD				Low priority
+man_cheese.xml		Low		TBD				Not finalized
+man_xmms.xml		Low		TBD				Not finalized
+non_gpl.xml		Medium		TBD
+rachel_kinneret.xml	---		---				No translation needed
+social_contract.xml	Low		TBD				Low priority
+thoughts_1.xml          Low		TBD                             Low priority
+thoughts_2.xml          Low		TBD                             Low priority
+thoughts_3.xml          Low		TBD                             Low priority
+thoughts_4.xml          Low		TBD                             Low priority
+thoughts_5.xml          Low		TBD                             Low priority
+tour_kinneret.xml	High		Nizar Abed	in progress	------------
+user_interface.xml	High		Zoabi Nadeem?   waiting for ok
+why_linux.xml		---		---				(not used)
+apps_list.xml		Medium		TBD				(new) Not finalized
+man_games.xml		Medium				(new) Not finalized
 release_notes.xml	TBD				(new) Low priority
