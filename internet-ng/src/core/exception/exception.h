@@ -8,7 +8,7 @@
  * This file holds the exceptions namespace and all the exception might be
  * thrown from within the application.
  *
- * $Revision: 1.2 $
+ * $Revision: 1.3 $
  */
 namespace core {
     namespace exception {
@@ -192,6 +192,62 @@ namespace core {
              * Destructor.
              */
             virtual ~InvalidFormatException() throw () {
+                // Nothing to do
+            }
+        };
+
+        /**
+         * Thrown when a file requested could not be found.
+         *
+         * @author z9u2k
+         */
+        class FileNotFoundException : public Exception {
+        public:
+
+            /* --- Constructos --- */
+            
+            /**
+             * Constructor.
+             *
+             * @param what The reason for the exception.
+             */
+            FileNotFoundException(const std::string &what) throw () :
+                    Exception(what) {
+                // Nothing to do
+            }
+
+            /**
+             * Destructor.
+             */
+            virtual ~FileNotFoundException() throw () {
+                // Nothing to do
+            }
+        };
+
+        /**
+         * Thrown when a generic I/O error was encountered.
+         *
+         * @author z9u2k
+         */
+        class IOException : public Exception {
+        public:
+
+            /* --- Constructos --- */
+            
+            /**
+             * Constructor.
+             *
+             * @param what The reason for the exception.
+             */
+            IOException(const std::string &what) throw () :
+                    Exception(what) {
+                // Nothing to do
+            }
+
+            /**
+             * Destructor.
+             */
+            virtual ~IOException() throw () {
                 // Nothing to do
             }
         };
