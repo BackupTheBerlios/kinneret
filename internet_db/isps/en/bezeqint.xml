@@ -41,6 +41,6 @@
 		<server loc="Haifa">04-8137777</server>
 		<server loc="The Sharon">09-7755555</server>
 		<server loc="The South">08-9126666</server>
-		<server loc="Anywhere">136014</server>
+<!--		<server loc="Anywhere">136014</server>		-->
 	</dialup>
 </isp>
