@@ -1,4 +1,4 @@
-m4trace:aclocal.m4:10807: -1- m4_pattern_allow([^AM_[A-Z]+FLAGS$])
+m4trace:aclocal.m4:10800: -1- m4_pattern_allow([^AM_[A-Z]+FLAGS$])
 m4trace:configure.in:25: -1- AC_INIT([acinclude.m4])
 m4trace:configure.in:25: -1- m4_pattern_forbid([^_?A[CHUM]_])
 m4trace:configure.in:25: -1- m4_pattern_forbid([_AC_])
@@ -68,7 +68,7 @@ m4trace:configure.in:34: -1- AC_SUBST([target_cpu], [`echo $ac_cv_target | sed '
 m4trace:configure.in:34: -1- AC_SUBST([target_vendor], [`echo $ac_cv_target | sed 's/^\([[^-]]*\)-\([[^-]]*\)-\(.*\)$/\2/'`])
 m4trace:configure.in:34: -1- AC_SUBST([target_os], [`echo $ac_cv_target | sed 's/^\([[^-]]*\)-\([[^-]]*\)-\(.*\)$/\3/'`])
 m4trace:configure.in:39: -1- AM_INIT_AUTOMAKE([l2swim], [0.3b2])
-m4trace:configure.in:39: -1- AM_AUTOMAKE_VERSION([1.7.2])
+m4trace:configure.in:39: -1- AM_AUTOMAKE_VERSION([1.7.5])
 m4trace:configure.in:39: -1- AC_PROG_INSTALL
 m4trace:configure.in:39: -1- AC_PROG_INSTALL
 m4trace:configure.in:39: -1- AC_SUBST([INSTALL_PROGRAM])
@@ -97,6 +97,7 @@ m4trace:configure.in:39: -1- AC_PROG_AWK
 m4trace:configure.in:39: -1- AC_SUBST([AWK])
 m4trace:configure.in:39: -1- AC_PROG_MAKE_SET
 m4trace:configure.in:39: -1- AC_SUBST([SET_MAKE])
+m4trace:configure.in:39: -1- AC_SUBST([am__leading_dot])
 m4trace:configure.in:41: -1- AC_SUBST([CONF_FILES])
 m4trace:configure.in:44: -1- AC_CONFIG_HEADERS([config.h])
 m4trace:configure.in:47: -1- AC_PROG_CC
@@ -113,7 +114,7 @@ m4trace:configure.in:47: -1- AC_SUBST([CC])
 m4trace:configure.in:47: -1- AC_SUBST([ac_ct_CC])
 m4trace:configure.in:47: -1- AC_SUBST([EXEEXT], [$ac_cv_exeext])
 m4trace:configure.in:47: -1- AC_SUBST([OBJEXT], [$ac_cv_objext])
-m4trace:configure.in:47: -1- AC_SUBST([DEPDIR])
+m4trace:configure.in:47: -1- AC_SUBST([DEPDIR], ["${am__leading_dot}deps"])
 m4trace:configure.in:47: -1- AC_SUBST([am__include])
 m4trace:configure.in:47: -1- AC_SUBST([am__quote])
 m4trace:configure.in:47: -1- AM_CONDITIONAL([AMDEP], [test "x$enable_dependency_tracking" != xno])

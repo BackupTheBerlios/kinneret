@@ -1,8 +1,8 @@
 /****************************************************************************
 ** MainWindow meta object code from reading C++ file 'l2swim.h'
 **
-** Created: Thu Jul 17 16:59:46 2003
-**      by: The Qt MOC ($Id: l2swim.moc.cpp,v 1.1 2003/07/19 06:59:12 nirro Exp $)
+** Created: Tue Sep 2 21:22:58 2003
+**      by: The Qt MOC ($Id: l2swim.moc.cpp,v 1.2 2003/09/02 18:28:50 nirro Exp $)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -14,7 +14,7 @@
 
 #include <private/qucomextra_p.h>
 #if !defined(Q_MOC_OUTPUT_REVISION) || (Q_MOC_OUTPUT_REVISION != 26)
-#error "This file was generated using the moc from 3.1.1. It"
+#error "This file was generated using the moc from 3.2.0b1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif

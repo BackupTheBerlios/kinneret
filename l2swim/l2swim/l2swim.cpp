@@ -75,19 +75,32 @@ MainWindow::MainWindow ( const char * name ) : KMainWindow ( 0L, name )
         this, SLOT( openURLRequest(const KURL &, const KParts::URLArgs & ) ) );
 
   setCentralWidget( hbox );
+}
+
+void MainWindow::firstload()
+{
   KLocale locale("");
   lang=locale.language().left(2);
+  bool langexist=true;
   menufile=QString("/opt/kinneret/l2swim/etc/swim_menu_"+lang+".txt");
-
+  QString lastmenufile=menufile;
   if (!QFile(menufile).exists())
   {
-    KMessageBox::sorry(this,i18n("Sorry - Your language menu-file: %1 does not exist, using default language instead").arg(menufile));
+    langexist=false;
     menufile=QString("/opt/kinneret/l2swim/etc/swim_menu.txt");
   }
   menu=new cmenu();
   menu->initialize(menufile);
   if (!menu->getLanguage().isNull()) lang=menu->getLanguage();
   openURL(KURL(menu->getMenuName()),false);
+  if (!langexist) KMessageBox::information(this,i18n("Your language menu-file: %1 does not exist, using default language instead").arg(lastmenufile)
+    ,i18n("Sorry"),"LangMenuFile");
+}
+
+void MainWindow::show()
+{
+  KMainWindow::show();
+  firstload();
 }
 
 void MainWindow::home()

@@ -60,6 +60,8 @@ public:
   ~MainWindow();
   void putImage(QString imagefile);
   void openURL(KURL url,bool push=true,bool forw=false);
+  void firstload();
+  virtual void show();
 
 public slots:
 

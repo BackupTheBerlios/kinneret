@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2003-07-16 20:27+0300\n"
+"POT-Creation-Date: 2003-09-02 20:44+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,13 +55,13 @@ msgstr ""
 msgid "About l2swim"
 msgstr ""
 
-#: l2swim.cpp:84
+#: l2swim.cpp:96
 msgid ""
 "Sorry - Your language menu-file: %1 does not exist, using default language "
 "instead"
 msgstr ""
 
-#: l2swim.cpp:254
+#: l2swim.cpp:266
 msgid "ERROR - Image %1 not found"
 msgstr ""
 
