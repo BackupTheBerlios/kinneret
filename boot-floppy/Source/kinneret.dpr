@@ -24,11 +24,13 @@ uses
   ParInstall in 'ParInstall.pas' {parinst},
   ParInstall2 in 'ParInstall2.pas' {parinst2},
   checkOS in 'checkOS.pas',
-  ParInstall3 in 'ParInstall3.pas' {ParInst3};
+  ParInstall3 in 'ParInstall3.pas' {ParInst3},
+  sysUtils;
 
 {$R *.RES}
 
 begin
+  sysLocale.MiddleEast:=true;
   Application.Initialize;
   Application.Title := 'Kinneret Boot Floppy';
   Application.CreateForm(TWForm, WForm);

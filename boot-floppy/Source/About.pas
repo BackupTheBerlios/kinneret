@@ -51,10 +51,8 @@ end;
 
 procedure TFormAbout.FormShow(Sender: TObject);
 begin
-    if (GetCurrentLanguage='iw') or (GetCurrentLanguage='ac') then BidiMode:=bdRightToLeft
+    if (GetCurrentLanguage='he') or (GetCurrentLanguage='ar') then BidiMode:=bdRightToLeft
     else Bidimode:=bdLeftToRight;
-    if (GetCurrentLanguage='he') or (GetCurrentLanguage='ar') then memo1.Alignment:=taRightJustify
-    else memo1.Alignment:=taLeftJustify;
     memo1.Text:=wideFormat(_('Kinneret''s Boot Floppy Maker,'+#10#13+
     'And "HD operation" wizard.'+#10#13+#10#13+
     'Version: %s,'+#10#13+

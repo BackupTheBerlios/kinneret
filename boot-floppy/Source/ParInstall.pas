@@ -30,10 +30,8 @@ implementation
 
 procedure Tparinst.FormShow(Sender: TObject);
 begin
-  if (GetCurrentLanguage='iw') or (GetCurrentLanguage='ac') then BidiMode:=bdRightToLeft
+  if (GetCurrentLanguage='he') or (GetCurrentLanguage='ar') then BidiMode:=bdRightToLeft
   else Bidimode:=bdLeftToRight;
-  if (GetCurrentLanguage='he') or (GetCurrentLanguage='ar') then Explanation.Alignment:=taRightJustify
-  else Explanation.Alignment:=taLeftJustify;
   Caption:=pWideChar(_('Hard-Drive Operation Wizard'));
   explanation.Caption:=pWideChar(_('What is "Hard-Drive Operation" ?'+#10#13+#10#13+
   'You can work with GNU/Linux Kinneret from the CD, without'+#10#13+

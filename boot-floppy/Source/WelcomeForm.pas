@@ -87,9 +87,10 @@ begin
     else if (copy(getCurrentLanguage,0,2)='ar') then UseLanguage('ar')
     else UseLanguage('he');
   end else begin //windows 9x
-    if (copy(getCurrentLanguage,0,2)='iw') then
+    if (copy(getCurrentLanguage,0,2)='iw') or
+    (copy(getCurrentLanguage,0,2)='he') then
     begin
-      UseLanguage('iw');
+      UseLanguage('he');
       RadioButton3.Hide;
       RadioButton4.Hide;
     end
@@ -99,9 +100,9 @@ begin
       RadioButton1.Hide;
       RadioButton4.Hide;
     end
-   else if (copy(getCurrentLanguage,0,2)='ar') then
+    else if (copy(getCurrentLanguage,0,2)='ar') then
     begin
-      UseLanguage('ac');
+      UseLanguage('ar');
       RadioButton1.Hide;
       RadioButton3.Hide;
     end
@@ -114,9 +115,9 @@ begin
     end;
   end;
 
-  if (GetCurrentLanguage='he') or (GetCurrentLanguage='iw') then RadioButton1.Checked:=true
+  if (GetCurrentLanguage='he') then RadioButton1.Checked:=true
   else if (GetCurrentLanguage='ru') then RadioButton3.Checked:=true
-  else if (GetCurrentLanguage='ar') or (GetCurrentLanguage='ac')then RadioButton4.Checked:=true
+  else if (GetCurrentLanguage='ar') then RadioButton4.Checked:=true
   else RadioButton2.Checked:=true;
 
   TranslateProperties (self);      //GNUGETTEXT
@@ -138,59 +139,34 @@ end;
 
 procedure TWForm.RadioButton4Click(Sender: TObject);
 begin
-    if osis95 then
-    begin
-      UseLanguage('ac');
-      BidiMode:=bdRightToLeft
-    end
-    else
-    begin
-      UseLanguage('ar');
-      Label2.Alignment:=taRightJustify;
-      LinkLabel.Alignment:=taRightJustify;
-    end;
-    Retranslator.Execute;
-    refreshlabel2;
+  UseLanguage('ar');
+  BidiMode:=bdRightToLeft;
+  Retranslator.Execute;
+  refreshlabel2;
 end;
 
 procedure TWForm.RadioButton3Click(Sender: TObject);
 begin
-    BiDiMode:=bdLeftToRight;
-    Label2.Alignment:=taLeftJustify;
-    LinkLabel.Alignment:=taLeftJustify;
-    UseLanguage('ru');
-    Retranslator.Execute;
-//    Label2.Repaint;
-    refreshlabel2;
+  BiDiMode:=bdLeftToRight;
+  UseLanguage('ru');
+  Retranslator.Execute;
+  refreshlabel2;
 end;
 
 procedure TWForm.RadioButton2Click(Sender: TObject);
 begin
-
-    BiDiMode:=bdLeftToRight;
-    Label2.Alignment:=taLeftJustify;
-    LinkLabel.Alignment:=taLeftJustify;
-    UseLanguage('en');
-    Retranslator.Execute;
-//    Label2.Repaint;
-    refreshlabel2;
+  BiDiMode:=bdLeftToRight;
+  UseLanguage('en');
+  Retranslator.Execute;
+  refreshlabel2;
 end;
 
 procedure TWForm.RadioButton1Click(Sender: TObject);
 begin
-    if osis95 then
-    begin
-      UseLanguage('iw');
-      BidiMode:=bdRightToLeft
-    end
-    else
-    begin
-      UseLanguage('he');
-      Label2.Alignment:=taRightJustify;
-      LinkLabel.Alignment:=taRightJustify;
-    end;
-    Retranslator.Execute;
-    refreshlabel2;
+  UseLanguage('he');
+  BidiMode:=bdRightToLeft;
+  Retranslator.Execute;
+  refreshlabel2;
 end;
 
 procedure TWForm.refreshlabel2();
@@ -219,7 +195,6 @@ begin
    'If you haven''t installed any of these boot options,'+#10#13+
    'just start Kinneret regularly, with the Kinneret CD,'+#10#13+
    'or with a Boot-Floppy.'));
-
 end;
 
 procedure TWForm.ButtonAdvancedClick(Sender: TObject);
@@ -229,27 +204,27 @@ var
   key: string;
   i: integer;
 begin
-    try
-        FormAdvanced.Strings:=TStringList.Create;
-        FormAdvanced.FileName := 'A:\SYSLINUX.CFG';	{ set the file name }
-        FormAdvanced.Strings.LoadFromFile(FormAdvanced.Filename); { load from file }
-        Line:=FormAdvanced.Strings[1];
+  try
+    FormAdvanced.Strings:=TStringList.Create;
+    FormAdvanced.FileName := 'A:\SYSLINUX.CFG';	{ set the file name }
+    FormAdvanced.Strings.LoadFromFile(FormAdvanced.Filename); { load from file }
+    line:=FormAdvanced.Strings[1];
     //Seperating Line to words
     for i:=1 to Length(Line) do
     begin
-        if line[i]='=' then
-        begin
-            key:=word;
-            word:='';
-        end
-        else if (line[i]=' ') then
-        begin
-            if key='' then begin key:=word; word:=''; end;
-            if key<>'APPEND' then FormAdvanced.ParamList.InsertRow(key,word,TRUE);
-            word:='';
-            key:='';
-        end
-        else word:=word+line[i];
+      if line[i]='=' then
+      begin
+        key:=word;
+        word:='';
+      end
+      else if (line[i]=' ') then
+      begin
+        if key='' then begin key:=word; word:=''; end;
+        if key<>'APPEND' then FormAdvanced.ParamList.InsertRow(key,word,TRUE);
+        word:='';
+        key:='';
+      end
+      else word:=word+line[i];
     end;
     if key='' then begin key:=word; word:=''; end;
     FormAdvanced.ParamList.InsertRow(key,word,TRUE);
@@ -269,15 +244,9 @@ end;
 
 procedure TWForm.LinkLabelClick(Sender: TObject);
 var
-  lang,guide : string;
+  guide : string;
 begin
-  if (getCurrentLanguage='he') or (getCurrentLanguage='iw') then
-    lang:='he'
-  else if (getCurrentLanguage='ar') or (getCurrentLanguage='ac') then
-    lang:='ar'
-  else lang:=copy(getCurrentLanguage,0,2);
-
-  guide:='..\manual\'+lang+'\first_time.html';
+  guide:='..\manual\'+getCurrentLanguage+'\first_time.html';
   if fileExists(guide) then
     ShellExecute(Handle, 'open', pchar(guide), nil, nil, SW_SHOWNORMAL)
   else ShellExecute(Handle, 'open',

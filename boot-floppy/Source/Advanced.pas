@@ -60,10 +60,8 @@ end;
 
 procedure TFormAdvanced.FormShow(Sender: TObject);
 begin
-    if (GetCurrentLanguage='iw') or (GetCurrentLanguage='ac') then BidiMode:=bdRightToLeft
+    if (GetCurrentLanguage='he') or (GetCurrentLanguage='ar') then BidiMode:=bdRightToLeft
     else Bidimode:=bdLeftToRight;
-    if (GetCurrentLanguage='he') or (GetCurrentLanguage='ar') then Explanation.Alignment:=taRightJustify
-    else Explanation.Alignment:=taLeftJustify;
     Explanation.Caption:=pWideChar(_('These options are for advanced users only'+#10#13+
     'You can ruin the boot-floppy easily here.'+#10#13#10#13+
     'You can change the kernel parameters here,'+#10#13+

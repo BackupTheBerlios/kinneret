@@ -48,12 +48,8 @@ begin
   with FormWarning do begin
     fType:=tType;
     Label1.Caption:=mtext;
-    if (GetCurrentLanguage='he') or (GetCurrentLanguage='ar') then Label1.Alignment:=taRightJustify
-    else if (getCurrentLanguage='iw') or (GetCurrentLanguage='ac') then bidimode:=bdRightToLeft
-    else begin
-      Label1.Alignment:=taLeftJustify;
-      BidiMode:=bdLeftToRight;
-    end;
+    if (GetCurrentLanguage='he') or (GetCurrentLanguage='ar') then BidiMode:=bdRightToLeft
+    else Bidimode:=bdLeftToRight;
     if fType=MSG then begin
       pic:=IDI_INFORMATION;
       Caption:=pWideChar(_('Information'));
@@ -93,7 +89,7 @@ begin
       ButtonCancel.Left:=Width div 2-ButtonCancel.width div 2;
     end;
     Label1.Top:=8;
-    if (GetCurrentLanguage='he') or (GetCurrentLanguage='iw') then Label1.Left:=width-20-Label1.Width
+    if (GetCurrentLanguage='he') or (GetCurrentLanguage='ar') then Label1.Left:=width-20-Label1.Width
     else Label1.Left:=50;
     Height:=ButtonCancel.Top+60;
     cancel:=True;

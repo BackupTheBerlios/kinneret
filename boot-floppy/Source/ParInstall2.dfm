@@ -47,26 +47,10 @@ object parinst2: Tparinst2
       Height = 65
       AutoSize = False
     end
-    object LBDesktop: TTntLabel
-      Left = 40
-      Top = 122
-      Width = 273
-      Height = 17
-      AutoSize = False
-      Color = clBtnFace
-      ParentColor = False
-    end
-    object LBMenu: TTntLabel
-      Left = 40
-      Top = 146
-      Width = 273
-      Height = 17
-      AutoSize = False
-    end
     object CBDesktop: TTntCheckBox
       Left = 16
       Top = 120
-      Width = 17
+      Width = 321
       Height = 17
       AllowGrayed = True
       TabOrder = 0
@@ -74,7 +58,7 @@ object parinst2: Tparinst2
     object CBMenu: TTntCheckBox
       Left = 16
       Top = 144
-      Width = 17
+      Width = 321
       Height = 17
       TabOrder = 1
     end

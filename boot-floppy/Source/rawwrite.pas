@@ -246,7 +246,7 @@ end;
 
 procedure TMainForm.FormShow(Sender: TObject);
 begin
-    if (GetCurrentLanguage='iw') or (GetCurrentLanguage='ac') then BidiMode:=bdRightToLeft
+    if (GetCurrentLanguage='he') or (GetCurrentLanguage='ar') then BidiMode:=bdRightToLeft
     else Bidimode:=bdLeftToRight;
     ProgressBar1.Position:=0;
     LabelUp.Caption:=pWideChar(_('Please Insert a floppy to drive A:'));

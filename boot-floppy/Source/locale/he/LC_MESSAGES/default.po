@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
 "POT-Creation-Date: 2004-03-01 20:55\n"
-"PO-Revision-Date: 2004-04-02 20:50+0200\n"
+"PO-Revision-Date: 2004-04-03 00:24+0200\n"
 "Last-Translator: Nir Misgav <nirro@linux-kinneret.org>\n"
 "Language-Team: Nir Misgav <nirro@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 #. FormAbout..Caption
 #. WForm..Button1..Caption
 #: About.dfm:8
-#: WelcomeForm.dfm:528
+#: WelcomeForm.dfm:544
 #: About.pas:87
 msgid "About"
 msgstr "אודות"
@@ -113,6 +113,18 @@ msgstr "אודות"
 #  MainForm..Font.Name
 #  WForm..Font.Name
 #  WForm..Label2..Font.Name
+#. FormAbout..Font.Name
+#. FormAdvanced..Font.Name
+#. FormWarning..Font.Name
+#. parinst..Font.Name
+#. parinst2..Font.Name
+#. ParInst3..Font.Name
+#. MainForm..Font.Name
+#. WForm..Font.Name
+#. WForm..Label2..Font.Name
+#. WForm..LinkLabel..Font.Name
+#. WForm..RadioButton1..Font.Name
+#. WForm..RadioButton3..Font.Name
 #: About.dfm:15
 #: Advanced.dfm:13
 #: fWarning.dfm:13
@@ -122,6 +134,9 @@ msgstr "אודות"
 #: rawwrite.dfm:15
 #: WelcomeForm.dfm:15
 #: WelcomeForm.dfm:142
+#: WelcomeForm.dfm:516
+#: WelcomeForm.dfm:578
+#: WelcomeForm.dfm:617
 msgid "MS Sans Serif"
 msgstr "למדריך מפורט יש ללחוץ כאן."
 
@@ -168,7 +183,7 @@ msgstr "אזהרה"
 #. MainForm..Caption
 #. WForm..WriteButton..Caption
 #: rawwrite.dfm:8
-#: WelcomeForm.dfm:510
+#: WelcomeForm.dfm:526
 #: rawwrite.pas:254
 msgid "Make a bootable floppy"
 msgstr "הכנת תקליטון הפעלה"
@@ -177,6 +192,7 @@ msgstr "הכנת תקליטון הפעלה"
 #  WForm..Caption
 #  WForm..Caption
 #  WForm..Caption
+#. WForm..Caption
 #: WelcomeForm.dfm:8
 msgid "Welcome to GNU/Linux \"Kinneret\""
 msgstr "ברוכים הבאים לגנו/לינוקס כנרת"
@@ -185,6 +201,7 @@ msgstr "ברוכים הבאים לגנו/לינוקס כנרת"
 #  WForm..label1..Caption
 #  WForm..label1..Caption
 #  WForm..label1..Caption
+#. WForm..label1..Caption
 #: WelcomeForm.dfm:124
 msgid "Welcome to \"Kinneret\""
 msgstr "\"ברוכים הבאים ל-\"כנרת"
@@ -196,38 +213,54 @@ msgstr "\"ברוכים הבאים ל-\"כנרת"
 msgid "Arial"
 msgstr "Arial"
 
+#  WForm..LinkLabel..Caption
+#: WelcomeForm.dfm:512
+msgid "For detailed user guide press here."
+msgstr "למדריך מפורט נא ללחוץ כאן."
+
 #  WForm..Button3..Caption
 #  WForm..Button3..Caption
 #. WForm..Button3..Caption
-#: WelcomeForm.dfm:519
+#: WelcomeForm.dfm:535
 msgid "Exit"
 msgstr "יציאה"
 
 #  WForm..Button2..Caption
 #  WForm..Button2..Caption
 #. WForm..Button2..Caption
-#: WelcomeForm.dfm:537
+#: WelcomeForm.dfm:553
 msgid "Reboot"
 msgstr "אתחול המחשב"
 
 #  WForm..RadioButton2..Caption
 #  WForm..RadioButton2..Caption
 #  WForm..RadioButton2..Caption
-#: WelcomeForm.dfm:547
+#  WForm..RadioButton2..Caption
+#: WelcomeForm.dfm:563
 msgid "English"
+msgstr ""
+
+#. WForm..RadioButton1..Caption
+#: WelcomeForm.dfm:574
+msgid "עברית"
+msgstr ""
+
+#. WForm..RadioButton1..Caption_UTF7
+#: WelcomeForm.dfm:584
+msgid "+BeIF0QXoBdkF6g"
 msgstr ""
 
 #  WForm..ButtonAdvanced..Hint
 #  WForm..ButtonAdvanced..Hint
 #. WForm..ButtonAdvanced..Hint
-#: WelcomeForm.dfm:567
+#: WelcomeForm.dfm:591
 msgid "Advanced options for editing kernel parameters"
 msgstr "אפשרויות מתקדמות לעריכת הפרמטרים הנשלחים אל הליבה בזמן האיתחול"
 
 #  WForm..ButtonAdvanced..Caption
 #  WForm..ButtonAdvanced..Caption
 #. WForm..ButtonAdvanced..Caption
-#: WelcomeForm.dfm:568
+#: WelcomeForm.dfm:592
 msgid "Advanced"
 msgstr "מתקדם"
 
@@ -235,19 +268,25 @@ msgstr "מתקדם"
 #  parinst2..TntGroupBox2..Caption
 #  WForm..TntButton1..Caption
 #. WForm..TntButton1..Caption
-#: WelcomeForm.dfm:579
+#: WelcomeForm.dfm:603
 msgid "Hard-Drive Operation"
 msgstr "הפעלה מכונן קשיח"
 
-#. WForm..TntRadioButton1..Caption
-#: WelcomeForm.dfm:589
-msgid "Russian"
+#. WForm..RadioButton3..Caption
+#: WelcomeForm.dfm:613
+msgid "русский"
+msgstr ""
+
+#. WForm..RadioButton3..Caption_UTF7
+#: WelcomeForm.dfm:623
+msgid "+BEAEQwRBBEEEOgQ4BDk"
 msgstr ""
 
 #  ParInst3..Caption
 #  ParInst3..Caption
 #  WForm..TntButton2..Caption
-#: WelcomeForm.dfm:599
+#. WForm..TntButton2..Caption
+#: WelcomeForm.dfm:630
 msgid "Uninstall Kinneret"
 msgstr "הסרת כנרת"
 
@@ -788,11 +827,13 @@ msgid "Invalid Format Specifier: %s"
 msgstr ""
 
 #  Programmer's name for it: SMismatchedArgumentTypes
+#  Programmer's name for it: SMismatchedArgumentTypes
 #. Programmer's name for it: SMismatchedArgumentTypes
 #: TntFormatStrUtils.pas:36
 msgid "Argument types for index %d do not match. (%s <> %s)"
 msgstr ""
 
+#  Programmer's name for it: SMismatchedArgumentCounts
 #  Programmer's name for it: SMismatchedArgumentCounts
 #  Programmer's name for it: SMismatchedArgumentCounts
 #  Programmer's name for it: SMismatchedArgumentCounts
@@ -803,11 +844,13 @@ msgstr ""
 
 #  Programmer's name for it: SBufferOverflow
 #  Programmer's name for it: SBufferOverflow
+#  Programmer's name for it: SBufferOverflow
 #. Programmer's name for it: SBufferOverflow
 #: TntSystem.pas:793
 msgid "Buffer overflow"
 msgstr ""
 
+#  Programmer's name for it: SInvalidUTF7
 #  Programmer's name for it: SInvalidUTF7
 #  Programmer's name for it: SInvalidUTF7
 #. Programmer's name for it: SInvalidUTF7
@@ -819,13 +862,15 @@ msgstr ""
 #  Programmer's name for it: SInvalidCurrency
 #  Delphi 5 compatibility
 #  Programmer's name for it: SInvalidCurrency
+#  Delphi 5 compatibility
+#  Programmer's name for it: SInvalidCurrency
 #. Delphi 5 compatibility
 #. Programmer's name for it: SInvalidCurrency
 #: TntSysUtils.pas:45
 msgid "'%s' is not a valid currency value"
 msgstr ""
 
-#: WelcomeForm.pas:137
+#: WelcomeForm.pas:155
 msgid ""
 "You are going to reboot the computer.\n"
 "In order to prevent data loss, Please close\n"
@@ -835,7 +880,7 @@ msgstr ""
 "מומלץ לסגור את כל התוכניות הרצות כרגע.\n"
 "האם להמשיך?"
 
-#: WelcomeForm.pas:180
+#: WelcomeForm.pas:210
 msgid ""
 "Floppy has been successfully written.\n"
 "\n"
@@ -853,7 +898,7 @@ msgstr ""
 "לסגור את כל התוכניות הרצות כרגע,\n"
 "ולאתחל את המחשב מחדש."
 
-#: WelcomeForm.pas:189
+#: WelcomeForm.pas:219
 msgid ""
 "Welcome to GNU/Linux Kinneret.\n"
 "This program is not an installation Program,\n"
@@ -880,7 +925,7 @@ msgstr ""
 "חדש: ניתן לבצע \"הפעלה מכונן קשיח\" כדי להפעיל את\n"
 "כנרת ישירות מהכונן הקשיח, ללא צורך בתקליטור."
 
-#: WelcomeForm.pas:199
+#: WelcomeForm.pas:229
 msgid ""
 "Kinneret was successfully installed.\n"
 "\n"
@@ -914,7 +959,7 @@ msgstr ""
 #  Seperating Line to words
 #  Seperating Line to words
 #. Seperating Line to words
-#: WelcomeForm.pas:237
+#: WelcomeForm.pas:267
 msgid ""
 "In order to enter the Advanced options, You must put your boot-floppy\n"
 "(The floppy you can make here) in drive A:"

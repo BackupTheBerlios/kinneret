@@ -19,8 +19,6 @@ type
     LabelBoot: TTntLabel;
     ListDrives: TTntListView;
     LabelNote: TTntLabel;
-    LBDesktop: TTntLabel;
-    LBMenu: TTntLabel;
     procedure FormShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure ListDrivesMouseUp(Sender: TObject; Button: TMouseButton;
@@ -55,30 +53,7 @@ end;
 
 procedure Tparinst2.FormShow(Sender: TObject);
 begin
-  if (GetCurrentLanguage='he') or (GetCurrentLanguage='ar') then begin
-    LabelChoose.Alignment:=taRightJustify;
-    LabelBoot.Alignment:=taRightJustify;
-    LabelNote.Alignment:=taRightJustify;
-    LBDesktop.Alignment:=taRightJustify;
-    LBMenu.Alignment:=taRightJustify;
-  end
-  else begin
-    LabelChoose.Alignment:=taLeftJustify;
-    LabelBoot.Alignment:=taLeftJustify;
-    LabelNote.Alignment:=taLeftJustify;
-    LBDesktop.Alignment:=taLeftJustify;
-    LBMenu.Alignment:=taLeftJustify;
-  end;
-  if (GetCurrentLanguage='he') or (GetCurrentLanguage='iw')
-  or (GetCurrentLanguage='ar') or (GetCurrentLanguage='ac')then
-  begin
-    CBDesktop.Left:=320;
-    CBMenu.Left:=320;
-  end else begin
-    CBDesktop.Left:=16;
-    CBMenu.Left:=16;
-  end;
-  if (GetCurrentLanguage='iw') or (GetCurrentLanguage='ac') then BidiMode:=bdRightToLeft
+  if (GetCurrentLanguage='he') or (GetCurrentLanguage='ar') then BidiMode:=bdRightToLeft
   else Bidimode:=bdLeftToRight;
   Caption:=pWideChar(_('Hard-Drive Operation options'));
   ButtonCancel.Caption:=pwideChar(_('Cancel'));
@@ -93,10 +68,8 @@ begin
   'choose one or more of the next options (recommended) :'));
   TNTGroupBox2.Caption:=pWideChar(_('1. Drive Options'));
   TNTGroupBox1.Caption:=pWideChar(_('2. Boot Options'));
-  begin
-    LBDesktop.Caption:=pWideChar(_('Desktop shortcut (Windows 95,98)'));
-    LBMenu.Caption:=pWideChar(_('Boot Menu (Windows 95,98, NT,2000, XP)'));
-  end;
+  CBDesktop.Caption:=pWideChar(_('Desktop shortcut (Windows 95,98)'));
+  CBMenu.Caption:=pWideChar(_('Boot Menu (Windows 95,98, NT,2000, XP)'));
   ListDrives.Columns[0].Caption:=pWideChar(_('Drive'));
   ListDrives.Columns[1].Caption:=pWideChar(_('Free space before inst.'));
   ListDrives.Columns[2].Caption:=pWideChar(_('Free space after inst.'));
@@ -104,7 +77,6 @@ begin
   begin
     CBDesktop.Checked:=false;
     CBDesktop.Enabled:=false;
-    LBDesktop.Enabled:=false;
     CBMenu.Checked:=false;
     CBMenu.Enabled:=true;
   end else if osis95 then
@@ -117,7 +89,6 @@ begin
   begin
     CBDesktop.Checked:=false;
     CBDesktop.Enabled:=false;
-    LBDesktop.Enabled:=false;
     CBMenu.Checked:=true;
     CBMenu.Enabled:=true;
   end;
