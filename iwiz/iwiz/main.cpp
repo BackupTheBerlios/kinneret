@@ -31,6 +31,8 @@
 #include "iwizard.h"
 #include "rename.h"
 
+#include <unistd.h>
+
 #include <vector>
 #include <fstream>
 #include <string>
@@ -55,7 +57,7 @@ int main(int argc, char *argv[])
 
 	KApplication a;
 	iwizard *iwiz = new iwizard();
-	iwiz->setFinishEnabled(iwiz->QWizard::page(4), true);
+	iwiz->setFinishEnabled(iwiz->QWizard::page(5), true);
 	a.setMainWidget(iwiz);
 	iwiz->show();
 
@@ -73,19 +75,22 @@ int main(int argc, char *argv[])
 		// Wizard completed, run the tool and create the connection!
 
 		// check if username and password were entered
-		do
+		if (!iwiz->radioLAN->isChecked())
 		{
-			if (iwiz->lineUsername->text().isEmpty() || QString(iwiz->linePassword->password()).isEmpty())
+			do
 			{
-				KMessageBox::error(iwiz, tr2i18n("You must enter username and password"));
-				iwiz->showPage(iwiz->QWizard::page(4));
-				iwiz->show();
-				a.exec();
+				if (iwiz->lineUsername->text().isEmpty() || QString(iwiz->linePassword->password()).isEmpty())
+				{
+					KMessageBox::error(iwiz, tr2i18n("You must enter username and password"));
+					iwiz->showPage(iwiz->QWizard::page(5));
+					iwiz->show();
+					a.exec();
 
-				if (iwiz->result() == QDialog::Rejected) return 0;
-			}
-			else break;
-		} while (1);
+					if (iwiz->result() == QDialog::Rejected) return 0;
+				}
+				else break;
+			} while (1);
+		}
 
 		// check to see if the name is unique.
 		// if it isn't, allow to the user to rename the connection.
@@ -108,6 +113,7 @@ int main(int argc, char *argv[])
 		}
 
 		cons.close();
+		unlink("/tmp/.cons");
 
 		bool bOK;
 		QString qName = iwiz->lineConnectionName->text();
@@ -157,43 +163,72 @@ int main(int argc, char *argv[])
 		else if (iwiz->radioISDN->isChecked()) strCmd += "isdn";
 		else if (iwiz->radioDialup->isChecked()) strCmd += "dialup";
 
-		strCmd += " ";
-		strCmd += "--modem=\"";
-		strCmd += string(iwiz->comboModems->currentText().ascii());
-		strCmd += "\"";
-
-		// iface, optional
-		if (iwiz->radioEthernet->isEnabled())
+		if (iwiz->radioLAN->isChecked())
 		{
-			// if the radio box is enabled, the modem is a dual modem
-			strCmd += " ";
-			strCmd += "--iface=";
-			if (iwiz->radioEthernet->isChecked()) strCmd += "eth";
-			else if (iwiz->radioUSB->isChecked()) strCmd += "usb";
+			if (iwiz->radioStatic->isChecked())
+			{
+				strCmd += " --ip=";
+				strCmd += string(iwiz->lineIP->text().ascii());
+
+				strCmd += " --mask=";
+				strCmd += string(iwiz->lineNetmask->text().ascii());
+
+				strCmd += " --broadcast=";
+				strCmd += string(iwiz->lineBroadcast->text().ascii());
+
+				strCmd += " --gateway=";
+				strCmd += string(iwiz->lineGateway->text().ascii());
+			}
+
+			else
+			{
+				strCmd += " --ip=dhcp";
+			}
+
+			strCmd += " --dev=";
+			strCmd += string(iwiz->comboLANEth->currentText().ascii());
 		}
 
-		strCmd += " ";
-		strCmd += "--dev=";
-		if (iwiz->radioEthernet->isChecked()) strCmd += string(iwiz->comboEth->currentText().ascii());
-		else if (iwiz->radioUSB->isChecked()) strCmd += string(iwiz->lineUSBEth->text().ascii());
-
-		strCmd += " ";
-		strCmd += "--username=\"";
-		strCmd += string(iwiz->lineUsername->text().ascii());
-		strCmd += "\"";
-
-		if (!iwiz->lineServer->text().isEmpty())
+		if (iwiz->radioADSL->isChecked() || iwiz->radioCable->isChecked())
 		{
 			strCmd += " ";
-			strCmd += "--server=\"";
-			strCmd += string(iwiz->lineServer->text().ascii());
+			strCmd += "--modem=\"";
+			strCmd += string(iwiz->comboModems->currentText().ascii());
+			strCmd += "\"";
+
+			// iface, optional
+			if (iwiz->radioEthernet->isEnabled())
+			{
+				// if the radio box is enabled, the modem is a dual modem
+				strCmd += " ";
+				strCmd += "--iface=";
+				if (iwiz->radioEthernet->isChecked()) strCmd += "eth";
+				else if (iwiz->radioUSB->isChecked()) strCmd += "usb";
+			}
+
+			strCmd += " ";
+			strCmd += "--dev=";
+			if (iwiz->radioEthernet->isChecked()) strCmd += string(iwiz->comboEth->currentText().ascii());
+			else if (iwiz->radioUSB->isChecked()) strCmd += string(iwiz->lineUSBEth->text().ascii());
+
+			strCmd += " ";
+			strCmd += "--username=\"";
+			strCmd += string(iwiz->lineUsername->text().ascii());
+			strCmd += "\"";
+
+			if (!iwiz->lineServer->text().isEmpty())
+			{
+				strCmd += " ";
+				strCmd += "--server=\"";
+				strCmd += string(iwiz->lineServer->text().ascii());
+				strCmd += "\"";
+			}
+
+			strCmd += " ";
+			strCmd += "--passwd=\"";
+			strCmd += string(iwiz->linePassword->password());
 			strCmd += "\"";
 		}
-
-		strCmd += " ";
-		strCmd += "--passwd=\"";
-		strCmd += string(iwiz->linePassword->password());
-		strCmd += "\"";
 
 		strCmd += " ";
 		strCmd += "--name=\"";
@@ -202,9 +237,11 @@ int main(int argc, char *argv[])
 
 		strCmd += " 2>&1 > /tmp/internet_dump";
 
+		cout << strCmd << endl;
+
 		if (system(strCmd.c_str()) != 0)
 		{
-			KMessageBox::error(0, tr2i18n("Unable to create connection.\n"
+				KMessageBox::error(0, tr2i18n("Unable to create connection.\n"
 				"/tmp/internet_dump containes the output from the tool,\n"
 				"please report a bug and include this file."));
 			return -1;

@@ -1,6 +1,7 @@
 # Makefile.in generated automatically by automake 1.5 from Makefile.am.
 # Generated automatically from Makefile.in by config.pl.
-# KDE tags expanded automatically by am_edit - $Revision: 1.7 $ 
+# KDE tags expanded automatically by am_edit - $Revision: 1.8 $ 
+
 # Copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001
 # Free Software Foundation, Inc.
 # This Makefile.in is free software; the Free Software Foundation
@@ -447,12 +448,7 @@ GTAGS:
 distclean-tags:
 	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH
 
-#>- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-#>+ 4
-KDE_DIST=iwizard.h iwiz rename.h 
-
-DISTFILES= $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
-
+DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 
 top_distdir = ..
 distdir = $(top_distdir)/$(PACKAGE)-$(VERSION)
@@ -612,8 +608,6 @@ messages:
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:
 
-
-
 #>+ 27
 rename.cpp: $(srcdir)/rename.ui rename.h rename.moc
 	rm -f rename.cpp
@@ -667,7 +661,7 @@ force-reedit:
 
 
 #>+ 11
-iwiz.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/iwiz.cpp $(srcdir)/main.cpp $(srcdir)/rename.cpp $(srcdir)/iwizard.cpp $(srcdir)/iwiz.moc.cpp  rename.moc iwizard.moc
+iwiz.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/iwiz.cpp $(srcdir)/main.cpp rename.cpp iwizard.cpp iwiz.moc.cpp  rename.moc iwizard.moc
 	@echo 'creating iwiz.all_cpp.cpp ...'; \
 	rm -f iwiz.all_cpp.files iwiz.all_cpp.final; \
 	echo "#define KDE_USE_FINAL 1" >> iwiz.all_cpp.final; \

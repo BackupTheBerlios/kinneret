@@ -1,6 +1,7 @@
 # Makefile.in generated automatically by automake 1.5 from Makefile.am.
 # Generated automatically from Makefile.in by config.pl.
-# KDE tags expanded automatically by am_edit - $Revision: 1.7 $ 
+# KDE tags expanded automatically by am_edit - $Revision: 1.8 $ 
+
 # Copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001
 # Free Software Foundation, Inc.
 # This Makefile.in is free software; the Free Software Foundation
@@ -496,8 +497,6 @@ uninstall-info: uninstall-info-recursive
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:
-
-
 
 #>+ 2
 docs-am:

@@ -3,51 +3,51 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
-"POT-Creation-Date: 2003-08-13 14:54+0300\n"
-"PO-Revision-Date: 2003-08-13 14:55+0300\n"
+"POT-Creation-Date: 2003-08-28 14:30+0300\n"
+"PO-Revision-Date: 2003-08-28 14:32+0300\n"
 "Last-Translator: Itay 'z9u2K' Duvdevani <z9u2K@bezeqint.net>\n"
 "Language-Team: Hebrew <livrix@il.org>\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.1\n"
 
-#: iwizard.ui.h:33
+#: iwizard.ui.h:34
 msgid "Cannot query ISPs"
 msgstr "שגיאה בעת קבלת רשימת ספקים"
 
-#: iwizard.ui.h:77
+#: iwizard.ui.h:79
 msgid "Cannot query hardware"
 msgstr "שגיאה בעת קבלת רשימת מודמים"
 
-#: iwizard.ui.h:119
+#: iwizard.ui.h:123
 msgid "Cannot query ethernet devices"
 msgstr "שגיאה בעת קבלת רשימת ממשקי רשת"
 
-#: iwizard.ui.h:177 iwizard.ui.h:246
+#: iwizard.ui.h:185 iwizard.ui.h:255
 msgid "Cannot get modem type"
 msgstr "שגיאה בעת קבלת סוג המודם"
 
-#: iwizard.ui.h:217
+#: iwizard.ui.h:226
 msgid "Cannot resolve modem type"
 msgstr "שגיאה בעת קביעת סוג המודם"
 
-#: main.cpp:40 main.cpp:48 iwiz.moc.cpp:34 iwiz.moc.cpp:42
+#: main.cpp:42 main.cpp:50 iwiz.moc.cpp:34 iwiz.moc.cpp:42
 msgid "Iwiz"
 msgstr "אשף האינטרנט"
 
-#: main.cpp:65
+#: main.cpp:67
 msgid "Must be root!"
 msgstr "אינך משתמש העל! עליך להיות משתמש העל (root)."
 
-#: main.cpp:80
+#: main.cpp:84
 msgid "You must enter username and password"
 msgstr "חובה להזין שם משתמש וסיסמא!"
 
-#: main.cpp:98
+#: main.cpp:103
 msgid "Cannot open /tmp/.cons"
 msgstr "שגיאה בפתיחת tmp/.cons/"
 
-#: main.cpp:207
+#: main.cpp:244
 msgid ""
 "Unable to create connection.\n"
 "/tmp/internet_dump containes the output from the tool,\n"
@@ -57,15 +57,15 @@ msgstr ""
 "הקובץ tmp/internet_dump/ מכיל מידע אודות הכשל,\n"
 "בעת דיווח באג, יש לכלול קובץ זה."
 
-#: main.cpp:212
+#: main.cpp:249
 msgid "Connection created successfuly"
 msgstr "חיבור נוצר בהצלחה"
 
-#: main.cpp:220
+#: main.cpp:257
 msgid "Unable to set connection to default."
 msgstr "כשל בקביעת חיבור כחיבור ברירת מחדל"
 
-#: main.cpp:223
+#: main.cpp:260
 msgid "Connection set to default"
 msgstr "חיבור נקבע כברירת מחדל"
 
@@ -83,11 +83,11 @@ msgstr "שם החיבור הנבחר אינו ייחודי. יש להקליד ש
 msgid "Rename"
 msgstr "שינוי שם"
 
-#: iwizard.cpp:421
+#: iwizard.cpp:490
 msgid "Welcome"
 msgstr "ברוכים הבאים"
 
-#: iwizard.cpp:422
+#: iwizard.cpp:491
 msgid ""
 "Welcome to the Internet configuration wizard.\n"
 "This wizard will help you to set up your connection to the internet from "
@@ -123,19 +123,19 @@ msgstr ""
 "org. אנא מכם, בקרו באתר הפיתוח של הכל (http://iwiz.linux-kinneret.org) לפני "
 "כן."
 
-#: iwizard.cpp:430
+#: iwizard.cpp:499
 msgid "Welcome to the Internet Configuration Wizard!"
 msgstr "ברוכים באים לאשף הגדרת האינטרנט הישראלי!"
 
-#: iwizard.cpp:431
+#: iwizard.cpp:500
 msgid "How do you connect to the internet?"
 msgstr "כיצד אתם מתחברים לאינטרנט?"
 
-#: iwizard.cpp:433
+#: iwizard.cpp:502
 msgid "LAN"
 msgstr "LAN"
 
-#: iwizard.cpp:434
+#: iwizard.cpp:503
 msgid ""
 "Local Area Network. Choose this if you are not connecting directly to the "
 "internet, but do it through a gateway instate."
@@ -143,43 +143,43 @@ msgstr ""
 "Local Are Network,\n"
 "יש לבחור באפשרות זו אם אינך מחובר ישירות לאינטרנט, אלא דרך מחשב אחר."
 
-#: iwizard.cpp:435
+#: iwizard.cpp:504
 msgid "ADSL"
 msgstr "ADSL"
 
-#: iwizard.cpp:436
+#: iwizard.cpp:505
 msgid "Asymetric Digital Subscriptor Line"
 msgstr "Asymetric Digital Subscriptor Line"
 
-#: iwizard.cpp:437
+#: iwizard.cpp:506
 msgid "Cable"
 msgstr "כבלים"
 
-#: iwizard.cpp:438
+#: iwizard.cpp:507
 msgid "TV Cable"
 msgstr "כבלים"
 
-#: iwizard.cpp:439
+#: iwizard.cpp:508
 msgid "ISDN"
 msgstr "ISDN"
 
-#: iwizard.cpp:440
+#: iwizard.cpp:509
 msgid "ISDN is a fast connection over special telephone lines"
 msgstr "ISDN הוא חיבור מהיר על גבי תשתית טלפון מיוחדת"
 
-#: iwizard.cpp:441
+#: iwizard.cpp:510
 msgid "Analog (Dial-up)"
 msgstr "אנלוגי"
 
-#: iwizard.cpp:442
+#: iwizard.cpp:511
 msgid "A regular connection made from a regualt analog telephone line"
 msgstr "חיבור רגיל המבוצע על גבי קו טלפון רגיל (אנלוגי)"
 
-#: iwizard.cpp:443
+#: iwizard.cpp:512
 msgid "Connection Type"
 msgstr "סוג החיבור"
 
-#: iwizard.cpp:444
+#: iwizard.cpp:513
 msgid ""
 "Debian system handle differently network from other Linuxes, In order to "
 "setup the connection right, the wizard needs to know if your distribution if "
@@ -193,23 +193,23 @@ msgstr ""
 "\n"
 "על איזה סוג מערכת מורץ אשף זה כעת?"
 
-#: iwizard.cpp:448
+#: iwizard.cpp:517
 msgid "Debian based Linux (Debian, Knoppix, Kinneret, etc...)"
 msgstr "מערכת מבוססת Debian (Debian, Knoppix, כנרת...)"
 
-#: iwizard.cpp:449
+#: iwizard.cpp:518
 msgid "Choose this if your Linux is based on Debian."
 msgstr "יש לבחור אפשרות זו אם הפצת הלינוקס ברשותך מבוססת על Debian."
 
-#: iwizard.cpp:450
+#: iwizard.cpp:519
 msgid "Non-Debian based Linux (Mandrake, RedHat etc...)"
 msgstr "מערכת שאינה מבוססת על Debian (Mandrake, RedHat...)"
 
-#: iwizard.cpp:451
+#: iwizard.cpp:520
 msgid "Choose this if your Linux is not based on Debian."
 msgstr "יש לבחור אפשרות זו אם הפצת הלינוקס ברשותך אינה מבוססת על Debian."
 
-#: iwizard.cpp:452
+#: iwizard.cpp:521
 msgid ""
 "Here is a list if known Israeli Internet Service Providers (ISPs). If your "
 "is not on the list, please report to us, and we'll have it added.\n"
@@ -221,55 +221,107 @@ msgstr ""
 "\n"
 "יש לבחור את הספק המבוקש מהרשימה הנ\"ל."
 
-#: iwizard.cpp:455
+#: iwizard.cpp:524
 msgid "A List of ISPs. Pick the one you use."
 msgstr "רשימת ספקים. יש לבחור את הספק דרכו יתבצע החיבור."
 
-#: iwizard.cpp:456
+#: iwizard.cpp:525
 msgid ""
 "Here is a list of modems. Choose the modem that is connected to your "
 "computer."
 msgstr "להלן רשימה של המודמים הנתמכים ע\"י האשף. יש לבחור את המודם בו מתבצע השימוש."
 
-#: iwizard.cpp:457
+#: iwizard.cpp:526
 msgid "Pick your modem from the list."
 msgstr "יש לבחור מודם מהרשימה"
 
-#: iwizard.cpp:458
+#: iwizard.cpp:527
 msgid "Debian, or non-Debian?"
 msgstr "דיבאן, או לא דביאן?"
 
-#: iwizard.cpp:459
+#: iwizard.cpp:528
+msgid "Interface's Address"
+msgstr "כתובת ממשק"
+
+#: iwizard.cpp:529
+msgid "From DHCP"
+msgstr "משרת DHCP"
+
+#: iwizard.cpp:530
+msgid "Static (Manual)"
+msgstr "קבוע (ידני)"
+
+#: iwizard.cpp:531
+msgid "Static Address"
+msgstr "כתובת קבועה"
+
+#: iwizard.cpp:532
+msgid "Address"
+msgstr "כתובת"
+
+#: iwizard.cpp:533
+msgid "Netmask"
+msgstr "מיסוך"
+
+#: iwizard.cpp:534
+msgid "Broadcast"
+msgstr "שידור"
+
+#: iwizard.cpp:535
+msgid "192.168.0.2"
+msgstr "192.168.0.2"
+
+#: iwizard.cpp:536
+msgid "255.255.255.0"
+msgstr "255.255.255.0"
+
+#: iwizard.cpp:537
+msgid "255.255.255.255"
+msgstr "255.255.255.255"
+
+#: iwizard.cpp:538
+msgid "Gateway"
+msgstr "שער"
+
+#: iwizard.cpp:539
+msgid "192.168.0.1"
+msgstr "192.168.0.1"
+
+#: iwizard.cpp:540 iwizard.cpp:547
+msgid "Which card your modems connects to?"
+msgstr "לאיזה כרטיס רשת מחובר המודם?"
+
+#: iwizard.cpp:541
+msgid "IP Addresses"
+msgstr "כתובת IP"
+
+#: iwizard.cpp:542
 msgid ""
 "You will now have to specify some parameters about your modem and the way it "
 "is connected to your computer"
 msgstr "עליך לציין מספר פרמטרים לגבי המודם הנבחר והדרך בה הוא מחובר למחשב"
 
-#: iwizard.cpp:460
+#: iwizard.cpp:543
 msgid "Choose interface:"
 msgstr "יש לבחור ממשק:"
 
-#: iwizard.cpp:461
+#: iwizard.cpp:544
 msgid "Through Ethernet Card"
 msgstr "דרך כרטיס רשת"
 
-#: iwizard.cpp:462
+#: iwizard.cpp:545
 msgid "Through USB"
 msgstr "דרך שקע USB"
 
-#: iwizard.cpp:463
+#: iwizard.cpp:546
 msgid "Ethernet"
 msgstr "כרטיס רשת"
 
-#: iwizard.cpp:464
-msgid "Which card your modems connects to?"
-msgstr "לאיזה כרטיס רשת מחובר המודם?"
-
-#: iwizard.cpp:465
+#: iwizard.cpp:548
 msgid "USB"
 msgstr "USB"
 
-#: iwizard.cpp:466
+#: iwizard.cpp:549
 msgid ""
 "What is the module name that has to be loaded into the kernel to make the "
 "modem active (without the .o suffix)?"
@@ -277,23 +329,23 @@ msgstr ""
 "מהו שמו של המודול (module) אותו יש לטעון על מנת להפעיל את המודם (ללא הסיומת "
 "o.)?"
 
-#: iwizard.cpp:467
+#: iwizard.cpp:550
 msgid "CDCEther"
 msgstr "CDCEther"
 
-#: iwizard.cpp:468
+#: iwizard.cpp:551
 msgid "After the modem is activated, which network interface will it occupy?"
 msgstr "לאחר שהמודם הופעל, דרך איזה ממשק רשת ניתן יהיה לפנות אליו?"
 
-#: iwizard.cpp:469
+#: iwizard.cpp:552
 msgid "eth0"
 msgstr "eth0"
 
-#: iwizard.cpp:470
+#: iwizard.cpp:553
 msgid "Modem's Interface"
 msgstr "ממשק המודם"
 
-#: iwizard.cpp:471
+#: iwizard.cpp:554
 msgid ""
 "Type your username as supplied by your ISP (usually English-only letters, In "
 "lowercase, with numbers and '_' allowed)"
@@ -301,35 +353,35 @@ msgstr ""
 "יש להקליד את שם המשתמש כפי שסופק ע\"י ספק האינטרנט (בד\"כ אותיות אנגליות "
 "קטנות בלבד, בנוסף לסימן '_')"
 
-#: iwizard.cpp:472
+#: iwizard.cpp:555
 msgid "Server:"
 msgstr "שרת:"
 
-#: iwizard.cpp:473
+#: iwizard.cpp:556
 msgid "(Apply mainly to universities)"
 msgstr "(בעיקר לאוניברסיטאות)"
 
-#: iwizard.cpp:474
+#: iwizard.cpp:557
 msgid "Username:"
 msgstr "שם משתמש:"
 
-#: iwizard.cpp:476
+#: iwizard.cpp:559
 msgid "Password:"
 msgstr "סיסמא:"
 
-#: iwizard.cpp:477
+#: iwizard.cpp:560
 msgid "Remember Password (TODO)"
 msgstr "זכור סיסמא (מל\"ב)"
 
-#: iwizard.cpp:478
+#: iwizard.cpp:561
 msgid "Connect on Startup (TODO)"
 msgstr "התחבר בהפעל (מל\"ב)"
 
-#: iwizard.cpp:479
+#: iwizard.cpp:562
 msgid "Auto reconnect if connection dorpped (TODO)"
 msgstr "התחבר אוטומטית לאחר התנתקות (מל\"ב)"
 
-#: iwizard.cpp:480
+#: iwizard.cpp:563
 msgid ""
 "The connection's name is a unique name given to this connection. It will be "
 "used to identify this connection, in case you have more then one. Please "
@@ -339,19 +391,19 @@ msgstr ""
 "החיבור הזה לבין חיבורים אחרים, במקרה והוגדר יותר מחיבור אחד. יש לוודא כי שם "
 "החיבור הינו ייחודי."
 
-#: iwizard.cpp:481
+#: iwizard.cpp:564
 msgid "Connection Name:"
 msgstr "שם החיבור:"
 
-#: iwizard.cpp:482
+#: iwizard.cpp:565
 msgid "My Connection"
 msgstr "My Connection"
 
-#: iwizard.cpp:483
+#: iwizard.cpp:566
 msgid "Set as default conection"
 msgstr "קבע כחיבור ברירת מחדל"
 
-#: iwizard.cpp:484
+#: iwizard.cpp:567
 msgid "Username, password and connection name"
 msgstr "שם משתמש, סיסמא ושם החיבור"
 

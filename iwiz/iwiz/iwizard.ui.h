@@ -11,6 +11,7 @@
 #include <string>
 #include <fstream>
 
+#include <unistd.h>
 #include <stdlib.h>		// for system(...)
 
 #include <kmessagebox.h>
@@ -59,6 +60,7 @@ void iwizard::init()
 	}
     
 	isps.close();
+	unlink("/tmp/.isps");
     
 	// clear-n'-fill the combo-box
 	while (comboISPs->count()) comboISPs->removeItem(0);	// clear
@@ -105,13 +107,15 @@ void iwizard::init()
 	}
    
 	hws.close();
+	unlink("/tmp/.hws");
 	comboModems->setCurrentItem(0);
     
 	// fill ethernet's combo box
 	// count how many times the string 'eth' appears in /proc/net/dev
 	ret = system("cat /proc/net/dev | grep eth > /tmp/.eths");
 
-	while (comboEth->count()) comboEth->removeItem(0);		// clear    
+	while (comboEth->count()) comboEth->removeItem(0);		// clear
+	while (comboLANEth->count()) comboLANEth->removeItem(0);		// clear    
 
 	std::ifstream eths("/tmp/.eths");
 	if (!eths || ret != 0)
@@ -129,12 +133,16 @@ void iwizard::init()
 			{
 				szBuffer[6] = 0;
 				comboEth->insertItem(&szBuffer[2]);
+				comboLANEth->insertItem(&szBuffer[2]);
 			}
 		}
 	    
 		eths.close();
 		comboEth->setCurrentItem(0);
+		comboLANEth->setCurrentItem(0);
 	}
+
+	unlink("/tmp/.eths");
 
 	// Kinneret autodetect
 	std::ifstream kinneret("/opt/kinneret/bin/config.sh", std::ios::in);
@@ -181,6 +189,7 @@ void iwizard::onModemChanged(const QString &qs)
 	char szBuffer[0xFF];
 	type.getline(szBuffer, 0xFF);    
 	type.close();
+	unlink("/tmp/.hwtype");
 
 	if (strcmp(szBuffer, "Interface: Ethernet") == 0)
 	{
@@ -250,6 +259,7 @@ void iwizard::AssembleUsername(const QString &qs)
 	char szBuffer[0xFF];
 	suffix.getline(szBuffer, 0xFF);
 	suffix.close();
+	unlink("/tmp/.suffix");
 
 	QString qFinal = QString("(") + lineUsername->text() + QString(szBuffer) + QString(")");
 
@@ -271,4 +281,93 @@ void iwizard::AssembleUsername(const QString &qs)
 
 	// set final
 	textSuffix->setText(QString(str.c_str()));
+}
+
+
+void iwizard::onNewPage(const QString &qs)
+{
+	if (0) { std::cout << qs; }
+
+	// skip LAN
+	if (currentPage() == QWizard::page(3) && !radioLAN->isChecked() && nPrevPage == 2)
+	{
+		QWizard::showPage(QWizard::page(4));
+		return;
+	}
+
+	if (currentPage() == QWizard::page(3) && !radioLAN->isChecked() && nPrevPage == 4)
+	{
+		QWizard::showPage(QWizard::page(2));
+		return;
+	}
+
+	// skip broadband stuff
+	if (currentPage() == QWizard::page(4) && radioLAN->isChecked() && nPrevPage == 3)
+	{
+		QWizard::showPage(QWizard::page(5));
+		return;
+	}
+
+	if (currentPage() == QWizard::page(4) && radioLAN->isChecked() && nPrevPage == 5)
+	{
+		QWizard::showPage(QWizard::page(3));
+		return;
+	}
+
+	nPrevPage = indexOf(currentPage());
+}
+
+
+void iwizard::onLAN()
+{
+	// disable and enable stuff
+	comboModems->setEnabled(false);
+	lineUsername->setEnabled(false);
+	linePassword->setEnabled(false);
+	lineServer->setEnabled(false);
+}
+
+
+void iwizard::onADSL()
+{
+	comboModems->setEnabled(true);
+	lineUsername->setEnabled(true);
+	linePassword->setEnabled(true);
+	lineServer->setEnabled(true);
+}
+
+
+void iwizard::onCables()
+{
+	onADSL();
+}
+
+
+void iwizard::onISDN()
+{
+
+}
+
+
+void iwizard::onAnalog()
+{
+
+}
+
+
+void iwizard::onFromDHCP()
+{
+	lineIP->setEnabled(false);
+	lineNetmask->setEnabled(false);
+	lineBroadcast->setEnabled(false);
+	lineGateway->setEnabled(false);
+}
+
+
+void iwizard::onStaticAddress()
+{
+	lineIP->setEnabled(true);
+	lineNetmask->setEnabled(true);
+	lineBroadcast->setEnabled(true);
+	lineGateway->setEnabled(true);
 }
