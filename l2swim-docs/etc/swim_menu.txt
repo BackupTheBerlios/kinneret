@@ -40,10 +40,6 @@
 </text>
 <name=arabic>
 إضغط هنا للوثائق في أللغه ألعربيه.
-<null>
-יש לחצ/י כאן למסמכים באמהרית
-<null>
-Click here for русский documentation
 <name=english>
 Click here for English documentation
 <text>
