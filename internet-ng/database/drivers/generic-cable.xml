@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<modem>
-    <name>Generic Cable Modem</name>
-    <hebname></hebname>
+<driver>
+    <name lang="en">Generic Cable Modem</name>
     <type>cable</type>
-    <interfaces>
-        <interface>usb</interface>
-        <interface>ethernet</interface>
-    </interfaces>
-    <modules>
-        <module kernel="2.4">CDCEther</module>
-        <module kernel="2.6">usbnet</module>
-    </modules>
-    <!--
-    <supports>
-        <name>Ambit</name>
-        <name>Motorola SB4100/4200 SurfBoard Cable Modem</name>
-	    <name>Motorola SB5100 SurfBoard Cable Modem</name>
-	    <name>Joohong SuperLink 2800 Cable Modem</name>
-	    <name>Terayon TJ715x</name>
-    </supports>
-    -->
-</modem>
+    <interface type="usb"/>
+    <interface type="ethernet"/>
+    <module kernel="2.4">CDCEther</module>
+    <module kernel="2.6">usbnet</module>
+    <supported>
+        <modem>Ambit</modem>
+        <modem>Motorola SB4100/4200 SurfBoard Cable Modem</modem>
+	    <modem>Motorola SB5100 SurfBoard Cable Modem</modem>
+	    <modem>Joohong SuperLink 2800 Cable Modem</modem>
+	    <modem>Terayon TJ715x</modem>
+    </supported>
+</driver>

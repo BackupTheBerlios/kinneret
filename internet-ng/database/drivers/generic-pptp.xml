@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<modem>
-    <name>PPtP ADSL Modem</name>
+<driver>
+    <name lang="en">PPtP ADSL Modem</name>
     <type>adsl</type>
-    <interfaces>
-        <interface>ethernet</interface>
-    </interfaces>
-    <vpn>
-        <dialer>pptp</dialer>
+    <interface type="ethernet"/>
+    <vpn protocol="pptp">
         <address>10.0.0.138</address>
-        <remotename>"10.0.0.138 RELAY_PPP1"</remotename>
+        <remotename>10.0.0.138 RELAY_PPP1</remotename>
+        <ethernet>
+            <address>10.200.1.1</address>
+            <netmask>255.0.0.0</netmask>
+            <broadcast>255.255.255.255</broadcast>
+        </ethernet>
     </vpn>
-    <ethernet>
-        <address>10.200.1.1</address>
-        <mask>255.0.0.0</mask>
-        <broadcast>255.255.255.255</broadcast>
-    </ethernet>
-    <supports>
-        <name>Alcatel SpeedTouch Home</name>
-    </supports>
-</modem>
+    <supported>
+        <modem>Alcatel SpeedTouch Home</modem>
+    </supported>
+</driver>

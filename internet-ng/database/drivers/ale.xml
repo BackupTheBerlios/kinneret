@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<modem>
-    <name>ALE</name>
+<driver>
+    <name lang="en">ALE</name>
     <type>adsl</type>
-    <interfaces>
-        <interface>usb</interface>
-    </interfaces>
-    <supports>
-        <name>ALE-070</name>
-        <name>ALE-130</name>
-    </supports>
+    <interface type="usb"/>
+    <supported>
+        <modem>ALE-070</modem>
+        <modem>ALE-130</modem>
+    </supported>
     <unsupported/>
-</modem>
+</driver>
