@@ -1,22 +1,104 @@
-A:link				{text-decoration: none;}
-A:visited				{text-decoration: none;}
-A:hover				{color: #0066CC;}  
+body 
+{ 
+	FONT-FAMILY: Sans-Serif; 
+	FONT-SIZE: 13px; 
+	margin: 7%;
+}
 
-A.orange_white:link		{color: #FF3300;background-color: transparent;text-decoration: none;}
-A.orange_white:visited	{color: #FF3300;background-color: transparent;text-decoration: none;}
-A.orange_white:hover	{color: #3300CC;background-color: transparent;text-decoration: none;}
+A:link	
+{
+	text-decoration: none;
+}
 
-A.white_blue:link		{color: white;background-color: transparent;text-decoration: none;}
-A.white_blue:visited		{color: white;background-color: transparent;text-decoration: none;}
-A.white_blue:hover		{color: #FF3300;background-color: transparent;text-decoration: none;}
+A:visited
+{
+	text-decoration: none;
+}
 
-FONT				{FONT-FAMILY: Sans-Serif; FONT-SIZE: 13px}
-TD					{FONT-FAMILY: Sans-Serif; FONT-SIZE: 13px}
-BODY				{FONT-FAMILY: Sans-Serif; FONT-SIZE: 13px; margin:0px;}
-.rtl				{background-image: url(/opt/kinneret/images/spiral_r.gif);background-repeat: repeat-y;background-position: right;}
-.ltr				{background-image: url(/opt/kinneret/images/spiral_l.gif);background-repeat: repeat-y;background-position: left;}
-P					{FONT-FAMILY: Sans-Serif; FONT-SIZE: 13px}
-DIV					{FONT-FAMILY: Sans-Serif; FONT-SIZE: 13px}
+A:hover
+{
+	color: #0066CC;
+}  
+
+A.orange_white:link
+{
+	color: #FF3300;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+A.orange_white:visited
+{
+	color: #FF3300;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+A.orange_white:hover	
+{
+	color: #3300CC;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+A.white_blue:link	
+{
+	color: white;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+A.white_blue:visited
+{
+	color: white;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+A.white_blue:hover
+{
+	color: #FF3300;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+FONT
+{
+	FONT-FAMILY: Sans-Serif; 
+	FONT-SIZE: 13px
+}
+
+TD
+{
+	FONT-FAMILY: Sans-Serif; 
+	FONT-SIZE: 13px
+}
+
+.rtl
+{
+	background-image: url(/opt/kinneret/images/spiral_r.gif);
+	background-repeat: repeat-y;
+	background-position: right;
+}
+
+.ltr
+{
+	background-image: url(/opt/kinneret/images/spiral_l.gif);
+	background-repeat: repeat-y;
+	background-position: left;
+}
+
+P
+{
+	FONT-FAMILY: Sans-Serif; 
+	FONT-SIZE: 13px
+}
+
+DIV
+{
+	FONT-FAMILY: Sans-Serif; 
+	FONT-SIZE: 13px
+}
 
 #rtllist
 {

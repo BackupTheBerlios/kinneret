@@ -51,23 +51,9 @@
 			</xsl:choose>
 		</xsl:variable>
 
-		<!-- define a variable with the document alignment -->
-		<xsl:variable name="_align">
-			<xsl:choose>
-				<xsl:when test="@lang = 'hebrew'">left</xsl:when>
-				<xsl:when test="@lang = 'arabic'">left</xsl:when>
-				<xsl:when test="@lang = 'russian'">right</xsl:when>
-				<xsl:when test="@lang = 'english'">right</xsl:when>
-				<xsl:otherwise>right</xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
-
 		<!-- main document body and footer -->
 		<!-- apply the direction to the document body. The class is used in the xsl -->
 		<body dir="{$_dir}" class="{$_dir}">
-
-			<!-- ensure there is a border around text so that it does not stick to the browser frame -->
-			<table width="90%" align="{$_align}"><tr><td>
 
 			<!-- is there a 'title' segment? if so apply 'title' template -->
 			<xsl:if test="title">
@@ -151,9 +137,6 @@ Important! GNU/Linux Kinneret is provided "as is" without warranty of any kind, 
 					<xsl:otherwise>ltr</xsl:otherwise>
 				</xsl:choose>
 				<IMG SRC="../image/exclamation.png" ALT="!" />
-			</td></tr></table>
-
-			<!-- ensure there is a border around text so that it does not stick to the browser frame -->
 			</td></tr></table>
 
 		</body>

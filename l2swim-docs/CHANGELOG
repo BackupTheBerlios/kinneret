@@ -17,6 +17,7 @@ This file includes changes since the last upload. It is intended to provide a re
 * icons in xsl now use relative path 5/4/04
 * Fixed Makefile to create /opt/kinneret/doc/pdf directory 5/4/04
 * Added pdf of Linux admin guide
+* Fixed the Margins so the documents are now at the center of the page 8/5/04 (Nirro)
 
 -------------- v 0.7.2 --------------
 * Updated first_time.xml 15/1/04
