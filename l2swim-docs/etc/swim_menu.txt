@@ -91,8 +91,6 @@ Click here for English documentation
 <img src="/opt/kinneret/images/star.png">מדריך עורכי מסמכים 
 <null>
 <font color=grey>____________________ מדריכים ליישומים __________________</font>
-  <play=he/man_firebird.html>
-מדריך גלישה באינטרנט עם Mozilla Firebird
 <null>
 מדריך השמעת מוזיקה עם XMMS
 <null>
