@@ -75,7 +75,7 @@ begin
   ChosenDrive:='';
   {get KNOPPIX SIZE}
   f:=CreateFile('..\KNOPPIX\knoppix', GENERIC_READ, FILE_SHARE_READ, nil, OPEN_EXISTING, 0, 0);
-  knoppixSize:=GetFileSize(f,nil)/1048576;
+  knoppixSize:=GetFileSize(f,nil)/1048576+2;
   closeHandle(f);
   GetAllFixedDrives(DrivesArray);
   for i:=low(DrivesArray) to high(DrivesArray) do

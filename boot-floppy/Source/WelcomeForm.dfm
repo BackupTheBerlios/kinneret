@@ -132,7 +132,7 @@ object WForm: TWForm
   end
   object Label2: TTntLabel
     Left = 192
-    Top = 80
+    Top = 72
     Width = 273
     Height = 137
     AutoSize = False

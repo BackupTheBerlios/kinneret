@@ -15,8 +15,8 @@ type
     procedure ButtonCloseClick(Sender: TObject);
 
   private
-function FileOperation (sources, dests: TStrings; op, flags: Integer) : bool;
-function filesExist(files : TStrings) : bool;
+    function FileOperation (sources, dests: TStrings; op, flags: Integer) : bool;
+    function filesExist(files : TStrings) : bool;
     { Private declarations }
   public
     createMenu : bool;
@@ -43,11 +43,6 @@ var
 begin
   error:=false;
   cdrom:='..\';
-  if (CreateMenu or CreateShortcut) and diskFree(2)<2097152 {2MB} then
-  begin
-    error:=true;
-    labelWait.Caption:=pwidechar(_('Drive C: is full, Unable to copy files.'));
-  end;
   source:=TStringList.Create;
   destination:=TStringList.Create;
   // ADDING FILES TO COPY
@@ -74,9 +69,18 @@ begin
     source.Add(cdrom+'\boot\VMLINUZ');
     destination.add('c:\boot\VMLINUZ');
   end;
+  //not enough space in C: (rare)
+  if (CreateMenu or CreateShortcut) and (diskFree(3)<2097152) {2MB} then
+  begin
+    error:=true;
+    labelWait.Caption:=pwidechar(_('Drive C: is full, Unable to copy files.'+#10#13+
+    'Free up some space, or try again without Boot Options.'));
+    messagebeep(MB_ICONERROR);
+  end;
+  //Copying all files
   if not error and (not filesExist(source) or
   (FileOperation (source, destination , FO_COPY, FOF_ALLOWUNDO or FOF_NOCONFIRMATION))
-  or not filesExist(destination)))
+  or not filesExist(destination))
   then begin
     error:=true;
     LabelWait.Caption:=pWideChar(_('Error while copying files.'+#10#13+
@@ -104,6 +108,7 @@ begin
       except
         LabelWait.Caption:=pWideChar(_('Error, Can''t modify C:\boot.ini'+#10#13+
         'Unable to install Boot-Menu.'));
+        messagebeep(MB_ICONERROR);
         error:=true;
       end;
       BootIni.Free;
