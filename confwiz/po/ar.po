@@ -1,4 +1,5 @@
-# translation of ar.po to 
+# translation of ar.po to Hebrew
+# translation of ar.po to
 # translation of ar.po to
 # translation of confwiz_ar.po to
 # translation of confwiz_ar.po to
@@ -12,12 +13,13 @@
 # translation of confwiz_ar.po to
 # nizar <nizara@actcom.net.il>, 2003.
 # nizar abed <nizar@srcget.com>, 2004.
+# dovix <dovix2003@yahoo.com>, 2004.
 msgid ""
 msgstr ""
 "Project-Id-Version: ar\n"
-"PO-Revision-Date: 2004-03-01 02:15+0200\n"
-"Last-Translator: nizar abed <nizar@srcget.com>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2004-03-01 22:19+0200\n"
+"Last-Translator: dovix <dovix2003@yahoo.com>\n"
+"Language-Team: Hebrew <he@li.org>\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.2\n"
@@ -520,14 +522,13 @@ msgid "Side Menu"
 msgstr "ﻻئحه جانبيه"
 
 #: configwizard.cpp:1308
-#, fuzzy
 msgid ""
 "In this step you will have to choose the partition that will be used to "
 "store your documents and configuration files.<BR/><I>GNU/Linux Kinneret</I> "
 "scanned you hard-drive(s), and found the following usable partitions:"
 msgstr ""
 "في هذه ألمرحله عليك إختيار ألتقسيم ألذي سوف يستعمل لتخزين ألمستندات وملفات "
-"ألتعديلات. <BR/>\n"
+"ألتعديلات. <BR/>"
 "<l>جنو/لينوكس كينيرت </l> أجرى فحص أﻷقراص ألصلبه ووجد أن ألتقاسيم أﻵتيه "
 "ملائمه "
 
