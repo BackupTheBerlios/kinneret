@@ -1,6 +1,6 @@
 #!/usr/bin/kaptain
 #
-# kiwiz version 0.31 using kaptain grammer (C) 2004 by Dovix, dovix2003@linux-kinneret.org
+# kiwiz version 0.31.1 using kaptain grammer (C) 2004 by Dovix, dovix2003@linux-kinneret.org
 # released under the terms of the GNU General Public License, version 2
 # http://www.fsf.org/copyleft/gpl.txt
 #
@@ -66,7 +66,7 @@ advanced_log_pane -> advanced_log_icon advanced_log_button;
 advanced_log_icon -> @icon("/home/dovix/iwiz/128x128/actions/filefind.png");
 advanced_log_button -> @action(advanced_log_play)="Activity log";
 
-advanced_log_play -> "kaptain kwiz-log.kaptn";
+advanced_log_play -> "kaptain kiwiz-log.kaptn";
 
 advanced_right_pane :framed -> advanced_info_pane advanced_bottom_pane;
 
