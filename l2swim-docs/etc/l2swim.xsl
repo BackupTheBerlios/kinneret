@@ -53,11 +53,11 @@
 <!-- use only once, at the top of the document -->
 <xsl:template match="title">
   <CENTER>
-  <IMG SRC="/opt/kinneret/images/blue_bar.gif" />
+  <IMG SRC="/opt/kinneret/images/blue_bar.png" />
   <FONT COLOR="BLUE">
   <H1><xsl:apply-templates/></H1>
   </FONT>
-  <IMG SRC="/opt/kinneret/images/blue_bar.gif" />
+  <IMG SRC="/opt/kinneret/images/blue_bar.png" />
   </CENTER>
   <BR/>
 </xsl:template>
