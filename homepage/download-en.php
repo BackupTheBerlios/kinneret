@@ -21,7 +21,7 @@
               <tr>
                 <td width="10"><img src="ltr/leftend.gif" width="10" height="20" alt=""></td>
                 <td STYLE="background-color:#1F2AB9" width="85">
-                <div align="center"><b><font color="#0000C0"">English</font></b></div>
+                <div align="center"><b><font color="#0000C0">English</font></b></div>
                 </td>
                 <td width="30"><img src="ltr/middleend.gif" width="30" height="20" alt=""></td>
                 <td STYLE="background-color:#1F2AB9" width="85">
@@ -115,8 +115,8 @@ document.write(""+dayname+", "+monthname+" "+date+", "+yearname);
     <td width="10%" valign="top">
       <table width="150" border="0" cellspacing="0" cellpadding="0">
         <tr> 
-          <td STYLE="background-color:#7494F0" width="3"><font color="#FFFFFF">&nbsp;</font></td>
-          <td STYLE="background-color:#7494F0"><font color="#FFFFFF"><a href="download-en.php">Download</a></font></td>
+          <td STYLE="background-color:#7494F0" width="3"><font color="#333333">&nbsp;</font></td>
+          <td STYLE="background-color:#7494F0"><font color="#FFFFFF">Download</font></td>
           <td><img src="ltr/navbartop.gif" width="40" height="20" alt=""></td>
         </tr>
         <tr> 
@@ -146,73 +146,23 @@ document.write(""+dayname+", "+monthname+" "+date+", "+yearname);
       <table width="500" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td> 
-            <p><b>About the GNU/Linux Kinneret project</b></p> 
-            <p>The GNU/Linux Kinneret project (Kinneret for short), is a designated project whose goal is to address a challange faced by today's Israeli pupils. During the term of his studies, the Israeli pupil is required to familiarize with a verity of different software tools such as a word processor, a spreadsheet and several designated software according to his course of studies, in order to benefit the most out of the learning process.</p>
-            <p>Since not all schools can supply wide access to computers for their pupils, the pupils need those tools at home. The challange surfaces when considering the high price of these tools. A pupil who is interested in serving printed work or exercise the material learnt in class with the computer, needs to buy these tools, or otherwise get a pirated (illegal) copies of them.</p>
-            <p>On one end the pupil needs, and sometimes is required, to use software tools to complete his tasks, but on the other end he's not presented with cheap, convenient, and worthy alternatives.</p>
-            <p>In order to answer this exact problem, the Kinneret project was born. The project attends three main goals:
-<ul>
-<li>
-Presenting free, quality proven alternatives to the Windows™ operating system and to the commercial software tools that pupils use during their studies.
-</li>
-<li>
-Promoting the free software and open source movements in Israel.
-</li>
-<li>
-Giving equal opportunity to pupils from all parts of the population in the technological age.
-</li>
-</ul>
-</font></p>
-            <p>The main deliverable of the project is a software pack which includes a GNU/Linux based operating system, a collection of office tools such as a word processor, a spreadsheet and a presentation tool, and also a verity of designated software tools in the various fields of studies. All the tools will be running on a designed and comfortable desktop, with maximal Hebrew support. Many wizards will be provided to simplify Internet connection, printer configuration, and access to windows files that will make the initial experience of a Windows user to a pleasent, simple and easy one.</p>
-            <p>It is important to note that the Kinneret software pack will cater to all the Israeli pupils, regardless of origin and spoken language. In the first stage we will include language packs for Arabic and Russian, and later on we will aim to translate the documentation and wizards to those languages as well.</p>
-            <p><b>The pedagogic aspect</b></p>
-            <p>The cost of commercial software tools used today in schools is very high. Some schools have difficulties purchasing licenses for the various tools, and fail to provide an adequate work environment for their pupils. The variety of learning programs in today's education system demand the use of such tools too often. This creates a challange for the pupils, but is also a financial burden for some schools.</p>
-            <p>The pedagogic forum was formed under the Kinneret project in order to satisfy those needs. The forum deals with forming alternative learning programs, which are not based on particular software to be used during the learning process. The goal of this is to give schools the option to choose which software will be used for the learning process in any subject.</p>
-            <p>The goals of the pedagogic forum are:
-
-<ul>
-<li>
-Finding free, adequate alternatives to the commercial software tools being used today in schools.
-</li>
-<li>
-Forming learning programs which are not based on dependency on the software being used, while encouraging the use of the free alternatives found. 
-</li>
-<li>
-Developing lesson skeletons based on usage of the alternatives found.
-</li>
-<li>
-In the future, developing learning aids to answer the lesson skeletons which will be written within the forum. 
-</li>
-</ul>
-
-The learning programs that will be formed in the forum will be passed for approval to the ministry of education.
-</font></p>
-            <p>The entire work of the pedagogic forum, as for the work of the whole project, is being done out of belief in freedom and sharing. It is important to understand the necessity in advancing the free software and open source movements.</p>
-            <p>This spirit will accompany the different products of the forum's work, and will be embedded into the learning programs and lesson skeletons formed by it.</p>
-            <p><b>How one  can help</b></p>
-            <p>The Kinneret project is being done by people from the entire range of Israeli population: pupils, teachers, software enthusiasts and users, those who know their way around computers and those who don't. Anyone who is interested in contributing to the project is invited to do so. Anybody can help in a verity of the projects' areas, starting from suggesting ideas, translating, designing and documenting, and finally developing software tools and learning programs in the different forums. We invite anyone who wants to contribute, to join the project.</p>
-            <p>Contacting us:</p>
-<ul>
-<li>
-Gai Shaked, Kinneret's spokesman: costello /at/ linux-kinneret /dot/ org
-</li>
-<li>
-Liad Weinberger, head of the pedagogic forum: wliad /at/ linux-kinneret /dot/ org
-</li>
-<li>
-General information:  contact /at/ linux-kinneret /dot/ org
-</li>
-</ul>
-<p>
-Please replace the /at/ and /dot/ tags with the standard email address symbols.</p>
-
             <p>
+GNU/Linux Kinneret is free software. We invite you to freely download a ready-to-burn CD image from the "Hamakor - Israeli organization for free and open source software" servers. We recommend that you use a fast Internet connection (cable or xDSL). The download will take about two hours using a 750MBit connection.
+<p>
+You can check the downloaded image in order to verify the integrity of the download. For that purpose, the file signature should be computed using a special utility. This signature should be compared with the signature in the file ending with md5sum. A utility to calculate md5sum for Windows can be downloaded <a href="http://www.etree.org/md5com.html" class="orange_white" target="new">from this site</a>. Instructions are available from that site as well.
+<p>
+After you download the iso file it should be burned to a blank CDR or CDRW. You should burn it as an image file and not as a regular file.
+	    <p>
+<?php
+$tmp = file("06counter.txt");
+$counter = $tmp[0];
+$tmp = file("06MD5counter.txt");
+$counterMD5 = $tmp[0];
+?>
+	    <a href="download06-en.php" class="orange_white">Click here to download</a> (Kinneret 0.6 - "Yarden")- <b><?=$counter ?></b> downloads <br>
+	    <a href="download06MD5-en.php" class="orange_white">View the signature file</a> - <b><?=$counterMD5 ?></b> downloads
 
-Those interested in signing up as active members of the project, are invited to do so, free of charge and with no limitations. The discussion forums are available only to Hebrew speakers. If you want to help with the project but do not speak Hebrew, please write to one of the above emails to discuss other options.
-</p>
-            <p>Best regards,<BR>The Kinneret project team.</p>
-            <p><a href="index-en.html" class="orange_white">Return to homepage</a></p>
-           <table width="400" border="0" cellspacing="0" cellpadding="0">
+	    <table width="400" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td>
                   <div align="right"><img src="ltr/hbtopleft.gif" width="20" height="15" alt=""></div>
