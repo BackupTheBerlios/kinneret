@@ -6,7 +6,7 @@ object WForm: TWForm
   BorderStyle = bsDialog
   BorderWidth = 30
   Caption = 'Welcome to GNU/Linux "Kinneret"'
-  ClientHeight = 321
+  ClientHeight = 337
   ClientWidth = 489
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -115,7 +115,7 @@ object WForm: TWForm
   PixelsPerInch = 96
   TextHeight = 13
   object label1: TTntLabel
-    Left = 120
+    Left = 112
     Top = 0
     Width = 369
     Height = 42
@@ -132,9 +132,9 @@ object WForm: TWForm
   end
   object Label2: TTntLabel
     Left = 192
-    Top = 72
-    Width = 273
-    Height = 137
+    Top = 64
+    Width = 289
+    Height = 177
     AutoSize = False
     Font.Charset = HEBREW_CHARSET
     Font.Color = clWindowText
@@ -504,7 +504,7 @@ object WForm: TWForm
   end
   object WriteButton: TTntButton
     Left = 352
-    Top = 240
+    Top = 256
     Width = 137
     Height = 33
     Caption = 'Make a bootable floppy'
@@ -513,7 +513,7 @@ object WForm: TWForm
   end
   object Button3: TTntButton
     Left = 8
-    Top = 288
+    Top = 304
     Width = 89
     Height = 33
     Caption = 'Exit'
@@ -531,7 +531,7 @@ object WForm: TWForm
   end
   object Button2: TTntButton
     Left = 112
-    Top = 288
+    Top = 304
     Width = 105
     Height = 33
     Caption = 'Reboot'
@@ -561,7 +561,7 @@ object WForm: TWForm
   end
   object ButtonAdvanced: TTntButton
     Left = 232
-    Top = 288
+    Top = 304
     Width = 105
     Height = 33
     Hint = 'Advanced options for editing kernel parameters'
@@ -573,7 +573,7 @@ object WForm: TWForm
   end
   object TntButton1: TTntButton
     Left = 352
-    Top = 288
+    Top = 304
     Width = 137
     Height = 33
     Caption = 'Partial installation'

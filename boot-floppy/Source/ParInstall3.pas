@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, TntStdCtrls, TNTForms, gnuGetText, ShellAPI, fWarning,checkos, INIfiles, strUtils;
+  Dialogs, StdCtrls, TntStdCtrls, TNTForms, gnuGetText, ShellAPI, fWarning,checkos,
+  INIfiles, strUtils;
 
 type
   textpos = (Start, Anywhere);
@@ -38,6 +39,7 @@ var
 
 implementation
 
+uses welcomeForm;
 {$R *.dfm}
 
 procedure TParInst3.FormActivate(Sender: TObject);
@@ -54,10 +56,10 @@ begin
   source:=TStringList.Create;
   destination:=TStringList.Create;
   // ADDING FILES TO COPY
-  source.Add(cdrom+'\KNOPPIX\knoppix');
-  destination.add(ChosenDrive+':\KNOPPIX\knoppix');
-  source.Add(cdrom+'\KNOPPIX\knoppix.sh');
-  destination.add(ChosenDrive+':\KNOPPIX\knoppix.sh');
+//  source.Add(cdrom+'\KNOPPIX\knoppix');
+//  destination.add(ChosenDrive+':\KNOPPIX\knoppix');
+//  source.Add(cdrom+'\KNOPPIX\knoppix.sh');
+//  destination.add(ChosenDrive+':\KNOPPIX\knoppix.sh');
   if not osis95 and createmenu then
   begin
     source.Add(cdrom+'\boot\menu.lst');
@@ -157,7 +159,11 @@ begin
   if not error and osis95 and createMenu then error:=install9xMenu
   else if not error and osis95 and not createMenu then removeMenu;
 
-  if not error then LabelWait.Caption:=pWideChar(_('Installation finished successfully.'))
+  if not error then
+  begin
+    LabelWait.Caption:=pWideChar(_('Installation finished successfully.'));
+    wForm.Condition:=parInst_made;
+  end
   else LabelWait.Caption:=pWideChar(_('Installation failed.'));
   ButtonClose.Enabled:=true;
 end;

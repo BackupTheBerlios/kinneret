@@ -18,6 +18,7 @@ uses
 function MyExitWindows(RebootParam: Longword): Boolean;
 
 type
+  Cond_type = (start,floppy_made,parinst_made);
   TWForm = class(TTntForm)
     WriteButton: TTntButton;
     Button3: TTntButton;
@@ -43,7 +44,7 @@ type
   private
     Retranslator:TExecutable;
   public
-    WriteSucceed : Boolean;
+    Condition : Cond_type;
 
     { Public declarations }
   end;
@@ -65,21 +66,15 @@ end;
 
 procedure TWForm.WriteButtonClick(Sender: TObject);
 begin
-  WriteButton.Enabled:=false;
-  Button3.Enabled:=false;
   MainForm.ShowModal;
-  if Writesucceed then Label2.Caption:=PWideChar(_('Floppy has been successfully written.'+#10#13+
-  #10#13+'To restart Kinneret:'+#10#13+#10#13+
-  'Make sure the Floppy and the CD are still in place,'+#10#13+
-  'Close any running programs'+#10#13+
-  'And Reboot the computer.'));
+  refreshlabel2;
 
 end;
 
 procedure TWForm.FormCreate(Sender: TObject);
 begin
   if not getOS then exit;
-  WriteSucceed:=false;
+  Condition:=start;
   RadioButton1.Caption:='עברית';
   Retranslator:=gnugettext.DefaultInstance.TP_CreateRetranslator;
   if (osis95=false) then UseLanguage('he')
@@ -175,18 +170,31 @@ end;
 
 procedure TWForm.refreshlabel2();
 begin
-    if Writesucceed then Label2.Caption:=PWideChar(_('Floppy has been successfully written.'+#10#13+
+  if (Condition=floppy_made) then Label2.Caption:=PWideChar(_('Floppy has been successfully written.'+#10#13+
     #10#13+'To restart Kinneret:'+#10#13+#10#13+
    'Make sure the Floppy and the CD are still in place,'+#10#13+
    'Close any running programs'+#10#13+
    'And Reboot the computer.'))
-  else label2.Caption:=PWideChar(_('Welcome to GNU/Linux "Kinneret"'+
+  else if (Condition=start) then label2.Caption:=PWideChar(_('Welcome to GNU/Linux "Kinneret"'+
    #10#13+'This program is not an installation Program.'+
    #10#13+'Kinneret doesn''t need to be installed.'+
    #10#13+'To start Kinneret, You should boot the computer'+
    #10#13+'from the Kinneret CD.'+#10#13#10#13+
    'If You can''t or don''t know how to boot from CD,'+#10#13+
-   'You can make a bootable floppy here.'));
+   'You can make a bootable floppy here.'+#10#13#10#13+
+   'NEW: You can now make a Partial Installation,'+#10#13+
+   'if you want to work with Kinneret from the HD.'))
+  else if (Condition=parInst_made) then Label2.Caption:=pWideChar(_('Kinneret was successfully installed.'+#10#13#10#13+
+   'In order to start Kinneret:'+#10#13+
+   'If you installed a Desktop Shortcut, just launch it, and'+#10#13+
+   'answer ''Ok'' on the message.'+#10#13#10#13+
+   'If you installed a Boot-Menu, you should reboot, and'+#10#13+
+   'choose ''GNU/Linux Kinneret'' in the Menu that appears'+#10#13+
+   'on boot time.'+#10#13#10#13+
+   'If you haven''t installed any of these boot options,'+#10#13+
+   'just start Kinneret regularly, with the Kinneret CD,'+#10#13+
+   'or with a Boot-Floppy.'));
+
 end;
 
 procedure TWForm.ButtonAdvancedClick(Sender: TObject);
@@ -231,6 +239,7 @@ end;
 procedure TWForm.TntButton1Click(Sender: TObject);
 begin
   parinst.ShowModal();
+  refreshlabel2;
 end;
 
 end.

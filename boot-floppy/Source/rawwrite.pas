@@ -12,7 +12,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ComCtrls, ExtCtrls, BlockDev, WelcomeForm, fWarning, checkOS,
+  StdCtrls, ComCtrls, ExtCtrls, BlockDev, fWarning, checkOS, welcomeForm,
   TntStdCtrls, TntForms;
 
 type
@@ -68,7 +68,7 @@ procedure TMainForm.FormCreate(Sender: TObject);
 begin
     TranslateProperties (self);      //GNUGETTEXT
    // Prevent error messages being displayed by NT
-   wForm.WriteSucceed:=False;
+//   wForm.Condition:=False;
    SetErrorMode(SEM_FAILCRITICALERRORS);
 
    CmdImage := '..\boot\boot.img';
@@ -212,7 +212,7 @@ begin
 
             if HadError=false then
             begin
-               wForm.WriteSucceed:=true;
+               wForm.Condition:=floppy_made;
                messagebeep(MB_OK);
                Labelup.Caption:='';
                LabelDown.Caption:=pWideChar(_('The disk was succesfully written.'));

@@ -43,39 +43,37 @@ object parinst2: Tparinst2
     object LabelBoot: TTntLabel
       Left = 24
       Top = 32
-      Width = 305
+      Width = 313
       Height = 65
       AutoSize = False
     end
     object LBDesktop: TTntLabel
       Left = 48
       Top = 122
-      Width = 257
+      Width = 265
       Height = 17
       AutoSize = False
-      Caption = 'LBDesktop'
       Color = clBtnFace
       ParentColor = False
     end
     object LBMenu: TTntLabel
       Left = 48
       Top = 146
-      Width = 257
+      Width = 265
       Height = 17
       AutoSize = False
-      Caption = 'LBMenu'
     end
     object CBDesktop: TTntCheckBox
       Left = 24
       Top = 120
-      Width = 305
+      Width = 313
       Height = 17
       TabOrder = 0
     end
     object CBMenu: TTntCheckBox
       Left = 24
       Top = 144
-      Width = 305
+      Width = 313
       Height = 17
       TabOrder = 1
     end
@@ -96,7 +94,7 @@ object parinst2: Tparinst2
     object LabelNote: TTntLabel
       Left = 24
       Top = 144
-      Width = 305
+      Width = 313
       Height = 33
       AutoSize = False
     end
