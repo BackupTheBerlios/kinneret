@@ -1,9 +1,17 @@
-From 0.1 to 0.3b (13 May 2003):
+From 0.1 to 0.3b
+-------------------------------
+13 May 2003:
 * Changed kinneret's base path to /opt/kinneret/
 * All vfat devices will be mounted RW and all NTFS partition will be mounted RO
 * NTFS and vfat partitions will be mounted to support Hebrew (codepage=cp1255,iocharset=cp1255,utf8)
 
-From 0.1b to 0.1 (29 Apr 2003):
+28 May 2003:
+* Fixed path problems (usr ==> opt)
+* Displays error message if not VFAT partitions were found
+
+From 0.1b to 0.1
+-------------------------------
+29 Apr 2003:
 * Fixed the freezing tune2fs by removing it from the script.
 * The swim wizard will be launched even if the wizard was aborted
 * The wizard now marks the partition of with the largest free space automaticlly

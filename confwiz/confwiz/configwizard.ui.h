@@ -173,6 +173,7 @@ void configwizard::onSelect()
 			unlink("/tmp/.df");
 		}
 
+//		#warning CHANGE TO ZERO!!
 		if (nVFATs == 0)
 		{
 			// System does not have any vfat partitions,

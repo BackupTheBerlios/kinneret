@@ -101,11 +101,11 @@ int main(int argc, char *argv[])
 //	#warning ADD NOT!!
 	if (!QFile::exists(QString("/tmp/foundhome")))
 	{
-		system("sudo /usr/kinneret/bin/ttf.sh");	// load fonts
+		system("sudo /opt/kinneret/bin/ttf.sh");	// load fonts
 		return 0;
 	}
 	
-	unlink("/opt/foundhome");
+	unlink("/tmp/foundhome");
 
 	// Continue...
 
