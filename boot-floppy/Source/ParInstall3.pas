@@ -9,8 +9,8 @@ uses
 type
   TParInst3 = class(TForm)
     LabelWait: TTntLabel;
-    procedure FormCreate(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     function FileOperation (const source, dest: string; op, flags: Integer) : bool;
     { Private declarations }
@@ -25,12 +25,6 @@ var
 implementation
 
 {$R *.dfm}
-
-procedure TParInst3.FormCreate(Sender: TObject);
-begin
-  LabelWait.Caption:=pWideChar(_(
-  'Please wait while installing Kinneret, this may take several menutes...'));
-end;
 
 function TparInst3.FileOperation (const source, dest: string;
                          op, flags: Integer) : bool;
@@ -65,6 +59,12 @@ begin
   (FileOperation (source, destination , FO_COPY, FOF_ALLOWUNDO or FOF_NOCONFIRMATION	))
     then showWarning(ERR,pWideChar(_('Error while copying files.'+#10#13+
     'Unable to continue.')));
+end;
+
+procedure TParInst3.FormShow(Sender: TObject);
+begin
+  LabelWait.Caption:=pWideChar(_(
+  'Please wait while installing Kinneret, this may take several menutes...'));
 end;
 
 end.

@@ -14,7 +14,7 @@ object ParInst3: TParInst3
   OldCreateOrder = False
   Position = poDesktopCenter
   OnActivate = FormActivate
-  OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object LabelWait: TTntLabel
