@@ -3,6 +3,7 @@
 {                                                                             }
 {    Tnt Delphi Unicode Controls                                              }
 {      http://home.ccci.org/wolbrink/tnt/delphi_unicode_controls.htm          }
+{        Version: 2.1.2                                                       }
 {                                                                             }
 {    Copyright (c) 2002, 2003 Troy Wolbrink (troy.wolbrink@ccci.org)          }
 {                                                                             }
@@ -10,12 +11,12 @@
 
 unit TntGraphics;
 
-{$INCLUDE Compilers.inc}
+{$INCLUDE TntCompilers.inc}
 
 interface
 
 uses
-  Graphics, Windows;
+  Classes, Graphics, Windows;
 
 {TNT-WARN TextRect}
 procedure WideCanvasTextRect(Canvas: TCanvas; Rect: TRect; X, Y: Integer; const Text: WideString);
@@ -29,7 +30,18 @@ function WideCanvasTextWidth(Canvas: TCanvas; const Text: WideString): Integer;
 {TNT-WARN TextHeight}
 function WideCanvasTextHeight(Canvas: TCanvas; const Text: WideString): Integer;
 
+type
+{TNT-WARN TPicture}
+  TTntPicture = class(TPicture{TNT-ALLOW TPicture})
+  public
+    procedure LoadFromFile(const Filename: WideString);
+    procedure SaveToFile(const Filename: WideString);
+  end;
+
 implementation
+
+uses
+  SysUtils, TntClasses, TntSysUtils;
 
 type
   TAccessCanvas = class(TCanvas);
@@ -88,6 +100,36 @@ end;
 function WideCanvasTextHeight(Canvas: TCanvas; const Text: WideString): Integer;
 begin
   Result := WideCanvasTextExtent(Canvas, Text).cY;
+end;
+
+{ TTntPicture }
+
+procedure TTntPicture.LoadFromFile(const Filename: WideString);
+begin
+  inherited LoadFromFile(WideExtractShortPathName(Filename));
+end;
+
+procedure TTntPicture.SaveToFile(const Filename: WideString);
+var
+  TempFile: WideString;
+begin
+  if Graphic <> nil then begin
+    // create to temp file (ansi safe file name)
+    repeat
+      TempFile := WideExtractFilePath(Filename) + IntToStr(Random(MaxInt)) + WideExtractFileExt(Filename);
+    until not WideFileExists(TempFile);
+    CloseHandle(WideFileCreate(TempFile)); // make it a real file so that it has a temp
+    try
+      // save
+      Graphic.SaveToFile(WideExtractShortPathName(TempFile));
+      // rename
+      WideDeleteFile(Filename);
+      if not WideRenameFile(TempFile, FileName) then
+        RaiseLastOSError;
+    finally
+      WideDeleteFile(TempFile);
+    end;
+  end;
 end;
 
 end.

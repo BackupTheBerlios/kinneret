@@ -43,8 +43,8 @@ end;
 procedure TFormAbout.FormCreate(Sender: TObject);
 begin
   TranslateProperties (self);      //GNUGETTEXT
-  date:='16/5/03';
-  version:='0.3';
+  date:='28/4/04';
+  version:='0.7';
 end;
 
 procedure TFormAbout.FormShow(Sender: TObject);

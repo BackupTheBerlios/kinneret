@@ -3,6 +3,7 @@
 {                                                                             }
 {    Tnt Delphi Unicode Controls                                              }
 {      http://home.ccci.org/wolbrink/tnt/delphi_unicode_controls.htm          }
+{        Version: 2.1.2                                                       }
 {                                                                             }
 {    Copyright (c) 2002, 2003 Troy Wolbrink (troy.wolbrink@ccci.org)          }
 {                                                                             }
@@ -10,13 +11,9 @@
 
 unit TntSysUtils;
 
-{$INCLUDE Compilers.inc}
+{$INCLUDE TntCompilers.inc}
 
 interface
-
-{$IFDEF COMPILER_6_UP}
-{$WARN SYMBOL_PLATFORM OFF} { We are going to use Win32 specific symbols! }
-{$ENDIF}
 
 uses
   {$IFDEF COMPILER_6_UP} Types, {$ENDIF} SysUtils, Windows;
@@ -29,65 +26,14 @@ uses
 type
   TWideStringDynArray = array of WideString;
 {$ENDIF}
-
-//---------------------------------------------------------------------------------------------
-//                                 Tnt - System
-//---------------------------------------------------------------------------------------------
-
-// ......... compatibility .........
-{$IFNDEF COMPILER_6_UP} // Delphi 5 compatibility
-type UTF8String = type AnsiString;
-function UTF8Encode(const WS: WideString): UTF8String;
-function UTF8Decode(const S: UTF8String): WideString;
-{$ENDIF}
-
-// ................ ANSI TYPES ................
-{TNT-WARN Char}
-{TNT-WARN PChar}
-{TNT-WARN String}
-
-{TNT-WARN CP_ACP} // <-- use DefaultUserCodePage
-var
-  DefaultUserCodePage: Cardinal; // implicitly used when convering AnsiString <--> WideString.
-
-{TNT-WARN LoadResString}
-function LoadResStringW(ResStringRec: PResStringRec): WideString;
-{TNT-WARN ParamCount}
-function WideParamCount: Integer;
-{TNT-WARN ParamStr}
-function WideParamStr(Index: Integer): WideString;
-
 // ......... introduced .........
-
-const
-  CR = WideChar(#13);
-  LF = WideChar(#10);
-  CRLF = WideString(#13#10);
-  WideLineSeparator = WideChar($2028);
-
-  { Each Unicode stream should begin with the code U+FEFF,  }
-  {   which the standard defines as the *byte order mark*.  }
-  UNICODE_BOM = WideChar($FEFF);
-  UNICODE_BOM_SWAPPED = WideChar($FFFE);
-
-function WideStringToUTF8(const S: WideString): AnsiString;
-function UTF8ToWideString(const S: AnsiString): WideString;
-
-function WideStringToUTF7(const W: WideString): AnsiString;
-function UTF7ToWideString(const S: AnsiString): WideString;
-
-function StringToWideStringEx(const S: AnsiString; CodePage: Cardinal): WideString;
-function WideStringToStringEx(const WS: WideString; CodePage: Cardinal): AnsiString;
-
-function UCS2ToWideString(const Value: AnsiString): WideString;
-function WideStringToUCS2(const Value: WideString): AnsiString;
-
-function CharSetToCodePage(ciCharset: UINT): Cardinal;
-function LCIDToCodePage(ALcid: LCID): Cardinal;
-function KeyboardCodePage: Cardinal;
-function KeyUnicode(C: AnsiChar): WideChar;
-
-procedure StrSwapByteOrder(Str: PWideChar);
+type
+  // The user of the application did something plainly wrong.
+  ETntUserError = class(Exception);
+  // A general error occured. (ie. file didn't exist, server didn't return data, etc.)
+  ETntGeneralError = class(Exception);
+  // Like Assert().  An error occured that should never have happened, send me a bug report now!
+  ETntInternalError = class(Exception);
 
 //---------------------------------------------------------------------------------------------
 //                                 Tnt - SysUtils
@@ -95,6 +41,9 @@ procedure StrSwapByteOrder(Str: PWideChar);
 
 // ......... compatibility .........
 {$IFNDEF COMPILER_6_UP} // Delphi 5 compatibility
+resourcestring
+  SInvalidCurrency = '''%s'' is not a valid currency value';
+
 const sLineBreak = #13#10;
 const PathDelim = '\';
 const DriveDelim = ':';
@@ -196,6 +145,48 @@ procedure StrDisposeW(Str: PWideChar);
 
 // ........ string functions .........
 
+{$IFDEF COMPILER_7_UP}
+type
+  PFormatSettings= ^TFormatSettings;
+{$ENDIF}
+
+{$IFDEF COMPILER_6_UP}
+{TNT-WARN WideFormatBuf} // SysUtils.WideFormatBuf doesn't correctly handle numeric specifiers.
+function Tnt_WideFormatBuf(var Buffer; BufLen: Cardinal; const FormatStr;
+  FmtLen: Cardinal; const Args: array of const): Cardinal; {$IFDEF COMPILER_7_UP} overload; {$ENDIF}
+{$ENDIF}
+
+{$IFDEF COMPILER_7_UP}
+function Tnt_WideFormatBuf(var Buffer; BufLen: Cardinal; const FormatStr;
+  FmtLen: Cardinal; const Args: array of const;
+    const FormatSettings: TFormatSettings): Cardinal; overload;
+{$ENDIF}
+
+{$IFDEF COMPILER_6_UP}
+{TNT-WARN WideFmtStr} // SysUtils.WideFmtStr doesn't handle string lengths > 4096.
+procedure Tnt_WideFmtStr(var Result: WideString; const FormatStr: WideString;
+  const Args: array of const); {$IFDEF COMPILER_7_UP} overload; {$ENDIF}
+{$ENDIF}
+
+{$IFDEF COMPILER_7_UP}
+procedure Tnt_WideFmtStr(var Result: WideString; const FormatStr: WideString;
+  const Args: array of const; const FormatSettings: TFormatSettings); overload;
+{$ENDIF}
+
+{$IFDEF COMPILER_6_UP}
+{----------------------------------------------------------------------------------------
+  Without the FormatSettings parameter, Tnt_WideFormat is *NOT* necessary...
+    TntSystem.InstallTntSystemUpdates([tsFixWideFormat]);
+      will fix WideFormat as well as WideFmtStr.
+----------------------------------------------------------------------------------------}
+function Tnt_WideFormat(const FormatStr: WideString; const Args: array of const): WideString; {$IFDEF COMPILER_7_UP} overload; {$ENDIF}
+{$ENDIF}
+
+{$IFDEF COMPILER_7_UP}
+function Tnt_WideFormat(const FormatStr: WideString; const Args: array of const;
+  const FormatSettings: TFormatSettings): WideString; overload;
+{$ENDIF}
+
 {TNT-WARN WideUpperCase} // SysUtils.WideUpperCase is broken on Win9x.
 function Tnt_WideUpperCase(const S: WideString): WideString;
 
@@ -261,6 +252,10 @@ function WideExtractRelativePath(const BaseName, DestName: WideString): WideStri
 
 // ........ file management routines .........
 
+{TNT-WARN ExpandFileName}
+function WideExpandFileName(const FileName: WideString): WideString;
+{TNT-WARN ExtractShortPathName}
+function WideExtractShortPathName(const FileName: WideString): WideString;
 {TNT-WARN FileCreate}
 function WideFileCreate(const FileName: WideString): Integer;
 {TNT-WARN FileOpen}
@@ -298,6 +293,7 @@ type
 function WideFindFirst(const Path: WideString; Attr: Integer; var F: TSearchRecW): Integer;
 function WideFindNext(var F: TSearchRecW): Integer;
 procedure WideFindClose(var F: TSearchRecW);
+function WideRemoveDir(const Dir: WideString): Boolean;
 
 // ........ date/time functions .........
 
@@ -311,6 +307,21 @@ function TntStrToDateTime(Str: WideString): TDateTime;
 function TntStrToDate(Str: WideString): TDateTime;
 {TNT-WARN StrToTime}
 function TntStrToTime(Str: WideString): TDateTime;
+{TNT-WARN StrToDateTimeDef}
+function TntStrToDateTimeDef(Str: WideString; Default: TDateTime): TDateTime;
+{TNT-WARN StrToDateDef}
+function TntStrToDateDef(Str: WideString; Default: TDateTime): TDateTime;
+{TNT-WARN StrToTimeDef}
+function TntStrToTimeDef(Str: WideString; Default: TDateTime): TDateTime;
+
+{TNT-WARN CurrToStr}
+{TNT-WARN CurrToStrF}
+function TntCurrToStr(Value: Currency; lpFormat: PCurrencyFmtW = nil): WideString;
+{TNT-WARN StrToCurr}
+function TntStrToCurr(const S: WideString): Currency;
+{TNT-WARN StrToCurrDef}
+function TntStrToCurrDef(const S: WideString; const Default: Currency): Currency;
+function GetDefaultCurrencyFmt: TCurrencyFmtW;
 
 // ........ misc functions .........
 
@@ -318,6 +329,12 @@ function TntStrToTime(Str: WideString): TDateTime;
 function WideGetLocaleStr(LocaleID: LCID; LocaleType: Integer; Default: WideString): WideString;
 
 // ......... introduced .........
+
+const
+  CR = WideChar(#13);
+  LF = WideChar(#10);
+  CRLF = WideString(#13#10);
+  WideLineSeparator = WideChar($2028);
 
 var
   Win32PlatformIsUnicode: Boolean;
@@ -346,6 +363,10 @@ function ExtractStringArrayStr(P: PWideChar): WideString;
 function ExtractStringFromStringArray(var P: PWideChar; Separator: WideChar = #0): WideString;
 function ExtractStringsFromStringArray(P: PWideChar; Separator: WideChar = #0): TWideStringDynArray;
 
+function IsWideCharMappableToAnsi(const WC: WideChar): Boolean;
+function IsWideStringMappableToAnsi(const WS: WideString): Boolean;
+function IsRTF(const Value: WideString): Boolean;
+
 //---------------------------------------------------------------------------------------------
 //                                 Tnt - Variants
 //---------------------------------------------------------------------------------------------
@@ -363,819 +384,8 @@ function VarToWideStrDef(const V: Variant; const ADefault: WideString): WideStri
 implementation
 
 uses
-  TntWindows, Math, {$IFDEF COMPILER_6_UP} SysConst, {$ELSE} Consts, {$ENDIF} ActiveX, ComObj;
-
-//---------------------------------------------------------------------------------------------
-//                                 Tnt - System
-//---------------------------------------------------------------------------------------------
-
-{$IFNDEF COMPILER_6_UP} // Delphi 5 compatibility
-function Utf8Encode(const WS: WideString): UTF8String;
-
-    function UnicodeToUtf8(Dest: PAnsiChar; MaxDestBytes: Cardinal;
-      Source: PWideChar; SourceChars: Cardinal): Cardinal;
-    var
-      i, count: Cardinal;
-      c: Cardinal;
-    begin
-      Result := 0;
-      if Source = nil then Exit;
-      count := 0;
-      i := 0;
-      if Dest <> nil then
-      begin
-        while (i < SourceChars) and (count < MaxDestBytes) do
-        begin
-          c := Cardinal(Source[i]);
-          Inc(i);
-          if c <= $7F then
-          begin
-            Dest[count] := AnsiChar(c);
-            Inc(count);
-          end
-          else if c > $7FF then
-          begin
-            if count + 3 > MaxDestBytes then
-              break;
-            Dest[count] := AnsiChar($E0 or (c shr 12));
-            Dest[count+1] := AnsiChar($80 or ((c shr 6) and $3F));
-            Dest[count+2] := AnsiChar($80 or (c and $3F));
-            Inc(count,3);
-          end
-          else //  $7F < Source[i] <= $7FF
-          begin
-            if count + 2 > MaxDestBytes then
-              break;
-            Dest[count] := AnsiChar($C0 or (c shr 6));
-            Dest[count+1] := AnsiChar($80 or (c and $3F));
-            Inc(count,2);
-          end;
-        end;
-        if count >= MaxDestBytes then count := MaxDestBytes-1;
-        Dest[count] := #0;
-      end
-      else
-      begin
-        while i < SourceChars do
-        begin
-          c := Integer(Source[i]);
-          Inc(i);
-          if c > $7F then
-          begin
-            if c > $7FF then
-              Inc(count);
-            Inc(count);
-          end;
-          Inc(count);
-        end;
-      end;
-      Result := count+1;  // convert zero based index to byte count
-    end;
-
-var
-  L: Integer;
-  Temp: UTF8String;
-begin
-  Result := '';
-  if WS = '' then Exit;
-  SetLength(Temp, Length(WS) * 3); // SetLength includes space for null terminator
-
-  L := UnicodeToUtf8(PAnsiChar(Temp), Length(Temp)+1, PWideChar(WS), Length(WS));
-  if L > 0 then
-    SetLength(Temp, L-1)
-  else
-    Temp := '';
-  Result := Temp;
-end;
-
-function Utf8Decode(const S: UTF8String): WideString;
-
-    function Utf8ToUnicode(Dest: PWideChar; MaxDestChars: Cardinal;
-      Source: PAnsiChar; SourceBytes: Cardinal): Cardinal;
-    var
-      i, count: Cardinal;
-      c: Byte;
-      wc: Cardinal;
-    begin
-      if Source = nil then
-      begin
-        Result := 0;
-        Exit;
-      end;
-      Result := Cardinal(-1);
-      count := 0;
-      i := 0;
-      if Dest <> nil then
-      begin
-        while (i < SourceBytes) and (count < MaxDestChars) do
-        begin
-          wc := Cardinal(Source[i]);
-          Inc(i);
-          if (wc and $80) <> 0 then
-          begin
-            if i >= SourceBytes then Exit;          // incomplete multibyte char
-            wc := wc and $3F;
-            if (wc and $20) <> 0 then
-            begin
-              c := Byte(Source[i]);
-              Inc(i);
-              if (c and $C0) <> $80 then Exit;      // malformed trail byte or out of range char
-              if i >= SourceBytes then Exit;        // incomplete multibyte char
-              wc := (wc shl 6) or (c and $3F);
-            end;
-            c := Byte(Source[i]);
-            Inc(i);
-            if (c and $C0) <> $80 then Exit;       // malformed trail byte
-
-            Dest[count] := WideChar((wc shl 6) or (c and $3F));
-          end
-          else
-            Dest[count] := WideChar(wc);
-          Inc(count);
-        end;
-        if count >= MaxDestChars then count := MaxDestChars-1;
-        Dest[count] := #0;
-      end
-      else
-      begin
-        while (i < SourceBytes) do
-        begin
-          c := Byte(Source[i]);
-          Inc(i);
-          if (c and $80) <> 0 then
-          begin
-            if i >= SourceBytes then Exit;          // incomplete multibyte char
-            c := c and $3F;
-            if (c and $20) <> 0 then
-            begin
-              c := Byte(Source[i]);
-              Inc(i);
-              if (c and $C0) <> $80 then Exit;      // malformed trail byte or out of range char
-              if i >= SourceBytes then Exit;        // incomplete multibyte char
-            end;
-            c := Byte(Source[i]);
-            Inc(i);
-            if (c and $C0) <> $80 then Exit;       // malformed trail byte
-          end;
-          Inc(count);
-        end;
-      end;
-      Result := count+1;
-    end;
-
-var
-  L: Integer;
-  Temp: WideString;
-begin
-  Result := '';
-  if S = '' then Exit;
-  SetLength(Temp, Length(S));
-
-  L := Utf8ToUnicode(PWideChar(Temp), Length(Temp)+1, PAnsiChar(S), Length(S));
-  if L > 0 then
-    SetLength(Temp, L-1)
-  else
-    Temp := '';
-  Result := Temp;
-end;
-{$ENDIF}
-
-function LoadResStringW(ResStringRec: PResStringRec): WideString;
-var
-  Len: Integer;
-begin
-  if (ResStringRec = nil)
-  or (ResStringRec.Identifier >= 64*1024)
-  or (not Win32PlatformIsUnicode) then
-    Result := System.LoadResString{TNT-ALLOW LoadResString}(ResStringRec)
-  else begin
-    Result := '';
-    Len := 0;
-    While Len = Length(Result) do begin
-      if Length(Result) = 0 then
-        SetLength(Result, 1024)
-      else
-        SetLength(Result, Length(Result) * 2);
-      Len := LoadStringW(FindResourceHInstance(ResStringRec.Module^),
-        ResStringRec.Identifier, PWideChar(Result), Length(Result));
-    end;
-    SetLength(Result, Len);
-  end;
-end;
-
-function WideGetParamStr(P: PWideChar; var Param: WideString): PWideChar;
-var
-  Len: Integer;
-  Buffer: array[0..4095] of WideChar;
-begin
-  while True do
-  begin
-    while (P[0] <> #0) and (P[0] <= ' ') do Inc(P);
-    if (P[0] = '"') and (P[1] = '"') then Inc(P, 2) else Break;
-  end;
-  Len := 0;
-  while (P[0] > ' ') and (Len < SizeOf(Buffer)) do
-    if P[0] = '"' then
-    begin
-      Inc(P);
-      while (P[0] <> #0) and (P[0] <> '"') do
-      begin
-        Buffer[Len] := P[0];
-        Inc(Len);
-        Inc(P);
-      end;
-      if P[0] <> #0 then Inc(P);
-    end else
-    begin
-      Buffer[Len] := P[0];
-      Inc(Len);
-      Inc(P);
-    end;
-  SetString(Param, Buffer, Len);
-  Result := P;
-end;
-
-function WideParamCount: Integer;
-var
-  P: PWideChar;
-  S: WideString;
-begin
-  P := WideGetParamStr(GetCommandLineW, S);
-  Result := 0;
-  while True do
-  begin
-    P := WideGetParamStr(P, S);
-    if S = '' then Break;
-    Inc(Result);
-  end;
-end;
-
-function WideParamStr(Index: Integer): WideString;
-var
-  P: PWideChar;
-begin
-  if Index = 0 then
-    Result := WideGetModuleFileName(0)
-  else
-  begin
-    P := GetCommandLineW;
-    while True do
-    begin
-      P := WideGetParamStr(P, Result);
-      if (Index = 0) or (Result = '') then Break;
-      Dec(Index);
-    end;
-  end;
-end;
-
-function WideStringToUTF8(const S: WideString): AnsiString;
-begin
-  Result := UTF8Encode(S);
-end;
-
-function UTF8ToWideString(const S: AnsiString): WideString;
-begin
-  Result := UTF8Decode(S);
-end;
-
-  { ======================================================================= }
-  { Original File:   ConvertUTF7.c                                          }
-  { Author: David B. Goldsmith                                              }
-  { Copyright (C) 1994, 1996 Taligent, Inc. All rights reserved.            }
-  {                                                                         }
-  { This code is copyrighted. Under the copyright laws, this code may not   }
-  { be copied, in whole or part, without prior written consent of Taligent. }
-  {                                                                         }
-  { Taligent grants the right to use this code as long as this ENTIRE       }
-  { copyright notice is reproduced in the code.  The code is provided       }
-  { AS-IS, AND TALIGENT DISCLAIMS ALL WARRANTIES, EITHER EXPRESS OR         }
-  { IMPLIED, INCLUDING, BUT NOT LIMITED TO IMPLIED WARRANTIES OF            }
-  { MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  IN NO EVENT      }
-  { WILL TALIGENT BE LIABLE FOR ANY DAMAGES WHATSOEVER (INCLUDING,          }
-  { WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS      }
-  { INTERRUPTION, LOSS OF BUSINESS INFORMATION, OR OTHER PECUNIARY          }
-  { LOSS) ARISING OUT OF THE USE OR INABILITY TO USE THIS CODE, EVEN        }
-  { IF TALIGENT HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.        }
-  { BECAUSE SOME STATES DO NOT ALLOW THE EXCLUSION OR LIMITATION OF         }
-  { LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, THE ABOVE            }
-  { LIMITATION MAY NOT APPLY TO YOU.                                        }
-  {                                                                         }
-  { RESTRICTED RIGHTS LEGEND: Use, duplication, or disclosure by the        }
-  { government is subject to restrictions as set forth in subparagraph      }
-  { (c)(l)(ii) of the Rights in Technical Data and Computer Software        }
-  { clause at DFARS 252.227-7013 and FAR 52.227-19.                         }
-  {                                                                         }
-  { This code may be protected by one or more U.S. and International        }
-  { Patents.                                                                }
-  {                                                                         }
-  { TRADEMARKS: Taligent and the Taligent Design Mark are registered        }
-  { trademarks of Taligent, Inc.                                            }
-  { ======================================================================= }
-
-type UCS2 = Word;
-
-const
-  _base64: AnsiString = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
-  _direct: AnsiString = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789''(),-./:?';
-  _optional: AnsiString = '!"#$%&*;<=>@[]^_`{|}';
-  _spaces: AnsiString = #9#13#10#32;
-
-var
-  base64: PAnsiChar;
-  invbase64: array[0..127] of SmallInt;
-  direct: PAnsiChar;
-  optional: PAnsiChar;
-  spaces: PAnsiChar;
-  mustshiftsafe: array[0..127] of AnsiChar;
-  mustshiftopt: array[0..127] of AnsiChar;
-
-var
-  needtables: Boolean = True;
-
-procedure Initialize_UTF7_Data;
-begin
-  base64 := PAnsiChar(_base64);
-  direct := PAnsiChar(_direct);
-  optional := PAnsiChar(_optional);
-  spaces := PAnsiChar(_spaces);
-end;
-
-procedure tabinit;
-var
-  i: Integer;
-  limit: Integer;
-begin
-  i := 0;
-  while (i < 128) do
-  begin
-    mustshiftopt[i] := #1;
-    mustshiftsafe[i] := #1;
-    invbase64[i] := -1;
-    Inc(i);
-  end { For };
-  limit := Length(_Direct);
-  i := 0;
-  while (i < limit) do
-  begin
-    mustshiftopt[Integer(direct[i])] := #0;
-    mustshiftsafe[Integer(direct[i])] := #0;
-    Inc(i);
-  end { For };
-  limit := Length(_Spaces);
-  i := 0;
-  while (i < limit) do
-  begin
-    mustshiftopt[Integer(spaces[i])] := #0;
-    mustshiftsafe[Integer(spaces[i])] := #0;
-    Inc(i);
-  end { For };
-  limit := Length(_Optional);
-  i := 0;
-  while (i < limit) do
-  begin
-    mustshiftopt[Integer(optional[i])] := #0;
-    Inc(i);
-  end { For };
-  limit := Length(_Base64);
-  i := 0;
-  while (i < limit) do
-  begin
-    invbase64[Integer(base64[i])] := i;
-    Inc(i);
-  end { For };
-  needtables := False;
-end; { tabinit }
-
-function WRITE_N_BITS(x: UCS2; n: Integer; var BITbuffer: Cardinal; var bufferbits: Integer): Integer;
-begin
-  BITbuffer := BITbuffer or (x and (not (-1 shl n))) shl (32 - n - bufferbits);
-  bufferbits := bufferbits + n;
-  Result := bufferbits;
-end; { WRITE_N_BITS }
-
-function READ_N_BITS(n: Integer; var BITbuffer: Cardinal; var bufferbits: Integer): UCS2;
-var
-  buffertemp: Cardinal;
-begin
-  buffertemp := BITbuffer shr (32 - n);
-  BITbuffer := BITbuffer shl n;
-  bufferbits := bufferbits - n;
-  Result := UCS2(buffertemp);
-end; { READ_N_BITS }
-
-function ConvertUCS2toUTF7(var sourceStart: PWideChar; sourceEnd: PWideChar;
-  var targetStart: PAnsiChar; targetEnd: PAnsiChar; optional: Boolean;
-    verbose: Boolean): Integer;
-var
-  r: UCS2;
-  target: PAnsiChar;
-  source: PWideChar;
-  BITbuffer: Cardinal;
-  bufferbits: Integer;
-  shifted: Boolean;
-  needshift: Boolean;
-  done: Boolean;
-  mustshift: PAnsiChar;
-begin
-  Initialize_UTF7_Data;
-  Result := 0;
-  BITbuffer := 0;
-  bufferbits := 0;
-  shifted := False;
-  source := sourceStart;
-  target := targetStart;
-  r := 0;
-  if needtables then
-    tabinit;
-  if optional then
-    mustshift := @mustshiftopt[0]
-  else
-    mustshift := @mustshiftsafe[0];
-  repeat
-    done := source >= sourceEnd;
-    if not Done then
-    begin
-      r := Word(source^);
-      Inc(Source);
-    end { If };
-    needshift := (not done) and ((r > $7F) or (mustshift[r] <> #0));
-    if needshift and (not shifted) then
-    begin
-      if (Target >= TargetEnd) then
-      begin
-        Result := 2;
-        break;
-      end { If };
-      target^ := '+';
-      Inc(target);
-      { Special case handling of the SHIFT_IN character }
-      if (r = UCS2('+')) then
-      begin
-        if (target >= targetEnd) then
-        begin
-          Result := 2;
-          break;
-        end;
-        target^ := '-';
-        Inc(target);
-      end
-      else
-        shifted := True;
-    end { If };
-    if shifted then
-    begin
-      { Either write the character to the bit buffer, or pad }
-      { the bit buffer out to a full base64 character. }
-      { }
-      if needshift then
-        WRITE_N_BITS(r, 16, BITbuffer, bufferbits)
-      else
-        WRITE_N_BITS(0, (6 - (bufferbits mod 6)) mod 6, BITbuffer,
-          bufferbits);
-      { Flush out as many full base64 characters as possible }
-      { from the bit buffer. }
-      { }
-      while (target < targetEnd) and (bufferbits >= 6) do
-      begin
-        Target^ := base64[READ_N_BITS(6, BITbuffer, bufferbits)];
-        Inc(Target);
-      end { While };
-      if (bufferbits >= 6) then
-      begin
-        if (target >= targetEnd) then
-        begin
-          Result := 2;
-          break;
-        end { If };
-      end { If };
-      if (not needshift) then
-      begin
-        { Write the explicit shift out character if }
-        { 1) The caller has requested we always do it, or }
-        { 2) The directly encoded character is in the }
-        { base64 set, or }
-        { 3) The directly encoded character is SHIFT_OUT. }
-        { }
-        if verbose or ((not done) and ((invbase64[r] >= 0) or (r =
-          Integer('-')))) then
-        begin
-          if (target >= targetEnd) then
-          begin
-            Result := 2;
-            Break;
-          end { If };
-          Target^ := '-';
-          Inc(Target);
-        end { If };
-        shifted := False;
-      end { If };
-      { The character can be directly encoded as ASCII. }
-    end { If };
-    if (not needshift) and (not done) then
-    begin
-      if (target >= targetEnd) then
-      begin
-        Result := 2;
-        break;
-      end { If };
-      Target^ := AnsiChar(r);
-      Inc(Target);
-    end { If };
-  until (done);
-  sourceStart := source;
-  targetStart := target;
-end; { ConvertUCS2toUTF7 }
-
-function ConvertUTF7toUCS2(var sourceStart: PAnsiChar; sourceEnd: PAnsiChar;
-  var targetStart: PWideChar; targetEnd: PWideChar): Integer;
-var
-  target: PWideChar { Register };
-  source: PAnsiChar { Register };
-  BITbuffer: Cardinal { & "Address Of" Used };
-  bufferbits: Integer { & "Address Of" Used };
-  shifted: Boolean { Used In Boolean Context };
-  first: Boolean { Used In Boolean Context };
-  wroteone: Boolean;
-  base64EOF: Boolean;
-  base64value: Integer;
-  done: Boolean;
-  c: UCS2;
-  prevc: UCS2;
-  junk: UCS2 { Used In Boolean Context };
-begin
-  Initialize_UTF7_Data;
-  Result := 0;
-  BITbuffer := 0;
-  bufferbits := 0;
-  shifted := False;
-  first := False;
-  wroteone := False;
-  source := sourceStart;
-  target := targetStart;
-  c := 0;
-  if needtables then
-    tabinit;
-  repeat
-    { read an ASCII character c }
-    done := Source >= SourceEnd;
-    if (not done) then
-    begin
-      c := Word(Source^);
-      Inc(Source);
-    end { If };
-    if shifted then
-    begin
-      { We're done with a base64 string if we hit EOF, it's not a valid }
-      { ASCII character, or it's not in the base64 set. }
-      { }
-      base64value := invbase64[c];
-      base64EOF := (done or (c > $7F)) or (base64value < 0);
-      if base64EOF then
-      begin
-        shifted := False;
-        { If the character causing us to drop out was SHIFT_IN or }
-        { SHIFT_OUT, it may be a special escape for SHIFT_IN. The }
-        { test for SHIFT_IN is not necessary, but allows an alternate }
-        { form of UTF-7 where SHIFT_IN is escaped by SHIFT_IN. This }
-        { only works for some values of SHIFT_IN. }
-        { }
-        if ((not done) and ((c = Integer('+')) or (c = Integer('-')))) then
-        begin
-          { get another character c }
-          prevc := c;
-          Done := Source >= SourceEnd;
-          if (not Done) then
-          begin
-            c := Word(Source^);
-            Inc(Source);
-            { If no base64 characters were encountered, and the }
-            { character terminating the shift sequence was }
-            { SHIFT_OUT, then it's a special escape for SHIFT_IN. }
-            { }
-          end;
-          if first and (prevc = Integer('-')) then
-          begin
-            { write SHIFT_IN unicode }
-            if (target >= targetEnd) then
-            begin
-              Result := 2;
-              break;
-            end { If };
-            Target^ := WideChar('+');
-            Inc(Target);
-          end
-          else
-          begin
-            if (not wroteone) then
-            begin
-              Result := 1;
-            end { If };
-          end { Else };
-          ;
-        end { If }
-        else
-        begin
-          if (not wroteone) then
-          begin
-            Result := 1;
-          end { If };
-        end { Else };
-      end { If }
-      else
-      begin
-        { Add another 6 bits of base64 to the bit buffer. }
-        WRITE_N_BITS(base64value, 6, BITbuffer,
-          bufferbits);
-        first := False;
-      end { Else };
-      { Extract as many full 16 bit characters as possible from the }
-      { bit buffer. }
-      { }
-      while (bufferbits >= 16) and (target < targetEnd) do
-      begin
-        { write a unicode }
-        Target^ := WideChar(READ_N_BITS(16, BITbuffer, bufferbits));
-        Inc(Target);
-        wroteone := True;
-      end { While };
-      if (bufferbits >= 16) then
-      begin
-        if (target >= targetEnd) then
-        begin
-          Result := 2;
-          Break;
-        end;
-      end { If };
-      if (base64EOF) then
-      begin
-        junk := READ_N_BITS(bufferbits, BITbuffer, bufferbits);
-        if (junk <> 0) then
-        begin
-          Result := 1;
-        end { If };
-      end { If };
-    end { If };
-    if (not shifted) and (not done) then
-    begin
-      if (c = Integer('+')) then
-      begin
-        shifted := True;
-        first := True;
-        wroteone := False;
-      end { If }
-      else
-      begin
-        { It must be a directly encoded character. }
-        if (c > $7F) then
-        begin
-          Result := 1;
-        end { If };
-        if (target >= targetEnd) then
-        begin
-          Result := 2;
-          break;
-        end { If };
-        Target^ := WideChar(c);
-        Inc(Target);
-      end { Else };
-    end { If };
-  until (done);
-  sourceStart := source;
-  targetStart := target;
-end; { ConvertUTF7toUCS2 }
-
-  {*****************************************************************************}
-  { Thanks to Francisco Leong for providing the Pascal conversion of            }
-  {   ConvertUTF7.c (by David B. Goldsmith)                                     }
-  {*****************************************************************************}
-
-resourcestring
-  SBufferOverflow = 'Buffer overflow';
-  SInvalidUTF7 = 'Invalid UTF7';
-
-function WideStringToUTF7(const W: WideString): AnsiString;
-var
-  SourceStart, SourceEnd: PWideChar;
-  TargetStart, TargetEnd: PAnsiChar;
-begin
-  if W = '' then
-    Result := ''
-  else
-  begin
-    SetLength(Result, Length(W) * 7); // Assume worst case
-    SourceStart := PWideChar(@W[1]);
-    SourceEnd := PWideChar(@W[Length(W)]) + 1;
-    TargetStart := PAnsiChar(@Result[1]);
-    TargetEnd := PAnsiChar(@Result[Length(Result)]) + 1;
-    if ConvertUCS2toUTF7(SourceStart, SourceEnd, TargetStart,
-      TargetEnd, True, False) <> 0 then
-      raise Exception.Create(SBufferOverflow);
-    SetLength(Result, TargetStart - PAnsiChar(@Result[1]));
-  end;
-end;
-
-function UTF7ToWideString(const S: AnsiString): WideString;
-var
-  SourceStart, SourceEnd: PAnsiChar;
-  TargetStart, TargetEnd: PWideChar;
-begin
-  if (S = '') then
-    Result := ''
-  else
-  begin
-    SetLength(Result, Length(S)); // Assume Worst case
-    SourceStart := PAnsiChar(@S[1]);
-    SourceEnd := PAnsiChar(@S[Length(S)]) + 1;
-    TargetStart := PWideChar(@Result[1]);
-    TargetEnd := PWideChar(@Result[Length(Result)]) + 1;
-    case ConvertUTF7toUCS2(SourceStart, SourceEnd, TargetStart,
-      TargetEnd) of
-      1: raise Exception.Create(SInvalidUTF7);
-      2: raise Exception.Create(SBufferOverflow);
-    end;
-    SetLength(Result, TargetStart - PWideChar(@Result[1]));
-  end;
-end;
-
-function StringToWideStringEx(const S: AnsiString; CodePage: Cardinal): WideString;
-var
-  InputLength,
-  OutputLength: Integer;
-begin
-  InputLength := Length(S);
-  OutputLength := MultiByteToWideChar(CodePage, 0, PAnsiChar(S), InputLength, nil, 0);
-  SetLength(Result, OutputLength);
-  MultiByteToWideChar(CodePage, 0, PAnsiChar(S), InputLength, PWideChar(Result), OutputLength);
-end;
-
-function WideStringToStringEx(const WS: WideString; CodePage: Cardinal): AnsiString;
-var
-  InputLength,
-  OutputLength: Integer;
-begin
-  InputLength := Length(WS);
-  OutputLength := WideCharToMultiByte(CodePage, 0, PWideChar(WS), InputLength, nil, 0, nil, nil);
-  SetLength(Result, OutputLength);
-  WideCharToMultiByte(CodePage, 0, PWideChar(WS), InputLength, PAnsiChar(Result), OutputLength, nil, nil);
-end;
-
-function UCS2ToWideString(const Value: AnsiString): WideString;
-begin
-  if Length(Value) = 0 then
-    Result := ''
-  else
-    SetString(Result, PWideChar(@Value[1]), Length(Value) div SizeOf(WideChar))
-end;
-
-function WideStringToUCS2(const Value: WideString): AnsiString;
-begin
-  if Length(Value) = 0 then
-    Result := ''
-  else
-    SetString(Result, PAnsiChar(@Value[1]), Length(Value) * SizeOf(WideChar))
-end;
-
-{ Windows.pas doesn't declare TranslateCharsetInfo() correctly. }
-function TranslateCharsetInfo(lpSrc: PDWORD; var lpCs: TCharsetInfo; dwFlags: DWORD): BOOL; stdcall; external gdi32 name 'TranslateCharsetInfo';
-
-function CharSetToCodePage(ciCharset: UINT): Cardinal;
-var
-  C: TCharsetInfo;
-begin
-  Win32Check(TranslateCharsetInfo(PDWORD(ciCharset), C, TCI_SRCCHARSET));
-  Result := C.ciACP
-end;
-
-function LCIDToCodePage(ALcid: LCID): Cardinal;
-var
-  Buf: array[0..6] of AnsiChar;
-begin
-  GetLocaleInfo(ALcid, LOCALE_IDefaultAnsiCodePage, Buf, 6);
-  Result := StrToIntDef(Buf, GetACP);
-end;
-
-function KeyboardCodePage: Cardinal;
-begin
-  Result := LCIDToCodePage(GetKeyboardLayout(0) and $FFFF);
-end;
-
-function KeyUnicode(C: AnsiChar): WideChar;
-begin
-  // converts the given character (as it comes with a WM_CHAR message) into its
-  // corresponding Unicode character depending on the active keyboard layout
-  MultiByteToWideChar(KeyboardCodePage, MB_USEGLYPHCHARS, @C, 1, @Result, 1);
-end;
-
-procedure StrSwapByteOrder(Str: PWideChar);
-var
-  P: PWord;
-begin
-  P := PWord(Str);
-  While (P^ <> 0) do begin
-    P^ := MakeWord(HiByte(P^), LoByte(P^));
-    Inc(P);
-  end;
-end;
+  ActiveX, ComObj, Math, {$IFDEF COMPILER_6_UP} SysConst, {$ELSE} Consts, {$ENDIF}
+  TntSystem, TntWindows, TntFormatStrUtils;
 
 //---------------------------------------------------------------------------------------------
 //                                 Tnt - SysUtils
@@ -1412,11 +622,10 @@ end;
 
 function StrAllocW(Size: Cardinal): PWideChar;
 begin
-  Size := Size * SizeOf(WideChar);
-  Inc(Size, SizeOf(Cardinal));
+  Size := SizeOf(Cardinal) + (Size * SizeOf(WideChar));
   GetMem(Result, Size);
-  Cardinal(Pointer(Result)^) := Size;
-  Inc(Result, SizeOf(Cardinal));
+  PCardinal(Result)^ := Size;
+  Inc(PAnsiChar(Result), SizeOf(Cardinal));
 end;
 
 function StrBufSizeW(const Str: PWideChar): Cardinal;
@@ -1424,8 +633,8 @@ var
   P: PWideChar;
 begin
   P := Str;
-  Dec(P, SizeOf(Cardinal));
-  Result := Cardinal(Pointer(P)^) - SizeOf(Cardinal);
+  Dec(PAnsiChar(P), SizeOf(Cardinal));
+  Result := PCardinal(P)^ - SizeOf(Cardinal);
   Result := Result div SizeOf(WideChar);
 end;
 
@@ -1444,10 +653,114 @@ procedure StrDisposeW(Str: PWideChar);
 begin
   if Str <> nil then
   begin
-    Dec(Str, SizeOf(Cardinal));
+    Dec(PAnsiChar(Str), SizeOf(Cardinal));
     FreeMem(Str, Cardinal(Pointer(Str)^));
   end;
 end;
+
+{$IFDEF COMPILER_6_UP}
+function _Tnt_WideFormatBuf(var Buffer; BufLen: Cardinal; const FormatStr;
+  FmtLen: Cardinal; const Args: array of const
+    {$IFDEF COMPILER_7_UP}; const FormatSettings: PFormatSettings {$ENDIF}): Cardinal;
+var
+  OldFormat: WideString;
+  NewFormat: WideString;
+begin
+  SetString(OldFormat, PWideChar(@FormatStr), FmtLen);
+  { The reason for this is that WideFormat doesn't correctly format floating point specifiers.
+    See QC#4254. }
+  NewFormat := ReplaceFloatingArgumentsInFormatString(OldFormat, Args{$IFDEF COMPILER_7_UP}, FormatSettings{$ENDIF});
+  {$IFDEF COMPILER_7_UP}
+  if FormatSettings <> nil then
+    Result := WideFormatBuf{TNT-ALLOW WideFormatBuf}(Buffer, BufLen, Pointer(NewFormat)^,
+      Length(NewFormat), Args, FormatSettings^)
+  else
+  {$ENDIF}
+    Result := WideFormatBuf{TNT-ALLOW WideFormatBuf}(Buffer, BufLen, Pointer(NewFormat)^,
+      Length(NewFormat), Args);
+end;
+
+function Tnt_WideFormatBuf(var Buffer; BufLen: Cardinal; const FormatStr;
+  FmtLen: Cardinal; const Args: array of const): Cardinal;
+begin
+  Result := _Tnt_WideFormatBuf(Buffer, BufLen, FormatStr, FmtLen, Args{$IFDEF COMPILER_7_UP}, nil{$ENDIF});
+end;
+{$ENDIF}
+
+{$IFDEF COMPILER_7_UP}
+function Tnt_WideFormatBuf(var Buffer; BufLen: Cardinal; const FormatStr;
+  FmtLen: Cardinal; const Args: array of const; const FormatSettings: TFormatSettings): Cardinal;
+begin
+  Result := _Tnt_WideFormatBuf(Buffer, BufLen, FormatStr, FmtLen, Args, @FormatSettings);
+end;
+{$ENDIF}
+
+{$IFDEF COMPILER_6_UP}
+procedure _Tnt_WideFmtStr(var Result: WideString; const FormatStr: WideString;
+  const Args: array of const{$IFDEF COMPILER_7_UP}; const FormatSettings: PFormatSettings{$ENDIF});
+var
+  Len, BufLen: Integer;
+  Buffer: array[0..4095] of WideChar;
+begin
+  BufLen := Length(Buffer); // Fixes buffer overwrite issue. (See QC #4703, #4744)
+  if Length(FormatStr) < (Length(Buffer) - (Length(Buffer) div 4)) then
+    Len := _Tnt_WideFormatBuf(Buffer, Length(Buffer) - 1, Pointer(FormatStr)^,
+      Length(FormatStr), Args{$IFDEF COMPILER_7_UP}, FormatSettings{$ENDIF})
+  else
+  begin
+    BufLen := Length(FormatStr);
+    Len := BufLen;
+  end;
+  if Len >= BufLen - 1 then
+  begin
+    while Len >= BufLen - 1 do
+    begin
+      Inc(BufLen, BufLen);
+      Result := '';          // prevent copying of existing data, for speed
+      SetLength(Result, BufLen);
+      Len := _Tnt_WideFormatBuf(Pointer(Result)^, BufLen - 1, Pointer(FormatStr)^,
+        Length(FormatStr), Args{$IFDEF COMPILER_7_UP}, FormatSettings{$ENDIF});
+    end;
+    SetLength(Result, Len);
+  end
+  else
+    SetString(Result, Buffer, Len);
+end;
+
+procedure Tnt_WideFmtStr(var Result: WideString; const FormatStr: WideString;
+  const Args: array of const);
+begin
+  _Tnt_WideFmtStr(Result, FormatStr, Args{$IFDEF COMPILER_7_UP}, nil{$ENDIF});
+end;
+{$ENDIF}
+
+{$IFDEF COMPILER_7_UP}
+procedure Tnt_WideFmtStr(var Result: WideString; const FormatStr: WideString;
+  const Args: array of const; const FormatSettings: TFormatSettings);
+begin
+  _Tnt_WideFmtStr(Result, FormatStr, Args, @FormatSettings);
+end;
+{$ENDIF}
+
+{$IFDEF COMPILER_6_UP}
+{----------------------------------------------------------------------------------------
+  Without the FormatSettings parameter, Tnt_WideFormat is *NOT* necessary...
+    TntSystem.InstallTntSystemUpdates([tsFixWideFormat]);
+      will fix WideFormat as well as WideFmtStr.
+----------------------------------------------------------------------------------------}
+function Tnt_WideFormat(const FormatStr: WideString; const Args: array of const): WideString;
+begin
+  Tnt_WideFmtStr(Result, FormatStr, Args);
+end;
+{$ENDIF}
+
+{$IFDEF COMPILER_7_UP}
+function Tnt_WideFormat(const FormatStr: WideString; const Args: array of const;
+  const FormatSettings: TFormatSettings): WideString;
+begin
+  Tnt_WideFmtStr(Result, FormatStr, Args, FormatSettings);
+end;
+{$ENDIF}
 
 function Tnt_WideUpperCase(const S: WideString): WideString;
 begin
@@ -1954,6 +1267,21 @@ begin
     Result := DestName;
 end;
 
+function WideExpandFileName(const FileName: WideString): WideString;
+var
+  FName: PWideChar;
+  Buffer: array[0..MAX_PATH - 1] of WideChar;
+begin
+  SetString(Result, Buffer, Tnt_GetFullPathNameW(PWideChar(FileName), MAX_PATH, Buffer, FName));
+end;
+
+function WideExtractShortPathName(const FileName: WideString): WideString;
+var
+  Buffer: array[0..MAX_PATH - 1] of WideChar;
+begin
+  SetString(Result, Buffer, Tnt_GetShortPathNameW(PWideChar(FileName), Buffer, MAX_PATH));
+end;
+
 function WideFileCreate(const FileName: WideString): Integer;
 begin
   Result := Integer(Tnt_CreateFileW(PWideChar(FileName), GENERIC_READ or GENERIC_WRITE,
@@ -1983,7 +1311,7 @@ var
   Code: Cardinal;
 begin
   Code := WideFileGetAttr(Name);
-  Result := (Integer(Code) <> -1) and (FILE_ATTRIBUTE_DIRECTORY and Code <> 0);
+  Result := (Code <> INVALID_FILE_ATTRIBUTES) and (FILE_ATTRIBUTE_DIRECTORY and Code <> 0);
 end;
 
 function WideFileExists(const Name: WideString): Boolean;
@@ -1991,12 +1319,12 @@ var
   Code: Cardinal;
 begin
   Code := WideFileGetAttr(Name);
-  Result := (Integer(Code) <> -1) and ((FILE_ATTRIBUTE_DIRECTORY and Code) = 0);
+  Result := (Code <> INVALID_FILE_ATTRIBUTES) and ((FILE_ATTRIBUTE_DIRECTORY and Code) = 0);
 end;
 
 function WideFileGetAttr(const FileName: WideString): Cardinal;
 begin
-  Result := Tnt_GetFileAttributesW(PWideChar(FileName))
+  Result := Tnt_GetFileAttributesW(PWideChar(FileName));
 end;
 
 function WideFileSetAttr(const FileName: WideString; Attr: Integer): Boolean;
@@ -2008,7 +1336,7 @@ function WideForceDirectories(Dir: WideString): Boolean;
 begin
   Result := True;
   if Length(Dir) = 0 then
-    raise Exception.Create(SCannotCreateDir);
+    raise ETntGeneralError.Create(SCannotCreateDir);
   Dir := WideExcludeTrailingBackslash(Dir);
   if (Length(Dir) < 3) or WideDirectoryExists(Dir)
     or (WideExtractFilePath(Dir) = Dir) then Exit; // avoid 'xyz:\' problem.
@@ -2108,6 +1436,11 @@ begin
   end;
 end;
 
+function WideRemoveDir(const Dir: WideString): Boolean;
+begin
+  Result := Tnt_RemoveDirectoryW(PWideChar(Dir));
+end;
+
 function _ValidDateTimeStrEx(Str: WideString; Flags: Integer): Boolean;
 var
   TheDateTime: Double;
@@ -2160,16 +1493,97 @@ begin
   Result := IntStrToDateTime(Str, VAR_TIMEVALUEONLY, SInvalidTime);
 end;
 
+function TryStrToDateTime(Str: WideString; Flags: Integer; out DateTime: TDateTime): Boolean;
+var
+  ADouble: Double;
+begin
+  Result := Succeeded(VarDateFromStr(Str, GetThreadLocale, Flags, ADouble));
+  if Result then
+    DateTime := ADouble;
+end;
+
+function TntStrToDateTimeDef(Str: WideString; Default: TDateTime): TDateTime;
+begin
+  if not TryStrToDateTime(Str, 0, Result) then
+    Result := Default;
+end;
+
+function TntStrToDateDef(Str: WideString; Default: TDateTime): TDateTime;
+begin
+  if not TryStrToDateTime(Str, VAR_DATEVALUEONLY, Result) then
+    Result := Default;
+end;
+
+function TntStrToTimeDef(Str: WideString; Default: TDateTime): TDateTime;
+begin
+  if not TryStrToDateTime(Str, VAR_TIMEVALUEONLY, Result) then
+    Result := Default;
+end;
+
+function TntCurrToStr(Value: Currency; lpFormat: PCurrencyFmtW = nil): WideString;
+const
+  MAX_BUFF_SIZE = 64; // can a currency string actually be larger?
+begin
+  SetLength(Result, MAX_BUFF_SIZE);
+  if 0 = Tnt_GetCurrencyFormatW(GetThreadLocale, 0, PWideChar(WideString(FloatToStr(Value))),
+    lpFormat, PWideChar(Result), Length(Result))
+  then
+    RaiseLastOSError;
+  Result := PWideChar(Result);
+end;
+
+function TntStrToCurr(const S: WideString): Currency;
+begin
+  try
+    OleCheck(VarCyFromStr(S, GetThreadLocale, 0, Result));
+  except
+    on E: Exception do begin
+      E.Message := E.Message + CRLF + WideFormat(SInvalidCurrency, [S]);
+      raise EConvertError.Create(E.Message);
+    end;
+  end;
+end;
+
+function TntStrToCurrDef(const S: WideString; const Default: Currency): Currency;
+begin
+  if not Succeeded(VarCyFromStr(S, GetThreadLocale, 0, Result)) then
+    Result := Default;
+end;
+
+threadvar
+  Currency_DecimalSep: WideString;
+  Currency_ThousandSep: WideString;
+  Currency_CurrencySymbol: WideString;
+
+function GetDefaultCurrencyFmt: TCurrencyFmtW;
+begin
+  ZeroMemory(@Result, SizeOf(Result));
+  Result.NumDigits := StrToIntDef(WideGetLocaleStr(GetThreadLocale, LOCALE_ICURRDIGITS, '2'), 2);
+  Result.LeadingZero := StrToIntDef(WideGetLocaleStr(GetThreadLocale, LOCALE_ILZERO, '1'), 1);
+  Result.Grouping := StrToIntDef(Copy(WideGetLocaleStr(GetThreadLocale, LOCALE_SMONGROUPING, '3;0'), 1, 1), 3);
+  Currency_DecimalSep := WideGetLocaleStr(GetThreadLocale, LOCALE_SMONDECIMALSEP, '.');
+  Result.lpDecimalSep := PWideChar(Currency_DecimalSep);
+  Currency_ThousandSep := WideGetLocaleStr(GetThreadLocale, LOCALE_SMONTHOUSANDSEP, ',');
+  Result.lpThousandSep := PWideChar(Currency_ThousandSep);
+  Result.NegativeOrder := StrToIntDef(WideGetLocaleStr(GetThreadLocale, LOCALE_INEGCURR, '0'), 0);
+  Result.PositiveOrder := StrToIntDef(WideGetLocaleStr(GetThreadLocale, LOCALE_ICURRENCY, '0'), 0);
+  Currency_CurrencySymbol := WideGetLocaleStr(GetThreadLocale, LOCALE_SCURRENCY, '');
+  Result.lpCurrencySymbol := PWideChar(Currency_CurrencySymbol);
+end;
+
 function WideGetLocaleStr(LocaleID: LCID; LocaleType: Integer; Default: WideString): WideString;
+var
+  L: Integer;
 begin
   if (not Win32PlatformIsUnicode) then
     Result := GetLocaleStr{TNT-ALLOW GetLocaleStr}(LocaleID, LocaleType, Default)
   else begin
-    SetLength(Result, GetLocaleInfoW(LocaleID, LocaleType, nil, 0) + 1);
-    if Length(Result) > 0 then begin
-      GetLocaleInfoW(LocaleID, LocaleType, PWideChar(Result), Length(Result));
-      Result := PWideChar(Result);
-    end;
+    SetLength(Result, 255);
+    L := GetLocaleInfoW(LocaleID, LocaleType, PWideChar(Result), Length(Result));
+    if L > 0 then
+      SetLength(Result, L - 1)
+    else
+      Result := Default;
   end;
 end;
 
@@ -2315,6 +1729,31 @@ begin
   SetLength(Result, Count);
 end;
 
+function IsWideCharMappableToAnsi(const WC: WideChar): Boolean;
+var
+  UsedDefaultChar: BOOL;
+begin
+  WideCharToMultiByte(DefaultUserCodePage, 0, PWideChar(@WC), 1, nil, 0, nil, @UsedDefaultChar);
+  Result := not UsedDefaultChar;
+end;
+
+function IsWideStringMappableToAnsi(const WS: WideString): Boolean;
+var
+  UsedDefaultChar: BOOL;
+begin
+  WideCharToMultiByte(DefaultUserCodePage, 0, PWideChar(WS), Length(WS), nil, 0, nil, @UsedDefaultChar);
+  Result := not UsedDefaultChar;
+end;
+
+function IsRTF(const Value: WideString): Boolean;
+const
+  RTF_BEGIN_1  = WideString('{\RTF');
+  RTF_BEGIN_2  = WideString('{URTF');
+begin
+  Result := (WideTextPos(RTF_BEGIN_1, Value) = 1)
+         or (WideTextPos(RTF_BEGIN_2, Value) = 1);
+end;
+
 //---------------------------------------------------------------------------------------------
 //                                 Tnt - Variants
 //---------------------------------------------------------------------------------------------
@@ -2335,17 +1774,13 @@ end;
 {$ENDIF}
 
 initialization
-  {$IFDEF COMPILER_7_UP}
-  if (Win32Platform = VER_PLATFORM_WIN32_NT) and (Win32MajorVersion >= 5) then
-    DefaultUserCodePage := CP_THREAD_ACP // Win 2K/XP/...
-  else
-    DefaultUserCodePage := LCIDToCodePage(GetThreadLocale); // Win NT4/95/98/ME
-  {$ELSE}
-  DefaultUserCodePage := CP_ACP{TNT-ALLOW CP_ACP};
-  {$ENDIF}
-
   Win32PlatformIsUnicode := (Win32Platform = VER_PLATFORM_WIN32_NT);
   Win32PlatformIsXP := ((Win32MajorVersion = 5) and (Win32MinorVersion >= 1))
                     or  (Win32MajorVersion > 5);
+
+finalization
+  Currency_DecimalSep := ''; {make memory sleuth happy}
+  Currency_ThousandSep := ''; {make memory sleuth happy}
+  Currency_CurrencySymbol := ''; {make memory sleuth happy}
 
 end.

@@ -3,6 +3,7 @@
 {                                                                             }
 {    Tnt Delphi Unicode Controls                                              }
 {      http://home.ccci.org/wolbrink/tnt/delphi_unicode_controls.htm          }
+{        Version: 2.1.2                                                       }
 {                                                                             }
 {    Copyright (c) 2002, 2003 Troy Wolbrink (troy.wolbrink@ccci.org)          }
 {                                                                             }
@@ -10,7 +11,7 @@
 
 unit TntActnList;
 
-{$INCLUDE Compilers.inc}
+{$INCLUDE TntCompilers.inc}
 
 interface
 
@@ -276,6 +277,8 @@ type
 procedure TCustomActionHelper.SetAnsiCaption(const Value: AnsiString);
 begin
   FAction.Caption := Value;
+  if (Value = '') and (FNewAnsiCaption <> '') then
+    FOldWideCaption := '';
 end;
 
 function TCustomActionHelper.SettingNewCaption: Boolean;
@@ -306,6 +309,8 @@ end;
 procedure TCustomActionHelper.SetAnsiHint(const Value: AnsiString);
 begin
   FAction.Hint := Value;
+  if (Value = '') and (FNewAnsiHint <> '') then
+    FOldWideHint := '';
 end;
 
 function TCustomActionHelper.SettingNewHint: Boolean;

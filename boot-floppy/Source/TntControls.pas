@@ -3,6 +3,7 @@
 {                                                                             }
 {    Tnt Delphi Unicode Controls                                              }
 {      http://home.ccci.org/wolbrink/tnt/delphi_unicode_controls.htm          }
+{        Version: 2.1.2                                                       }
 {                                                                             }
 {    Copyright (c) 2002, 2003 Troy Wolbrink (troy.wolbrink@ccci.org)          }
 {                                                                             }
@@ -10,7 +11,7 @@
 
 unit TntControls;
 
-{$INCLUDE Compilers.inc}
+{$INCLUDE TntCompilers.inc}
 
 {
   Windows NT provides support for native Unicode windows.  To add Unicode support to a
@@ -58,12 +59,8 @@ unit TntControls;
 
 interface
 
-{$IFDEF COMPILER_6_UP}
-{$WARN SYMBOL_PLATFORM OFF} { We are going to use Win32 specific symbols! }
-{$ENDIF}
-
 uses
-  Classes, Windows, Messages, Controls, Forms, TntClasses, TypInfo, ActnList, Menus, TntMenus,
+  Forms, Classes, Windows, Messages, Controls, TntClasses, TypInfo, ActnList, Menus, TntMenus,
   TntSysUtils;
 
 {TNT-WARN TCaption}
@@ -135,6 +132,9 @@ type
 procedure WideListControl_AddItem(Control: TCustomListControl; const Item: WideString; AObject: TObject);
 {$ENDIF}
 
+var
+  _IsShellProgramming: Boolean = False;
+
 implementation
 
 uses
@@ -190,12 +190,33 @@ type
 
 { TWideCaptionHolder }
 
+function CompareCaptionHolderToTarget(Item, Target: Pointer): Integer;
+begin
+  if Integer(TWideCaptionHolder(Item).FControl) < Integer(Target) then
+    Result := -1
+  else if Integer(TWideCaptionHolder(Item).FControl) > Integer(Target) then
+    Result := 1
+  else
+    Result := 0;
+end;
+
+function FindWideCaptionHolderIndex(Control: TControl; var Index: Integer): Boolean;
+begin
+  // find control in sorted wide caption list (list is sorted by TWideCaptionHolder.FControl)
+  Result := FindSortedListByTarget(WideCaptionHolders, CompareCaptionHolderToTarget, Control, Index);
+end;
+
 constructor TWideCaptionHolder.Create(AOwner: TControl);
+var
+  Index: Integer;
 begin
   inherited Create(nil);
   FControl := AOwner;
   FControl.FreeNotification(Self);
-  WideCaptionHolders.Add(Self)
+
+  // insert into list according sort
+  FindWideCaptionHolderIndex(FControl, Index);
+  WideCaptionHolders.Insert(Index, Self);
 end;
 
 procedure TWideCaptionHolder.Notification(AComponent: TComponent; Operation: TOperation);
@@ -219,18 +240,16 @@ end;
 
 function FindWideCaptionHolder(Control: TControl; CreateIfNotFound: Boolean = True): TWideCaptionHolder;
 var
-  i: integer;
+  Index: integer;
 begin
-  Result := nil;
-  for i := 0 to WideCaptionHolders.Count - 1 do begin
-    if (TWideCaptionHolder(WideCaptionHolders[i]).FControl = Control) then begin
-      Result := TWideCaptionHolder(WideCaptionHolders[i]);
-      exit; // found it!
-    end;
-  end;
-  if (Result = nil) and CreateIfNotFound then begin
-    Result := TWideCaptionHolder.Create(Control);
-  end;
+  if FindWideCaptionHolderIndex(Control, Index) then begin
+  	Result := TWideCaptionHolder(WideCaptionHolders[Index]);
+    Assert(Result.FControl = Control, 'TNT Internal Error: FindWideCaptionHolderIndex failed.');
+  end else
+    Result := nil;
+
+  if (Result = nil) and CreateIfNotFound then
+  	Result := TWideCaptionHolder.Create(Control);
 end;
 
 //----------------------------------------------- GET/SET WINDOW CAPTION/HINT -------------
@@ -255,17 +274,17 @@ end;
 procedure TntControl_SetStoredText(Control: TControl; const Value: WideString);
 begin
   FindWideCaptionHolder(Control).FWideCaption := Value;
-  TAccessWinControl(Control).Text := Value;
+  TAccessControl(Control).Text := Value;
 end;
 
 function TntControl_GetText(Control: TControl): WideString;
 var
   WideCaptionHolder: TWideCaptionHolder;
 begin
-  if (not Win32PlatformIsUnicode) 
+  if (not Win32PlatformIsUnicode)
   or ((Control is TWinControl) and TWinControl(Control).HandleAllocated and (not IsWindowUnicode(TWinControl(Control).Handle))) then
     // Win9x / non-unicode handle
-    Result := TAccessWinControl(Control).Text
+    Result := TAccessControl(Control).Text
   else if (not (Control is TWinControl)) then begin
     // non-windowed TControl
     WideCaptionHolder := FindWideCaptionHolder(Control, False);
@@ -289,11 +308,11 @@ begin
   if (not Win32PlatformIsUnicode)
   or ((Control is TWinControl) and TWinControl(Control).HandleAllocated and (not IsWindowUnicode(TWinControl(Control).Handle))) then
     // Win9x / non-unicode handle
-    TAccessWinControl(Control).Text := Text
+    TAccessControl(Control).Text := Text
   else if (not (Control is TWinControl)) then begin
     // non-windowed TControl
     with FindWideCaptionHolder(Control) do
-      SetSyncedWideString(Text, FWideCaption, TAccessWinControl(Control).Text, SetAnsiText)
+      SetSyncedWideString(Text, FWideCaption, TAccessControl(Control).Text, SetAnsiText)
   end else if (not TWinControl(Control).HandleAllocated) then begin
     // NO HANDLE
     TntControl_SetStoredText(Control, Text);
@@ -400,7 +419,16 @@ procedure MakeWMCharMsgSafeForAnsi(var Message: TMessage);
 begin
   with TWMChar(Message) do begin
     Assert(Msg = WM_CHAR);
-    Assert(Unused = 0);
+    if not _IsShellProgramming then
+      Assert(Unused = 0)
+    else begin
+      Assert((Unused = 0) or (CharCode <= Word(High(AnsiChar))));
+      // When a Unicode control is embedded under non-Delphi Unicode
+      //   window something strange happens
+      if (Unused <> 0) then begin
+        CharCode := (Unused shl 8) or CharCode;
+      end;
+    end;
     if (CharCode > Word(High(AnsiChar))) then begin
       Unused := CharCode;
       CharCode := ANSI_UNICODE_HOLDER;
@@ -479,16 +507,16 @@ begin
   inherited Create(nil);
   FControl.FreeNotification(Self);
 
-  WinControl_ObjectInstance := TntClasses.MakeObjectInstance(FControl.MainWndProc);
-  ObjectInstance := TntClasses.MakeObjectInstance(Win32Proc);
-  DefObjectInstance := TntClasses.MakeObjectInstance(DefWin32Proc);
+  WinControl_ObjectInstance := MakeObjectInstance(FControl.MainWndProc);
+  ObjectInstance := MakeObjectInstance(Win32Proc);
+  DefObjectInstance := MakeObjectInstance(DefWin32Proc);
 end;
 
 destructor TWinControlTrap.Destroy;
 begin
-  TntClasses.FreeObjectInstance(ObjectInstance);
-  TntClasses.FreeObjectInstance(DefObjectInstance);
-  TntClasses.FreeObjectInstance(WinControl_ObjectInstance);
+  FreeObjectInstance(ObjectInstance);
+  FreeObjectInstance(DefObjectInstance);
+  FreeObjectInstance(WinControl_ObjectInstance);
   inherited;
 end;
 
@@ -558,31 +586,51 @@ begin
     PendingRecreateWndTrapList.Add(Self);
 end;
 
+var
+  Finalized: Boolean; { If any tnt controls are still around after finalization it must be due to a memory leak.
+                        Windows will still try to send a WM_DESTROY, but we will just ignore it if we're finalized. }
+
 procedure TWinControlTrap.Win32Proc(var Message: TMessage);
 begin
-  Inc(Win32ProcLevel);
-  try
-    with Message do begin
-      {$IFDEF TNT_VERIFY_WINDOWPROC}
-      if not SameWndMethod(FControl.WindowProc, LastVerifiedWindowProc) then begin
-        SubClassWindowProc;
-        LastVerifiedWindowProc := FControl.WindowProc;
+  if (not Finalized) then begin
+    Inc(Win32ProcLevel);
+    try
+      with Message do begin
+        {$IFDEF TNT_VERIFY_WINDOWPROC}
+        if not SameWndMethod(FControl.WindowProc, LastVerifiedWindowProc) then begin
+          SubClassWindowProc;
+          LastVerifiedWindowProc := FControl.WindowProc;
+        end;
+        {$ENDIF}
+        if Msg = WM_DESTROY then begin
+          UnSubClassUnicodeControl;
+        end;
+        LastWin32Msg := Msg;
+        Result := CallWindowProcW(PrevWin32Proc, Handle, Msg, wParam, lParam);
       end;
-      {$ENDIF}
-      if Msg = WM_DESTROY then begin
-        UnSubClassUnicodeControl;
-      end;
-      LastWin32Msg := Msg;
-      Result := CallWindowProcW(PrevWin32Proc, Handle, Msg, wParam, lParam);
+    finally
+      Dec(Win32ProcLevel);
     end;
-  finally
-    Dec(Win32ProcLevel);
+    if (Win32ProcLevel = 0) and (DestroyTrap) then
+      Free;
   end;
-  if (Win32ProcLevel = 0) and (DestroyTrap) then
-    Free;
 end;
 
 procedure TWinControlTrap.DefWin32Proc(var Message: TMessage);
+
+  function IsChildEdit(AHandle: HWND): Boolean;
+  var
+    AHandleClass: WideString;
+  begin
+    Result := False;
+    if (FControl.Handle = GetParent(Handle)) then begin
+      // child control
+      SetLength(AHandleClass, 255);
+      SetLength(AHandleClass, GetClassNameW(AHandle, PWideChar(AHandleClass), Length(AHandleClass)));
+      Result := WideSameText(AHandleClass, 'EDIT');
+    end;
+  end;
+
 begin
   with Message do begin
     if Msg = WM_NOTIFYFORMAT then
@@ -591,20 +639,25 @@ begin
       if (Msg = WM_CHAR) then begin
         RestoreWMCharMsg(Message)
       end;
-      if (Msg = WM_IME_CHAR) and (not Win32PlatformIsXP) then
+      if (Msg = WM_IME_CHAR) and (not _IsShellProgramming) and (not Win32PlatformIsXP) then
       begin
         { In Windows XP, DefWindowProc handles WM_IME_CHAR fine for VCL windows. }
         { Before XP, DefWindowProc will sometimes produce incorrect, non-Unicode WM_CHAR. }
         { Also, using PostMessageW on Windows 2000 didn't always produce the correct results. }
         Message.Result := SendMessageW(Handle, WM_CHAR, wParam, lParam)
-      end else
+      end else if (Msg = WM_IME_CHAR) and (_IsShellProgramming) then begin
+        { When a Tnt control is hosted by a non-delphi control, DefWindowProc doesn't always work even on XP. }
+        if IsChildEdit(Handle) then
+          Message.Result := Integer(PostMessageW(Handle, WM_CHAR, wParam, lParam)) // native edit child control
+        else
+          Message.Result := SendMessageW(Handle, WM_CHAR, wParam, lParam);
+      end else begin
+        { Normal DefWindowProc }
         Result := CallWindowProcW(PrevDefWin32Proc, Handle, Msg, wParam, lParam);
+      end;
     end;
   end;
 end;
-
-var
-  OriginalHintStr: AnsiString = '';
 
 procedure ProcessCMHintShowMsg(var Message: TMessage);
 begin
@@ -616,7 +669,6 @@ begin
           HintInfo.HintWindowClass := TTntHintWindow;
         HintInfo.HintData := HintInfo;
         HintInfo.HintStr := WideGetShortHint(WideGetHint(HintInfo.HintControl));
-        OriginalHintStr := HintInfo.HintStr;
       end;
     end;
   end;
@@ -692,7 +744,7 @@ var
   WinControlTrap: TWinControlTrap;
 begin
   if not IsWindowUnicode(Control.Handle) then
-    raise Exception.Create('TNT Internal Error: SubClassUnicodeControl.Control is not Unicode.');
+    raise ETntInternalError.Create('Internal Error: SubClassUnicodeControl.Control is not Unicode.');
 
   WinControlTrap := FindOrCreateWinControlTrap(Control);
   WinControlTrap.SubClassControl(Params_Caption);
@@ -728,10 +780,10 @@ begin
   TAccessWinControl(CreationControl).WindowHandle := HWindow;
   ObjectInstance := GetObjectInstance(CreationControl);
   {Controls.InitWndProc converts control to ANSI here by calling SetWindowLongA()!}
-  SetWindowLongW(HWindow, GWL_WNDPROC, Longint(ObjectInstance));
+  SetWindowLongW(HWindow, GWL_WNDPROC, Integer(ObjectInstance));
   if  (GetWindowLongW(HWindow, GWL_STYLE) and WS_CHILD <> 0)
   and (GetWindowLongW(HWindow, GWL_ID) = 0) then
-    SetWindowLongW(HWindow, GWL_ID, HWindow);
+    SetWindowLongW(HWindow, GWL_ID, Integer(HWindow));
   SetProp(HWindow, MakeIntAtom(ControlAtom), THandle(CreationControl));
   SetProp(HWindow, MakeIntAtom(WindowAtom), THandle(CreationControl));
   CreationControl := nil;
@@ -754,12 +806,13 @@ begin
 
   with Params do begin
     WideWinClassName := WinClassName + UNICODE_CLASS_EXT;
-    ClassRegistered := GetClassInfoW(WindowClass.hInstance, PWideChar(WideWinClassName), TempClass);
+    ClassRegistered := GetClassInfoW(hInstance, PWideChar(WideWinClassName), TempClass);
     if (not ClassRegistered) or (TempClass.lpfnWndProc <> InitialProc)
     then begin
-      if ClassRegistered then Windows.UnregisterClassW(PWideChar(WideWinClassName), WindowClass.hInstance);
+      if ClassRegistered then Win32Check(Windows.UnregisterClassW(PWideChar(WideWinClassName), hInstance));
       // Prepare a TWndClassW record
       WideClass := TWndClassW(WindowClass);
+      WideClass.hInstance := hInstance;
       WideClass.lpfnWndProc := InitialProc;
       if not Tnt_Is_IntResource(PWideChar(WindowClass.lpszMenuName)) then begin
         WideClass.lpszMenuName := PWideChar(WideString(WindowClass.lpszMenuName));
@@ -799,7 +852,7 @@ begin
     try
       with Params do
         Handle := CreateWindowExW(ExStyle, PWideChar(WideWinClassName), nil,
-          Style, X, Y, Width, Height, WndParent, 0, WindowClass.hInstance, Param);
+          Style, X, Y, Width, Height, WndParent, 0, hInstance, Param);
       if Handle = 0 then
         RaiseLastOSError;
       TAccessWinControl(Control).WindowHandle := Handle;
@@ -944,8 +997,13 @@ begin
   else begin
     FBlockPaint := True;
     try
-      inherited;
-      Caption := ExtractTntHintCaption(AData);
+      FActivating := True;
+      try
+        Caption := ExtractTntHintCaption(AData);
+        inherited;
+      finally
+        FActivating := False;
+      end;
     finally
       FBlockPaint := False;
     end;
@@ -957,7 +1015,7 @@ function TTntHintWindow.CalcHintRect(MaxWidth: Integer; const AHint: AnsiString;
 var
   WideHintStr: WideString;
 begin
-  if (not Win32PlatformIsUnicode)
+   if (not Win32PlatformIsUnicode)
   or (not DataPointsToHintInfoForTnt(AData)) then
     Result := inherited CalcHintRect(MaxWidth, AHint, AData)
   else begin
@@ -1026,5 +1084,6 @@ initialization
 finalization
   WideCaptionHolders.Free;
   PendingRecreateWndTrapList.Free;
+  Finalized := True;
 
 end.

@@ -22,7 +22,8 @@ uses
   gnugettext in 'gnugettext.pas',
   Advanced in 'Advanced.pas' {FormAdvanced},
   ParInstall in 'ParInstall.pas' {parinst},
-  ParInstall2 in 'ParInstall2.pas' {parinst2};
+  ParInstall2 in 'ParInstall2.pas' {parinst2},
+  drives in 'drives.pas';
 
 {$R *.RES}
 

@@ -3,6 +3,7 @@
 {                                                                             }
 {    Tnt Delphi Unicode Controls                                              }
 {      http://home.ccci.org/wolbrink/tnt/delphi_unicode_controls.htm          }
+{        Version: 2.1.2                                                       }
 {                                                                             }
 {    Copyright (c) 2002, 2003 Troy Wolbrink (troy.wolbrink@ccci.org)          }
 {                                                                             }
@@ -10,7 +11,7 @@
 
 unit TntTypInfo;
 
-{$INCLUDE Compilers.inc}
+{$INCLUDE TntCompilers.inc}
 
 interface
 

@@ -3,6 +3,7 @@
 {                                                                             }
 {    Tnt Delphi Unicode Controls                                              }
 {      http://home.ccci.org/wolbrink/tnt/delphi_unicode_controls.htm          }
+{        Version: 2.1.2                                                       }
 {                                                                             }
 {    Copyright (c) 2002, 2003 Troy Wolbrink (troy.wolbrink@ccci.org)          }
 {                                                                             }
@@ -10,13 +11,9 @@
 
 unit TntMenus;
 
-{$INCLUDE Compilers.inc}
+{$INCLUDE TntCompilers.inc}
 
 interface
-
-{$IFDEF COMPILER_6_UP}
-{$WARN SYMBOL_PLATFORM OFF} { We are going to use Win32 specific symbols! }
-{$ENDIF}
 
 uses
   Windows, Classes, Menus, Graphics, Messages;
@@ -109,6 +106,8 @@ function WideGetMenuItemCaption(MenuItem: TMenuItem{TNT-ALLOW TMenuItem}): WideS
 function WideGetMenuItemHint(MenuItem: TMenuItem{TNT-ALLOW TMenuItem}): WideString;
 
 procedure NoOwnerDrawTopLevelItems(Menu: TMainMenu{TNT-ALLOW TMainMenu});
+
+procedure FixMenuBiDiProblem(Menu: TMenu);
 
 function MenuItemHasBitmap(MenuItem: TMenuItem{TNT-ALLOW TMenuItem}): Boolean;
 
@@ -297,10 +296,11 @@ begin
   begin
     if Result[I] = cHotkeyPrefix then
       if SysLocale.FarEast
-      and ((I > 1) and (Length(Result)-I >= 2)
-      and (Result[I-1] = '(') and (Result[I+2] = ')')) then
-        Delete(Result, I-1, 4)
-      else
+      and ((I > 1) and (Length(Result) - I >= 2)
+      and (Result[I - 1] = '(') and (Result[I + 2] = ')')) then begin
+        Delete(Result, I - 1, 4);
+        Dec(I, 2);
+      end else
         Delete(Result, I, 1);
     Inc(I);
   end;
@@ -389,45 +389,36 @@ end;
 { TTntMenuItem's utility procs }
 
 procedure SyncHotKeyPosition(const Source: WideString; var Dest: WideString);
-
-  function SafeIndex(const S: WideString; Idx: Integer): Boolean;
-  begin
-    Result := (Idx <= Length(S)) and (Idx >= 1);
-  end;
-
-  function SafeGetChar(const S: WideString; Idx: Integer): WideChar;
-  begin
-    if SafeIndex(S, Idx) then
-      Result := S[Idx]
-    else
-      Result := #0;
-  end;
-
 var
-  HotKey: WideChar;
-  HotKeyPrefixIndex: Integer;
-  FarEastHotKey_UseParen: Boolean;
+  I: Integer;
+  FarEastHotString: WideString;
 begin
-  // determine pattern
-  HotKeyPrefixIndex := WideGetHotkeyPos(Source) - 1;
-  FarEastHotKey_UseParen := False;
-  HotKey := #0;
-  if  (SysLocale.FarEast)
-  and (SafeGetChar(Source, HotKeyPrefixIndex - 1) = '(')
-  and (SafeGetChar(Source, HotKeyPrefixIndex + 2) = ')') then begin
-    HotKey := SafeGetChar(Source, HotKeyPrefixIndex + 1);
-    Dec(HotKeyPrefixIndex, 2);
-    FarEastHotKey_UseParen := True;
-  end;
-  // copy pattern
-  Dest := WideStripHotkey(Dest);
-  if SafeIndex(Dest, HotKeyPrefixIndex) then begin
-    if (not FarEastHotKey_UseParen) then
-      System.Insert(cHotkeyPrefix, Dest, HotKeyPrefixIndex)
-    else begin
-      System.Insert('(' + cHotkeyPrefix, Dest, HotKeyPrefixIndex + 1);
-      System.Insert(WideString(HotKey) + ')', Dest, HotKeyPrefixIndex + 3); // '(&A'
+  if (AnsiString(Source) <> AnsiString(Dest))
+  and WideSameCaption(AnsiString(Source), AnsiString(Dest)) then begin
+    // when reduced to ansi, the only difference is hot key positions
+    Dest := WideStripHotkey(Dest);
+    I := 1;
+    while I <= Length(Source) do
+    begin
+      if Source[I] = cHotkeyPrefix then begin
+        if SysLocale.FarEast
+        and ((I > 1) and (Length(Source) - I >= 2)
+        and (Source[I - 1] = '(') and (Source[I + 2] = ')')) then begin
+          FarEastHotString := Copy(Source, I - 1, 4);
+          Dec(I);
+          Insert(FarEastHotString, Dest, I);
+          Inc(I, 3);
+        end else begin
+          Insert(cHotkeyPrefix, Dest, I);
+          Inc(I);
+        end;
+      end;
+      Inc(I);
     end;
+    // test work
+    if AnsiString(Source) <> AnsiString(Dest) then
+      raise ETntInternalError.CreateFmt('Internal Error: SyncHotKeyPosition Failed ("%s" <> "%s").',
+        [AnsiString(Source), AnsiString(Dest)]);
   end;
 end;
 
@@ -440,6 +431,19 @@ begin
       UpdateMenuItems(Items[i], ParentMenu);
     if Items is TTntMenuItem then
       TTntMenuItem(Items).UpdateMenuString(ParentMenu);
+  end;
+end;
+
+procedure FixMenuBiDiProblem(Menu: TMenu);
+begin
+  // TMenu sometimes sets bidi on item[0] which can convert caption to ansi
+  if (SysLocale.MiddleEast) then begin
+    if (Menu <> nil)
+    and (Menu.Items.Count > 0)
+    and (Menu.Items[0] is TTntMenuItem) then
+    begin
+      (Menu.Items[0] as TTntMenuItem).UpdateMenuString(Menu);
+    end;
   end;
 end;
 
@@ -581,23 +585,11 @@ begin
 end;
 
 procedure TTntMenuItem.MenuChanged(Rebuild: Boolean);
-var
-  ParentMenu: TMenu;
 begin
   if (not FIgnoreMenuChanged) then begin
     inherited;
     UpdateMenuItems(Self, GetParentMenu);
-    // TMenu sometimes sets bidi on item[0] which can convert caption to ansi
-    if (SysLocale.MiddleEast) then begin
-      ParentMenu := GetParentMenu;
-      if (ParentMenu <> nil)
-      and (not ParentMenu.ParentBiDiMode)
-      and (ParentMenu.Items.Count > 0)
-      and (ParentMenu.Items[0] is TTntMenuItem) then
-      begin
-        (ParentMenu.Items[0] as TTntMenuItem).UpdateMenuString(ParentMenu);
-      end;
-    end;
+    FixMenuBiDiProblem(GetParentMenu);
   end;
 end;
 
@@ -841,7 +833,7 @@ begin
         Caption := '';
         ShortCut := scNone;
       finally
-        FIgnoreMenuChanged := True;
+        FIgnoreMenuChanged := False;
       end;
       inherited;
     finally
@@ -850,7 +842,7 @@ begin
         Caption := SaveCaption;
         ShortCut := SaveShortcut;
       finally
-        FIgnoreMenuChanged := True;
+        FIgnoreMenuChanged := False;
       end;
     end;
     DrawMenuText((ParentMenu <> nil) and (ParentMenu.IsRightToLeft))
@@ -1003,6 +995,7 @@ end;
 destructor TTntPopupMenu.Destroy;
 begin
   TntPopupList.Remove(Self);
+  PopupList.Add(Self);
   inherited;
 end;
 
@@ -1032,7 +1025,11 @@ var
 begin
   case Message.Msg of
     WM_ENTERMENULOOP:
-      Menus.PopupList := SavedPopupList;
+      begin
+        Menus.PopupList := SavedPopupList;
+        for i := 0 to Count - 1 do
+          FixMenuBiDiProblem(Items[i]);
+      end;
     WM_MENUSELECT:
       with TWMMenuSelect(Message) do
       begin

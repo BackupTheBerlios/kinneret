@@ -3,6 +3,7 @@
 {                                                                             }
 {    Tnt Delphi Unicode Controls                                              }
 {      http://home.ccci.org/wolbrink/tnt/delphi_unicode_controls.htm          }
+{        Version: 2.1.2                                                       }
 {                                                                             }
 {    Copyright (c) 2002, 2003 Troy Wolbrink (troy.wolbrink@ccci.org)          }
 {                                                                             }
@@ -10,13 +11,9 @@
 
 unit TntForms;
 
-{$INCLUDE Compilers.inc}
+{$INCLUDE TntCompilers.inc}
 
 interface
-
-{$IFDEF COMPILER_6_UP}
-{$WARN SYMBOL_PLATFORM OFF} { We are going to use Win32 specific symbols! }
-{$ENDIF}
 
 uses
   Classes, TntClasses, Windows, Messages, Controls, Forms, TntControls;
@@ -25,9 +22,11 @@ type
 {TNT-WARN TScrollBox}
   TTntScrollBox = class(TScrollBox{TNT-ALLOW TScrollBox})
   private
+    FWMSizeCallCount: Integer;
     function IsHintStored: Boolean;
     function GetHint: WideString;
     procedure SetHint(const Value: WideString);
+    procedure WMSize(var Message: TWMSize); message WM_SIZE;
   protected
     procedure CreateWindowHandle(const Params: TCreateParams); override;
     procedure DefineProperties(Filer: TFiler); override;
@@ -118,9 +117,12 @@ type
     function IsCaptionStored: Boolean;
     function IsHintStored: Boolean;
     procedure WMMenuSelect(var Message: TWMMenuSelect); message WM_MENUSELECT;
+    procedure CMBiDiModeChanged(var Message: TMessage); message CM_BIDIMODECHANGED;
+    procedure WMWindowPosChanging(var Message: TMessage); message WM_WINDOWPOSCHANGING;
   protected
     procedure UpdateActions; override;
     procedure CreateWindowHandle(const Params: TCreateParams); override;
+    procedure DestroyWindowHandle; override;
     procedure DefineProperties(Filer: TFiler); override;
     function GetActionLinkClass: TControlActionLinkClass; override;
     procedure ActionChange(Sender: TObject; CheckDefaults: Boolean); override;
@@ -137,6 +139,7 @@ type
     FMainFormChecked: Boolean;
     FHint: WideString;
     FTntAppIdleEventControl: TControl;
+    FSettingChangeTime: Cardinal;
     function GetHint: WideString;
     procedure SetAnsiAppHint(const Value: AnsiString);
     procedure SetHint(const Value: WideString);
@@ -149,6 +152,7 @@ type
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
     property Hint: WideString read GetHint write SetHint;
+    property SettingChangeTime: Cardinal read FSettingChangeTime;
   end;
 
 {TNT-WARN IsAccel}
@@ -168,17 +172,14 @@ var
 implementation
 
 uses
-  SysUtils, Consts, {$IFDEF COMPILER_6_UP} RTLConsts, {$ENDIF} Menus, TntMenus,
-  TntActnList, StdActns, TntStdActns, TntWindows, TntSysUtils;
+  SysUtils, Consts, {$IFDEF COMPILER_6_UP} RTLConsts, {$ENDIF} Menus, FlatSB, StdActns,
+  TntSystem, TntSysUtils, TntWindows, TntMenus, TntActnList, TntStdActns;
 
 function IsWideCharAccel(CharCode: Word; const Caption: WideString): Boolean;
 var
   W: WideChar;
 begin
-  if CharCode <= Word(High(AnsiChar)) then
-    W := KeyUnicode(AnsiChar(CharCode))
-  else
-    W := WideChar(CharCode);
+  W := KeyUnicode(CharCode);
   Result := WideSameText(W, WideGetHotKey(Caption));
 end;
 
@@ -244,6 +245,17 @@ begin
   Result := TntControl_GetActionLinkClass(Self, inherited GetActionLinkClass);
 end;
 
+procedure TTntScrollBox.WMSize(var Message: TWMSize);
+begin
+  Inc(FWMSizeCallCount);
+  try
+    if FWMSizeCallCount < 32 then { Infinite recursion was encountered on Win 9x. }
+      inherited;
+  finally
+    Dec(FWMSizeCallCount);
+  end;
+end;
+
 { TTntCustomFrame }
 
 procedure TTntCustomFrame.CreateWindowHandle(const Params: TCreateParams);
@@ -306,7 +318,7 @@ begin
     DefWndProc := @DefMDIChildProcW;
     WindowHandle := CreateMDIWindowW(PWideChar(WideWinClassName),
       nil, Params.style, Params.X, Params.Y, Params.Width, Params.Height,
-        Application.MainForm.ClientHandle, Params.WindowClass.hInstance, Longint(Params.Param));
+        Application.MainForm.ClientHandle, hInstance, Longint(Params.Param));
     if WindowHandle = 0 then
       RaiseLastOSError;
     SubClassUnicodeControl(Self, Params.Caption);
@@ -318,13 +330,24 @@ begin
     CreateUnicodeHandle(Self, NewParams, '');
     Exclude(FFormState, fsCreatedMDIChild);
   end;
-{$IFDEF COMPILER_6_UP}
+  {$IFDEF COMPILER_6_UP}
   if AlphaBlend then begin
     // toggle AlphaBlend to force update
     AlphaBlend := False;
     AlphaBlend := True;
+  end else if TransparentColor then begin
+    // toggle TransparentColor to force update
+    TransparentColor := False;
+    TransparentColor := True;
   end;
-{$ENDIF}
+  {$ENDIF}
+end;
+
+procedure TTntForm{TNT-ALLOW TTntForm}.DestroyWindowHandle;
+begin
+  if Win32PlatformIsUnicode then
+    UninitializeFlatSB(Handle); { Bug in VCL: Without this there might be a resource leak. }
+  inherited;
 end;
 
 procedure TTntForm{TNT-ALLOW TTntForm}.DefineProperties(Filer: TFiler);
@@ -404,7 +427,7 @@ begin
         if MenuFlag and MF_POPUP <> 0 then
         begin
           FindKind := fkHandle;
-          ID := GetSubMenu(Menu, ID);
+          ID := Integer(GetSubMenu(Menu, ID));
         end;
         MenuItem := Self.Menu.FindItem(ID, FindKind);
       end;
@@ -421,12 +444,30 @@ begin
   TntApplication.DoIdle;
 end;
 
+procedure TTntForm{TNT-ALLOW TTntForm}.CMBiDiModeChanged(var Message: TMessage);
+var
+  Loop: Integer;
+begin
+  inherited;
+  for Loop := 0 to ComponentCount - 1 do
+    if Components[Loop] is TMenu then
+      FixMenuBiDiProblem(TMenu(Components[Loop]));
+end;
+
+procedure TTntForm{TNT-ALLOW TTntForm}.WMWindowPosChanging(var Message: TMessage);
+begin
+  inherited;
+  // This message *sometimes* means that the Menu.BiDiMode changed.
+  FixMenuBiDiProblem(Menu);
+end;
+
 { TTntApplication }
 
 constructor TTntApplication.Create(AOwner: TComponent);
 begin
   inherited;
   Application.HookMainWindow(WndProc);
+  FSettingChangeTime := GetTickCount;
 end;
 
 destructor TTntApplication.Destroy;
@@ -517,6 +558,7 @@ type
 constructor TTntAppIdleEventControl.Create(AOwner: TComponent);
 begin
   inherited;
+  ParentFont := False; { This allows Parent (Application) to be in another module. }
   Parent := Application.MainForm;
   Visible := True;
   Action := TTntAction.Create(Self);
@@ -572,6 +614,8 @@ var
   BasicAction: TBasicAction;
 begin
   Result := False; { not handled }
+  if (Message.Msg = WM_SETTINGCHANGE) then
+    FSettingChangeTime := GetTickCount;
   if (Message.Msg = CM_ACTIONEXECUTE) then begin
     BasicAction := TBasicAction(Message.LParam);
     if (BasicAction.ClassType = THintAction{TNT-ALLOW THintAction})
@@ -644,14 +688,24 @@ begin
     RaiseLastOSError;
 end;
 
+function UnhookIsKnownToFail: Boolean;
+begin
+  Result := (Pos('W3WP.',    Tnt_WideUpperCase(WideExtractFileName(WideParamStr(0)))) = 1) // for IIS 6.0
+         or (Pos('DLLHOST.', Tnt_WideUpperCase(WideExtractFileName(WideParamStr(0)))) = 1) // for IIS 5.0
+end;
+
 initialization
   TntApplication := TTntApplication.Create(nil);
   if Win32Platform = VER_PLATFORM_WIN32_NT then
     CreateGetMessageHookForNT;
 
 finalization
-  if NTGetMessageHook <> 0 then
-    Win32Check(UnhookWindowsHookEx(NTGetMessageHook));
+  if NTGetMessageHook <> 0 then begin
+    if UnhookIsKnownToFail then
+      UnhookWindowsHookEx(NTGetMessageHook) // no Win32Check!
+    else
+      Win32Check(UnhookWindowsHookEx(NTGetMessageHook));
+  end;
   FreeAndNil(TntApplication);
 
 end.

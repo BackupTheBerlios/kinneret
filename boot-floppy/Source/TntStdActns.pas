@@ -3,6 +3,7 @@
 {                                                                             }
 {    Tnt Delphi Unicode Controls                                              }
 {      http://home.ccci.org/wolbrink/tnt/delphi_unicode_controls.htm          }
+{        Version: 2.1.2                                                       }
 {                                                                             }
 {    Copyright (c) 2002, 2003 Troy Wolbrink (troy.wolbrink@ccci.org)          }
 {                                                                             }
@@ -10,12 +11,12 @@
 
 unit TntStdActns;
 
-{$INCLUDE Compilers.inc}
+{$INCLUDE TntCompilers.inc}
 
 interface
 
 uses
-  Classes, ActnList, TntActnList, StdActns;
+  Classes, ActnList, TntActnList, StdActns, TntDialogs;
 
 type
 {TNT-WARN THintAction}
@@ -142,6 +143,8 @@ type
     procedure DefineProperties(Filer: TFiler); override;
   public
     procedure Assign(Source: TPersistent); override;
+    procedure UpdateTarget(Target: TObject); override;
+    procedure ExecuteTarget(Target: TObject); override;
   published
     property Caption: WideString read GetCaption write SetCaption;
     property Hint: WideString read GetHint write SetHint;
@@ -380,12 +383,15 @@ type
     procedure SetCaption(const Value: WideString);
     function GetHint: WideString;
     procedure SetHint(const Value: WideString);
+    function GetDialog: TTntOpenDialog;
   protected
     procedure DefineProperties(Filer: TFiler); override;
+    function GetDialogClass: TCommonDialogClass; override;
   public
     procedure Assign(Source: TPersistent); override;
   published
     property Caption: WideString read GetCaption write SetCaption;
+    property Dialog: TTntOpenDialog read GetDialog;
     property Hint: WideString read GetHint write SetHint;
   end;
 
@@ -396,12 +402,15 @@ type
     procedure SetCaption(const Value: WideString);
     function GetHint: WideString;
     procedure SetHint(const Value: WideString);
+    function GetDialog: TTntOpenDialog;
   protected
     procedure DefineProperties(Filer: TFiler); override;
+    function GetDialogClass: TCommonDialogClass; override;
   public
     procedure Assign(Source: TPersistent); override;
   published
     property Caption: WideString read GetCaption write SetCaption;
+    property Dialog: TTntOpenDialog read GetDialog;
     property Hint: WideString read GetHint write SetHint;
   end;
 
@@ -412,12 +421,15 @@ type
     procedure SetCaption(const Value: WideString);
     function GetHint: WideString;
     procedure SetHint(const Value: WideString);
+    function GetDialog: TTntSaveDialog;
   protected
     procedure DefineProperties(Filer: TFiler); override;
+    function GetDialogClass: TCommonDialogClass; override;
   public
     procedure Assign(Source: TPersistent); override;
   published
     property Caption: WideString read GetCaption write SetCaption;
+    property Dialog: TTntSaveDialog read GetDialog;
     property Hint: WideString read GetHint write SetHint;
   end;
 
@@ -605,14 +617,14 @@ procedure TntStdActn_AfterInherited_Assign(Action: TCustomAction{TNT-ALLOW TCust
 implementation
 
 uses
-  TntClasses;
+  Dialogs, TntClasses;
 
 {TNT-IGNORE-UNIT}
 
 procedure TntStdActn_AfterInherited_Assign(Action: TCustomAction{TNT-ALLOW TCustomAction}; Source: TPersistent);
 begin
   TntAction_AfterInherited_Assign(Action, Source);
-{$IFDEF COMPILER_6_UP}
+  {$IFDEF COMPILER_6_UP}
   // TCommonDialogAction
   if (Action is TCommonDialogAction) and (Source is TCommonDialogAction) then begin
     TCommonDialogAction(Action).BeforeExecute := TCommonDialogAction(Source).BeforeExecute;
@@ -636,7 +648,7 @@ begin
   if (Action is TSearchFindNext) and (Source is TSearchFindNext) then begin
     TSearchFindNext(Action).SearchFind := TSearchFindNext(Source).SearchFind;
   end;
-{$ENDIF}
+  {$ENDIF}
 end;
 
 //-------------------------
@@ -913,6 +925,18 @@ end;
 procedure TTntEditDelete.SetHint(const Value: WideString);
 begin
   TntAction_SetHint(Self, Value);
+end;
+
+procedure TTntEditDelete.UpdateTarget(Target: TObject);
+begin
+  Enabled := True;
+end;
+
+procedure TTntEditDelete.ExecuteTarget(Target: TObject);
+begin
+  if GetControl(Target).SelLength = 0 then
+    GetControl(Target).SelLength := 1;
+  GetControl(Target).ClearSelection
 end;
 
 { TTntWindowAction }
@@ -1427,6 +1451,16 @@ begin
   TntAction_SetHint(Self, Value);
 end;
 
+function TTntFileOpen.GetDialog: TTntOpenDialog;
+begin
+  Result := inherited Dialog as TTntOpenDialog;
+end;
+
+function TTntFileOpen.GetDialogClass: TCommonDialogClass;
+begin
+  Result := TTntOpenDialog;
+end;
+
 { TTntFileOpenWith }
 
 procedure TTntFileOpenWith.Assign(Source: TPersistent);
@@ -1461,6 +1495,16 @@ begin
   TntAction_SetHint(Self, Value);
 end;
 
+function TTntFileOpenWith.GetDialog: TTntOpenDialog;
+begin
+  Result := inherited Dialog as TTntOpenDialog;
+end;
+
+function TTntFileOpenWith.GetDialogClass: TCommonDialogClass;
+begin
+  Result := TTntOpenDialog;
+end;
+
 { TTntFileSaveAs }
 
 procedure TTntFileSaveAs.Assign(Source: TPersistent);
@@ -1493,6 +1537,16 @@ end;
 procedure TTntFileSaveAs.SetHint(const Value: WideString);
 begin
   TntAction_SetHint(Self, Value);
+end;
+
+function TTntFileSaveAs.GetDialog: TTntSaveDialog;
+begin
+  Result := TOpenDialog(inherited Dialog) as TTntSaveDialog;
+end;
+
+function TTntFileSaveAs.GetDialogClass: TCommonDialogClass;
+begin
+  Result := TTntSaveDialog;
 end;
 
 { TTntFilePrintSetup }

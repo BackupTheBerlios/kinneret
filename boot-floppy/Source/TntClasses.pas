@@ -3,6 +3,7 @@
 {                                                                             }
 {    Tnt Delphi Unicode Controls                                              }
 {      http://home.ccci.org/wolbrink/tnt/delphi_unicode_controls.htm          }
+{        Version: 2.1.2                                                       }
 {                                                                             }
 {    Copyright (c) 2002, 2003 Troy Wolbrink (troy.wolbrink@ccci.org)          }
 {                                                                             }
@@ -10,16 +11,26 @@
 
 unit TntClasses;
 
-{$INCLUDE Compilers.inc}
+{$INCLUDE TntCompilers.inc}
 
 interface
 
 uses
-  Classes, SysUtils, Windows, ActiveX, Controls, Graphics;
+  Classes, SysUtils, Windows, ActiveX;
+
+// ......... introduced .........
+type
+  TTntStreamCharSet = (csAnsi, csUnicode, csUnicodeSwapped, csUtf8);
+
+function AutoDetectCharacterSet(Stream: TStream): TTntStreamCharSet;
+
+//---------------------------------------------------------------------------------------------
+//                                 Tnt - Classes
+//---------------------------------------------------------------------------------------------
 
 {TNT-WARN ExtractStrings}
 {TNT-WARN LineStart}
-{TNT-WARN TStringStream}   // TO DO: Implement a TWideStringStream
+{TNT-WARN TStringStream}   // TODO: Implement a TWideStringStream
 
 procedure TntPersistent_AfterInherited_DefineProperties(Filer: TFiler; Instance: TPersistent);
 
@@ -29,6 +40,13 @@ type
   public
     constructor Create(const FileName: WideString; Mode: Word);
     destructor Destroy; override;
+  end;
+
+{TNT-WARN TMemoryStream}
+  TTntMemoryStream = class(TMemoryStream{TNT-ALLOW TMemoryStream})
+  public
+    procedure LoadFromFile(const FileName: WideString);
+    procedure SaveToFile(const FileName: WideString);
   end;
 
 {TNT-WARN TResourceStream}
@@ -42,6 +60,7 @@ type
     constructor CreateFromID(Instance: THandle; ResID: Word; ResType: PWideChar);
     destructor Destroy; override;
     function Write(const Buffer; Count: Longint): Longint; override;
+    procedure SaveToFile(const FileName: WideString);
   end;
 
   TTntStrings = class;
@@ -60,8 +79,8 @@ type
   public
     procedure LoadFromFile(const FileName: WideString); reintroduce;
     procedure SaveToFile(const FileName: WideString); reintroduce;
-    procedure LoadFromFileEx(const FileName: WideString; CodePage: Cardinal); virtual; abstract;
-    procedure SaveToFileEx(const FileName: WideString; CodePage: Cardinal); virtual; abstract;
+    procedure LoadFromFileEx(const FileName: WideString; CodePage: Cardinal);
+    procedure SaveToFileEx(const FileName: WideString; CodePage: Cardinal);
     procedure LoadFromStreamEx(Stream: TStream; CodePage: Cardinal); virtual; abstract;
     procedure SaveToStreamEx(Stream: TStream; CodePage: Cardinal); virtual; abstract;
   end;
@@ -74,6 +93,7 @@ type
     FAnsiStrings: TAnsiStrings{TNT-ALLOW TAnsiStrings};
     procedure SetAnsiStrings(const Value: TAnsiStrings{TNT-ALLOW TAnsiStrings});
   private
+    FLastFileCharSet: TTntStreamCharSet;
     FDefined: TWideStringsDefined;
     FDelimiter: WideChar;
     FQuoteChar: WideChar;
@@ -141,7 +161,7 @@ type
     procedure InsertObject(Index: Integer; const S: WideString;
       AObject: TObject); virtual;
     procedure LoadFromFile(const FileName: WideString); virtual;
-    procedure LoadFromStream(Stream: TStream); virtual;
+    procedure LoadFromStream(Stream: TStream; WithBOM: Boolean = True); virtual;
     procedure Move(CurIndex, NewIndex: Integer); virtual;
     procedure SaveToFile(const FileName: WideString); virtual;
     procedure SaveToStream(Stream: TStream; WithBOM: Boolean = True); virtual;
@@ -151,6 +171,7 @@ type
     property Count: Integer read GetCount;
     property Delimiter: WideChar read GetDelimiter write SetDelimiter;
     property DelimitedText: WideString read GetDelimitedText write SetDelimitedText;
+    property LastFileCharSet: TTntStreamCharSet read FLastFileCharSet;
     property Names[Index: Integer]: WideString read GetName;
     property Objects[Index: Integer]: TObject read GetObject write PutObject;
     property QuoteChar: WideChar read GetQuoteChar write SetQuoteChar;
@@ -229,24 +250,66 @@ type
     property OnChanging: TNotifyEvent read FOnChanging write FOnChanging;
   end;
 
-function MakeObjectInstance(Method: TWndMethod): Pointer;
-procedure FreeObjectInstance(ObjectInstance: Pointer);
-
 // ......... introduced .........
 type
-  TTntStreamCharSet = (csAnsi, csUnicode, csUnicodeSwapped);
-function AutoDetectCharacterSet(Stream: TStream): TTntStreamCharSet;
+  TListTargetCompare = function (Item, Target: Pointer): Integer;
+
+function FindSortedListByTarget(List: TList; TargetCompare: TListTargetCompare;
+  Target: Pointer; var Index: Integer): Boolean;
 
 function ClassIsRegistered(const clsid: TCLSID): Boolean;
 
 var
   RuntimeUTFStreaming: Boolean;
 
+type
+  TBufferedAnsiString = class(TObject)
+  private
+    FStringBuffer: AnsiString;
+    LastWriteIndex: Integer;
+  public
+    procedure Clear;
+    procedure AddChar(const wc: AnsiChar);
+    procedure AddString(const s: AnsiString);
+    procedure AddBuffer(Buff: PAnsiChar; Chars: Integer);
+    function Value: AnsiString;
+    function BuffPtr: PAnsiChar;
+  end;
+
+  TBufferedWideString = class(TObject)
+  private
+    FStringBuffer: WideString;
+    LastWriteIndex: Integer;
+  public
+    procedure Clear;
+    procedure AddChar(const wc: WideChar);
+    procedure AddString(const s: WideString);
+    procedure AddBuffer(Buff: PWideChar; Chars: Integer);
+    function Value: WideString;
+    function BuffPtr: PWideChar;
+  end;
+
+  TBufferedStreamReader = class(TStream)
+  private
+    FStream: TStream;
+    FStreamSize: Integer;
+    FBuffer: array of Byte;
+    FBufferSize: Integer;
+    FBufferStartPosition: Integer;
+    FVirtualPosition: Integer;
+    procedure UpdateBufferFromPosition(StartPos: Integer);
+  public
+    constructor Create(Stream: TStream; BufferSize: Integer = 1024);
+    function Read(var Buffer; Count: Longint): Longint; override;
+    function Write(const Buffer; Count: Longint): Longint; override;
+    function Seek(Offset: Longint; Origin: Word): Longint; override;
+  end;
+
 implementation
 
 uses
-  Consts, {$IFDEF COMPILER_6_UP} RTLConsts, {$ENDIF} SysConst, ComObj, Forms, Registry,
-  ShellApi, Math, TypInfo, TntTypInfo, TntSysUtils;
+  {$IFDEF COMPILER_6_UP} RTLConsts, {$ELSE} Consts, {$ENDIF} ComObj, Math,
+  Registry, TypInfo, TntTypInfo, TntSystem, TntSysUtils;
 
 { TntPersistent }
 
@@ -401,6 +464,32 @@ begin
   if Handle >= 0 then FileClose(Handle);
 end;
 
+{ TTntMemoryStream }
+
+procedure TTntMemoryStream.LoadFromFile(const FileName: WideString);
+var
+  Stream: TStream;
+begin
+  Stream := TTntFileStream.Create(FileName, fmOpenRead or fmShareDenyWrite);
+  try
+    LoadFromStream(Stream);
+  finally
+    Stream.Free;
+  end;
+end;
+
+procedure TTntMemoryStream.SaveToFile(const FileName: WideString);
+var
+  Stream: TStream;
+begin
+  Stream := TTntFileStream.Create(FileName, fmCreate);
+  try
+    SaveToStream(Stream);
+  finally
+    Stream.Free;
+  end;
+end;
+
 { TTntResourceStream }
 
 constructor TTntResourceStream.Create(Instance: THandle; const ResName: WideString;
@@ -444,6 +533,18 @@ begin
   raise EStreamError.CreateRes(PResStringRec(@SCantWriteResourceStreamError));
 end;
 
+procedure TTntResourceStream.SaveToFile(const FileName: WideString);
+var
+  Stream: TStream;
+begin
+  Stream := TTntFileStream.Create(FileName, fmCreate);
+  try
+    SaveToStream(Stream);
+  finally
+    Stream.Free;
+  end;
+end;
+
 { TAnsiStrings }
 
 procedure TAnsiStrings{TNT-ALLOW TAnsiStrings}.LoadFromFile(const FileName: WideString);
@@ -470,6 +571,32 @@ begin
   end;
 end;
 
+procedure TAnsiStrings{TNT-ALLOW TAnsiStrings}.LoadFromFileEx(const FileName: WideString; CodePage: Cardinal);
+var
+  Stream: TStream;
+begin
+  Stream := TTntFileStream.Create(FileName, fmOpenRead or fmShareDenyWrite);
+  try
+    LoadFromStreamEx(Stream, CodePage);
+  finally
+    Stream.Free;
+  end;
+end;
+
+procedure TAnsiStrings{TNT-ALLOW TAnsiStrings}.SaveToFileEx(const FileName: WideString; CodePage: Cardinal);
+var
+  Stream: TStream;
+begin
+  Stream := TTntFileStream.Create(FileName, fmCreate);
+  try
+    if (CodePage = CP_UTF8) then
+      Stream.WriteBuffer(PAnsiChar(UTF8_BOM)^, Length(UTF8_BOM));
+    SaveToStreamEx(Stream, CodePage);
+  finally
+    Stream.Free;
+  end;
+end;
+
 { TAnsiStringsForWideStrings }
 
 type
@@ -487,8 +614,6 @@ type
     procedure Clear; override;
     procedure Delete(Index: Integer); override;
     procedure Insert(Index: Integer; const S: AnsiString); override;
-    procedure LoadFromFileEx(const FileName: WideString; CodePage: Cardinal); override;
-    procedure SaveToFileEx(const FileName: WideString; CodePage: Cardinal); override;
     procedure LoadFromStreamEx(Stream: TStream; CodePage: Cardinal); override;
     procedure SaveToStreamEx(Stream: TStream; CodePage: Cardinal); override;
   end;
@@ -538,30 +663,6 @@ begin
   FWideStrings.SetUpdateState(Updating);
 end;
 
-procedure TAnsiStringsForWideStrings.LoadFromFileEx(const FileName: WideString; CodePage: Cardinal);
-var
-  Stream: TStream;
-begin
-  Stream := TTntFileStream.Create(FileName, fmOpenRead or fmShareDenyWrite);
-  try
-    LoadFromStreamEx(Stream, CodePage);
-  finally
-    Stream.Free;
-  end;
-end;
-
-procedure TAnsiStringsForWideStrings.SaveToFileEx(const FileName: WideString; CodePage: Cardinal);
-var
-  Stream: TStream;
-begin
-  Stream := TTntFileStream.Create(FileName, fmCreate);
-  try
-    SaveToStreamEx(Stream, CodePage);
-  finally
-    Stream.Free;
-  end;
-end;
-
 procedure TAnsiStringsForWideStrings.LoadFromStreamEx(Stream: TStream; CodePage: Cardinal);
 var
   Size: Integer;
@@ -593,6 +694,7 @@ begin
   inherited;
   FAnsiStrings := TAnsiStringsForWideStrings.Create;
   TAnsiStringsForWideStrings(FAnsiStrings).FWideStrings := Self;
+  FLastFileCharSet := csUnicode;
 end;
 
 destructor TTntStrings.Destroy;
@@ -744,7 +846,7 @@ end;
 
 procedure TTntStrings.Error(Msg: PResStringRec; Data: Integer);
 begin
-  Error(LoadResStringW(Msg), Data);
+  Error(WideLoadResString(Msg), Data);
 end;
 
 procedure TTntStrings.Exchange(Index1, Index2: Integer);
@@ -922,13 +1024,15 @@ var
 begin
   Stream := TTntFileStream.Create(FileName, fmOpenRead or fmShareDenyWrite);
   try
+    FLastFileCharSet := AutoDetectCharacterSet(Stream);
+    Stream.Position := 0;
     LoadFromStream(Stream);
   finally
     Stream.Free;
   end;
 end;
 
-procedure TTntStrings.LoadFromStream(Stream: TStream);
+procedure TTntStrings.LoadFromStream(Stream: TStream; WithBOM: Boolean = True);
 var
   DataLeft: Integer;
   StreamCharSet: TTntStreamCharSet;
@@ -937,7 +1041,10 @@ var
 begin
   BeginUpdate;
   try
-    StreamCharSet := AutoDetectCharacterSet(Stream);
+    if WithBOM then
+      StreamCharSet := AutoDetectCharacterSet(Stream)
+    else
+      StreamCharSet := csUnicode;
     DataLeft := Stream.Size - Stream.Position;
     if (StreamCharSet in [csUnicode, csUnicodeSwapped]) then
     begin
@@ -947,6 +1054,13 @@ begin
       if StreamCharSet = csUnicodeSwapped then
         StrSwapByteOrder(PWideChar(SW));
       SetTextStr(SW);
+    end
+    else if StreamCharSet = csUtf8 then
+    begin
+      // BOM indicates UTF-8 text stream
+      SetLength(SA, DataLeft div SizeOf(AnsiChar));
+      Stream.Read(PAnsiChar(SA)^, DataLeft);
+      SetTextStr(UTF8ToWideString(SA));
     end
     else
     begin
@@ -1593,30 +1707,13 @@ begin
   end;
 end;
 
-function MakeObjectInstance(Method: TWndMethod): Pointer;
-begin
-{$IFDEF COMPILER_6_UP}
-  Result := Classes.MakeObjectInstance(Method);
-{$ELSE}
-  Result := Forms.MakeObjectInstance(Method);
-{$ENDIF}
-end;
-
-procedure FreeObjectInstance(ObjectInstance: Pointer);
-begin
-{$IFDEF COMPILER_6_UP}
-  Classes.FreeObjectInstance(ObjectInstance);
-{$ELSE}
-  Forms.FreeObjectInstance(ObjectInstance);
-{$ENDIF}
-end;
-
 //------------------------- TntClasses introduced procs ----------------------------------
 
 function AutoDetectCharacterSet(Stream: TStream): TTntStreamCharSet;
 var
   ByteOrderMark: WideChar;
   BytesRead: Integer;
+  Utf8Test: array[0..2] of AnsiChar;
 begin
   // Byte Order Mark
   ByteOrderMark := #0;
@@ -1625,6 +1722,11 @@ begin
     if (ByteOrderMark <> UNICODE_BOM) and (ByteOrderMark <> UNICODE_BOM_SWAPPED) then begin
       ByteOrderMark := #0;
       Stream.Seek(-BytesRead, soFromCurrent);
+      if (Stream.Size - Stream.Position) >= Length(Utf8Test) * SizeOf(AnsiChar) then begin
+        BytesRead := Stream.Read(Utf8Test[0], Length(Utf8Test) * SizeOf(AnsiChar));
+        if Utf8Test <> UTF8_BOM then
+          Stream.Seek(-BytesRead, soFromCurrent);
+      end;
     end;
   end;
   // Test Byte Order Mark
@@ -1632,8 +1734,35 @@ begin
     Result := csUnicode
   else if ByteOrderMark = UNICODE_BOM_SWAPPED then
     Result := csUnicodeSwapped
+  else if Utf8Test = UTF8_BOM then
+    Result := csUtf8
   else
     Result := csAnsi;
+end;
+
+function FindSortedListByTarget(List: TList; TargetCompare: TListTargetCompare;
+  Target: Pointer; var Index: Integer): Boolean;
+var
+  L, H, I, C: Integer;
+begin
+  Result := False;
+  L := 0;
+  H := List.Count - 1;
+  while L <= H do
+  begin
+    I := (L + H) shr 1;
+    C := TargetCompare(List[i], Target);
+    if C < 0 then L := I + 1 else
+    begin
+      H := I - 1;
+      if C = 0 then
+      begin
+        Result := True;
+        L := I;
+      end;
+    end;
+  end;
+  Index := L;
 end;
 
 function ClassIsRegistered(const clsid: TCLSID): Boolean;
@@ -1667,6 +1796,226 @@ begin
   finally
     Reg.Free;
   end;
+end;
+
+{ TBufferedAnsiString }
+
+procedure TBufferedAnsiString.Clear;
+begin
+  LastWriteIndex := 0;
+  if Length(FStringBuffer) > 0 then
+    FillChar(FStringBuffer[1], Length(FStringBuffer) * SizeOf(AnsiChar), 0);
+end;
+
+procedure TBufferedAnsiString.AddChar(const wc: AnsiChar);
+const
+  MIN_GROW_SIZE = 32;
+  MAX_GROW_SIZE = 256;
+var
+  GrowSize: Integer;
+begin
+  Inc(LastWriteIndex);
+  if LastWriteIndex > Length(FStringBuffer) then begin
+    GrowSize := Max(MIN_GROW_SIZE, Length(FStringBuffer));
+    GrowSize := Min(GrowSize, MAX_GROW_SIZE);
+    SetLength(FStringBuffer, Length(FStringBuffer) + GrowSize);
+    FillChar(FStringBuffer[LastWriteIndex], GrowSize * SizeOf(AnsiChar), 0);
+  end;
+  FStringBuffer[LastWriteIndex] := wc;
+end;
+
+procedure TBufferedAnsiString.AddString(const s: AnsiString);
+var
+  LenS: Integer;
+  BlockSize: Integer;
+  AllocSize: Integer;
+begin
+  LenS := Length(s);
+  if LenS > 0 then begin
+    Inc(LastWriteIndex);
+    if LastWriteIndex + LenS - 1 > Length(FStringBuffer) then begin
+      // determine optimum new allocation size
+      BlockSize := Length(FStringBuffer) div 2;
+      if BlockSize < 8 then
+        BlockSize := 8;
+      AllocSize := ((LenS div BlockSize) + 1) * BlockSize;
+      // realloc buffer
+      SetLength(FStringBuffer, Length(FStringBuffer) + AllocSize);
+      FillChar(FStringBuffer[Length(FStringBuffer) - AllocSize + 1], AllocSize * SizeOf(AnsiChar), 0);
+    end;
+    CopyMemory(@FStringBuffer[LastWriteIndex], @s[1], LenS * SizeOf(AnsiChar));
+    Inc(LastWriteIndex, LenS - 1);
+  end;
+end;
+
+procedure TBufferedAnsiString.AddBuffer(Buff: PAnsiChar; Chars: Integer);
+var
+  i: integer;
+begin
+  for i := 1 to Chars do begin
+    if Buff^ = #0 then
+      break;
+    AddChar(Buff^);
+    Inc(Buff);
+  end;
+end;
+
+function TBufferedAnsiString.Value: AnsiString;
+begin
+  Result := PAnsiChar(FStringBuffer);
+end;
+
+function TBufferedAnsiString.BuffPtr: PAnsiChar;
+begin
+  Result := PAnsiChar(FStringBuffer);
+end;
+
+{ TBufferedWideString }
+
+procedure TBufferedWideString.Clear;
+begin
+  LastWriteIndex := 0;
+  if Length(FStringBuffer) > 0 then
+    FillChar(FStringBuffer[1], Length(FStringBuffer) * SizeOf(WideChar), 0);
+end;
+
+procedure TBufferedWideString.AddChar(const wc: WideChar);
+const
+  MIN_GROW_SIZE = 32;
+  MAX_GROW_SIZE = 256;
+var
+  GrowSize: Integer;
+begin
+  Inc(LastWriteIndex);
+  if LastWriteIndex > Length(FStringBuffer) then begin
+    GrowSize := Max(MIN_GROW_SIZE, Length(FStringBuffer));
+    GrowSize := Min(GrowSize, MAX_GROW_SIZE);
+    SetLength(FStringBuffer, Length(FStringBuffer) + GrowSize);
+    FillChar(FStringBuffer[LastWriteIndex], GrowSize * SizeOf(WideChar), 0);
+  end;
+  FStringBuffer[LastWriteIndex] := wc;
+end;
+
+procedure TBufferedWideString.AddString(const s: WideString);
+var
+  i: integer;
+begin
+  for i := 1 to Length(s) do
+    AddChar(s[i]);
+end;
+
+procedure TBufferedWideString.AddBuffer(Buff: PWideChar; Chars: Integer);
+var
+  i: integer;
+begin
+  for i := 1 to Chars do begin
+    if Buff^ = #0 then
+      break;
+    AddChar(Buff^);
+    Inc(Buff);
+  end;
+end;
+
+function TBufferedWideString.Value: WideString;
+begin
+  Result := PWideChar(FStringBuffer);
+end;
+
+function TBufferedWideString.BuffPtr: PWideChar;
+begin
+  Result := PWideChar(FStringBuffer);
+end;
+
+{ TBufferedStreamReader }
+
+constructor TBufferedStreamReader.Create(Stream: TStream; BufferSize: Integer = 1024);
+begin
+  // init stream
+  FStream := Stream;
+  FStreamSize := Stream.Size;
+  // init buffer
+  FBufferSize := BufferSize;
+  SetLength(FBuffer, BufferSize);
+  FBufferStartPosition := -FBufferSize; { out of any useful range }
+  // init virtual position
+  FVirtualPosition := 0;
+end;
+
+function TBufferedStreamReader.Seek(Offset: Integer; Origin: Word): Longint;
+begin
+  case Origin of
+    soFromBeginning: FVirtualPosition := Offset;
+    soFromCurrent:   Inc(FVirtualPosition, Offset);
+    soFromEnd:       FVirtualPosition := FStreamSize + Offset;
+  end;
+  Result := FVirtualPosition;
+end;
+
+procedure TBufferedStreamReader.UpdateBufferFromPosition(StartPos: Integer);
+begin
+  try
+    FStream.Position := StartPos;
+    FStream.Read(FBuffer[0], FBufferSize);
+    FBufferStartPosition := StartPos;
+  except
+    FBufferStartPosition := -FBufferSize; { out of any useful range }
+    raise;
+  end;
+end;
+
+function TBufferedStreamReader.Read(var Buffer; Count: Integer): Longint;
+var
+  BytesLeft: Integer;
+  FirstBufferRead: Integer;
+  StreamDirectRead: Integer;
+  Buf: PAnsiChar;
+begin
+  if (FVirtualPosition >= 0) and (Count >= 0) then
+  begin
+    Result := FStreamSize - FVirtualPosition;
+    if Result > 0 then
+    begin
+      if Result > Count then
+        Result := Count;
+
+      Buf := @Buffer;
+      BytesLeft := Result;
+
+      // try to read what is left in buffer
+      FirstBufferRead := FBufferStartPosition + FBufferSize - FVirtualPosition;
+      if (FirstBufferRead < 0) or (FirstBufferRead > FBufferSize) then
+        FirstBufferRead := 0;
+      FirstBufferRead := Min(FirstBufferRead, Result);
+      if FirstBufferRead > 0 then begin
+        Move(FBuffer[FVirtualPosition - FBufferStartPosition], Buf[0], FirstBufferRead);
+        Dec(BytesLeft, FirstBufferRead);
+      end;
+
+      if BytesLeft > 0 then begin
+        // The first read in buffer was not enough
+        StreamDirectRead := (BytesLeft div FBufferSize) * FBufferSize;
+        FStream.Position := FVirtualPosition + FirstBufferRead;
+        FStream.Read(Buf[FirstBufferRead], StreamDirectRead);
+        Dec(BytesLeft, StreamDirectRead);
+
+        if BytesLeft > 0 then begin
+          // update buffer, and read what is left
+          UpdateBufferFromPosition(FStream.Position);
+          Move(FBuffer[0], Buf[FirstBufferRead + StreamDirectRead], BytesLeft);
+        end;
+      end;
+
+      Inc(FVirtualPosition, Result);
+      Exit;
+    end;
+  end;
+  Result := 0;
+end;
+
+function TBufferedStreamReader.Write(const Buffer; Count: Integer): Longint;
+begin
+  raise ETntInternalError.Create('Internal Error: class can not write.');
+  Result := 0;
 end;
 
 initialization

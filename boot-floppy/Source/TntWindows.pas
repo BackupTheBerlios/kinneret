@@ -3,6 +3,7 @@
 {                                                                             }
 {    Tnt Delphi Unicode Controls                                              }
 {      http://home.ccci.org/wolbrink/tnt/delphi_unicode_controls.htm          }
+{        Version: 2.1.2                                                       }
 {                                                                             }
 {    Copyright (c) 2002, 2003 Troy Wolbrink (troy.wolbrink@ccci.org)          }
 {                                                                             }
@@ -10,7 +11,7 @@
 
 unit TntWindows;
 
-{$INCLUDE Compilers.inc}
+{$INCLUDE TntCompilers.inc}
 
 interface
 
@@ -22,6 +23,12 @@ uses
 const
   WS_EX_LAYERED = $00080000;
 {$ENDIF}
+
+const
+  DT_NOFULLWIDTHCHARBREAK = $00080000;
+
+const
+  INVALID_FILE_ATTRIBUTES = DWORD(-1);
 
 // ................ ANSI TYPES ................
 {TNT-WARN LPSTR}
@@ -70,6 +77,24 @@ const
 {TNT-WARN LOCALE_USER_DEFAULT} // <-- use GetThreadLocale
 {TNT-WARN LOCALE_SYSTEM_DEFAULT} // <-- use GetThreadLocale
 
+{TNT-WARN SetWindowText}
+{TNT-WARN SetWindowTextA}
+function Tnt_SetWindowTextW(hWnd: HWND; lpString: PWideChar): BOOL;
+
+{TNT-WARN RemoveDirectory}
+{TNT-WARN RemoveDirectoryA}
+function Tnt_RemoveDirectoryW(lpPathName: PWideChar): BOOL;
+
+{TNT-WARN GetShortPathName}
+{TNT-WARN GetShortPathNameA}
+function Tnt_GetShortPathNameW(lpszLongPath: PWideChar; lpszShortPath: PWideChar;
+  cchBuffer: DWORD): DWORD;
+
+{TNT-WARN GetFullPathName}
+{TNT-WARN GetFullPathNameA}
+function Tnt_GetFullPathNameW(lpFileName: PWideChar; nBufferLength: DWORD;
+  lpBuffer: PWideChar; var lpFilePart: PWideChar): DWORD;
+
 {TNT-WARN CreateFile}
 {TNT-WARN CreateFileA}
 function Tnt_CreateFileW(lpFileName: PWideChar; dwDesiredAccess, dwShareMode: DWORD;
@@ -114,6 +139,11 @@ function Tnt_DeleteFileW(lpFileName: PWideChar): BOOL;
 function Tnt_DrawTextW(hDC: HDC; lpString: PWideChar; nCount: Integer;
   var lpRect: TRect; uFormat: UINT): Integer;
 
+{TNT-WARN ExtTextOut}
+{TNT-WARN ExtTextOutA}
+function Tnt_ExtTextOutW(DC: HDC; X, Y: Integer; Options: Longint;
+  Rect: PRect; Str: PWideChar; Count: Longint; Dx: PInteger): BOOL;
+
 {TNT-WARN GetDiskFreeSpace}
 {TNT-WARN GetDiskFreeSpaceA}
 function Tnt_GetDiskFreeSpaceW(lpRootPathName: PWideChar; var lpSectorsPerCluster,
@@ -144,6 +174,10 @@ function Tnt_GetComputerNameW(lpBuffer: PWideChar; var nSize: DWORD): BOOL;
 function Tnt_ShellExecuteW(hWnd: HWND; Operation, FileName, Parameters,
   Directory: PWideChar; ShowCmd: Integer): HINST;
 
+{TNT-WARN LoadLibrary}
+{TNT-WARN LoadLibraryA}
+function Tnt_LoadLibraryW(lpLibFileName: PWideChar): HMODULE;
+
 {TNT-WARN LoadLibraryEx}
 {TNT-WARN LoadLibraryExA}
 function Tnt_LoadLibraryExW(lpLibFileName: PWideChar; hFile: THandle; dwFlags: DWORD): HMODULE;
@@ -155,6 +189,11 @@ function Tnt_CreateProcessW(lpApplicationName: PWideChar; lpCommandLine: PWideCh
     bInheritHandles: BOOL; dwCreationFlags: DWORD; lpEnvironment: Pointer;
       lpCurrentDirectory: PWideChar; const lpStartupInfo: TStartupInfo;
         var lpProcessInformation: TProcessInformation): BOOL;
+
+{TNT-WARN GetCurrencyFormat}
+{TNT-WARN GetCurrencyFormatA}
+function Tnt_GetCurrencyFormatW(Locale: LCID; dwFlags: DWORD; lpValue: PWideChar;
+  lpFormat: PCurrencyFmtW; lpCurrencyStr: PWideChar; cchCurrency: Integer): Integer;
 
 {TNT-WARN CompareString}
 {TNT-WARN CompareStringA}
@@ -180,7 +219,16 @@ function Tnt_CharLowerBuffW(lpsz: PWideChar; cchLength: DWORD): DWORD;
 {TNT-WARN GetStringTypeEx}
 {TNT-WARN GetStringTypeExA}
 function Tnt_GetStringTypeExW(Locale: LCID; dwInfoType: DWORD;
-  lpSrcStr: PWideChar; cchSrc: Integer; var lpCharType): BOOL; stdcall;
+  lpSrcStr: PWideChar; cchSrc: Integer; var lpCharType): BOOL; 
+
+{TNT-WARN LoadString}
+{TNT-WARN LoadStringA}
+function Tnt_LoadStringW(hInstance: HINST; uID: UINT; lpBuffer: PWideChar; nBufferMax: Integer): Integer;
+
+{TNT-WARN ExtractAssociatedIcon}
+{TNT-WARN ExtractAssociatedIconA}
+function Tnt_ExtractAssociatedIconW(hInst: HINST; lpIconPath: PWideChar;
+  var lpiIcon: Word): HICON;
 
 {TNT-WARN GetFileVersionInfoSize}
 {TNT-WARN GetFileVersionInfoSizeA}
@@ -245,6 +293,12 @@ function Tnt_SHBrowseForFolderW(var lpbi: TBrowseInfoW): PItemIDList;
 {TNT-WARN SHGetPathFromIDListW} // <-- no stub on early Windows 95
 function Tnt_SHGetPathFromIDListW(pidl: PItemIDList; pszPath: PWideChar): BOOL;
 
+{TNT-WARN SHGetFileInfo}
+{TNT-WARN SHGetFileInfoA}
+{TNT-WARN SHGetFileInfoW} // <-- no stub on early Windows 95
+function Tnt_SHGetFileInfoW(pszPath: PWideChar; dwFileAttributes: DWORD;
+  var psfi: TSHFileInfoW; cbFileInfo, uFlags: UINT): DWORD;
+
 // ......... introduced .........
 function Tnt_Is_IntResource(ResStr: LPCWSTR): Boolean;
 
@@ -258,7 +312,7 @@ function SUBLANGID(lgid: WORD): WORD;
 implementation
 
 uses
-  SysUtils, TntSysUtils;
+  SysUtils, Math, TntSystem, TntSysUtils;
 
 function _PAnsiCharWithNil(const S: AnsiString): PAnsiChar;
 begin
@@ -284,20 +338,161 @@ begin
     Result := Copy(WideString(lpString), 1, cchCount);
 end;
 
-function _IsWideCharMappableToAnsi(const WC: WideChar): Boolean;
-var
-  UsedDefaultChar: BOOL;
-begin
-  WideCharToMultiByte(DefaultUserCodePage, 0, PWideChar(@WC), 1, nil, 0, nil, @UsedDefaultChar);
-  Result := not UsedDefaultChar;
-end;
-
 procedure _MakeWideWin32FindData(var WideFindData: TWIN32FindDataW; AnsiFindData: TWIN32FindDataA);
 begin
   CopyMemory(@WideFindData, @AnsiFindData,
     Integer(@WideFindData.cFileName) - Integer(@WideFindData));
   StrPCopyW{TNT-ALLOW StrPCopyW}(WideFindData.cFileName, AnsiFindData.cFileName);
   StrPCopyW{TNT-ALLOW StrPCopyW}(WideFindData.cAlternateFileName, AnsiFindData.cAlternateFileName);
+end;
+
+function Tnt_SetWindowTextW(hWnd: HWND; lpString: PWideChar): BOOL;
+begin
+  if Win32PlatformIsUnicode then
+    Result := SetWindowTextW(hWnd, lpString)
+  else
+    Result := SetWindowTextA{TNT-ALLOW SetWindowTextA}(hWnd, PAnsiChar(AnsiString(lpString)));
+end;
+
+//-----------------------------
+
+type
+  TPathLengthResultOption = (poAllowDirectoryMode, poZeroSmallBuff, poExactCopy, poExactCopySubPaths);
+  TPathLengthResultOptions = set of TPathLengthResultOption;
+
+procedure _ExactStrCopyW(pDest, pSource: PWideChar; Count: Integer);
+var
+  i: integer;
+begin
+  for i := 1 to Count do begin
+    pDest^ := pSource^;
+    Inc(PSource);
+    Inc(pDest);
+  end;
+end;
+
+procedure _ExactCopySubPaths(pDest, pSource: PWideChar; Count: Integer);
+var
+  i: integer;
+  OriginalSource: PWideChar;
+  PNextSlash: PWideChar;
+begin
+  if Count >= 4 then begin
+    OriginalSource := pSource;
+    PNextSlash := StrScanW(pSource, '\');
+    for i := 1 to Count - 1 do begin
+      // determine next path delimiter
+      if pSource > pNextSlash then begin
+        PNextSlash := StrScanW(pSource, '\');
+      end;
+      // leave if no more sub paths
+      if (PNextSlash = nil)
+      or ((pNextSlash - OriginalSource) >= Count) then begin
+        exit;
+      end;
+      // copy char
+      pDest^ := pSource^;
+      Inc(PSource);
+      Inc(pDest);
+    end;
+  end;
+end;
+
+function _HandlePathLengthResult(nBufferLength: DWORD; lpBuffer: PWideChar; const AnsiBuff: AnsiString; Options: TPathLengthResultOptions): Integer;
+var
+  WideBuff: WideString;
+begin
+  WideBuff := AnsiBuff;
+  if nBufferLength > Cardinal(Length(WideBuff)) then begin
+    // normal
+    Result := Length(WideBuff);
+    StrLCopyW(lpBuffer, PWideChar(WideBuff), nBufferLength);
+  end else if (poExactCopy in Options) then begin
+    // exact
+    Result := nBufferLength;
+    _ExactStrCopyW(lpBuffer, PWideChar(WideBuff), nBufferLength);
+  end else begin
+    // other
+    if (poAllowDirectoryMode in Options)
+    and (nBufferLength = Cardinal(Length(WideBuff))) then begin
+      Result := Length(WideBuff) + 1;
+      StrLCopyW(lpBuffer, PWideChar(WideBuff), nBufferLength - 1);
+    end else begin
+      Result := Length(WideBuff) + 1;
+      if (nBufferLength > 0) then begin
+        if (poZeroSmallBuff in Options) then
+          lpBuffer^ := #0
+        else if (poExactCopySubPaths in Options) then
+          _ExactCopySubPaths(lpBuffer, PWideChar(WideBuff), nBufferLength);
+      end;
+    end;
+  end;
+end;
+
+function _HandleStringLengthResult(nBufferLength: DWORD; lpBuffer: PWideChar; const AnsiBuff: AnsiString; Options: TPathLengthResultOptions): Integer;
+var
+  WideBuff: WideString;
+begin
+  WideBuff := AnsiBuff;
+  if nBufferLength >= Cardinal(Length(WideBuff)) then begin
+    // normal
+    Result := Length(WideBuff);
+    StrLCopyW(lpBuffer, PWideChar(WideBuff), nBufferLength);
+  end else if nBufferLength = 0 then
+    Result := Length(WideBuff)
+  else
+    Result := 0;
+end;
+
+//-------------------------------------------
+
+function Tnt_RemoveDirectoryW(lpPathName: PWideChar): BOOL;
+begin
+  if Win32PlatformIsUnicode then
+    Result := RemoveDirectoryW(PWideChar(lpPathName))
+  else
+    Result := RemoveDirectoryA{TNT-ALLOW RemoveDirectoryA}(PAnsiChar(AnsiString(lpPathName)));
+end;
+
+function Tnt_GetShortPathNameW(lpszLongPath: PWideChar; lpszShortPath: PWideChar;
+  cchBuffer: DWORD): DWORD;
+var
+  AnsiBuff: AnsiString;
+begin
+  if Win32PlatformIsUnicode then
+    Result := GetShortPathNameW(lpszLongPath, lpszShortPath, cchBuffer)
+  else begin
+    SetLength(AnsiBuff, MAX_PATH * 2);
+    SetLength(AnsiBuff, GetShortPathNameA{TNT-ALLOW GetShortPathNameA}(PAnsiChar(AnsiString(lpszLongPath)),
+      PAnsiChar(AnsiBuff), Length(AnsiBuff)));
+    Result := _HandlePathLengthResult(cchBuffer, lpszShortPath, AnsiBuff, [poExactCopySubPaths]);
+  end;
+end;
+
+function Tnt_GetFullPathNameW(lpFileName: PWideChar; nBufferLength: DWORD;
+  lpBuffer: PWideChar; var lpFilePart: PWideChar): DWORD;
+var
+  AnsiBuff: AnsiString;
+  AnsiFilePart: PAnsiChar;
+  AnsiLeadingChars: Integer;
+  WideLeadingChars: Integer;
+begin
+  if Win32PlatformIsUnicode then
+    Result := GetFullPathNameW(lpFileName, nBufferLength, lpBuffer, lpFilePart)
+  else begin
+    SetLength(AnsiBuff, MAX_PATH * 2);
+    SetLength(AnsiBuff, GetFullPathNameA{TNT-ALLOW GetFullPathNameA}(PAnsiChar(AnsiString(lpFileName)),
+      Length(AnsiBuff), PAnsiChar(AnsiBuff), AnsiFilePart));
+    Result := _HandlePathLengthResult(nBufferLength, lpBuffer, AnsiBuff, [poZeroSmallBuff]);
+    // deal w/ lpFilePart
+    if (AnsiFilePart = nil) or (nBufferLength < Result) then
+      lpFilePart := nil
+    else begin
+      AnsiLeadingChars := AnsiFilePart - PAnsiChar(AnsiBuff);
+      WideLeadingChars := Length(WideString(Copy(AnsiBuff, 1, AnsiLeadingChars)));
+      lpFilePart := lpBuffer + WideLeadingChars;
+    end;
+  end;
 end;
 
 function Tnt_CreateFileW(lpFileName: PWideChar; dwDesiredAccess, dwShareMode: DWORD;
@@ -399,6 +594,17 @@ begin
       PAnsiChar(AnsiString(_WStr(lpString, nCount))), -1, lpRect, uFormat);
 end;
 
+function Tnt_ExtTextOutW(DC: HDC; X, Y: Integer; Options: Longint;
+  Rect: PRect; Str: PWideChar; Count: Longint; Dx: PInteger): BOOL;
+begin
+  if Win32PlatformIsUnicode then
+    Result := ExtTextOutW(DC, X, Y, Options, Rect, Str, Count, Dx)
+  else
+    Result := ExtTextOutA{TNT-ALLOW ExtTextOutA}(DC, X, Y, Options, Rect,
+      PAnsiChar(AnsiString(_WStr(Str, Count))), Count, Dx);
+end;
+
+
 function Tnt_GetDiskFreeSpaceW(lpRootPathName: PWideChar; var lpSectorsPerCluster,
   lpBytesPerSector, lpNumberOfFreeClusters, lpTotalNumberOfClusters: DWORD): BOOL;
 begin
@@ -419,12 +625,7 @@ begin
   else begin
     SetLength(AnsiBuff, MAX_PATH);
     SetLength(AnsiBuff, GetModuleFileNameA{TNT-ALLOW GetModuleFileNameA}(hModule, PAnsiChar(AnsiBuff), Length(AnsiBuff)));
-    if Length(AnsiBuff) = 0 then
-      Result := 0
-    else begin
-      StrPLCopyW{TNT-ALLOW StrPLCopyW}(lpFileName, AnsiBuff, nSize - 1);
-      Result := StrLenW(lpFileName);
-    end;
+    Result := _HandlePathLengthResult(nSize, lpFilename, AnsiBuff, [poExactCopy]);
   end;
 end;
 
@@ -437,12 +638,7 @@ begin
   else begin
     SetLength(AnsiBuff, MAX_PATH);
     SetLength(AnsiBuff, GetTempPathA{TNT-ALLOW GetTempPathA}(Length(AnsiBuff), PAnsiChar(AnsiBuff)));
-    if Length(AnsiBuff) = 0 then
-      Result := 0
-    else begin
-      StrPLCopyW{TNT-ALLOW StrPLCopyW}(lpBuffer, AnsiBuff, nBufferLength - 1);
-      Result := StrLenW(lpBuffer);
-    end;
+    Result := _HandlePathLengthResult(nBufferLength, lpBuffer, AnsiBuff, [poAllowDirectoryMode, poZeroSmallBuff]);
   end;
 end;
 
@@ -455,12 +651,7 @@ begin
   else begin
     SetLength(AnsiBuff, MAX_PATH);
     SetLength(AnsiBuff, GetWindowsDirectoryA{TNT-ALLOW GetWindowsDirectoryA}(PAnsiChar(AnsiBuff), Length(AnsiBuff)));
-    if Length(AnsiBuff) = 0 then
-      Result := 0
-    else begin
-      StrPLCopyW{TNT-ALLOW StrPLCopyW}(lpBuffer, AnsiBuff, uSize - 1);
-      Result := StrLenW(lpBuffer);
-    end;
+    Result := _HandlePathLengthResult(uSize, lpBuffer, AnsiBuff, []);
   end;
 end;
 
@@ -473,15 +664,9 @@ begin
   else begin
     SetLength(AnsiBuff, MAX_PATH);
     SetLength(AnsiBuff, GetSystemDirectoryA{TNT-ALLOW GetSystemDirectoryA}(PAnsiChar(AnsiBuff), Length(AnsiBuff)));
-    if Length(AnsiBuff) = 0 then
-      Result := 0
-    else begin
-      StrPLCopyW{TNT-ALLOW StrPLCopyW}(lpBuffer, AnsiBuff, uSize - 1);
-      Result := StrLenW(lpBuffer);
-    end;
+    Result := _HandlePathLengthResult(uSize, lpBuffer, AnsiBuff, []);
   end;
 end;
-
 
 function Tnt_GetComputerNameW(lpBuffer: PWideChar; var nSize: DWORD): BOOL;
 var
@@ -496,10 +681,11 @@ begin
     Result := GetComputerNameA{TNT-ALLOW GetComputerNameA}(PAnsiChar(AnsiBuff), AnsiBuffLen);
     if Result then begin
       SetLength(AnsiBuff, AnsiBuffLen);
-      if Length(AnsiBuff) = 0 then
-        nSize := 0
-      else begin
-        StrPLCopyW{TNT-ALLOW StrPLCopyW}(lpBuffer, AnsiBuff, nSize - 1);
+      if (nSize <= AnsiBuffLen) or (Length(AnsiBuff) = 0) then begin
+        nSize := AnsiBuffLen + 1;
+        Result := False;
+      end else begin
+        StrPLCopyW{TNT-ALLOW StrPLCopyW}(lpBuffer, AnsiBuff, nSize);
         nSize := StrLenW(lpBuffer);
       end;
     end;
@@ -518,6 +704,14 @@ begin
       _PAnsiCharWithNil(AnsiString(FileName)), _PAnsiCharWithNil(AnsiString(Parameters)),
         _PAnsiCharWithNil(AnsiString(Directory)), ShowCmd)
   end;
+end;
+
+function Tnt_LoadLibraryW(lpLibFileName: PWideChar): HMODULE;
+begin
+  if Win32PlatformIsUnicode then
+    Result := LoadLibraryW(lpLibFileName)
+  else
+    Result := LoadLibraryA{TNT-ALLOW LoadLibraryA}(PAnsiChar(AnsiString(lpLibFileName)));
 end;
 
 function Tnt_LoadLibraryExW(lpLibFileName: PWideChar; hFile: THandle; dwFlags: DWORD): HMODULE;
@@ -546,6 +740,39 @@ begin
   end;
 end;
 
+function Tnt_GetCurrencyFormatW(Locale: LCID; dwFlags: DWORD; lpValue: PWideChar;
+  lpFormat: PCurrencyFmtW; lpCurrencyStr: PWideChar; cchCurrency: Integer): Integer;
+const
+  MAX_ANSI_BUFF_SIZE = 64; // can a currency string actually be larger?
+var
+  AnsiFormat: TCurrencyFmtA;
+  PAnsiFormat: PCurrencyFmtA;
+  AnsiBuff: AnsiString;
+begin
+  if Win32PlatformIsUnicode then
+    Result := GetCurrencyFormatW(Locale, dwFlags, lpValue, lpFormat, lpCurrencyStr, cchCurrency)
+  else begin
+    if lpFormat = nil then
+      PAnsiFormat := nil
+    else begin
+      ZeroMemory(@AnsiFormat, SizeOf(AnsiFormat));
+      AnsiFormat.NumDigits        := lpFormat.NumDigits;
+      AnsiFormat.LeadingZero      := lpFormat.LeadingZero;
+      AnsiFormat.Grouping         := lpFormat.Grouping;
+      AnsiFormat.lpDecimalSep     := PAnsiChar(AnsiString(lpFormat.lpDecimalSep));
+      AnsiFormat.lpThousandSep    := PAnsiChar(AnsiString(lpFormat.lpThousandSep));
+      AnsiFormat.NegativeOrder    := lpFormat.NegativeOrder;
+      AnsiFormat.PositiveOrder    := lpFormat.PositiveOrder;
+      AnsiFormat.lpCurrencySymbol := PAnsiChar(AnsiString(lpFormat.lpCurrencySymbol));
+      PAnsiFormat := @AnsiFormat;
+    end;
+    SetLength(AnsiBuff, MAX_ANSI_BUFF_SIZE);
+    SetLength(AnsiBuff, GetCurrencyFormatA{TNT-ALLOW GetCurrencyFormatA}(Locale, dwFlags,
+      PAnsiChar(AnsiString(lpValue)), PAnsiFormat, PAnsiChar(AnsiBuff), MAX_ANSI_BUFF_SIZE));
+    Result := _HandleStringLengthResult(cchCurrency, lpCurrencyStr, AnsiBuff, []);
+  end;
+end;
+
 function Tnt_CompareStringW(Locale: LCID; dwCmpFlags: DWORD; lpString1: PWideChar;
   cchCount1: Integer; lpString2: PWideChar; cchCount2: Integer): Integer;
 var
@@ -556,7 +783,7 @@ begin
     Result := CompareStringW(Locale, dwCmpFlags, lpString1, cchCount1, lpString2, cchCount2)
   else begin
     WideStr1 := _WStr(lpString1, cchCount1);
-    WideStr1 := _WStr(lpString1, cchCount1);
+    WideStr2 := _WStr(lpString2, cchCount2);
     if (dwCmpFlags = 0) then begin
       // binary comparison
       if WideStr1 < WideStr2 then
@@ -585,7 +812,7 @@ begin
     if HiWord(Cardinal(lpsz)) = 0 then begin
       // literal char mode
       Result := lpsz;
-      if _IsWideCharMappableToAnsi(WideChar(lpsz)) then begin
+      if IsWideCharMappableToAnsi(WideChar(lpsz)) then begin
         AStr := WideChar(lpsz); // single character may be more than one byte
         CharUpperA{TNT-ALLOW CharUpperA}(PAnsiChar(AStr));
         WStr := AStr; // should always be single wide char
@@ -629,7 +856,7 @@ begin
     if HiWord(Cardinal(lpsz)) = 0 then begin
       // literal char mode
       Result := lpsz;
-      if _IsWideCharMappableToAnsi(WideChar(lpsz)) then begin
+      if IsWideCharMappableToAnsi(WideChar(lpsz)) then begin
         AStr := WideChar(lpsz); // single character may be more than one byte
         CharLowerA{TNT-ALLOW CharLowerA}(PAnsiChar(AStr));
         WStr := AStr; // should always be single wide char
@@ -663,7 +890,7 @@ begin
 end;
 
 function Tnt_GetStringTypeExW(Locale: LCID; dwInfoType: DWORD;
-  lpSrcStr: PWideChar; cchSrc: Integer; var lpCharType): BOOL; stdcall;
+  lpSrcStr: PWideChar; cchSrc: Integer; var lpCharType): BOOL; 
 var
   AStr: AnsiString;
 begin
@@ -674,6 +901,69 @@ begin
     Result := GetStringTypeExA{TNT-ALLOW GetStringTypeExA}(Locale, dwInfoType,
       PAnsiChar(AStr), -1, lpCharType);
   end;
+end;
+
+function Win9x_LoadStringW(hInstance: HINST; uID: UINT; lpBuffer: PWideChar; nBufferMax: Integer): Integer;
+// This function originated by the WINE Project.
+//   It was translated to Pascal by Francisco Leong.
+//     It was further modified by Troy Wolbrink.
+var
+  hmem: HGLOBAL;
+  hrsrc: THandle;
+  p: PWideChar;
+  string_num, i: Integer;
+  block: Integer;
+begin
+  Result := 0;
+  // Netscape v3 fix...
+  if (HIWORD(uID) = $FFFF) then begin
+    uID := UINT(-(Integer(uID)));
+  end;
+  // figure block, string_num
+  block := ((uID shr 4) and $FFFF) + 1; // bits 4 - 19, mask out bits 20 - 31, inc by 1
+  string_num := uID and $000F;
+  // get handle & pointer to string block
+  hrsrc := FindResource{TNT-ALLOW FindResource}(hInstance, MAKEINTRESOURCE(block), RT_STRING);
+  if (hrsrc <> 0) then
+  begin
+    hmem := LoadResource(hInstance, hrsrc);
+    if (hmem <> 0) then
+    begin
+      p := LockResource(hmem);
+      // walk the block to the requested string
+      for i := 0 to string_num - 1 do begin
+        p := p + Integer(p^) + 1;
+      end;
+      Result := Integer(p^); { p points to the length of string }
+      Inc(p); { p now points to the actual string }
+      if (lpBuffer <> nil) and (nBufferMax > 0) then
+      begin
+        Result := min(nBufferMax - 1, Result); { max length to copy }
+        if (Result > 0) then begin
+          CopyMemory(lpBuffer, p, Result * sizeof(WideChar));
+        end;
+        lpBuffer[Result] := WideChar(0); { null terminate }
+      end;
+    end;
+  end;
+end;
+
+function Tnt_LoadStringW(hInstance: HINST; uID: UINT; lpBuffer: PWideChar; nBufferMax: Integer): Integer;
+begin
+  if Win32PlatformIsUnicode then
+    Result := Windows.LoadStringW(hInstance, uID, lpBuffer, nBufferMax)
+  else
+    Result := Win9x_LoadStringW(hInstance, uID, lpBuffer, nBufferMax);
+end;
+
+function Tnt_ExtractAssociatedIconW(hInst: HINST; lpIconPath: PWideChar;
+  var lpiIcon: Word): HICON;
+begin
+  if Win32PlatformIsUnicode then
+    Result := ExtractAssociatedIconW(hInst, lpIconPath, lpiIcon)
+  else
+    Result := ExtractAssociatedIconA{TNT-ALLOW ExtractAssociatedIconA}(hInst,
+      PAnsiChar(AnsiString(lpIconPath)), lpiIcon)
 end;
 
 function Tnt_GetFileVersionInfoSizeW(lptstrFilename: PWideChar; var lpdwHandle: DWORD): DWORD;
@@ -724,21 +1014,25 @@ type
   TSHFileOperationW = function(var lpFileOp: TSHFileOpStructW): Integer; stdcall;
   TSHBrowseForFolderW = function(var lpbi: TBrowseInfoW): PItemIDList; stdcall;
   TSHGetPathFromIDListW = function(pidl: PItemIDList; pszPath: PWideChar): BOOL; stdcall;
+  TSHGetFileInfoW = function(pszPath: PWideChar; dwFileAttributes: DWORD;
+    var psfi: TSHFileInfoW; cbFileInfo, uFlags: UINT): DWORD; stdcall;
 
 var
   Safe_SHFileOperationW: TSHFileOperationW = nil;
   Safe_SHBrowseForFolderW: TSHBrowseForFolderW = nil;
   Safe_SHGetPathFromIDListW: TSHGetPathFromIDListW = nil;
+  Safe_SHGetFileInfoW: TSHGetFileInfoW = nil;
 
 var Shell32DLL: HModule = 0;
 
 procedure LoadWideShell32Procs;
 begin
   if Shell32DLL = 0 then begin
-    Shell32DLL := WinCheckH(LoadLibrary('shell32.dll'));
+    Shell32DLL := WinCheckH(Tnt_LoadLibraryW('shell32.dll'));
     Safe_SHFileOperationW := WinCheckP(GetProcAddress(Shell32DLL, 'SHFileOperationW'));
     Safe_SHBrowseForFolderW := WinCheckP(GetProcAddress(Shell32DLL, 'SHBrowseForFolderW'));
     Safe_SHGetPathFromIDListW := WinCheckP(GetProcAddress(Shell32DLL, 'SHGetPathFromIDListW'));
+    Safe_SHGetFileInfoW := WinCheckP(GetProcAddress(Shell32DLL, 'SHGetFileInfoW'));
   end;
 end;
 
@@ -758,8 +1052,14 @@ begin
   end else begin
     AnsiFileOp := TSHFileOpStructA(lpFileOp);
     // convert PChar -> PWideChar
-    AnsiFileOp.pFrom := PAnsiChar(AnsiString(ExtractStringArrayStr(lpFileOp.pFrom)));
-    AnsiFileOp.pTo := PAnsiChar(AnsiString(ExtractStringArrayStr(lpFileOp.pTo)));
+    if lpFileOp.pFrom = nil then
+      AnsiFileOp.pFrom := nil
+    else
+      AnsiFileOp.pFrom := PAnsiChar(AnsiString(ExtractStringArrayStr(lpFileOp.pFrom)));
+    if lpFileOp.pTo = nil then
+      AnsiFileOp.pTo := nil
+    else
+      AnsiFileOp.pTo := PAnsiChar(AnsiString(ExtractStringArrayStr(lpFileOp.pTo)));
     AnsiFileOp.lpszProgressTitle := PAnsiChar(AnsiString(lpFileOp.lpszProgressTitle));
     Result := SHFileOperationA{TNT-ALLOW SHFileOperationA}(AnsiFileOp);
     // return struct results
@@ -817,15 +1117,20 @@ end;
 function Tnt_SHBrowseForFolderW(var lpbi: TBrowseInfoW): PItemIDList;
 var
   AnsiInfo: TBrowseInfoA;
+  AnsiBuffer: array[0..MAX_PATH] of AnsiChar;
 begin
   if Win32PlatformIsUnicode then begin
     LoadWideShell32Procs;
     Result := Safe_SHBrowseForFolderW(lpbi);
   end else begin
     AnsiInfo := TBrowseInfoA(lpbi);
-    AnsiInfo.pszDisplayName := PAnsiChar(AnsiString(lpbi.pszDisplayName));
     AnsiInfo.lpszTitle := PAnsiChar(AnsiString(lpbi.lpszTitle));
+    if lpbi.pszDisplayName <> nil then
+      AnsiInfo.pszDisplayName := AnsiBuffer;
     Result := SHBrowseForFolderA{TNT-ALLOW SHBrowseForFolderA}(AnsiInfo);
+    if lpbi.pszDisplayName <> nil then
+      StrPCopyW{TNT-ALLOW StrPCopyW}(lpbi.pszDisplayName, AnsiInfo.pszDisplayName);
+    lpbi.iImage := AnsiInfo.iImage;
   end;
 end;
 
@@ -843,6 +1148,28 @@ begin
       StrPCopyW{TNT-ALLOW StrPCopyW}(pszPath, PAnsiChar(AnsiPath))
   end;
 end;
+
+function Tnt_SHGetFileInfoW(pszPath: PWideChar; dwFileAttributes: DWORD;
+  var psfi: TSHFileInfoW; cbFileInfo, uFlags: UINT): DWORD;
+var
+  SHFileInfoA: TSHFileInfoA;
+begin
+  if Win32PlatformIsUnicode then begin
+    LoadWideShell32Procs;
+    Result := Safe_SHGetFileInfoW(pszPath, dwFileAttributes, psfi, cbFileInfo, uFlags)
+  end else begin
+    Result := SHGetFileInfoA{TNT-ALLOW SHGetFileInfoA}(PAnsiChar(AnsiString(pszPath)),
+      dwFileAttributes, SHFileInfoA, SizeOf(TSHFileInfoA), uFlags);
+    // update pfsi...
+    ZeroMemory(@psfi, SizeOf(TSHFileInfoW));
+    psfi.hIcon := SHFileInfoA.hIcon;
+    psfi.iIcon := SHFileInfoA.iIcon;
+    psfi.dwAttributes := SHFileInfoA.dwAttributes;
+    StrPLCopyW{TNT-ALLOW StrPLCopyW}(psfi.szDisplayName, SHFileInfoA.szDisplayName, MAX_PATH);
+    StrPLCopyW{TNT-ALLOW StrPLCopyW}(psfi.szTypeName, SHFileInfoA.szTypeName, 80);
+  end;
+end;
+
 
 function Tnt_Is_IntResource(ResStr: LPCWSTR): Boolean;
 begin

@@ -3,6 +3,7 @@
 {                                                                             }
 {    Tnt Delphi Unicode Controls                                              }
 {      http://home.ccci.org/wolbrink/tnt/delphi_unicode_controls.htm          }
+{        Version: 2.1.2                                                       }
 {                                                                             }
 {    Copyright (c) 2002, 2003 Troy Wolbrink (troy.wolbrink@ccci.org)          }
 {                                                                             }
@@ -10,12 +11,13 @@
 
 unit TntStdCtrls;
 
-{$INCLUDE Compilers.inc}
+{$INCLUDE TntCompilers.inc}
 
 interface
-
+ 
 uses
-  Windows, Messages, Classes, Controls, TntControls, StdCtrls, CheckLst, TntClasses, TntSysUtils;
+  Windows, Messages, Classes, Controls, TntControls, StdCtrls, CheckLst, Graphics,
+  TntClasses, TntSysUtils;
 
 {TNT-WARN TCustomEdit}
 type
@@ -260,6 +262,12 @@ type
   end;
 {$ENDIF}
 
+type
+  ITntComboFindString = interface
+    ['{63BEBEF4-B1A2-495A-B558-7487B66F6827}']
+    function FindString(const Value: WideString; StartPos: Integer): Integer;
+  end;
+
 {TNT-WARN TCustomComboBox}
 type
   TTntCustomComboBox = class(TCustomComboBox{TNT-ALLOW TCustomComboBox},
@@ -267,12 +275,12 @@ type
   private
     FItems: TTntStrings;
     FSaveItems: TTntStrings;
+    FSaveItemIndex: Integer;
     {$IFDEF COMPILER_6_UP}
     FFilter: WideString;
     FLastTime: Cardinal;
     {$ENDIF}
     function GetItems: TTntStrings;
-    procedure SetItems(const Value: TTntStrings); reintroduce;
     function GetSelStart: Integer;
     procedure SetSelStart(const Value: Integer);
     function GetSelLength: Integer;
@@ -302,6 +310,7 @@ type
     {$IFDEF DELPHI_7}
     function GetItemsClass: TCustomComboBoxStringsClass; override;
     {$ENDIF}
+    procedure SetItems(const Value: TTntStrings); reintroduce; virtual;
   public
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
@@ -394,6 +403,11 @@ type
     property Items; { Must be published after OnMeasureItem }
   end;
 
+  {$IFDEF COMPILER_6_UP}
+  TLBGetWideDataEvent = procedure(Control: TWinControl; Index: Integer;
+    var Data: WideString) of object;
+  {$ENDIF}
+
   TAccessCustomListBox = class(TCustomListBox{TNT-ALLOW TCustomListBox});
 
   TTntListBoxStrings = class(TTntStrings)
@@ -427,10 +441,18 @@ type
     FSaveItems: TTntStrings;
     FSaveTopIndex: Integer;
     FSaveItemIndex: Integer;
+    {$IFDEF COMPILER_6_UP}
+    FOnData: TLBGetWideDataEvent;
+    {$ENDIF}
     procedure SetItems(const Value: TTntStrings);
     function GetHint: WideString;
     procedure SetHint(const Value: WideString);
     function IsHintStored: Boolean;
+    {$IFDEF COMPILER_6_UP}
+    function GetOwnerData(Index: Integer; out Data: WideString): Boolean;
+    procedure LBGetText(var Message: TMessage); message LB_GETTEXT;
+    procedure LBGetTextLen(var Message: TMessage); message LB_GETTEXTLEN;
+    {$ENDIF}
   protected
     procedure CreateWindowHandle(const Params: TCreateParams); override;
     procedure DefineProperties(Filer: TFiler); override;
@@ -439,6 +461,9 @@ type
     procedure CreateWnd; override;
     procedure DestroyWnd; override;
     procedure DrawItem(Index: Integer; Rect: TRect; State: TOwnerDrawState); override;
+    {$IFDEF COMPILER_6_UP}
+    property OnData: TLBGetWideDataEvent read FOnData write FOnData;
+    {$ENDIF}
   public
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
@@ -861,8 +886,10 @@ type
     property OnStartDrag;
   end;
 
-procedure TntCombo_AfterInherited_CreateWnd(Combo: TCustomComboBox{TNT-ALLOW TCustomComboBox}; Items: TTntStrings; var FSaveItems: TTntStrings);
-procedure TntCombo_BeforeInherited_DestroyWnd(Combo: TCustomComboBox{TNT-ALLOW TCustomComboBox}; Items: TTntStrings; var FSaveItems: TTntStrings);
+procedure TntCombo_AfterInherited_CreateWnd(Combo: TCustomComboBox{TNT-ALLOW TCustomComboBox};
+  Items: TTntStrings; var FSaveItems: TTntStrings; FSaveItemIndex: integer; PreInheritedAnsiText: AnsiString);
+procedure TntCombo_BeforeInherited_DestroyWnd(Combo: TCustomComboBox{TNT-ALLOW TCustomComboBox};
+  Items: TTntStrings; var FSaveItems: TTntStrings; ItemIndex: integer; var FSaveItemIndex: integer);
 function TntCombo_ComboWndProc(Combo: TCustomComboBox{TNT-ALLOW TCustomComboBox};
   var Message: TMessage; ComboWnd: HWnd; ComboProc: Pointer; DoEditCharMsg: TWMCharMsgHandler): Boolean;
 function TntCombo_CNCommand(Combo: TCustomComboBox{TNT-ALLOW TCustomComboBox}; Items: TTntStrings; var Message: TWMCommand): Boolean;
@@ -885,6 +912,8 @@ procedure TntCombo_AutoCompleteKeyPress(Combo: TCustomComboBox{TNT-ALLOW TCustom
   Items: TTntStrings; var Message: TWMChar;
     AutoComplete_UniqueMatchOnly, AutoComplete_PreserveDataEntryCase: Boolean);
 {$ENDIF}
+procedure TntCombo_DefaultDrawItem(Canvas: TCanvas; Index: Integer; Rect: TRect;
+  State: TOwnerDrawState; Items: TTntStrings);
 
 procedure TntCustomEdit_CreateWindowHandle(Edit: TCustomEdit{TNT-ALLOW TCustomEdit}; const Params: TCreateParams);
 procedure TntCustomEdit_AfterInherited_CreateWnd(Edit: TCustomEdit{TNT-ALLOW TCustomEdit}; var FPasswordChar: WideChar);
@@ -899,7 +928,7 @@ procedure TntCustomEdit_SetPasswordChar(Edit: TCustomEdit{TNT-ALLOW TCustomEdit}
 
 
 function TntMemo_LineStart(Handle: THandle; Index: Integer): Integer;
-function TntMemo_LineLength(Handle: THandle; Index: Integer): Integer;
+function TntMemo_LineLength(Handle: THandle; Index: Integer; StartPos: Integer = -1): Integer;
 
 procedure TntListBox_AfterInherited_CreateWnd(ListBox: TCustomListBox{TNT-ALLOW TCustomListBox};
   var FSaveItems: TTntStrings; FItems: TTntStrings; FSaveTopIndex, FSaveItemIndex: Integer);
@@ -920,7 +949,7 @@ procedure TntButton_CMDialogChar(Button: TButton{TNT-ALLOW TButton}; var Message
 implementation
 
 uses
-  Forms, SysUtils, Consts, RichEdit, Graphics, ComStrs, Dialogs,
+  Forms, SysUtils, Consts, RichEdit, ComStrs, Dialogs,
   {$IFDEF COMPILER_6_UP} RTLConsts, {$ENDIF} {$IFDEF COMPILER_7_UP} Themes, {$ENDIF}
   TntForms, TntGraphics, TntActnList, TntWindows;
 
@@ -1152,12 +1181,11 @@ begin
   Result := SendMessageW(Handle, EM_LINEINDEX, Index, 0);
 end;
 
-function TntMemo_LineLength(Handle: THandle; Index: Integer): Integer;
-var
-  StartPos: Integer;
+function TntMemo_LineLength(Handle: THandle; Index: Integer; StartPos: Integer = -1): Integer;
 begin
   Assert(Win32PlatformIsUnicode);
-  StartPos := TntMemo_LineStart(Handle, Index);
+  if StartPos = -1 then
+    StartPos := TntMemo_LineStart(Handle, Index);
   if StartPos < 0 then
     Result := 0
   else
@@ -1198,11 +1226,11 @@ end;
 
 procedure TTntMemoStrings.Insert(Index: Integer; const S: Widestring);
 
-  function RichEditSelStart: Integer;
+  function RichEditSelStartW: Integer;
   var
     CharRange: TCharRange;
   begin
-    SendMessage(Memo.Handle, EM_EXGETSEL, 0, Longint(@CharRange));
+    SendMessageW(Memo.Handle, EM_EXGETSEL, 0, Longint(@CharRange));
     Result := CharRange.cpMin;
   end;
 
@@ -1226,13 +1254,21 @@ begin
         Inc(StartPos, LineLen);
         Line := CRLF + s;
       end;
-      if (FRichEditMode)
-      and (LineBreakStyle <> tlbsCRLF) then
-        Line := TntAdjustLineBreaks(Line, LineBreakStyle);
       SendMessageW(Memo.Handle, EM_SETSEL, StartPos, StartPos);
-      SendMessageW(Memo.Handle, EM_REPLACESEL, 0, Longint(PWideChar(Line)));
+
       if (FRichEditMode)
-      and (RichEditSelStart <> (StartPos + Length(Line))) then
+      and (LineBreakStyle <> tlbsCRLF) then begin
+        Line := TntAdjustLineBreaks(Line, LineBreakStyle);
+        if Line = CR then
+          Line := CRLF; { This helps a ReadOnly RichEdit 4.1 control to insert a blank line. }
+        SendMessageW(Memo.Handle, EM_REPLACESEL, 0, Longint(PWideChar(Line)));
+        if Line = CRLF then
+          Line := CR;
+      end else
+        SendMessageW(Memo.Handle, EM_REPLACESEL, 0, Longint(PWideChar(Line)));
+
+      if (FRichEditMode)
+      and (RichEditSelStartW <> (StartPos + Length(Line))) then
         raise EOutOfResources.Create(sRichEditInsertError);
     end;
   end;
@@ -1486,38 +1522,66 @@ end;
 
 type TAccessCustomComboBox = class(TCustomComboBox{TNT-ALLOW TCustomComboBox});
 
-procedure TntCombo_AfterInherited_CreateWnd(Combo: TCustomComboBox{TNT-ALLOW TCustomComboBox}; Items: TTntStrings; var FSaveItems: TTntStrings);
-var
-  FSaveItemIndex: Integer;
+{$IFDEF COMPILER_5}
+  THackCustomComboBox = class(TWinControl)
+  protected
+    F_xxxxxxxx_Items: TStrings{TNT-ALLOW TStrings};
+    F_xxxxxxxx_Canvas: TCanvas;
+    F_xxxxxxxx_CharCase: TEditCharCase;
+    F_xxxxxxxx_Sorted: Boolean;
+    F_xxxxxxxx_Style: TComboBoxStyle;
+    F_xxxxxxxx_ItemHeight: Integer;
+    F_xxxxxxxx_MaxLength: Integer;
+    F_xxxxxxxx_DropDownCount: Integer;
+    F_xxxxxxxx_EditHandle: HWnd;
+    F_xxxxxxxx_ListHandle: HWnd;
+    F_xxxxxxxx_EditInstance: Pointer;
+    FListInstance: Pointer;
+    F_xxxxxxxx_DefEditProc: Pointer;
+    FDefListProc: Pointer;
+  end;
+{$ENDIF}
+
+procedure TntCombo_AfterInherited_CreateWnd(Combo: TCustomComboBox{TNT-ALLOW TCustomComboBox};
+  Items: TTntStrings; var FSaveItems: TTntStrings; FSaveItemIndex: integer; PreInheritedAnsiText: AnsiString);
 begin
-  if Win32PlatformIsUnicode then begin
-    with TAccessCustomComboBox(Combo) do begin
-      if ListHandle <> 0 then
-        SetWindowLongW(ListHandle, GWL_WNDPROC, GetWindowLong(ListHandle, GWL_WNDPROC));
-      SetWindowLongW(EditHandle, GWL_WNDPROC, GetWindowLong(EditHandle, GWL_WNDPROC));
-      if FSaveItems <> nil then
-      begin
-        FSaveItemIndex := ItemIndex;
-        Items.Assign(FSaveItems);
-        FreeAndNil(FSaveItems);
-        TntControl_SetText(Combo, TntControl_GetStoredText(Combo, Text));
-        if FSaveItemIndex <> -1 then
-        begin
-          if Items.Count < FSaveItemIndex then FSaveItemIndex := Items.Count;
-          SendMessage(Handle, CB_SETCURSEL, FSaveItemIndex, 0);
-        end;
+  if (not Win32PlatformIsUnicode) then begin
+    TAccessCustomComboBox(Combo).Text := PreInheritedAnsiText;
+  end else begin
+    with TAccessCustomComboBox(Combo) {$IFNDEF COMPILER_6_UP}, THackCustomComboBox(Combo) {$ENDIF} do
+    begin
+      if ListHandle <> 0 then begin
+        // re-extract FDefListProc as a Unicode proc
+        SetWindowLongA(ListHandle, GWL_WNDPROC, Integer(FDefListProc));
+        FDefListProc := Pointer(GetWindowLongW(ListHandle, GWL_WNDPROC));
+        // override with FListInstance as a Unicode proc
+        SetWindowLongW(ListHandle, GWL_WNDPROC, Integer(FListInstance));
       end;
+      SetWindowLongW(EditHandle, GWL_WNDPROC, GetWindowLong(EditHandle, GWL_WNDPROC));
+    end;
+    if FSaveItems <> nil then
+    begin
+      Items.Assign(FSaveItems);
+      FreeAndNil(FSaveItems);
+      if FSaveItemIndex <> -1 then
+      begin
+        if Items.Count < FSaveItemIndex then FSaveItemIndex := Items.Count;
+        SendMessage(Combo.Handle, CB_SETCURSEL, FSaveItemIndex, 0);
+      end;
+      TntControl_SetText(Combo, TntControl_GetStoredText(Combo, TAccessCustomComboBox(Combo).Text));
     end;
   end;
 end;
 
-procedure TntCombo_BeforeInherited_DestroyWnd(Combo: TCustomComboBox{TNT-ALLOW TCustomComboBox}; Items: TTntStrings; var FSaveItems: TTntStrings);
+procedure TntCombo_BeforeInherited_DestroyWnd(Combo: TCustomComboBox{TNT-ALLOW TCustomComboBox};
+  Items: TTntStrings; var FSaveItems: TTntStrings; ItemIndex: integer; var FSaveItemIndex: integer);
 begin
   if (Win32PlatformIsUnicode) and (Items.Count > 0) then
   begin
     FSaveItems := TTntStringList.Create;
     FSaveItems.Assign(Items);
-    Items.Clear; { This keeps TCustomComboBox from creating its own FSaveItems. }
+    FSaveItemIndex:= ItemIndex;
+    Items.Clear; { This keeps TCustomComboBox from creating its own FSaveItems. (this kills the original ItemIndex) }
   end;
 end;
 
@@ -1698,22 +1762,28 @@ begin
     WideListControl_AddItem(Destination, Items[ItemIndex], Items.Objects[ItemIndex]);
 end;
 
-function TntCombo_FindString(hWnd: THandle; StartPos: Integer; const Text: WideString): Integer;
+function TntCombo_FindString(Combo: TCustomComboBox{TNT-ALLOW TCustomComboBox};
+  StartPos: Integer; const Text: WideString): Integer;
+var
+  ComboFindString: ITntComboFindString;
 begin
-  if IsWindowUnicode(hWnd) then
-    Result := SendMessageW(hWnd, CB_FINDSTRING, StartPos, Integer(PWideChar(Text)))
+  if Combo.GetInterface(ITntComboFindString, ComboFindString) then
+    Result := ComboFindString.FindString(Text, StartPos)
+  else if IsWindowUnicode(Combo.Handle) then
+    Result := SendMessageW(Combo.Handle, CB_FINDSTRING, StartPos, Integer(PWideChar(Text)))
   else
-    Result := SendMessageA(hWnd, CB_FINDSTRING, StartPos, Integer(PAnsiChar(AnsiString(Text))))
+    Result := SendMessageA(Combo.Handle, CB_FINDSTRING, StartPos, Integer(PAnsiChar(AnsiString(Text))))
 end;
 
-function TntCombo_FindUniqueString(hWnd: THandle; StartPos: Integer; const Text: WideString): Integer;
+function TntCombo_FindUniqueString(Combo: TCustomComboBox{TNT-ALLOW TCustomComboBox};
+  StartPos: Integer; const Text: WideString): Integer;
 var
   Match_1, Match_2: Integer;
 begin
   Result := CB_ERR;
-  Match_1 := TntCombo_FindString(hWnd, -1, Text);
+  Match_1 := TntCombo_FindString(Combo, -1, Text);
   if Match_1 <> CB_ERR then begin
-    Match_2 := TntCombo_FindString(hWnd, Match_1, Text);
+    Match_2 := TntCombo_FindString(Combo, Match_1, Text);
     if Match_2 = Match_1 then
       Result := Match_1;
   end;
@@ -1726,9 +1796,9 @@ var
   ValueChange: Boolean;
 begin
   if UniqueMatchOnly then
-    Idx := TntCombo_FindUniqueString(Combo.Handle, -1, SearchText)
+    Idx := TntCombo_FindUniqueString(Combo, -1, SearchText)
   else
-    Idx := TntCombo_FindString(Combo.Handle, -1, SearchText);
+    Idx := TntCombo_FindString(Combo, -1, SearchText);
   Result := (Idx <> CB_ERR);
   if Result then begin
     ValueChange := Idx <> Combo.ItemIndex;
@@ -1779,8 +1849,8 @@ begin
       else begin
         if Combo.AutoDropDown and (not Combo.DroppedDown) then
           Combo.DroppedDown := True;
-        // reset FFilter if it's been too long (0.5 sec)
-        if GetTickCount - FLastTime >= 500 then
+        // reset FFilter if it's been too long (1.25 sec) { Windows XP is actually 2 seconds! }
+        if GetTickCount - FLastTime >= 1250 then
           FFilter := '';
         FLastTime := GetTickCount;
         // if AutoSelect works, remember new FFilter
@@ -1862,14 +1932,17 @@ begin
 end;
 
 procedure TTntCustomComboBox.CreateWnd;
+var
+  PreInheritedAnsiText: AnsiString;
 begin
+  PreInheritedAnsiText := TAccessCustomComboBox(Self).Text;
   inherited;
-  TntCombo_AfterInherited_CreateWnd(Self, Items, FSaveItems);
+  TntCombo_AfterInherited_CreateWnd(Self, Items, FSaveItems, FSaveItemIndex, PreInheritedAnsiText);
 end;
 
 procedure TTntCustomComboBox.DestroyWnd;
 begin
-  TntCombo_BeforeInherited_DestroyWnd(Self, Items, FSaveItems);
+  TntCombo_BeforeInherited_DestroyWnd(Self, Items, FSaveItems, ItemIndex, FSaveItemIndex);
   inherited;
 end;
 
@@ -1908,16 +1981,21 @@ begin
     inherited;
 end;
 
+procedure TntCombo_DefaultDrawItem(Canvas: TCanvas; Index: Integer; Rect: TRect;
+  State: TOwnerDrawState; Items: TTntStrings);
+begin
+  Canvas.FillRect(Rect);
+  if Index >= 0 then
+    WideCanvasTextOut(Canvas, Rect.Left + 2, Rect.Top, Items[Index]);
+end;
+
 procedure TTntCustomComboBox.DrawItem(Index: Integer; Rect: TRect; State: TOwnerDrawState);
 begin
   TControlCanvas(Canvas).UpdateTextFlags;
   if Assigned(OnDrawItem) then
     OnDrawItem(Self, Index, Rect, State)
-  else begin
-    Canvas.FillRect(Rect);
-    if Index >= 0 then
-      WideCanvasTextOut(Canvas, Rect.Left + 2, Rect.Top, Items[Index]);
-  end;
+  else
+    TntCombo_DefaultDrawItem(Canvas, Index, Rect, State, Items);
 end;
 
 function TTntCustomComboBox.GetItems: TTntStrings;
@@ -2209,6 +2287,7 @@ begin
     FSaveItems.Assign(FItems);
     FSaveTopIndex := ListBox.TopIndex;
     FSaveItemIndex := ListBox.ItemIndex;
+    ListBox.Items.Clear; { This keeps TCustomListBox from creating its own FSaveItems. (this kills the original ItemIndex) }
   end;
 end;
 
@@ -2342,6 +2421,71 @@ function TTntCustomListBox.GetActionLinkClass: TControlActionLinkClass;
 begin
   Result := TntControl_GetActionLinkClass(Self, inherited GetActionLinkClass);
 end;
+
+{$IFDEF COMPILER_6_UP}
+function TTntCustomListBox.GetOwnerData(Index: Integer; out Data: WideString): Boolean;
+var
+  AnsiData: AnsiString;
+  AnsiEvent: TLBGetDataEvent;
+begin
+  Result := False;
+  Data := '';
+  if (Index > -1) and (Index < Count) then begin
+    if Assigned(OnData) then begin
+      OnData(Self, Index, Data);
+      Result := True;
+    end else if Assigned(inherited OnData) then begin
+      AnsiData := '';
+      AnsiEvent := inherited OnData;
+      AnsiEvent(Self, Index, AnsiData);
+      Data := AnsiData;
+      Result := True;
+    end;
+  end;
+end;
+
+procedure TTntCustomListBox.LBGetText(var Message: TMessage);
+var
+  S: WideString;
+  AnsiS: AnsiString;
+begin
+  if Style in [lbVirtual, lbVirtualOwnerDraw] then
+  begin
+    if GetOwnerData(Message.WParam, S) then begin
+      if Win32PlatformIsUnicode then begin
+        StrCopyW(PWideChar(Message.LParam), PWideChar(S));
+        Message.Result := Length(S);
+      end else begin
+        AnsiS := S;
+        StrCopy{TNT-ALLOW StrCopy}(PAnsiChar(Message.LParam), PAnsiChar(AnsiS));
+        Message.Result := Length(AnsiS);
+      end;
+    end
+    else
+      Message.Result := LB_ERR;
+  end
+  else
+    inherited;
+end;
+
+procedure TTntCustomListBox.LBGetTextLen(var Message: TMessage);
+var
+  S: WideString;
+begin
+  if Style in [lbVirtual, lbVirtualOwnerDraw] then
+  begin
+    if GetOwnerData(Message.WParam, S) then begin
+      if Win32PlatformIsUnicode then
+        Message.Result := Length(S)
+      else
+        Message.Result := Length(AnsiString(S));
+    end else
+      Message.Result := LB_ERR;
+  end
+  else
+    inherited;
+end;
+{$ENDIF}
 
 // --- label helper procs
 
