@@ -34,8 +34,8 @@ implementation
 
 procedure TParInst3.FormActivate(Sender: TObject);
 var
-  source,destination : TStrings ;
-  CDROM : string;
+  source,destination,configsys,autoexec : TStrings ;
+  CDROM, configsysFile,autoexecFile: string;
   error : boolean;
   attribute : dword;
   BootIni: TIniFile;
@@ -103,6 +103,9 @@ begin
     messagebeep(MB_ICONERROR);
     buttonClose.Enabled:=true;
   end;
+  source.free;
+  destination.free;
+
   if not error and not osis95 and createmenu then
   begin       //Windows NT Create Menu with GRUB
     if not fileExists('c:\boot.ini') or not fileExists('c:\ntldr') then
@@ -148,8 +151,39 @@ begin
       BootIni.Free;
     end;
   end;
-  source.free;
-  destination.free;
+  if not error and osis95 and createmenu then
+  begin
+    configsys := TStringList.Create;
+    autoexec := TStringList.Create;
+    configsysFile := 'c:\config.sys';
+    autoexecFile := 'c:\autoexec.bat';
+    try
+       with configsys do begin
+        LoadFromFile(configsysFile);
+        insert(0,'[menu]');
+        insert(1,'menuitem=windows, Windows');
+        insert(2,'menuitem=kinneret, GNU/Linux Kinneret');
+        insert(3,'menucolor=15,1');
+        insert(4,'menudefault=Windows, 10');
+        insert(5,'[kinneret]');
+        insert(6,'[windows]');
+        SaveToFile(configsysFile);
+      end;
+      with autoexec do begin
+        LoadFromFile(autoexecFile);
+        insert(0,'@echo off');
+        insert(1,'%config%');
+        insert(2,':kinneret');
+        insert(3,'call c:\boot\Kinneret.bat');
+        insert(4,':windows');
+        SaveToFile(autoexecFile);
+      end;
+      finally
+      Configsys.Free;
+      Autoexec.Free;
+    end;
+  end;
+
   if not error then LabelWait.Caption:=pWideChar(_('Installation finished successfully.'));
   ButtonClose.Enabled:=true;
 end;
