@@ -175,10 +175,15 @@ bool cmenu::initialize(QString filename, QString cmdStartpage, QString *startpag
       if (menuname.compare(name)!=0) page+="<a href=""swit://goback"">"+i18n("Go back")+"</a><BR><BR>";
       else page+="<a href=""swit://exit"">"+i18n("Exit")+"</a><BR><BR>";
       page+="</P></td></tr></table>";
-      startpage_page+="<a href=""swit://exit"">"+i18n("Exit")+"</a><BR><BR>";
-      startpage_page+="</P></td></tr></table>";
+      page+="</body></html>";
+      if (isStartpage)
+      {
+        startpage_page+="<a href=""swit://exit"">"+i18n("Exit")+"</a><BR><BR>";
+        startpage_page+="</P></td></tr></table>";
+        startpage_page+="</body></html>";
+        addTextToSection("swit://startpage", startpage_page);
+      }
       addTextToSection(name,page);
-      if (isStartpage) addTextToSection("swit://startpage", startpage_page);
       lType=getline(filereader,&key,&name);
       name=QString("swim://")+name;
     }
