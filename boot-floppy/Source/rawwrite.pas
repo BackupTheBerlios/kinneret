@@ -72,14 +72,13 @@ begin
    wForm.WriteSucceed:=False;
    SetErrorMode(SEM_FAILCRITICALERRORS);
 
-   CmdImage := 'knoppix-orig-boot.img';
+   CmdImage := 'boot.img';
 end;
 
 procedure TMainForm.WriteButtonClick(Sender: TObject);
 var
    h1       : THandle;
    Buffer   : String;
-   Errormsg : String;
    Read     : DWORD;
    Blocks   : Integer;
    WrittenBlocks  : Integer;
