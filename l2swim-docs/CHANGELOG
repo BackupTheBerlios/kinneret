@@ -1,8 +1,7 @@
 This file includes changes since the last upload. It is intended to provide a reference for translators/authors/remastering.
 
--------------- v 0.5.0a ----------------
-* Updated ~/etc/l2swim.xsl (no impact on translat
-ions - enhanced tags and html output) 5/7/03 dovix
+-------------- v 0.5.0beta ----------------
+* Updated ~/etc/l2swim.xsl (no impact on translations - enhanced tags and html output) 5/7/03 dovix
 * updated ~/etc/swim_menu_he.txt 28/06/03 dovix
 * new  ~/src/he/thoughts_1.xml 28/6/03 dovix
 * new  ~/src/he/thoughts_2.xml 28/6/03 dovix
