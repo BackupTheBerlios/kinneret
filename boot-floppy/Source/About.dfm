@@ -26,8 +26,6 @@ object FormAbout: TFormAbout
     Width = 217
     Height = 201
     Cursor = crIBeam
-    BiDiMode = bdLeftToRight
-    ParentBiDiMode = False
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 0

@@ -26,13 +26,23 @@ object FormAdvanced: TFormAdvanced
     Height = 65
     AutoSize = False
   end
+  object addLabel: TTntLabel
+    Left = 240
+    Top = 328
+    Width = 3
+    Height = 13
+    BiDiMode = bdLeftToRight
+    ParentBiDiMode = False
+  end
   object ParamList: TValueListEditor
     Left = 120
     Top = 104
     Width = 273
     Height = 209
     Hint = 'Edit the Values here'
+    BiDiMode = bdLeftToRight
     KeyOptions = [keyDelete, keyUnique]
+    ParentBiDiMode = False
     ParentShowHint = False
     ShowHint = False
     TabOrder = 0

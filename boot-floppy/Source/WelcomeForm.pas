@@ -151,11 +151,9 @@ end;
 
 procedure TWForm.Button2Click(Sender: TObject);
 begin
-  FormWarning.Label1.Caption:=PWideChar(_('You are going to reboot the computer.'#10#13+
+  if not ShowWarning(WRN, pWideChar(_('You are going to reboot the computer.'#10#13+
   'In order to prevent data loss, Please close'+#10#13+
-  'all running programs. Continune ?'));
-  FormWarning.ShowModal;
-  if FormWarning.Cancel then exit;
+  'all running programs. Continune ?'))) then exit;
   MyExitWindows(EWX_REBOOT);
 end;
 
@@ -209,10 +207,42 @@ begin
 end;
 
 procedure TWForm.ButtonAdvancedClick(Sender: TObject);
+var
+  Line: string;
+  word: string;
+  key: string;
+  i: integer;
 begin
-    if fileExists('a:\syslinux.cfg') then FormAdvanced.ShowModal
-    else showmessage(_('In order to enter the Advanced options, You must put your boot-floppy'+#10#13+
-        '(The floppy you can make here) in drive A:'));
+    try
+        FormAdvanced.Strings:=TStringList.Create;
+        FormAdvanced.FileName := 'A:\SYSLINUX.CFG';	{ set the file name }
+        FormAdvanced.Strings.LoadFromFile(FormAdvanced.Filename); { load from file }
+        Line:=FormAdvanced.Strings[1];
+    //Seperating Line to words
+    for i:=1 to Length(Line) do
+    begin
+        if line[i]='=' then
+        begin
+            key:=word;
+            word:='';
+        end
+        else if (line[i]=' ') then
+        begin
+            if key='' then begin key:=word; word:=''; end;
+            if key<>'APPEND' then FormAdvanced.ParamList.InsertRow(key,word,TRUE);
+            word:='';
+            key:='';
+        end
+        else word:=word+line[i];
+    end;
+    if key='' then begin key:=word; word:=''; end;
+    FormAdvanced.ParamList.InsertRow(key,word,TRUE);
+    FormAdvanced.ShowModal;
+  except
+    ShowWarning(MSG,pWideChar(_('In order to enter the Advanced options, You must put your boot-floppy'+#10#13+
+        '(The floppy you can make here) in drive A:')));
+  end;
+
 end;
 
 end.

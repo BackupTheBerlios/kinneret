@@ -24,6 +24,8 @@ type
     { Private declarations }
   public
     { Public declarations }
+  version: string;
+  date: string;
   end;
 
 var
@@ -41,6 +43,8 @@ end;
 procedure TFormAbout.FormCreate(Sender: TObject);
 begin
   TranslateProperties (self);      //GNUGETTEXT
+  date:='16/5/03';
+  version:='0.3';
 end;
 
 procedure TFormAbout.FormShow(Sender: TObject);
@@ -49,9 +53,9 @@ begin
     else Bidimode:=bdLeftToRight;
     if GetCurrentLanguage='he' then memo1.Alignment:=taRightJustify
     else memo1.Alignment:=taLeftJustify;
-    memo1.Text:=format(_('Kinneret''s Boot Floppy Maker'+#10#13#10#13+
+    memo1.Text:=wideFormat(_('Kinneret''s Boot Floppy Maker'+#10#13#10#13+
     'Version: %s,'+#10#13+
-    'Date: 4/5/2003,'+#10#13+
+    'Date: %s,'+#10#13+
     'Written by: Nir Misgav.'+#10#13+
     'Email: nirro@yahoo.com'+#10#13+
     'All rights reserved to'+#10#13+
@@ -71,7 +75,7 @@ begin
     'Tnt Unicode Controls,'+#10#13+
     'by Tnt Software Products.'+#10#13+
     'License: Unspecific open source,'+#10#13+
-    'See: TntUnicode.txt.'),['0.2b']);
+    'See: TntUnicode.txt.'),[version,date]);
 
     Caption:=PWideChar(_('About'));
     Button1.Caption:=PWideChar(_('Close'));

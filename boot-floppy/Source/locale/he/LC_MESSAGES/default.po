@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: boot-floppy-0.2b\n"
-"POT-Creation-Date: 2003-05-11 22:30\n"
-"PO-Revision-Date: 2003-05-12 11:52+0200\n"
+"POT-Creation-Date: 2003-05-17 01:29\n"
+"PO-Revision-Date: 2003-05-17 02:45+0200\n"
 "Last-Translator: Nir Misgav <nirro@hotmail.com>\n"
 "Language-Team: Nir Misgav <nirro@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -14,7 +14,7 @@ msgstr ""
 
 #. FormAbout..Caption
 #. WForm..Button1..Caption
-#: Source/About.dfm:10
+#: About.dfm:10
 msgid "About"
 msgstr "אודות"
 
@@ -24,153 +24,89 @@ msgstr "אודות"
 #. MainForm..Font.Name
 #. WForm..Font.Name
 #. WForm..Label2..Font.Name
-#: Source/About.dfm:15
-#: Source/rawwrite.dfm:15
-#: Source/WelcomeForm.dfm:15
-#: Source/WelcomeForm.dfm:142
+#: About.dfm:15
+#: WelcomeForm.dfm:15
+#: WelcomeForm.dfm:142
 msgid "MS Sans Serif"
 msgstr ""
 
 #. FormAbout..Button1..Caption
-#: Source/About.dfm:40
+#: About.dfm:40
 msgid "Close"
 msgstr "סגור"
 
-msgid "Confirm"
-msgstr "נא לאשר"
-
-msgid "OK"
-msgstr "אישור"
-
-#. FormAdvanced..Caption
-#: Source/Advanced.dfm:7
-msgid "Advanced options"
-msgstr "אפשרויות מתקדמות"
-
-#. FormAdvanced..Label1..Caption
-#: Source/Advanced.dfm:34
-msgid "Insert a new key name"
-msgstr "הוספת מפתח חדש"
-
 #. FormAdvanced..ParamList..Hint
-#: Source/Advanced.dfm:41
+#: Advanced.dfm:40
 msgid "Edit the Values here"
 msgstr "עריכת הערכים"
 
-#. FormAdvanced..ButtonAdd..Hint
-#: Source/Advanced.dfm:55
-msgid "Add a new Key"
-msgstr "הוספת מפתח חדש"
-
-#. FormAdvanced..ButtonAdd..Caption
-#: Source/Advanced.dfm:56
-msgid "Add"
-msgstr "הוספה"
-
-#. FormAdvanced..ButtonRemove..Hint
-#: Source/Advanced.dfm:67
-msgid "Remove a selected Key and his Value"
-msgstr "הסרת המפתח שנבחר וערכו"
-
-#. FormAdvanced..ButtonRemove..Caption
-#: Source/Advanced.dfm:68
-msgid "Remove"
-msgstr "הסרה"
-
-#. FormAdvanced..ButtonSave..Hint
-#: Source/Advanced.dfm:79
-msgid "Save changes and exit"
-msgstr "שמירת השינויים ויציאה"
-
-#. FormAdvanced..ButtonSave..Caption
-#: Source/Advanced.dfm:80
-msgid "Save && Exit"
-msgstr "שמירה ויציאה"
-
-#. FormAdvanced..ButtonCancel..Hint
-#: Source/Advanced.dfm:91
-msgid "Exit without saving"
-msgstr "יציאה ללא שמירה"
-
-#. FormAdvanced..ButtonCancel..Caption
-#. FormWarning..ButtonCancel..Caption
-#: Source/Advanced.dfm:92
-#: Source/rawwrite.pas:258
-msgid "Cancel"
-msgstr "ביטול"
-
 #. FormWarning..Caption
-#: Source/fWarning.dfm:6
+#: fWarning.dfm:6
 msgid "Warning"
 msgstr "אזהרה"
 
-#. FormWarning..ButtonContinune..Caption
-#: Source/fWarning.dfm:58
-msgid "Continune"
-msgstr "המשך"
-
 #. MainForm..Caption
 #. WForm..WriteButton..Caption
-#: Source/rawwrite.dfm:10
+#: rawwrite.dfm:10
 msgid "Make a bootable floppy"
 msgstr "הכנת תקליטון הפעלה"
 
 #. WForm..Caption
-#: Source/WelcomeForm.dfm:8
+#: WelcomeForm.dfm:8
 msgid "Welcome to GNU/Linux \"Kinneret\""
 msgstr "\"ברוכים הבאים לגנו/לינוקס \"כנרת"
 
 #. WForm..label1..Caption
-#: Source/WelcomeForm.dfm:124
+#: WelcomeForm.dfm:124
 msgid "Welcome to \"Kinneret\""
 msgstr "\"ברוכים הבאים ל-\"כנרת"
 
 #. WForm..label1..Font.Name
-#: Source/WelcomeForm.dfm:128
+#: WelcomeForm.dfm:128
 msgid "Arial"
 msgstr ""
 
 #. WForm..Button3..Caption
-#: Source/WelcomeForm.dfm:519
+#: WelcomeForm.dfm:519
 msgid "Exit"
 msgstr "יציאה"
 
 #. WForm..Button2..Caption
-#: Source/WelcomeForm.dfm:537
+#: WelcomeForm.dfm:537
 msgid "Reboot"
 msgstr "אתחול המחשב"
 
 #. WForm..RadioButton2..Caption
-#: Source/WelcomeForm.dfm:547
+#: WelcomeForm.dfm:547
 msgid "English"
 msgstr ""
 
 #. WForm..RadioButton1..Caption
-#: Source/WelcomeForm.dfm:558
+#: WelcomeForm.dfm:558
 msgid "עברית"
 msgstr ""
 
 #. WForm..RadioButton1..Caption_UTF7
-#: Source/WelcomeForm.dfm:562
+#: WelcomeForm.dfm:562
 msgid "+BeIF0QXoBdkF6g"
 msgstr ""
 
 #. WForm..ButtonAdvanced..Hint
-#: Source/WelcomeForm.dfm:569
+#: WelcomeForm.dfm:569
 msgid "Advanced options for editing kernel parameters"
 msgstr "אפשרויות מתקדמות לעריכת הפרמטרים הנשלחים אל הליבה בזמן האיתחול"
 
 #. WForm..ButtonAdvanced..Caption
-#: Source/WelcomeForm.dfm:570
+#: WelcomeForm.dfm:570
 msgid "Advanced"
 msgstr "מתקדם"
 
-#: Source/About.pas:74
+#: About.pas:74
 msgid ""
 "Kinneret's Boot Floppy Maker\n"
 "\n"
 "Version: %s,\n"
-"Date: 4/5/2003,\n"
+"Date: %s,\n"
 "Written by: Nir Misgav.\n"
 "Email: nirro@yahoo.com\n"
 "All rights reserved to\n"
@@ -199,7 +135,7 @@ msgstr ""
 "מכין תקליטון ההפעלה של כנרת\n"
 "\n"
 ",%s : גרסא\n"
-",מתאריך: 4/5/2003\n"
+",%s :מתאריך\n"
 ".נכתב ע\"י: ניר משגב\n"
 "nirro@yahoo.com :דוא\"ל\n"
 "כל הזכויות שמורות\n"
@@ -225,11 +161,11 @@ msgstr ""
 ",(רשיון: פתוח (לא מוגדר\n"
 ".TntUnicode.txt :ראה"
 
-#: Source/Advanced.pas:49
+#: Advanced.pas:48
 msgid "Really remove %s ?"
 msgstr "? %s באמת להסיר את"
 
-#: Source/Advanced.pas:75
+#: Advanced.pas:70
 msgid ""
 "These options are for advanced users only\n"
 "You can ruin the boot-floppy easily here.\n"
@@ -243,99 +179,160 @@ msgstr ""
 ",באפשרותך לשנות את הפרמטרים שנשלחים אל הליבה\n"
 ".פרמטרים אלה יישמרו בתקליטון לאיתחולים עתידיים"
 
-#. Seperating Line to words
-#: Source/Advanced.pas:103
-msgid "Unable to load settings,\n"
-"Verify the floppy is in place and try again."
-msgstr ",לא ניתן לטעון את ההגדרות\n"
-".אנא וודא שהתקליטון בכונן ונסה שוב"
+#: Advanced.pas:71
+msgid "Advanced options"
+msgstr "אפשרויות מתקדמות"
 
-#: Source/Advanced.pas:113
-msgid "You must insert a key name."
-msgstr ".חובה להכניס שם מפתח"
+#: Advanced.pas:72
+msgid "To add a new key, insert the key name and press Enter."
+msgstr ".ENTER על מנת להוסיף מפתח, הכנס את שם המפתח ולחץ"
 
-#: Source/Advanced.pas:119
+#: Advanced.pas:73
+msgid "Remove key"
+msgstr "הסרת מפתח"
+
+#: Advanced.pas:74
+msgid "Add a new key here."
+msgstr ": הוספת מפתח חדש"
+
+#: Advanced.pas:75
+msgid "Remove a selected Key and his Value"
+msgstr "הסרת המפתח שנבחר וערכו"
+
+#: Advanced.pas:76
+msgid "Cancel"
+msgstr "ביטול"
+
+#: Advanced.pas:77
+msgid "Exit without saving"
+msgstr "יציאה ללא שמירה"
+
+#: Advanced.pas:78
+msgid "Save && Exit"
+msgstr "שמירה ויציאה"
+
+#: Advanced.pas:79
+msgid "Save changes and exit"
+msgstr "שמירת השינויים ויציאה"
+
+#: Advanced.pas:90
+msgid "You must Insert a key"
+msgstr "יש להכניס שם מפתח"
+
+#: Advanced.pas:96
+msgid "Error - You can't enter spaces"
+msgstr "שגיאה - לא ניתן להכניס רווחים"
+
+#: Advanced.pas:102
 msgid "This key is already in the list, Edit it instead."
 msgstr ".המפתח כבר נמצא ברשימה, יש לערוך אותו"
 
-#: Source/Advanced.pas:146
+#: Advanced.pas:124
 msgid "Save changes and exit ?"
-msgstr "?לשמור שינויים ולצאת"
+msgstr "? לשמור שינויים ולצאת"
 
-#: Source/Advanced.pas:161
+#: Advanced.pas:139
 msgid "Unable to save changes,\n"
 "Verify the floppy is in place and try again."
 msgstr ",לא ניתן לשמור שינויים\n"
 ".אנא וודא שהתקליטון עדיין בכונן ונסה שוב"
 
-#: Source/rawwrite.pas:100
+#: fWarning.pas:59
+msgid "Information"
+msgstr "שים לב"
+
+#: fWarning.pas:63
+msgid "Question"
+msgstr "ווידוא"
+
+#: fWarning.pas:65
+msgid "No"
+msgstr "לא"
+
+#: fWarning.pas:66
+msgid "Yes"
+msgstr "כן"
+
+#: fWarning.pas:72
+msgid "Continune"
+msgstr "המשך"
+
+#: fWarning.pas:75
+msgid "Error"
+msgstr "שגיאה"
+
+#: fWarning.pas:89
+msgid "Ok"
+msgstr "אישור"
+
+#: rawwrite.pas:100
 msgid "Warning - All the data in this floppy will be erased.\n"
 "Do you want to continune ?"
 msgstr "!אזהרה - כל המידע שבתקליטון יימחק\n"
 "?האם להמשיך"
 
 #. read the 1st sector to settle the disk...
-#: Source/rawwrite.pas:147
+#: rawwrite.pas:145
 msgid "Making disk, Please wait..."
 msgstr "...מכין את התקליטון, אנא המתן"
 
-#: Source/rawwrite.pas:179
+#: rawwrite.pas:177
 msgid "Error - Floppy is not found on drive A:"
 msgstr "A: שגיאה - אין תקליטון בכונן"
 
-#: Source/rawwrite.pas:180
+#: rawwrite.pas:178
 msgid "Error - The floppy is write protected"
 msgstr ".שגיאה - התקליטון מוגן בפני כתיבה"
 
-#: Source/rawwrite.pas:181
+#: rawwrite.pas:179
 msgid "Error - The floppy is being used by another process"
 msgstr "שגיאה - הכונן תפוס ע\"י תהליך אחר"
 
-#: Source/rawwrite.pas:182
+#: rawwrite.pas:180
 msgid "Error - The floppy is defected, Try another floppy"
 msgstr "שגיאה - התקליטון פגום, אנא נסה אחר."
 
-#: Source/rawwrite.pas:184
+#: rawwrite.pas:182
 msgid "Unknown Error - No'-"
 msgstr "שגיאה לא ידועה - "
 
-#: Source/rawwrite.pas:187
+#: rawwrite.pas:185
 msgid "Error - Unable to write to disk,\n"
 "Please verify that the disk is in drive and not write protected."
 msgstr "שגיאה - אין אפשרות לכתוב לתקליטון.\n"
 ".אנא וודא שהתקליטון בכונן, ושאינו מוגן מכתיבה "
 
-#: Source/rawwrite.pas:202
+#: rawwrite.pas:200
 msgid "Error - Cannot find Drive A:"
 msgstr "A: שגיאה - אין גישה לכונן"
 
-#: Source/rawwrite.pas:220
+#: rawwrite.pas:218
 msgid "The disk was succesfully written."
 msgstr ".התקליטון הוכן בהצלחה"
 
-#: Source/rawwrite.pas:227
+#: rawwrite.pas:225
 msgid "Operation has faild, Please try again."
 msgstr ".הכנת התקליטון נכשלה, אנא נסה שנית"
 
-#: Source/rawwrite.pas:254
+#: rawwrite.pas:252
 msgid "Please Insert a floppy to drive A:"
 msgstr "A: אנא הכנס תקליטון לכונן"
 
-#: Source/rawwrite.pas:257
+#: rawwrite.pas:255
 msgid "Start"
 msgstr "התחל"
 
 #. Programmer's name for it: SBufferOverflow
-#: Source/TntSysUtils.pas:1053
+#: TntSysUtils.pas:1053
 msgid "Buffer overflow"
 msgstr ""
 
 #. Programmer's name for it: SInvalidUTF7
-#: Source/TntSysUtils.pas:1054
+#: TntSysUtils.pas:1054
 msgid "Invalid UTF7"
 msgstr ""
 
-#: Source/WelcomeForm.pas:73
+#: WelcomeForm.pas:73
 msgid ""
 "Floppy has been successfully written.\n"
 "\n"
@@ -354,11 +351,11 @@ msgstr ""
 ".ולאתחל את המחשב מחדש"
 
 #. what OS
-#: Source/WelcomeForm.pas:98
+#: WelcomeForm.pas:98
 msgid "Error - Cannot find Windows version"
 msgstr ""
 
-#: Source/WelcomeForm.pas:156
+#: WelcomeForm.pas:156
 msgid ""
 "You are going to reboot the computer.\n"
 "In order to prevent data loss, Please close\n"
@@ -368,7 +365,7 @@ msgstr ""
 ".מומלץ לסגור את כל התוכניות הרצות כרגע\n"
 "? האם להמשיך"
 
-#: Source/WelcomeForm.pas:208
+#: WelcomeForm.pas:206
 msgid ""
 "Welcome to GNU/Linux \"Kinneret\"\n"
 "This program is not an installation Program.\n"
@@ -388,4 +385,11 @@ msgstr ""
 "\n"
 "אם אינך יכול/ה או אינך יודע/ת  איך לאתחל\n"
 ".מהתקליטור, ביכולתך להכין תקליטון הפעלה כאן"
+
+#. Seperating Line to words
+#: WelcomeForm.pas:243
+msgid "In order to enter the Advanced options, You must put your boot-floppy\n"
+"(The floppy you can make here) in drive A:"
+msgstr "על מנת להיכנס לאפשרויות מתקדמות, \n"
+"A: יש להכניס את תקליטון ההפעלה (שהכנת כאן) לכונן"
 

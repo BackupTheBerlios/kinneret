@@ -96,10 +96,8 @@ begin
    Wait;
 
    try
-         FormWarning.Label1.Caption:=pWideChar(_('Warning - All the data in this floppy will be erased.'+#10#13+
-            'Do you want to continune ?'));
-         FormWarning.Showmodal;
-         if FormWarning.Cancel then exit;
+        if not showWarning(WRN, pWideChar(_('Warning - All the data in this floppy will be erased.'+#10#13+
+            'Do you want to continune ?'))) then exit;
          BlocksCount := 64;
          // make sure that the file exists...
          h1 := CreateFile(PChar(CmdImage), GENERIC_READ, FILE_SHARE_READ, nil, OPEN_EXISTING, 0, 0);
@@ -214,7 +212,7 @@ begin
 
             if HadError=false then
             begin
-                wForm.WriteSucceed:=true;
+               wForm.WriteSucceed:=true;
                messagebeep(MB_OK);
                Labelup.Caption:='';
                LabelDown.Caption:=pWideChar(_('The disk was succesfully written.'));
@@ -223,7 +221,7 @@ begin
             end
             else
             begin
-             messagebeep(MB_ICONASTERISK) ;
+             messagebeep(MB_ICONEXCLAMATION) ;
              Labelup.Caption:=pWideChar(_('Operation has faild, Please try again.'));
              ButtonStart.Enabled:=true;
              ButtonCancel.Enabled:=true;
@@ -253,7 +251,7 @@ begin
     ProgressBar1.Position:=0;
     LabelUp.Caption:=pWideChar(_('Please Insert a floppy to drive A:'));
     LabelDown.Caption:='';
-    Caption:=_('Make a bootable floppy');
+    Caption:=pWideChar(_('Make a bootable floppy'));
     ButtonStart.Caption:=pWideChar(_('Start'));
     ButtonCancel.Caption:=PWideChar(_('Cancel'));
     Buttonstart.Enabled:=true;
