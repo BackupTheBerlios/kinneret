@@ -22,6 +22,31 @@
 #include <qobjectlist.h>
 #include "help.h"
 
+#include <khtml_part.h>
+#include <kurl.h>
+#include <klocale.h>
+#include <khtmlview.h>
+
+void configwizard::init()
+{
+	kHTML = new KHTMLPart(widgetStack);
+	kHTML->view()->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding, TRUE);
+	KLocale locale("");
+	KURL url = "/opt/kinneret/l2swim/doc/" + locale.language().left(2) + "/kinneret_license.html";
+	kHTML->openURL(url);
+
+	widgetStack->addWidget(kHTML->view());
+	widgetStack->raiseWidget(kHTML->view());
+
+	connect(kHTML->browserExtension(), SIGNAL(openURLRequest(const KURL&, const KParts::URLArgs&)),
+		this, SLOT(openURLRequest(const KURL &, const KParts::URLArgs&)));
+}
+
+void configwizard::destroy()
+{
+	delete kHTML;
+}
+
 void configwizard::onSelect()
 {
 	const int page_nicetomeet	= 0;
@@ -423,6 +448,8 @@ Please go back and select another.")));
 		QListViewItem *vi = qpl.first();
 		qDefaultHome = vi->text(0).left(vi->text(0).find(' ')) + QString("/");	
 		docs_path->setText(qDefaultHome);
+
+		qsHome = qDefaultHome;
 	
 		// So the custom widget thing didn't turned up as I wanted it to...
 		// well, it's only my first KDE app...
@@ -538,6 +565,16 @@ void configwizard::onCreateDir()
 	system(qCmd);
 	
 	docs_path->setText(docs_path->text() + lineCreate->text());
+
+	// Update tree
+	QListViewItem *p = dir_list->firstChild();
+	delete p;
+	
+	Directory *root = new Directory(dir_list, qsHome);
+	root->setOpen(true);
+
+	// Select correct directory
+	dir_list->setDir(docs_path->text().right(docs_path->text().length() - qsHome.length()));
 }
 
 
@@ -592,4 +629,18 @@ void configwizard::onHelp()
 
 void configwizard::newSwap(int size)
 {
+}
+
+
+void configwizard::openURLRequest( const KURL &url, const KParts::URLArgs & )
+{
+	kHTML->openURL(url);
+}
+
+
+void configwizard::onLicenseBack()
+{
+	KLocale locale("");
+	KURL url = "/opt/kinneret/l2swim/doc/" + locale.language().left(2) + "/kinneret_license.html";
+	kHTML->openURL(url);
 }

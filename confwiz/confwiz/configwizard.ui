@@ -407,38 +407,31 @@ here we will put the "nice to meet you" text at runtime.</string>
             </property>
             <widget class="QLayoutWidget">
                 <property name="name">
-                    <cstring>layout58</cstring>
+                    <cstring>layout166</cstring>
                 </property>
                 <vbox>
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="KTextBrowser">
-                        <property name="name">
-                            <cstring>textLicense</cstring>
-                        </property>
-                        <property name="font">
-                            <font>
-                            </font>
-                        </property>
-                        <property name="frameShape">
-                            <enum>NoFrame</enum>
-                        </property>
-                        <property name="text">
-                            <string>this is your license, and this is your &lt;a href="/home/z9u2K/projects/kinneret/licenses/gpl_heb.html"&gt;GPL&lt;/a&gt;.</string>
-                        </property>
-                    </widget>
                     <widget class="QLayoutWidget">
                         <property name="name">
-                            <cstring>layout57</cstring>
+                            <cstring>layout165</cstring>
                         </property>
                         <hbox>
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>pushButton1</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Back to Kinneret's License</string>
+                                </property>
+                            </widget>
                             <spacer>
                                 <property name="name">
-                                    <cstring>spacer3</cstring>
+                                    <cstring>spacer86</cstring>
                                 </property>
                                 <property name="orientation">
                                     <enum>Horizontal</enum>
@@ -448,25 +441,88 @@ here we will put the "nice to meet you" text at runtime.</string>
                                 </property>
                                 <property name="sizeHint">
                                     <size>
-                                        <width>805</width>
-                                        <height>48</height>
+                                        <width>151</width>
+                                        <height>21</height>
                                     </size>
                                 </property>
                             </spacer>
-                            <widget class="QLabel">
-                                <property name="name">
-                                    <cstring>tux2</cstring>
-                                </property>
-                                <property name="pixmap">
-                                    <pixmap>image0</pixmap>
-                                </property>
-                                <property name="scaledContents">
-                                    <bool>false</bool>
-                                </property>
-                            </widget>
                         </hbox>
                     </widget>
+                    <widget class="QWidgetStack">
+                        <property name="name">
+                            <cstring>widgetStack</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>7</hsizetype>
+                                <vsizetype>7</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="paletteBackgroundColor">
+                            <color>
+                                <red>255</red>
+                                <green>255</green>
+                                <blue>255</blue>
+                            </color>
+                        </property>
+                        <widget class="QWidget">
+                            <property name="name">
+                                <cstring>page</cstring>
+                            </property>
+                            <attribute name="id">
+                                <number>0</number>
+                            </attribute>
+                        </widget>
+                    </widget>
                 </vbox>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout8_2</cstring>
+                </property>
+                <hbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <spacer>
+                        <property name="name">
+                            <cstring>spacer2_2</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>0</width>
+                                <height>48</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>tux1_2</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>0</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>image0</pixmap>
+                        </property>
+                        <property name="scaledContents">
+                            <bool>false</bool>
+                        </property>
+                    </widget>
+                </hbox>
             </widget>
         </vbox>
     </widget>
@@ -1785,12 +1841,21 @@ here we will put the "nice to meet you" text at runtime.</string>
         <receiver>configwizard</receiver>
         <slot>newSwap(int)</slot>
     </connection>
+    <connection>
+        <sender>pushButton1</sender>
+        <signal>clicked()</signal>
+        <receiver>configwizard</receiver>
+        <slot>onLicenseBack()</slot>
+    </connection>
 </connections>
 <includes>
+    <include location="local" impldecl="in declaration">khtml_part.h</include>
     <include location="local" impldecl="in implementation">configwizard.ui.h</include>
 </includes>
 <variables>
+    <variable access="public">QString qsHome;</variable>
     <variable access="public">long lFreeOnPartition;</variable>
+    <variable access="public">KHTMLPart *kHTML;</variable>
 </variables>
 <slots>
     <slot>onSelect()</slot>
@@ -1799,11 +1864,16 @@ here we will put the "nice to meet you" text at runtime.</string>
     <slot>onAddFontDir()</slot>
     <slot>onRemoveFontDir()</slot>
     <slot>onHelp()</slot>
-    <slot>newSwap(int size)</slot>
+    <slot>newSwap( int size )</slot>
+    <slot>openURLRequest( const KURL &amp;url, const KParts::URLArgs &amp; )</slot>
+    <slot>onLicenseBack()</slot>
 </slots>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+    <function access="private" specifier="non virtual">destroy()</function>
+</functions>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
-    <includehint>ktextbrowser.h</includehint>
     <includehint>klistview.h</includehint>
     <includehint>knuminput.h</includehint>
     <includehint>directoryview.h</includehint>

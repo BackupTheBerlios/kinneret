@@ -30,6 +30,8 @@
 #include <qapplication.h>
 #include <qheader.h>
 
+#include <iostream>
+
 static const char* folder_closed_xpm[]={
     "16 16 9 1",
     "g c #808080",
@@ -153,124 +155,115 @@ QPixmap *fileNormal = 0;
  * Class Directory
  *
  *****************************************************************************/
-
-Directory::Directory( Directory * parent, const QString& filename )
-    : QListViewItem( parent ), f(filename),
-      showDirsOnly( parent->showDirsOnly ),
-      pix( 0 )
+Directory::Directory(Directory *parent, const QString& filename) : QListViewItem(parent), f(filename),
+	showDirsOnly(parent->showDirsOnly), pix(0)
 {
-    p = parent;
-    readable = QDir( fullName() ).isReadable();
+	p = parent;
+	readable = QDir(fullName()).isReadable();
 
-    if ( !readable )
-        setPixmap( folderLocked );
-    else
-        setPixmap( folderClosed );
+	if (!readable) setPixmap(folderLocked);
+	else setPixmap(folderClosed);
+}
+
+Directory::Directory(QListView *parent, const QString& filename) : QListViewItem(parent), f(filename),
+	showDirsOnly((reinterpret_cast<DirectoryView*>(parent))->showDirsOnly()), pix(0)
+{
+	p = 0;
+	readable = QDir(fullName()).isReadable();
+}
+
+void Directory::setPixmap(QPixmap *px)
+{
+	pix = px;
+	setup();
+	widthChanged(0);
+	invalidateHeight();
+	repaint();
 }
 
 
-Directory::Directory( QListView * parent, const QString& filename )
-    : QListViewItem( parent ), f(filename),
-      showDirsOnly( ( (DirectoryView*)parent )->showDirsOnly() ),
-      pix( 0 )
+const QPixmap *Directory::pixmap(int i) const
 {
-    p = 0;
-    readable = QDir( fullName() ).isReadable();
+	if (i) return 0;
+	return pix;
 }
 
-
-void Directory::setPixmap( QPixmap *px )
+void Directory::setOpen(bool o)
 {
-    pix = px;
-    setup();
-    widthChanged( 0 );
-    invalidateHeight();
-    repaint();
-}
+	if (o) setPixmap(folderOpen);
+	else setPixmap(folderClosed);
 
+	if (o && !childCount())
+	{
+		QString s(fullName());
+		QDir thisDir(s);
 
-const QPixmap *Directory::pixmap( int i ) const
-{
-    if ( i )
-        return 0;
-    return pix;
-}
+		if (!thisDir.isReadable())
+		{
+			readable = FALSE;
+			setExpandable(FALSE);
+			return;
+		}
 
-void Directory::setOpen( bool o )
-{
-    if ( o )
-        setPixmap( folderOpen );
-    else
-        setPixmap( folderClosed );
-
-    if ( o && !childCount() ) {
-        QString s( fullName() );
-        QDir thisDir( s );
-        if ( !thisDir.isReadable() ) {
-            readable = FALSE;
-            setExpandable( FALSE );
-            return;
-        }
-
-        listView()->setUpdatesEnabled( FALSE );
+		listView()->setUpdatesEnabled(FALSE);
         const QFileInfoList * files = thisDir.entryInfoList();
-        if ( files ) {
-            QFileInfoListIterator it( *files );
-            QFileInfo * fi;
-            while( (fi=it.current()) != 0 ) {
-                ++it;
-                if ( fi->fileName() == "." || fi->fileName() == ".." )
-                    ; // nothing
-                else if ( fi->isSymLink() && !showDirsOnly ) {
-                    FileItem *item = new FileItem( this, fi->fileName(),
-                                                     "Symbolic Link" );
-                    item->setPixmap( fileNormal );
-                }
-                else if ( fi->isDir() )
-                    (void)new Directory( this, fi->fileName() );
-                else if ( !showDirsOnly ) {
-                    FileItem *item
-                        = new FileItem( this, fi->fileName(),
-                                             fi->isFile()?"File":"Special" );
-                    item->setPixmap( fileNormal );
-                }
-            }
-        }
-        listView()->setUpdatesEnabled( TRUE );
-    }
-    QListViewItem::setOpen( o );
+        
+		if (files)
+		{
+			QFileInfoListIterator it(*files);
+			QFileInfo * fi;
+			
+			while((fi = it.current()) != 0)
+			{
+				++it;
+				if (fi->fileName() == "." || fi->fileName() == ".." ); // nothing
+				else if (fi->isSymLink() && !showDirsOnly)
+				{
+					FileItem *item = new FileItem(this, fi->fileName(), "Symbolic Link" );
+					item->setPixmap(fileNormal);
+				}
+				
+				else if (fi->isDir()) (void)new Directory(this, fi->fileName());
+				else if (!showDirsOnly)
+				{
+					FileItem *item = new FileItem(this, fi->fileName(), fi->isFile() ? "File" : "Special");
+					item->setPixmap(fileNormal);
+				}
+			}
+		}
+		listView()->setUpdatesEnabled(TRUE);
+	}
+	QListViewItem::setOpen(o);
 }
 
 
 void Directory::setup()
 {
-    setExpandable( TRUE );
-    QListViewItem::setup();
+	setExpandable(TRUE);
+	QListViewItem::setup();
 }
 
 
 QString Directory::fullName()
 {
-    QString s;
-    if ( p ) {
-        s = p->fullName();
-        s.append( f.name() );
-        s.append( "/" );
-    } else {
-        s = f.name();
-    }
-    return s;
+	QString s;
+	if (p)
+	{
+		s = p->fullName();
+		s.append(f.name());
+		s.append("/");
+	}
+
+	else s = f.name();
+	return s;
 }
 
 
-QString Directory::text( int column ) const
+QString Directory::text(int column) const
 {
-    if ( column == 0 )
-        return f.name();
-    else if ( readable )
-        return "Directory";
-    else
-        return "Unreadable Directory";
+	if (column == 0) return f.name();
+	else if (readable) return "Directory";
+	else return "Unreadable Directory";
 }
 
 /*****************************************************************************
@@ -278,112 +271,120 @@ QString Directory::text( int column ) const
  * Class DirectoryView
  *
  *****************************************************************************/
-
-DirectoryView::DirectoryView( QWidget *parent, const char *name, bool sdo )
-    : QListView( parent, name ), dirsOnly( sdo ), oldCurrent( 0 ),
-      dropItem( 0 ), mousePressed( FALSE )
+DirectoryView::DirectoryView(QWidget *parent, const char *name, bool sdo) : QListView(parent, name),
+	dirsOnly(sdo), oldCurrent(0), dropItem(0), mousePressed(FALSE)
 {
-    autoopen_timer = new QTimer( this );
-    if ( !folderLocked ) {
-        folderLocked = new QPixmap( folder_locked );
-        folderClosed = new QPixmap( folder_closed_xpm );
-        folderOpen = new QPixmap( folder_open_xpm );
-        fileNormal = new QPixmap( pix_file );
-    }
+	autoopen_timer = new QTimer(this);
+	if (!folderLocked)
+	{
+		folderLocked = new QPixmap(folder_locked);
+		folderClosed = new QPixmap(folder_closed_xpm);
+		folderOpen = new QPixmap(folder_open_xpm);
+		fileNormal = new QPixmap(pix_file);
+	}
 
-    connect( this, SIGNAL( doubleClicked( QListViewItem * ) ),
-             this, SLOT( slotFolderSelected( QListViewItem * ) ) );
-    connect( this, SIGNAL( returnPressed( QListViewItem * ) ),
-             this, SLOT( slotFolderSelected( QListViewItem * ) ) );
+	connect(this, SIGNAL(doubleClicked(QListViewItem*)), this, SLOT(slotFolderSelected(QListViewItem*)));
+	connect(this, SIGNAL(returnPressed(QListViewItem*)), this, SLOT(slotFolderSelected(QListViewItem*)));
 
-    setAcceptDrops( TRUE );
-    viewport()->setAcceptDrops( TRUE );
+	setAcceptDrops(TRUE);
+	viewport()->setAcceptDrops(TRUE);
 
-    connect( autoopen_timer, SIGNAL( timeout() ),
-             this, SLOT( openFolder() ) );
+	connect(autoopen_timer, SIGNAL(timeout()), this, SLOT(openFolder()));
 }
 
 void DirectoryView::slotFolderSelected( QListViewItem *i )
 {
-    if ( !i || !showDirsOnly() )
-        return;
+	if (!i || !showDirsOnly()) return;
 
-    Directory *dir = (Directory*)i;
-    emit folderSelected( dir->fullName() );
+	Directory *dir = reinterpret_cast<Directory*>(i);
+	emit folderSelected(dir->fullName());
 }
 
 void DirectoryView::openFolder()
 {
-    autoopen_timer->stop();
-    if ( dropItem && !dropItem->isOpen() ) {
-        dropItem->setOpen( TRUE );
-        dropItem->repaint();
-    }
+	autoopen_timer->stop();
+	if (dropItem && !dropItem->isOpen())
+	{
+		dropItem->setOpen(TRUE);
+		dropItem->repaint();
+	}
 }
 
 static const int autoopenTime = 750;
-
-
-void DirectoryView::contentsDragEnterEvent( QDragEnterEvent *e )
+void DirectoryView::contentsDragEnterEvent(QDragEnterEvent *e)
 {
-    if ( !QUriDrag::canDecode(e) ) {
-        e->ignore();
-        return;
-    }
+	if (!QUriDrag::canDecode(e))
+	{
+		e->ignore();
+		return;
+	}
 
-    oldCurrent = currentItem();
-
-    QListViewItem *i = itemAt( contentsToViewport(e->pos()) );
-    if ( i ) {
-        dropItem = i;
-        autoopen_timer->start( autoopenTime );
-    }
+	oldCurrent = currentItem();
+	QListViewItem *i = itemAt(contentsToViewport(e->pos()));
+	if (i)
+	{
+		dropItem = i;
+		autoopen_timer->start(autoopenTime);
+	}
 }
 
 
-void DirectoryView::contentsDragMoveEvent( QDragMoveEvent *e )
+void DirectoryView::contentsDragMoveEvent(QDragMoveEvent *e)
 {
-    if ( !QUriDrag::canDecode(e) ) {
-        e->ignore();
-        return;
-    }
+	if (!QUriDrag::canDecode(e))
+	{
+		e->ignore();
+		return;
+	}
 
-    QPoint vp = contentsToViewport( ( (QDragMoveEvent*)e )->pos() );
-    QListViewItem *i = itemAt( vp );
-    if ( i ) {
-        setSelected( i, TRUE );
-        e->accept();
-        if ( i != dropItem ) {
-            autoopen_timer->stop();
-            dropItem = i;
-            autoopen_timer->start( autoopenTime );
+	QPoint vp = contentsToViewport((reinterpret_cast<QDragMoveEvent*>(e))->pos());
+	QListViewItem *i = itemAt(vp);
+	if (i)
+	{
+		setSelected(i, TRUE);
+		e->accept();
+
+		if (i != dropItem)
+		{
+			autoopen_timer->stop();
+			dropItem = i;
+			autoopen_timer->start(autoopenTime);
         }
-        switch ( e->action() ) {
-        case QDropEvent::Copy:
-            break;
-        case QDropEvent::Move:
-            e->acceptAction();
-            break;
-        case QDropEvent::Link:
-            e->acceptAction();
-            break;
-        default:
-            ;
-        }
-    } else {
-        e->ignore();
-        autoopen_timer->stop();
-        dropItem = 0;
-    }
+        
+		switch (e->action())
+		{
+		case QDropEvent::Copy:
+			break;
+
+		case QDropEvent::Move:
+			e->acceptAction();
+			break;
+
+		case QDropEvent::Link:
+			e->acceptAction();
+			break;
+
+		default:
+			break;
+		}
+		
+	}
+
+	else
+	{
+		e->ignore();
+		autoopen_timer->stop();
+		dropItem = 0;
+	}
 }
 
-void DirectoryView::contentsDragLeaveEvent( QDragLeaveEvent * )
+void DirectoryView::contentsDragLeaveEvent(QDragLeaveEvent *)
 {
-    autoopen_timer->stop();
-    dropItem = 0;
+	autoopen_timer->stop();
+	dropItem = 0;
 
-    setCurrentItem( oldCurrent );
-    setSelected( oldCurrent, TRUE );
+	setCurrentItem(oldCurrent);
+	setSelected(oldCurrent, TRUE);
 }
 
 void DirectoryView::contentsDropEvent( QDropEvent *e )

@@ -4,7 +4,7 @@ bin_PROGRAMS = confwiz
 ## INCLUDES were found outside kdevelop specific part
 
 confwiz_SOURCES = help.ui pleasewait.ui confwiz.cpp dirview.cpp configwizard.ui main.cpp 
-confwiz_LDADD   =  $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIBSOCKET)
+confwiz_LDADD   =  $(LIB_KHTML) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIBSOCKET)
 
 
 EXTRA_DIST = main.cpp confwiz.desktop configwizard.ui dirview.cpp dirview.h configwizard.ui.h confwiz.cpp confwiz.h pleasewait.ui confwiz-128.png confwiz-22.png confwiz-32.png confwiz-48.png confwiz-64.png confwiz-16.png pleasewait.ui.h help.ui 
