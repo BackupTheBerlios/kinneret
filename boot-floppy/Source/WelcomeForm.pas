@@ -13,7 +13,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, Menus,gnugettext, About, gifimage,fWarning,
-  Buttons, TntStdCtrls, TntForms, Advanced, ParInstall;
+  Buttons, TntStdCtrls, TntForms, Advanced, ParInstall,checkOS;
 
 function MyExitWindows(RebootParam: Longword): Boolean;
 
@@ -43,7 +43,6 @@ type
   private
     Retranslator:TExecutable;
   public
-    osis95: Boolean;
     WriteSucceed : Boolean;
 
     { Public declarations }
@@ -52,6 +51,7 @@ type
 var
   WForm: TWForm;
   Explanation, Explanation2, RebootWarning: pWideChar;
+
 implementation
 
 uses rawwrite;
@@ -77,28 +77,9 @@ begin
 end;
 
 procedure TWForm.FormCreate(Sender: TObject);
-var
-    Version : TOSVersionInfo;
-
 begin
-   // what OS
-   WriteSucceed:=false;
-   Version.dwOSVersionInfoSize := Sizeof(Version);
-   if GetVersionEx(Version) then
-   begin
-      if Version.dwPlatformId = VER_PLATFORM_WIN32_WINDOWS then
-      begin
-         OSis95 := True;
-      end
-      else
-      begin
-         OSis95 := False;
-      end;
-   end
-   else
-   begin
-      MessageDlg(pWideChar(_('Error - Cannot find Windows version')), mtError, [mbOK], 0);
-   end;
+
+  WriteSucceed:=false;
 
   Retranslator:=gnugettext.DefaultInstance.TP_CreateRetranslator;
   if (osis95=false) then UseLanguage('he')

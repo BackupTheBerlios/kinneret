@@ -12,7 +12,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ComCtrls, ExtCtrls, BlockDev, WelcomeForm, fWarning,
+  StdCtrls, ComCtrls, ExtCtrls, BlockDev, WelcomeForm, fWarning, checkOS,
   TntStdCtrls, TntForms;
 
 type
@@ -118,7 +118,7 @@ begin
 
             SetLength(Buffer, 512 * BlocksCount);
             // open the drive
-            if wForm.osIs95 then
+            if osIs95 then
             begin
                Device := TWin95Disk.Create;
                TWin95Disk(Device).SetDiskNumber(0);
@@ -171,7 +171,7 @@ begin
                except
                   on E : Exception do
                   begin
-                     if wForm.osis95=false then begin
+                     if osis95=false then begin
                        Error:=GetLastError;
                        case error of
                           21 : LabelDown.Caption:=pWideChar(_('Error - Floppy is not found on drive A:'));
@@ -188,7 +188,7 @@ begin
                end;
             finally
                Device.Close;
-               if (wForm.osis95=false) then
+               if (osis95=false) then
                begin
                 Device.Open;
                 Device.Close;

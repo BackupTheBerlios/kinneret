@@ -23,7 +23,8 @@ uses
   Advanced in 'Advanced.pas' {FormAdvanced},
   ParInstall in 'ParInstall.pas' {parinst},
   ParInstall2 in 'ParInstall2.pas' {parinst2},
-  drives in 'drives.pas';
+  checkOS in 'checkOS.pas',
+  ParInstall3 in 'ParInstall3.pas' {ParInst3};
 
 {$R *.RES}
 
@@ -37,5 +38,6 @@ begin
   Application.CreateForm(TFormAdvanced, FormAdvanced);
   Application.CreateForm(Tparinst, parinst);
   Application.CreateForm(Tparinst2, parinst2);
+  Application.CreateForm(TParInst3, ParInst3);
   Application.Run;
 end.

@@ -4,25 +4,27 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, TntStdCtrls,gnuGetText,drives,
-  ComCtrls, TntComCtrls, fWarning;
+  Dialogs, StdCtrls, ExtCtrls, TntStdCtrls,gnuGetText, drives,
+  ComCtrls, TntComCtrls, fWarning, checkOS, parinstall3;
 
 type
   Tparinst2 = class(TForm)
     ButtonStart: TTntButton;
     ButtonCancel: TTntButton;
     TntGroupBox1: TTntGroupBox;
-    TntCheckBox2: TTntCheckBox;
-    TntCheckBox1: TTntCheckBox;
+    CBDesktop: TTntCheckBox;
+    CBMenu: TTntCheckBox;
     TntGroupBox2: TTntGroupBox;
     LabelChoose: TTntLabel;
     LabelBoot: TTntLabel;
     ListDrives: TTntListView;
+    LabelNote: TTntLabel;
     procedure FormShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure ListDrivesMouseUp(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure ButtonCancelClick(Sender: TObject);
+    procedure ButtonStartClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,7 +35,6 @@ var
   parinst2: Tparinst2;
   knoppixSize : double;
   drivesArray : TDriveInfoArray;
-  chosenDrive : string;
 
 implementation
 
@@ -42,11 +43,27 @@ implementation
 procedure Tparinst2.FormShow(Sender: TObject);
 begin
   LabelChoose.Caption:=pwidechar(_('Choose a drive to install GNU/Linux Kinneret :'));
+  LabelNote.Caption:=pwideChar(_('Note: In some cases, a small directory will be created in'+#10#13+
+  'drive C:, even if you choose another drive.'));
   LabelBoot.Caption:=pwidechar(_('In order to start Kinneret, you can always boot with the'+#10#13+
   'Kinneret CD, or with a Boot-Floppy. After booting, Kinneret'+#10#13+
   'continues to load from the Hard-Drive automatically.'+#10#13+
   'However, if you don''t want to use the CD at all, You can'+#10#13+
   'choose one or more of the next options (recommended) :'));
+  if osis95 then
+  begin
+    CBDesktop.Checked:=true;
+    CBDesktop.Enabled:=true;
+    CBMenu.Checked:=false;
+    CBMenu.Enabled:=true;
+
+  end else  //is os NT
+  begin
+    CBDesktop.Checked:=false;
+    CBDesktop.Enabled:=false;
+    CBMenu.Checked:=true;
+    CBMenu.Enabled:=true;
+  end;
 end;
 
 procedure Tparinst2.FormCreate(Sender: TObject);
@@ -92,7 +109,6 @@ var
   Item: TListItem; 
   HitTest: THitTests;
   i : integer;
-  DriveItem : TtntListItem;
 begin
   Item := ListDrives.GetItemAt(x, y);
   HitTest := ListDrives.GetHitTestInfoAt(x, y);
@@ -127,6 +143,13 @@ end;
 procedure Tparinst2.ButtonCancelClick(Sender: TObject);
 begin
   close;
+end;
+
+procedure Tparinst2.ButtonStartClick(Sender: TObject);
+begin
+  hide;
+  parInst3.showModal;
+  show;
 end;
 
 end.

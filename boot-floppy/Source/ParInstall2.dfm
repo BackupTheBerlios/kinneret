@@ -1,9 +1,9 @@
 object parinst2: Tparinst2
-  Left = 319
-  Top = 122
+  Left = 242
+  Top = 58
   BorderStyle = bsToolWindow
   Caption = 'Partial Installation'
-  ClientHeight = 436
+  ClientHeight = 478
   ClientWidth = 387
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -12,23 +12,24 @@ object parinst2: Tparinst2
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
-  Position = poMainFormCenter
+  Position = poDesktopCenter
   OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object ButtonStart: TTntButton
     Left = 232
-    Top = 384
+    Top = 424
     Width = 113
     Height = 33
     Caption = 'Start Installation'
     Enabled = False
     TabOrder = 0
+    OnClick = ButtonStartClick
   end
   object ButtonCancel: TTntButton
     Left = 40
-    Top = 384
+    Top = 424
     Width = 113
     Height = 33
     Caption = 'Cancel'
@@ -37,7 +38,7 @@ object parinst2: Tparinst2
   end
   object TntGroupBox1: TTntGroupBox
     Left = 16
-    Top = 176
+    Top = 216
     Width = 353
     Height = 185
     Caption = '2. Boot Options'
@@ -49,7 +50,7 @@ object parinst2: Tparinst2
       Height = 65
       AutoSize = False
     end
-    object TntCheckBox2: TTntCheckBox
+    object CBDesktop: TTntCheckBox
       Left = 24
       Top = 120
       Width = 297
@@ -57,7 +58,7 @@ object parinst2: Tparinst2
       Caption = 'Desktop shortcut (Windows 95,98,ME)'
       TabOrder = 0
     end
-    object TntCheckBox1: TTntCheckBox
+    object CBMenu: TTntCheckBox
       Left = 24
       Top = 144
       Width = 297
@@ -70,7 +71,7 @@ object parinst2: Tparinst2
     Left = 16
     Top = 16
     Width = 353
-    Height = 145
+    Height = 185
     Caption = '1. Drive Options'
     TabOrder = 3
     object LabelChoose: TTntLabel
@@ -78,6 +79,13 @@ object parinst2: Tparinst2
       Top = 24
       Width = 321
       Height = 25
+      AutoSize = False
+    end
+    object LabelNote: TTntLabel
+      Left = 24
+      Top = 144
+      Width = 305
+      Height = 33
       AutoSize = False
     end
     object ListDrives: TTntListView

@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, TntStdCtrls,gnuGetText,fWarning,ShellAPI,parInstall2;
+  Dialogs, StdCtrls, TntStdCtrls,gnuGetText,fWarning,parInstall2;
 
 type
   Tparinst = class(TForm)
@@ -15,8 +15,7 @@ type
     procedure NoButtonClick(Sender: TObject);
     procedure YesButtonClick(Sender: TObject);
   private
-    function FileOperation (const source, dest: string; op, flags: Integer) : bool;
-    { Private declarations }
+     { Private declarations }
   public
     { Public declarations }
   end;
@@ -60,27 +59,8 @@ begin
   begin
     hide;
     parinst2.ShowModal;
-//  if(FileOperation ('D:\KNOPPIX\knoppix', 'C:\KNOPPIX\knoppix', FO_COPY, FOF_ALLOWUNDO or FOF_NOCONFIRMATION	))
-//    then showWarning(ERR,pWideChar(_('Error while copying files')));
   end;
   close;
 end;
-
-function TparInst.FileOperation (const source, dest: string;
-                         op, flags: Integer) : bool;
-var shf: TSHFileOpStruct;
-    s1, s2: string;
-begin
- FillChar (shf, SizeOf (shf), #0);
- s1:= source + #0#0;
- s2:= dest + #0#0;
- shf.Wnd:= Handle;
- shf.wFunc:= op;
- shf.pFrom:= PCHAR (s1);
- shf.pTo:= PCHAR (s2);
- shf.fFlags:= flags;
- SHFileOperation (shf);
- FileOperation:=shf.fAnyOperationsAborted;
-end (*FileOperation*);
 
 end.
