@@ -1,4 +1,4 @@
-<?xml version='1.0'?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!-- ********************************************************************
      Gnu/Linux Kinneret
@@ -16,40 +16,110 @@
      http://www.gnu.org/copyleft/gpl.html for more details.
 
      Filename: l2swim.xsl
-     Version: 0.5 1-August-2003
+     Version: 1.99a (2nd edition) 16-September-2003
      Encoding: [UTF8]
      Language support: Hebrew, Arabic, English, Russian
 
      Authored by: dovix, dovix@linux-kinneret.org
      ******************************************************************** -->
 
-<xsl:stylesheet
-          xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version='1.0'>
-<xsl:output method="html" encoding="utf-8"/>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:output encoding="UTF-8" method="html" indent="yes" doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
 
-<xsl:template match="document | hebrew | arabic | article">
-  <html>
-    <head>
-       <link title="StyleSheet" rel="stylesheet"  href="../../etc/l2swim.css" type="text/css"/>
-       <title>
-          <xsl:value-of select="./title"/>
-       </title>
-    </head>
-    <body dir="rtl">
-      <xsl:apply-templates/>
-    </body>
-  </html>
+<xsl:preserve-space elements="pre"/>
+
+<xsl:template match="/article">
+	<html>
+		<head>
+			<!-- apply stylesheet -->
+ 			<link title="StyleSheet" rel="stylesheet"  href="../../etc/l2swim.css" type="text/css"/>
+			<!-- set the title to the value of the 'title' element of the current node -->
+			<title><xsl:value-of select="./title"/></title>
+			<!-- -->
+		</head>
+
+		<!-- define a variable with the document direction -->
+		<xsl:variable name="_dir">
+			<xsl:choose>
+				<xsl:when test="@lang = 'hebrew'">rtl</xsl:when>
+				<xsl:when test="@lang = 'arabic'">rtl</xsl:when>
+				<xsl:when test="@lang = 'russian'">ltr</xsl:when>
+				<xsl:when test="@lang = 'english'">ltr</xsl:when>
+				<xsl:otherwise>ltr</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+
+		<!-- main document body and footer -->
+		<!-- apply the direction to the document body -->
+		<body dir="{$_dir}">
+
+			<!-- is there a 'title' segment? if so apply 'title' template -->
+			<xsl:if test="title">
+				<xsl:apply-templates select="title" />
+			</xsl:if>
+
+			<!-- is there a 'copy' segment? if so apply 'copy' template -->
+			<xsl:if test="copy">
+				<xsl:apply-templates select="copy" />
+			</xsl:if>
+
+			<!-- is there a 'toc' segment? if so apply 'toc' template -->
+			<xsl:if test="toc">
+				<xsl:apply-templates select="toc" />
+			</xsl:if>
+
+			<!-- is there a mandatory 'main' segment? if so apply 'main' template -->
+			<xsl:choose>
+				<xsl:when test="main">
+					<xsl:apply-templates select="main" />
+				</xsl:when>
+				<xsl:otherwise>
+					Error: No 'main' section found around body tags
+				</xsl:otherwise>
+			</xsl:choose>
+
+			<!-- print the footer text -->
+			<table bgcolor="#99ccff" width="100%" cellpadding="5" cellspacing="0" border="0"><tr><td align="center">
+				<xsl:choose>
+<!-- TO DO: needs translation -->
+					<xsl:when test="@lang = 'hebrew'">מסמך זה עובד ונערך עבור <a href="http://www.linux-kinneret.org">גנו/לינוקס כנרת</a>, תוך שימוש בתוכנה חופשית בלבד.</xsl:when>
+					<xsl:when test="@lang = 'arabic'">מסמך זה עובד ונערך עבור <a href="http://www.linux-kinneret.org">גנו/לינוקס כנרת</a>, תוך שימוש בתוכנה חופשית בלבד.</xsl:when>
+					<xsl:when test="@lang = 'russian'">This document was edited and formatted for <a href="http://www.linux-kinneret.org">GNU/Linux Kinneret</a> using only free software</xsl:when>
+					<xsl:when test="@lang = 'english'">This document was edited and formatted for <a href="http://www.linux-kinneret.org">GNU/Linux Kinneret</a> using only free software</xsl:when>
+					<xsl:otherwise>ltr</xsl:otherwise>
+				</xsl:choose>
+			</td></tr></table>
+		</body>
+
+	</html>
 </xsl:template>
 
-<xsl:template match="english | russian">
-  <html>
-    <head><title>
-      <xsl:value-of select="./title"/>
-    </title></head>
-    <body>
-      <xsl:apply-templates/>
-    </body>
-  </html>
+<xsl:template match="main">
+	<xsl:apply-templates/>
+</xsl:template>
+
+<xsl:template match="toc">
+	<form name="contents">
+	<b>	<xsl:choose>
+		<xsl:when test="@lang = 'hebrew'">תוכן</xsl:when>
+		<xsl:when test="@lang = 'arabic'">תוכן</xsl:when>
+		<xsl:when test="@lang = 'russian'">Contents</xsl:when>
+		<xsl:when test="@lang = 'english'">Contents</xsl:when>
+		<xsl:otherwise>Contents</xsl:otherwise>
+	</xsl:choose></b>:
+	<select name="url" size="1" OnChange="location.href=form.url.options[form.url.selectedIndex].value" style="font-family:Arial,Helvetica,sans-serif; font-size:10">
+		<xsl:for-each select="ancestor::article/main/chapter">
+			<xsl:variable name="chapid">doc_chap
+				<xsl:number/>
+			</xsl:variable>
+			<option value="#{$chapid}">
+				<xsl:number/>.
+				<xsl:value-of select="."/>
+			</option>
+		</xsl:for-each>
+	</select>
+	</form>
+
 </xsl:template>
 
 <!-- document title, blue, centered and barred -->
@@ -65,9 +135,27 @@
   <BR/>
 </xsl:template>
 
-<!-- document subtitle, underlined, blue and right justified -->
+<!-- document chapter, underlined, blue and right justified - numbered & toc-ready -->
 <!-- use to designate sections within the document, usually followed by some text -->
-<xsl:template match="subtitle | chapter">
+<xsl:template match="chapter">
+	<xsl:variable name="chid"><xsl:number/></xsl:variable>
+        <p>
+		<U>
+		<FONT COLOR="BLUE">
+		<B>
+		<span>
+			<a name="doc_chap{$chid}"><xsl:number/>. </a>
+		</span>
+		<xsl:value-of select="."/>
+		</B>
+		</FONT>
+		</U>
+	</p>
+</xsl:template>
+
+<!-- document chapter, underlined, blue and right justified - not numbered & no toc -->
+<!-- use to designate sections within the document, usually followed by some text -->
+<xsl:template match="chapnotoc">
   <p>
   <U>
   <FONT COLOR="BLUE">
@@ -77,9 +165,9 @@
   </p>
 </xsl:template>
 
-<!-- document level 2 subtitle, bold, italics, blue and right justified -->
+<!-- document section, bold, italics, blue and right justified -->
 <!-- use to designate sections within the document, usually followed by some text -->
-<xsl:template match="subtitle2 | section">
+<xsl:template match="section">
   <p>
   <B>
   <I>
@@ -91,9 +179,9 @@
   </p>
 </xsl:template>
 
-<!-- document level 3 subtitle, italics, blue and right justified -->
+<!-- document sub-section, italics, blue and right justified -->
 <!-- use to designate sections within the document, usually followed by some text -->
-<xsl:template match="subtitle3 | subsect">
+<xsl:template match="subsect">
   <p>
   <I>
   <FONT COLOR="BLUE" SIZE="-1">
@@ -271,6 +359,60 @@
   </b>
 </xsl:template>
 
+<!--
+
+The following tags allow to construct a table. Here is an example:
+
+<table>
+<tr><th>title1</th><th>title2</th></tr>
+<tr><ti>item1.1</ti><ti>item1.2</ti></tr>
+<tr><ti>item2.1</ti><ti>item2.2</ti></tr>
+<tr><ti>item3.1</ti><ti>item3.2</ti></tr>
+</table>
+-->
+
+<xsl:template match="table">
+    <table class="ntable">
+      <xsl:apply-templates/>
+    </table>
+  </xsl:template>
+
+
+  <xsl:template match="tr">
+    <tr>
+      <xsl:apply-templates/>
+    </tr>
+  </xsl:template>
+
+
+  <xsl:template match="ti">
+    <td bgcolor="#ddddff" class="tableinfo">
+      <xsl:apply-templates/>
+    </td>
+  </xsl:template>
+
+
+  <xsl:template match="th">
+    <td bgcolor="#99ccff" class="infohead">
+      <b>
+        <xsl:apply-templates/>
+      </b>
+    </td>
+  </xsl:template>
+
+
+
+
+<!-- report errors when obsolete tags are used -->
+
+<xsl:template match="/document | /english | /hebrew | /arabic | /russian">
+The old document tags are no longer in use. Please use 'article lang = "hebrew"|"arabic"|"russian"|"english"' instead.
+</xsl:template>
+
+<xsl:template match="subtitle | subtitle2 | subtitle3">
+The old paragrapg tags are no longer in use. Please use "chapter"|"section"|"subsect""' instead of "subtitle" | "subtitle2" | "subtitle3".
+</xsl:template>
+
 </xsl:stylesheet>
 
 <!-- ********************************************************************
@@ -281,4 +423,3 @@
 	Additional HTML references can be found at: http://www.utexas.edu/learn/html/
 
      ******************************************************************** -->
-

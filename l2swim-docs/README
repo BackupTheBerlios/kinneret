@@ -10,32 +10,12 @@ This file contains:
 ***************************************************************************
 1. Changelog
 
-Version 0.5
-- swim_menu.txt was updated further to simplify the content (dovix 13/8/03)
-- faq_kinneret.xml was updated to reflect the current status of the project and include additional answers (dovix 13/8/03)
-- release_notes new (dovix 15/8/03)
-
-
-Version 0.5b
-- Added many documents and manuals
-
-Version 0.3
--  All source documents are now XML and are connverted to HTML with xsltproc using an appropriate XSL stylsheet
-- Added a screenshots chapter
-- Completed the Linux history article translation
-- Added a "where do I?" chapter
-- Cleaned up menu clutter to reduce number of entries and simplify navigation
-- new directory structure under l2swim-docs with support for multiple locales
-- various bug fixes
-- add support for new features such as multiple languages and multiple images
-
-Version 0.1
-- Initial document set written with KWord and saved as HTML.
+Please see the CHANGELOG file.
 
 ***************************************************************************
 2. Installation instructions for remastering the Kinneret CD
 
-The instructions here are for version 0.3 (Hermon).
+The instructions here are for version 0.6 (Kinneret).
 
 Since the build process is not yet automated, precompiled document files are provided. Also, since the l2swim application does not yet support locales, a symbolic link has to be created in order for the application to work.
 
@@ -75,17 +55,15 @@ tmp
 
 4. To-do list
 
-- Revamp the screenshots tour to be more like a slideshow (dovix)
-- Enrich & revamp the stylesheet (dovix)
+- add trabslations to the xsl including for toc (dovix)
 - New screenshots (dovix)
-- Resize images automatically to screen size (dovix)
 - Add Arabic translation (nizar)
 - Add Russian translation (phazeman)
-- Add manuals for the various applications in Kinneret (monic, dovix)
+- Add manuals for the various applications in Kinneret (dovix)
 - Add list of included applications (ronen/dovix)
 - Add list of non-GPL licensed modules (costello/dovix)
 - Manual for translators (dovix)
-- Build wizard script (?)
+- Build wizard script (Q)
 
 ***************************************************************************
 

@@ -1,5 +1,16 @@
 This file includes changes since the last upload. It is intended to provide a reference for translators/authors/remastering.
 
+-------------- v 0.7 ----------------
+* Important! layout and structure changes (XSL&XML) as follows: 17/9/2003
+-- removed "edited with free software" section as this is now automatically generated
+-- old document/language tags are obsolete, now using <article lang="hebrew"|"arabic"|"russian"|"english"> 16/9/2003
+-- main body tags now have to be encapsulated within <main></main>
+-- old segment tags (subtitle, subtitle2, subtitle3) are obsolete and replaced with (chapter, section, subsect)
+-- new tag <toc/> to generate table of content
+-- <chapter> now adds an index number. New tag <chapnotoc> doesn't add number and exclude from TOC
+* New explanation file 'MANUAL' for developing swimming guide articles. 17/9/03
+* new guide: apps_list.xml
+
 -------------- v 0.6 ----------------
 * merged all tour files into a single file 2/8/2003 dovix
 * massive re-editing on the menu file swim_menu_he.xml 22/8/03

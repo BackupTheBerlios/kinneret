@@ -1,20 +1,15 @@
 <?xml version = '1.0' encoding = 'utf-8' ?>
-<english>
+<article lang="english">
 	<title>History of Linux</title>
 	<copy>
 by		<link href="mailto:ragibhasan@yahoo.com">Ragib Hasan</link>
 , July 2002,  version 2.1		<newl/>
 This article is copyrighted by Ragib Hasan (1999+) and so all rights are reserved. But don&apos;t worry, Any part of this article can be reproduced in any form with prior permission of the author which can be obtained for FREE by e-mailing him.	</copy>
-	<subtitle>Table of contents</subtitle>
-	<bullets>
-		<item>In the beginning</item>
-		<item>New Baby in the horizon</item>
-		<item>Confrontation and development</item>
-		<item>A Decade of Linux</item>
-		<item>Tux : The Spirit of Linux</item>
-		<item>Some Linux Cookies</item>
-	</bullets>
-	<subtitle>In The Beginning</subtitle>
+
+<toc lang="english"/>
+
+<main>
+	<chapter>In The Beginning</chapter>
 	<para>It was 1991, and the ruthless agonies of the cold war was gradually coming to an end. There was an air of peace and tranquility that prevailed in the horizon. In the field of computing, a great future seemed to be in the offing, as powerful hardware pushed the limits of the computers beyond what anyone expected.</para>
 	<para>But still, something was missing.</para>
 	<para>And it was the none other than the Operating Systems, where a great void seemed to have appeared.</para>
@@ -25,7 +20,7 @@ A solution seemed to appear in form of MINIX. It was written from scratch by 		<
 , a Dutch professor who wanted to teach his students the inner workings of a real operating system. It was designed to run on the Intel 8086 microprocessors that had flooded the world market.	</para>
 	<para>As an operating system, MINIX was not a superb one. But it had the advantage that the source code was available. Anyone who happened to get the book &apos;Operating System&apos; by Tanenbaum could get hold of the 12,000 lines of code, written in C and assembly language. For the first time, an aspiring programmer or hacker could read the source codes of the operating system, which to that time the software vendors had guarded vigorously. A superb author, Tanenbaum captivated the brightest minds of computer science with the elaborate and immaculately lively discussion of the art of creating a working operating system. Students of Computer Science all over the world poured over the book, reading through the codes to understand the very system that runs their computer.</para>
 	<para>And one of them was Linus Torvalds.</para>
-	<subtitle>New Baby in the Horizon</subtitle>
+	<chapter>New Baby in the Horizon</chapter>
 	<para>
 In 1991, 		<link href="http://www.cs.helsinki.fi/~torvalds/">Linus Benedict Torvalds</link>
  was a second year student of Computer Science at the University of Helsinki and a self-taught hacker. The 21 year old sandy haired soft-spoken Finn loved to tinker with the power of the computers and the limits to which the system can be pushed. But all that was lacking was an operating system that could meet the demands of the professionals. MINIX was good, but still it was simply an operating system for the students, designed as a teaching tool rather than an industry strength one.	</para>
@@ -68,9 +63,9 @@ As I mentioned a month(?) ago, I&apos;m working on a free version of a minix-loo
 finally reached the stage where it&apos;s even usable (though may not be depending on what you want), and I am willing to put out the sources for wider distribution. It is  just version 0.02 (+1 (very small) patch already), but I&apos;ve successfully run bash/gcc/gnu-make/gnu-sed/compress etc under it. Sources for this pet project of mine can be found at nic.funet.fi (128.214.6.100) in the directory /pub/OS/Linux. The directory also contains some README-file and a couple of binaries to work under linux
 (bash, update and gcc, what more can you ask for :-). Full kernel source is provided, as no minix code has been used. Library sources are only partially free, so that cannot be distributed currently. The system is able to compile &quot;as-is&quot; and has been known to work. Heh. Sources to the binaries (bash and gcc) can be found at the same place in /pub/gnu.	</box>
 	<para>Linux version 0.03 came in a few weeks. By December came version 0.10. Still Linux was little more than in skeletal form. It had only support for AT hard disks, had no login ( booted directly to bash). version 0.11 was much better with support for multilingual keyboards, floppy disk drivers, support for VGA,EGA, Hercules etc. The version numbers went directly from 0.12 to 0.95 and 0.96 and so on. Soon the code went worldwide via ftp sites at Finland and elsewhere.</para>
-	<subtitle>Confrontation &amp; Development</subtitle>
+	<chapter>Confrontation &amp; Development</chapter>
 	<image>
-		<file>&quot;../image/history_linus_1.jpg&quot;</file>
+		<file>../image/history_linus_1.jpg</file>
 	</image>
 	<para>Soon Linus faced some confrontation from none other than Andrew Tanenbaum, the great teacher who wrote MINIX. In a post to Linus, Tanenbaum commented:</para>
 	<box>
@@ -92,37 +87,37 @@ Soon, commercial vendors moved in. Linux itself was, and is free. What the vendo
 ) the Linux distributions became very popular.	</para>
 	<para>Meanwhile, there were amazing things happening with Linux. Besides the PC, Linux was ported to many different platforms. Linux was tweaked to run 3Com&apos;s handheld PalmPilot computer. Clustering technology enabled large number of Linux machines to be combined into a single computing entity, a parallel computer. In April 1996, researchers at Los Alamos National Laboratory used Linux to run 68 PCs as a single parallel processing machine to simulate atomic shock waves.But unlike other Supercomputers costing a fortune, it was rather cheap. The do-it-yourself supercomputer cost only $152,000, including labor (connecting the 68 PCs with cables)-about one tenth the price of a comparable commercial machine. It reached a peak speed of 19 billion calculations per second, making it the 315th most powerful supercomputer in the world. And it was a robust one too. Three months later it still didn&apos;t have to be rebooted.</para>
 	<image>
-		<file>&quot;../image/history_linus_2.jpg&quot;</file>
+		<file>../image/history_linus_2.jpg</file>
 	</image>
 	<para>The best thing about Linux today is the fanatic following it commands. Whenever a new piece of hardware is out, Linux kernel is tweaked to take advantage of it. For example, within weeks after the introduction of Intel Xeon® Microprocessor, Linux kernel was tweaked and was ready for it. It has also been adapted for use in Alpha, Mac, PowerPC, and even for palmtops, a feat which is hardly matched by any other operating system. And it continues its journey into the new millennium, with the same enthusiasm that started one fine day back in 1991.</para>
 	<image>
-		<file>&quot;../image/history_linus_family.jpg&quot;</file>
+		<file>../image/history_linus_family.jpg</file>
 	</image>
 	<para>As for Linus, he remains a simple man. Unlike Bill Gates, he is not a billionaire. Having completed studies, he moved to USA andlanded a job at Transmeta Corporation. After conducting a top-secret research and development project, Transmeta launched the Cruose™ processor. Linus was an active member of the research team. Recently married to Tove, he is the proud father of a girl, Patricia Miranda Torvalds. But he remains as the world&apos;s most favorite and most famous programmer to this date. Revered by Computer communities worldwide, Linus is by far the most popular programmer on this planet.</para>
-	<subtitle>After a Decade: Linux Today</subtitle>
+	<chapter>After a Decade: Linux Today</chapter>
 	<para>Proving all the warning and prophecies of the skeptics wrong, Linux has completed a decade of development. Today, Linux is one of the fastest growing operating systems in the history. From a few dedicated fanatics in 1991-92 to millions of general users at present, it is certainly a remarkable journey. The big businesses have &apos;discovered&apos; Linux, and have poured millions of dollars into the development effort, denouncing the anti-business myth of the open-source movement. IBM corp. once considered the archenemy of open-source hacker community, has come forward with a huge fund for development of open source Linux based solutions. But what&apos;s really amazing is the continuously increasing band of developers spread throughout the world who work with a fervent zeal to improve upon the features of Linux. The development effort is not, as many closed-sourced advocates accuse, totally engulfed with chaos. A well designed development model supervised by some maintainers is adopted. Along with this, there are thousands of developers working to port various applications to Linux.</para>
 	<para>Commercial enterprises are no longer wary of Linux. With a large number of vendors providing support for Linux based products, it is no longer a &apos;do-at-your-own-risk&apos; thing to use Linux at the office. As for reliability, Linux certainly proved it during the nasty attacks of the CIH virus in 1999 and the love bug a year later, during which Linux based machines proved to be immune to the damages caused by these otherwise quite simple computer viruses. Linux start-ups like Red Hat received a cordial response as they went public. And even after the dot-com bust of the recent years, these companies continue to thrive and grow. With this added confidence, many large and small busienesses have adopted Linux based servers and workstations as an integral part of their offices.</para>
-	<subtitle2>Rise of the Desktop Linux</subtitle2>
+	<section>Rise of the Desktop Linux</section>
 	<para>What is the biggest complain against Linux? Perhaps in the past, it was the text based interface which scared off many people from using it. &apos;Text mode gives total control&apos;, some dedicated hackers and heavy users may explain. But for the millions of ordinary people, it also means a lot of effort towards learning the system. The existing X-Windows system and the window managers were not up to the general computer users&apos; expectation. Exactly this argument had always been put forward by dedicated followers of the Windows(TM) camp. But things began to change in the last couple of years. The advent of professional looking desktop environments like KDE( K Desktop Environment) and GNOME completed the picture. The recent versions of these desktop environment have changed the general perception about the &apos;user friendliness&apos; of Linux to a great extent. Though hard-core users grumble about the loss of purity of the hacker-culture, this great change in the mindset of the common users has increased the popularity of Linux.</para>
-	<subtitle2>Linux in the Developing World</subtitle2>
+	<section>Linux in the Developing World</section>
 	<para>Perhaps the greatest change is the spread of Linux to the developing world. In the days before Linux, developing countries were way behind in the field of computing. The cost of hardware fell down, but the cost of software was a huge burden to the cash-strapped computer enthusiasts of the Third World countries. In desperation, people resorted to piracy of almost all sorts of software products. This resulted in widespread piracy, amounting to billions of dollars. But then again, the pricetag of most of the commercial products were far beyond the reaches of the people in developing countries. For example, a typical operating system product costs at least US $100 or more. But in countries with per capita incomes of about US$200-300, is a huge amount.</para>
 	<para>The rise of Linux and other related open source product has changed it all. Since Linux can be scaled to run in almost computer with very few resources, it has become a suitable alternative for low budget computer users. Old, ancient 486/Pentium 1 computers that has become a part of history in the developed world are still used in developing countries. And Linux has enabled to unleash the full potential of these computers. The use of open source software has also proliferated, since the price of software is a big question. In countries of Asia, Africa and Latin America, Linux has appeared as a way out for the masses of computer enthusiasts. And a testament to the true global nature of Linux, local customizations were made in obscure parts of the world. The Linux documentation now includes documents written in almost all the major languages...and also many minor ones, for example, Vietnamese.</para>
-	<subtitle2>From Desktop to SuperComputing</subtitle2>
+	<section>From Desktop to SuperComputing</section>
 	<para>When Linux was first envisaged by Linus Torvalds, it was just another hackers hobby. But from the humble Intel 386 machine of Linus that ran the first kernel, Linux has come a long way. Its most notable use now is in the field of massively parralel supercomputing clusters. Let us see a few examples:</para>
-	<subtitle3>The TetraGrid</subtitle3>
+	<subsect>The TetraGrid</subsect>
 	<para>In August 2001, BBC reported that the US Government was planning to build what would be a mega computer, capable of performing over 13 trillion calculations per second (13.6 TeraFLOPS). The project, called Tetragrid would consist of a connected network of 4 US supercomputing centers. The four labs that are collaborating to create the Teragrid are: National Center for Supercomputing Applications at the University of Illinois(NCSA), San Diego Supercomputer Center (SDSC) at the University of California Argonne National Laboratory in Chicago; California Institute of Technology in Pasadena. At each of these centers, there would be a supercomputer. In total, there would be more than 3000 processors running in parallel to create the Tetragrid. The main technology behind this massive computer would be clustering: the technology of binding together many low performance/cost processors to create a single computing environment.</para>
 	<para>Dubbed as the Distributed Terascale Facility, the Teragrid will combine enough computing power to facilitate the solution of complex mathematical and simulation problems, ranging from Astronomy and Cancer Research to Weather Forecasting. Equipped with a 600 Terabyte storage space, the Teragrid would be so powerful that it would take a human working on a calculator 10 million years to do what the Teragrid can do in only 1 second. The amazing thing is that this massively parallel Mega Computer will be powered by Linux. Each of the 4 sites will operate a Linux cluster, and connected by means of a 40 Gigabit/sec dedicated optical network.</para>
-	<subtitle3>Evolocity at Lawrence Livermore National Lab</subtitle3>
+	<subsect>Evolocity at Lawrence Livermore National Lab</subsect>
 	<para>In July 2002, it was reported that Linux NetworX, a California based company, began work on Evolocity, a very powerful Linux based cluster supercomputer for the Lawrence Livermore National Laboratory(LLNL), California, USA. This awsome cluster would consist of 962 nodes running on a total of 1920 Intel 2.4 GHz Xeon processors. With 4 GB of DDR SDRAM Memory and 120 GB of Hard Disk space at each node, the supercomputer cluster would run at a maximum speed of 9.2 TeraFLOPS(FLoating Operations Per Second), bringing it among the world&apos;s top five fastest supercomputers. With mass-produced off-the-shelf technology, this supercomputer will surely bring an air of change in the LLNL, where once massive Cray supercomputers reigned supreme.</para>
 	<para>Using Linux as the base system, the makers of Teragrid have saved millions of dollars, utilizing the clustering technology developed worldwide by the dedicated followers of open source movement.</para>
-	<subtitle2>The Journey Continues</subtitle2>
+	<section>The Journey Continues</section>
 	<para>The journey of Linux from a hacking project to globalization has been more like an evolutionary experience. The GNU Project, started in the early 1980&apos;s by Richard Stallman, laid the foundation for the development of open source software. Prof. Andrew Tanenbaum&apos;s Personal Computer operating system Minix brought the study of operating systems from a theoretical basis to a practical one. And finally, Linus Torvald&apos;s endless enthusiasm for perfection gave birth to Linux. Throughout the last couple of years, hundreds of thousands of people forming global community nurtured it and brought it to its glorious place in the annals of the computer revolution. Today Linux is not just another student&apos;s hacking project, it is a worldwide phenomenon bringing together huge companies like IBM and the countless millions of people throughout the world in the spirit of the open source software movement. In the history of computing, it will forever remain as one of the most amazing endeavors of human achievement.</para>
-	<subtitle>Tux the penguin: Linux&apos;s Dear Logo</subtitle>
+	<chapter>Tux the penguin: Linux&apos;s Dear Logo</chapter>
 	<para>The logo of Linux is a penguin. Unlike other commercial products of computer operating systems, Linux doesn&apos;t have a formidable serious looking symbol. Rather Tux, as the penguin is lovingly called, symbolizes the care-free attitude of the total movement. This cute logo has a very interesting history. As put forward by Linus, initially no logo was selected for Linux. Once Linus went to the southern hemisphere on a vacation. There he encountered a penguin, not unlike the current logo of Linux. As he tried to pat it, the penguin bit his hand. This amusing incident led to the selection of a penguin as the logo of Linux sometime later.</para>
 	<image>
-		<file>&quot;../image/history_linux_logo.gif&quot;</file>
+		<file>../image/history_linux_logo.gif</file>
 	</image>
-	<subtitle>Some Linux Cookies</subtitle>
+	<chapter>Some Linux Cookies</chapter>
 	<para>Here are some famous words by Linus himself.</para>
 	<para>
 Dijkstra probably hates me		<newl/>
@@ -148,7 +143,7 @@ Don&apos;t take the above to mean that I&apos;ll stop the day somebody complains
 	<para>
 `When you say &quot;I wrote a program that crashed Windows&quot;, people just stare at you blankly and say &quot;Hey, I got those with the system, *for free*&quot;.&apos;		<newl/>
 (By Linus Torvalds)	</para>
-	<subtitle>Acknowledgements</subtitle>
+	<chapter>Acknowledgements</chapter>
 	<para>
 History is always boring, but history of Computing and that of Linux are very interesting. Much of the source of this article has been taken from the Internet. It was inspired by the questions asked by many would be Linux users at meetings and postings of Bangladesh Linux Users Group. 		<link href="http://bdlug.hypermart.net">http://bdlug.hypermart.net</link>
 .Thanks to all.	</para>
@@ -162,5 +157,7 @@ Bangladesh University of Engineering &amp; Technology,
 Dhaka, Bangladesh. 
 mail me at ragibhasan@yahoo.com 
 </code>
-	<copy>This document was edited by free software only. The document was transfered to XML using KXMLEditor and converted to HTML (using an XSL stylesheet created with Katoob) with the xsltproc processor on a GNU/Linux operating system.</copy>
-</english>
+
+</main>
+
+</article>

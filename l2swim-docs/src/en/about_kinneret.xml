@@ -1,25 +1,35 @@
 <?xml version = '1.0' encoding = 'utf-8' ?>
-<english>
-	<title>Learning in the Kinneret</title>
-	<copy>
+<article lang="english">
 
-by				<link href="mailto:wliad@linux-kinneret.org">Liad Weinberger</link>
+<title>Learning in the Kinneret</title>
 
-, July 2003				<newl/>
+<copy>
+	by <link href="mailto:wliad@linux-kinneret.org">Liad Weinberger</link>, July 2003<newl/>
+	Please feel free to copy and distribute verbatim copies of this document, but the content may not be changes without prior written approval from the copyright holders.
+</copy>
 
-Please feel free to copy and distribute verbatim copies of this document, but the content may not be changes without prior written approval from the copyright holders.		</copy>
-	<chapter>An overview of the project</chapter>
-	<para>The GNU/Linux Kinneret project (Kinneret for short), is a designated project whose goal is to address a challange faced by today&apos;s Israeli pupils. During the term of his studies, the Israeli pupil is required to familiarize with a verity of different software tools such as a word processor, a spreadsheet and several designated software according to his course of studies, in order to benefit the most out of the learning process.</para>
-	<para>Since not all schools can supply wide access to computers for their pupils, the pupils need those tools at home. The challange surfaces when considering the high price of these tools. A pupil who is interested in serving printed work or exercise the material learnt in class with the computer, needs to buy these tools, or otherwise get a pirated (illegal) copies of them.</para>
-	<para>On one end the pupil needs, and sometimes is required, to use software tools to complete his tasks, but on the other end he&apos;s not presented with cheap, convenient, and worthy alternatives.</para>
-	<para>
+<toc lang="english"/>
 
-In order to answer this exact problem, the Kinneret project was born. The project attends three main goals:				<bullets>
-			<item>Presenting free, quality proven alternatives to the Windows™ operating system and to the commercial software tools that pupils use during their studies.</item>
-			<item>Promoting the free software and open source movements in Israel.</item>
-			<item>Giving equal opportunity to pupils from all parts of the population in the technological age.</item>
-		</bullets>
-	</para>
+<main>
+
+<chapter>An overview of the project</chapter>
+
+<para>The GNU/Linux Kinneret project (Kinneret for short), is a designated project whose goal is to address a challange faced by today&apos;s Israeli pupils. During the term of his studies, the Israeli pupil is required to familiarize with a verity of different software tools such as a word processor, a spreadsheet and several designated software according to his course of studies, in order to benefit the most out of the learning process.</para>
+
+<para>Since not all schools can supply wide access to computers for their pupils, the pupils need those tools at home. The challange surfaces when considering the high price of these tools. A pupil who is interested in serving printed work or exercise the material learnt in class with the computer, needs to buy these tools, or otherwise get a pirated (illegal) copies of them.</para>
+
+<para>On one end the pupil needs, and sometimes is required, to use software tools to complete his tasks, but on the other end he&apos;s not presented with cheap, convenient, and worthy alternatives.</para>
+
+<para>
+
+In order to answer this exact problem, the Kinneret project was born. The project attends three main goals:				
+
+<bullets>
+	<item>Presenting free, quality proven alternatives to the Windows™ operating system and to the commercial software tools that pupils use during their studies.</item>
+	<item>Promoting the free software and open source movements in Israel.</item>
+		<item>Giving equal opportunity to pupils from all parts of the population in the technological age.</item>
+</bullets>
+</para>
 
 The main deliverable of the project is a software pack which includes a GNU/Linux based operating system, a collection of office tools such as a word processor, a spreadsheet and a presentation tool, and also a verity of designated software tools in the various fields of studies. All the tools will be running on a designed and comfortable desktop, with maximal Hebrew support. Many wizards will be provided to simplify Internet connection, printer configuration, and access to windows files that will make the initial experience of a Windows user to a pleasent, simple and easy one.		<para/>
 
@@ -81,5 +91,5 @@ Those interested in signing up as active members of the project, are invited to 
 Best regards,				<newl/>
 
 The Kinneret project team.		</para>
-	<copy>This document was edited by free software only. The document was transfered to XML using KXMLEditor and converted to HTML (using an XSL stylesheet created with Katoob) with the xsltproc processor on a GNU/Linux operating system.</copy>
-</english>
+</main>
+</article>

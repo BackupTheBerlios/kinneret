@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<hebrew>
+<article lang="hebrew">
 <title>
 מוסריות וחופש בעולם המחשבים
 </title>
@@ -12,9 +12,13 @@
 הגרסה המובאת להלן אינה הגרסה המקורית. גרסה זו עברה עריכה והתאמות ע"י <link href="mailto:dovix@linux-kinneret.org">דוביקס</link> תוך שמירה על תכני המאמר המקורי.
 </copy>
 
-<chapter>
+<toc lang="hebrew"/>
+
+<main>
+
+<chapnotoc>
 מאמר ראשון בסדרה
-</chapter>
+</chapnotoc>
 
 <para>
 כמה הגיגים שעולים בדעתי בתקופה האחרונה.
@@ -148,10 +152,6 @@
 אשמח לקבל תגובות למאמר.
 </para>
 
+</main>
 
-<copy>
-מסמך זה עובד ונערך ע"י תוכנה חופשית בלבד. המסמך המקורי הוסב לקובץ XML בעזרת עורך התמלילים Katoob והומר ל HTML בעזרת המעבד xsltptoc תוך שימוש בתבנית XSLT שנכתבה בעזרת Katoob, על מערכת ההפעלה GNU/Linux. 
-</copy>
-
-
-</hebrew>
+</article>

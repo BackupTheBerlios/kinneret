@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<document>
+<article lang="hebrew">
 <title>
 למה כדאי לי לעבוד עם לינוקס במקום עם חלונות?
 </title>
+
+<copy>
+נאסף ונערך על ידי CooL_SPoT (רם מתתיהו) מדיונים שנערכו בפורום <link href="http://www.whatsup.org.il">Whatsup</link>
+<newl/>
+מותר להעתיק מסמך זה וחלקים ממנו בתנאי שיוזכר המחבר הנ"ל
+</copy>
+
+<toc lang="hebrew"/>
+
+<main>
 
 <quote>
 כי אתה כנראה שוכח את כל הפעמים בהם תקעת את הראש בקיר.
@@ -10,12 +20,6 @@
 <by>
 dolfin
 </by>
-
-<copy>
-נאסף ונערך על ידי CooL_SPoT (רם מתתיהו) מדיונים שנערכו בפורום <link href="http://www.whatsup.org.il">Whatsup</link>
-<newl/>
-מותר להעתיק מסמך זה וחלקים ממנו בתנאי שיוזכר המחבר הנ"ל
-</copy>
 
 <para>
 אז למה באמת לינוקס עדיפה על חלונות?
@@ -159,11 +163,6 @@ mksoft
 pacman
 </by>
 
-<copy>
-מסמך זה עובד ונערך ע"י תוכנה חופשית בלבד. המסמך המקורי הוסב לקובץ XML בעזרת עורך התמלילים Katoob והומר ל HTML בעזרת המעבד xsltptoc תוך שימוש בתבנית XSLT שנכתבה בעזרת Katoob, על מערכת ההפעלה GNU/Linux. 
-</copy>
+</main>
 
-
-</document>
-
-
+</article>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<hebrew>
+<article lang="hebrew">
 <title>
 מדריך משחקי מחשב
 </title>
@@ -13,6 +13,10 @@
 <newl/>
 כל הזכויות למדריך שמורות לפרוייקט גנו/לינוקס כנרת
 </copy>
+
+<toc lang="hebrew"/>
+
+<main>
 
 <chapter>
 ג'אמפ אנד באמפ (Jump n bump)
@@ -304,9 +308,6 @@ Alt-X : חזרה מיידית לתפריט הראשי.
 </section>
 <quatro><one>../image/man_games_pm_1.jpg</one><two>../image/man_games_pm_2.jpg</two><three>../image/man_games_pm_3.jpg</three><four>../image/man_games_pm_4.jpg</four></quatro>
 
+</main>
 
-<copy>
-מסמך זה עובד ונערך ע"י תוכנה חופשית בלבד. המסמך נכתב כקובץ XML בעזרת עורך התמלילים Katoob והומר ל HTML בעזרת המעבד xsltptoc תוך שימוש בתבנית XSLT שנכתבה בעזרת Katoob, על מערכת ההפעלה GNU/Linux. 
-</copy>
-
-</hebrew>
+</article>
