@@ -27,7 +27,7 @@ $num += 1;
 #Do we have to update again?
 if ($num >= 900) {
 	$num=1;
-	`/opt/kinneret/karamba/scripts/weather.pl`;
+	`/opt/kinneret/karamba/The/scripts/weather.pl`;
 }
 #just write where we are now...
 open Dest,">".$filename;

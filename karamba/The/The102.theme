@@ -12,14 +12,14 @@ IMAGE X=0 Y=0 PATH="pics/bg.png"
 #weather
 <GROUP> X=4 Y=50
 	TEXT X=11 Y=0 VALUE="מזג אויר" COLOR=255,165,0 FONTSIZE=12 FONT="David" SHADOW=1
-	TEXT X=10 Y=70 SENSOR=PROGRAM PROGRAM="/opt/kinneret/karamba/scripts/weather2.pl" LINE=1 COLOR=0,0,0 FONTSIZE=10 FONT="Impact" INTERVAL=1500 ENCODING=UTF8
-	IMAGE X=0 Y=20 SENSOR=PROGRAM PROGRAM="/opt/kinneret/karamba/scripts/weather2.pl" LINE=2
-	IMAGE X=60 Y=15 SENSOR=PROGRAM PROGRAM="/opt/kinneret/karamba/scripts/weather2.pl" LINE=3
-	IMAGE X=60 Y=33 SENSOR=PROGRAM PROGRAM="/opt/kinneret/karamba/scripts/weather2.pl" LINE=4
-	IMAGE X=60 Y=51 SENSOR=PROGRAM PROGRAM="/opt/kinneret/karamba/scripts/weather2.pl" LINE=5
-	IMAGE X=60 Y=69 SENSOR=PROGRAM PROGRAM="/opt/kinneret/karamba/scripts/weather2.pl" LINE=6
-	TEXT X=20 Y=89 SENSOR=PROGRAM PROGRAM="/opt/kinneret/karamba/scripts/weather8.pl" LINE=1 COLOR=0,0,0 FONTSIZE=10 FONT="Nachlieli" INTERVAL=1000 ENCODING=UTF8
-	CLICKAREA x=0 y=104 w=55 h=10 preview=false onclick="/opt/kinneret/karamba/scripts/next.pl"
+	TEXT X=10 Y=70 SENSOR=PROGRAM PROGRAM="/opt/kinneret/karamba/The/scripts/weather2.pl" LINE=1 COLOR=0,0,0 FONTSIZE=10 FONT="Impact" INTERVAL=1500 ENCODING=UTF8
+	IMAGE X=0 Y=20 SENSOR=PROGRAM PROGRAM="/opt/kinneret/karamba/The/scripts/weather2.pl" LINE=2
+	IMAGE X=60 Y=15 SENSOR=PROGRAM PROGRAM="/opt/kinneret/karamba/The/scripts/weather2.pl" LINE=3
+	IMAGE X=60 Y=33 SENSOR=PROGRAM PROGRAM="/opt/kinneret/karamba/The/scripts/weather2.pl" LINE=4
+	IMAGE X=60 Y=51 SENSOR=PROGRAM PROGRAM="/opt/kinneret/karamba/The/scripts/weather2.pl" LINE=5
+	IMAGE X=60 Y=69 SENSOR=PROGRAM PROGRAM="/opt/kinneret/karamba/The/scripts/weather2.pl" LINE=6
+	TEXT X=20 Y=89 SENSOR=PROGRAM PROGRAM="/opt/kinneret/karamba/The/scripts/weather8.pl" LINE=1 COLOR=0,0,0 FONTSIZE=10 FONT="Nachlieli" INTERVAL=1000 ENCODING=UTF8
+	CLICKAREA x=0 y=104 w=55 h=10 preview=false onclick="/opt/kinneret/karamba/The/scripts/next.pl"
 	TEXT X=0 Y=100 VALUE="מיקום אחר" COLOR=0,0,200 FONTSIZE=10 SHADOW=0
 </GROUP>
 

@@ -30,4 +30,4 @@ open Dest,">".$filename;
 print Dest $num;
 close Source;
 #and finally get the new city weather info
-`/opt/kinneret/karamba/scripts/weather.pl`;
+`/opt/kinneret/karamba/The/scripts/weather.pl`;
