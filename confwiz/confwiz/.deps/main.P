@@ -154,15 +154,25 @@ main.o: main.cpp /usr/kde/3.1/include/kcmdlineargs.h \
   /usr/include/sys/ucontext.h /usr/include/sys/resource.h \
   /usr/include/bits/resource.h /usr/include/unistd.h \
   /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
-  /usr/include/bits/confname.h /usr/include/getopt.h confwiz.h \
-  ../config.h /usr/kde/3.1/include/kapp.h \
-  /usr/kde/3.1/include/kapplication.h /usr/kde/3.1/include/kdeversion.h \
-  /usr/qt/3/include/qapplication.h /usr/qt/3/include/qdesktopwidget.h \
-  /usr/qt/3/include/qasciidict.h /usr/qt/3/include/qtranslator.h \
-  /usr/qt/3/include/qstrlist.h /usr/qt/3/include/qstringlist.h \
-  /usr/kde/3.1/include/kinstance.h configwizard.h \
-  /usr/qt/3/include/qvariant.h /usr/qt/3/include/qwizard.h \
-  /usr/qt/3/include/qdialog.h \
+  /usr/include/bits/confname.h /usr/include/getopt.h \
+  /usr/kde/3.1/include/khtmlview.h confwiz.h ../config.h \
+  /usr/kde/3.1/include/kapp.h /usr/kde/3.1/include/kapplication.h \
+  /usr/kde/3.1/include/kdeversion.h /usr/qt/3/include/qapplication.h \
+  /usr/qt/3/include/qdesktopwidget.h /usr/qt/3/include/qasciidict.h \
+  /usr/qt/3/include/qtranslator.h /usr/qt/3/include/qstrlist.h \
+  /usr/qt/3/include/qstringlist.h /usr/kde/3.1/include/kinstance.h \
+  configwizard.h /usr/qt/3/include/qvariant.h /usr/qt/3/include/qwizard.h \
+  /usr/qt/3/include/qdialog.h /usr/kde/3.1/include/khtml_part.h \
+  /usr/kde/3.1/include/dom/html_document.h \
+  /usr/kde/3.1/include/dom/dom_doc.h /usr/kde/3.1/include/dom/dom_node.h \
+  /usr/kde/3.1/include/dom/css_stylesheet.h \
+  /usr/kde/3.1/include/dom/dom_string.h \
+  /usr/kde/3.1/include/dom/dom_misc.h \
+  /usr/kde/3.1/include/dom/dom2_range.h \
+  /usr/kde/3.1/include/kparts/part.h /usr/qt/3/include/qdom.h \
+  /usr/qt/3/include/qguardedptr.h /usr/kde/3.1/include/kxmlguiclient.h \
+  /usr/kde/3.1/include/kparts/browserextension.h \
+  /usr/kde/3.1/include/kparts/event.h /usr/qt/3/include/qregexp.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.2/include/g++-v3/iostream
 main.cpp :
 /usr/kde/3.1/include/kcmdlineargs.h :
@@ -386,6 +396,7 @@ main.cpp :
 /usr/include/bits/environments.h :
 /usr/include/bits/confname.h :
 /usr/include/getopt.h :
+/usr/kde/3.1/include/khtmlview.h :
 confwiz.h :
 ../config.h :
 /usr/kde/3.1/include/kapp.h :
@@ -402,4 +413,19 @@ configwizard.h :
 /usr/qt/3/include/qvariant.h :
 /usr/qt/3/include/qwizard.h :
 /usr/qt/3/include/qdialog.h :
+/usr/kde/3.1/include/khtml_part.h :
+/usr/kde/3.1/include/dom/html_document.h :
+/usr/kde/3.1/include/dom/dom_doc.h :
+/usr/kde/3.1/include/dom/dom_node.h :
+/usr/kde/3.1/include/dom/css_stylesheet.h :
+/usr/kde/3.1/include/dom/dom_string.h :
+/usr/kde/3.1/include/dom/dom_misc.h :
+/usr/kde/3.1/include/dom/dom2_range.h :
+/usr/kde/3.1/include/kparts/part.h :
+/usr/qt/3/include/qdom.h :
+/usr/qt/3/include/qguardedptr.h :
+/usr/kde/3.1/include/kxmlguiclient.h :
+/usr/kde/3.1/include/kparts/browserextension.h :
+/usr/kde/3.1/include/kparts/event.h :
+/usr/qt/3/include/qregexp.h :
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.2/include/g++-v3/iostream :

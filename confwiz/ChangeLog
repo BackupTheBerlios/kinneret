@@ -1,3 +1,9 @@
+From 0.3b to 0.3.1
+-------------------------------
+28 Jun 2003:
+* Created directories will be displayed in tree
+* License is now displayed using KHTML
+
 From 0.1 to 0.3b
 -------------------------------
 13 May 2003:

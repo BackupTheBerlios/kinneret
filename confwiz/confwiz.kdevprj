@@ -22,8 +22,8 @@ bin_program=confwiz
 cflags=
 cppflags=
 cxxflags=\s-O0 -Wall
-ldadd=\s$(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT)
-ldflags=\s            \s
+ldadd=\s$(LIB_KHTML) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT)
+ldflags=\s              \s
 
 [General]
 AMChanged=false
@@ -40,7 +40,7 @@ project_type=mini_kde2
 sgml_file=/home/z9u2K/projects/kinneret/confwiz/doc/en/index.docbook
 short_info=
 sub_dir=confwiz/
-version=0.3b
+version=0.3.1
 version_control=CVS
 workspace=1
 
