@@ -91,17 +91,15 @@
   </p>
 </xsl:template>
 
-<!-- document level 3 subtitle, underlined, italics, blue and right justified -->
+<!-- document level 3 subtitle, italics, blue and right justified -->
 <!-- use to designate sections within the document, usually followed by some text -->
 <xsl:template match="subtitle3 | subsect">
   <p>
-  <U>
   <I>
   <FONT COLOR="BLUE" SIZE="-1">
-  <B><xsl:apply-templates/></B>
+  <xsl:apply-templates/>
   </FONT>
   </I>
-  </U>
   </p>
 </xsl:template>
 
@@ -223,6 +221,46 @@
       <xsl:value-of select="file" />
     </xsl:attribute>
   </IMG>
+  </CENTER>
+</xsl:template>
+
+<!-- displays a 4 images in a table -->
+<xsl:template match="quatro">
+  <CENTER>
+  <table>
+  <tr>
+  <td>  
+  <IMG>
+    <xsl:attribute name = "SRC">
+      <xsl:value-of select="one" />
+    </xsl:attribute>
+  </IMG>
+  </td>
+  <td>  
+  <IMG>
+    <xsl:attribute name = "SRC">
+      <xsl:value-of select="two" />
+    </xsl:attribute>
+  </IMG>
+  </td>
+  </tr>
+  <tr>
+  <td>  
+  <IMG>
+    <xsl:attribute name = "SRC">
+      <xsl:value-of select="three" />
+    </xsl:attribute>
+  </IMG>
+  </td>
+  <td>  
+  <IMG>
+    <xsl:attribute name = "SRC">
+      <xsl:value-of select="four" />
+    </xsl:attribute>
+  </IMG>
+  </td>
+  </tr>
+  </table>
   </CENTER>
 </xsl:template>
 
