@@ -29,25 +29,26 @@ main.o main.o: main.cpp /opt/kde3/include/kapplication.h \
   /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
   /usr/include/bits/wchar.h /usr/include/gconv.h \
   /usr/lib/gcc-lib/i486-suse-linux/3.3/include/stdarg.h \
-  /usr/include/bits/sys_errlist.h /usr/lib/qt3/include/qpaintdevice.h \
-  /usr/lib/qt3/include/qpalette.h /usr/lib/qt3/include/qcolor.h \
-  /usr/lib/qt3/include/qstringlist.h /usr/lib/qt3/include/qstrlist.h \
-  /usr/lib/qt3/include/qptrlist.h /usr/lib/qt3/include/qglist.h \
-  /usr/lib/qt3/include/qptrcollection.h /usr/lib/qt3/include/qbrush.h \
-  /usr/lib/qt3/include/qfont.h /usr/lib/qt3/include/qfontmetrics.h \
-  /usr/lib/qt3/include/qfontinfo.h /usr/lib/qt3/include/qsizepolicy.h \
-  /usr/lib/qt3/include/qasciidict.h /usr/lib/qt3/include/qgdict.h \
-  /usr/lib/qt3/include/qtranslator.h /usr/lib/qt3/include/qpixmap.h \
-  /opt/kde3/include/kinstance.h l2swim.h /opt/kde3/include/kmainwindow.h \
-  /opt/kde3/include/kxmlguifactory.h /usr/lib/qt3/include/qdom.h \
-  /opt/kde3/include/kxmlguiclient.h /opt/kde3/include/kxmlguibuilder.h \
-  /usr/lib/qt3/include/qmainwindow.h /usr/lib/qt3/include/qtoolbar.h \
-  /usr/lib/qt3/include/qdockwindow.h /usr/lib/qt3/include/qframe.h \
-  /opt/kde3/include/ktoolbar.h /usr/lib/qt3/include/qcombobox.h \
-  /opt/kde3/include/kglobal.h /usr/lib/qt3/include/qguardedptr.h \
-  /usr/lib/qt3/include/qiconset.h /opt/kde3/include/klocale.h index.h \
-  /usr/lib/qt3/include/qfile.h /usr/lib/qt3/include/qhbox.h \
-  /usr/lib/qt3/include/qimage.h /usr/lib/qt3/include/qlabel.h \
+  /usr/include/bits/sys_errlist.h /usr/include/bits/stdio.h \
+  /usr/lib/qt3/include/qpaintdevice.h /usr/lib/qt3/include/qpalette.h \
+  /usr/lib/qt3/include/qcolor.h /usr/lib/qt3/include/qstringlist.h \
+  /usr/lib/qt3/include/qstrlist.h /usr/lib/qt3/include/qptrlist.h \
+  /usr/lib/qt3/include/qglist.h /usr/lib/qt3/include/qptrcollection.h \
+  /usr/lib/qt3/include/qbrush.h /usr/lib/qt3/include/qfont.h \
+  /usr/lib/qt3/include/qfontmetrics.h /usr/lib/qt3/include/qfontinfo.h \
+  /usr/lib/qt3/include/qsizepolicy.h /usr/lib/qt3/include/qasciidict.h \
+  /usr/lib/qt3/include/qgdict.h /usr/lib/qt3/include/qtranslator.h \
+  /usr/lib/qt3/include/qpixmap.h /opt/kde3/include/kinstance.h l2swim.h \
+  /opt/kde3/include/kmainwindow.h /opt/kde3/include/kxmlguifactory.h \
+  /usr/lib/qt3/include/qdom.h /opt/kde3/include/kxmlguiclient.h \
+  /opt/kde3/include/kxmlguibuilder.h /usr/lib/qt3/include/qmainwindow.h \
+  /usr/lib/qt3/include/qtoolbar.h /usr/lib/qt3/include/qdockwindow.h \
+  /usr/lib/qt3/include/qframe.h /opt/kde3/include/ktoolbar.h \
+  /usr/lib/qt3/include/qcombobox.h /opt/kde3/include/kglobal.h \
+  /usr/lib/qt3/include/qguardedptr.h /usr/lib/qt3/include/qiconset.h \
+  /opt/kde3/include/klocale.h index.h /usr/lib/qt3/include/qfile.h \
+  /usr/lib/qt3/include/qhbox.h /usr/lib/qt3/include/qimage.h \
+  /usr/lib/qt3/include/qlabel.h \
   /opt/kde3/include/kparts/componentfactory.h \
   /opt/kde3/include/kparts/factory.h /opt/kde3/include/klibloader.h \
   /usr/include/stdlib.h /usr/include/bits/waitflags.h \
@@ -207,6 +208,8 @@ main.o main.o: main.cpp /opt/kde3/include/kapplication.h \
 /usr/lib/gcc-lib/i486-suse-linux/3.3/include/stdarg.h:
 
 /usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
 
 /usr/lib/qt3/include/qpaintdevice.h:
 

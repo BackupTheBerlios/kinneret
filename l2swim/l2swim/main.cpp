@@ -28,9 +28,8 @@ int main( int argc, char **argv )
     else startpage="";
   MainWindow *window=new MainWindow("",startpage);
   a.setMainWidget( window );
-  window->resize(640,480);
-  window->showMaximized();
-
+  window->show();
+  
   return a.exec();
 }
 

@@ -75,6 +75,9 @@ MainWindow::MainWindow ( const char* name, const QString spage) : KMainWindow ( 
         this, SLOT( openURLRequest(const KURL &, const KParts::URLArgs & ) ) );
 
   setCentralWidget( hbox );
+  resize(maximumSize());
+
+  setAutoSaveSettings("MainWindow",true);
 }
 
 void MainWindow::firstload()
