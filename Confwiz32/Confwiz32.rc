@@ -1,0 +1,118 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Unknown language: 0xD, 0x1 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_HEB)
+#ifdef _WIN32
+LANGUAGE 0xD, 0x1
+#pragma code_page(1255)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG1 DIALOGEX 0, 0, 332, 241
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | 
+    WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "אשף ההגדרות של כנרת לחלונות"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "ויב",IDC_TEXT,5,5,320,145,0,WS_EX_RIGHT | 
+                    WS_EX_RTLREADING
+    COMBOBOX        IDC_COMBO,165,155,85,59,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "בחירת המחיצה:",IDC_STATIC,273,155,50,12,SS_CENTERIMAGE,
+                    WS_EX_RIGHT | WS_EX_RTLREADING
+    LTEXT           "גודל קובץ הבית",IDC_STATIC,267,170,57,8,0,WS_EX_RIGHT | 
+                    WS_EX_RTLREADING
+    EDITTEXT        IDC_HOME,215,170,35,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_HOME,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNLEFT | UDS_AUTOBUDDY | UDS_ARROWKEYS,200,170,11,
+                    15
+    LTEXT           "גודל קובץ ההחלפה",IDC_STATIC,255,185,68,8,0,WS_EX_RIGHT | 
+                    WS_EX_RTLREADING
+    EDITTEXT        IDC_SWAP,215,185,35,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_SWAP,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNLEFT | UDS_AUTOBUDDY | UDS_ARROWKEYS,200,185,11,
+                    15
+    DEFPUSHBUTTON   "בצע",IDOK,280,220,45,15
+    PUSHBUTTON      "בטל",IDCANCEL,5,220,45,15
+    CTEXT           "מצב: מוכן.",IDC_STAT,55,220,220,15,SS_CENTERIMAGE | 
+                    SS_SUNKEN,WS_EX_RTLREADING
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 325
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 234
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Unknown language: 0xD, 0x1 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
