@@ -111,7 +111,7 @@ document.write("יום "+dayname+", "+date+" ל"+monthname+", "+yearname+"</font
       <table width="150" border="0" cellspacing="0" cellpadding="0">
         <tr> 
           <td bgcolor="#7494F0" width="3"><font color="#FFFFFF">&nbsp;</font></td>
-          <td bgcolor="#7494F0"><font color="#333333"><a href="download.php"><nobr>הורדת התוכנה</nobr></a></font></td>
+          <td bgcolor="#7494F0"><font color="#333333"><nobr>הורדת התוכנה</nobr></font></td>
           <td><img src="rtl/navbartop.gif" width="40" height="20"></td>
         </tr>
         <tr> 
@@ -133,6 +133,7 @@ document.write("יום "+dayname+", "+date+" ל"+monthname+", "+yearname+"</font
           <td>
             <p>&nbsp;</p>
             <p>&nbsp;</p>
+
           </td>
         </tr>
       </table>
@@ -141,13 +142,27 @@ document.write("יום "+dayname+", "+date+" ל"+monthname+", "+yearname+"</font
       <table width="500" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td> 
-            <p><font color="#0066cc"><b>ברוך בואך לבית הפרוייקט גנו/לינוקס כנרת</b></font></p>
-            <p><font color="#0066cc"> גנו/לינוקס כנרת הינה מערכת הפעלה ומגוון יישומים המסופקים בערכה אחת ונוחה להפעלה ולשימוש (תקליטור). המערכת אינה מחייבת התקנה ו/או הגדרות מסובכות, ומכילה זיהוי חומרה אוטומטי, אשף התחברות קלה לאינטרנט ומגוון יישומים עשיר ואיכותי וכן תמיכה מקסימלית בעברית (ובעתיד בשפות נוספות).</font></p>
-            <p><font color="#0066cc"> בין היישומים המסופקים בתקליטור ניתן למנות יישומים משרדיים (מעבד תמלילים, גיליון אלקטרוני, עורך מצגות ועוד), יישומי אינטרנט (דפדפן, דוא"ל, מסרים מיידיים, צ'אט ועוד), יישומי מולטימדיה (נגינת שירים, צפיה בסרטים, עריכת תמונות ועוד) וכן מגוון משחקים. גנו/לינוקס כנרת מיועדת בראש ובראשונה לתלמידים במערכת החינוך הישראלית, ולכן היא כוללת מגוון לומדות, עזרי לימוד וסביבות פיתוח הנדרשות במהלך שנות הלימוד.</font></p>
-            <p><font color="#0066cc"> המערכת ניתנת להורדה חופשית (ובחינם) מהאינטרנט. מטרות הפרוייקט הן מתן הזדמנות שווה לתלמידים מכל האוכלוסיה בחינוך הטכנולוגי, הצגת אלטרנטיבה חופשית ואיכותית למערכת ההפעלה ולתוכנות הקנייניות בהן משתמש התלמיד בעת לימודיו וכן קידום תנועות התוכנה החופשית והקוד הפתוח בישראל.</font></p>
-            <p><font color="#0066cc"><a href="about-he.html" class="orange_white">מידע נוסף על הפרוייקט ועל ההיבטים הפדגוגיים שלו</a></font></p>
-            <table width="400" border="0" cellspacing="0" cellpadding="0">
-              <tr> 
+            <p><font color="#0066cc">
+		גנו/לינוקס כנרת היא תוכנה חופשית. אנו מזמינים אותך להוריד עותק לצריבה חינם משרתי "המקור - עמותה ישראלית לתוכנה חופשית ולקוד־מקור פתוח". לצורך ההורדה רצוי להשתמש בקו  אינטרנט מהיר (כבלים או ADSL). משך ההורדה הוא כשעתיים וחצי בקו 750 מגהביט.
+<p>
+יש באפשרותך לבדוק את הקובץ שהורדת על מנת לוודא שלא חלו תקלות בזמן ההורדה ושהקובץ תקין. לצורך זה, יש להפעיל על הקובץ תוכנה מיוחדת שתחשב עבור קובץ זה קוד זיהוי ייחודי. את הקוד הזה יש להשוות לקוד המופיע בקובץ עם סיומת md5sum הזמין גם הוא להורדה. ניתן להוריד תוכנה מתאימה לחלונות לצורך חישוב ובדיקת קוד הזיהוי <a href="http://www.etree.org/md5com.html" class="orange_white" target="new"> מהאתר הזה </a>. באתר זה גם מופיעות הוראות שימוש בתוכנה.
+<p>
+לאחר הורדת קובץ ה iso ובדיקתו, יש לצרוב אותו לתקליטור. יש להקפיד לצרוב אותו כ image ולא כקובץ רגיל.
+	    <p>
+<?php
+$tmp = file("06counter.txt");
+$counter = $tmp[0];
+$tmp = file("06MD5counter.txt");
+$counterMD5 = $tmp[0];
+?>
+	    <a href="download06.php" class="orange_white">להורדת המערכת</a> (כנרת 0.6 "ירדן")- <b><?=$counter ?></b> הורדות <br>
+	    <a href="download06MD5.php" class="orange_white">לצפיה בקובץ בדיקת התקינות</a> - <b><?=$counterMD5 ?></b> הורדות
+<br>
+<a href="ftp://ftp.berlios.de/pub/kinneret/how_to_install.pdf" class="orange_white">מדריך הפעלה והגדרת תצורה ראשונית (פורמט PDF)</a>
+		</font>
+	    <table width="400" border="0" cellspacing="0" cellpadding="0">
+
+              <tr>
                 <td> 
                   <div align="left"><img src="rtl/hbtopleft.gif" width="20" height="15"></div>
                 </td>
@@ -156,6 +171,7 @@ document.write("יום "+dayname+", "+date+" ל"+monthname+", "+yearname+"</font
                 </td>
                 <td><img src="rtl/hbtopright.gif" width="20" height="15"></td>
               </tr>
+
               <tr> 
                 <td colspan="3"><img src="rtl/horizontalbar.gif" width="400" height="15"></td>
               </tr>
@@ -166,6 +182,7 @@ document.write("יום "+dayname+", "+date+" ל"+monthname+", "+yearname+"</font
                 <td bgcolor="1F2AB9" height="15"> 
                   <div align="center"><font color="#FFFFFF">תבנית אתר חופשית באדיבות <a href="http://www.serenitymedia.co.uk" class="white_blue" target="new"><u>SerenityMedia.co.uk</u></a></font></div>
                 </td>
+
                 <td><img src="rtl/hbbottomright.gif" width="20" height="15"></font></td>
               </tr>
             </table>
@@ -176,5 +193,6 @@ document.write("יום "+dayname+", "+date+" ל"+monthname+", "+yearname+"</font
     </td>
   </tr>
 </table>
+
 </body>
 </html>

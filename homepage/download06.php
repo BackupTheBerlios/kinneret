@@ -2,16 +2,18 @@
 <head>
 <title>גנו/לינוקס כנרת - אפשר גם אחרת!</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta HTTP-EQUIV="refresh" content="1; URL=http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso">
 <link REL="StyleSheet" HREF="common/style.css" TYPE="text/css">
 </head>
 
 <body marginheight=3 marginwidth=0 topmargin="3" leftmargin="0" bgcolor="#FFFFFF" text="#0066cc" link="#FFFFFF" alink="#000080" vlink="#FFFFFF">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr> 
+  <tr>
     <td colspan="2">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr> 
+        <tr>
           <td>&nbsp;</td>
+
         </tr>
         <tr>
           <td>
@@ -20,6 +22,7 @@
                 <td width="10"><img src="rtl/leftend.gif" width="10" height="20"></td>
                 <td bgcolor="1F2AB9" width="85">
                   <div align="center"><b><font color="#0000C0">עברית</font></b></div>
+
                 </td>
                 <td width="30"><img src="rtl/middleend.gif" width="30" height="20"></td>
                 <td bgcolor="1F2AB9" width="85">
@@ -28,6 +31,7 @@
                 <td width="30"><img src="rtl/middleend.gif" width="30" height="20"></td>
                 <td bgcolor="1F2AB9" width="85">
                   <div align="center"><b><font color="#333333">русский</font></b></div>
+
                 </td>
                 <td width="30"><img src="rtl/middleend.gif" width="30" height="20"></td>
                 <td bgcolor="1F2AB9" width="85">
@@ -36,12 +40,13 @@
                 <td width="10"><img src="rtl/rightend.gif" width="10" height="20"></td>
               </tr>
             </table>
+
           </td>
         </tr>
-        <tr> 
+        <tr>
           <td><img src="rtl/logo.gif" width="600" height="15"></td>
         </tr>
-        <tr> 
+        <tr>
           <td>
             <table width="450" border="0" cellspacing="0" cellpadding="0">
               <tr>
@@ -104,25 +109,30 @@ document.write("יום "+dayname+", "+date+" ל"+monthname+", "+yearname+"</font
       </table>
     </td>
   </tr>
+
 </table>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="10%" valign="top">
       <table width="150" border="0" cellspacing="0" cellpadding="0">
-        <tr> 
-          <td bgcolor="#7494F0" width="3"><font color="#FFFFFF">&nbsp;</font></td>
-          <td bgcolor="#7494F0"><font color="#333333"><a href="download.php"><nobr>הורדת התוכנה</nobr></a></font></td>
-          <td><img src="rtl/navbartop.gif" width="40" height="20"></td>
-        </tr>
-        <tr> 
-          <td bgcolor="#7494F0" width="3"><font color="#FFFFFF">&nbsp;</font></td>
-          <td bgcolor="#7494F0" width="100"><font color="#FFFFFF"><a href="main/modules.php?name=Forums"><nobr>קבוצות דיון ותמיכה</nobr></a></font></td>
-          <td><img src="rtl/navbarmiddle.gif" width="22" height="20"></td>
-        </tr>
-        <tr> 
+        <tr>
           <td bgcolor="#7494F0" width="3">&nbsp;</td>
-          <td bgcolor="#7494F0"><font color="#FFFFFF"><a href="main/index.php"><nobr>אתר הבית למפתחים</nobr></a></font></td>
+          <td bgcolor="#7494F0" width="100"><font color="#FFFFFF"><a href="http://www.linux-kinneret.org/">עמוד ראשי</a></font></td>
+          <td><img src="rtl/navbartop.gif" width="40" height="20"></td>
+
+        </tr>
+
+	<tr>
+          <td bgcolor="#7494F0" width="3"><font color="#FFFFFF">&nbsp;</font></td>
+          <td bgcolor="#7494F0"><font color="#333333">צילומי מסך</font></td>
+          <td><img src="rtl/navbarmiddle.gif" width="10" height="20"></td>
+        </tr>
+
+        <tr>
+          <td bgcolor="#7494F0" width="3">&nbsp;</td>
+          <td bgcolor="#7494F0"><font color="#FFFFFF"><a href="main/index.php">אתר הבית למפתחים</a></font></td>
           <td><img src="rtl/navbarend.gif" width="10" height="20"></td>
+
         </tr>
       </table>
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -133,6 +143,7 @@ document.write("יום "+dayname+", "+date+" ל"+monthname+", "+yearname+"</font
           <td>
             <p>&nbsp;</p>
             <p>&nbsp;</p>
+
           </td>
         </tr>
       </table>
@@ -140,41 +151,51 @@ document.write("יום "+dayname+", "+date+" ל"+monthname+", "+yearname+"</font
     <td valign="top">
       <table width="500" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td> 
-            <p><font color="#0066cc"><b>ברוך בואך לבית הפרוייקט גנו/לינוקס כנרת</b></font></p>
-            <p><font color="#0066cc"> גנו/לינוקס כנרת הינה מערכת הפעלה ומגוון יישומים המסופקים בערכה אחת ונוחה להפעלה ולשימוש (תקליטור). המערכת אינה מחייבת התקנה ו/או הגדרות מסובכות, ומכילה זיהוי חומרה אוטומטי, אשף התחברות קלה לאינטרנט ומגוון יישומים עשיר ואיכותי וכן תמיכה מקסימלית בעברית (ובעתיד בשפות נוספות).</font></p>
-            <p><font color="#0066cc"> בין היישומים המסופקים בתקליטור ניתן למנות יישומים משרדיים (מעבד תמלילים, גיליון אלקטרוני, עורך מצגות ועוד), יישומי אינטרנט (דפדפן, דוא"ל, מסרים מיידיים, צ'אט ועוד), יישומי מולטימדיה (נגינת שירים, צפיה בסרטים, עריכת תמונות ועוד) וכן מגוון משחקים. גנו/לינוקס כנרת מיועדת בראש ובראשונה לתלמידים במערכת החינוך הישראלית, ולכן היא כוללת מגוון לומדות, עזרי לימוד וסביבות פיתוח הנדרשות במהלך שנות הלימוד.</font></p>
-            <p><font color="#0066cc"> המערכת ניתנת להורדה חופשית (ובחינם) מהאינטרנט. מטרות הפרוייקט הן מתן הזדמנות שווה לתלמידים מכל האוכלוסיה בחינוך הטכנולוגי, הצגת אלטרנטיבה חופשית ואיכותית למערכת ההפעלה ולתוכנות הקנייניות בהן משתמש התלמיד בעת לימודיו וכן קידום תנועות התוכנה החופשית והקוד הפתוח בישראל.</font></p>
-            <p><font color="#0066cc"><a href="about-he.html" class="orange_white">מידע נוסף על הפרוייקט ועל ההיבטים הפדגוגיים שלו</a></font></p>
-            <table width="400" border="0" cellspacing="0" cellpadding="0">
-              <tr> 
-                <td> 
+          <td>
+            <p><font color="#0066cc">
+		הורדת גנו/לינוקס כנרת 0.6 תתחיל בתוך מספר שניות
+<?php
+$tmp = file("06counter.txt");
+$dls = $tmp[0]+1;
+$fp = fopen("06counter.txt", "w");
+fwrite($fp, $dls);
+fclose($fp);
+?>
+
+		</font>
+	    <table width="400" border="0" cellspacing="0" cellpadding="0">
+
+              <tr>
+                <td>
                   <div align="left"><img src="rtl/hbtopleft.gif" width="20" height="15"></div>
                 </td>
-                <td bgcolor="1F2AB9" height="15"> 
+                <td bgcolor="1F2AB9" height="15">
                   <div align="center"><font color="#FFFFFF">גנו/לינוקס כנרת מבוססת על עירצוב של <a href="http://www.knopper.net/knoppix/index-en.html" class="white_blue" target="new"><u>קנופיקס</u></a></font></div>
                 </td>
                 <td><img src="rtl/hbtopright.gif" width="20" height="15"></td>
               </tr>
-              <tr> 
+
+              <tr>
                 <td colspan="3"><img src="rtl/horizontalbar.gif" width="400" height="15"></td>
               </tr>
-              <tr> 
-                <td> 
+              <tr>
+                <td>
                   <div align="left"><img src="rtl/hbbottomleft.gif" width="20" height="15"></font></div>
                 </td>
-                <td bgcolor="1F2AB9" height="15"> 
+                <td bgcolor="1F2AB9" height="15">
                   <div align="center"><font color="#FFFFFF">תבנית אתר חופשית באדיבות <a href="http://www.serenitymedia.co.uk" class="white_blue" target="new"><u>SerenityMedia.co.uk</u></a></font></div>
                 </td>
+
                 <td><img src="rtl/hbbottomright.gif" width="20" height="15"></font></td>
               </tr>
             </table>
-            
+
           </td>
         </tr>
       </table>
     </td>
   </tr>
 </table>
+
 </body>
 </html>
