@@ -95,10 +95,12 @@ Click here for English documentation
 <end>
 
 <menu=index15>
- מדריכים למפתחים ולשימוש מתקדם ב<b><i>לינוקס</b></i>
+מדריכים למפתחים ולשימוש מתקדם ב<b><i>לינוקס</b></i>
 דף זה מכיל מדריכים המיועדים למפתחים ומתרגמי יישומים בלינוקס, וכן לשימוש מתקדם במערכת.
 <play=he/translator_guide.html>
 מדריך לתרגום יישומים בלינוקס 
+<play=pdf/linux_newbie.pdf>
+מדריך למנהל המערכת המתחיל 
 <end>
 
 <menu=index4>

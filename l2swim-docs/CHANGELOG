@@ -15,6 +15,8 @@ This file includes changes since the last upload. It is intended to provide a re
 * Updated ooo manual with latest guide from xslf from 27/feb
 * New: translator_guide 5/4/04
 * icons in xsl now use relative path 5/4/04
+* Fixed Makefile to create /opt/kinneret/doc/pdf directory 5/4/04
+* Added pdf of Linux admin guide
 
 -------------- v 0.7.2 --------------
 * Updated first_time.xml 15/1/04

@@ -1,7 +1,7 @@
 # Swimming Guide documents Makefile,
 # Written by Nir Misgav, Dec 2003.
 # All Rights Reserved to GNU/Linux Kinneret
-# Version 0.2
+# Version 0.3
 #
 # Available rules :
 # make (or make newer) : make only new documents
@@ -12,7 +12,7 @@
 
 destdir = $(DESTDIR)/opt/kinneret
 docdirs = he en ar ru
-extradirs = image audio samples
+extradirs = image audio samples pdf
 stylesheet = etc/l2swim.xsl
 menufile = etc/swim_menu.txt
 cssfile = etc/l2swim.css
