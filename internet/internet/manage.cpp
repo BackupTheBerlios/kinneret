@@ -74,6 +74,40 @@ void ManageSetDefault(const ConfigFile &conf, const CommandLine &cmd, string str
 	cout << endl;
 }
 
+void ManageClearCurrent(const ConfigFile &conf, const CommandLine &cmd) throw (Error) {
+    // remove 'current'
+    if (cmd.bVerbose) cout << "Removing 'current'...\n";
+    string file = conf.strDBPath + "connections/current.tar.gz";
+    string strCmd = "unlink " + file;
+    if (system(strCmd.c_str()) != 0) throw ErrorSystem();
+}
+
+void ManageSetCurrent(const ConfigFile &conf, const CommandLine &cmd, string strCon) throw (Error)
+{
+	// make sure connection exists
+	string file = conf.strDBPath + "connections/" + strCon + ".tar.gz";
+	if (!FileExists(file)) throw Error404(file);
+
+	string c;
+
+	// delete default
+	if (FileExists(conf.strDBPath + "connections/current.tar.gz"))
+	{
+		if (cmd.bVerbose) cout << "Deleting old 'current'...\n";
+		c = "rm -f '" + conf.strDBPath + "connections/current.tar.gz'";
+		if (system(c.c_str()) != 0) throw ErrorSystem();
+	}
+
+	// re-create
+	if (cmd.bVerbose) cout << "(Re)Creating 'current'...\n";
+	c = "ln -s '" + conf.strDBPath + "connections/" + strCon + ".tar.gz' '" + conf.strDBPath + "connections/current.tar.gz'";
+	if (system(c.c_str()) != 0) throw ErrorSystem();
+
+	if (cmd.bVerbose) cout << "'current' connection set to " << strCon << endl;
+
+	cout << endl;
+}
+
 void ManageExtract(const ConfigFile &conf, const CommandLine &cmd,
 	int argc, char *argv[], string strScript) throw (Error)
 {

@@ -71,7 +71,8 @@ int main(int argc, char *argv[])
 		if (CmdLine.bListISPs)			InfoListISPs(db);
 		if (CmdLine.bListConnections)	InfoListConnections(Conf);
 		if (CmdLine.bShowDefault)		InfoShowDefault(Conf);
-		if (CmdLine.clISPInfo.bIs)		InfoISP(db, CmdLine.clISPInfo.strOpt);
+        if (CmdLine.bShowCurrent)		InfoShowCurrent(Conf);
+        if (CmdLine.clISPInfo.bIs)		InfoISP(db, CmdLine.clISPInfo.strOpt);
 		if (CmdLine.clHWInfo.bIs)		InfoHW(db, CmdLine.clHWInfo.strOpt);
 		if (CmdLine.clListHWs.bIs)		InfoListHWs(db, CmdLine.clListHWs.strOpt);
 
@@ -79,6 +80,7 @@ int main(int argc, char *argv[])
 		if (CmdLine.clDelete.bIs)		ManageDelete(Conf, CmdLine, CmdLine.clDelete.strOpt);
 		if (CmdLine.clSetDefault.bIs)	ManageSetDefault(Conf, CmdLine, CmdLine.clSetDefault.strOpt);
 		if (CmdLine.clExtract.bIs)		ManageExtract(Conf, CmdLine, argc, argv, CmdLine.clExtract.strOpt);
+        if (CmdLine.bClearCurrent)		ManageClearCurrent(Conf, CmdLine);
 
 		// Use
 		if (CmdLine.clInit.bIs)			Use(Conf, CmdLine, "init", CmdLine.clInit.strOpt);

@@ -235,6 +235,33 @@ void InfoListHWs(const Database &db, string strType) throw (Error)
 		cout << *iter << endl;
 }
 
+void InfoShowCurrent(const ConfigFile &conf) throw (Error)
+{
+	string file = conf.strDBPath + "connections/current.tar.gz";
+	ifstream f(file.c_str(), ios::in);
+	if (!f) throw Error("You do not have a current connection");
+
+	f.close();
+
+	string cmd;
+	cmd = "ls -l '" + conf.strDBPath + "connections/current.tar.gz' | rev | cut -b 8- > /tmp/.defcon";
+	if (system(cmd.c_str()) != 0) throw ErrorSystem();
+
+	f.open("/tmp/.defcon");
+	if (!f) throw Error404("/tmp/.defcon");
+
+	char buff[0xff];
+	f.getline(buff, 0xff);
+	f.close();
+
+	cmd = buff;
+
+	cmd.erase(cmd.find("/"));
+	cmd = "echo '" + cmd + "' | rev";
+
+	if (system(cmd.c_str()) != 0) throw ErrorSystem();
+}
+
 void InfoShowDefault(const ConfigFile &conf) throw (Error)
 {
 	string file = conf.strDBPath + "connections/default.tar.gz";

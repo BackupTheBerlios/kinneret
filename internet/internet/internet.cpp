@@ -36,7 +36,16 @@ void Use(const ConfigFile &conf, const CommandLine &cmd, string strScript, strin
 {
 	// Verify connection's name
 	if (cmd.bVerbose) cout << "making sure connection exists...\n";
-	if (cmd.bVerbose && strCon == string("default")) cout << "Using 'default' connection...\n";
+	if (strCon == string("default")) {
+        if (strScript == "disconnect") {
+            if (cmd.bVerbose)
+                cout << "Using 'current' connection...\n";
+            strCon = "current";
+        } else {
+            if (cmd.bVerbose)
+                cout << "Using 'default' connection...\n";
+        }
+    }
 
 	string file = conf.strDBPath + "connections/" + strCon + ".tar.gz";
 	if (!FileExists(file)) throw Error("No such connection, use -C to list connections");
@@ -52,10 +61,24 @@ void Use(const ConfigFile &conf, const CommandLine &cmd, string strScript, strin
 	if (cmd.bVerbose) cout << "Changing premission...\n";
 	strCmd = "chmod +x /tmp/iwiz/" + strScript + ".sh";
 	if (system(strCmd.c_str()) != 0) throw ErrorSystem();
+    
+    if (strScript == "connect") {
+        // Make sure we do not have a 'current'
+        string file = conf.strDBPath + "connections/current.tar.gz";
+	    if (FileExists(file))
+            throw Error("A connection is active, please use --kill or --clearcurr first.");
+    }
 
 	if (cmd.bVerbose) cout << "Running script...\n";
 	strCmd = "/tmp/iwiz/" + strScript + ".sh";
 	if (system(strCmd.c_str()) != 0) throw ErrorSystem();
+    
+    if (strScript == "connect") {
+        // make 'current'
+        ManageSetCurrent(conf, cmd, strCon);
+    } else if (strScript == "disconnect") {
+        ManageClearCurrent(conf, cmd);
+    }
 
 	cout << endl;
 }

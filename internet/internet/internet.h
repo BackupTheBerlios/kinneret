@@ -169,6 +169,8 @@ public:
 	bool		bListISPs;
 	bool		bListConnections;
 	bool		bShowDefault;
+    bool		bShowCurrent;
+    bool		bClearCurrent;
 	CLPair		clISPInfo;
 	CLPair		clHWInfo;
 	CLFromList	clListHWs;
@@ -289,10 +291,13 @@ void InfoISP(const Database &db, string strISP) throw (Error);
 void InfoHW(const Database &db, string strHW) throw (Error);
 void InfoListHWs(const Database &db, string strType) throw (Error);
 void InfoShowDefault(const ConfigFile &conf) throw (Error);
+void InfoShowCurrent(const ConfigFile &conf) throw (Error);
 
 // Manage
 void ManageDelete(const ConfigFile &conf, const CommandLine &cmd, string strCon) throw (Error);
 void ManageSetDefault(const ConfigFile &conf, const CommandLine &cmd, string strCon) throw (Error);
+void ManageSetCurrent(const ConfigFile &conf, const CommandLine &cmd, string strCon) throw (Error);
+void ManageClearCurrent(const ConfigFile &conf, const CommandLine &cmd) throw (Error);
 void ManageExtract(const ConfigFile &conf, const CommandLine &cmd,
 	int argc, char *argv[], string strScript) throw (Error);
 

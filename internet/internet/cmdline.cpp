@@ -51,6 +51,8 @@ CommandLine::CommandLine() :
 	bListISPs(false),
 	bListConnections(false),
 	bShowDefault(false),
+    bShowCurrent(false),
+    bClearCurrent(false),
 	clISPInfo(),
 	clHWInfo(),
 	clListHWs(),
@@ -133,9 +135,11 @@ void CommandLine::Parse(int argc, char *argv[]) throw (Error)
 		{ "listhws",		1, 0, 'H'  },
 		{ "hwinfo",			1, 0, 0x0A },
 		{ "ispinfo",		1, 0, 0x0B },
-
+        
 		// Manage connections
 		{ "defaultshow",	0, 0, 0x03 },
+        { "currentshow",	0, 0, 0x13 },
+        { "clearcurr",	    0, 0, 0x14 },
 		{ "delete",			1, 0, 0x01 },
 		{ "default",		1, 0, 0x02 },
 		{ "extract",		1, 0, 0x08 },
@@ -199,6 +203,8 @@ void CommandLine::Parse(int argc, char *argv[]) throw (Error)
 		case 0x01: clDelete.bIs			= true; clDelete.strOpt			= optarg;	break;
 		case 0x02: clSetDefault.bIs		= true; clSetDefault.strOpt		= optarg;	break;
 		case 0x03: bShowDefault			= true;										break;
+        case 0x13: bShowCurrent			= true;										break;
+        case 0x14: bClearCurrent		= true;										break;
 		case 0x09: clIFace.bIs			= true; clIFace.strOpt			= optarg;	break;
 		case 0x0A: clHWInfo.bIs			= true; clHWInfo.strOpt			= optarg;	break;
 		case 0x0B: clISPInfo.bIs		= true; clISPInfo.strOpt		= optarg;	break;
@@ -244,7 +250,7 @@ void CommandLine::Parse(int argc, char *argv[]) throw (Error)
 	}
 
 	// Manage mode
-	if (bShowDefault) bCreateMode = false;
+	if (bShowDefault || bShowCurrent || bClearCurrent) bCreateMode = false;
 	if (clDelete.bIs || clSetDefault.bIs) bCreateMode = false;
 	if (clExtract.bIs)
 	{
