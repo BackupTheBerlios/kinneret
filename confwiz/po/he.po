@@ -10,12 +10,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "POT-Creation-Date: 2003-08-22 16:29+0300\n"
-"PO-Revision-Date: 2004-05-07 14:24+0300\n"
-"Last-Translator: Itay 'z9u2K' Duvdevani <z9u2K@bezeqint.net>\n"
-"Language-Team: Hebrew <livrix@il.org>\n"
+"PO-Revision-Date: 2004-09-11 05:23+0300\n"
+"Last-Translator: dovix <dovix2003@yahoo.com>\n"
+"Language-Team: Hebrew <he@li.org>\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.3.1\n"
+"X-Generator: KBabel 1.0.2\n"
 "MIME-Version: 1.0\n"
 
 #: configwizard.ui.h:37
@@ -125,7 +125,7 @@ msgid ""
 msgstr ""
 "לא נבחרה ספריית בית.\n"
 "במקרה זה ספריית הבית נקבעה לשורש המחיצה אותה בחרת,\n"
-"על-מנת לשנות בחירה זו יש ללחוץ על \"חזור\"."
+"על-מנת לשנות בחירה זו עליך ללחוץ על \"חזור\"."
 
 #: configwizard.ui.h:666
 msgid "Cannot create directory!"
@@ -186,7 +186,7 @@ msgstr "אשף הגדרת <i>גנו/לינוקס-כנרת</i>"
 
 #: main.cpp:153
 msgid "You have canceled the wizard, Kinneret will now shutdown."
-msgstr "פעולת האשף בוטלה ע\"י המשתמש, \"כנרת\" כעת תסגור עצמה."
+msgstr "פעולת האשף בוטלה ע\"י המשתמש, פעולת המערכת תסתיים כעת."
 
 #: pleasewait.ui.h:36
 msgid "Creating directory... [1/13]"
@@ -250,7 +250,7 @@ msgid ""
 "Your names"
 msgstr ""
 "Itay 'z9u2K' Duvdevani\n"
-" Dovix"
+"Dovix"
 
 #: _translatorinfo.cpp:3
 msgid ""
@@ -258,7 +258,7 @@ msgid ""
 "Your emails"
 msgstr ""
 "z9u2k@linux-kinneret.org\n"
-" dovix@linux-kinneret.org"
+"dovix@linux-kinneret.org"
 
 #~ msgid ""
 #~ "<B><U>Configuration Wizard - Help</U></B><BR/> \n"
