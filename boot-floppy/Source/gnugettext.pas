@@ -17,7 +17,7 @@ interface
 
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils, TypInfo;
 
 (*****************************************************************************)
 (*                                                                           *)
@@ -49,6 +49,8 @@ function LoadResString(ResStringRec: PResStringRec): widestring;
 function LoadResStringA(ResStringRec: PResStringRec): ansistring;
 function LoadResStringW(ResStringRec: PResStringRec): widestring;
 
+// This returns an empty string if not translated or translator name is not specified.
+function GetTranslatorNameAndEmail:widestring;
 
 
 (*****************************************************************************)
@@ -106,6 +108,8 @@ function GetCurrentLanguage:string;
 // Only use these, if you need to split up your translation into several
 // .mo files.
 function dgettext(const szDomain: string; const szMsgId: widestring): widestring; 
+function dngettext(const szDomain: string; const singular,plural: widestring; Number:longint): widestring;
+function ngettext(const singular,plural: widestring; Number:longint): widestring;
 procedure textdomain(const szDomain: string);
 function getcurrenttextdomain: string;
 procedure bindtextdomain(const szDomain: string; const szDirectory: string);
@@ -124,8 +128,9 @@ procedure bindtextdomain(const szDomain: string; const szDirectory: string);
 type
   TExecutable=
     class
-      procedure Execute; virtual; abstract; 
+      procedure Execute; virtual; abstract;
     end;
+  TGetPluralForm=function (Number:Longint):Integer;
   TGnuGettextInstance=
     class   // Do not create multiple instances on Linux!
     public
@@ -133,8 +138,11 @@ type
       constructor Create;
       destructor Destroy; override;
       procedure UseLanguage(LanguageCode: string);
-      function gettext(const szMsgId: widestring): widestring; 
+      function gettext(const szMsgId: widestring): widestring;
+      function ngettext(const singular,plural:widestring;Number:longint):widestring;
       function GetCurrentLanguage:string;
+      function GetTranslationProperty (Propertyname:string):WideString;
+      function GetTranslatorNameAndEmail:widestring;
 
       // Form translation tools, these are not threadsafe. All TP_ procs must be called just before TranslateProperites()
       procedure TP_Ignore(AnObject:TObject; const name:string);
@@ -147,14 +155,18 @@ type
 
       // Multi-domain functions
       function dgettext(const szDomain: string; const szMsgId: widestring): widestring;
+      function dngettext(const szDomain,singular,plural:widestring;Number:longint):widestring;
       procedure textdomain(const szDomain: string);
       function getcurrenttextdomain: string;
       procedure bindtextdomain(const szDomain: string; const szDirectory: string);
 
       // Debugging and advanced tools
       procedure SaveUntranslatedMsgids(filename: string);
+    protected
+      procedure TranslateStrings (sl:TStrings;TextDomain:string);
     private
       curlang: string;
+      curGetPluralForm:TGetPluralForm;
       curmsgdomain: string;
       savefileCS: TMultiReadExclusiveWriteSynchronizer;
       savefile: TextFile;
@@ -165,7 +177,8 @@ type
       TP_ClassHandling:TList;      // Items are TClassMode. If a is derived from b, a comes first
       TP_Retranslator:TExecutable; // Cast this to TTP_Retranslator
       procedure SaveCheck(szMsgId: widestring);
-      procedure TranslatePropertiesSub(AnObject: TObject; DoneList:TStringList; Name, TextDomain:string);
+      procedure TranslateProperty(AnObject: TObject; PropInfo: PPropInfo;
+        TodoList: TStrings; TextDomain:string);  // Translates a single property of an object
     end;
 
 var
@@ -191,12 +204,11 @@ implementation
 
 uses
   {$ifdef MSWINDOWS}
-  Windows,
+  Windows;
   {$endif}
   {$ifdef LINUX}
-  Libc,
+  Libc;
   {$endif}
-  TypInfo;
 
 type
   TTP_RetranslatorItem=
@@ -237,6 +249,7 @@ type
     public
       LastLanguage:string;
       Retranslator:TExecutable;
+      destructor Destroy; override;
     end;
   TDomain =
     class
@@ -316,6 +329,11 @@ begin
     if s[i]=#13 then delete (s,i,1) else inc (i);
   end;
   Result:=s;
+end;
+
+function GGGetEnvironmentVariable (name:string):string;
+begin
+  Result:=SysUtils.GetEnvironmentVariable(name);
 end;
 
 function LF2LineBreakA (s:string):string;
@@ -403,6 +421,16 @@ end;
 function dgettext(const szDomain: string; const szMsgId: widestring): widestring;
 begin
   Result:=DefaultInstance.dgettext(szDomain, szMsgId);
+end;
+
+function dngettext(const szDomain: string; const singular,plural: widestring; Number:longint): widestring;
+begin
+  Result:=DefaultInstance.dngettext(szDomain,singular,plural,Number);
+end;
+
+function ngettext(const singular,plural: widestring; Number:longint): widestring;
+begin
+  Result:=DefaultInstance.ngettext(singular,plural,Number);
 end;
 
 procedure textdomain(const szDomain: string);
@@ -633,6 +661,11 @@ begin
   {$endif}
 end;
 
+function GetTranslatorNameAndEmail:widestring;
+begin
+  Result:=DefaultInstance.GetTranslatorNameAndEmail;
+end;
+
 procedure UseLanguage(LanguageCode: string);
 begin
   DefaultInstance.UseLanguage(LanguageCode);
@@ -776,18 +809,20 @@ end;
 
 function TDomain.gettextbyid(id: cardinal): ansistring;
 var
-  offset: cardinal;
+  offset, size: cardinal;
 begin
-  offset := CardinalInMem (momemory,O+8*id+4);
-  Result := strpas(momemory+offset);
+  offset:=CardinalInMem (momemory,O+8*id+4);
+  size:=CardinalInMem (momemory,O+8*id);
+  SetString (Result,momemory+offset,size);
 end;
 
 function TDomain.getdsttextbyid(id: cardinal): ansistring;
 var
-  offset: cardinal;
+  offset, size: cardinal;
 begin
-  offset := CardinalInMem (momemory,T+8*id+4);
-  Result := strpas(momemory+offset);
+  offset:=CardinalInMem (momemory,T+8*id+4);
+  size:=CardinalInMem (momemory,T+8*id);
+  SetString (Result,momemory+offset,size);
 end;
 
 function TDomain.gettext(msgid: ansistring): ansistring;
@@ -795,7 +830,7 @@ var
   i, nn, step: cardinal;
   s: string;
 begin
-  if (not isopen) and (moexists) then
+  if (not isopen) and moexists then
     OpenMoFile;
   if not isopen then begin
     Result := msgid;
@@ -979,6 +1014,96 @@ begin
   curlang:=langcode;
 end;
 
+function GetPluralForm2EN(Number: Integer): Integer;
+begin
+  Number:=abs(Number);
+  if Number=1 then Result:=0 else Result:=1;
+end;
+
+function GetPluralForm1(Number: Integer): Integer;
+begin
+  Result:=0;
+end;
+
+function GetPluralForm2FR(Number: Integer): Integer;
+begin
+  Number:=abs(Number);
+  if (Number=1) or (Number=0) then Result:=0 else Result:=1;
+end;
+
+function GetPluralForm3LV(Number: Integer): Integer;
+begin
+  Number:=abs(Number);
+  if (Number mod 10=1) and (Number mod 100<>11) then
+    Result:=0
+  else
+    if Number<>0 then Result:=1
+                 else Result:=2;
+end;
+
+function GetPluralForm3GA(Number: Integer): Integer;
+begin
+  Number:=abs(Number);
+  if Number=1 then Result:=0
+  else if Number=2 then Result:=1
+  else Result:=2;
+end;
+
+function GetPluralForm3LT(Number: Integer): Integer;
+var
+  n1,n2:byte;
+begin
+  Number:=abs(Number);
+  n1:=Number mod 10;
+  n2:=Number mod 100;
+  if (n1=1) and (n2<>11) then
+    Result:=0
+  else
+    if (n1>=2) and ((n2<10) or (n2>=20)) then Result:=1
+    else Result:=2;
+end;
+
+function GetPluralForm3PL(Number: Integer): Integer;
+var
+  n1,n2:byte;
+begin
+  Number:=abs(Number);
+  n1:=Number mod 10;
+  n2:=Number mod 100;
+  if n1=1 then Result:=0
+  else if (n1>=2) and (n1<=4) and ((n2<10) or (n2>=20)) then Result:=1
+  else Result:=2;
+end;
+
+function GetPluralForm3RU(Number: Integer): Integer;
+var
+  n1,n2:byte;
+begin
+  Number:=abs(Number);
+  n1:=Number mod 10;
+  n2:=Number mod 100;
+  if (n1=1) and (n2<>11) then
+    Result:=0
+  else
+    if (n1>=2) and (n1<=4) and ((n2<10) or (n2>=20)) then Result:=1
+    else Result:=2;
+end;
+
+function GetPluralForm4SL(Number: Integer): Integer;
+var
+  n2:byte;
+begin
+  Number:=abs(Number);
+  n2:=Number mod 100;
+  if n2=1 then Result:=0
+  else
+  if n2=2 then Result:=1
+  else
+  if (n2=3) or (n2=4) then Result:=2
+  else
+    Result:=3;
+end;
+
 { TGnuGettextInstance }
 
 procedure TGnuGettextInstance.bindtextdomain(const szDomain,
@@ -1002,6 +1127,7 @@ constructor TGnuGettextInstance.Create;
 var
   lang: string;
 begin
+  curGetPluralForm:=GetPluralForm2EN;
   Enabled:=True;
   curmsgdomain:=DefaultTextDomain;
   savefileCS := TMultiReadExclusiveWriteSynchronizer.Create;
@@ -1070,6 +1196,8 @@ begin
   end else begin
     Result:=UTF8Decode(LF2LineBreakA(getdomain(domainlist,szDomain,DefaultDomainDirectory,CurLang).gettext(StripCR(utf8encode(szMsgId)))));
   end;
+  if (szMsgId<>'') and (Result='') then
+    raise Exception.Create (Format('Error: Could not translate %s. Probably because the mo file doesn''t contain utf-8 encoded translations.',[szMsgId]));
   if (Result = szMsgId) and (szDomain = DefaultTextDomain) then
     SaveCheck(szMsgId);
 end;
@@ -1258,166 +1386,179 @@ begin
   comp.LastLanguage:=curlang;
 end;
 
+procedure TGnuGettextInstance.TranslateProperty (AnObject:TObject; PropInfo:PPropInfo; TodoList:TStrings; TextDomain:string);
+var
+  ppi:PPropInfo;
+  ws: WideString;
+  old: WideString;
+  obj:TObject;
+  sl:TStrings;
+  i, k:integer;
+  Propname:string;
+begin
+  PropName:=PropInfo^.Name;
+  try
+    // Translate certain types of properties
+    case PropInfo^.PropType^.Kind of
+      tkString, tkLString, tkWString:
+        begin
+          old := GetWideStrProp(AnObject, PropName);
+          if (old <> '') and (IsWriteProp(PropInfo)) then begin
+            if TP_Retranslator<>nil then
+              (TP_Retranslator as TTP_Retranslator).Remember(AnObject, PropName, old);
+            ws := dgettext(textdomain,old);
+            if ws <> old then begin
+              ppi:=GetPropInfo(AnObject, Propname);
+              if ppi=nil then
+                raise Exception.Create ('Property disappeared...');
+              SetWideStrProp(AnObject, ppi, ws);
+            end;
+          end;
+        end { case item };
+      tkClass:
+        begin
+          obj:=GetObjectProp(AnObject, PropName);
+          if obj<>nil then begin
+            // Check the global class ignore list
+            for k:=0 to TP_ClassHandling.Count-1 do begin
+              if AnObject.InheritsFrom(TClass(TP_ClassHandling.Items[k])) then
+                exit;
+            end;
+            // Check for TStrings translation
+            if obj is TStrings then begin
+              sl:=obj as TStrings;
+              if (sl.Text<>'') and (TP_Retranslator<>nil) then
+                (TP_Retranslator as TTP_Retranslator).Remember(obj, 'Text', sl.Text);
+              TranslateStrings (sl,TextDomain);
+            end else
+            // Check for TCollection
+            if obj is TCollection then
+              for i := 0 to TCollection(obj).Count - 1 do
+                TodoList.AddObject('',TCollection(obj).Items[i]);
+            // Check for TComponent
+            if obj is TComponent then
+              TodoList.AddObject ('',obj);
+          end { if not nil };
+        end { case item };
+      end { case };
+  except
+    on E:Exception do
+      raise Exception.Create ('Property cannot be translated.'+sLineBreak+
+        'Use TP_GlobalIgnoreClassProperty('+AnObject.ClassName+','+PropName+') or'+sLineBreak+
+        'TP_Ignore (self,''.'+PropName+''') to prevent this message.'+sLineBreak+
+        'Reason: '+e.Message);
+  end;
+end;
+
 procedure TGnuGettextInstance.TranslateProperties(AnObject: TObject; textdomain:string='');
 var
-  DoneList:TStringList;
+  TodoList:TStringList; // List of Name/TObject's that is to be processed
+  DoneList:TStringList; // List of hex codes representing pointers to objects that have been done
+  i, j, Count: integer;
+  PropList: PPropList;
+  UPropName: string;
+  PropInfo: PPropInfo;
+  comp:TComponent;
+  cm,currentcm:TClassMode;
+  ObjectPropertyIgnoreList:TStringList;
+  objid, Name:string;
 begin
   if textdomain='' then
     textdomain:=curmsgdomain;
   if TP_Retranslator<>nil then
     (TP_Retranslator as TTP_Retranslator).TextDomain:=textdomain;
   DoneList:=TStringList.Create;
+  TodoList:=TStringList.Create;
+  ObjectPropertyIgnoreList:=TStringList.Create;
   try
+    TodoList.AddObject('', AnObject);
     DoneList.Sorted:=True;
+    ObjectPropertyIgnoreList.Sorted:=True;
+    ObjectPropertyIgnoreList.Duplicates:=dupIgnore;
+    ObjectPropertyIgnoreList.CaseSensitive:=False;
     DoneList.Duplicates:=dupError;
     DoneList.CaseSensitive:=True;
-    TranslatePropertiesSub (AnObject,Donelist,'',textdomain);
+
+    while TodoList.Count<>0 do begin
+      AnObject:=TodoList.Objects[0];
+      Name:=TodoList.Strings[0];
+      TodoList.Delete(0);
+      if AnObject<>nil then begin
+        // Make sure each object is only translated once
+        Assert (sizeof(integer)=sizeof(TObject));
+        objid:=IntToHex(integer(AnObject),8);
+        if DoneList.Find(objid,i) then begin
+          continue;
+        end else begin
+          DoneList.Add(objid);
+        end;
+
+        ObjectPropertyIgnoreList.Clear;
+
+        // Find out if there is special handling of this object
+        currentcm:=nil;
+        for j:=0 to TP_ClassHandling.Count-1 do begin
+          cm:=TObject(TP_ClassHandling.Items[j]) as TClassMode;
+          if AnObject.InheritsFrom(cm.HClass) then begin
+            if cm.PropertiesToIgnore.Count<>0 then begin
+              ObjectPropertyIgnoreList.AddStrings(cm.PropertiesToIgnore);
+            end else begin
+              currentcm:=cm;
+              break;
+            end;
+          end;
+        end;
+        if currentcm<>nil then begin
+          ObjectPropertyIgnoreList.Clear;
+          // Ignore or use special handler
+          if Assigned(currentcm.SpecialHandler) then
+            currentcm.SpecialHandler (AnObject);
+          continue;
+        end;
+
+        try
+          Count := GetPropList(AnObject, PropList);
+          for j := 0 to Count - 1 do begin
+            PropInfo := PropList[j];
+            UPropName:=uppercase(PropInfo^.Name);
+            // Ignore properties that are meant to be ignored
+            if ((currentcm=nil) or (not currentcm.PropertiesToIgnore.Find(UPropName,i))) and
+               (not TP_IgnoreList.Find(Name+'.'+UPropName,i)) and
+               (not ObjectPropertyIgnoreList.Find(UPropName,i)) then begin
+              TranslateProperty (AnObject,PropInfo,TodoList,TextDomain);
+            end;  // if
+          end;  // for
+        finally
+        end;
+        if AnObject is TStrings then begin
+          TranslateStrings (AnObject as TStrings,TextDomain);
+        end;
+        if AnObject is TComponent then
+          for i := 0 to TComponent(AnObject).ComponentCount - 1 do begin
+            comp:=TComponent(AnObject).Components[i];
+            if not TP_IgnoreList.Find(uppercase(comp.Name),j) then begin
+              TodoList.AddObject(uppercase(comp.Name),comp);
+            end;
+          end;
+      end { if AnObject<>nil };
+    end { while todolist.count<>0 };
   finally
+    FreeAndNil (todolist);
+    FreeAndNil (ObjectPropertyIgnoreList);
     FreeAndNil (DoneList);
   end;
   TP_IgnoreList.Clear;
   TP_Retranslator:=nil;
 end;
 
-procedure TGnuGettextInstance.TranslatePropertiesSub(AnObject: TObject; DoneList:TStringList; 
-  Name, TextDomain: string);
-var
-  i, k: integer;
-  j, Count: integer;
-  PropList: PPropList;
-  PropName, UPropName: string;
-  PropInfo: PPropInfo;
-  sl: TObject;
-  comp:TComponent;
-  ppi:PPropInfo;
-  ws: WideString;
-  old: WideString;
-  cm,currentcm:TClassMode;
-  ObjectPropertyIgnoreList:TStringList;
-  objid:string;
-begin
-  if (AnObject = nil) then
-    Exit;
-  // Make sure each object is only translated once
-  Assert (sizeof(integer)=sizeof(TObject));
-  objid:=IntToHex(integer(AnObject),8);
-  if DoneList.Find(objid,i) then begin
-    exit;
-  end else begin
-    DoneList.Add(objid);
-  end;
-  
-  ObjectPropertyIgnoreList:=TStringList.Create;
-  try
-    ObjectPropertyIgnoreList.Sorted:=True;
-    ObjectPropertyIgnoreList.Duplicates:=dupIgnore;
-    // Find out if there is special handling of this object
-    currentcm:=nil;
-    for j:=0 to TP_ClassHandling.Count-1 do begin
-      cm:=TObject(TP_ClassHandling.Items[j]) as TClassMode;
-      if AnObject.InheritsFrom(cm.HClass) then begin
-        if cm.PropertiesToIgnore.Count<>0 then begin
-          ObjectPropertyIgnoreList.AddStrings(cm.PropertiesToIgnore);
-        end else begin
-          currentcm:=cm;
-          break;
-        end;
-      end;
-    end;
-    if currentcm<>nil then begin
-      ObjectPropertyIgnoreList.Clear;
-      // Ignore or use special handler
-      if Assigned(currentcm.SpecialHandler) then
-        currentcm.SpecialHandler (AnObject);
-      exit;
-    end;
-
-    try
-      Count := GetPropList(AnObject, PropList);
-        for j := 0 to Count - 1 do begin
-          PropInfo := PropList[j];
-          PropName := PropInfo^.Name;
-          UPropName:=uppercase(PropName);
-          // Ignore properties that are meant to be ignored
-          if ((currentcm=nil) or (not currentcm.PropertiesToIgnore.Find(UPropName,i))) and
-             (not TP_IgnoreList.Find(Name+'.'+UPropName,i)) and
-             (not ObjectPropertyIgnoreList.Find(UPropName,i)) then begin
-            try
-              // Translate certain types of properties
-              case PropInfo^.PropType^.Kind of
-                tkString, tkLString, tkWString:
-                  begin
-                    old := GetWideStrProp(AnObject, PropName);
-                    if (old <> '') and (IsWriteProp(PropInfo)) then begin
-                      if TP_Retranslator<>nil then
-                        (TP_Retranslator as TTP_Retranslator).Remember(AnObject, PropName, old);
-                      ws := dgettext(textdomain,old);
-                      if ws <> old then begin
-                        ppi:=GetPropInfo(AnObject, Propname);
-                        if ppi=nil then
-                          raise Exception.Create ('Property disappeared...');
-                        SetWideStrProp(AnObject, ppi, ws);
-                      end;
-                    end;
-                  end;
-                tkClass:
-                  begin
-                    sl := GetObjectProp(AnObject, PropName);
-                    if (sl = nil) then
-                      Continue;
-                    // Check the global class ignore list
-                    for k:=0 to TP_ClassHandling.Count-1 do begin
-                      if AnObject.InheritsFrom(TClass(TP_ClassHandling.Items[k])) then
-                        exit;
-                    end;
-                    // Check for TStrings translation
-                    if sl is TStrings then begin
-                      old := TStrings(sl).Text;
-                      if old <> '' then begin
-                        if TP_Retranslator<>nil then
-                          (TP_Retranslator as TTP_Retranslator).Remember(sl, 'Text', old); 
-                        ws := dgettext(textdomain,old);
-                        if (old <> ws) then begin
-                          TStrings(sl).Text := ws;
-                        end;
-                      end
-                    end else
-                    // Check for TCollection
-                    if sl is TCollection then
-                      for i := 0 to TCollection(sl).Count - 1 do
-                        TranslatePropertiesSub(TCollection(sl).Items[i],DoneList,'',textdomain);
-                  end;
-                end; // case
-            except
-              on E:Exception do
-                raise Exception.Create ('Property cannot be translated.'+sLineBreak+
-                  'Use TP_GlobalIgnoreClassProperty('+AnObject.ClassName+','+PropName+') or'+sLineBreak+
-                  'TP_Ignore (self,''.'+PropName+''') to prevent this message.'+sLineBreak+
-                  'Reason: '+e.Message);
-            end;                                  
-          end;  // if
-        end;  // for
-    finally
-    end;
-    if AnObject is TComponent then
-      for i := 0 to TComponent(AnObject).ComponentCount - 1 do begin
-        comp:=TComponent(AnObject).Components[i];
-        if not TP_IgnoreList.Find(uppercase(comp.Name),j) then begin
-          TranslatePropertiesSub(comp,DoneList,uppercase(comp.Name),TextDomain);
-        end;
-      end;
-  finally
-    FreeAndNil (ObjectPropertyIgnoreList);
-  end;
-end;
-
 procedure TGnuGettextInstance.UseLanguage(LanguageCode: string);
 var
   i,p:integer;
   dom:TDomain;
+  l2:string[2];
 begin
   if LanguageCode='' then begin
-    LanguageCode:=GetEnvironmentVariable('LANG');
+    LanguageCode:=GGGetEnvironmentVariable('LANG');
     {$ifdef MSWINDOWS}
     if LanguageCode='' then
       LanguageCode:=GetWindowsLanguage;
@@ -1436,6 +1577,101 @@ begin
   {$ifdef LINUX}
   setlocale (LC_MESSAGES, PChar(LanguageCode));
   {$endif}
+
+  l2:=lowercase(copy(curlang,1,2));
+  if (l2='en') or (l2='de') then curGetPluralForm:=GetPluralForm2EN else
+  if (l2='hu') or (l2='ko') or (l2='zh') or (l2='ja') or (l2='tr') then curGetPluralForm:=GetPluralForm1 else
+  if (l2='fr') or (l2='fa') or (lowercase(curlang)='pt_br') then curGetPluralForm:=GetPluralForm2FR else
+  if (l2='lv') then curGetPluralForm:=GetPluralForm3LV else
+  if (l2='ga') then curGetPluralForm:=GetPluralForm3GA else
+  if (l2='lt') then curGetPluralForm:=GetPluralForm3LT else
+  if (l2='ru') or (l2='cs') or (l2='sk') or (l2='uk') or (l2='hr') then curGetPluralForm:=GetPluralForm3RU else
+  if (l2='pl') then curGetPluralForm:=GetPluralForm3PL else
+  if (l2='sl') then curGetPluralForm:=GetPluralForm4SL else
+    curGetPluralForm:=GetPluralForm2EN
+end;
+
+procedure TGnuGettextInstance.TranslateStrings(sl: TStrings;TextDomain:string);
+var
+  s:TStringList;
+  line:string;
+  i:integer;
+begin
+  s:=TStringList.Create;
+  try
+    s.AddStrings (sl);
+    for i:=0 to s.Count-1 do begin
+      line:=s.Strings[i];
+      if line<>'' then
+        s.Strings[i]:=dgettext(TextDomain,line);
+    end;
+    sl.Text:=s.Text;
+  finally
+    FreeAndNil (s);
+  end;
+end;
+
+function TGnuGettextInstance.GetTranslatorNameAndEmail: widestring;
+begin
+  Result:=GetTranslationProperty('LAST-TRANSLATOR');
+end;
+
+function TGnuGettextInstance.GetTranslationProperty(
+  Propertyname: string): WideString;
+var
+  sl:TStringList;
+  i:integer;
+  s:string;
+begin
+  Propertyname:=uppercase(Propertyname)+': ';
+  sl:=TStringList.Create;
+  try
+    sl.Text:=utf8encode(gettext(''));
+    for i:=0 to sl.Count-1 do begin
+      s:=sl.Strings[i];
+      if uppercase(copy(s,1,length(Propertyname)))=Propertyname then begin
+        Result:=utf8decode(trim(copy(s,length(PropertyName)+1,maxint)));
+        exit;
+      end;
+    end;
+  finally
+    FreeAndNil (sl);
+  end;
+  Result:='';
+end;
+
+function TGnuGettextInstance.dngettext(const szDomain,singular, plural: widestring;
+  Number: Integer): widestring;
+var
+  org,trans:widestring;
+  idx:integer;
+  p:integer;
+begin
+  org:=singular+#0+plural;
+  trans:=dgettext(szDomain,org);
+  if org=trans then
+    idx:=GetPluralForm2EN(Number)
+  else
+    idx:=curGetPluralForm(Number);
+  while true do begin
+    p:=pos(#0,trans);
+    if p=0 then begin
+      Result:=trans;
+      exit;
+    end;
+    if idx=0 then begin
+      Result:=copy(trans,1,p-1);
+      exit;
+    end;
+    delete (trans,1,p);
+    dec (idx);
+  end;
+end;
+
+function TGnuGettextInstance.ngettext(const singular, plural: widestring;
+  Number: Integer): widestring;
+begin
+  Result := dngettext(curmsgdomain, singular, plural, Number);
 end;
 
 { TClassMode }
@@ -1503,10 +1739,11 @@ end;
 constructor TAssemblyAnalyzer.Create;
 begin
   filelist:=TStringList.Create;
-  filelist.Duplicates:=dupError;
   {$ifdef LINUX}
+  filelist.Duplicates:=dupError;
   filelist.CaseSensitive:=True;
   {$endif}
+  filelist.Duplicates:=dupError;
   filelist.CaseSensitive:=False;
   filelist.Sorted:=True;
 end;
@@ -1577,18 +1814,19 @@ end;
 procedure TTP_Retranslator.Execute;
 var
   i:integer;
+  sl:TStrings;
   item:TTP_RetranslatorItem;
   newvalue:WideString;
   ppi:PPropInfo;
 begin
   for i:=0 to list.Count-1 do begin
     item:=TObject(list.items[i]) as TTP_RetranslatorItem;
-    newValue:=instance.dgettext(textdomain,item.OldValue);
     if item.obj is TStrings then begin
-      if uppercase(item.Propname)='TEXT' then begin
-        (item.obj as TStrings).Text:=newValue;
-      end;
+      sl:=item.obj as TStrings;
+      sl.Text:=item.OldValue;
+      Instance.TranslateStrings(sl,textdomain);
     end else begin
+      newValue:=instance.dgettext(textdomain,item.OldValue);
       ppi:=GetPropInfo(item.obj, item.Propname);
       if ppi=nil then
         raise Exception.Create ('Property disappeared...');
@@ -1607,6 +1845,14 @@ begin
   item.Propname:=Propname;
   item.OldValue:=OldValue;
   list.Add(item);
+end;
+
+{ TGnuGettextComponentMarker }
+
+destructor TGnuGettextComponentMarker.Destroy;
+begin
+  FreeAndNil (Retranslator);
+  inherited;
 end;
 
 initialization
