@@ -1,0 +1,33 @@
+<KishoorConfiguration>
+<type>cable</type>
+
+	<isp>
+		<name>012</name>
+		<dhcpdns>192.168.101.101</dhcpdns>
+		<dns1>212.117.129.3</dns1>
+		<dns2>212.117.128.6</dns2>
+		<pptp_server>aztv.012.net.il</pptp_server>
+<!--name reso later		<pptp_server>aztv.012.net.il</pptp_server> -->
+
+		
+	</isp>
+
+	<preactions>
+		<addstatic_route>pptp_server</addstatic_route>
+	</preactions>
+		
+	<connection>
+		<pppd>
+			<dev>pty</dev>
+			<pptp_location>/usr/sbin/pptp</pptp_location>
+			<pptp_args>--nolaunchpppd</pptp_args>
+			<pppd_args>lock noauth nobsdcomp nodeflate lcp-echo-failure 10 lcp-echo-interval 20 noipdefault hide-password usepeerdns persist holdoff 150 maxfail 0</pppd_args>
+		</pppd>
+	</connection>
+	
+	<postactions>
+			<route_del>default</route_del>
+			<route_add1>default dev eth0 metric 1</route_add1> <!-- do not forget to generlize interface names -->
+			<route_add2>default dev ppp0 metric 0</route_add2>
+	</postactions>
+</KishoorConfiguration>

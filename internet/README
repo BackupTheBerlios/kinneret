@@ -1,0 +1,94 @@
+Internet Tool v0.1
+==================
+The internet tool is designed to make life easier on new users to establish
+a connection to the internet. The tool relies on a database that should
+eventually hold all the Israeli ISPs (Internet Service Providers) and Modems.
+
+You can checkup on the latests database at the development page of the tool at:
+http://iwiz.linux-kinneret.org
+
+As for version 0.1.1, the tool supports only broadband connections (ADSL and Cable).
+I will add support for ISDN and Dial-up modems in the near future (next version should
+already support these).
+
+If you want to know more, you can read help/wizard.kwd(or pdf) and type ./internet --help
+If you still can't find what you're looking for, mail me.
+
+Getting it to work
+------------------
+The tool is being written as part of the Kinneret (http://www.linux-kinneret.org) project,
+questions can be asked in the development forum.
+
+In order to get the tool to work properly, you will have to make sure it can find it's database.
+The tool has it's own configuration file, placed at /etc/internet.conf.
+In this file you can set the database's directory.
+NOTE: Write the path to the database including the trailing slash (/).
+      The path that is written should be the path to deps.xml,
+      not to the sub-directory db/.
+
+Simply extract db/ from the tarball to the directory you have selected.
+You can download the latest database from the development page.
+
+After placing the database, all you have to do is extracting the executable (or compile it,
+if you have downloaded the source code) and run it.
+
+If you are compiling from source, you will have to download and install libxml2.
+The tool expects to find libxml2's headers under /usr/include/libxml2/libxml/.
+
+Stuff you need to know BEFORE running to tool
+---------------------------------------------
+* You should run the tool as a user that has both read and write permissions
+  to the database directory and all of it's sub-directories (root will be a good idea).
+
+* If you want to re-use the core code, you'll find the script internet/mklib.sh. after building the tool,
+  run it, and you'll have libinternet.a file you can use in your app (notify me if you do so, please).
+
+* The API is pretty simple, but not well-documented yet, mail me if you can't understand something.
+
+* The wizard mode has been temporally disabled, it will be available again on the next version.
+
+* When running in non-wizard mode, you MUST supply ALL of these arguments:
+  --debian
+  --isp
+  --method
+  --dialer
+  --modem
+  --dev
+  --username
+  --passwd
+  --name
+  Or else the tool won't have enough data to assemble the scripts.
+  If the modem you have selected have a dual interface (USB and Ethernet), you must supply
+  also the --iface flag.
+
+* It is recommended to use the -v (verbose) flag, to see what's going on and to know why to tool broke down
+  (send me the output when you report a bug/crash).
+
+* Open the tarball that has been created under <DB path>/connections/
+  (you can use the --extract option to do that on a specific script) and examine the
+  scripts before running them (using the tool or in any other way),
+  remember, the tool is still under development and might create extremely buggy scripts.
+
+* DO NOT run internet --init/boot/connect/disconnect BEFORE backing up things and making sure
+  you can fix what the script is about to do! Results of running
+  'internet --init/boot/connect/disconnect' are at your responsibility only!
+
+* If the usage of the scripts broke your system, please send the faulty tarball (can be found
+  under <DB path>/connection/<connection name>.tar.gz) to me so it would be easier
+  for me to fix the bug.
+
+One last thing
+--------------
+THE DATABASE IS VERY VERY VERY V-E-R-Y EMPTY!
+If you can spear a moment, read help/wizard.kwd and submit something... Thanks.
+
+NOTE: If the tool cannot resolve the correct dialer, or cannot resolve a dialer at all,
+      have a look at <DB path>/deps.xml. Add the correct entry there, run the tool,
+      and if it works, submit the entry to me. Thanks.
+
+Oh, yeah,
+---------
+This is GPL (or the fact the the file COPYING already hold the GPL is enough?)
+
+Cheers,
+Itay 'z9u2K' Duvdevani, z9u2k@linux-kinneret.org (<== address for questions, requests, bugs, submittions and girls phone-numbers)

@@ -1,0 +1,17 @@
+<KishoorConfiguration>
+<type>adsl</type>
+
+	<isp>
+		<name>actcom</name>
+	</isp>
+		
+	<connection>
+		<pppd>
+			<dev>pty</dev>
+			<pptp_location>/usr/sbin/pppoe</pptp_location>
+			<pptp_args>nada</pptp_args><!-- keeping empty intentionly -->
+			<pppd_args>-p /var/run/pppoe.conf-adsl.pid.pppoe -I eth0 -T 80 -U  -m 1412 noipdefault noauth default-asyncmap defaultroute hide-password nodetach usepeerdns mtu 1492 mru 1492 noaccomp noccp nobsdcomp nodeflate nopcomp novj novjccomp lcp-echo-interval 20 lcp-echo-failure 3</pppd_args>
+		</pppd>
+	</connection>
+	
+</KishoorConfiguration>
