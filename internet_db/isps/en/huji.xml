@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<isp>
+	<name>Hebrew University of Jerusalem</name>
+	<cname>huji</cname>
+
+	<dns1>128.139.6.1</dns1>
+	<dns2>128.139.4.3</dns2>
+
+	<support>
+		<homepage>http://www.huji.ac.il</homepage>
+		<tech>5883450</tech>
+<!--		<join></join>	-->
+	</support>
+
+	<email>
+<!--		<pop3>pop.actcom.net.il</pop3>	-->
+<!--		<smtp>mail.actcom.net.il</smtp>	-->
+<!--		<suffix>huji.ac.il</suffix>		-->
+	</email>
+
+	<proxy>
+		<manual>proxy.huji.ac.il:8080</manual>
+		<auto>http://pac.huji.ac.il/proxy.pac</auto>
+	</proxy>
+
+	<broadband>
+		<gateway>
+			<cable>
+				<remotename>vpn.huji.ac.il</remotename>
+			</cable>
+		</gateway>
+		<usrsuffix type="adsl">huji</usrsuffix>
+		<usrsuffix type="cable">huji</usrsuffix>
+	</broadband>
+
+	<isdn>
+		<server loc="Jerusalem">02-6210333</server>
+		<server loc="Anywhere">1346680</server>
+		<server loc="Rehovot">08-9482000</server>
+	</isdn>
+
+	<dialup>
+		<server loc="Jerusalem">02-6210333</server>
+		<server loc="Anywhere">1346680</server>
+		<server loc="Rehovot">08-9482000</server>
+	</dialup>
+</isp>
