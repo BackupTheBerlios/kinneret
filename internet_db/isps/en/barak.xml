@@ -24,7 +24,7 @@
 	<broadband>
 		<gateway>
 			<cable>
-				<remotename>matav.barak.net.il</remotename>
+				<remotename>pns.barak.net.il</remotename>
 			</cable>
 		</gateway>
 		<usrsuffix type="adsl">@IBarak</usrsuffix>

@@ -5,6 +5,8 @@
 * fixed pptp server for Barak
 * fixed pptp served for 012 and added 012-aztv as they use a different server
 (temporary work around)
+* added sl28xx - has eth/usb but currently reported to work only with eth -
+left usb for further tests
 
 16-Jan-2004
 ===========

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<hw>
+	<name>Joohong SuperLink 2800 Cable Modem</name>
+
+	<hardware>
+		<type>cable</type>
+		<interface>usb||ethernet</interface>
+	</hardware>
+
+	<module>CDCEther</module>
+</hw>

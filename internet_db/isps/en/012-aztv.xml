@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <isp>
-	<name>012.net</name>
+	<name>012.net - aztv</name>
 	<cname>012</cname>
 	<dns1>212.117.129.3</dns1>
 	<dns2>212.117.128.6</dns2>
@@ -24,7 +24,7 @@
 	<broadband>
 		<gateway>
 			<cable>
-				<remotename>cablepns.012.net.il</remotename>
+				<remotename>aztv.012.net.il</remotename>
 			</cable>
 		</gateway>
 	</broadband>
