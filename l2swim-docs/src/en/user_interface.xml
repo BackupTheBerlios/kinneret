@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<english>
+<title>
+Where's my...?
+</title>
+
+<copy>
+Written by Dovix (C) 2003 by <link href="http://www.linux-kinneret.org">GNU/Linux Kinneret</link>
+<newl/>
+This document is lightly based on the respective chapter in the Mandrake Linux 9.1 Starter Guide
+<newl/>
+Copyright (C) 1999, 2000, 2001, 2002, 2003 by <link href="http://www.mandrakesoft.com">Mandrake Soft S.A. and MandakeSoft Inc.</link>
+<newl/>
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.2 or any later version published by the Free Software Foundation.
+</copy>
+
+<subtitle>
+Where's my...?
+</subtitle>
+<para>
+Experienced Windows users are normally accustomed to certain functions and/or concepts that are obviously treated differently in GNU/Linux. This short guide will familiarize you with some important differences in order to ease your migration to GNU/Linux.
+</para>
+<para>
+This guide will also familiarize you with the default GNU/Linux Kinneret desktop features. We opted for a simple and intuitive look, that will get you up and running quickly. We do not aim to cover all of the superior capabilities of the KDE graphical environment - we will leave these for later.
+</para>
+<image><file>"../image/ui_desktop.png"</file></image>
+<subtitle>
+Start Menu
+</subtitle>
+<para>
+This concept remains more or less the same, except it's now called the K menu (unlike what you might think, it is not an abbreviation of 'Kinneret' but of 'KDE' that is the graphic environment we are using for GNU/Linux Kinneret). To cater to different tastes, we configured two such menu icons, one at the bottom right and one at the bottom left sides of the screen. The two menus contain exactly the same entries and you are welcome to use whichever one that is more convenient to you.
+</para>
+<image><file>"../image/ui_leftmenu.png"</file></image>
+<image><file>"../image/ui_rightmenu.png"</file></image>
+
+<subtitle>
+Applications
+</subtitle>
+<para>
+The wide variety of free applications is one large differentiator between GNU/Linux and Windows. GNU/Linux Kinneret comes with many more applications pre-installed onto your system, and clicking on the main menu will give you a wide range of choices depending on what you would like to do. There are many full-fledged applications available to accomplish almost eny task you would wish for. There are of course many more applications available, but we had to limit ourselves to the space available on one CD (that is by the way compressed, to allow as much as three times the storage capacity of a regular CD).
+</para>
+<para>
+Since GNU/Linux Kinneret runs from a CD, you will not be able to install additional apps at this stage. However, we believe that once you become familiar and comfortable with the system you will opt to install it on your hard this, and then the sky is the limit...
+</para>
+<para>
+To make your navigation easy, we included a special "What to do?" button and menu that will allow you to access common tasks very quickly.
+</para>
+<image><file>"../image/ui_whattodo.png"</file></image>
+
+<subtitle>
+Taskbar
+</subtitle>
+<para>
+The taskbar is now caller 'kicker', but it should be familiar to you, with the usual assortment of quick launch icons, minimized applications, clock and various indicators.
+</para>
+<image><file>"../image/ui_kicker.png"</file></image>
+<para>
+The icons from the right to left, allow you to access the menu, to minimize all windows and reveal the desktop, browse your home directory, surf the internet and quickly access applications to perform common tasks.
+</para>
+<para>
+You will note arrows on the right-most and left-most sides of kicker. These allow you to hide the kicker to gain more desktop space. Once hidden, just click the arror again to expand kicker to it's original size.
+</para>
+<para>
+If you are not sure what a specific icon does, just move the cursor over it and shortly a tooltip will show that will explain the function of that icon.
+</para>
+<image><file>"../image/ui_tooltip.png"</file></image>
+
+<subtitle>
+Control Panel
+</subtitle>
+<para>
+This is called the KDE Control Center and it can be accessed from the main menu. Through this interface, you will have the ability to modify most of your system's settings with graphical tools. We also provided several easy to use wizards to assist you with common configuration tasks. You can access these wizards from the same menu or by the icons on your default desktop.
+</para>
+
+<subtitle>
+DOS Shell
+</subtitle>
+<para>
+GNU/Linux is still very fond of its shell environments. Unlike Windows or MacOS, the popularity of the shell is not fading away. Much of this is attributed by the power of the Linux shell, compared with other operating systems. By default, GNU/Linux Kinneret installs bash, a truly powerful shell environment. However, don't worry! we equipped your system with so many graphical applications that you will not have to use the shell. As you become more familiar with the system and want to learn more, you will find a link to the shell in the main menu.
+</para>
+
+<subtitle>
+C: Drive
+</subtitle>
+<para>
+This may be the least intuitive concept to grasp so far. But do not worry - we prepared a separate guide that will take you step by step through the Linux file system concepts. So if you feel a bit lost here, just ignore this chapter for now and we will cover it later.
+</para>
+<para>
+Directory entries in GNU/Linux are structured in a tree. The root of the tree is called the / directory. Other directories are located under the root, with subsequent levels separated by a slash. For example the files of this guide are located under /opt/kinneret/l2swim/doc/.
+</para>
+<para> 
+The “lettered drive” is a concept exclusive to Windows. On UNIX systems, the drive notion (C:, D:, ..., Z:) is replaced by “mount points”.  Your system will use configuration files to instruct the filesystem how to “load” all relevant disks, disk partitions and remote systems, and then assign them to a specified directory, generally under the /mnt/ directory. In time, you will find how much this approach is more flexible and useful than the one used by Windows.
+</para>
+<para>
+From a user perspective, you are always accessing directories, with different partitions simply mapped to a directory on your directory tree. These settings are what allow GNU/Linux to be able to read any other filesystem you have configured, even a Windows directory. You will find your Windows drives under the /mnt directory. 
+</para>
+<para>
+We should make an important note here. Unlike Windows, Linux is case-sensitive. That means that /opt is not the same as /Opt. Since you will use graphical tools in GNU/Linux Kinneret, you should not worry about this peculiarity.
+</para>
+
+<subtitle>
+CD-ROM Drive
+</subtitle>
+<para>
+The same concept as for C: applies here. CD-ROMs are “mounted” in /mnt/cdrom/. To access it, just click on the desktop icon.
+</para>
+
+<subtitle>
+Floppy Disk Drive
+</subtitle>
+<para>
+Like CD-ROMs and disk partitions, floppy disks are mounted and will appear on /mnt/floppy/. This feature directly supports reading Windows diskettes.
+</para>
+
+<subtitle>
+My Documents
+</subtitle>
+<para>
+When you first booted the GNU/Linux Kinneret CD, you had the option to perform some initial configurations. If you did so, you had a chance to create a directory for personal files. The default one that was created for you (unless you changed the proposed value) is located at /kinneret/documents
+</para>
+
+<subtitle>
+What next?
+</subtitle>
+<para>
+Now that you are aquainted with some of the new concepts, you are welcome to move on to the "step by step" guide that will show you how to accomplish some common tasks very easily. Even after you exit the swimming guide, you can come back here by double-clicking the "learn to swim" icon on the desktop. Happy swimming!
+</para>
+<image><file>"../image/ui_l2swim.png"</file></image>
+
+<copy>
+This document was written by free software only. The document was written as an XML file using the text editor Katoob and was converted into HTML using the xsltproc processor using a stylesheet created with Katoob. The screenshots were taken with KSnapshot and edited with The Gimp. all on a GNU/Linux operating system.
+</copy>
+
+<para>
+Linux is a registered trademark of Linus Torvalds; UNIX is a registered trademark of The Open Group in the United States and other countries. Windows is a registered trademarks of Microsoft Corporation. All other trademarks and copyrights are the property of their respective owners. 
+</para>
+
+</english>
