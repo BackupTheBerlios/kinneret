@@ -61,7 +61,7 @@ then
 		NTFSOK=0
 	fi
 
-	if [ $NTFSOK ]
+	if [ $NTFSOK -ne 0 ]
 	then
 		for dir in `cat /etc/fstab | grep ntfs | cut -b 6-9`
 		do
@@ -89,10 +89,10 @@ do
 done
 
 # mount all ReiserFS directories RW
-#for dir in `cat /etc/fstab | grep reiserfs | cut -b 6-9`
-#do
-#	mount -t reiserfs -o defaults,rw,user /dev/$dir /mnt/$dir 2>&1
-#done
+for dir in `cat /etc/fstab | grep reiserfs | cut -b 6-9`
+do
+	mount -t reiserfs -o defaults,rw,user /dev/$dir /mnt/$dir 2>&1
+done
 
 # Scan directories
 for dir in `cat /etc/fstab | grep vfat | cut -b 6-9`
@@ -111,6 +111,10 @@ then
 fi
 
 echo "${BLUE}Linking partitions...${NORMAL}"
+# create partitions, if it's not already there
+mkdir -p /home/knoppix/partitions
+
+# make sure it's empty
 rm -fr /home/knoppix/partitions/*
 
 letter="103"	# C in octal
@@ -120,7 +124,7 @@ do
 	echo -e "${BLUE}Linking /mnt/${mntpt} to \\${letter}...${NORMAL}"
 	slash=\\
 	to=`echo -e "${slash}${letter}"`
-	ln -s /mnt/$mntpt/ "/home/knoppix/partitions/пїЅпїЅ${to}"
+	ln -s /mnt/$mntpt/ "/home/knoppix/partitions/лерп ${to}"
 
 	let letter++
 done
