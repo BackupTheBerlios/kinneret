@@ -7,7 +7,8 @@ libcore_la_LIBADD = \
 	core/utils/Config.lo \
 	core/xml/xml.lo \
 	core/xml/CoreErrorHandler.lo \
-	core/utils/utils.lo
+	core/utils/utils.lo \
+	core/utils/xts.lo
 libcore_la_LDFLAGS = -static
 libcore_la_INCLUDES = -I$(top_srcdir)/src
 
