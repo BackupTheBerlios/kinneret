@@ -44,7 +44,7 @@ msgstr "حجم"
 msgid "Free (% In Use)"
 msgstr "حر ( % مستعمل )"
 
-#: configwizard.ui.h:139 configwizard.ui.h:255 configwizard.ui.h:440
+#: configwizard.ui.h:139 configwizard.ui.h:255 configwizard.ui.h:443
 msgid "Cannot get information about disk usage!"
 msgstr "فشل في ألحصول على ألمعطيات عن كمية ألقرص ألمستعمله"
 
@@ -68,7 +68,7 @@ msgstr ""
 "ألنظام ﻻ يحوي وﻻ نوع من تقاسيم شبابيك  \n"
 "ألساحر ينهي ألمهمه أﻵن."
 
-#: configwizard.ui.h:264 configwizard.ui.h:449
+#: configwizard.ui.h:264 configwizard.ui.h:452
 msgid "Cannot get device status"
 msgstr "فشل في ألعثور على معطيات أﻵله"
 
@@ -88,16 +88,20 @@ msgstr ""
 "إنك ﻻ تملك مساحه  فارغه في إي من أﻷقراص ألصلبه \n"
 "تحتاج على أﻷقل 660 MB مساحه على ألقرص."
 
-#: configwizard.ui.h:388 configwizard.ui.h:397 configwizard.ui.h:592
-#: configwizard.ui.h:601 configwizard.ui.h:635
+#: configwizard.ui.h:386
+msgid "Would you like to import fonts from your Windows partition?"
+msgstr ""
+
+#: configwizard.ui.h:391 configwizard.ui.h:400 configwizard.ui.h:595
+#: configwizard.ui.h:604 configwizard.ui.h:638
 msgid "Cannot search for TTF fonts!"
 msgstr "فشل في ألتفتيش عن أحرف TTF !"
 
-#: configwizard.ui.h:392 configwizard.ui.h:596
+#: configwizard.ui.h:395 configwizard.ui.h:599
 msgid "Path"
 msgstr "مسار"
 
-#: configwizard.ui.h:487
+#: configwizard.ui.h:490
 msgid ""
 "You do not have enough free space on the selected partition,\n"
 "Please go back and select another."
@@ -105,11 +109,11 @@ msgstr ""
 "إنك ﻻ تملك مساحه فارغه في ألمسار ألمختار,\n"
 "ألرجاء ألرجوع للخلف وإختيار مسار آخر."
 
-#: configwizard.ui.h:506
+#: configwizard.ui.h:509
 msgid "Swap file too big, swap size reduced to %1"
 msgstr "ملف ذاكرة أل SWAP كبير جدا, ملف أل SWAP صغر إلى %1"
 
-#: configwizard.ui.h:514
+#: configwizard.ui.h:517
 msgid ""
 "You have not selected a partition,\n"
 "please go back and select one."
@@ -117,11 +121,11 @@ msgstr ""
 "لم تختار ألتقسيم بعد,\n"
 "ألرجاء ألرجوع إلى ألخلف وإختيار تقسيم."
 
-#: configwizard.ui.h:537
+#: configwizard.ui.h:540
 msgid "Name"
 msgstr "ألإسم"
 
-#: configwizard.ui.h:546
+#: configwizard.ui.h:549
 msgid ""
 "You have not selected a home directory.\n"
 "In this case, the wizard set it to the root of your selected partition.\n"
@@ -132,19 +136,19 @@ msgstr ""
 "ألمختار.\n"
 "لتغيير ذلك , ألرجاء ألرجوع إلى ألخلف. "
 
-#: configwizard.ui.h:663
+#: configwizard.ui.h:666
 msgid "Cannot create directory!"
 msgstr "فشل في إنشاء مجلد !"
 
-#: configwizard.ui.h:687
+#: configwizard.ui.h:690
 msgid "Choose a directory the containes *.ttf files"
 msgstr "إختار ألمجلد ألذي يحوي ملفات ttf ."
 
-#: configwizard.ui.h:701
+#: configwizard.ui.h:704
 msgid "Are you sure you want to remove the directory\n"
 msgstr "هل أنت متأكد بأنك تريد حذف ألمجلد \n"
 
-#: configwizard.ui.h:702
+#: configwizard.ui.h:705
 msgid ""
 "\n"
 "From the list?"
@@ -152,11 +156,11 @@ msgstr ""
 "\n"
 "من ألقائمه ؟"
 
-#: configwizard.ui.h:704
+#: configwizard.ui.h:707
 msgid "Are you sure?"
 msgstr "هل أنت متأكد ؟"
 
-#: configwizard.ui.h:761 configwizard.ui.h:784 configwizard.ui.h:838
+#: configwizard.ui.h:764 configwizard.ui.h:787 configwizard.ui.h:841
 #: main.cpp:64
 msgid "Current font size: %1"
 msgstr "ألحجم ألحالي للحرف : %1"
@@ -165,27 +169,27 @@ msgstr "ألحجم ألحالي للحرف : %1"
 msgid "Configuration Wizard"
 msgstr "ساحر ألتعديل"
 
-#: main.cpp:70 configwizard.cpp:1310
+#: main.cpp:70
 msgid "Partition"
 msgstr "تقسيم"
 
-#: main.cpp:71 configwizard.cpp:1315
+#: main.cpp:71
 msgid "Swap File"
 msgstr "ملف SWAP"
 
-#: main.cpp:72 configwizard.cpp:1320
+#: main.cpp:72
 msgid "Home Directory"
 msgstr "مجلد ألبيت"
 
-#: main.cpp:73 configwizard.cpp:1325
+#: main.cpp:73
 msgid "TrueType Fonts Import"
 msgstr "إستيراد True Type Fonts"
 
-#: main.cpp:74 configwizard.cpp:1328
+#: main.cpp:74
 msgid "Conclusion"
 msgstr "ألخلاصه"
 
-#: main.cpp:119 confwiz.moc.cpp:34 confwiz.moc.cpp:42
+#: main.cpp:119
 msgid "Confwiz"
 msgstr "Confwiz"
 
@@ -249,437 +253,6 @@ msgstr "ينهي... [13/13]"
 msgid "Working... [N/A]"
 msgstr "مشغول...[غير معرف]"
 
-#: help.cpp:134
-msgid ""
-"<B><U>Configuration Wizard - Help</U></B><BR/> \n"
-"<BR/> \n"
-"<U>Configuration types</U><BR/> \n"
-"<BR/> \n"
-"<I>Automatic</I> - Selects the partitions with the largest free space, sets "
-"your home directory to it's root, imports TrueType fonts from an existing "
-"Windows partition and creates a swap file so that at least 300M stays free, "
-"and not larger then 256M. It is highly recommended to select this option.<BR/"
-"> \n"
-"<BR/> \n"
-"<I>No Configuration</I> - No configuration is made at all, not home "
-"directory is created, and no swap file or TrueType index is made.<BR/> \n"
-"<BR/> \n"
-"<I>Expert Mode</I> - Allows manual configuration of the working partition, "
-"the home directory, the swap file and the TrueType fonts index. This option "
-"is recommended for the use of Linux / Computers experts only.<BR/> \n"
-"<BR/> \n"
-"<U>Partition mapping under Linux</U><BR/> \n"
-"In Linux, the partition mapping and naming method is different then the "
-"method known to Windows users (C, D etc).<BR/> \n"
-"In Linux, the naming is made by the physical structure and layout of the "
-"partitions. Each hard-drive gets the prefix hd, to indicate it is a hard-"
-"drive.<BR/> \n"
-"Afterward, each physical drive gets a letter, a, b, c, or d, by their order, "
-"e.g., the first drive on the first IDE device (the Primary Master) gets the "
-"suffix a. the Secondary Master gets the letter b. the Primary Slave and the "
-"Secondary Slave gets the letters c and d respectively.<BR/> \n"
-"The string ends with a digit, representing the number of partition (starting "
-"from 1). Therefore, hda1 will be the first partition on the first hard-drive "
-"connected to the Primary IDE device. hda2 will be the second partition on "
-"the hard-drive. hdb4 will be the fourth partition on the Secondary Master "
-"etc.<BR/> \n"
-"<BR/> \n"
-"<U>How do I translate Linux mapping (hda1, hdc10 etc) to Windows mapping (C, "
-"D etc)?</U><BR/> \n"
-"There is not way of doing it directly because Windows maps drives without "
-"relation to their physical order.<BR/> \n"
-"In most Windows systems, incremental numbering of Windows style partitons "
-"will match the incremental numbering of Linux partitions, meaning, hda1 will "
-"be drive C, drive D will be either hda2 or hdb1 (depending on the number of "
-"partitions on hda)<BR/> \n"
-"<BR/> \n"
-"Please note that this method will not work on all system, since Windows "
-"allows the user to manually change letters of drives, and sometimes put the "
-"CD-ROM(s) in the middle of the hard-drives and not at the end (so C and D "
-"might be hard-drives, E will be a CD-ROM and F will be another hard-drive). "
-"The method above should work for most system, but that is NOT guaranteed."
-msgstr ""
-"<B><U>ساحر ألتعديل - مساعده </U></B><BR/>\n"
-"<BR/>\n"
-"<U>نوع ألتعديل </U><BR/>\n"
-"<l>أوتوماتيكي </l> - يختار ألتفسيم أﻷكبر حجما , يجعل جذر ألتقسيم مجلد بيتك "
-"يستورد خطوط TTF من نظام شبابيك موجود , إنشاء ملف داكرة بدل حيث يبقى 300 "
-"ميغا حر وليس أكثر من 256 ميغا, مفضل جدا إختيار هذا ألإمكانيه. "
-"<BR/> \n<BR/>\n"
-"<l>عدم ألتعديل</l>ﻻ تجرى ألتعديلات بالمره, ﻻ يصدر مجلد ألبيت ,ﻻ ملف ذاكرة بدل "
-"وﻻتستورد ألخطوط. "
-" <BR/>\n"
-"<l>أسلوب ألخبراء</l> - يسمح تعديل يدوي للتقسيم ألحالي, مجلد ألبيت, ملف ذاكرة "
-"ألبدل وإستيراد ألخطوط. هذه ألإمكانيه مفضله لمستخدمي لينوكس / خبراء ألحاسوب "
-"فقط. "
-" <BR/>\n"
-"<U>تخطيط ألتقسيم في لينوكس </U><BR/>\n"
-"في أنظمة لينوكس , تخطيط ألتقاسيم وتسميتها يختلف عن ألمعروف لمستخدمي شبابيك "
-"(C,D ألخ...) "
-"<BR/>\n"
-"في لينوكس تجري ألتسميه حسب ألمبنى ألفيزيائي وتصميم ألتقسيم. كل قرص صلب "
-"يبدأ إسمه ب- hd للإشاره أنه قرص صلب. "
-" <BR/>\n"
-"بعد ألبادئه hd يحصل كل قرص على حرف , a,b,c or d حسب موقع ألقرص ألفيزيائي. "
-"مثال: ألقرص أﻷول على أل IDE أﻷول يسمى hda , ألقرص ألثاني على أل IDE أﻷول "
-"يسمى hdb الخ ... "
-" <BR/>\n"
-"ينتهي ألإسم برقم ألذي يشير إلى رقم ألتقسيم , إبتداء من 1 , لذلك hda1 هو "
-"ألتقسيم أﻷول في ألقرص أﻷول. "
-"<BR/>\n"
-"<BR/>\n"
-"<U>كيف أستطيع أن أترجم أﻷسماء من نظام لينوكس إلى أسماء في نظام شبابيك؟ </U> "
-"<BR/>\n"
-"ﻻ توجد طريقه لترجمة أسماء أﻷقراص ﻷن أنظمة شبابيك تخطط أﻷقراص بدون صله لترتيب "
-"أﻷقراص . "
-"<BR/>\n"
-"في معظم أنظمة شبابيك ألتسميه ألتصاعديه للتقاسيم تلائم ألتسميه ألتصاعديه في "
-"أنظمة لينوكس, بكلمات أخرى, hda1 في لينوكس هو C في شبابيك, D في شبابيك هو "
-"hda2 أو hdb1 في لينوكس ( يتعلق بعدد ألتقاسيم في hda  -  ألقرص أﻷول). "
-"<BR/>\n"
-"<BR/>\n"
-"ألرجاء ألملاحظه أن هذه ألطريقه ليست صحيحه دائما لأن أنظمة شبابيك تمكن "
-"ألمستخدم من تغيير أسم ألتقسيم حيث يصبح أحيانا ألقرص ألمكثف (CDROM) في ألوسط "
-"وليس في ألآخر. ألطريقه أعلاه صحيحه في معظم ألأنظمه, لكنها ليست مضمونه."
-
-#: help.cpp:155
-msgid "Return"
-msgstr "رجوع"
-
-#: pleasewait.cpp:110
-msgid "Configuring..."
-msgstr "تعديل..."
-
-#: pleasewait.cpp:111
-msgid "Please wait, configuring..."
-msgstr "إنتظر من فضلك, تعديل..."
-
-#: pleasewait.cpp:112
-msgid "Creating Directory... [1/13]"
-msgstr "يتم إنشاء مجلد...[1/13]"
-
-#: configwizard.cpp:1285
-msgid "Welcome to Kinneret!"
-msgstr "أهلا وسهلا في كينيرت!"
-
-#: configwizard.cpp:1286
-msgid ""
-"<I>GNU/Linux Kinneret</I> is a CD based (LiveCD) Operating System (OS) and a "
-"large collection of applications. The system does not require any "
-"complicated configuration, or installation, and features an automatic "
-"hardware detection, friendly configuration wizards, a large collection of "
-"quality applications and a full built-in Hebrew support (and other languages "
-"soon).<BR/><BR/>Among the application you will find: Office Suits (Word "
-"processors, Spread sheets, Presentation editor etc.), Internet applications "
-"(Web-browsers, E-mail clients, Instant messengers, Chat clients etc.), "
-"Multimedia applications (Audio players, Video players, Image manipulators "
-"and editors etc.) and a collection of fun games.<BR/><I>GNU/Linux Kinneret</"
-"I> is aimed in the first place to the students in the Israeli educational "
-"system. Therefore, it includes a large collection of educational programs, "
-"learning aids and development environments the are required throughout the "
-"year.<BR/><BR/>The project will allow equality in the technological "
-"education of all low-socioeconomy status students by offering a high-quality "
-"free (of charge, too) alternative to the proprietary software that are used "
-"by the student throughout the learning process. The project also aims at "
-"promoting the Free-Software and Open-Source movements in Israel.<BR/><BR/>If "
-"you would like to contribute to the project, or get help and more "
-"information, we invite you to out project website, located at: http://www."
-"linux-kinneret.org. We'd be glad to get any kind of help (including help "
-"that does not involve programming, such as translating, documentation "
-"writing and quality assurance).<BR/><BR/>NOTICE! This version is a "
-"development version and still experimental. We reccomend unexperienced users "
-"to wait to the official and full version. Information about the release of "
-"our official version will be published at the project's site."
-msgstr ""
-"<l>جنو/ لينوكس كينيرت </I>"
-" هو نظام تشغيل على قرص مكثف وألذي يحوي مجموعه من "
-"ألبرامج. ألنظام ﻻ يتطلب أي تعديلات معقده أو تنصيب , ومزود بجهاز أوتوماتيكي "
-"لإيجاد ألمركبات , ساحر تعديل, مجموعه واسعه من ألبرامج ذو جوده عاليه ودعم "
-"كامل بأللغه ألعبريه ( ولغات أخرى في ألمستقبل ) . "
-"<BR/><BR/>"
-"في مجموعة ألبرامج سوف تجد : ألمجموعه ألمكتبيه ( محررات نصوص, محررات عروض "
-"وألكثير غيرهم ) . برامج للإنترنت (متصفح, برامج للمراسلات وغيرها ), برامج "
-"للصوت وألصوره (عازف أغاني, عازف أفلام محرر للصور وألكثير أخرى ) ومجموعه من "
-"أﻷلعاب ألمسليه. "
-"<BR/>"
-"<l> جنو/ لينوكس كينيرت <l> صمم في أﻷساس لطلاب ألمدارس في نطاق ألنظام ألتربوي "
-"في إسرائيل. لذلك فهو يحوي عدد كبير من ألبرامج ألثقافيه ,ألمساعدات ألتعليميه  "
-"وبيئات ألتطوير ألمطلوبه من ألطالب خلال ألسنه ألدراسيه. "
-"<BR/><BR/>"
-"إذا كنت تريد ألإنضمام إلى ألمشروع أو تحتاج أي مساعده ومزيد من ألمعلومات "
-"فبإمكانك زيارة موقع ألمشروع http://www.linux-kinneret.org فنحن نقبل بسرور أي "
-"مساعده ( يشمل مساعده ليست في مجال ألبرمجه مثل ألترجمه, توثيق , كتابه "
-"وتأمينات ). "
-" <BR/><BR/>"
-"ملاحظه! هذا ألإصدار هو إصدار تطوير وما زال تجربي. طاقم ألمشروع ينصح "
-"ألمستخدمين أللذين ﻻ يملكون ألخبره ألكافيه في ألإنتظار للإصدار ألرسمي . "
-"معلومات عن ألإصدار ألسمي سوف تنشر في موقع ألمشروع."
-
-#: configwizard.cpp:1287
-msgid "Language"
-msgstr "أللغه"
-
-#: configwizard.cpp:1288
-msgid "Hebrew"
-msgstr "עברית"
-
-#: configwizard.cpp:1289
-msgid "Russian"
-msgstr "русский"
-
-#: configwizard.cpp:1290
-msgid "Arabic"
-msgstr "ألعربيه"
-
-#: configwizard.cpp:1291
-msgid "English"
-msgstr "English"
-
-#: configwizard.cpp:1293
-msgid ""
-"For those of you the default font size is too small/large, we've supplied "
-"two buttons for increasing and decreasing the interface's font size."
-msgstr "للذين بألنسبه لهم ألخط صغير/كبير, قد أضفنا زران لتكبير وتصغير حجم ألخط."
-
-#: configwizard.cpp:1294
-msgid "Increase"
-msgstr "تكبير"
-
-#: configwizard.cpp:1295
-msgid "Decrese"
-msgstr "تصغير"
-
-#: configwizard.cpp:1296
-msgid "Current Font Size: 12"
-msgstr "ألحجم ألحالي للحرف: 12"
-
-#: configwizard.cpp:1297
-msgid "Nice To Meet"
-msgstr "لطفا أن نتقابل"
-
-#: configwizard.cpp:1298
-msgid "Back to Kinneret's License"
-msgstr "ألرجوع إلى رخصة كينيرت"
-
-#: configwizard.cpp:1299
-msgid "I agree to the terms above"
-msgstr "أوافق على ألشروط أعلاه"
-
-#: configwizard.cpp:1300
-msgid "License"
-msgstr "رخصه"
-
-#: configwizard.cpp:1301
-msgid ""
-"<I>GNU/Linux Kinneret</I> allows you to use it without installation or "
-"configuration, in order to experience with the system.<BR/><BR/>In order to "
-"allow your work with <I>GNU/Linux Kinneret</I> to be as productive as "
-"possible, and allowing you to save you documents, preferences and data to "
-"your hard-drive, you'll have to dedicate a few minutes to complete this "
-"wizard.<BR/><BR/>The wizard will be activated each time you'll boot <I>GNU/"
-"Linux Kinneret</I>, until you'll create the necessary files (by choosing "
-"Automatic or Expert configuration). After the files were successfully "
-"created the wizard will stop \"popping-up\" during boot-up.<BR/><BR/>Please "
-"select your preferred configuration options:"
-msgstr ""
-"<I>جنو/لينوكس كينيرت </I> يمكنك من "
-"إستعمال ألنظام بدون أن تنصبه, لكي تستطيع تجربة ألنظام. "
-" <br/><br/> "
-"لكي تستطيع ألشغل مع <I>جنو/ لينوكس كينيرت</I> وتبرز "
-"مهاراتك قدر ألإمكان, وتمكينك من حفظ مستنداتك,ألمفضلات وألمعلومات على ألقرص "
-"ألصلب, كل ما عليك فعله هو تخصيص بضع دقائق لإكمال ألساحر. "
-"<br/><br/> "
-"ألساحر سوف يشتغل في كل مره تشغل <I>جنو/ لينوكس كينيرت</I> , "
-"إلى حد ما تصدر ألملفات ألضروريه (عند إختيار أوتوماتيكي أو تعديل للخبراء ). "
-" بعد أن تصدر ألملفات بنجاح يتوقف ألساحر عن ألظهور عند "
-"ألتشغيل. "
-" <br/><br/> "
-" ألرجاء إختيار إمكانية ألتعديل ألمفضله:"
-
-#: configwizard.cpp:1302
-msgid "Configuration Types"
-msgstr "نوع ألتعديل"
-
-#: configwizard.cpp:1303
-msgid "Automatic (Recommended)"
-msgstr "أوتوماتيكي (مفضل)"
-
-#: configwizard.cpp:1304
-msgid "No Configuration (Not Recommended)"
-msgstr "عدم ألتعديل (غير مفضل)"
-
-#: configwizard.cpp:1305
-msgid "Expert Mode (Only for Linux know-hows)"
-msgstr "أسلوب ألخبراء (فقط للذين يعرفون لينوكس)"
-
-#: configwizard.cpp:1306
-msgid "Configuration Type"
-msgstr "نوع ألتعديل"
-
-#: configwizard.cpp:1307 configwizard.cpp:1311 configwizard.cpp:1316
-#: configwizard.cpp:1321 configwizard.cpp:1326
-msgid "Side Menu"
-msgstr "ﻻئحه جانبيه"
-
-#: configwizard.cpp:1308
-msgid ""
-"In this step you will have to choose the partition that will be used to "
-"store your documents and configuration files.<BR/><I>GNU/Linux Kinneret</I> "
-"scanned you hard-drive(s), and found the following usable partitions:"
-msgstr ""
-"في هذه ألمرحله عليك إختيار ألتقسيم ألذي سوف يستعمل لتخزين ألمستندات وملفات "
-"ألتعديلات. <BR/>"
-"<l>جنو/لينوكس كينيرت </l> أجرى فحص أﻷقراص ألصلبه ووجد أن ألتقاسيم أﻵتيه "
-"ملائمه "
-
-#: configwizard.cpp:1309
-msgid ""
-"We already choosen the partitions with the largest free-space. In order to "
-"change out selection, click a different partition.<BR/><BR/>Partitions "
-"mapping id presented in it's Unix form, in addition to it's <B>estimated</B> "
-"Windows-ish name. You can get more information about partition mapping by "
-"clicking on the \"help\" button."
-msgstr ""
-"قد إخترنا ألتقسيم ذو المساحه ألفارغه أﻷكبر , لإختيار آخر, "
-"إضغط على تقسيم آخر "
-"<BR/><BR/> "
-"تخطيط ألتقاسيم مبين بمبنى يونيكس , بألإضافه إلى <B>تقدير</B> "
-"أﻹسم حسب أنظمة شبابيك. يمكنك ألحصول على مزيد من ألمعلومات حول "
-"تخطيط ألتقاسيم بألضغط على زر /\"مساعده/\"."
-
-#: configwizard.cpp:1312
-msgid ""
-"In this step you will have to specify the size of the to-be-created swap "
-"file.<BR/>The swap file expands the memory that is available to the system, "
-"thus increasing performance. Therefore, it is highly recommended that you "
-"create a swap file, if you don't have a swap partition already (Notice: "
-"Creating the swap file might take a little while, but on the next time you "
-"will run <I>GNU/Linux Kinneret</I> you will notice a high improvement in "
-"performance. The recommended swap size is two time your cache memory (RAM) "
-"and it's importance increases when you have little RAM).<BR/>If you do not "
-"wish a swap file, enter zero.<BR/><BR/>Note: The maximal swap size is 4G, or "
-"4096MB.<BR/>Any value above 4096MB will be reduced to 4096MB. If the "
-"partition you have selected does not have enough room for the specified swap "
-"size, the wizard will adjust the swap size to the partition and a message "
-"will be displayed."
-msgstr ""
-" في هذه ألمرحله عليك تحديد حجم ألتقسيم لذاكرة ألبدل . "
-" <br/> "
-"ذاكرة ألبدل توسع ألذاكره ألمتوفره لنظام ألتشغيل, لذلك فهي تحسن طريقة شغل ألنظام, لذاك من "
-"ألمفضل إنشاء ذاكرة بدل, إذا كنت ﻻ تملك تقسيم ذاكرة بدل بعد (ملاحظه: إنشاء "
-"ذاكرة بدل ممكن أن يستغرق بعض ألوقت, لكن في ألمره ألقادمه "
-"تشغل <i>جنو/ لينوكس كينيرت</I>  سوف تلاحظ تحسن في شغل "
-"ألنظام. حجم ذاكرة ألبدل ألمفضل هو ضعف ذاكرة أل RAM  وأهميتها تزيد في حالة "
-"وجود قليل من ذاكرة RAM . "
-"<br/> "
-"إذا كنت ﻻ تريد إنشاء ذاكرة بدل , أدخل صفر . "
-"<br/><br/> "
-"ملاحظه: ألحجم أﻷقصى لذاكرة ألبدل هو 4G أو 4096MB . "
-"<br/> "
-"أي حجم أكبر من 4096MB سوف يحسب 4096MB . إذا كان حجم ألتقسيم "
-"أصغر من ألحجم ألمطلوب سوف يجعل ألساحر كل ألتقسيم ذاكرة بدل وإعلام سوف يظهر على ألشاشه. "
-
-#: configwizard.cpp:1313
-msgid "Please enter the desired swap size:"
-msgstr "ألرجاء إدخال حجم ذاكرة ألبدل ألمرغوبه: "
-
-#: configwizard.cpp:1314
-msgid "MB"
-msgstr "MB"
-
-#: configwizard.cpp:1317
-msgid ""
-"A directory name 'kinneret' will be created at the root of the partition you "
-"have selected. This directory will hold system data and configuration files. "
-"Do not make changed to the content of this directory!<BR/><BR/>In addition "
-"to that directory you can select / create your default directory for saving "
-"your data and documents (your \"home directory\")."
-msgstr ""
-"مجلد بإسم كينيرت سوف يُنشأ في جذر ألتقسيم ألذي إخترته. "
-"هذا ألمجلد سوف يحوي معلومات للنظام وملفات تعديل. "
-"ﻻ تجري ألتغييرات في هذه ألملفات! "
-"<BR/> <BR/> "
-"بألإضافه إلى هذا ألمجلد يمكنك إختيار/إنشاء مجلد خاص بك لحفظ ألمعلومات وألملفات "
-"ألخاصه بك (/\"مجلد بيتك/\") "
-
-#: configwizard.cpp:1318
-msgid "Create"
-msgstr "إنشاء"
-
-#: configwizard.cpp:1319
-msgid "/"
-msgstr "/"
-
-#: configwizard.cpp:1322
-msgid ""
-"<I>GNU/Linux Kinneret</I> is able to import TrueType fonts from an existing "
-"Windows partition. <I>Kinneret</I> is also able to import non-Windows fonts, "
-"as long as they are TrueType (have the .ttf extension).<BR/><I>Kinneret</I> "
-"have scanned and added the fonts that are in your standart Windows fonts "
-"directory (if it was found). You can add and remove font directories as you "
-"wish."
-msgstr ""
-"<I>جنو/ لينوكس كينيرت</I> "
-"يستطيع أستوراد خطوط  ttf من أنظمة شبابيك. "
-"<I>كينيرت</I> "
-"يستطيع أيضا أستوراد خطوط ليست تابعه ﻷنظمة شبابيك حيث أن تكون هذه "
-"ألخطوط  ttf . "
-" <BR/>"
-"<l> كينيرت </l> "
-" قد بحث وأضاف ألخطوط ألموجوده في ألتقسيم ألذي عليه نظام شبابيك "
-"( إذا وجد ) . بإمكانك إضافة وإزالة ألخطوط كما تشاء . "
-
-#: configwizard.cpp:1327
-msgid ""
-"A home directory was configured for you in <I>Kinneret</I>, this directory "
-"will be your default place to save documents and data. The little house icon "
-"in the quick-launch bar will allow you to access this directory easily. Any "
-"file that will be written in this directory will be accessible from both "
-"Windows and <I>Kinneret</I>.<BR/><BR/>For your security, the home directory, "
-"and the partition it is on, are the only place you have write access to. "
-"Therefore, you shouldn't write data to any other place, they won't be saved "
-"after a reboot."
-msgstr ""
-"لقد عدل مجلد ألبيت في <l> كينيرت </I> , مجلد ألبيت هو ألمكان لحفظ ألمستندات "
-"وألملفات. أيقونة ألبيت ألصغيره في ألتشغيل ألسريع تمكنك من دخول مجلد ألبيت "
-"بسهوله. كل ملف يحفظ في هذا ألمجلد يمكن ألوصول إليه من نظام شبابيك و <l> كينيرت</I> ."
-"<BR/><BR/>"
-"لأمانك, مجلد ألبيت وألتقسيم ألموجود عليه ألمجلد, هم ألمكان ألوحيد ألذي "
-"تستطيع ألكتابه عليه. لذلك غير مفضل أن تحفظ ملفات في مكان آخر, لن تجدهم عند "
-"إعادة ألتشغيل."
-
-#: configwizard.cpp:1329
-msgid ""
-"You must have a lot of questions about <I>GNU/Linux Kinneret</I>: What can I "
-"do with it? How do I use the application that comes with it? What's <I>GNU/"
-"Linux</I>?<BR/><BR/>For that purpose we have created the Learn to Swim Guide "
-"(or The Swimming Guide) that will allow you to easily get familiar with the "
-"system and getting to work with it.<BR/>The guide contains a collection of "
-"articles and guides in many subjects. You can activate the guide by double-"
-"clicking on the \"Learn to Swim\" icon on your desktop.<BR/><BR/>The project "
-"team congratulates you for your new system, and wishes you a lot of joy and "
-"productivity while working with the system!"
-msgstr ""
-"قد تملك ألكثير من أﻷسئله عن <I> جنو/ لينوكس كينيرت </I>: ماذا أستطيع أن أفعل "
-"بواسطته؟ كيف أستطيع أن أستخدم ألبرامج ألموجوده فيه؟ ما هو <l> جنو/ لينوكس </I>?؟ "
-"<BR/><BR/>"
-"لهذا ألهدف وضعنا مرشد تعلم ألسباحه  (أو مرشد ألسباحه) ألذي يمنحك ألفرصه في "
-"تعلم ألنظام وألشغل معه بسهوله. "
-"<BR/>"
-"ألمرشد يشمل مجموعه من ألمقالات وألمرشدين لمواضيع متعدده.  بإمكانك قراءة "
-"ألمرشد بواسطة ألضغط مرتين على أيقونة \"تعلم ألسباحه\" ألموجوده على سطح "
-"ألمكتب. "
-"<BR/><BR/>"
-"طاقم ألمشروع يهنئك على نظامك ألجديد ويتمنى لك ألكثير من ألمتعه وألإبداع!"
-
-#: configwizard.cpp:1330
-msgid "What's Next?"
-msgstr "ماذا بعد؟ "
-
-#: dirview.moc.cpp:34 dirview.moc.cpp:42
-msgid "DirectoryView"
-msgstr "عرض مجلدات"
-
 #: _translatorinfo.cpp:1
 msgid ""
 "_: NAME OF TRANSLATORS\n"
@@ -696,3 +269,363 @@ msgstr ""
 "بريد الكتروني للمترجمين: \n"
 "nizar@srcget.com"
 
+#~ msgid ""
+#~ "<B><U>Configuration Wizard - Help</U></B><BR/> \n"
+#~ "<BR/> \n"
+#~ "<U>Configuration types</U><BR/> \n"
+#~ "<BR/> \n"
+#~ "<I>Automatic</I> - Selects the partitions with the largest free space, "
+#~ "sets your home directory to it's root, imports TrueType fonts from an "
+#~ "existing Windows partition and creates a swap file so that at least 300M "
+#~ "stays free, and not larger then 256M. It is highly recommended to select "
+#~ "this option.<BR/> \n"
+#~ "<BR/> \n"
+#~ "<I>No Configuration</I> - No configuration is made at all, not home "
+#~ "directory is created, and no swap file or TrueType index is made.<BR/> \n"
+#~ "<BR/> \n"
+#~ "<I>Expert Mode</I> - Allows manual configuration of the working "
+#~ "partition, the home directory, the swap file and the TrueType fonts "
+#~ "index. This option is recommended for the use of Linux / Computers "
+#~ "experts only.<BR/> \n"
+#~ "<BR/> \n"
+#~ "<U>Partition mapping under Linux</U><BR/> \n"
+#~ "In Linux, the partition mapping and naming method is different then the "
+#~ "method known to Windows users (C, D etc).<BR/> \n"
+#~ "In Linux, the naming is made by the physical structure and layout of the "
+#~ "partitions. Each hard-drive gets the prefix hd, to indicate it is a hard-"
+#~ "drive.<BR/> \n"
+#~ "Afterward, each physical drive gets a letter, a, b, c, or d, by their "
+#~ "order, e.g., the first drive on the first IDE device (the Primary Master) "
+#~ "gets the suffix a. the Secondary Master gets the letter b. the Primary "
+#~ "Slave and the Secondary Slave gets the letters c and d respectively.<BR/"
+#~ "> \n"
+#~ "The string ends with a digit, representing the number of partition "
+#~ "(starting from 1). Therefore, hda1 will be the first partition on the "
+#~ "first hard-drive connected to the Primary IDE device. hda2 will be the "
+#~ "second partition on the hard-drive. hdb4 will be the fourth partition on "
+#~ "the Secondary Master etc.<BR/> \n"
+#~ "<BR/> \n"
+#~ "<U>How do I translate Linux mapping (hda1, hdc10 etc) to Windows mapping "
+#~ "(C, D etc)?</U><BR/> \n"
+#~ "There is not way of doing it directly because Windows maps drives without "
+#~ "relation to their physical order.<BR/> \n"
+#~ "In most Windows systems, incremental numbering of Windows style partitons "
+#~ "will match the incremental numbering of Linux partitions, meaning, hda1 "
+#~ "will be drive C, drive D will be either hda2 or hdb1 (depending on the "
+#~ "number of partitions on hda)<BR/> \n"
+#~ "<BR/> \n"
+#~ "Please note that this method will not work on all system, since Windows "
+#~ "allows the user to manually change letters of drives, and sometimes put "
+#~ "the CD-ROM(s) in the middle of the hard-drives and not at the end (so C "
+#~ "and D might be hard-drives, E will be a CD-ROM and F will be another hard-"
+#~ "drive). The method above should work for most system, but that is NOT "
+#~ "guaranteed."
+#~ msgstr ""
+#~ "<B><U>ساحر ألتعديل - مساعده </U></B><BR/>\n"
+#~ "<BR/>\n"
+#~ "<U>نوع ألتعديل </U><BR/>\n"
+#~ "<l>أوتوماتيكي </l> - يختار ألتفسيم أﻷكبر حجما , يجعل جذر ألتقسيم مجلد "
+#~ "بيتك يستورد خطوط TTF من نظام شبابيك موجود , إنشاء ملف داكرة بدل حيث يبقى "
+#~ "300 ميغا حر وليس أكثر من 256 ميغا, مفضل جدا إختيار هذا ألإمكانيه. <BR/> \n"
+#~ "<BR/>\n"
+#~ "<l>عدم ألتعديل</l>ﻻ تجرى ألتعديلات بالمره, ﻻ يصدر مجلد ألبيت ,ﻻ ملف ذاكرة "
+#~ "بدل وﻻتستورد ألخطوط.  <BR/>\n"
+#~ "<l>أسلوب ألخبراء</l> - يسمح تعديل يدوي للتقسيم ألحالي, مجلد ألبيت, ملف "
+#~ "ذاكرة ألبدل وإستيراد ألخطوط. هذه ألإمكانيه مفضله لمستخدمي لينوكس / خبراء "
+#~ "ألحاسوب فقط.  <BR/>\n"
+#~ "<U>تخطيط ألتقسيم في لينوكس </U><BR/>\n"
+#~ "في أنظمة لينوكس , تخطيط ألتقاسيم وتسميتها يختلف عن ألمعروف لمستخدمي "
+#~ "شبابيك (C,D ألخ...) <BR/>\n"
+#~ "في لينوكس تجري ألتسميه حسب ألمبنى ألفيزيائي وتصميم ألتقسيم. كل قرص صلب "
+#~ "يبدأ إسمه ب- hd للإشاره أنه قرص صلب.  <BR/>\n"
+#~ "بعد ألبادئه hd يحصل كل قرص على حرف , a,b,c or d حسب موقع ألقرص ألفيزيائي. "
+#~ "مثال: ألقرص أﻷول على أل IDE أﻷول يسمى hda , ألقرص ألثاني على أل IDE أﻷول "
+#~ "يسمى hdb الخ ...  <BR/>\n"
+#~ "ينتهي ألإسم برقم ألذي يشير إلى رقم ألتقسيم , إبتداء من 1 , لذلك hda1 هو "
+#~ "ألتقسيم أﻷول في ألقرص أﻷول. <BR/>\n"
+#~ "<BR/>\n"
+#~ "<U>كيف أستطيع أن أترجم أﻷسماء من نظام لينوكس إلى أسماء في نظام شبابيك؟ </"
+#~ "U> <BR/>\n"
+#~ "ﻻ توجد طريقه لترجمة أسماء أﻷقراص ﻷن أنظمة شبابيك تخطط أﻷقراص بدون صله "
+#~ "لترتيب أﻷقراص . <BR/>\n"
+#~ "في معظم أنظمة شبابيك ألتسميه ألتصاعديه للتقاسيم تلائم ألتسميه ألتصاعديه "
+#~ "في أنظمة لينوكس, بكلمات أخرى, hda1 في لينوكس هو C في شبابيك, D في شبابيك "
+#~ "هو hda2 أو hdb1 في لينوكس ( يتعلق بعدد ألتقاسيم في hda  -  ألقرص أﻷول). "
+#~ "<BR/>\n"
+#~ "<BR/>\n"
+#~ "ألرجاء ألملاحظه أن هذه ألطريقه ليست صحيحه دائما لأن أنظمة شبابيك تمكن "
+#~ "ألمستخدم من تغيير أسم ألتقسيم حيث يصبح أحيانا ألقرص ألمكثف (CDROM) في "
+#~ "ألوسط وليس في ألآخر. ألطريقه أعلاه صحيحه في معظم ألأنظمه, لكنها ليست "
+#~ "مضمونه."
+
+#~ msgid "Return"
+#~ msgstr "رجوع"
+
+#~ msgid "Configuring..."
+#~ msgstr "تعديل..."
+
+#~ msgid "Please wait, configuring..."
+#~ msgstr "إنتظر من فضلك, تعديل..."
+
+#~ msgid "Creating Directory... [1/13]"
+#~ msgstr "يتم إنشاء مجلد...[1/13]"
+
+#~ msgid "Welcome to Kinneret!"
+#~ msgstr "أهلا وسهلا في كينيرت!"
+
+#~ msgid ""
+#~ "<I>GNU/Linux Kinneret</I> is a CD based (LiveCD) Operating System (OS) "
+#~ "and a large collection of applications. The system does not require any "
+#~ "complicated configuration, or installation, and features an automatic "
+#~ "hardware detection, friendly configuration wizards, a large collection of "
+#~ "quality applications and a full built-in Hebrew support (and other "
+#~ "languages soon).<BR/><BR/>Among the application you will find: Office "
+#~ "Suits (Word processors, Spread sheets, Presentation editor etc.), "
+#~ "Internet applications (Web-browsers, E-mail clients, Instant messengers, "
+#~ "Chat clients etc.), Multimedia applications (Audio players, Video "
+#~ "players, Image manipulators and editors etc.) and a collection of fun "
+#~ "games.<BR/><I>GNU/Linux Kinneret</I> is aimed in the first place to the "
+#~ "students in the Israeli educational system. Therefore, it includes a "
+#~ "large collection of educational programs, learning aids and development "
+#~ "environments the are required throughout the year.<BR/><BR/>The project "
+#~ "will allow equality in the technological education of all low-"
+#~ "socioeconomy status students by offering a high-quality free (of charge, "
+#~ "too) alternative to the proprietary software that are used by the student "
+#~ "throughout the learning process. The project also aims at promoting the "
+#~ "Free-Software and Open-Source movements in Israel.<BR/><BR/>If you would "
+#~ "like to contribute to the project, or get help and more information, we "
+#~ "invite you to out project website, located at: http://www.linux-kinneret."
+#~ "org. We'd be glad to get any kind of help (including help that does not "
+#~ "involve programming, such as translating, documentation writing and "
+#~ "quality assurance).<BR/><BR/>NOTICE! This version is a development "
+#~ "version and still experimental. We reccomend unexperienced users to wait "
+#~ "to the official and full version. Information about the release of our "
+#~ "official version will be published at the project's site."
+#~ msgstr ""
+#~ "<l>جنو/ لينوكس كينيرت </I> هو نظام تشغيل على قرص مكثف وألذي يحوي مجموعه "
+#~ "من ألبرامج. ألنظام ﻻ يتطلب أي تعديلات معقده أو تنصيب , ومزود بجهاز "
+#~ "أوتوماتيكي لإيجاد ألمركبات , ساحر تعديل, مجموعه واسعه من ألبرامج ذو جوده "
+#~ "عاليه ودعم كامل بأللغه ألعبريه ( ولغات أخرى في ألمستقبل ) . <BR/><BR/>في "
+#~ "مجموعة ألبرامج سوف تجد : ألمجموعه ألمكتبيه ( محررات نصوص, محررات عروض "
+#~ "وألكثير غيرهم ) . برامج للإنترنت (متصفح, برامج للمراسلات وغيرها ), برامج "
+#~ "للصوت وألصوره (عازف أغاني, عازف أفلام محرر للصور وألكثير أخرى ) ومجموعه "
+#~ "من أﻷلعاب ألمسليه. <BR/><l> جنو/ لينوكس كينيرت <l> صمم في أﻷساس لطلاب "
+#~ "ألمدارس في نطاق ألنظام ألتربوي في إسرائيل. لذلك فهو يحوي عدد كبير من "
+#~ "ألبرامج ألثقافيه ,ألمساعدات ألتعليميه  وبيئات ألتطوير ألمطلوبه من ألطالب "
+#~ "خلال ألسنه ألدراسيه. <BR/><BR/>إذا كنت تريد ألإنضمام إلى ألمشروع أو تحتاج "
+#~ "أي مساعده ومزيد من ألمعلومات فبإمكانك زيارة موقع ألمشروع http://www.linux-"
+#~ "kinneret.org فنحن نقبل بسرور أي مساعده ( يشمل مساعده ليست في مجال ألبرمجه "
+#~ "مثل ألترجمه, توثيق , كتابه وتأمينات ).  <BR/><BR/>ملاحظه! هذا ألإصدار هو "
+#~ "إصدار تطوير وما زال تجربي. طاقم ألمشروع ينصح ألمستخدمين أللذين ﻻ يملكون "
+#~ "ألخبره ألكافيه في ألإنتظار للإصدار ألرسمي . معلومات عن ألإصدار ألسمي سوف "
+#~ "تنشر في موقع ألمشروع."
+
+#~ msgid "Language"
+#~ msgstr "أللغه"
+
+#~ msgid "Hebrew"
+#~ msgstr "עברית"
+
+#~ msgid "Russian"
+#~ msgstr "русский"
+
+#~ msgid "Arabic"
+#~ msgstr "ألعربيه"
+
+#~ msgid "English"
+#~ msgstr "English"
+
+#~ msgid ""
+#~ "For those of you the default font size is too small/large, we've supplied "
+#~ "two buttons for increasing and decreasing the interface's font size."
+#~ msgstr ""
+#~ "للذين بألنسبه لهم ألخط صغير/كبير, قد أضفنا زران لتكبير وتصغير حجم ألخط."
+
+#~ msgid "Increase"
+#~ msgstr "تكبير"
+
+#~ msgid "Decrese"
+#~ msgstr "تصغير"
+
+#~ msgid "Current Font Size: 12"
+#~ msgstr "ألحجم ألحالي للحرف: 12"
+
+#~ msgid "Nice To Meet"
+#~ msgstr "لطفا أن نتقابل"
+
+#~ msgid "Back to Kinneret's License"
+#~ msgstr "ألرجوع إلى رخصة كينيرت"
+
+#~ msgid "I agree to the terms above"
+#~ msgstr "أوافق على ألشروط أعلاه"
+
+#~ msgid "License"
+#~ msgstr "رخصه"
+
+#~ msgid ""
+#~ "<I>GNU/Linux Kinneret</I> allows you to use it without installation or "
+#~ "configuration, in order to experience with the system.<BR/><BR/>In order "
+#~ "to allow your work with <I>GNU/Linux Kinneret</I> to be as productive as "
+#~ "possible, and allowing you to save you documents, preferences and data to "
+#~ "your hard-drive, you'll have to dedicate a few minutes to complete this "
+#~ "wizard.<BR/><BR/>The wizard will be activated each time you'll boot "
+#~ "<I>GNU/Linux Kinneret</I>, until you'll create the necessary files (by "
+#~ "choosing Automatic or Expert configuration). After the files were "
+#~ "successfully created the wizard will stop \"popping-up\" during boot-up."
+#~ "<BR/><BR/>Please select your preferred configuration options:"
+#~ msgstr ""
+#~ "<I>جنو/لينوكس كينيرت </I> يمكنك من إستعمال ألنظام بدون أن تنصبه, لكي "
+#~ "تستطيع تجربة ألنظام.  <br/><br/> لكي تستطيع ألشغل مع <I>جنو/ لينوكس "
+#~ "كينيرت</I> وتبرز مهاراتك قدر ألإمكان, وتمكينك من حفظ مستنداتك,ألمفضلات "
+#~ "وألمعلومات على ألقرص ألصلب, كل ما عليك فعله هو تخصيص بضع دقائق لإكمال "
+#~ "ألساحر. <br/><br/> ألساحر سوف يشتغل في كل مره تشغل <I>جنو/ لينوكس كينيرت</"
+#~ "I> , إلى حد ما تصدر ألملفات ألضروريه (عند إختيار أوتوماتيكي أو تعديل "
+#~ "للخبراء ).  بعد أن تصدر ألملفات بنجاح يتوقف ألساحر عن ألظهور عند "
+#~ "ألتشغيل.  <br/><br/>  ألرجاء إختيار إمكانية ألتعديل ألمفضله:"
+
+#~ msgid "Configuration Types"
+#~ msgstr "نوع ألتعديل"
+
+#~ msgid "Automatic (Recommended)"
+#~ msgstr "أوتوماتيكي (مفضل)"
+
+#~ msgid "No Configuration (Not Recommended)"
+#~ msgstr "عدم ألتعديل (غير مفضل)"
+
+#~ msgid "Expert Mode (Only for Linux know-hows)"
+#~ msgstr "أسلوب ألخبراء (فقط للذين يعرفون لينوكس)"
+
+#~ msgid "Configuration Type"
+#~ msgstr "نوع ألتعديل"
+
+#~ msgid "Side Menu"
+#~ msgstr "ﻻئحه جانبيه"
+
+#~ msgid ""
+#~ "In this step you will have to choose the partition that will be used to "
+#~ "store your documents and configuration files.<BR/><I>GNU/Linux Kinneret</"
+#~ "I> scanned you hard-drive(s), and found the following usable partitions:"
+#~ msgstr ""
+#~ "في هذه ألمرحله عليك إختيار ألتقسيم ألذي سوف يستعمل لتخزين ألمستندات "
+#~ "وملفات ألتعديلات. <BR/><l>جنو/لينوكس كينيرت </l> أجرى فحص أﻷقراص ألصلبه "
+#~ "ووجد أن ألتقاسيم أﻵتيه ملائمه "
+
+#~ msgid ""
+#~ "We already choosen the partitions with the largest free-space. In order "
+#~ "to change out selection, click a different partition.<BR/><BR/>Partitions "
+#~ "mapping id presented in it's Unix form, in addition to it's <B>estimated</"
+#~ "B> Windows-ish name. You can get more information about partition mapping "
+#~ "by clicking on the \"help\" button."
+#~ msgstr ""
+#~ "قد إخترنا ألتقسيم ذو المساحه ألفارغه أﻷكبر , لإختيار آخر, إضغط على تقسيم "
+#~ "آخر <BR/><BR/> تخطيط ألتقاسيم مبين بمبنى يونيكس , بألإضافه إلى <B>تقدير</"
+#~ "B> أﻹسم حسب أنظمة شبابيك. يمكنك ألحصول على مزيد من ألمعلومات حول تخطيط "
+#~ "ألتقاسيم بألضغط على زر /\"مساعده/\"."
+
+#~ msgid ""
+#~ "In this step you will have to specify the size of the to-be-created swap "
+#~ "file.<BR/>The swap file expands the memory that is available to the "
+#~ "system, thus increasing performance. Therefore, it is highly recommended "
+#~ "that you create a swap file, if you don't have a swap partition already "
+#~ "(Notice: Creating the swap file might take a little while, but on the "
+#~ "next time you will run <I>GNU/Linux Kinneret</I> you will notice a high "
+#~ "improvement in performance. The recommended swap size is two time your "
+#~ "cache memory (RAM) and it's importance increases when you have little "
+#~ "RAM).<BR/>If you do not wish a swap file, enter zero.<BR/><BR/>Note: The "
+#~ "maximal swap size is 4G, or 4096MB.<BR/>Any value above 4096MB will be "
+#~ "reduced to 4096MB. If the partition you have selected does not have "
+#~ "enough room for the specified swap size, the wizard will adjust the swap "
+#~ "size to the partition and a message will be displayed."
+#~ msgstr ""
+#~ " في هذه ألمرحله عليك تحديد حجم ألتقسيم لذاكرة ألبدل .  <br/> ذاكرة ألبدل "
+#~ "توسع ألذاكره ألمتوفره لنظام ألتشغيل, لذلك فهي تحسن طريقة شغل ألنظام, لذاك "
+#~ "من ألمفضل إنشاء ذاكرة بدل, إذا كنت ﻻ تملك تقسيم ذاكرة بدل بعد (ملاحظه: "
+#~ "إنشاء ذاكرة بدل ممكن أن يستغرق بعض ألوقت, لكن في ألمره ألقادمه تشغل "
+#~ "<i>جنو/ لينوكس كينيرت</I>  سوف تلاحظ تحسن في شغل ألنظام. حجم ذاكرة ألبدل "
+#~ "ألمفضل هو ضعف ذاكرة أل RAM  وأهميتها تزيد في حالة وجود قليل من ذاكرة "
+#~ "RAM . <br/> إذا كنت ﻻ تريد إنشاء ذاكرة بدل , أدخل صفر . <br/><br/> "
+#~ "ملاحظه: ألحجم أﻷقصى لذاكرة ألبدل هو 4G أو 4096MB . <br/> أي حجم أكبر من "
+#~ "4096MB سوف يحسب 4096MB . إذا كان حجم ألتقسيم أصغر من ألحجم ألمطلوب سوف "
+#~ "يجعل ألساحر كل ألتقسيم ذاكرة بدل وإعلام سوف يظهر على ألشاشه. "
+
+#~ msgid "Please enter the desired swap size:"
+#~ msgstr "ألرجاء إدخال حجم ذاكرة ألبدل ألمرغوبه: "
+
+#~ msgid "MB"
+#~ msgstr "MB"
+
+#~ msgid ""
+#~ "A directory name 'kinneret' will be created at the root of the partition "
+#~ "you have selected. This directory will hold system data and configuration "
+#~ "files. Do not make changed to the content of this directory!<BR/><BR/>In "
+#~ "addition to that directory you can select / create your default directory "
+#~ "for saving your data and documents (your \"home directory\")."
+#~ msgstr ""
+#~ "مجلد بإسم كينيرت سوف يُنشأ في جذر ألتقسيم ألذي إخترته. هذا ألمجلد سوف يحوي "
+#~ "معلومات للنظام وملفات تعديل. ﻻ تجري ألتغييرات في هذه ألملفات! <BR/> <BR/> "
+#~ "بألإضافه إلى هذا ألمجلد يمكنك إختيار/إنشاء مجلد خاص بك لحفظ ألمعلومات "
+#~ "وألملفات ألخاصه بك (/\"مجلد بيتك/\") "
+
+#~ msgid "Create"
+#~ msgstr "إنشاء"
+
+#~ msgid "/"
+#~ msgstr "/"
+
+#~ msgid ""
+#~ "<I>GNU/Linux Kinneret</I> is able to import TrueType fonts from an "
+#~ "existing Windows partition. <I>Kinneret</I> is also able to import non-"
+#~ "Windows fonts, as long as they are TrueType (have the .ttf extension).<BR/"
+#~ "><I>Kinneret</I> have scanned and added the fonts that are in your "
+#~ "standart Windows fonts directory (if it was found). You can add and "
+#~ "remove font directories as you wish."
+#~ msgstr ""
+#~ "<I>جنو/ لينوكس كينيرت</I> يستطيع أستوراد خطوط  ttf من أنظمة شبابيك. "
+#~ "<I>كينيرت</I> يستطيع أيضا أستوراد خطوط ليست تابعه ﻷنظمة شبابيك حيث أن "
+#~ "تكون هذه ألخطوط  ttf .  <BR/><l> كينيرت </l>  قد بحث وأضاف ألخطوط "
+#~ "ألموجوده في ألتقسيم ألذي عليه نظام شبابيك ( إذا وجد ) . بإمكانك إضافة "
+#~ "وإزالة ألخطوط كما تشاء . "
+
+#~ msgid ""
+#~ "A home directory was configured for you in <I>Kinneret</I>, this "
+#~ "directory will be your default place to save documents and data. The "
+#~ "little house icon in the quick-launch bar will allow you to access this "
+#~ "directory easily. Any file that will be written in this directory will be "
+#~ "accessible from both Windows and <I>Kinneret</I>.<BR/><BR/>For your "
+#~ "security, the home directory, and the partition it is on, are the only "
+#~ "place you have write access to. Therefore, you shouldn't write data to "
+#~ "any other place, they won't be saved after a reboot."
+#~ msgstr ""
+#~ "لقد عدل مجلد ألبيت في <l> كينيرت </I> , مجلد ألبيت هو ألمكان لحفظ "
+#~ "ألمستندات وألملفات. أيقونة ألبيت ألصغيره في ألتشغيل ألسريع تمكنك من دخول "
+#~ "مجلد ألبيت بسهوله. كل ملف يحفظ في هذا ألمجلد يمكن ألوصول إليه من نظام "
+#~ "شبابيك و <l> كينيرت</I> .<BR/><BR/>لأمانك, مجلد ألبيت وألتقسيم ألموجود "
+#~ "عليه ألمجلد, هم ألمكان ألوحيد ألذي تستطيع ألكتابه عليه. لذلك غير مفضل أن "
+#~ "تحفظ ملفات في مكان آخر, لن تجدهم عند إعادة ألتشغيل."
+
+#~ msgid ""
+#~ "You must have a lot of questions about <I>GNU/Linux Kinneret</I>: What "
+#~ "can I do with it? How do I use the application that comes with it? What's "
+#~ "<I>GNU/Linux</I>?<BR/><BR/>For that purpose we have created the Learn to "
+#~ "Swim Guide (or The Swimming Guide) that will allow you to easily get "
+#~ "familiar with the system and getting to work with it.<BR/>The guide "
+#~ "contains a collection of articles and guides in many subjects. You can "
+#~ "activate the guide by double-clicking on the \"Learn to Swim\" icon on "
+#~ "your desktop.<BR/><BR/>The project team congratulates you for your new "
+#~ "system, and wishes you a lot of joy and productivity while working with "
+#~ "the system!"
+#~ msgstr ""
+#~ "قد تملك ألكثير من أﻷسئله عن <I> جنو/ لينوكس كينيرت </I>: ماذا أستطيع أن "
+#~ "أفعل بواسطته؟ كيف أستطيع أن أستخدم ألبرامج ألموجوده فيه؟ ما هو <l> جنو/ "
+#~ "لينوكس </I>?؟ <BR/><BR/>لهذا ألهدف وضعنا مرشد تعلم ألسباحه  (أو مرشد "
+#~ "ألسباحه) ألذي يمنحك ألفرصه في تعلم ألنظام وألشغل معه بسهوله. <BR/>ألمرشد "
+#~ "يشمل مجموعه من ألمقالات وألمرشدين لمواضيع متعدده.  بإمكانك قراءة ألمرشد "
+#~ "بواسطة ألضغط مرتين على أيقونة \"تعلم ألسباحه\" ألموجوده على سطح ألمكتب. "
+#~ "<BR/><BR/>طاقم ألمشروع يهنئك على نظامك ألجديد ويتمنى لك ألكثير من ألمتعه "
+#~ "وألإبداع!"
+
+#~ msgid "What's Next?"
+#~ msgstr "ماذا بعد؟ "
+
+#~ msgid "DirectoryView"
+#~ msgstr "عرض مجلدات"

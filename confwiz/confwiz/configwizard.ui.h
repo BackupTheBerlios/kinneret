@@ -381,42 +381,45 @@ void configwizard::onSelect()
 			// NOTE: the autodetection has been discarded. a default of 100M is fine.
 			// have a nice day.
 			swap_size->setValue(100);
-
-			// automaticlly search for fonts...
-			if (system("/opt/kinneret/bin/findfonts.sh"))
-			{
-				KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot search for TTF fonts!")));
-				return;
-			}
-
-			FontsDirs->addColumn(QString(tr2i18n("Path")), 400);
-
-			std::ifstream fonts("/tmp/.fontsdirs");
-			if (!fonts)
-			{
-				KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot search for TTF fonts!")));
-				return;
-			}
-
-			if (fonts.is_open())
-			{
-				char szLine[0x300];
-
-				while (!fonts.eof())
-				{
-					fonts.getline(szLine, 0x300);
-
-					if (szLine[0])
-					{
-						QListViewItem *vi = new QListViewItem(FontsDirs, szLine);
-						FontsDirs->insertItem(vi);
-					}
-				}
-
-				fonts.close();
-			}
-
-			// Now jump to conclusion and let it to do all the configuration...
+   
+                        // ask the user if he would like to import fonts
+                       if (KMessageBox::questionYesNo(parentWidget(), QString(tr2i18n("Would you like to import fonts from your Windows partition?"))) == KMessageBox::Yes) {
+    
+                            // automaticlly search for fonts...
+                            if (system("/opt/kinneret/bin/findfonts.sh"))
+                            {
+                                    KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot search for TTF fonts!")));
+                                    return;
+                            }
+    
+                            FontsDirs->addColumn(QString(tr2i18n("Path")), 400);
+    
+                            std::ifstream fonts("/tmp/.fontsdirs");
+                            if (!fonts)
+                            {
+                                    KMessageBox::error(parentWidget(), QString(tr2i18n("Cannot search for TTF fonts!")));
+                                    return;
+                            }
+    
+                            if (fonts.is_open())
+                            {
+                                    char szLine[0x300];
+    
+                                    while (!fonts.eof())
+                                    {
+                                            fonts.getline(szLine, 0x300);
+    
+                                            if (szLine[0])
+                                            {
+                                                    QListViewItem *vi = new QListViewItem(FontsDirs, szLine);
+                                                    FontsDirs->insertItem(vi);
+                                            }
+                                    }
+    
+                                    fonts.close();
+                            }
+                        }
+                            // Now jump to conclusion and let it to do all the configuration...
 			QWizard::showPage(QWizard::page(page_conclusion));
 
 			return;
