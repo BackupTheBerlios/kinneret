@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!-- 
+   - Resolver for the 'auth' namespace.
+   -
+   - Author: z9u2k
+   - $Revision: 1.2 $
+  -->
+<resolver>
+    <namespace>auth</namespace>
+    <param name="username" xpath="auth/username" failure="ask"/>
+    <param name="passwd" xpath="auth/password" failure="ask"/>
+    <param name="server" xpath="auth/server" failure="ask"/>
+</resolver>

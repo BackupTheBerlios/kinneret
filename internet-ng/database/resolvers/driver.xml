@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- 
+   - Resolver for the 'driver' namespace.
+   -
+   - Author: z9u2k
+   - $Revision: 1.2 $
+  -->
+<resolver>
+    <namespace>driver</namespace>
+    <param name="name" xpath="driver/name" multi="locale"/>
+    <param name="comment" xpath="driver/comment" multi="locale"/>
+    <param name="module" xpath="driver/module[@kernel='%kernel']"/>
+    <param name="pptp-address" xpath="driver/vpn/address"/>
+    <param name="pptp-remotename" xpath="driver/vpn/remotename"/>
+    <param name="pptp-ethernet-address" xpath="driver/vpn/ethernet/address"/>
+    <param name="pptp-ethernet-netmask" xpath="driver/vpn/ethernet/netmask"/>
+    <param name="pptp-ethernet-broadcast"
+        xpath="driver/vpn/ethernet/broadcast"/>
+</resolver>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!-- 
+   - Resolver for the 'isp' namespace.
+   -
+   - Author: z9u2k
+   - $Revision: 1.2 $
+  -->
+<resolver>
+    <namespace>isp</namespace>
+    <param name="name" xpath="isp/name" multi="locale"/>
+    <param name="country" xpath="isp/country" multi="locale"/>
+    <param name="dns-%d" xpath="isp/servers/server[@type='dns']" multi="nth"/>
+    <param name="cable-remotename"
+        xpath="isp/cables/gateway/remotename[@name='%choice']/value"/>
+    <param name="cable-searchgroup" xpath="isp/cables/special/searchgroup"/>
+    <param name="cable-suffix" xpath="isp/cables/suffix"/>
+    <param name="adsl-suffix" xpath="isp/adsl/suffix"/>
+</resolver>
