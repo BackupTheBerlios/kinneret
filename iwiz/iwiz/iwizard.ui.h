@@ -65,7 +65,7 @@ void iwizard::init()
     
 	std::map<std::string, std::string>::iterator iter;
 	for (iter = mapISPs.begin() ; iter != mapISPs.end() ; iter++)
-		comboISPs->insertItem(iter->first);
+		comboISPs->insertItem(QString(iter->first.c_str()));
 	comboISPs->setCurrentItem(0);
     
     // now, list modems
@@ -219,7 +219,7 @@ void iwizard::AssembleUsername(const QString &qs)
 	if (0) { std::cout << qs << std::endl; } // I hate stupid warnings...
 	
 	// set suffix
-	QString qCmd = "internet --ispinfo " + mapISPs[comboISPs->currentText()];
+	QString qCmd = QString("internet --ispinfo ") + QString(mapISPs[comboISPs->currentText().ascii()].c_str());
     
 	// cable or ADSL ?
 	if (radioADSL->isChecked()) qCmd += " | grep \"ADSL Username Suffix\" | cut -b 23-";
@@ -255,6 +255,6 @@ void iwizard::AssembleUsername(const QString &qs)
 		str.replace(st, en - st + 2, name);
 	}
 
-	// set final    
-	textSuffix->setText(str);
+	// set final
+	textSuffix->setText(QString(str.c_str()));
 }

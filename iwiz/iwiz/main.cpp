@@ -125,7 +125,7 @@ int main(int argc, char *argv[])
 
 		strCmd += " ";
 		strCmd += "--isp=";
-		strCmd += iwiz->mapISPs[iwiz->comboISPs->currentText()];
+		strCmd += iwiz->mapISPs[string(iwiz->comboISPs->currentText().ascii())];
 
 		strCmd += " ";
 		strCmd += "--method=";
