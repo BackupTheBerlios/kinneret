@@ -41,7 +41,7 @@ maphome()
 		echo -e "${BLUE}Linking /mnt/${mntpt} to \\${letter}...${NORMAL}"
 		slash=\\
 		to=`echo -e "${slash}${letter}"`
-		ln -s /mnt/$mntpt/ "/home/z9u2K/partitions/пїЅпїЅ${to}"
+		ln -s /mnt/$mntpt/ "/home/z9u2K/partitions/лерп ${to}"
 
 		let letter++
 	done
