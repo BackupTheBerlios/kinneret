@@ -17,7 +17,7 @@
      http://www.gnu.org/copyleft/gpl.html for more details.
 
      Filename: l2swim.xsl
-     Version: 1.99b (2nd edition) 18-September-2003
+     Version: 1.99c (2nd edition) 19-December-2003
      Encoding: [UTF8]
      Language support: Hebrew, Arabic, English, Russian
 
@@ -53,6 +53,9 @@
 		<!-- main document body and footer -->
 		<!-- apply the direction to the document body -->
 		<body dir="{$_dir}">
+
+			<!-- ensure there is a border around text so that it does not stick to the browser frame -->
+			<table width="90%"><tr><td>
 
 			<!-- is there a 'title' segment? if so apply 'title' template -->
 			<xsl:if test="title">
@@ -138,6 +141,8 @@ Important! GNU/Linux Kinneret is provided "as is" without warranty of any kind, 
 				<IMG SRC="/opt/kinneret/images/exclamation.png" />
 			</td></tr></table>
 
+			<!-- ensure there is a border around text so that it does not stick to the browser frame -->
+			</td></tr></table>
 
 		</body>
 
