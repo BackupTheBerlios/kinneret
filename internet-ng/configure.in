@@ -1,0 +1,11 @@
+AC_INIT
+AM_INIT_AUTOMAKE(internetng,0.1)
+AC_PROG_CC
+AC_PROG_CXX
+AC_PROG_RANLIB
+AC_PROG_INSTALL
+AC_OUTPUT(Makefile \
+          src/Makefile \
+          src/core/Makefile \
+          src/core/resolvers/Makefile \
+          src/core/utils/Makefile)
