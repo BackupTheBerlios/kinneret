@@ -21,7 +21,8 @@ uses
   fWarning in 'fWarning.pas' {FormWarning},
   gnugettext in 'gnugettext.pas',
   Advanced in 'Advanced.pas' {FormAdvanced},
-  ParInstall in 'ParInstall.pas' {parinst};
+  ParInstall in 'ParInstall.pas' {parinst},
+  ParInstall2 in 'ParInstall2.pas' {parinst2};
 
 {$R *.RES}
 
@@ -34,5 +35,6 @@ begin
   Application.CreateForm(TFormWarning, FormWarning);
   Application.CreateForm(TFormAdvanced, FormAdvanced);
   Application.CreateForm(Tparinst, parinst);
+  Application.CreateForm(Tparinst2, parinst2);
   Application.Run;
 end.

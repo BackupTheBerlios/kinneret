@@ -1,8 +1,8 @@
 object parinst: Tparinst
-  Left = 342
+  Left = 380
   Top = 185
-  Width = 432
-  Height = 314
+  Width = 353
+  Height = 352
   Caption = 'Partial installation wizard'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,27 +15,29 @@ object parinst: Tparinst
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object TntLabel1: TTntLabel
-    Left = 64
+  object explanation: TTntLabel
+    Left = 24
     Top = 32
     Width = 297
     Height = 185
     AutoSize = False
   end
   object YesButton: TTntButton
-    Left = 232
-    Top = 232
+    Left = 184
+    Top = 256
     Width = 129
     Height = 33
     Caption = 'Yes'
     TabOrder = 0
+    OnClick = YesButtonClick
   end
   object NoButton: TTntButton
-    Left = 64
-    Top = 232
+    Left = 32
+    Top = 256
     Width = 129
     Height = 33
     Caption = 'Not now, thanks'
     TabOrder = 1
+    OnClick = NoButtonClick
   end
 end

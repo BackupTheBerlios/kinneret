@@ -504,7 +504,7 @@ object WForm: TWForm
   end
   object WriteButton: TTntButton
     Left = 352
-    Top = 288
+    Top = 240
     Width = 137
     Height = 33
     Caption = 'Make a bootable floppy'
@@ -530,7 +530,7 @@ object WForm: TWForm
     OnClick = Button1Click
   end
   object Button2: TTntButton
-    Left = 240
+    Left = 112
     Top = 288
     Width = 105
     Height = 33
@@ -562,7 +562,7 @@ object WForm: TWForm
     Caption_UTF7 = '+BeIF0QXoBdkF6g'
   end
   object ButtonAdvanced: TTntButton
-    Left = 128
+    Left = 232
     Top = 288
     Width = 105
     Height = 33
@@ -575,7 +575,7 @@ object WForm: TWForm
   end
   object TntButton1: TTntButton
     Left = 352
-    Top = 248
+    Top = 288
     Width = 137
     Height = 33
     Caption = 'Partial installation'
