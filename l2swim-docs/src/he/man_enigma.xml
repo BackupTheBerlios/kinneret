@@ -9,7 +9,7 @@
 <newl/>
 מבוסס על ה man page המקורי של המשחק הזמין בכתובת <link href="http://www.nongnu.org/enigma">http://www.nongnu.org/enigma</link> והמופץ תחת רישיון ה GPL
 <newl/>
-כל הזכויות לתרגום שמורות לפרוייקט גנו/לינוקס כנרת, יולי 2003
+כל הזכויות לתרגום שמורות לפרוייקט גנו/לינוקס כנרת
 </copy>
 
 <chapter>
@@ -34,7 +34,7 @@
 Enigma : מכיל 141 שלבים
 </item>
 <item>
-ו-Oxyd and co : מכיל 77 שלבים
+Oxyd &amp; co : מכיל 77 שלבים
 </item>
 </bullets>
 בחרו את אחד הסטים, בחרו את השלב הרצוי, והתחילו לשחק.
@@ -89,13 +89,13 @@ Alt-X : חזרה מיידית לתפריט הראשי.
 </chapter>
 <para>
 שלב 2
-<image><file>"../image/enigma2a.jpg"</file></image>
+<image><file>"../image/man_enigma2a.jpg"</file></image>
 שלב 39
-<image><file>"../image/enigma39a.jpg"</file></image>
+<image><file>"../image/man_enigma39a.jpg"</file></image>
 שלב 42
-<image><file>"../image/enigma42a.jpg"</file></image>
+<image><file>"../image/man_enigma42a.jpg"</file></image>
 שלב 64
-<image><file>"../image/enigma64a.jpg"</file></image>
+<image><file>"../image/man_enigma64a.jpg"</file></image>
 </para>
 
 <copy>
