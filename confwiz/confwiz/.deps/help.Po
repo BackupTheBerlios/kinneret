@@ -137,17 +137,17 @@ help.o help.o: help.cpp /usr/kde/3.1/include/klocale.h \
   /usr/qt/3/include/qcolor.h /usr/qt/3/include/qbrush.h \
   /usr/qt/3/include/qfont.h /usr/qt/3/include/qfontmetrics.h \
   /usr/qt/3/include/qfontinfo.h /usr/qt/3/include/qsizepolicy.h \
-  /usr/kde/3.1/include/kpushbutton.h /usr/qt/3/include/qpushbutton.h \
-  /usr/qt/3/include/qbutton.h /usr/qt/3/include/qkeysequence.h \
-  /usr/qt/3/include/qiconset.h /usr/qt/3/include/qpixmap.h \
+  /usr/qt/3/include/qpushbutton.h /usr/qt/3/include/qbutton.h \
+  /usr/qt/3/include/qkeysequence.h /usr/qt/3/include/qiconset.h \
+  /usr/qt/3/include/qpixmap.h /usr/kde/3.1/include/ktextbrowser.h \
+  /usr/qt/3/include/qtextbrowser.h /usr/qt/3/include/qtextedit.h \
+  /usr/qt/3/include/qscrollview.h /usr/qt/3/include/qframe.h \
+  /usr/qt/3/include/qscrollbar.h /usr/qt/3/include/qrangecontrol.h \
+  /usr/qt/3/include/qstylesheet.h /usr/qt/3/include/qptrvector.h \
+  /usr/qt/3/include/qgvector.h /usr/qt/3/include/qdict.h \
+  /usr/qt/3/include/qgdict.h /usr/kde/3.1/include/kpushbutton.h \
   /usr/kde/3.1/include/kguiitem.h /usr/kde/3.1/include/kicontheme.h \
   /usr/kde/3.1/include/kglobal.h /usr/kde/3.1/include/kinstance.h \
-  /usr/kde/3.1/include/ktextbrowser.h /usr/qt/3/include/qtextbrowser.h \
-  /usr/qt/3/include/qtextedit.h /usr/qt/3/include/qscrollview.h \
-  /usr/qt/3/include/qframe.h /usr/qt/3/include/qscrollbar.h \
-  /usr/qt/3/include/qrangecontrol.h /usr/qt/3/include/qstylesheet.h \
-  /usr/qt/3/include/qptrvector.h /usr/qt/3/include/qgvector.h \
-  /usr/qt/3/include/qdict.h /usr/qt/3/include/qgdict.h \
   /usr/qt/3/include/qlayout.h /usr/qt/3/include/qtooltip.h \
   /usr/qt/3/include/qwhatsthis.h /usr/qt/3/include/qcursor.h \
   /usr/qt/3/include/qimage.h help.moc /usr/qt/3/include/qmetaobject.h \
@@ -527,8 +527,6 @@ help.h:
 
 /usr/qt/3/include/qsizepolicy.h:
 
-/usr/kde/3.1/include/kpushbutton.h:
-
 /usr/qt/3/include/qpushbutton.h:
 
 /usr/qt/3/include/qbutton.h:
@@ -538,14 +536,6 @@ help.h:
 /usr/qt/3/include/qiconset.h:
 
 /usr/qt/3/include/qpixmap.h:
-
-/usr/kde/3.1/include/kguiitem.h:
-
-/usr/kde/3.1/include/kicontheme.h:
-
-/usr/kde/3.1/include/kglobal.h:
-
-/usr/kde/3.1/include/kinstance.h:
 
 /usr/kde/3.1/include/ktextbrowser.h:
 
@@ -570,6 +560,16 @@ help.h:
 /usr/qt/3/include/qdict.h:
 
 /usr/qt/3/include/qgdict.h:
+
+/usr/kde/3.1/include/kpushbutton.h:
+
+/usr/kde/3.1/include/kguiitem.h:
+
+/usr/kde/3.1/include/kicontheme.h:
+
+/usr/kde/3.1/include/kglobal.h:
+
+/usr/kde/3.1/include/kinstance.h:
 
 /usr/qt/3/include/qlayout.h:
 

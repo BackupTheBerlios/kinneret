@@ -143,20 +143,20 @@ configwizard.o configwizard.o: configwizard.cpp \
   /usr/qt/3/include/qframe.h /usr/qt/3/include/qscrollbar.h \
   /usr/qt/3/include/qrangecontrol.h /usr/qt/3/include/qfile.h \
   /usr/qt/3/include/qfileinfo.h /usr/qt/3/include/qdatetime.h \
-  /usr/qt/3/include/qtimer.h /usr/kde/3.1/include/klistview.h \
-  /usr/kde/3.1/include/knuminput.h /usr/qt/3/include/qspinbox.h \
-  /usr/kde/3.1/include/kpushbutton.h /usr/qt/3/include/qpushbutton.h \
+  /usr/qt/3/include/qtimer.h /usr/qt/3/include/qpushbutton.h \
   /usr/qt/3/include/qbutton.h /usr/qt/3/include/qkeysequence.h \
-  /usr/qt/3/include/qiconset.h /usr/kde/3.1/include/kguiitem.h \
+  /usr/qt/3/include/qiconset.h /usr/qt/3/include/qlabel.h \
+  /usr/kde/3.1/include/ktextbrowser.h /usr/qt/3/include/qtextbrowser.h \
+  /usr/qt/3/include/qtextedit.h /usr/qt/3/include/qstylesheet.h \
+  /usr/qt/3/include/qptrvector.h /usr/qt/3/include/qgvector.h \
+  /usr/qt/3/include/qdict.h /usr/qt/3/include/qgdict.h \
+  /usr/qt/3/include/qbuttongroup.h /usr/qt/3/include/qgroupbox.h \
+  /usr/qt/3/include/qradiobutton.h /usr/qt/3/include/qheader.h \
+  /usr/kde/3.1/include/klistview.h /usr/kde/3.1/include/knuminput.h \
+  /usr/qt/3/include/qspinbox.h /usr/qt/3/include/qlineedit.h \
+  /usr/kde/3.1/include/kpushbutton.h /usr/kde/3.1/include/kguiitem.h \
   /usr/kde/3.1/include/kicontheme.h /usr/kde/3.1/include/kglobal.h \
-  /usr/kde/3.1/include/kinstance.h /usr/kde/3.1/include/ktextbrowser.h \
-  /usr/qt/3/include/qtextbrowser.h /usr/qt/3/include/qtextedit.h \
-  /usr/qt/3/include/qstylesheet.h /usr/qt/3/include/qptrvector.h \
-  /usr/qt/3/include/qgvector.h /usr/qt/3/include/qdict.h \
-  /usr/qt/3/include/qgdict.h /usr/qt/3/include/qbuttongroup.h \
-  /usr/qt/3/include/qgroupbox.h /usr/qt/3/include/qcheckbox.h \
-  /usr/qt/3/include/qheader.h /usr/qt/3/include/qlabel.h \
-  /usr/qt/3/include/qlineedit.h /usr/qt/3/include/qradiobutton.h \
+  /usr/kde/3.1/include/kinstance.h /usr/qt/3/include/qcheckbox.h \
   /usr/qt/3/include/qlayout.h /usr/qt/3/include/qtooltip.h \
   /usr/qt/3/include/qwhatsthis.h /usr/qt/3/include/qcursor.h \
   /usr/qt/3/include/qimage.h configwizard.ui.h \
@@ -579,14 +579,6 @@ dirview.h:
 
 /usr/qt/3/include/qtimer.h:
 
-/usr/kde/3.1/include/klistview.h:
-
-/usr/kde/3.1/include/knuminput.h:
-
-/usr/qt/3/include/qspinbox.h:
-
-/usr/kde/3.1/include/kpushbutton.h:
-
 /usr/qt/3/include/qpushbutton.h:
 
 /usr/qt/3/include/qbutton.h:
@@ -595,13 +587,7 @@ dirview.h:
 
 /usr/qt/3/include/qiconset.h:
 
-/usr/kde/3.1/include/kguiitem.h:
-
-/usr/kde/3.1/include/kicontheme.h:
-
-/usr/kde/3.1/include/kglobal.h:
-
-/usr/kde/3.1/include/kinstance.h:
+/usr/qt/3/include/qlabel.h:
 
 /usr/kde/3.1/include/ktextbrowser.h:
 
@@ -623,15 +609,29 @@ dirview.h:
 
 /usr/qt/3/include/qgroupbox.h:
 
-/usr/qt/3/include/qcheckbox.h:
+/usr/qt/3/include/qradiobutton.h:
 
 /usr/qt/3/include/qheader.h:
 
-/usr/qt/3/include/qlabel.h:
+/usr/kde/3.1/include/klistview.h:
+
+/usr/kde/3.1/include/knuminput.h:
+
+/usr/qt/3/include/qspinbox.h:
 
 /usr/qt/3/include/qlineedit.h:
 
-/usr/qt/3/include/qradiobutton.h:
+/usr/kde/3.1/include/kpushbutton.h:
+
+/usr/kde/3.1/include/kguiitem.h:
+
+/usr/kde/3.1/include/kicontheme.h:
+
+/usr/kde/3.1/include/kglobal.h:
+
+/usr/kde/3.1/include/kinstance.h:
+
+/usr/qt/3/include/qcheckbox.h:
 
 /usr/qt/3/include/qlayout.h:
 
