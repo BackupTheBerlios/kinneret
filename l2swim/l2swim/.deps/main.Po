@@ -1,220 +1,131 @@
-main.o main.o: main.cpp /usr/include/kde/kapplication.h \
-  /usr/include/kde/kdeversion.h /usr/include/kde/kdemacros.h \
-  /usr/lib/qt-3.2/include/qapplication.h \
-  /usr/lib/qt-3.2/include/qdesktopwidget.h \
-  /usr/lib/qt-3.2/include/qwidget.h /usr/lib/qt-3.2/include/qwindowdefs.h \
-  /usr/lib/qt-3.2/include/qobjectdefs.h /usr/lib/qt-3.2/include/qglobal.h \
-  /usr/lib/qt-3.2/include/qconfig.h /usr/lib/qt-3.2/include/qmodules.h \
-  /usr/lib/qt-3.2/include/qfeatures.h /usr/lib/qt-3.2/include/qstring.h \
-  /usr/lib/qt-3.2/include/qcstring.h /usr/lib/qt-3.2/include/qmemarray.h \
-  /usr/lib/qt-3.2/include/qgarray.h /usr/lib/qt-3.2/include/qshared.h \
-  /usr/lib/qt-3.2/include/qwinexport.h /usr/include/string.h \
-  /usr/include/features.h /usr/include/sys/cdefs.h \
+main.o main.o: main.cpp /opt/kde3/include/kapplication.h \
+  /opt/kde3/include/kdeversion.h /usr/lib/qt3/include/qapplication.h \
+  /usr/lib/qt3/include/qdesktopwidget.h /usr/lib/qt3/include/qwidget.h \
+  /usr/lib/qt3/include/qwindowdefs.h /usr/lib/qt3/include/qobjectdefs.h \
+  /usr/lib/qt3/include/qglobal.h /usr/lib/qt3/include/qconfig.h \
+  /usr/lib/qt3/include/qmodules.h /usr/lib/qt3/include/qfeatures.h \
+  /usr/lib/qt3/include/qstring.h /usr/lib/qt3/include/qcstring.h \
+  /usr/lib/qt3/include/qmemarray.h /usr/lib/qt3/include/qgarray.h \
+  /usr/lib/qt3/include/qshared.h /usr/lib/qt3/include/qwinexport.h \
+  /usr/include/string.h /usr/include/features.h /usr/include/sys/cdefs.h \
   /usr/include/gnu/stubs.h \
-  /usr/lib/gcc-lib/i386-redhat-linux/3.3.2/include/stddef.h \
+  /usr/lib/gcc-lib/i586-suse-linux/3.3.1/include/stddef.h \
   /usr/include/xlocale.h \
-  /usr/lib/gcc-lib/i386-redhat-linux/3.3.2/include/limits.h \
-  /usr/lib/gcc-lib/i386-redhat-linux/3.3.2/include/syslimits.h \
+  /usr/lib/gcc-lib/i586-suse-linux/3.3.1/include/limits.h \
+  /usr/lib/gcc-lib/i586-suse-linux/3.3.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/bits/posix1_lim.h \
   /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
   /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
-  /usr/include/bits/stdio_lim.h /usr/include/c++/3.3.2/string \
-  /usr/include/c++/3.3.2/i386-redhat-linux/bits/c++config.h \
-  /usr/include/c++/3.3.2/i386-redhat-linux/bits/os_defines.h \
-  /usr/include/c++/3.3.2/bits/stringfwd.h \
-  /usr/include/c++/3.3.2/bits/char_traits.h \
-  /usr/include/c++/3.3.2/cstring /usr/include/c++/3.3.2/cstddef \
-  /usr/include/c++/3.3.2/bits/fpos.h \
-  /usr/include/c++/3.3.2/i386-redhat-linux/bits/c++io.h \
-  /usr/include/c++/3.3.2/cstdio /usr/include/stdio.h \
-  /usr/include/bits/types.h /usr/include/bits/wordsize.h \
-  /usr/include/bits/typesizes.h /usr/include/libio.h \
-  /usr/include/_G_config.h /usr/include/wchar.h /usr/include/bits/wchar.h \
-  /usr/include/gconv.h \
-  /usr/lib/gcc-lib/i386-redhat-linux/3.3.2/include/stdarg.h \
+  /usr/include/bits/stdio_lim.h /usr/lib/qt3/include/qnamespace.h \
+  /usr/lib/qt3/include/qobject.h /usr/lib/qt3/include/qevent.h \
+  /usr/lib/qt3/include/qregion.h /usr/lib/qt3/include/qrect.h \
+  /usr/lib/qt3/include/qsize.h /usr/lib/qt3/include/qpoint.h \
+  /usr/lib/qt3/include/qmime.h /usr/lib/qt3/include/qmap.h \
+  /usr/lib/qt3/include/qdatastream.h /usr/lib/qt3/include/qiodevice.h \
+  /usr/lib/qt3/include/qpair.h /usr/lib/qt3/include/qvaluelist.h \
+  /usr/lib/qt3/include/qtl.h /usr/lib/qt3/include/qtextstream.h \
+  /usr/include/stdio.h /usr/include/bits/types.h \
+  /usr/include/bits/wordsize.h /usr/include/bits/typesizes.h \
+  /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+  /usr/include/bits/wchar.h /usr/include/gconv.h \
+  /usr/lib/gcc-lib/i586-suse-linux/3.3.1/include/stdarg.h \
   /usr/include/bits/sys_errlist.h /usr/include/bits/stdio.h \
-  /usr/include/c++/3.3.2/i386-redhat-linux/bits/gthr.h \
-  /usr/include/c++/3.3.2/i386-redhat-linux/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/sched.h /usr/include/time.h \
-  /usr/include/bits/sched.h /usr/include/bits/time.h \
-  /usr/include/signal.h /usr/include/bits/sigset.h \
-  /usr/include/bits/pthreadtypes.h /usr/include/bits/initspin.h \
-  /usr/include/bits/sigthread.h /usr/include/unistd.h \
-  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
-  /usr/include/bits/confname.h /usr/include/getopt.h \
-  /usr/include/c++/3.3.2/cwchar /usr/include/c++/3.3.2/ctime \
-  /usr/include/c++/3.3.2/memory \
-  /usr/include/c++/3.3.2/bits/stl_algobase.h \
-  /usr/include/c++/3.3.2/climits /usr/include/c++/3.3.2/cstdlib \
+  /usr/lib/qt3/include/qpaintdevice.h /usr/lib/qt3/include/qpalette.h \
+  /usr/lib/qt3/include/qcolor.h /usr/lib/qt3/include/qstringlist.h \
+  /usr/lib/qt3/include/qstrlist.h /usr/lib/qt3/include/qptrlist.h \
+  /usr/lib/qt3/include/qglist.h /usr/lib/qt3/include/qptrcollection.h \
+  /usr/lib/qt3/include/qbrush.h /usr/lib/qt3/include/qfont.h \
+  /usr/lib/qt3/include/qfontmetrics.h /usr/lib/qt3/include/qfontinfo.h \
+  /usr/lib/qt3/include/qsizepolicy.h /usr/lib/qt3/include/qasciidict.h \
+  /usr/lib/qt3/include/qgdict.h /usr/lib/qt3/include/qtranslator.h \
+  /usr/lib/qt3/include/qpixmap.h /opt/kde3/include/kinstance.h l2swim.h \
+  /opt/kde3/include/kmainwindow.h /opt/kde3/include/kxmlguifactory.h \
+  /usr/lib/qt3/include/qdom.h /opt/kde3/include/kxmlguiclient.h \
+  /opt/kde3/include/kxmlguibuilder.h /usr/lib/qt3/include/qmainwindow.h \
+  /usr/lib/qt3/include/qtoolbar.h /usr/lib/qt3/include/qdockwindow.h \
+  /usr/lib/qt3/include/qframe.h /opt/kde3/include/ktoolbar.h \
+  /usr/lib/qt3/include/qcombobox.h /opt/kde3/include/kglobal.h \
+  /usr/lib/qt3/include/qguardedptr.h /usr/lib/qt3/include/qiconset.h \
+  /opt/kde3/include/klocale.h index.h /usr/lib/qt3/include/qfile.h \
+  /usr/lib/qt3/include/qhbox.h /usr/lib/qt3/include/qimage.h \
+  /usr/lib/qt3/include/qlabel.h \
+  /opt/kde3/include/kparts/componentfactory.h \
+  /opt/kde3/include/kparts/factory.h /opt/kde3/include/klibloader.h \
   /usr/include/stdlib.h /usr/include/bits/waitflags.h \
   /usr/include/bits/waitstatus.h /usr/include/endian.h \
-  /usr/include/bits/endian.h /usr/include/sys/types.h \
+  /usr/include/bits/endian.h /usr/include/sys/types.h /usr/include/time.h \
   /usr/include/sys/select.h /usr/include/bits/select.h \
-  /usr/include/sys/sysmacros.h /usr/include/alloca.h \
-  /usr/include/c++/3.3.2/new /usr/include/c++/3.3.2/exception \
-  /usr/include/c++/3.3.2/iosfwd \
-  /usr/include/c++/3.3.2/i386-redhat-linux/bits/c++locale.h \
-  /usr/include/c++/3.3.2/clocale /usr/include/locale.h \
-  /usr/include/bits/locale.h /usr/include/langinfo.h \
-  /usr/include/nl_types.h /usr/include/iconv.h /usr/include/libintl.h \
-  /usr/include/c++/3.3.2/cctype /usr/include/ctype.h \
-  /usr/include/c++/3.3.2/bits/functexcept.h \
-  /usr/include/c++/3.3.2/exception_defines.h \
-  /usr/include/c++/3.3.2/bits/stl_pair.h \
-  /usr/include/c++/3.3.2/bits/type_traits.h \
-  /usr/include/c++/3.3.2/bits/stl_iterator_base_types.h \
-  /usr/include/c++/3.3.2/bits/stl_iterator_base_funcs.h \
-  /usr/include/c++/3.3.2/bits/concept_check.h \
-  /usr/include/c++/3.3.2/bits/stl_iterator.h \
-  /usr/include/c++/3.3.2/bits/stl_alloc.h \
-  /usr/include/c++/3.3.2/bits/stl_threads.h \
-  /usr/include/c++/3.3.2/i386-redhat-linux/bits/atomicity.h \
-  /usr/include/c++/3.3.2/bits/stl_construct.h \
-  /usr/include/c++/3.3.2/bits/stl_uninitialized.h \
-  /usr/include/c++/3.3.2/bits/stl_raw_storage_iter.h \
-  /usr/include/c++/3.3.2/bits/stl_function.h \
-  /usr/include/c++/3.3.2/bits/basic_string.h \
-  /usr/include/c++/3.3.2/algorithm /usr/include/c++/3.3.2/bits/stl_algo.h \
-  /usr/include/c++/3.3.2/bits/stl_heap.h \
-  /usr/include/c++/3.3.2/bits/stl_tempbuf.h \
-  /usr/include/c++/3.3.2/bits/basic_string.tcc \
-  /usr/lib/qt-3.2/include/qnamespace.h /usr/lib/qt-3.2/include/qobject.h \
-  /usr/lib/qt-3.2/include/qevent.h /usr/lib/qt-3.2/include/qregion.h \
-  /usr/lib/qt-3.2/include/qrect.h /usr/lib/qt-3.2/include/qsize.h \
-  /usr/lib/qt-3.2/include/qpoint.h /usr/lib/qt-3.2/include/qmime.h \
-  /usr/lib/qt-3.2/include/qmap.h /usr/lib/qt-3.2/include/qdatastream.h \
-  /usr/lib/qt-3.2/include/qiodevice.h /usr/lib/qt-3.2/include/qpair.h \
-  /usr/lib/qt-3.2/include/qvaluelist.h /usr/lib/qt-3.2/include/qtl.h \
-  /usr/lib/qt-3.2/include/qtextstream.h /usr/include/c++/3.3.2/iterator \
-  /usr/include/c++/3.3.2/ostream /usr/include/c++/3.3.2/ios \
-  /usr/include/c++/3.3.2/bits/localefwd.h \
-  /usr/include/c++/3.3.2/bits/ios_base.h \
-  /usr/include/c++/3.3.2/bits/locale_classes.h \
-  /usr/include/c++/3.3.2/streambuf \
-  /usr/include/c++/3.3.2/bits/streambuf.tcc \
-  /usr/include/c++/3.3.2/bits/basic_ios.h \
-  /usr/include/c++/3.3.2/bits/streambuf_iterator.h \
-  /usr/include/c++/3.3.2/bits/locale_facets.h \
-  /usr/include/c++/3.3.2/cwctype /usr/include/wctype.h \
-  /usr/include/c++/3.3.2/i386-redhat-linux/bits/ctype_base.h \
-  /usr/include/c++/3.3.2/i386-redhat-linux/bits/ctype_inline.h \
-  /usr/include/c++/3.3.2/bits/codecvt.h \
-  /usr/include/c++/3.3.2/i386-redhat-linux/bits/codecvt_specializations.h \
-  /usr/include/c++/3.3.2/i386-redhat-linux/bits/time_members.h \
-  /usr/include/c++/3.3.2/i386-redhat-linux/bits/messages_members.h \
-  /usr/include/c++/3.3.2/bits/basic_ios.tcc \
-  /usr/include/c++/3.3.2/bits/ostream.tcc /usr/include/c++/3.3.2/locale \
-  /usr/include/c++/3.3.2/bits/locale_facets.tcc \
-  /usr/include/c++/3.3.2/cerrno /usr/include/errno.h \
-  /usr/include/bits/errno.h /usr/include/linux/errno.h \
-  /usr/include/asm/errno.h /usr/include/c++/3.3.2/cmath \
-  /usr/include/math.h /usr/include/bits/huge_val.h \
-  /usr/include/bits/nan.h /usr/include/bits/mathdef.h \
-  /usr/include/bits/mathcalls.h /usr/include/bits/mathinline.h \
-  /usr/include/c++/3.3.2/bits/cmath.tcc /usr/include/c++/3.3.2/limits \
-  /usr/include/c++/3.3.2/typeinfo /usr/include/c++/3.3.2/istream \
-  /usr/include/c++/3.3.2/bits/istream.tcc \
-  /usr/include/c++/3.3.2/bits/stream_iterator.h \
-  /usr/include/c++/3.3.2/list /usr/include/c++/3.3.2/bits/stl_list.h \
-  /usr/include/c++/3.3.2/bits/list.tcc /usr/include/c++/3.3.2/map \
-  /usr/include/c++/3.3.2/bits/stl_tree.h \
-  /usr/include/c++/3.3.2/bits/stl_map.h \
-  /usr/include/c++/3.3.2/bits/stl_multimap.h \
-  /usr/lib/qt-3.2/include/qpaintdevice.h \
-  /usr/lib/qt-3.2/include/qpalette.h /usr/lib/qt-3.2/include/qcolor.h \
-  /usr/lib/qt-3.2/include/qstringlist.h \
-  /usr/lib/qt-3.2/include/qstrlist.h /usr/lib/qt-3.2/include/qptrlist.h \
-  /usr/lib/qt-3.2/include/qglist.h \
-  /usr/lib/qt-3.2/include/qptrcollection.h \
-  /usr/lib/qt-3.2/include/qbrush.h /usr/lib/qt-3.2/include/qfont.h \
-  /usr/lib/qt-3.2/include/qfontmetrics.h \
-  /usr/lib/qt-3.2/include/qfontinfo.h \
-  /usr/lib/qt-3.2/include/qsizepolicy.h \
-  /usr/lib/qt-3.2/include/qasciidict.h /usr/lib/qt-3.2/include/qgdict.h \
-  /usr/lib/qt-3.2/include/qtranslator.h /usr/lib/qt-3.2/include/qpixmap.h \
-  /usr/include/kde/kinstance.h l2swim.h /usr/include/kde/kmainwindow.h \
-  /usr/include/kde/kxmlguifactory.h /usr/lib/qt-3.2/include/qdom.h \
-  /usr/include/kde/kxmlguiclient.h /usr/include/kde/kxmlguibuilder.h \
-  /usr/lib/qt-3.2/include/qmainwindow.h \
-  /usr/lib/qt-3.2/include/qtoolbar.h \
-  /usr/lib/qt-3.2/include/qdockwindow.h /usr/lib/qt-3.2/include/qframe.h \
-  /usr/lib/qt-3.2/include/qmetaobject.h \
-  /usr/lib/qt-3.2/include/qconnection.h /usr/include/kde/ktoolbar.h \
-  /usr/lib/qt-3.2/include/qcombobox.h /usr/include/kde/kglobal.h \
-  /usr/lib/qt-3.2/include/qguardedptr.h \
-  /usr/lib/qt-3.2/include/qiconset.h /usr/include/kde/klocale.h index.h \
-  /usr/lib/qt-3.2/include/qfile.h /usr/lib/qt-3.2/include/qhbox.h \
-  /usr/lib/qt-3.2/include/qimage.h /usr/lib/qt-3.2/include/qlabel.h \
-  /usr/include/kde/kparts/componentfactory.h \
-  /usr/include/kde/kparts/factory.h /usr/include/kde/klibloader.h \
-  /usr/include/kde/kparts/part.h /usr/include/kde/kurl.h \
-  /usr/include/kde/ktrader.h /usr/include/kde/kservice.h \
-  /usr/lib/qt-3.2/include/qvariant.h /usr/include/kde/kicontheme.h \
-  /usr/include/kde/ksycocaentry.h /usr/include/kde/ksycocatype.h \
-  /usr/include/kde/ksharedptr.h /usr/lib/qt-3.2/include/qwidgetstack.h \
-  /usr/lib/qt-3.2/include/qintdict.h /usr/lib/qt-3.2/include/qptrdict.h \
-  /usr/lib/qt-3.2/include/qsplitter.h \
-  /usr/lib/qt-3.2/include/qvaluestack.h /usr/include/kde/kiconloader.h \
-  /usr/lib/qt-3.2/include/qmovie.h /usr/include/kde/kprocess.h \
-  /usr/include/sys/wait.h /usr/include/bits/signum.h \
+  /usr/include/bits/sigset.h /usr/include/bits/time.h \
+  /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/sched.h /usr/include/alloca.h \
+  /opt/kde3/include/kparts/part.h /opt/kde3/include/kurl.h \
+  /opt/kde3/include/ktrader.h /opt/kde3/include/kservice.h \
+  /usr/lib/qt3/include/qvariant.h /opt/kde3/include/kicontheme.h \
+  /opt/kde3/include/ksycocaentry.h /opt/kde3/include/ksycocatype.h \
+  /opt/kde3/include/ksharedptr.h /usr/lib/qt3/include/qmetaobject.h \
+  /usr/lib/qt3/include/qconnection.h /usr/lib/qt3/include/qwidgetstack.h \
+  /usr/lib/qt3/include/qintdict.h /usr/lib/qt3/include/qptrdict.h \
+  /usr/lib/qt3/include/qsplitter.h /usr/lib/qt3/include/qvaluestack.h \
+  /opt/kde3/include/kiconloader.h /usr/lib/qt3/include/qmovie.h \
+  /opt/kde3/include/kprocess.h /usr/include/sys/wait.h \
+  /usr/include/signal.h /usr/include/bits/signum.h \
   /usr/include/bits/siginfo.h /usr/include/bits/sigaction.h \
   /usr/include/bits/sigcontext.h /usr/include/asm/sigcontext.h \
   /usr/include/bits/sigstack.h /usr/include/sys/ucontext.h \
-  /usr/include/sys/resource.h /usr/include/bits/resource.h \
-  /usr/include/kde/kmimetype.h /usr/include/sys/stat.h \
-  /usr/include/bits/stat.h /usr/include/kde/kservicetype.h \
-  /usr/include/kde/ksimpleconfig.h /usr/include/kde/kconfig.h \
-  /usr/include/kde/kconfigbase.h /usr/lib/qt-3.2/include/qdatetime.h \
-  /usr/include/kde/kconfigdata.h \
-  /usr/include/kde/kparts/browserextension.h \
-  /usr/include/kde/kparts/event.h /usr/include/kde/khtml_part.h \
-  /usr/include/kde/dom/html_document.h /usr/include/kde/dom/dom_doc.h \
-  /usr/include/kde/dom/dom_node.h /usr/include/kde/dom/css_stylesheet.h \
-  /usr/include/kde/dom/dom_string.h /usr/include/kde/kdebug.h \
-  /usr/include/kde/dom/dom_misc.h /usr/include/kde/dom/dom2_range.h \
-  /usr/lib/qt-3.2/include/qregexp.h /usr/include/kde/khtmlview.h \
-  /usr/lib/qt-3.2/include/qscrollview.h \
-  /usr/lib/qt-3.2/include/qscrollbar.h \
-  /usr/lib/qt-3.2/include/qrangecontrol.h /usr/include/kde/krun.h \
-  /usr/lib/qt-3.2/include/qtimer.h /usr/include/kde/kstartupinfo.h \
-  /usr/include/kde/kmessagebox.h /usr/include/kde/kguiitem.h \
-  /usr/include/kde/kstdguiitem.h
+  /usr/include/bits/sigthread.h /usr/include/sys/resource.h \
+  /usr/include/bits/resource.h /usr/include/unistd.h \
+  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
+  /usr/include/bits/confname.h /usr/include/getopt.h \
+  /opt/kde3/include/kmimetype.h /usr/include/sys/stat.h \
+  /usr/include/bits/stat.h /opt/kde3/include/kservicetype.h \
+  /opt/kde3/include/ksimpleconfig.h /opt/kde3/include/kconfig.h \
+  /opt/kde3/include/kconfigbase.h /usr/lib/qt3/include/qdatetime.h \
+  /opt/kde3/include/kconfigdata.h \
+  /opt/kde3/include/kparts/browserextension.h \
+  /opt/kde3/include/kparts/event.h /opt/kde3/include/khtml_part.h \
+  /opt/kde3/include/dom/html_document.h /opt/kde3/include/dom/dom_doc.h \
+  /opt/kde3/include/dom/dom_node.h /opt/kde3/include/dom/css_stylesheet.h \
+  /opt/kde3/include/dom/dom_string.h /opt/kde3/include/dom/dom_misc.h \
+  /opt/kde3/include/dom/dom2_range.h /usr/lib/qt3/include/qregexp.h \
+  /opt/kde3/include/khtmlview.h /usr/lib/qt3/include/qscrollview.h \
+  /usr/lib/qt3/include/qscrollbar.h /usr/lib/qt3/include/qrangecontrol.h \
+  /opt/kde3/include/krun.h /usr/lib/qt3/include/qtimer.h \
+  /opt/kde3/include/kstartupinfo.h /opt/kde3/include/kmessagebox.h \
+  /opt/kde3/include/kguiitem.h /opt/kde3/include/kstdguiitem.h
 
-/usr/include/kde/kapplication.h:
+/opt/kde3/include/kapplication.h:
 
-/usr/include/kde/kdeversion.h:
+/opt/kde3/include/kdeversion.h:
 
-/usr/include/kde/kdemacros.h:
+/usr/lib/qt3/include/qapplication.h:
 
-/usr/lib/qt-3.2/include/qapplication.h:
+/usr/lib/qt3/include/qdesktopwidget.h:
 
-/usr/lib/qt-3.2/include/qdesktopwidget.h:
+/usr/lib/qt3/include/qwidget.h:
 
-/usr/lib/qt-3.2/include/qwidget.h:
+/usr/lib/qt3/include/qwindowdefs.h:
 
-/usr/lib/qt-3.2/include/qwindowdefs.h:
+/usr/lib/qt3/include/qobjectdefs.h:
 
-/usr/lib/qt-3.2/include/qobjectdefs.h:
+/usr/lib/qt3/include/qglobal.h:
 
-/usr/lib/qt-3.2/include/qglobal.h:
+/usr/lib/qt3/include/qconfig.h:
 
-/usr/lib/qt-3.2/include/qconfig.h:
+/usr/lib/qt3/include/qmodules.h:
 
-/usr/lib/qt-3.2/include/qmodules.h:
+/usr/lib/qt3/include/qfeatures.h:
 
-/usr/lib/qt-3.2/include/qfeatures.h:
+/usr/lib/qt3/include/qstring.h:
 
-/usr/lib/qt-3.2/include/qstring.h:
+/usr/lib/qt3/include/qcstring.h:
 
-/usr/lib/qt-3.2/include/qcstring.h:
+/usr/lib/qt3/include/qmemarray.h:
 
-/usr/lib/qt-3.2/include/qmemarray.h:
+/usr/lib/qt3/include/qgarray.h:
 
-/usr/lib/qt-3.2/include/qgarray.h:
+/usr/lib/qt3/include/qshared.h:
 
-/usr/lib/qt-3.2/include/qshared.h:
-
-/usr/lib/qt-3.2/include/qwinexport.h:
+/usr/lib/qt3/include/qwinexport.h:
 
 /usr/include/string.h:
 
@@ -224,13 +135,13 @@ main.o main.o: main.cpp /usr/include/kde/kapplication.h \
 
 /usr/include/gnu/stubs.h:
 
-/usr/lib/gcc-lib/i386-redhat-linux/3.3.2/include/stddef.h:
+/usr/lib/gcc-lib/i586-suse-linux/3.3.1/include/stddef.h:
 
 /usr/include/xlocale.h:
 
-/usr/lib/gcc-lib/i386-redhat-linux/3.3.2/include/limits.h:
+/usr/lib/gcc-lib/i586-suse-linux/3.3.1/include/limits.h:
 
-/usr/lib/gcc-lib/i386-redhat-linux/3.3.2/include/syslimits.h:
+/usr/lib/gcc-lib/i586-suse-linux/3.3.1/include/syslimits.h:
 
 /usr/include/limits.h:
 
@@ -246,25 +157,35 @@ main.o main.o: main.cpp /usr/include/kde/kapplication.h \
 
 /usr/include/bits/stdio_lim.h:
 
-/usr/include/c++/3.3.2/string:
+/usr/lib/qt3/include/qnamespace.h:
 
-/usr/include/c++/3.3.2/i386-redhat-linux/bits/c++config.h:
+/usr/lib/qt3/include/qobject.h:
 
-/usr/include/c++/3.3.2/i386-redhat-linux/bits/os_defines.h:
+/usr/lib/qt3/include/qevent.h:
 
-/usr/include/c++/3.3.2/bits/stringfwd.h:
+/usr/lib/qt3/include/qregion.h:
 
-/usr/include/c++/3.3.2/bits/char_traits.h:
+/usr/lib/qt3/include/qrect.h:
 
-/usr/include/c++/3.3.2/cstring:
+/usr/lib/qt3/include/qsize.h:
 
-/usr/include/c++/3.3.2/cstddef:
+/usr/lib/qt3/include/qpoint.h:
 
-/usr/include/c++/3.3.2/bits/fpos.h:
+/usr/lib/qt3/include/qmime.h:
 
-/usr/include/c++/3.3.2/i386-redhat-linux/bits/c++io.h:
+/usr/lib/qt3/include/qmap.h:
 
-/usr/include/c++/3.3.2/cstdio:
+/usr/lib/qt3/include/qdatastream.h:
+
+/usr/lib/qt3/include/qiodevice.h:
+
+/usr/lib/qt3/include/qpair.h:
+
+/usr/lib/qt3/include/qvaluelist.h:
+
+/usr/lib/qt3/include/qtl.h:
+
+/usr/lib/qt3/include/qtextstream.h:
 
 /usr/include/stdio.h:
 
@@ -284,57 +205,95 @@ main.o main.o: main.cpp /usr/include/kde/kapplication.h \
 
 /usr/include/gconv.h:
 
-/usr/lib/gcc-lib/i386-redhat-linux/3.3.2/include/stdarg.h:
+/usr/lib/gcc-lib/i586-suse-linux/3.3.1/include/stdarg.h:
 
 /usr/include/bits/sys_errlist.h:
 
 /usr/include/bits/stdio.h:
 
-/usr/include/c++/3.3.2/i386-redhat-linux/bits/gthr.h:
+/usr/lib/qt3/include/qpaintdevice.h:
 
-/usr/include/c++/3.3.2/i386-redhat-linux/bits/gthr-default.h:
+/usr/lib/qt3/include/qpalette.h:
 
-/usr/include/pthread.h:
+/usr/lib/qt3/include/qcolor.h:
 
-/usr/include/sched.h:
+/usr/lib/qt3/include/qstringlist.h:
 
-/usr/include/time.h:
+/usr/lib/qt3/include/qstrlist.h:
 
-/usr/include/bits/sched.h:
+/usr/lib/qt3/include/qptrlist.h:
 
-/usr/include/bits/time.h:
+/usr/lib/qt3/include/qglist.h:
 
-/usr/include/signal.h:
+/usr/lib/qt3/include/qptrcollection.h:
 
-/usr/include/bits/sigset.h:
+/usr/lib/qt3/include/qbrush.h:
 
-/usr/include/bits/pthreadtypes.h:
+/usr/lib/qt3/include/qfont.h:
 
-/usr/include/bits/initspin.h:
+/usr/lib/qt3/include/qfontmetrics.h:
 
-/usr/include/bits/sigthread.h:
+/usr/lib/qt3/include/qfontinfo.h:
 
-/usr/include/unistd.h:
+/usr/lib/qt3/include/qsizepolicy.h:
 
-/usr/include/bits/posix_opt.h:
+/usr/lib/qt3/include/qasciidict.h:
 
-/usr/include/bits/environments.h:
+/usr/lib/qt3/include/qgdict.h:
 
-/usr/include/bits/confname.h:
+/usr/lib/qt3/include/qtranslator.h:
 
-/usr/include/getopt.h:
+/usr/lib/qt3/include/qpixmap.h:
 
-/usr/include/c++/3.3.2/cwchar:
+/opt/kde3/include/kinstance.h:
 
-/usr/include/c++/3.3.2/ctime:
+l2swim.h:
 
-/usr/include/c++/3.3.2/memory:
+/opt/kde3/include/kmainwindow.h:
 
-/usr/include/c++/3.3.2/bits/stl_algobase.h:
+/opt/kde3/include/kxmlguifactory.h:
 
-/usr/include/c++/3.3.2/climits:
+/usr/lib/qt3/include/qdom.h:
 
-/usr/include/c++/3.3.2/cstdlib:
+/opt/kde3/include/kxmlguiclient.h:
+
+/opt/kde3/include/kxmlguibuilder.h:
+
+/usr/lib/qt3/include/qmainwindow.h:
+
+/usr/lib/qt3/include/qtoolbar.h:
+
+/usr/lib/qt3/include/qdockwindow.h:
+
+/usr/lib/qt3/include/qframe.h:
+
+/opt/kde3/include/ktoolbar.h:
+
+/usr/lib/qt3/include/qcombobox.h:
+
+/opt/kde3/include/kglobal.h:
+
+/usr/lib/qt3/include/qguardedptr.h:
+
+/usr/lib/qt3/include/qiconset.h:
+
+/opt/kde3/include/klocale.h:
+
+index.h:
+
+/usr/lib/qt3/include/qfile.h:
+
+/usr/lib/qt3/include/qhbox.h:
+
+/usr/lib/qt3/include/qimage.h:
+
+/usr/lib/qt3/include/qlabel.h:
+
+/opt/kde3/include/kparts/componentfactory.h:
+
+/opt/kde3/include/kparts/factory.h:
+
+/opt/kde3/include/klibloader.h:
 
 /usr/include/stdlib.h:
 
@@ -348,331 +307,65 @@ main.o main.o: main.cpp /usr/include/kde/kapplication.h \
 
 /usr/include/sys/types.h:
 
+/usr/include/time.h:
+
 /usr/include/sys/select.h:
 
 /usr/include/bits/select.h:
 
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
 /usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/bits/sched.h:
 
 /usr/include/alloca.h:
 
-/usr/include/c++/3.3.2/new:
+/opt/kde3/include/kparts/part.h:
 
-/usr/include/c++/3.3.2/exception:
+/opt/kde3/include/kurl.h:
 
-/usr/include/c++/3.3.2/iosfwd:
+/opt/kde3/include/ktrader.h:
 
-/usr/include/c++/3.3.2/i386-redhat-linux/bits/c++locale.h:
+/opt/kde3/include/kservice.h:
 
-/usr/include/c++/3.3.2/clocale:
+/usr/lib/qt3/include/qvariant.h:
 
-/usr/include/locale.h:
+/opt/kde3/include/kicontheme.h:
 
-/usr/include/bits/locale.h:
+/opt/kde3/include/ksycocaentry.h:
 
-/usr/include/langinfo.h:
+/opt/kde3/include/ksycocatype.h:
 
-/usr/include/nl_types.h:
+/opt/kde3/include/ksharedptr.h:
 
-/usr/include/iconv.h:
+/usr/lib/qt3/include/qmetaobject.h:
 
-/usr/include/libintl.h:
+/usr/lib/qt3/include/qconnection.h:
 
-/usr/include/c++/3.3.2/cctype:
+/usr/lib/qt3/include/qwidgetstack.h:
 
-/usr/include/ctype.h:
+/usr/lib/qt3/include/qintdict.h:
 
-/usr/include/c++/3.3.2/bits/functexcept.h:
+/usr/lib/qt3/include/qptrdict.h:
 
-/usr/include/c++/3.3.2/exception_defines.h:
+/usr/lib/qt3/include/qsplitter.h:
 
-/usr/include/c++/3.3.2/bits/stl_pair.h:
+/usr/lib/qt3/include/qvaluestack.h:
 
-/usr/include/c++/3.3.2/bits/type_traits.h:
+/opt/kde3/include/kiconloader.h:
 
-/usr/include/c++/3.3.2/bits/stl_iterator_base_types.h:
+/usr/lib/qt3/include/qmovie.h:
 
-/usr/include/c++/3.3.2/bits/stl_iterator_base_funcs.h:
-
-/usr/include/c++/3.3.2/bits/concept_check.h:
-
-/usr/include/c++/3.3.2/bits/stl_iterator.h:
-
-/usr/include/c++/3.3.2/bits/stl_alloc.h:
-
-/usr/include/c++/3.3.2/bits/stl_threads.h:
-
-/usr/include/c++/3.3.2/i386-redhat-linux/bits/atomicity.h:
-
-/usr/include/c++/3.3.2/bits/stl_construct.h:
-
-/usr/include/c++/3.3.2/bits/stl_uninitialized.h:
-
-/usr/include/c++/3.3.2/bits/stl_raw_storage_iter.h:
-
-/usr/include/c++/3.3.2/bits/stl_function.h:
-
-/usr/include/c++/3.3.2/bits/basic_string.h:
-
-/usr/include/c++/3.3.2/algorithm:
-
-/usr/include/c++/3.3.2/bits/stl_algo.h:
-
-/usr/include/c++/3.3.2/bits/stl_heap.h:
-
-/usr/include/c++/3.3.2/bits/stl_tempbuf.h:
-
-/usr/include/c++/3.3.2/bits/basic_string.tcc:
-
-/usr/lib/qt-3.2/include/qnamespace.h:
-
-/usr/lib/qt-3.2/include/qobject.h:
-
-/usr/lib/qt-3.2/include/qevent.h:
-
-/usr/lib/qt-3.2/include/qregion.h:
-
-/usr/lib/qt-3.2/include/qrect.h:
-
-/usr/lib/qt-3.2/include/qsize.h:
-
-/usr/lib/qt-3.2/include/qpoint.h:
-
-/usr/lib/qt-3.2/include/qmime.h:
-
-/usr/lib/qt-3.2/include/qmap.h:
-
-/usr/lib/qt-3.2/include/qdatastream.h:
-
-/usr/lib/qt-3.2/include/qiodevice.h:
-
-/usr/lib/qt-3.2/include/qpair.h:
-
-/usr/lib/qt-3.2/include/qvaluelist.h:
-
-/usr/lib/qt-3.2/include/qtl.h:
-
-/usr/lib/qt-3.2/include/qtextstream.h:
-
-/usr/include/c++/3.3.2/iterator:
-
-/usr/include/c++/3.3.2/ostream:
-
-/usr/include/c++/3.3.2/ios:
-
-/usr/include/c++/3.3.2/bits/localefwd.h:
-
-/usr/include/c++/3.3.2/bits/ios_base.h:
-
-/usr/include/c++/3.3.2/bits/locale_classes.h:
-
-/usr/include/c++/3.3.2/streambuf:
-
-/usr/include/c++/3.3.2/bits/streambuf.tcc:
-
-/usr/include/c++/3.3.2/bits/basic_ios.h:
-
-/usr/include/c++/3.3.2/bits/streambuf_iterator.h:
-
-/usr/include/c++/3.3.2/bits/locale_facets.h:
-
-/usr/include/c++/3.3.2/cwctype:
-
-/usr/include/wctype.h:
-
-/usr/include/c++/3.3.2/i386-redhat-linux/bits/ctype_base.h:
-
-/usr/include/c++/3.3.2/i386-redhat-linux/bits/ctype_inline.h:
-
-/usr/include/c++/3.3.2/bits/codecvt.h:
-
-/usr/include/c++/3.3.2/i386-redhat-linux/bits/codecvt_specializations.h:
-
-/usr/include/c++/3.3.2/i386-redhat-linux/bits/time_members.h:
-
-/usr/include/c++/3.3.2/i386-redhat-linux/bits/messages_members.h:
-
-/usr/include/c++/3.3.2/bits/basic_ios.tcc:
-
-/usr/include/c++/3.3.2/bits/ostream.tcc:
-
-/usr/include/c++/3.3.2/locale:
-
-/usr/include/c++/3.3.2/bits/locale_facets.tcc:
-
-/usr/include/c++/3.3.2/cerrno:
-
-/usr/include/errno.h:
-
-/usr/include/bits/errno.h:
-
-/usr/include/linux/errno.h:
-
-/usr/include/asm/errno.h:
-
-/usr/include/c++/3.3.2/cmath:
-
-/usr/include/math.h:
-
-/usr/include/bits/huge_val.h:
-
-/usr/include/bits/nan.h:
-
-/usr/include/bits/mathdef.h:
-
-/usr/include/bits/mathcalls.h:
-
-/usr/include/bits/mathinline.h:
-
-/usr/include/c++/3.3.2/bits/cmath.tcc:
-
-/usr/include/c++/3.3.2/limits:
-
-/usr/include/c++/3.3.2/typeinfo:
-
-/usr/include/c++/3.3.2/istream:
-
-/usr/include/c++/3.3.2/bits/istream.tcc:
-
-/usr/include/c++/3.3.2/bits/stream_iterator.h:
-
-/usr/include/c++/3.3.2/list:
-
-/usr/include/c++/3.3.2/bits/stl_list.h:
-
-/usr/include/c++/3.3.2/bits/list.tcc:
-
-/usr/include/c++/3.3.2/map:
-
-/usr/include/c++/3.3.2/bits/stl_tree.h:
-
-/usr/include/c++/3.3.2/bits/stl_map.h:
-
-/usr/include/c++/3.3.2/bits/stl_multimap.h:
-
-/usr/lib/qt-3.2/include/qpaintdevice.h:
-
-/usr/lib/qt-3.2/include/qpalette.h:
-
-/usr/lib/qt-3.2/include/qcolor.h:
-
-/usr/lib/qt-3.2/include/qstringlist.h:
-
-/usr/lib/qt-3.2/include/qstrlist.h:
-
-/usr/lib/qt-3.2/include/qptrlist.h:
-
-/usr/lib/qt-3.2/include/qglist.h:
-
-/usr/lib/qt-3.2/include/qptrcollection.h:
-
-/usr/lib/qt-3.2/include/qbrush.h:
-
-/usr/lib/qt-3.2/include/qfont.h:
-
-/usr/lib/qt-3.2/include/qfontmetrics.h:
-
-/usr/lib/qt-3.2/include/qfontinfo.h:
-
-/usr/lib/qt-3.2/include/qsizepolicy.h:
-
-/usr/lib/qt-3.2/include/qasciidict.h:
-
-/usr/lib/qt-3.2/include/qgdict.h:
-
-/usr/lib/qt-3.2/include/qtranslator.h:
-
-/usr/lib/qt-3.2/include/qpixmap.h:
-
-/usr/include/kde/kinstance.h:
-
-l2swim.h:
-
-/usr/include/kde/kmainwindow.h:
-
-/usr/include/kde/kxmlguifactory.h:
-
-/usr/lib/qt-3.2/include/qdom.h:
-
-/usr/include/kde/kxmlguiclient.h:
-
-/usr/include/kde/kxmlguibuilder.h:
-
-/usr/lib/qt-3.2/include/qmainwindow.h:
-
-/usr/lib/qt-3.2/include/qtoolbar.h:
-
-/usr/lib/qt-3.2/include/qdockwindow.h:
-
-/usr/lib/qt-3.2/include/qframe.h:
-
-/usr/lib/qt-3.2/include/qmetaobject.h:
-
-/usr/lib/qt-3.2/include/qconnection.h:
-
-/usr/include/kde/ktoolbar.h:
-
-/usr/lib/qt-3.2/include/qcombobox.h:
-
-/usr/include/kde/kglobal.h:
-
-/usr/lib/qt-3.2/include/qguardedptr.h:
-
-/usr/lib/qt-3.2/include/qiconset.h:
-
-/usr/include/kde/klocale.h:
-
-index.h:
-
-/usr/lib/qt-3.2/include/qfile.h:
-
-/usr/lib/qt-3.2/include/qhbox.h:
-
-/usr/lib/qt-3.2/include/qimage.h:
-
-/usr/lib/qt-3.2/include/qlabel.h:
-
-/usr/include/kde/kparts/componentfactory.h:
-
-/usr/include/kde/kparts/factory.h:
-
-/usr/include/kde/klibloader.h:
-
-/usr/include/kde/kparts/part.h:
-
-/usr/include/kde/kurl.h:
-
-/usr/include/kde/ktrader.h:
-
-/usr/include/kde/kservice.h:
-
-/usr/lib/qt-3.2/include/qvariant.h:
-
-/usr/include/kde/kicontheme.h:
-
-/usr/include/kde/ksycocaentry.h:
-
-/usr/include/kde/ksycocatype.h:
-
-/usr/include/kde/ksharedptr.h:
-
-/usr/lib/qt-3.2/include/qwidgetstack.h:
-
-/usr/lib/qt-3.2/include/qintdict.h:
-
-/usr/lib/qt-3.2/include/qptrdict.h:
-
-/usr/lib/qt-3.2/include/qsplitter.h:
-
-/usr/lib/qt-3.2/include/qvaluestack.h:
-
-/usr/include/kde/kiconloader.h:
-
-/usr/lib/qt-3.2/include/qmovie.h:
-
-/usr/include/kde/kprocess.h:
+/opt/kde3/include/kprocess.h:
 
 /usr/include/sys/wait.h:
+
+/usr/include/signal.h:
 
 /usr/include/bits/signum.h:
 
@@ -688,68 +381,78 @@ index.h:
 
 /usr/include/sys/ucontext.h:
 
+/usr/include/bits/sigthread.h:
+
 /usr/include/sys/resource.h:
 
 /usr/include/bits/resource.h:
 
-/usr/include/kde/kmimetype.h:
+/usr/include/unistd.h:
+
+/usr/include/bits/posix_opt.h:
+
+/usr/include/bits/environments.h:
+
+/usr/include/bits/confname.h:
+
+/usr/include/getopt.h:
+
+/opt/kde3/include/kmimetype.h:
 
 /usr/include/sys/stat.h:
 
 /usr/include/bits/stat.h:
 
-/usr/include/kde/kservicetype.h:
+/opt/kde3/include/kservicetype.h:
 
-/usr/include/kde/ksimpleconfig.h:
+/opt/kde3/include/ksimpleconfig.h:
 
-/usr/include/kde/kconfig.h:
+/opt/kde3/include/kconfig.h:
 
-/usr/include/kde/kconfigbase.h:
+/opt/kde3/include/kconfigbase.h:
 
-/usr/lib/qt-3.2/include/qdatetime.h:
+/usr/lib/qt3/include/qdatetime.h:
 
-/usr/include/kde/kconfigdata.h:
+/opt/kde3/include/kconfigdata.h:
 
-/usr/include/kde/kparts/browserextension.h:
+/opt/kde3/include/kparts/browserextension.h:
 
-/usr/include/kde/kparts/event.h:
+/opt/kde3/include/kparts/event.h:
 
-/usr/include/kde/khtml_part.h:
+/opt/kde3/include/khtml_part.h:
 
-/usr/include/kde/dom/html_document.h:
+/opt/kde3/include/dom/html_document.h:
 
-/usr/include/kde/dom/dom_doc.h:
+/opt/kde3/include/dom/dom_doc.h:
 
-/usr/include/kde/dom/dom_node.h:
+/opt/kde3/include/dom/dom_node.h:
 
-/usr/include/kde/dom/css_stylesheet.h:
+/opt/kde3/include/dom/css_stylesheet.h:
 
-/usr/include/kde/dom/dom_string.h:
+/opt/kde3/include/dom/dom_string.h:
 
-/usr/include/kde/kdebug.h:
+/opt/kde3/include/dom/dom_misc.h:
 
-/usr/include/kde/dom/dom_misc.h:
+/opt/kde3/include/dom/dom2_range.h:
 
-/usr/include/kde/dom/dom2_range.h:
+/usr/lib/qt3/include/qregexp.h:
 
-/usr/lib/qt-3.2/include/qregexp.h:
+/opt/kde3/include/khtmlview.h:
 
-/usr/include/kde/khtmlview.h:
+/usr/lib/qt3/include/qscrollview.h:
 
-/usr/lib/qt-3.2/include/qscrollview.h:
+/usr/lib/qt3/include/qscrollbar.h:
 
-/usr/lib/qt-3.2/include/qscrollbar.h:
+/usr/lib/qt3/include/qrangecontrol.h:
 
-/usr/lib/qt-3.2/include/qrangecontrol.h:
+/opt/kde3/include/krun.h:
 
-/usr/include/kde/krun.h:
+/usr/lib/qt3/include/qtimer.h:
 
-/usr/lib/qt-3.2/include/qtimer.h:
+/opt/kde3/include/kstartupinfo.h:
 
-/usr/include/kde/kstartupinfo.h:
+/opt/kde3/include/kmessagebox.h:
 
-/usr/include/kde/kmessagebox.h:
+/opt/kde3/include/kguiitem.h:
 
-/usr/include/kde/kguiitem.h:
-
-/usr/include/kde/kstdguiitem.h:
+/opt/kde3/include/kstdguiitem.h:

@@ -65,7 +65,7 @@ lineType getline(QTextStream* stream, QString *key, QString *value)
 
 // initialize the menu
 bool cmenu::initialize(QString filename, QString cmdStartpage, QString *startpage)
-{
+{         
 // cout<<"starting menu"<<endl;
   QString name;
   QString linkname;
@@ -146,7 +146,15 @@ bool cmenu::initialize(QString filename, QString cmdStartpage, QString *startpag
         }
         // Writing linktext
         if (type.compare("null")==0) page+="<FONT COLOR=GREY><U>"+linktext+"</U></FONT><BR><BR>";
-        else if (type.compare("text")==0) page+=linktext+"<BR><BR>";
+        else if (type.compare("text")==0)
+        {
+          while (type.compare("/text")!=0)
+          {
+            page+=linktext+"<br>";
+            lType=getline(filereader,&type,&linktext);
+          }
+          page+="<br>";
+        }          
        	else
         {
           bool isStartpage=false;
@@ -228,6 +236,7 @@ void cmenu::getLink(QString linkname, QString *text, QString *type, QString *ima
   pcsection where;
 
   for(where=first;(where!=NULL)&&(linkname.compare(where->linkname)!=0);where=where->next);
+
   if (where!=NULL)
   {
     *type=where->stype;
