@@ -23,10 +23,10 @@ cflags=
 cppflags=
 cxxflags=\s-O0 -Wall
 ldadd=\s$(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT)
-ldflags=\s           \s
+ldflags=\s            \s
 
 [General]
-AMChanged=false
+AMChanged=true
 author=Itay 'z9u2K' Duvdevani
 configure_args=\s--build=i386-linux --host=i386-linux --target=i386-linux\s
 email=z9u2K@linux-kinneret.org
@@ -40,7 +40,7 @@ project_type=mini_kde2
 sgml_file=/home/z9u2K/projects/kinneret/confwiz/doc/en/index.docbook
 short_info=
 sub_dir=confwiz/
-version=0.1
+version=0.3b
 version_control=CVS
 workspace=1
 
@@ -253,17 +253,17 @@ type=normal
 [scripts/config.sh]
 dist=true
 install=true
-install_location=/usr/kinneret/bin/config.sh
+install_location=/opt/kinneret/bin/config.sh
 type=SCRIPT
 
 [scripts/findfonts.sh]
 dist=true
 install=true
-install_location=/usr/kinneret/bin/findfonts.sh
+install_location=/opt/kinneret/bin/findfonts.sh
 type=SCRIPT
 
 [scripts/ttf.sh]
 dist=true
 install=true
-install_location=/usr/kinneret/bin/ttf.sh
+install_location=/opt/kinneret/bin/ttf.sh
 type=SCRIPT

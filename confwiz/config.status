@@ -503,7 +503,7 @@ s,@INSTALL_PROGRAM@,${INSTALL} $(INSTALL_STRIP_FLAG),;t t
 s,@INSTALL_SCRIPT@,${INSTALL},;t t
 s,@INSTALL_DATA@,${INSTALL} -m 644,;t t
 s,@PACKAGE@,confwiz,;t t
-s,@VERSION@,0.1,;t t
+s,@VERSION@,0.3b,;t t
 s,@EXEEXT@,,;t t
 s,@OBJEXT@,o,;t t
 s,@ACLOCAL@,${SHELL} /home/z9u2K/projects/kinneret/cvs/confwiz/admin/missing --run aclocal,;t t
@@ -742,7 +742,7 @@ ${ac_dA}PACKAGE_VERSION${ac_dB}PACKAGE_VERSION${ac_dC}""${ac_dD}
 ${ac_dA}PACKAGE_STRING${ac_dB}PACKAGE_STRING${ac_dC}""${ac_dD}
 ${ac_dA}PACKAGE_BUGREPORT${ac_dB}PACKAGE_BUGREPORT${ac_dC}""${ac_dD}
 ${ac_dA}PACKAGE${ac_dB}PACKAGE${ac_dC}"confwiz"${ac_dD}
-${ac_dA}VERSION${ac_dB}VERSION${ac_dC}"0.1"${ac_dD}
+${ac_dA}VERSION${ac_dB}VERSION${ac_dC}"0.3b"${ac_dD}
 ${ac_dA}HAVE_TEMPLATE_REPOSITORY${ac_dB}HAVE_TEMPLATE_REPOSITORY${ac_dC}1${ac_dD}
 ${ac_dA}KDELIBSUFF${ac_dB}KDELIBSUFF${ac_dC}""${ac_dD}
 ${ac_dA}STDC_HEADERS${ac_dB}STDC_HEADERS${ac_dC}1${ac_dD}
@@ -789,7 +789,7 @@ ${ac_uA}PACKAGE_VERSION${ac_uB}PACKAGE_VERSION${ac_uC}""${ac_uD}
 ${ac_uA}PACKAGE_STRING${ac_uB}PACKAGE_STRING${ac_uC}""${ac_uD}
 ${ac_uA}PACKAGE_BUGREPORT${ac_uB}PACKAGE_BUGREPORT${ac_uC}""${ac_uD}
 ${ac_uA}PACKAGE${ac_uB}PACKAGE${ac_uC}"confwiz"${ac_uD}
-${ac_uA}VERSION${ac_uB}VERSION${ac_uC}"0.1"${ac_uD}
+${ac_uA}VERSION${ac_uB}VERSION${ac_uC}"0.3b"${ac_uD}
 ${ac_uA}HAVE_TEMPLATE_REPOSITORY${ac_uB}HAVE_TEMPLATE_REPOSITORY${ac_uC}1${ac_uD}
 ${ac_uA}KDELIBSUFF${ac_uB}KDELIBSUFF${ac_uC}""${ac_uD}
 ${ac_uA}STDC_HEADERS${ac_uB}STDC_HEADERS${ac_uC}1${ac_uD}

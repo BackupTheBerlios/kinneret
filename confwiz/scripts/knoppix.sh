@@ -17,7 +17,7 @@ BLUE="[1;34m"
 # MAGENTA: Found devices or drivers
 MAGENTA="[1;35m"
 #
-mounthome()
+maphome()
 {
 	d=$1
 	echo "${BLUE}Checking integrity of Kinneret's Home files...${NORMAL}"
@@ -38,16 +38,27 @@ mounthome()
 checkdir()
 {
 	d=$1
-	mount -o defaults,rw,user,uid=1000 /dev/$d /mnt/$d 2>&1
 	if [ -e /mnt/$d/kinneret/.config ]
 	then
 		echo "${BLUE}Kinneret's Home found on directory: ${MAGENTA}${d}${BLUE}."
-		mounthome /mnt/$d
+		maphome /mnt/$d
 	fi
 }
 
 HOMEFOUND=""
 echo "${BLUE}Searching for Kinneret's Home...${NORMAL}"
+
+# mount all NTFS directories RO
+for dir in `cat /etc/fstab | grep ntfs | cut -b 6-9`
+do
+	mount -t ntfs -o defaults,ro,user,uid=1000,codepage=cp1255,iocharset=cp1255,utf8 /dev/$dir /mnt/$dir 2>&1
+done
+
+# mount all vfat directories RW
+for dir in `cat /etc/fstab | grep vfat | cut -b 6-9`
+do
+	mount -t vfat -o defaults,rw,user,uid=1000,codepage=cp1255,iocharset=cp1255,utf8 /dev/$dir /mnt/$dir 2>&1
+done
 
 # Scan directories
 for dir in `cat /etc/fstab | grep vfat | cut -b 6-9`
@@ -57,41 +68,6 @@ do
 		checkdir $dir
 	fi
 done
-
-# load fonts
-#if [ -e "/home/knoppix/.fontsdirs" ]
-#then
-#	mkdir -p /home/knoppix/.fonts
-#	rm -fr /home/knoppix/.fonts/*.ttf
-#	for dir in `cat /home/knoppix/.fontsdirs`
-#	do
-#		if [ -e "${dir}" ]
-#		then
-#			ln -s "${dir}/*.ttf" /home/knoppix/.fonts
-#		else
-#			sudo mount `echo $dir | cut -b 1-9` -o rw,user
-#			if [ -e "${dir}" ]
-#			then
-#				ln -s "${dir}/*.ttf" /home/knoppix/.fonts
-#			else
-#				echo "${RED}Invalid fonts directory, skipping.${NORMAL}"
-#			fi
-#		fi
-#	done
-
-#	cd /home/knoppix/.fonts
-#	ttmkfdir -o fonts.scale > /dev/null
-
-	# Make the drectory a fonts directory
-#	mkfontdir > /dev/null
-
-	# Update the X server's fonts search path
-#	xset fp+ /home/knoppix/.fonts > /dev/null
-
-	# Reload the font server
-#	/etc/init.d/xfs start > /dev/null		# start it if it wasn't
-#	/etc/init.d/xfs reload > /dev/null	# reload it
-#fi
 
 if [ -z "$HOMEFOUND" ]
 then

@@ -1,3 +1,8 @@
+From 0.1 to 0.3b (13 May 2003):
+* Changed kinneret's base path to /opt/kinneret/
+* All vfat devices will be mounted RW and all NTFS partition will be mounted RO
+* NTFS and vfat partitions will be mounted to support Hebrew
+
 From 0.1b to 0.1 (29 Apr 2003):
 * Fixed the freezing tune2fs by removing it from the script.
 * The swim wizard will be launched even if the wizard was aborted

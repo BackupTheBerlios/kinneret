@@ -111,7 +111,7 @@
 #define STDC_HEADERS 1
 
 /* Version number of package */
-#define VERSION "0.1"
+#define VERSION "0.3b"
 
 /*
  * jpeg.h needs HAVE_BOOLEAN, when the system uses boolean in system

@@ -105,7 +105,7 @@ int main(int argc, char *argv[])
 		return 0;
 	}
 	
-	unlink("/tmp/foundhome");
+	unlink("/opt/foundhome");
 
 	// Continue...
 
@@ -130,7 +130,7 @@ int main(int argc, char *argv[])
 	// only if wizard was completed
 	if (wizard->result() != QDialog::Rejected)
 	{
-		system("sudo /usr/kinneret/bin/ttf.sh");	// load fonts
+		system("sudo /opt/kinneret/bin/ttf.sh");	// load fonts
 	}
 
 	KProcess p;
@@ -139,7 +139,7 @@ int main(int argc, char *argv[])
 	{
 		// run preferance wizard...
 		p.clearArguments();
-		p << "/usr/kinneret/bin/prefwiz";
+		p << "/opt/kinneret/bin/prefwiz";
 		p.start();
 
 		// wait for completetion...
@@ -148,7 +148,7 @@ int main(int argc, char *argv[])
 
 	// run swim wizard...
 	p.clearArguments();
-	p << "/usr/kinneret/bin/swim";
+	p << "/opt/kinneret/bin/swim";
 	p.start();	
 	while (p.isRunning());
 	

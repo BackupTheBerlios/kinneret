@@ -449,7 +449,7 @@ Please go back and select another.")));
 		nextButton()->setEnabled(false);
 
 		KProcess p;
-		p << "/usr/kinneret/bin/config.sh" << qHome << swapsize << qMnt;
+		p << "/opt/kinneret/bin/config.sh" << qHome << swapsize << qMnt;
 		p.start();
 
 		while (p.isRunning())
@@ -462,7 +462,7 @@ Please go back and select another.")));
     if (currentPage() == reinterpret_cast<QWizard*>(this)->page(page_fonts) && FontsDirs->childCount() == 0)
 	{
 		// automaticlly search for fonts...
-		system("/usr/kinneret/bin/findfonts.sh");
+		system("/opt/kinneret/bin/findfonts.sh");
 
 		FontsDirs->addColumn(QString(tr2i18n("Path")), 400);
 
