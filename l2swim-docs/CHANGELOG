@@ -20,6 +20,7 @@ This file includes changes since the last upload. It is intended to provide a re
 * Fixed the Margins so the documents are now at the center of the page 8/5/04 (Nirro)
 * Initial and unfinshed xml menu - etc/swim-menu.xml 13/5/04 (Nirro)
 * new xml menu is finished. swim-menu.txt is not used anymore in l2swim(>=0.7.3) 15/5/04 (Nirro)
+* added support for "titles". Dovix, note that most of the documents do not have a title. 16/5/04 (Nirro)
 
 -------------- v 0.7.2 --------------
 * Updated first_time.xml 15/1/04

@@ -152,6 +152,9 @@ void MainWindow::openURL(KURL url, bool backward,bool forward)
 		html->begin();
 		html->write(page);
 		html->end();
+		QString title=html->htmlDocument().title().string();
+		if ((title.isNull())||(title.isEmpty())) setCaption(i18n("Learn to swim"));
+		else setCaption(i18n("Learn to swim - %1").arg(title));
 		visible=HTML;
 		stack->raiseWidget(visible);
 		currentPage=url.url();
@@ -202,6 +205,9 @@ void MainWindow::openURL(KURL url, bool backward,bool forward)
 		{
 			html->openURL(url);
 			visible=HTML;
+			QString title=html->htmlDocument().title().string();
+			if ((title.isNull())||(title.isEmpty())) setCaption(i18n("Learn to swim"));
+			else setCaption(i18n("Learn to swim - %1").arg(title));
 			stack->raiseWidget(visible);
 		}
 		// other part internal

@@ -560,9 +560,9 @@ s,@ac_ct_RANLIB@,ranlib,;t t
 s,@EGREP@,grep -E,;t t
 s,@LIBTOOL@,$(SHELL) $(top_builddir)/libtool --silent,;t t
 s,@KDE_PLUGIN@,-avoid-version -module -no-undefined $(KDE_RPATH) $(KDE_MT_LDFLAGS),;t t
-s,@MSGFMT@,:,;t t
-s,@GMSGFMT@,:,;t t
-s,@XGETTEXT@,:,;t t
+s,@MSGFMT@,/usr/bin/msgfmt,;t t
+s,@GMSGFMT@,/usr/bin/msgfmt,;t t
+s,@XGETTEXT@,/usr/bin/xgettext,;t t
 s,@LIBUTIL@,-lutil,;t t
 s,@LIBCOMPAT@,,;t t
 s,@LIBCRYPT@,-lcrypt,;t t

@@ -49,6 +49,10 @@ msgstr ""
 msgid "Learn to swim"
 msgstr "מדריך השחייה"
 
+#: l2swim.cpp:157,210
+msgid "Learn to swim - %1"
+msgstr "מדריך השחייה - %1"
+
 #: l2swim.cpp:72
 msgid "Backward"
 msgstr "אחורה"

@@ -115,12 +115,14 @@ bool cmenu::getLink(QString linkname, QString type, QString *imagefile, QString 
   
 		*text=QString("<!DOCTYPE HTML PUBLIC ""-//W3C//DTD HTML 4.01 Transitional//EN"">");
 		*text+=QString("<html><head><meta http-equiv=""Content-Type"" content=""text/html; charset=UTF-8"">");
-		*text+=QString("<style type=""text/css"">body {margin: 2em 5%;}</style></head>");
+		*text+=QString("<style type=""text/css"">body {margin: 2em 5%;}</style>");
+		// title
+		*text+=QString("<title>"+node.toElement().attribute("title","")+"</title></head>");
+		// start body
+		*text+=QString("<body dir="""+element.attribute("dir",defaultDir)+""" class="""+element.attribute("dir",defaultDir)+""">");
 		// menu properties
-		QString menudir=element.attribute("dir",defaultDir);
-		*text+="<body dir="""+menudir+""">";
-  
 		node=node.firstChild();
+		// Writing the document itself
 		while (!node.isNull())
 		{
 			element = node.toElement(); // try to convert the node to an element.

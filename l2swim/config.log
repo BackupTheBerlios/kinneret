@@ -565,12 +565,11 @@ configure:15226: result: yes
 configure:15233: checking dynamic linker characteristics
 configure:15684: result: GNU/Linux ld.so
 configure:17299: checking for msgfmt
-configure:17326: result: msgfmt
+configure:17326: result: /usr/bin/msgfmt
 configure:17335: checking for gmsgfmt
-configure:17366: result: msgfmt
-configure:17375: result: found msgfmt program is not GNU msgfmt; ignore it
+configure:17366: result: /usr/bin/msgfmt
 configure:17385: checking for xgettext
-configure:17412: result: :
+configure:17412: result: /usr/bin/xgettext
 configure:17511: checking for main in -lutil
 configure:17535: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c -lutil   >&5
 configure:17541: $? = 0
@@ -877,9 +876,9 @@ configure:18846: checking for crt_externs.h
 configure:18853: result: no
 configure:18866: checking for _NSGetEnviron
 configure:18923: gcc -o conftest -ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -O2     conftest.c  >&5
-/tmp/ccyZMjzQ.o(.text+0x11): In function `main':
+/tmp/cc6IWYyX.o(.text+0x11): In function `main':
 : undefined reference to `_NSGetEnviron'
-/tmp/ccyZMjzQ.o(.data+0x0): undefined reference to `_NSGetEnviron'
+/tmp/cc6IWYyX.o(.data+0x0): undefined reference to `_NSGetEnviron'
 collect2: ld returned 1 exit status
 configure:18929: $? = 1
 configure: failed program was:
@@ -1692,9 +1691,9 @@ ac_cv_lib_ucb_killpg=no
 ac_cv_lib_util_main=yes
 ac_cv_lib_z=-lz
 ac_cv_objext=o
-ac_cv_path_GMSGFMT=msgfmt
-ac_cv_path_MSGFMT=msgfmt
-ac_cv_path_XGETTEXT=:
+ac_cv_path_GMSGFMT=/usr/bin/msgfmt
+ac_cv_path_MSGFMT=/usr/bin/msgfmt
+ac_cv_path_XGETTEXT=/usr/bin/xgettext
 ac_cv_path_install='/usr/bin/install -c'
 ac_cv_prog_AWK=gawk
 ac_cv_prog_CPP='gcc -E'
@@ -1807,7 +1806,7 @@ ECHO_T=''
 EGREP='grep -E'
 EXEEXT=''
 FRAMEWORK_COREAUDIO=''
-GMSGFMT=':'
+GMSGFMT='/usr/bin/msgfmt'
 INSTALL_DATA='${INSTALL} -m 644'
 INSTALL_PROGRAM='${INSTALL} $(INSTALL_STRIP_FLAG)'
 INSTALL_SCRIPT='${INSTALL}'
@@ -1866,7 +1865,7 @@ MAKEINFO='${SHELL} /home/nir/cvs/l2swim/admin/missing --run makeinfo'
 MCOPIDL='/usr/bin/mcopidl'
 MEINPROC='/usr/bin/meinproc'
 MOC='/usr/share/qt3/bin/moc'
-MSGFMT=':'
+MSGFMT='/usr/bin/msgfmt'
 NOOPT_CFLAGS='-O0'
 NOOPT_CXXFLAGS='-O0'
 NOREPO='-fno-repo'
@@ -1896,7 +1895,7 @@ USE_RTTI=''
 USE_THREADS=''
 VERSION='0.3b2'
 WOVERLOADED_VIRTUAL=''
-XGETTEXT=':'
+XGETTEXT='/usr/bin/xgettext'
 X_EXTRA_LIBS=''
 X_INCLUDES='-I/usr/X11R6/include'
 X_LDFLAGS='-L/usr/X11R6/lib'

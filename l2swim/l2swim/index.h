@@ -40,5 +40,5 @@ public:
     QString getDefaultImage() {return imagePath+defaultImage;};  
 private:
      QDomDocument* menusDoc;
-     QString firstPage, docsPath, defaultImage, imagePath, defaultDir;
+     QString firstPage, docsPath, defaultImage, imagePath, defaultDir, cssFile;
 };
