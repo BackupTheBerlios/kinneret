@@ -1,54 +1,90 @@
 <?xml version="1.0"?>
 <!--
-Sample Connection Description
-This is the file that is packed into the tarball.
-It containes everything needed for auto-regeneration
-of the connection. This file is sent to the connection
-assembler.
+    Sample Connection Description.
+    This file is sent to the connection assembler, describing anything needed by
+    it to create the connection.
 -->
 <connection>
+    
     <!-- Connection Header -->
+
+    <!-- Connection's name -->
     <name>MyTestConnection</name>
+
+    <!-- internet-ng version created it -->
     <internet-ng>0.1</internet-ng>
-    <created>
-        <date>2001-01-01</date>
-        <time>00:00:00</time>
-    </created>
+
+    <!-- Creation time -->
+    <created date="2001-01-01" time="00:00:00"/>
+
+    <!-- Comment -->
     <comment>Created by z9u2k late late at night...</comment>
 
     <!-- Modules -->
+
+    <!--
+        The modules section lists the modules that is neede to be loaded in
+        order to resolv all the parameters successfully.
+    -->
     
-    <modules name="isp">
+    <!--
+        The ISP module resolvs all the valid params inside the 'isp' namespace.
+        This modules tells the resolver which file to load (which ISP), and
+        resolvs all the multiple choices in that file (for example, having two
+        remotenames, this section tells the resolver which is a the cosen one
+    -->
+    <isp>
+        <!-- A valid ISP file the module can be loaded from -->
         <file>foo.xml</file>
+
         <!--
-            Sometimes, the user must choose a certain
-            server or something like that. To resolv the conflict,
-            the next section holds the element with the attribute that should
-            be used.
+            If this ISP holds more than one element that can resolve a certain
+            param, this section chooses which of these will be used.
         -->
-        <choises>
+        <choices>
             <!--
-                This will tell the assembler to use the "cables-foo" server,
-                even though "cables-bar" is present as well.
+                A choice tells the resolver that more than one element can
+                resolv a specific param. In these cases, a choice is needed.
 
-                name is the name attribute of the chosen element.
+                This section tells the resolver which are the conflicting
+                elements, and which is the chosen one.
+
+                The 'xpath' attribute should evaluate to all the nodes that can
+                resolve the same param, while the 'name' attribute indicates
+                which of these is the chosen one.
             -->
-            <choise xpath="isp/broadband/gateway/valdesc[@type='remotename']"
+            <choice xpath="isp/broadband/gateway/valdesc[@type='remotename']"
                 name="cables-foo"/>
-        </choises>
-    </module>
+        </choices>
+    </isp>
 
-    <module name="driver">
+    <!--
+        The driver module donates the modem "driver" that should be used.
+    -->
+    <driver>
+        <!-- A valid driver file that the module can be loaded from -->
         <file>bar.xml</file>
+
+        <!--
+            In case this is an ethernet device (or a USB device supported by a
+            virtual ethernet module), this element donates the interface that
+            the modem will be conected to.
+        -->
         <ethernet device="eth0"/>
-    </module>
+    </driver>
 
     <!--
         If this module is missing or any part of it, the missing parts will be
-        asked at each connection.
+        asked at each connection, if needed.
     -->
-    <module name="authentication">
+    <authentication>
+        <!-- The username, without the suffix -->
         <username>qux</username>
+
+        <!-- The password -->
         <password>quxx</password>
-    </module>
+
+        <!-- The server -->
+        <server>quxxx</server>
+    </authentication>
 </connection>
