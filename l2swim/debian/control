@@ -1,5 +1,5 @@
 Source: l2swim
-Section: unknown
+Section: Kinneret
 Priority: optional
 Maintainer: Nir Misgav <nirro@linux-kinneret.org>
 Build-Depends: debhelper (>= 4.0.0),base-files (>= 3.0.12 ), binutils (>= 2.14.90.0.6-5 ), coreutils (>= 5.0-5 ), file (>= 4.06-1 ), gcc-3.3 (>= 1 ), gettext (>= 0.12.1-8 ), grep (>= 2.5.1-6 ), kdelibs4 (>= 4 ), kdelibs-data (>= 4 ), libart-2.0-2 (>= 2.3.16-1 ), libaudio2 (>= 1.6-6 ), libc6 (>= 2.3.2.ds1-10 ), libc6-dev (>= 2.3.2.ds1-10 ), libexpat1 (>= 1.95.6-6 ), libfam0c102 (>= 2.6.10-5 ), libfontconfig1 (>= 2.2.1-8 ), libfreetype6 (>= 2.1.5-3 ), libgcc1 (>= 1 ), libmagic1 (>= 4.06-1 ), libncurses5 (>= 5.3.20030719-1 ), libpng12-0 (>= 1.2.5.0-4 ), libpng12-dev (>= 1.2.5.0-4 ), libqt3c102-mt (>= 3 ), libqt3-mt-dev (>= 3 ), libstdc++5 (>= 1 ), libstdc++5-3.3-dev (>= 1 ), libxcursor1 (>= 1.0.2-2 ), libxft2 (>= 2.1.1-2 ), libxrender1 (>= 0.8.3-4 ), locales (>= 2.3.2.ds1-10 ), qt3-designer (>= 3 ), xlibmesa3-glu (>= 4.2.1-12.1 ), xlibmesa4-gl (>= 4.3.0-0ds4 ), xlibs (>= 4.3.0-0ds4 ), xlibs-dev (>= 4.3.0-0ds4 ), xutils (>= 4.3.0-0ds4 ), zlib1g (>= 1 ), zlib1g-dev (>= 1 )
@@ -9,7 +9,7 @@ Package: l2swim
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Suggests: l2swim-docs
-Description: l2swim - GNU/Linux Kinneret's help GUI
- The graphical help system of kinneret's help system
- this package does not includes all the documents.
+Description: GNU/Linux Kinneret's help GUI.
+ The graphical help interface of kinneret's help system.
+ this package does not includes all the documents,
  The documents are stored in l2swim-docs.
