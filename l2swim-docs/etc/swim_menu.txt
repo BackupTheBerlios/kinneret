@@ -86,11 +86,11 @@ Click here for English documentation
 מדריך שימוש בסיסי בערכת היישומים המשרדיים OpenOffice.org [טיוטה]
 <play=he/man_ooo_advanced.html>
 מדריך שימוש מתקדם בערכת היישומים המשרדיים OpenOffice.org
-<null>
+<play=he/man_gimp.html>
 מדריך עיבוד תמונות עם The Gimp
- <play=he/man_cheese.html>
+<play=he/man_cheese.html>
 מדריך הלחנת מנגינות עם Cheese Tracker
- <play=he/man_kpovmodeler.html>
+<play=he/man_kpovmodeler.html>
 מדריך עיצוב תמונות תלת-מימדיות עם KPovModeler
 <end>
 
