@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "POT-Creation-Date: 2003-04-30 14:09+0300\n"
-"PO-Revision-Date: 2003-04-30 14:13+0300\n"
+"PO-Revision-Date: 2003-04-30 15:12+0300\n"
 "Last-Translator: Itay 'z9u2K' Duvdevani <z9u2K@bezeqint.net>\n"
 "Language-Team: Hebrew <livrix@il.org>\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -262,7 +262,7 @@ msgstr ""
 
 #: pleasewait.cpp:111
 msgid "Please wait, configuring..."
-msgstr "אנא המתינו, מגדיר הגדרות מערכת..."
+msgstr "אנא המתינו, מגדיר הגדרות מערכת... (פעולה זו עלולה להימשך זמן מה)."
 
 #: pleasewait.cpp:112
 msgid "Creating Directory... [1/13]"
@@ -399,7 +399,10 @@ msgstr ""
 "(לתשומת לבך: הגדרת הקובץ עלולה לערוך זמן מה בפעם הראשונה, אך הוא ישפר את "
 "ביצועי המחשב בכל הפעלה חוזרת.גודל קובץ ההחלפה המומלץ הוא פי שתיים מגודל "
 "הזיכרון הפנימי.\n"
-"אם אין ברצונך ליצור קובץ החלפה, יש להכניס אפס."
+"אם אין ברצונך ליצור קובץ החלפה, יש להכניס אפס.\n"
+"\n"
+"הערה: הגדול המקסימלי של קובץ ההחלפה המותר הוא ארבעה ג'יגה בייט או 4096 מ\"ב.\n"
+"כל ערך הגדול מ- 4096 מ\"ב, יופחת ל- 4096. במקרה והמחיצה אינה מכילה מספיק מקום פנוי, האשף יתאים את גודל קובץ ההחלפה למחיצה ויציג הודעה."
 
 #: configwizard.cpp:1517
 msgid "swap_sub"
