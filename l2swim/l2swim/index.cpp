@@ -111,8 +111,8 @@ bool cmenu::initialize(QString filename, QString cmdStartpage, QString *startpag
       lType=getline(filereader,&key,&title);
       // Defining html head.
       page="<!DOCTYPE HTML PUBLIC ""-//W3C//DTD HTML 4.01 Transitional//EN"">";
-      page+="<html><head><meta http-equiv=""Content-Type"" content=""text/html; charset=UTF-8""></head>";
-      QString menudir=defaultdir;
+      page+="<html><head><meta http-equiv=""Content-Type"" content=""text/html; charset=UTF-8""><style type=""text/css"">body {margin: 2em 5%;}</style></head>"; 
+       QString menudir=defaultdir;
       if ((lType==tKey)&&(key.compare("menudir")==0))
       {
         if ((title.compare("rtl")==0)||(title.compare("ltr")==0)) menudir=title;
@@ -120,7 +120,6 @@ bool cmenu::initialize(QString filename, QString cmdStartpage, QString *startpag
       } 
       // defining html body, including direction.
       page+="<body dir="""+menudir+""">";
-      page+="<table width=""90%""><tr><td>";
       page+="<H1>"+title+"</H1></FONT><BR>";
       lType=getline(filereader,&key,&description);
       // Read description
@@ -183,12 +182,10 @@ bool cmenu::initialize(QString filename, QString cmdStartpage, QString *startpag
       QString startpage_page=page;
       if (menuname.compare(name)!=0) page+="<a href=""swit://goback"">"+i18n("Go back")+"</a><BR><BR>";
       else page+="<a href=""swit://exit"">"+i18n("Exit")+"</a><BR><BR>";
-      page+="</P></td></tr></table>";
       page+="</body></html>";
       if (isStartpage)
       {
         startpage_page+="<a href=""swit://exit"">"+i18n("Exit")+"</a><BR><BR>";
-        startpage_page+="</P></td></tr></table>";
         startpage_page+="</body></html>";
         addTextToSection("swit://startpage", startpage_page);
       }
