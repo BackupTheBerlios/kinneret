@@ -8,7 +8,7 @@
 # fix#4 added check for dhcpcd's dynamic file - z9u2k 27/5/2004
 
 error_exit() {
-    echo "ERROR:$1"
+    echo "ERROR: $1"
     exit -1
 }
 
@@ -89,7 +89,8 @@ echo "Fetching gateway using $DHCPCLIENT_NAME..."
 case "$DHCPCLIENT_NAME" in
     "dhcpcd" )
         for path in "/etc/dhcpc" "/var/lib/dhcpc" "invalid"; do
-            if [ -f ${path}/dhcpcd-[*hw::eth*].info ]; then
+            if [ -f "${path}/dhcpcd-[*hw::eth*].info" ]; then
+                echo "Reading ${path}/dhcpcd-[*hw::eth*].info..."
                 CABLEGW=`cat ${path}/dhcpcd-[*hw::eth*].info | grep GATEWAY | cut -d"=" -f2`
                 break;
             fi
