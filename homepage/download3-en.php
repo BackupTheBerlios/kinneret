@@ -223,7 +223,7 @@ http://mirror.hamakor.org.il/pub/Israeli/Kinneret/Kinneret-0.6-Yarden.iso" class
   <TD>Israel</td>
   <TD>0.7.2</td>
   <TD><a href="http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.7.2.iso" class="orange_white">Download</a></td>
-  <TD><a href="http://mirror.hamakor.org.il/pub/kinneret/Kinneret-0.7.2.md5sum" class="orange_white">Download</a></td>
+  <TD><a href="http://mirror.hamakor.org.il/pub/Israeli/Kinneret//Kinneret-0.7.2.md5sum" class="orange_white">Download</a></td>
   <TD> </td>
 </tr>
 <TR>
