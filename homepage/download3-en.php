@@ -174,8 +174,8 @@ GNU/Linux Kinneret is available in two flavors:
   <TD>Israel</td>
   <TD>0.6</td>
   <TD><a href="
-http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange_white">Download</a></td>
-  <TD><a href="http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.md5sum" class="orange_white">Download</a></td>
+http://mirror.hamakor.org.il/pub/Israeli/Kinneret/Kinneret-0.6-Yarden.iso" class="orange_white">Download</a></td>
+  <TD><a href="http://mirror.hamakor.org.il/pub/Israeli/Kinneret/Kinneret-0.6-Yarden.md5sum" class="orange_white">Download</a></td>
   <TD> </td>
 </tr>
 <TR>

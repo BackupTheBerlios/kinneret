@@ -120,17 +120,17 @@ document.write("יום "+dayname+", "+date+" ב"+monthname+", "+yearname);
       <table width="150" border="0" cellspacing="0" cellpadding="0">
         <tr> 
           <td STYLE="background-color:#7494F0" width="3"><font color="#FFFFFF">&nbsp;</font></td>
-          <td STYLE="background-color:#7494F0"><font color="#333333">הורדת&nbsp;התוכנה</font></td>
+          <td STYLE="background-color:#7494F0"><font color="#333333">הורדת&nbsp;המערכת</font></td>
           <td><img src="rtl/navbartop.gif" width="40" height="20" alt=""></td>
         </tr>
         <tr> 
           <td STYLE="background-color:#7494F0" width="3"><font color="#FFFFFF">&nbsp;</font></td>
-          <td STYLE="background-color:#7494F0" width="100"><font color="#FFFFFF"><a href="main/modules.php?name=Forums">קבוצות&nbsp;דיון&nbsp;ותמיכה</a></font></td>
+          <td STYLE="background-color:#7494F0" width="100"><font color="#FFFFFF"><a href="support-he.html">תמיכה&nbsp;ומדריכים</a></font></td>
           <td><img src="rtl/navbarmiddle.gif" width="22" height="20" alt=""></td>
         </tr>
         <tr> 
           <td STYLE="background-color:#7494F0" width="3"><font color="#FFFFFF">&nbsp;</font></td>
-          <td STYLE="background-color:#7494F0"><font color="#FFFFFF"><a href="main/index.php">אתר&nbsp;הבית&nbsp;למפתחים</a></font></td>
+          <td STYLE="background-color:#7494F0"><font color="#FFFFFF"><a href="main/modules.php?name=Forums">מידע&nbsp;וקבוצות&nbsp;דיון</a></font></td>
           <td><img src="rtl/navbarend.gif" width="10" height="20" alt=""></td>
         </tr>
       </table>
@@ -214,13 +214,13 @@ http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange
 <TABLE BORDER=1>
 <CAPTION ALIGN=TOP><B>אתרי הורדה לגרסת הפיתוח של גנו/לינוקס כנרת</b></caption>
 <TR>
-  <TH>Number</th>
-  <TH>Mirror</th>
-  <TH>Location</th>
-  <TH>Version</th>
+  <TH>מספר</th>
+  <TH>אתר</th>
+  <TH>מיקום</th>
+  <TH>גרסה</th>
   <TH>ISO</th>
   <TH>MD5SUM</th>
-  <TH>Can resume?</th>
+  <TH>האם ניתן להמשיך מנקודת ההפסקה?</th>
 </tr>
 <TR>
   <TD>#1</td>
@@ -243,6 +243,37 @@ http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange
 
 </table>
 <p>
+
+להלן רשימת אתרים בהם ניתן לרכוש תקליטור צרוב של גנו/לינוקס כנרת. <b>אתרים אלו אינם קשורים לפרוייקט כנרת בשום צורה שהיא, ואין אנו אחראים על הרכישה באתרים אלו.</b> המידע מובא כשרות לציבור עקב שאלות חוזרות אודות אפשרות רכישה של המערכת ע"י אלו שאין להם אפשרות לצרוב תקליטורים ו/או גישה לאינטרנט מהיר.
+<p>
+
+<TABLE BORDER=1>
+<CAPTION ALIGN=TOP><b>רכישת תקליטור צרוב של גנו/לינוקס</b></caption>
+<TR>
+  <TH>מספר</th>
+  <TH>אתר</th>
+  <TH>גרסה יציבה</th>
+  <TH>גרסת פיתוח</th>
+  <TH>עלות משוערת לתקליטור כולל משלוח</th>
+</tr>
+<TR>
+  <TD>1</td>
+  <TD><a href="http://www.guides.co.il" class="orange_white" target="new">מדריך הטרמפיסט למחשבים</a></td>
+  <TD><a href="http://www.guides.co.il/buylinux.php" class="orange_white" target="new">0.6</a></td>
+  <TD><a href="http://www.guides.co.il/buylinux.php" class="orange_white" target="new">0.7.2</a></td>
+  <TD>10 ש"ח (מינימום הזמנה - 25 ש"ח)</td>
+</tr>
+<TR>
+  <TD>1</td>
+  <TD><a href="http://www.guides.co.il" class="orange_white" target="new">בי די מחשבים</a></td>
+  <TD><a href="http://bdcomp.8m.com/services/buylinux.html" class="orange_white" target="new">0.6</a></td>
+  <TD><a href="http://bdcomp.8m.com/services/buylinux.html" class="orange_white" target="new">0.7.2</a></td>
+  <TD>10 ש"ח</td>
+</tr>
+
+</table>
+<p>
+
 
 
 	    <table width="400" border="0" cellspacing="0" cellpadding="0">

@@ -126,12 +126,12 @@ document.write("יום "+dayname+", "+date+" ב"+monthname+", "+yearname);
         </tr>
         <tr> 
           <td STYLE="background-color:#7494F0" width="3"><font color="#FFFFFF">&nbsp;</font></td>
-          <td STYLE="background-color:#7494F0" width="100"><font color="#FFFFFF"><a href="main/modules.php?name=Forums">קבוצות&nbsp;דיון&nbsp;ותמיכה</a></font></td>
+          <td STYLE="background-color:#7494F0" width="100"><font color="#FFFFFF"><a href="support-he.html">תמיכה&nbsp;ומדריכים</a></font></td>
           <td><img src="rtl/navbarmiddle.gif" width="22" height="20" alt=""></td>
         </tr>
         <tr> 
           <td STYLE="background-color:#7494F0" width="3"><font color="#FFFFFF">&nbsp;</font></td>
-          <td STYLE="background-color:#7494F0"><font color="#FFFFFF"><a href="main/index.php">אתר&nbsp;הבית&nbsp;למפתחים</a></font></td>
+          <td STYLE="background-color:#7494F0"><font color="#FFFFFF"><a href="main/modules.php?name=Forums">מידע&nbsp;וקבוצות&nbsp;דיון</a></font></td>
           <td><img src="rtl/navbarend.gif" width="10" height="20" alt=""></td>
         </tr>
       </table>
