@@ -29,9 +29,9 @@ namespace core {
             /**
              * Saves to a DOM tree.
              *
-             * @parm root Root elemnt of the document.
+             * @parm document Document to write to.
              */
-            virtual void toXML(const DOMElement *const root) = 0;
+            virtual void toXML(DOMDocument *const document) = 0;
         }
     }
 }
