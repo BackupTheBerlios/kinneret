@@ -158,6 +158,8 @@ You can check the downloaded image in order to verify the integrity of the downl
 
 After you download and check the iso file it should be burned to a blank CDR or CDRW. You should burn it as an image file and not as a regular file.
 	    <p>
+The download page contains information about <b>online shops that sell GNU/Linux Kinneret CDs</b> (these sites are not endorsed and are not operated by the Kinneret project).
+<p>
 <?php
 $tmp = file("hits-counter.txt");
 $counter = $tmp[0];

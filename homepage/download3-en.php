@@ -249,6 +249,48 @@ http://mirror.hamakor.org.il/pub/Israeli/Kinneret/Kinneret-0.6-Yarden.iso" class
 <p>
 
 
+Following is a list of sites that sell CDs with GNU/Linux Kinneret. <b>These sites are not endorsed and are not operated by the Kinneret project. We can not and will not assume any responsibility for purchases made in these sites.</b> This information is provides as a service to our users with no CD burner or broadband Internet that have requested this type of information.
+<p>
+
+<TABLE BORDER=1>
+<CAPTION ALIGN=TOP><b>Buying a CD of GNU/Linux Kinneret</b></caption>
+<TR>
+  <TH>Number</th>
+  <TH>Site</th>
+  <TH>Stable version</th>
+  <TH>Development version</th>
+  <TH>Estimated cost per CD incl. S&H</th>
+  <TH>Comments</th>
+</tr>
+<TR>
+  <TD>1</td>
+  <TD><a href="http://www.guides.co.il" class="orange_white" target="new">מדריך הטרמפיסט למחשבים</a></td>
+  <TD><a href="http://www.guides.co.il/buylinux.php" class="orange_white" target="new">0.6</a></td>
+  <TD><a href="http://www.guides.co.il/buylinux.php" class="orange_white" target="new">0.7.2</a></td>
+  <TD>10 ILS (min. order 25 ILS)</td>
+  <TD>Hebrew site</td>
+</tr>
+<TR>
+  <TD>2</td>
+  <TD><a href="http://bdcomp.8m.com" class="orange_white" target="new">בי די מחשבים</a></td>
+  <TD><a href="http://bdcomp.8m.com/services/buylinux.html" class="orange_white" target="new">0.6</a></td>
+  <TD><a href="http://bdcomp.8m.com/services/buylinux.html" class="orange_white" target="new">0.7.2</a></td>
+  <TD>10 ILS</td>
+  <TD>Hebrew site</td>
+</tr>
+<TR>
+  <TD>3</td>
+  <TD><a href="http://www.easylinuxcds.com/" class="orange_white" target="new">Easy Linux CD</a></td>
+  <TD>None</td>
+  <TD><a href="http://www.easylinuxcds.com/catalog/product_info.php?cPath=49_60_192&products_id=448" class="orange_white" target="new">0.7.1</a></td>
+  <TD>4.95$ + S&H</td>
+  <TD>Worldwide delivery</td>
+</tr>
+
+</table>
+<p>
+
+
 	    <table width="400" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td>

@@ -257,13 +257,14 @@ http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange
 <p>
 
 <TABLE BORDER=1>
-<CAPTION ALIGN=TOP><b>רכישת תקליטור צרוב של גנו/לינוקס</b></caption>
+<CAPTION ALIGN=TOP><b>רכישת תקליטור צרוב של גנו/לינוקס כנרת</b></caption>
 <TR>
   <TH>מספר</th>
   <TH>אתר</th>
   <TH>גרסה יציבה</th>
   <TH>גרסת פיתוח</th>
   <TH>עלות משוערת לתקליטור כולל משלוח</th>
+  <TH>הערות</th>
 </tr>
 <TR>
   <TD>1</td>
@@ -271,6 +272,7 @@ http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange
   <TD><a href="http://www.guides.co.il/buylinux.php" class="orange_white" target="new">0.6</a></td>
   <TD><a href="http://www.guides.co.il/buylinux.php" class="orange_white" target="new">0.7.2</a></td>
   <TD>10 ש"ח (מינימום הזמנה - 25 ש"ח)</td>
+  <TD></td>
 </tr>
 <TR>
   <TD>2</td>
@@ -278,6 +280,15 @@ http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange
   <TD><a href="http://bdcomp.8m.com/services/buylinux.html" class="orange_white" target="new">0.6</a></td>
   <TD><a href="http://bdcomp.8m.com/services/buylinux.html" class="orange_white" target="new">0.7.2</a></td>
   <TD>10 ש"ח</td>
+  <TD></td>
+</tr>
+<TR>
+  <TD>3</td>
+  <TD><a href="http://www.easylinuxcds.com/" class="orange_white" target="new">Easy Linux CD</a></td>
+  <TD>אין</td>
+  <TD><a href="http://www.easylinuxcds.com/catalog/product_info.php?cPath=49_60_192&products_id=448" class="orange_white" target="new">0.7.1</a></td>
+  <TD>4.95$ + משלוח</td>
+  <TD>משלוח לכל העולם</td>
 </tr>
 
 </table>
