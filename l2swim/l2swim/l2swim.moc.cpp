@@ -1,8 +1,8 @@
 /****************************************************************************
 ** MainWindow meta object code from reading C++ file 'l2swim.h'
 **
-** Created: Thu Sep 18 19:27:40 2003
-**      by: The Qt MOC ($Id: l2swim.moc.cpp,v 1.4 2003/09/18 16:46:42 nirro Exp $)
+** Created: Thu Oct 9 00:09:03 2003
+**      by: The Qt MOC ($Id: l2swim.moc.cpp,v 1.5 2003/10/08 22:13:17 nirro Exp $)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -14,7 +14,7 @@
 
 #include <private/qucomextra_p.h>
 #if !defined(Q_MOC_OUTPUT_REVISION) || (Q_MOC_OUTPUT_REVISION != 26)
-#error "This file was generated using the moc from 3.2.0b1. It"
+#error "This file was generated using the moc from 3.2.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -64,6 +64,7 @@ QMetaObject* MainWindow::staticMetaObject()
     static const QUMethod slot_5 = {"gotoPreviousPage", 0, 0 };
     static const QUMethod slot_6 = {"gotoForwardPage", 0, 0 };
     static const QUMethod slot_7 = {"printpage", 0, 0 };
+    static const QUMethod slot_8 = {"backButtonOff", 0, 0 };
     static const QMetaData slot_tbl[] = {
 	{ "home()", &slot_0, QMetaData::Public },
 	{ "about()", &slot_1, QMetaData::Public },
@@ -72,11 +73,12 @@ QMetaObject* MainWindow::staticMetaObject()
 	{ "openURLRequest(const KURL&,const KParts::URLArgs&)", &slot_4, QMetaData::Public },
 	{ "gotoPreviousPage()", &slot_5, QMetaData::Public },
 	{ "gotoForwardPage()", &slot_6, QMetaData::Public },
-	{ "printpage()", &slot_7, QMetaData::Public }
+	{ "printpage()", &slot_7, QMetaData::Public },
+	{ "backButtonOff()", &slot_8, QMetaData::Public }
     };
     metaObj = QMetaObject::new_metaobject(
 	"MainWindow", parentObject,
-	slot_tbl, 8,
+	slot_tbl, 9,
 	0, 0,
 #ifndef QT_NO_PROPERTIES
 	0, 0,
@@ -105,6 +107,7 @@ bool MainWindow::qt_invoke( int _id, QUObject* _o )
     case 5: gotoPreviousPage(); break;
     case 6: gotoForwardPage(); break;
     case 7: printpage(); break;
+    case 8: backButtonOff(); break;
     default:
 	return KMainWindow::qt_invoke( _id, _o );
     }

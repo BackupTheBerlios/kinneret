@@ -41,6 +41,7 @@
 #include <krun.h>
 #include <qfile.h>
 #include <kmessagebox.h>
+#include <qevent.h>
 
 #define TOOLBAR_ID_BACK 1
 #define TOOLBAR_ID_HOME 2
@@ -62,6 +63,7 @@ public:
   void openURL(KURL url,bool push=true,bool forw=false);
   void firstload();
   virtual void show();
+  virtual void keyPressEvent (QKeyEvent *e);
 
 public slots:
 
@@ -73,6 +75,7 @@ void openURLRequest(const KURL &url, const KParts::URLArgs & );
 void gotoPreviousPage();
 void gotoForwardPage();
 void printpage();
+void backButtonOff();
 
 private:
   int visible;

@@ -89,7 +89,13 @@ l2swim.o l2swim.o: l2swim.cpp l2swim.h /opt/kde3/include/kmainwindow.h \
   /usr/lib/qt3/include/qscrollbar.h /usr/lib/qt3/include/qrangecontrol.h \
   /opt/kde3/include/krun.h /usr/lib/qt3/include/qtimer.h \
   /opt/kde3/include/kstartupinfo.h /opt/kde3/include/kmessagebox.h \
-  /opt/kde3/include/kguiitem.h /opt/kde3/include/kstdguiitem.h
+  /opt/kde3/include/kguiitem.h /opt/kde3/include/kstdguiitem.h \
+  /opt/kde3/include/kapp.h /opt/kde3/include/kapplication.h \
+  /opt/kde3/include/kdeversion.h /usr/lib/qt3/include/qapplication.h \
+  /usr/lib/qt3/include/qdesktopwidget.h \
+  /usr/lib/qt3/include/qtranslator.h /opt/kde3/include/ktoolbarbutton.h \
+  /usr/lib/qt3/include/qtoolbutton.h /usr/lib/qt3/include/qbutton.h \
+  /usr/lib/qt3/include/qkeysequence.h
 
 l2swim.h:
 
@@ -444,3 +450,23 @@ index.h:
 /opt/kde3/include/kguiitem.h:
 
 /opt/kde3/include/kstdguiitem.h:
+
+/opt/kde3/include/kapp.h:
+
+/opt/kde3/include/kapplication.h:
+
+/opt/kde3/include/kdeversion.h:
+
+/usr/lib/qt3/include/qapplication.h:
+
+/usr/lib/qt3/include/qdesktopwidget.h:
+
+/usr/lib/qt3/include/qtranslator.h:
+
+/opt/kde3/include/ktoolbarbutton.h:
+
+/usr/lib/qt3/include/qtoolbutton.h:
+
+/usr/lib/qt3/include/qbutton.h:
+
+/usr/lib/qt3/include/qkeysequence.h:

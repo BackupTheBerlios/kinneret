@@ -18,12 +18,15 @@
  ***************************************************************************/
 
 #include "l2swim.h"
+#include <kapp.h>
+#include <ktoolbarbutton.h>
+#include <qtimer.h>
 
 // Showing the main widget.
 MainWindow::MainWindow ( const char* name, const QString spage) : KMainWindow ( 0L, name )
 {
   aboutline=i18n("<b><big><big>Learn To Swim (l2swim)</b></big></big><br><br>An interactive information center.<br>Version: %1<br>Date: %2<br>Programmed by : Nir Misgav<br>Email: %3<br>License: GPL<br>All rights reserved to <i><b>GNU/Linux Kinneret.</i></b>")
-      .arg("0.6rc3").arg("18/9/03").arg("nirro@linux-kinneret.org");
+      .arg("0.6rc4").arg("9/10/03").arg("nirro@linux-kinneret.org");
   cmdStartpage=spage;
 //  cout<<"menu initialized"<<endl;
   setCaption(i18n("Learn to swim"));
@@ -69,7 +72,6 @@ MainWindow::MainWindow ( const char* name, const QString spage) : KMainWindow ( 
 
   toolbar->alignItemRight(TOOLBAR_ID_ABOUT);
   addToolBar(toolbar);
-
   connect( html->browserExtension(),
         SIGNAL( openURLRequest( const KURL &, const KParts::URLArgs & ) ),
         this, SLOT( openURLRequest(const KURL &, const KParts::URLArgs & ) ) );
@@ -284,4 +286,28 @@ MainWindow::~MainWindow()
 {
   delete menu;
   if (part) delete part;
+}
+
+// Handle the BackspaceKey for Go-Back.
+void MainWindow::keyPressEvent (QKeyEvent *e)
+{
+  if (e->key()==0x1003)  //BackSpace Key
+  {
+    if (!e->isAutoRepeat())
+    {
+      if(!history.isEmpty())
+      {
+        toolbar->getButton(TOOLBAR_ID_BACK)->on(true);
+        QTimer::singleShot(100, this, SLOT(backButtonOff()));
+      }
+      else KApplication::beep();
+    }
+  }
+  else e->ignore();
+}
+
+void MainWindow::backButtonOff()
+{
+  toolbar->getButton(TOOLBAR_ID_BACK)->on(false);
+  gotoPreviousPage();
 }
