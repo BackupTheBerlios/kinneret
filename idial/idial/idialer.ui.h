@@ -8,8 +8,10 @@
 *****************************************************************************/
 
 #include <fstream>
+#include <iostream>
 
 #include <kmessagebox.h>
+#include <klineedit.h>
 
 void idialer::init()
 {
@@ -19,10 +21,7 @@ void idialer::init()
 	int ret = system("internet --defaultshow > /tmp/.def");
 	std::ifstream hws("/tmp/.def");
 	if (!hws || ret != 0)
-    {
-		KMessageBox::error(parentWidget(), tr2i18n("Cannot query default connection"));
-		exit(-1);
-    }
+    	KMessageBox::error(parentWidget(), tr2i18n("Cannot query default connection"));
 
 	// Listing Hardwares:
 	char szBuffer[0xFF];
@@ -90,6 +89,7 @@ void idialer::onGo()
 				KMessageBox::error(parentWidget(), tr2i18n("Cannot initialize connection!"));
 				setWorking(false);
 				textStdout->setText(textStdout->text() + tr2i18n("\nFailed."));
+				return;
 			}
 		}
 
@@ -104,6 +104,7 @@ void idialer::onGo()
 				KMessageBox::error(parentWidget(), tr2i18n("Cannot boot connection!"));
 				setWorking(false);
 				textStdout->setText(textStdout->text() + tr2i18n("\nFailed."));
+				return;
 			}
 		}
 
@@ -118,6 +119,7 @@ void idialer::onGo()
 				KMessageBox::error(parentWidget(), tr2i18n("Cannot connect!"));
 				setWorking(false);
 				textStdout->setText(textStdout->text() + tr2i18n("\nFailed."));
+				return;
 			}
 		}
 
@@ -132,12 +134,150 @@ void idialer::onGo()
 				KMessageBox::error(parentWidget(), tr2i18n("Cannot disconnect!"));
 				setWorking(false);
 				textStdout->setText(textStdout->text() + tr2i18n("\nFailed."));
+				return;
 			}
 		}
 	}
 
 	else if (qTab == tr2i18n("Advanced"))
 	{
+		QString qAction = comboActions->currentText();
+
+		if (qAction == tr2i18n("List ISPs"))
+		{
+			kProc.clearArguments();
+			disconnect(&kProc, SIGNAL(receivedStdout(KProcess*, char*, int)), this, SLOT(onGoStdout(KProcess*, char*, int)));
+			disconnect(&kProc, SIGNAL(receivedStdout(KProcess*, char*, int)), this, SLOT(onStdout(KProcess*, char*, int)));
+				
+			kProc << "internet" << "--listisps";
+			connect(&kProc, SIGNAL(receivedStdout(KProcess*, char*, int)),
+				SLOT(onGoStdout(KProcess*, char*, int)));
+
+			textStdout->setText(textStdout->text() + QString("\n"));
+				
+			if (kProc.start(KProcess::Block, KProcess::Stdout) == false)
+			{
+				KMessageBox::error(parentWidget(), tr2i18n("Cannot get ISPs list!"));
+				setWorking(false);
+				textStdout->setText(textStdout->text() + tr2i18n("\nFailed."));
+				return;
+			}
+		}
+
+		else if (qAction == tr2i18n("List Hardwares"))
+		{
+			kProc.clearArguments();
+			disconnect(&kProc, SIGNAL(receivedStdout(KProcess*, char*, int)), this, SLOT(onGoStdout(KProcess*, char*, int)));
+			disconnect(&kProc, SIGNAL(receivedStdout(KProcess*, char*, int)), this, SLOT(onStdout(KProcess*, char*, int)));
+
+			kProc << "internet" << "--listhws" << comboParam1->currentText().lower();
+			connect(&kProc, SIGNAL(receivedStdout(KProcess*, char*, int)),
+				SLOT(onGoStdout(KProcess*, char*, int)));
+
+			textStdout->setText(textStdout->text() + QString("\n"));
+
+			if (kProc.start(KProcess::Block, KProcess::Stdout) == false)
+			{
+				KMessageBox::error(parentWidget(), tr2i18n("Cannot get hardwares list!"));
+				setWorking(false);
+				textStdout->setText(textStdout->text() + tr2i18n("\nFailed."));
+				return;
+			}
+		}
+
+		else if (qAction == tr2i18n("Get Info on Hardware"))
+		{
+			kProc.clearArguments();
+			disconnect(&kProc, SIGNAL(receivedStdout(KProcess*, char*, int)), this, SLOT(onGoStdout(KProcess*, char*, int)));
+			disconnect(&kProc, SIGNAL(receivedStdout(KProcess*, char*, int)), this, SLOT(onStdout(KProcess*, char*, int)));
+
+			kProc << "internet" << "--hwinfo" << comboParam1->currentText();
+			connect(&kProc, SIGNAL(receivedStdout(KProcess*, char*, int)),
+				SLOT(onGoStdout(KProcess*, char*, int)));
+
+			textStdout->setText(textStdout->text() + QString("\n"));
+
+			if (kProc.start(KProcess::Block, KProcess::Stdout) == false)
+			{
+				KMessageBox::error(parentWidget(), tr2i18n("Cannot get hardware info!"));
+				setWorking(false);
+				textStdout->setText(textStdout->text() + tr2i18n("\nFailed."));
+				return;
+			}
+		}
+
+		else if (qAction == tr2i18n("Get Info on ISP"))
+		{
+			kProc.clearArguments();
+			disconnect(&kProc, SIGNAL(receivedStdout(KProcess*, char*, int)), this, SLOT(onGoStdout(KProcess*, char*, int)));
+			disconnect(&kProc, SIGNAL(receivedStdout(KProcess*, char*, int)), this, SLOT(onStdout(KProcess*, char*, int)));
+
+			kProc << "internet" << "--ispinfo" << comboParam1->currentText().left(comboParam1->currentText().find(" "));
+			connect(&kProc, SIGNAL(receivedStdout(KProcess*, char*, int)),
+				SLOT(onGoStdout(KProcess*, char*, int)));
+
+			textStdout->setText(textStdout->text() + QString("\n"));
+
+			if (kProc.start(KProcess::Block, KProcess::Stdout) == false)
+			{
+				KMessageBox::error(parentWidget(), tr2i18n("Cannot get hardware info!"));
+				setWorking(false);
+				textStdout->setText(textStdout->text() + tr2i18n("\nFailed."));
+				return;
+			}
+		}
+
+		else if (qAction == tr2i18n("Delete Current Connection"))
+		{
+			if (KMessageBox::questionYesNo(parentWidget(), tr2i18n("Are you sure you want to delete current connection?")) == KMessageBox::No)
+			{
+				setWorking(false);
+				textStdout->setText(textStdout->text() + tr2i18n("\nCanceled by user."));
+				return;
+			}
+			
+			QString qCmd = QString("internet --force --delete \"") + comboConnections->currentText() + QString("\"");
+			if (system(qCmd))
+			{
+				KMessageBox::error(parentWidget(), tr2i18n("Cannot delete connection!"));
+				setWorking(false);
+				textStdout->setText(textStdout->text() + tr2i18n("\nFailed."));
+				return;
+			}
+
+			comboConnections->removeItem(comboConnections->currentItem());
+		}
+
+		else if (qAction == tr2i18n("Set Current Connection as Default"))
+		{
+			if (KMessageBox::questionYesNo(parentWidget(), tr2i18n("Are you sure you want to set current connection to default?")) == KMessageBox::No)
+			{
+				setWorking(false);
+				textStdout->setText(textStdout->text() + tr2i18n("\nCanceled by user."));
+				return;
+			}
+
+			QString qCmd = QString("internet --default \"") + comboConnections->currentText() + QString("\"");
+			if (system(qCmd))
+			{
+				KMessageBox::error(parentWidget(), tr2i18n("Cannot set connection to default!"));
+				setWorking(false);
+				textStdout->setText(textStdout->text() + tr2i18n("\nFailed."));
+				return;
+			}
+		}
+
+		else if (qAction == tr2i18n("Extract a Script from Current Connection"))
+		{
+			QString qCmd = QString("internet --extract=") + comboParam1->currentText() + QString(" \"") + comboConnections->currentText() + QString("\" \"") + lineParam2->lineEdit()->text() + QString("\"");
+			if (system(qCmd))
+			{
+				KMessageBox::error(parentWidget(), tr2i18n("Cannot set connection to default!"));
+				setWorking(false);
+				textStdout->setText(textStdout->text() + tr2i18n("\nFailed."));
+				return;
+			}
+		}
 	}
 
 	// Enable all
@@ -156,6 +296,111 @@ void idialer::onNewConnection(const QString &qs)
 void idialer::onNewAction(const QString &qs)
 {
 	if (0) { qs.find(""); }
+	QString qAction = comboActions->currentText();
+
+	if (qAction == tr2i18n("List ISPs"))
+	{
+		textParam1Text->setText(QString::null);
+		textParam2Text->setText(QString::null);
+
+		comboParam1->setEnabled(false);
+		lineParam2->setEnabled(false);
+	}
+
+	else if (qAction == tr2i18n("List Hardwares"))
+	{
+		textParam1Text->setText("Hardware Type");
+		textParam2Text->setText(QString::null);
+
+		comboParam1->setEnabled(true);
+		lineParam2->setEnabled(false);
+
+		comboParam1->clear();
+		comboParam1->insertItem(QString("Broadband"));
+		comboParam1->insertItem(QString("ISDN"));
+		comboParam1->insertItem(QString("Dialup"));
+	}
+
+	else if (qAction == tr2i18n("Get Info on Hardware"))
+	{
+		textParam1Text->setText("Hardware Name");
+		textParam2Text->setText(QString::null);
+
+		comboParam1->setEnabled(true);
+		lineParam2->setEnabled(false);
+
+		// fill with hardware names
+		comboParam1->clear();
+
+		kProc.clearArguments();
+		disconnect(&kProc, SIGNAL(receivedStdout(KProcess*, char*, int)), this, SLOT(onGoStdout(KProcess*, char*, int)));
+		disconnect(&kProc, SIGNAL(receivedStdout(KProcess*, char*, int)), this, SLOT(onStdout(KProcess*, char*, int)));
+
+		kProc << "internet" << "--listhws=broadband";
+		connect(&kProc, SIGNAL(receivedStdout(KProcess*, char*, int)), SLOT(onStdout(KProcess*, char*, int)));
+		if (kProc.start(KProcess::Block, KProcess::Stdout) == false)
+		{
+			KMessageBox::error(parentWidget(), tr2i18n("Cannot get hardware list!"));
+			exit(-1);
+		}
+	}
+
+	else if (qAction == tr2i18n("Get Info on ISP"))
+	{
+		textParam1Text->setText("ISP Name");
+		textParam2Text->setText(QString::null);
+
+		comboParam1->setEnabled(true);
+		lineParam2->setEnabled(false);
+
+		// fill with hardware names
+		comboParam1->clear();
+
+		kProc.clearArguments();
+		disconnect(&kProc, SIGNAL(receivedStdout(KProcess*, char*, int)), this, SLOT(onGoStdout(KProcess*, char*, int)));
+		disconnect(&kProc, SIGNAL(receivedStdout(KProcess*, char*, int)), this, SLOT(onStdout(KProcess*, char*, int)));
+
+		kProc << "internet" << "--listisps";
+		connect(&kProc, SIGNAL(receivedStdout(KProcess*, char*, int)), SLOT(onStdout(KProcess*, char*, int)));
+		if (kProc.start(KProcess::Block, KProcess::Stdout) == false)
+		{
+			KMessageBox::error(parentWidget(), tr2i18n("Cannot get ISPs list!"));
+			exit(-1);
+		}
+	}
+
+	else if (qAction == tr2i18n("Delete Current Connection"))
+	{
+		textParam1Text->setText(QString::null);
+		textParam2Text->setText(QString::null);
+
+		comboParam1->setEnabled(false);
+		lineParam2->setEnabled(false);
+	}
+
+	else if (qAction == tr2i18n("Set Current Connection as Default"))
+	{
+		textParam1Text->setText(QString::null);
+		textParam2Text->setText(QString::null);
+
+		comboParam1->setEnabled(false);
+		lineParam2->setEnabled(false);
+	}
+
+	else if (qAction == tr2i18n("Extract a Script from Current Connection"))
+	{
+		textParam1Text->setText("Script Name");
+		textParam2Text->setText("To File...");
+
+		comboParam1->setEnabled(true);
+		lineParam2->setEnabled(true);
+
+		comboParam1->clear();
+		comboParam1->insertItem(QString("init"));
+		comboParam1->insertItem(QString("boot"));
+		comboParam1->insertItem(QString("connect"));
+		comboParam1->insertItem(QString("disconnect"));
+	}
 }
 
 
@@ -171,4 +416,49 @@ void idialer::setWorking( bool b )
 	tabWidget2->setEnabled(!b);
 	comboParam1->setEnabled(!b);
 	lineParam2->setEnabled(!b);
+}
+
+void idialer::onStdout( KProcess *proc, char *szBuffer, int nLen )
+{
+	if (0) { std::cout << nLen; proc->start(); }
+	QString qAction = comboActions->currentText();
+
+	if (qAction == tr2i18n("Get Info on Hardware"))
+	{
+		QString qOut = QString(szBuffer);
+		QString qHW;
+
+		while (!qOut.isEmpty())
+		{
+			qHW = qOut.left(qOut.find("\n"));
+
+			if (qHW != "Listing Hardwares:")
+				comboParam1->insertItem(qHW);
+
+			qOut = qOut.remove(0, qOut.find("\n") + 1);
+		}
+	}
+
+	else if (qAction == tr2i18n("Get Info on ISP"))
+	{
+		QString qOut = QString(szBuffer);
+		QString qHW;
+
+		while (!qOut.isEmpty())
+		{
+			qHW = qOut.left(qOut.find("\n"));
+
+			if (qHW != "Listing ISPs:")
+				comboParam1->insertItem(qHW);
+
+			qOut = qOut.remove(0, qOut.find("\n") + 1);
+		}
+	}
+}
+
+
+void idialer::onGoStdout( KProcess *proc, char *buffer, int len )
+{
+	if (0) { std::cout << len; proc->start(); }
+	textStdout->setText(textStdout->text() + QString(buffer));
 }

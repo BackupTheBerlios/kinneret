@@ -586,12 +586,18 @@
     <tabstop>pushCancel</tabstop>
 </tabstops>
 <includes>
+    <include location="global" impldecl="in declaration">kprocess.h</include>
     <include location="local" impldecl="in implementation">idialer.ui.h</include>
 </includes>
+<variables>
+    <variable access="public">KProcess kProc;</variable>
+</variables>
 <slots>
     <slot>onGo()</slot>
     <slot>onNewConnection( const QString &amp; qs )</slot>
     <slot>onNewAction( const QString &amp; qs )</slot>
+    <slot>onStdout( KProcess * kProc, char * szBuffer, int nLen )</slot>
+    <slot>onGoStdout(KProcess *proc, char *buffer, int len)</slot>
 </slots>
 <functions>
     <function access="private" specifier="non virtual">init()</function>
