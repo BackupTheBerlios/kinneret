@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="kinneret_apps_list.xsl"?>
 <catalog>
+<app>
+		<group></group>
+		<title>OpenOffice.org</title>
+		<class>חבילת תוכנות משרדיות</class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://www.openoffice.org</home>
+	</app>
 	<app>
 		<group>ייעודי</group>
 		<title>KMathTool</title>
@@ -729,13 +739,23 @@
 	</app>
 <app>
 		<group></group>
-		<title></title>
-		<class></class>
+		<title>Umbrello UML Modeller</title>
+		<class>פיתוח  - סרטוט UML</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
-		<home></home>
+		<home>http://uml.sourceforge.net/index.php</home>
+	</app>
+<app>
+		<group></group>
+		<title>klogic</title>
+		<class>לימוד - אלקטרוניקה</class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://uml.sourceforge.net/index.php</home>
 	</app>
 <app>
 		<group></group>
@@ -837,25 +857,6 @@
 		<hebrew></hebrew>
 		<home></home>
 	</app>
-<app>
-		<group></group>
-		<title></title>
-		<class></class>
-		<age></age>
-		<version></version>
-		<kinneret>?</kinneret>
-		<hebrew></hebrew>
-		<home></home>
-	</app>
-<app>
-		<group></group>
-		<title></title>
-		<class></class>
-		<age></age>
-		<version></version>
-		<kinneret>?</kinneret>
-		<hebrew></hebrew>
-		<home></home>
-	</app>
+
 
 </catalog>
