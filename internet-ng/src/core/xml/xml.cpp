@@ -6,6 +6,8 @@
 #include "core/exception/exception.h"
 #include "core/xml/CoreErrorHandler.h"
 
+#include "core/utils/xts.h"
+
 #include <xalanc/XalanTransformer/XercesDOMWrapperParsedSource.hpp>
 #include <xalanc/XercesParserLiaison/XercesDocumentWrapper.hpp>
 #include <xalanc/XercesParserLiaison/XercesDOMSupport.hpp>
@@ -17,6 +19,7 @@
 using namespace xercesc;
 using namespace xalanc;
 using namespace core::xml;
+using namespace core::utils;
 using namespace core::exception;
 using namespace std;
 
@@ -34,6 +37,7 @@ DOMDocument *core::xml::loadXML(const std::string &xml,
         throw FatalException("Unable to load " + xml);
     }
     
+    parser->getDocument()->normalize();
     return parser->getDocument();
 }
 
@@ -47,6 +51,7 @@ void core::xml::initXML() throw (XMLException) {
     parser->setDoNamespaces(true);
     parser->setDoValidation(true);
     parser->setDoSchema(true);
+    parser->setIncludeIgnorableWhitespace(false);
 
     coreHandler = new CoreErrorHandler();
     parser->setErrorHandler(coreHandler);
@@ -89,10 +94,8 @@ string core::xml::getAllTextNodes(DOMNode *const node) throw () {
             result << getAllTextNodes(children->item(i));
         }
     } else {
-        XMLCh *content = XMLString::replicate(node->getTextContent());
-        XMLString::trim(content);
-        result << XMLString::transcode(content);
-        XMLString::release(&content);
+        // Trim
+        result << xts(node->getTextContent(), true).asString();
     }
 
     return result.str();
@@ -100,39 +103,29 @@ string core::xml::getAllTextNodes(DOMNode *const node) throw () {
 
 string core::xml::getExceptionString(const XMLException &ex) throw () {
     stringstream result;
-    char *message = XMLString::transcode(ex.getMessage());
-    result << "XMLException: " << message <<
+    result << "XMLException: " << xts(ex.getMessage()) <<
         " (file: " << ex.getSrcFile() << ", line: " << ex.getSrcLine() <<
         ").";
-    XMLString::release(&message);
-
     return result.str();
 }
 
 string core::xml::getExceptionString(const SAXParseException &ex) throw () {
     stringstream result;
-
-    char *message = XMLString::transcode(ex.getMessage());
-    result << "SAXParseException: " << message << " (line: "
+    result << "SAXParseException: " << xts(ex.getMessage()) << " (line: "
         << ex.getLineNumber() << ", column: " << ex.getColumnNumber() <<
         ").";
-    XMLString::release(&message);
-
     return result.str();
 }
 
 string core::xml::getExceptionString(const DOMException &ex) throw () {
     stringstream result;
-
-    char *message = XMLString::transcode(ex.getMessage());
-    result << "DOMException: " << message << ".";
-    XMLString::release(&message);
-
+    result << "DOMException: " << xts(ex.getMessage()) << ".";
     return result.str();
 }
 
 string core::xml::getExceptionString(const XalanXPathException &ex) throw () {
     stringstream result;
+    // TODO: Use core::utils::xts when transcoding to local encoding.
     result << "XalanXPathException: " << ex.getMessage().transcode() << 
         " (line: " << ex.getLineNumber() << ", column: " <<
         ex.getColumnNumber() << ").";
