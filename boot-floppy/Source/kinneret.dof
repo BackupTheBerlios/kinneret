@@ -1,5 +1,6 @@
 [FileVersion]
 Version=7.0
+
 [Compiler]
 A=8
 B=0
@@ -79,6 +80,7 @@ PrivatePropAccessor=1
 UnsafeType=0
 UnsafeCode=0
 UnsafeCast=0
+
 [Linker]
 MapFile=0
 OutputObjs=0
@@ -89,6 +91,7 @@ MinStackSize=16384
 MaxStackSize=1048576
 ImageBase=4194304
 ExeDescription=
+
 [Directories]
 OutputDir=
 UnitOutputDir=
@@ -99,16 +102,19 @@ Packages=vcl;rtl;vclx;indy;inet;xmlrtl;vclie;inetdbbde;inetdbxpress;dbrtl;dsnap;
 Conditionals=
 DebugSourceDirs=
 UsePackages=0
+
 [Parameters]
 RunParams=
 HostApplication=
 Launcher=
 UseLauncher=0
 DebugCWD=
+
 [Language]
 ActiveLang=
 ProjectLang=
 RootDir=
+
 [Version Info]
 IncludeVerInfo=1
 AutoIncBuild=0
@@ -123,6 +129,7 @@ Private=0
 DLL=0
 Locale=1037
 CodePage=1255
+
 [Version Info Keys]
 CompanyName=GNU/Linux Kinneret
 FileDescription=Create a boot-floppy and install Kinneret to your Hard-Drive

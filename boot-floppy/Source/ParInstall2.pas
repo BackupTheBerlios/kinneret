@@ -54,7 +54,7 @@ begin
   if osisMe then
   begin
     CBDesktop.Checked:=false;
-    //CBDesktop.Enabled:=false;
+    CBDesktop.Enabled:=false;
     CBMenu.Checked:=false;
     CBMenu.Enabled:=true;
   end else if osis95 then
@@ -141,7 +141,7 @@ begin
                                       'Choose another one.'),
             [DrivesArray[Item.Index].DriveLetter]));
       end;
-    end else begin   //Uncheck
+    end else begin  //Uncheck
       Item.SubItems[1]:='';
       ButtonStart.Enabled:=false;
     end;
