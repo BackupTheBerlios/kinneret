@@ -25,7 +25,7 @@
 	<broadband>
 		<gateway>
 			<cable>
-				<remotename>[*auth::usr*].c.actcom.net.il</remotename>
+				<remotename>192.117.122.13</remotename>
 			</cable>
 		</gateway>
 		<usrsuffix type="adsl">@IActcom</usrsuffix>
