@@ -26,7 +26,7 @@ ldadd=\s$(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT)
 ldflags=\s \s
 
 [General]
-AMChanged=true
+AMChanged=false
 author=Itay 'z9u2K' Duvdevani
 configure_args=\s--build=i386-linux --host=i386-linux --target=i386-linux\s
 email=z9u2k@linux-kinneret.org
@@ -50,6 +50,15 @@ install=false
 install_location=
 type=DATA
 
+[KPP]
+kpp_appgrp=
+kpp_bldroot=
+kpp_icon=0
+kpp_license=5
+kpp_summary=An `internet` frontend for KDE
+kpp_url=http://iwiz.linux-kinneret.org
+kpp_version=0.2-rc1
+
 [LFV Groups]
 GNU=AUTHORS,COPYING,ChangeLog,INSTALL,README,TODO,NEWS
 Headers=*.h,*.hh,*.hxx,*.hpp,*.H
@@ -60,7 +69,7 @@ User Interface=*.kdevdlg,*.ui,*.rc,*.dlg
 groups=Headers,Sources,User Interface,Translations,GNU,Others
 
 [Makefile.am]
-files=iwiz.kdevprj,admin,AUTHORS,COPYING,ChangeLog,INSTALL,README,TODO,iwiz.lsm
+files=iwiz.kdevprj,admin,AUTHORS,COPYING,ChangeLog,INSTALL,README,TODO,iwiz.lsm,iwiz.spec
 sub_dirs=iwiz,po,doc
 type=normal
 
@@ -104,6 +113,12 @@ install_location=
 type=DATA
 
 [iwiz.lsm]
+dist=true
+install=false
+install_location=
+type=DATA
+
+[iwiz.spec]
 dist=true
 install=false
 install_location=

@@ -95,7 +95,7 @@ int main(int argc, char *argv[])
 			vector<string>::iterator iter;
 			for (iter = vNames.begin() ; iter != vNames.end() ; iter++)
 			{
-				if (QString(*iter) == qName)
+				if (QString(iter->c_str()) == qName)
 				{
 					bOK = false;
 					break;
