@@ -315,16 +315,7 @@
                     <enum>RichText</enum>
                 </property>
                 <property name="text">
-                    <string>&lt;I&gt;GNU/Linux Kinneret&lt;/I&gt; is a CD based (LiveCD) Operating System (OS)  and a large collection of applications. The system does not require any complicated configuration, or installation, and features an automatic hardware detection, friendly configuration wizards, a large collection of quality applications and a full built-in Hebrew support (and other languages soon).&lt;BR/&gt; 
-&lt;BR/&gt; 
-Among the application you will find: Office Suits (Word processors, Spread sheets, Presentation editor etc.), Internet applications (Web-browsers, E-mail clients, Instant messengers, Chat clients etc.), Multimedia applications (Audio players, Video players, Image manipulators and editors etc.) and a collection of fun games.&lt;BR/&gt; 
-&lt;I&gt;GNU/Linux Kinneret&lt;/I&gt; is aimed in the first place to the students in the Israeli educational system. Therefore, it includes a large collection of educational programs, learning aids and development environments the are required throughout the year.&lt;BR/&gt; 
-&lt;BR/&gt; 
-The project will allow equality in the technological education of all low-socioeconomy status students by offering a high-quality free (of charge, too) alternative to the proprietary software that are used by the student throughout the learning process. The project also aims at promoting the Free-Software and Open-Source movements in Israel.&lt;BR/&gt; 
-&lt;BR/&gt; 
-If you would like to contribute to the project, or get help and more information, we invite you to out project website, located at: http://www.linux-kinneret.org. We'd be glad to get any kind of help (including help that does not involve programming, such as translating, documentation writing and quality assurance).&lt;BR/&gt; 
-&lt;BR/&gt; 
-NOTICE! This version is a development version and still experimental. We reccomend unexperienced users to wait to the official and full version. Information about the release of our official version will be published at the project's site.</string>
+                    <string>&lt;I&gt;GNU/Linux Kinneret&lt;/I&gt; is a CD based (LiveCD) Operating System (OS) and a large collection of applications. The system does not require any complicated configuration, or installation, and features an automatic hardware detection, friendly configuration wizards, a large collection of quality applications and a full built-in Hebrew support (and other languages soon).&lt;BR/&gt;&lt;BR/&gt;Among the application you will find: Office Suits (Word processors, Spread sheets, Presentation editor etc.), Internet applications (Web-browsers, E-mail clients, Instant messengers, Chat clients etc.), Multimedia applications (Audio players, Video players, Image manipulators and editors etc.) and a collection of fun games.&lt;BR/&gt;&lt;I&gt;GNU/Linux Kinneret&lt;/I&gt; is aimed in the first place to the students in the Israeli educational system. Therefore, it includes a large collection of educational programs, learning aids and development environments the are required throughout the year.&lt;BR/&gt;&lt;BR/&gt;The project will allow equality in the technological education of all low-socioeconomy status students by offering a high-quality free (of charge, too) alternative to the proprietary software that are used by the student throughout the learning process. The project also aims at promoting the Free-Software and Open-Source movements in Israel.&lt;BR/&gt;&lt;BR/&gt;If you would like to contribute to the project, or get help and more information, we invite you to out project website, located at: http://www.linux-kinneret.org. We'd be glad to get any kind of help (including help that does not involve programming, such as translating, documentation writing and quality assurance).&lt;BR/&gt;&lt;BR/&gt;NOTICE! This version is a development version and still experimental. We reccomend unexperienced users to wait to the official and full version. Information about the release of our official version will be published at the project's site.</string>
                 </property>
                 <property name="linkUnderline">
                     <bool>false</bool>
@@ -721,10 +712,10 @@ NOTICE! This version is a development version and still experimental. We reccome
                     <enum>RichText</enum>
                 </property>
                 <property name="text">
-                    <string>&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;/head&gt;&lt;body style="font-size:12pt;font-family:Nachlieli"&gt;
-&lt;p&gt;&lt;span style="font-style:italic"&gt;GNU/Linux Kinneret&lt;/span&gt; allows you to use it without installation or configuration, in order to experience with the system.&lt;br /&gt;&lt;br /&gt;In order to allow your work with &lt;span style="font-style:italic"&gt;GNU/Linux Kinneret&lt;/span&gt; to be as productive as possible, and allowing you to save you documents, preferences and data to your hard-drive, you'll have to dedicate a few minutes to complete this wizard.&lt;br /&gt;&lt;br /&gt;The wizard will be activated each time you'll boot &lt;span style="font-style:italic"&gt;GNU/Linux Kinneret&lt;/span&gt;, until you'll create the necessary files (by choosing Automatic or Expert configuration). After the files were successfully created the wizard will stop &amp;quot;popping-up&amp;quot; during boot-up.&lt;br /&gt;&lt;br /&gt;Please select your preferred configuration options:&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;
-</string>
+                    <string>&lt;I&gt;GNU/Linux Kinneret&lt;/I&gt; allows you to use it without installation or configuration, in order to experience with the system.&lt;BR/&gt;&lt;BR/&gt;In order to allow your work with &lt;I&gt;GNU/Linux Kinneret&lt;/I&gt; to be as productive as possible, and allowing you to save you documents, preferences and data to your hard-drive, you'll have to dedicate a few minutes to complete this wizard.&lt;BR/&gt;&lt;BR/&gt;The wizard will be activated each time you'll boot &lt;I&gt;GNU/Linux Kinneret&lt;/I&gt;, until you'll create the necessary files (by choosing Automatic or Expert configuration). After the files were successfully created the wizard will stop "popping-up" during boot-up.&lt;BR/&gt;&lt;BR/&gt;Please select your preferred configuration options:</string>
+                </property>
+                <property name="readOnly">
+                    <bool>true</bool>
                 </property>
             </widget>
             <widget class="QButtonGroup">
@@ -899,8 +890,7 @@ NOTICE! This version is a development version and still experimental. We reccome
                             </font>
                         </property>
                         <property name="text">
-                            <string>In this step you will have to choose the partition that will be used to store your documents and configuration files.&lt;BR/&gt; 
-&lt;I&gt;GNU/Linux Kinneret&lt;/I&gt; scanned you hard-drive(s), and found the following usable partitions:</string>
+                            <string>In this step you will have to choose the partition that will be used to store your documents and configuration files.&lt;BR/&gt;&lt;I&gt;GNU/Linux Kinneret&lt;/I&gt; scanned you hard-drive(s), and found the following usable partitions:</string>
                         </property>
                         <property name="textFormat">
                             <enum>RichText</enum>
@@ -937,11 +927,11 @@ NOTICE! This version is a development version and still experimental. We reccome
                             <enum>RichText</enum>
                         </property>
                         <property name="text">
-                            <string>&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;/head&gt;&lt;body style="font-size:12pt;font-family:Nachlieli"&gt;
-&lt;p&gt;We already choosen the partitions with the largest free-space. In order to change out selection, click a different partition.&lt;br /&gt;&lt;br /&gt;Partitions mapping id presented in it's Unix form, in addition to it's &lt;span style="font-weight:600"&gt;estimated&lt;/span&gt; Windows-ish name. You can get more information about partition mapping by clicking on the &amp;quot;help&amp;quot; button.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;
-</string>
+                        <string>We already choosen the partitions with the largest free-space. In order to change out selection, click a different partition.&lt;BR/&gt;&lt;BR/&gt;Partitions mapping id presented in it's Unix form, in addition to it's &lt;B&gt;estimated&lt;/B&gt; Windows-ish name. You can get more information about partition mapping by clicking on the "help" button.</string>
                         </property>
+                        <property name="readOnly">
+                    <bool>true</bool>
+                </property>
                     </widget>
                     <widget class="QLayoutWidget">
                         <property name="name">
@@ -1055,11 +1045,11 @@ NOTICE! This version is a development version and still experimental. We reccome
                             <enum>RichText</enum>
                         </property>
                         <property name="text">
-                            <string>&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;/head&gt;&lt;body style="font-size:12pt;font-family:Nachlieli"&gt;
-&lt;p&gt;In this step you will have to specify the size of the to-be-created swap file.&lt;br /&gt;The swap file expands the memory that is available to the system, thus increasing performance. Therefore, it is highly recommended that you create a swap file, if you don't have a swap partition already (Notice: Creating the swap file might take a little while, but on the next time you will run &lt;span style="font-style:italic"&gt;GNU/Linux Kinneret&lt;/span&gt; you will notice a high improvement in performance. The recommended swap size is two time your cache memory (RAM) and it's importance increases when you have little RAM).&lt;br /&gt;If you do not wish a swap file, enter zero.&lt;br /&gt;&lt;br /&gt;Note: The maximal swap size is 4G, or 4096MB.&lt;br /&gt;Any value above 4096MB will be reduced to 4096MB. If the partition you have selected does not have enough room for the specified swap size, the wizard will adjust the swap size to the partition and a message will be displayed.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;
-</string>
+                        <string>In this step you will have to specify the size of the to-be-created swap file.&lt;BR/&gt;The swap file expands the memory that is available to the system, thus increasing performance. Therefore, it is highly recommended that you create a swap file, if you don't have a swap partition already (Notice: Creating the swap file might take a little while, but on the next time you will run &lt;I&gt;GNU/Linux Kinneret&lt;/I&gt; you will notice a high improvement in performance. The recommended swap size is two time your cache memory (RAM) and it's importance increases when you have little RAM).&lt;BR/&gt;If you do not wish a swap file, enter zero.&lt;BR/&gt;&lt;BR/&gt;Note: The maximal swap size is 4G, or 4096MB.&lt;BR/&gt;Any value above 4096MB will be reduced to 4096MB. If the partition you have selected does not have enough room for the specified swap size, the wizard will adjust the swap size to the partition and a message will be displayed.</string>
                         </property>
+                        <property name="readOnly">
+                    <bool>true</bool>
+                </property>
                     </widget>
                     <spacer>
                         <property name="name">
@@ -1271,11 +1261,11 @@ NOTICE! This version is a development version and still experimental. We reccome
                             <enum>RichText</enum>
                         </property>
                         <property name="text">
-                            <string>&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;/head&gt;&lt;body style="font-size:12pt;font-family:Nachlieli"&gt;
-&lt;p&gt;A directory name 'kinneret' will be created at the root of the partition you have selected. This directory will hold system data and configuration files. Do not make changed to the content of this directory!&lt;br /&gt;&lt;br /&gt;In addition to that directory you can select / create your default directory for saving your data and documents (your &amp;quot;home directory&amp;quot;).&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;
-</string>
+                            <string>A directory name 'kinneret' will be created at the root of the partition you have selected. This directory will hold system data and configuration files. Do not make changed to the content of this directory!&lt;BR/&gt;&lt;BR/&gt;In addition to that directory you can select / create your default directory for saving your data and documents (your "home directory").</string>
                         </property>
+                        <property name="readOnly">
+                    <bool>true</bool>
+                    </property>
                     </widget>
                     <widget class="DirectoryView">
                         <property name="name">
@@ -1427,8 +1417,7 @@ NOTICE! This version is a development version and still experimental. We reccome
                             </font>
                         </property>
                         <property name="text">
-                            <string>&lt;I&gt;GNU/Linux Kinneret&lt;/I&gt; is able to import TrueType fonts from an existing Windows partition. &lt;I&gt;Kinneret&lt;/I&gt; is also able to import non-Windows fonts, as long as they are TrueType (have the .ttf extension).&lt;BR/&gt; 
-&lt;I&gt;Kinneret&lt;/I&gt; have scanned and added the fonts that are in your standart Windows fonts directory (if it was found). You can add and remove font directories as you wish.</string>
+                            <string>&lt;I&gt;GNU/Linux Kinneret&lt;/I&gt; is able to import TrueType fonts from an existing Windows partition. &lt;I&gt;Kinneret&lt;/I&gt; is also able to import non-Windows fonts, as long as they are TrueType (have the .ttf extension).&lt;BR/&gt;&lt;I&gt;Kinneret&lt;/I&gt; have scanned and added the fonts that are in your standart Windows fonts directory (if it was found). You can add and remove font directories as you wish.</string>
                         </property>
                         <property name="textFormat">
                             <enum>RichText</enum>
@@ -1614,9 +1603,7 @@ NOTICE! This version is a development version and still experimental. We reccome
                             </font>
                         </property>
                         <property name="text">
-                            <string>A home directory was configured for you in &lt;I&gt;Kinneret&lt;/I&gt;, this directory will be your default place to save documents and data. The little house icon in the quick-launch bar will allow you to access this directory easily. Any file that will be written in this directory will be accessible from bot Windows and &lt;I&gt;Kinneret&lt;/I&gt;.&lt;BR/&gt; 
-&lt;BR/&gt; 
-For your security, the home directory, and the partition it is on, are the only place you have write access to. Therefore, you shouldn't write data to any other place, they won't be saved after a reboot.</string>
+                            <string>A home directory was configured for you in &lt;I&gt;Kinneret&lt;/I&gt;, this directory will be your default place to save documents and data. The little house icon in the quick-launch bar will allow you to access this directory easily. Any file that will be written in this directory will be accessible from both Windows and &lt;I&gt;Kinneret&lt;/I&gt;.&lt;BR/&gt;&lt;BR/&gt;For your security, the home directory, and the partition it is on, are the only place you have write access to. Therefore, you shouldn't write data to any other place, they won't be saved after a reboot.</string>
                         </property>
                         <property name="textFormat">
                             <enum>AutoText</enum>
@@ -1712,12 +1699,7 @@ For your security, the home directory, and the partition it is on, are the only 
                             </font>
                         </property>
                         <property name="text">
-                            <string>You must have a lot of questions about &lt;I&gt;GNU/Linux Kinneret&lt;/I&gt;: What can I do with it? How do I use the application that comes with it? What's &lt;I&gt;GNU/Linux&lt;/I&gt;?&lt;BR/&gt; 
-&lt;BR/&gt; 
-For that purpose we have created the Learn to Swim Guide (or The Swimming Guide) that will allow you to easily get familiar with the system and getting to work with it.&lt;BR/&gt; 
-The guide contains a collection of articles and guides in many subjects. You can activate the guide by double-clicking on the "Learn to Swim" icon on your desktop.&lt;BR/&gt; 
-&lt;BR/&gt; 
-The project team congratulates you for your new system, and wishes you a lot of joy and productivity while working with the system!</string>
+                            <string>You must have a lot of questions about &lt;I&gt;GNU/Linux Kinneret&lt;/I&gt;: What can I do with it? How do I use the application that comes with it? What's &lt;I&gt;GNU/Linux&lt;/I&gt;?&lt;BR/&gt;&lt;BR/&gt;For that purpose we have created the Learn to Swim Guide (or The Swimming Guide) that will allow you to easily get familiar with the system and getting to work with it.&lt;BR/&gt;The guide contains a collection of articles and guides in many subjects. You can activate the guide by double-clicking on the "Learn to Swim" icon on your desktop.&lt;BR/&gt;&lt;BR/&gt;The project team congratulates you for your new system, and wishes you a lot of joy and productivity while working with the system!</string>
                         </property>
                         <property name="textFormat">
                             <enum>RichText</enum>

@@ -96,6 +96,7 @@ void InitWizard(configwizard *wizard)
 			qs += QString("<BR/>");
 		}
 		q_index[i]->setText(qs);
+		q_index[i]->setTextFormat(Qt::RichText);
 	}
 }
 
@@ -104,8 +105,8 @@ int main(int argc, char *argv[])
 	// Before doing anything, see if the wizard should run...
 	// The startup script will create the file /etc/foundhome
 	// and will put 0 in it if it couldn't find the home directory.
-//	#warning ADD NOT!!
-	if (!QFile::exists(QString("/tmp/foundhome")))
+	#warning ADD NOT!!
+	if (QFile::exists(QString("/tmp/foundhome")))
 	{
 		system("sudo /opt/kinneret/bin/ttf.sh");	// load fonts
 		return 0;
@@ -150,6 +151,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		KMessageBox::error(0, QString(tr2i18n("You have canceled the wizard, Kinneret will now shutdown.")));
+		system("sudo init 6");
 		return 9;		// wizard canceled, kinneret will shutdown.
 	}
 
