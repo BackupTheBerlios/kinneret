@@ -89,10 +89,3 @@ Changes:
          - somewhat improved (?) error messages 
 	 - added an alternate grub name option
 
-0.9b:
-	 - corrected GRUB names (use PartitionNumber instead of entry number)
-	 - added '-B' option, so now it can be installed on any drive
-	 - -m '' now works to install without menu
-
-0.9c:
-	 - fix bug in using PartitionNumber (of OBI1 type :-)
