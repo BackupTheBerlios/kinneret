@@ -21,4 +21,7 @@ TEXT X=445 Y=110 COLOR=0,0,0 FONTSIZE=10 FONT="NACHLIELI" Align=Right SENSOR=pro
 TEXT X=445 Y=125 COLOR=0,0,0 FONTSIZE=10 FONT="NACHLIELI" Align=Right SENSOR=program program="/opt/kinneret/karamba/tip/rand.pl" line=10 encoding="UTF8"
 TEXT X=445 Y=140 COLOR=0,0,0 FONTSIZE=10 FONT="NACHLIELI" Align=Right SENSOR=program program="/opt/kinneret/karamba/tip/rand.pl" line=11 encoding="UTF8"
 
+#run on startup
+TEXT X=18 Y=154 COLOR=40,0,0 FONTSIZE=10 FONT="NACHLIELI" Align=Left SENSOR=textfile path="/opt/kinneret/karamba/tip/ctl" line=2 encoding="UTF8"
+clickarea x=17 y=154 h=12 w=100 onclick="cp /opt/kinneret/karamba/tip/karambatip.sh ~/.kde/Autostart/; kdialog --msgbox 'טיפים יצוגו עם הפעלת המערכת'"
 </GROUP>
