@@ -4,10 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, TntStdCtrls,gnuGetText,fWarning,parInstall2;
+  Dialogs, StdCtrls, TNTForms, TntStdCtrls,gnuGetText,fWarning,parInstall2;
 
 type
-  Tparinst = class(TForm)
+  Tparinst = class(TTNTForm)
     explanation: TTntLabel;
     YesButton: TTntButton;
     NoButton: TTntButton;
@@ -34,6 +34,7 @@ begin
   else Bidimode:=bdLeftToRight;
   if GetCurrentLanguage='he' then Explanation.Alignment:=taRightJustify
   else Explanation.Alignment:=taLeftJustify;
+  Caption:=pWideChar(_('Partial installation wizard'));
   explanation.Caption:=pWideChar(_('What is partial installation ?'+#10#13+#10#13+
   'For your knowledge, Kinneret CD contains about 2.3 GB'+#10#13+
   'of installed software, compressed into one CD.'+#10#13+

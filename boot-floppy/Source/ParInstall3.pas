@@ -4,11 +4,11 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, TntStdCtrls,gnuGetText, ShellAPI, fWarning,checkos, INIfiles, strUtils;
+  Dialogs, StdCtrls, TntStdCtrls, TNTForms, gnuGetText, ShellAPI, fWarning,checkos, INIfiles, strUtils;
 
 type
   textpos = (Start, Anywhere);
-  TParInst3 = class(TForm)
+  TParInst3 = class(TtntForm)
     LabelWait: TTntLabel;
     ButtonClose: TTntButton;
     procedure FormActivate(Sender: TObject);
@@ -54,10 +54,10 @@ begin
   source:=TStringList.Create;
   destination:=TStringList.Create;
   // ADDING FILES TO COPY
-//  source.Add(cdrom+'\KNOPPIX\knoppix');
-//  destination.add(ChosenDrive+':\KNOPPIX\knoppix');
-//  source.Add(cdrom+'\KNOPPIX\knoppix.sh');
-//  destination.add(ChosenDrive+':\KNOPPIX\knoppix.sh');
+  source.Add(cdrom+'\KNOPPIX\knoppix');
+  destination.add(ChosenDrive+':\KNOPPIX\knoppix');
+  source.Add(cdrom+'\KNOPPIX\knoppix.sh');
+  destination.add(ChosenDrive+':\KNOPPIX\knoppix.sh');
   if not osis95 and createmenu then
   begin
     source.Add(cdrom+'\boot\menu.lst');
@@ -96,9 +96,8 @@ begin
   if (CreateMenu or CreateShortcut) and (diskFree(3)<2097152) {2MB} then
   begin
     error:=true;
-    labelWait.Caption:=pwidechar(_('Drive C: is full, Unable to copy files.'+#10#13+
-    'Free up some space, or try again without Boot Options.'));
-    messagebeep(MB_ICONERROR);
+    ShowWarning(ERR,(_('Drive C: is full, Unable to copy files.'+#10#13+
+    'Free up some space, or try again without Boot Options.')));
   end;
   //Copying all files
   if not error and (not filesExist(source) or
@@ -106,9 +105,7 @@ begin
   or not filesExist(destination))
   then begin
     error:=true;
-    LabelWait.Caption:=pWideChar(_('Error while copying files.'+#10#13+
-    'Unable to continue.'));
-    messagebeep(MB_ICONERROR);
+    ShowWarning(ERR,pWideChar(_('Error while copying files.')));
     buttonClose.Enabled:=true;
   end;
   source.free;
@@ -118,9 +115,8 @@ begin
   begin       //Windows NT Create Menu with GRUB
     if not fileExists('c:\boot.ini') or not fileExists('c:\ntldr') then
     begin
-      LabelWait.Caption:=pWideChar(_('Error, Can''t find C:\boot.ini'+#10#13+
-      'Unable to install Boot-Menu.'));
-      messagebeep(MB_ICONERROR);
+      ShowWarning(ERR,pWideChar(_('Error, Can''t find C:\boot.ini'+#10#13+
+      'Unable to install Boot-Menu.')));
       error:=true;
     end else begin
       copyFile('c:\boot.ini','c:\boot\boot.ini.old',false);
@@ -132,9 +128,8 @@ begin
         BootIni.WriteInteger('boot loader', 'timeout' ,10);
         BootIni.WriteString( 'operating systems', 'C:\boot\stage1', '"GNU/Linux Kinneret"' );
       except
-        LabelWait.Caption:=pWideChar(_('Error, Can''t modify C:\boot.ini'+#10#13+
-        'Unable to install Boot-Menu.'));
-        messagebeep(MB_ICONERROR);
+        ShowWarning(ERR,pWideChar(_('Error, Can''t modify C:\boot.ini'+#10#13+
+        'Unable to install Boot-Menu.')));
         error:=true;
       end;
       BootIni.Free;
@@ -148,7 +143,7 @@ begin
     try
       if (BootIni.ReadString( 'operating systems', 'C:\boot\stage1', '' )<>'') and
       ShowWarning(QST,pWideChar(_('An old Boot-Menu was detected on your system,'+#10#13+
-      'Would you want to remove it ?'))) then
+      'Would you like to remove it ?'))) then
       begin
         attribute:=GetFileAttributes(pchar('c:\boot.ini'));
         SetFileAttributes(pchar('c:\boot.ini'), attribute and not FILE_ATTRIBUTE_READONLY	);
@@ -162,7 +157,8 @@ begin
   if not error and osis95 and createMenu then error:=install9xMenu
   else if not error and osis95 and not createMenu then removeMenu;
 
-  if not error then LabelWait.Caption:=pWideChar(_('Installation finished successfully.'));
+  if not error then LabelWait.Caption:=pWideChar(_('Installation finished successfully.'))
+  else LabelWait.Caption:=pWideChar(_('Installation failed.'));
   ButtonClose.Enabled:=true;
 end;
 
@@ -170,7 +166,9 @@ procedure TParInst3.FormShow(Sender: TObject);
 begin
   LabelWait.Caption:=pWideChar(_('Please wait while installing Kinneret,'+#10#13+
   'this may take several minutes...'));
+  Caption:=pWideChar(_('Installing Kinneret'));
   ButtonClose.enabled:=false;
+  ButtonClose.Caption:=pWideChar(_('Close'));
 end;
 
 procedure TParInst3.ButtonCloseClick(Sender: TObject);
@@ -280,15 +278,14 @@ begin
     if ((confstart=-1) and (confend=-1) and (autostart=-1) and (autoend=-1)) and
       (searchfor('[menu]',configsys,anywhere)>-1) then
     begin
-      LabelWait.Caption:=pWideChar(_('Another Boot-Menu which is not related to Kinneret was'+#10#13+
-      'detected on your system.'+#10#13+'Kinneret boot-menu cannot be installed.'));
-      messagebeep(MB_ICONERROR);
+      ShowWarning(ERR,pWideChar(_('Another Boot-Menu which is not related to Kinneret was'+#10#13+
+      'detected on your system.'+#10#13+'Kinneret boot-menu cannot be installed.')));
     end
     else if ((confstart>-1) and (confend>confstart) and (autostart>-1) and (autoend>autostart)) then
     begin
       result:=false;
       if ShowWarning(QST,pWideChar(_('There is an old Kinneret Boot-Menu installed,'+#10#13+
-        'Do you want to overwrite it ?'))) then
+        'would you like to overwrite it ?'))) then
       begin
         for i:=confstart to confend do configsys.delete(0);
         for i:=autostart to autoend do autoexec.delete(0);
@@ -297,9 +294,8 @@ begin
     end
     else if ((confstart>-1) or (confend>-1) or (autostart>-1) or (autoend>-1)) then
     begin
-      LabelWait.Caption:=pWideChar(_('It seems that there is an old Kinneret Boot-Menu installed,'+#10#13+
-      'but it is corrupted. Installation failed.'));
-      messagebeep(MB_ICONERROR);
+      ShowWarning(ERR,pWideChar(_('It seems that there is an old Kinneret Boot-Menu installed,'+#10#13+
+      'but it is corrupted.')));
     end
     // There is nothing in config.sys or autoexec.bat, just install normally.
     else toAdd:=true;
@@ -314,9 +310,7 @@ begin
       result:=false;      //result is not error
     end else if toAdd=true then
     begin
-      LabelWait.Caption:=pWideChar(_('There is an unknown problem with the Boot-Menu.'+#10#13+
-      'Installation failed.'));
-      messagebeep(MB_ICONERROR);
+      ShowWarning(ERR,(_('There is an unknown problem with the Boot-Menu.')));
       result:=true;
     end;
   finally

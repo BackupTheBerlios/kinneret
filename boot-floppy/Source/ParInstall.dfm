@@ -2,7 +2,6 @@ object parinst: Tparinst
   Left = 380
   Top = 185
   BorderStyle = bsToolWindow
-  Caption = 'Partial installation wizard'
   ClientHeight = 318
   ClientWidth = 345
   Color = clBtnFace

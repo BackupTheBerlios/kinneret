@@ -5,10 +5,10 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, TntStdCtrls,gnuGetText, drives,
-  ComCtrls, TntComCtrls, fWarning, checkOS, parinstall3;
+  ComCtrls, TntComCtrls, fWarning, checkOS, parinstall3,TntForms;
 
 type
-  Tparinst2 = class(TForm)
+  Tparinst2 = class(TtntForm)
     ButtonStart: TTntButton;
     ButtonCancel: TTntButton;
     TntGroupBox1: TTntGroupBox;
@@ -19,6 +19,8 @@ type
     LabelBoot: TTntLabel;
     ListDrives: TTntListView;
     LabelNote: TTntLabel;
+    LBDesktop: TTntLabel;
+    LBMenu: TTntLabel;
     procedure FormShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure ListDrivesMouseUp(Sender: TObject; Button: TMouseButton;
@@ -59,6 +61,8 @@ begin
     LabelNote.Alignment:=taRightJustify;
     CBDesktop.Alignment:=taLeftJustify;
     CBMenu.Alignment:=taLeftJustify;
+    LBDesktop.Alignment:=taRightJustify;
+    LBMenu.Alignment:=taRightJustify;
   end
   else begin
     LabelChoose.Alignment:=taLeftJustify;
@@ -66,9 +70,12 @@ begin
     LabelNote.Alignment:=taLeftJustify;
     CBDesktop.Alignment:=taRightJustify;
     CBMenu.Alignment:=taRightJustify;
+    LBDesktop.Alignment:=taLeftJustify;
+    LBMenu.Alignment:=taLeftJustify;
   end;
   if GetCurrentLanguage='iw' then BidiMode:=bdRightToLeft
   else Bidimode:=bdLeftToRight;
+  Caption:=pWideChar(_('Partial installation options'));
   ButtonCancel.Caption:=pwideChar(_('Cancel'));
   ButtonStart.Caption:=pWideChar(_('Start Installation'));
   LabelChoose.Caption:=pwidechar(_('Choose a drive to install GNU/Linux Kinneret :'));
@@ -81,12 +88,16 @@ begin
   'choose one or more of the next options (recommended) :'));
   TNTGroupBox2.Caption:=pWideChar(_('1. Drive Options'));
   TNTGroupBox1.Caption:=pWideChar(_('2. Boot Options'));
-  CBDesktop.Caption:=pWideChar(_('Desktop shortcut (Windows 95,98)'));
-  CBMenu.Caption:=pWideChar(_('Boot Menu (Windows 95,98, NT,2000, XP)'));
+  LBDesktop.Caption:=pWideChar(_('Desktop shortcut (Windows 95,98)'));
+  LBMenu.Caption:=pWideChar(_('Boot Menu (Windows 95,98, NT,2000, XP)'));
+  ListDrives.Columns[0].Caption:=pWideChar(_('Drive'));
+  ListDrives.Columns[1].Caption:=pWideChar(_('Free space before inst.'));
+  ListDrives.Columns[2].Caption:=pWideChar(_('Free space after inst.'));
   if osisMe then
   begin
     CBDesktop.Checked:=false;
     CBDesktop.Enabled:=false;
+    LBDesktop.Enabled:=false;
     CBMenu.Checked:=false;
     CBMenu.Enabled:=true;
   end else if osis95 then
@@ -99,6 +110,7 @@ begin
   begin
     CBDesktop.Checked:=false;
     CBDesktop.Enabled:=false;
+    LBDesktop.Enabled:=false;
     CBMenu.Checked:=true;
     CBMenu.Enabled:=true;
   end;

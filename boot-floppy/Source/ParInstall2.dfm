@@ -2,7 +2,6 @@ object parinst2: Tparinst2
   Left = 297
   Top = 111
   BorderStyle = bsToolWindow
-  Caption = 'Partial Installation'
   ClientHeight = 478
   ClientWidth = 387
   Color = clBtnFace
@@ -48,17 +47,35 @@ object parinst2: Tparinst2
       Height = 65
       AutoSize = False
     end
+    object LBDesktop: TTntLabel
+      Left = 48
+      Top = 122
+      Width = 257
+      Height = 17
+      AutoSize = False
+      Caption = 'LBDesktop'
+      Color = clBtnFace
+      ParentColor = False
+    end
+    object LBMenu: TTntLabel
+      Left = 48
+      Top = 146
+      Width = 257
+      Height = 17
+      AutoSize = False
+      Caption = 'LBMenu'
+    end
     object CBDesktop: TTntCheckBox
       Left = 24
       Top = 120
-      Width = 297
+      Width = 305
       Height = 17
       TabOrder = 0
     end
     object CBMenu: TTntCheckBox
       Left = 24
       Top = 144
-      Width = 297
+      Width = 305
       Height = 17
       TabOrder = 1
     end
@@ -92,14 +109,13 @@ object parinst2: Tparinst2
       Checkboxes = True
       Columns = <
         item
-          Caption = 'Drive'
         end
         item
-          Caption = 'Free space before inst.'
+          Alignment = taCenter
           Width = 125
         end
         item
-          Caption = 'Free space after inst.'
+          Alignment = taCenter
           Width = 125
         end>
       ReadOnly = True
