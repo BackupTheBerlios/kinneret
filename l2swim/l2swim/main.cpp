@@ -17,19 +17,27 @@
 
 #include <kapplication.h>
 #include "l2swim.h"
-#include <klocale.h>
+//#include "index.h"
+//#include <klocale.h>
 //#include <iostream.h>
 
 int main( int argc, char **argv )
 {
-  KApplication a( argc, argv, "l2swim");
-  QString cmdStartpage;
-  if ((argc>1)&&(argv[1][0]!='-')) cmdStartpage=argv[1];
-    else cmdStartpage="";
-	MainWindow *window=new MainWindow("",cmdStartpage);
-  a.setMainWidget( window );
-  window->show();
-  
-  return a.exec();
+	//initializing and checking the menu
+	KApplication a( argc, argv, "l2swim");
+	QString menufile=QString("/opt/kinneret/l2swim/etc/swim_menu.xml");
+	bool success;
+	cmenu *menu;
+	menu=new cmenu(menufile,&success);
+	if (!success) return(1);
+	QString cmdStartpage;
+	if ((argc>1)&&(argv[1][0]!='-')) cmdStartpage=argv[1];
+	else cmdStartpage="";
+	MainWindow *window=new MainWindow("",cmdStartpage,menu);
+	a.setMainWidget( window );
+	window->show();
+	int result=a.exec();
+	delete menu;
+	return result;
 }
 

@@ -1,5 +1,5 @@
 /***************************************************************************
-                          swim.cpp  -  description
+                          l2swim.cpp  -  description
                              -------------------
     begin                : Fri Apr  4 14:44:54 IDT 2003
     copyright           : (C) 2003 by GNU/Linux Kinneret
@@ -18,20 +18,19 @@
  ***************************************************************************/
 
 #include "l2swim.h"
-#include <kapp.h>
-#include <ktoolbarbutton.h>
-#include <qtimer.h>
 #include <iostream>
 
 using namespace std;
 
 // Showing the main widget.
-MainWindow::MainWindow ( const char* name, const QString spage) : KMainWindow ( 0L, name )
+MainWindow::MainWindow ( const char* name, const QString spage, cmenu* mn) : KMainWindow ( 0L, name )
 {
   aboutline=i18n("<b><big><big>Learn To Swim (l2swim)</b></big></big><br><br>An interactive information center.<br>Version: %1<br>Date: %2<br>Programmed by : Nir Misgav<br>Email: %3<br>License: GPL<br>All rights reserved to <i><b>GNU/Linux Kinneret.</i></b>")
-      .arg("0.7.1").arg("17/12/03").arg("nirro@linux-kinneret.org");
-  cmdStartpage=spage;
-	
+      .arg("0.7.3-1").arg("15/5/04").arg("nirro@linux-kinneret.org");
+	cmdStartpage=spage;
+	menu=mn;
+//	lang=locale.language().left(2);
+
 //  cout<<"menu initialized"<<endl;
   setCaption(i18n("Learn to swim"));
   hbox = new QHBox(this);
@@ -63,6 +62,7 @@ MainWindow::MainWindow ( const char* name, const QString spage) : KMainWindow ( 
   toolbar->insertButton(BarIcon("viewmag+"), TOOLBAR_ID_ZOOMIN,
                           SIGNAL(clicked(int)),this,SLOT(fzoomin()),TRUE,
                           i18n("Zoom-in"));
+
   toolbar->insertButton(BarIcon("viewmag-"), TOOLBAR_ID_ZOOMOUT,
                           SIGNAL(clicked(int)),this,SLOT(fzoomout()),FALSE,
                           i18n("Zoom-out"));
@@ -84,30 +84,15 @@ MainWindow::MainWindow ( const char* name, const QString spage) : KMainWindow ( 
   
 	setAutoSaveSettings("MainWindow",true);
 	toolbar->setIconText(KToolBar::IconTextBottom);
-}
 
-void MainWindow::firstload()
-{
-  KLocale locale("");
-  lang=locale.language().left(2);
-  menufile=QString("/opt/kinneret/l2swim/etc/swim_menu_"+lang+".xml");
-  if (!QFile(menufile).exists()) menufile=QString("/opt/kinneret/l2swim/etc/swim_menu.xml");
-  if (QFile(menufile).exists()) cout<<"file exists"<<endl;
-  bool success;
-  menu=new cmenu(menufile,&success);
-  if (success==false) cout<<"unsuccessful"<<endl;
-  openURL(KURL(menu->getFirstPage()),false);
-}
-
-void MainWindow::show()
-{
-  KMainWindow::show();
-  firstload();
+	openURL(KURL(menu->getFirstPage()),true);
 }
 
 void MainWindow::home()
 {
-  openURL(KURL(menu->getFirstPage()),true);
+	future.clear();
+	toolbar->setItemEnabled(TOOLBAR_ID_FORW,FALSE);
+	openURL(KURL(menu->getFirstPage()));
 }
 
 void MainWindow::fzoomin()
@@ -134,105 +119,111 @@ void MainWindow::fzoomout()
   if (zoom<=100) toolbar->setItemEnabled(TOOLBAR_ID_ZOOMOUT,FALSE);
 }
 
-void MainWindow::openURL(KURL url,bool push,bool forw)
+void MainWindow::openURL(KURL url, bool backward,bool forward)
 {
-  QString link;
-  // this is not forward nor backward
-  if (forw==false)
-  {
-    future.clear();
-    toolbar->setItemEnabled(TOOLBAR_ID_FORW,false);
-  }
-  if(url.url().compare(menu->getFirstPage())==0)
-      toolbar->setItemEnabled(TOOLBAR_ID_HOME,false);
-      else toolbar->setItemEnabled(TOOLBAR_ID_HOME,true);
-  if ((url.url().left(7).compare("swim://")==0)||
-      (url.url().compare("swit://startpage")==0))
-  {
-    //internal link
-    link=url.url().right(url.url().length()-7);
-    QString page,type,imagefile;
-    menu->getLink(link,&page,&type,&imagefile);
-    putImage(imagefile);
-    if (type.compare("menu")==0)
-    {
-      if (push)
-      {
-        history.push(currentPage);
-        toolbar->setItemEnabled(TOOLBAR_ID_BACK,true);
-      }
-      html->begin();
-      html->write(page);
-      html->end();
-      visible=HTML;
-      stack->raiseWidget(visible);
-      currentPage=url.url();
-      return;
-    }
-    else if (type.compare("exec")==0 )
-    {
-      KProcess *proc=new KProcess;
-      *proc << link;
-      proc->start(KProcess::DontCare);
-      delete proc;
-      return;
-    }
-    else if (type.compare("play")!=0)
-    {
-    // external URL
-      new KRun(KURL(type+"://"+link),0,false,true);
-      return;
-    }
-
-    // Internal URL
-    KURL url2;
-    url2.setPath(menu->getDocsPath());
-    url2.setFileName(link);
-    url2.setProtocol("file");
-    url=url2;
-  }
-  QString mimetype = KMimeType::findByURL(url)->name();
-  // external link
-  if (mimetype.compare("application/octet-stream")==0) new KRun(url,0,false,true);
-  else if(mimetype.compare("text/html")==0)
-  {
-    if(push)
-    {
-      history.push(currentPage);
-      toolbar->setItemEnabled(TOOLBAR_ID_BACK,true);
-    }
-    html->openURL( url.url() );
-    currentPage=url.url();
-    visible=HTML;
-    stack->raiseWidget(visible);
-  }
-  else
-  {
-    // other part
-    if (part)delete part;
-    part = KParts::ComponentFactory::createPartInstanceFromQuery<KParts::ReadOnlyPart>
-      ( mimetype, QString::null, splitter, 0L, this, 0L );
-    if ( part )
-    {
-      if(push)
-      {
-        history.push(currentPage);
-        toolbar->setItemEnabled(TOOLBAR_ID_BACK,true);
-      }
-      part->openURL(url);
-      part->widget()->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding, TRUE );
-      currentPage=url.url();
-      visible=PART;
-      stack->raiseWidget(visible);
-    }
-  }
-}  
+	QString link,type;
+	//check if it is the first page
+	if(url.url().compare(menu->getFirstPage())==0)
+	toolbar->setItemEnabled(TOOLBAR_ID_HOME,false);
+	else toolbar->setItemEnabled(TOOLBAR_ID_HOME,true);
+  
+	divideURL(url.url(),&type,&link);
+  
+	// a menu
+	if (type.compare("menu")==0)
+	{
+		if (!backward)
+		{
+			history.push(currentPage);
+			toolbar->setItemEnabled(TOOLBAR_ID_BACK,true);
+		} 
+		if ((!forward)&&(!backward))
+		{
+			future.clear();
+			toolbar->setItemEnabled(TOOLBAR_ID_FORW,false);
+		}
+		QString page,type,imagefile;
+		if (!menu->getLink(link,"menu",&imagefile,&page))
+		{
+			cout<<"Error - page not found"<<endl;
+			return;
+		}
+		putImage(imagefile);
+		html->begin();
+		html->write(page);
+		html->end();
+		visible=HTML;
+		stack->raiseWidget(visible);
+		currentPage=url.url();
+		return;
+	}
+	//executable from menu
+	if (type.compare("exec")==0 )
+	{
+		KProcess *proc=new KProcess;
+		*proc << link;
+		proc->start(KProcess::DontCare);
+		delete proc;
+		return;
+	}
+	// internal document (play from menu)
+	if (type.compare("play")==0)
+	{
+		QString imagefile;
+		if (!menu->getLink(link,"play",&imagefile))
+		{
+			cout<<"Error - page not found"<<endl;
+			return;
+		}
+		putImage(imagefile);
+		KURL url2;
+		url2.setPath(menu->getDocsPath());
+		url2.setFileName(link);
+		url2.setProtocol("file");
+		url=url2;
+	}
+	QString mimetype = KMimeType::findByURL(url)->name();
+	// executable or external link
+	if (mimetype.compare("application/octet-stream")==0) new KRun(url,0,false,true);
+	// internal html
+	else 
+	{
+		if (!backward)
+		{
+			history.push(currentPage);
+			toolbar->setItemEnabled(TOOLBAR_ID_BACK,true);
+		} 
+		if ((!forward)&&(!backward))
+		{
+			future.clear();
+			toolbar->setItemEnabled(TOOLBAR_ID_FORW,false);
+		}
+		if(mimetype.compare("text/html")==0)
+		{
+			html->openURL(url);
+			visible=HTML;
+			stack->raiseWidget(visible);
+		}
+		// other part internal
+		else
+		{
+			if (part)delete part;
+			part = KParts::ComponentFactory::createPartInstanceFromQuery<KParts::ReadOnlyPart> ( mimetype, QString::null, splitter, 0L, this, 0L );
+   	 		if ( part )
+			{
+				part->openURL(url);
+				part->widget()->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding, TRUE );
+				visible=PART;
+				stack->raiseWidget(visible);
+			}
+		}
+		currentPage=url.url();
+	}
+}
 
 void MainWindow::openURLRequest( const KURL &url, const KParts::URLArgs & )
 {
-  if (url.url().compare("swit://goback")==0) gotoPreviousPage();
-  else if (url.url().compare("swit://exit")==0) close();
-  else openURL(url);
+	openURL(url);
 }
 
 // button back pressed
@@ -241,7 +232,7 @@ void MainWindow::gotoPreviousPage()
   future.push(currentPage);
 //  cout<<currentPage<<endl;
   toolbar->setItemEnabled(TOOLBAR_ID_FORW,true);
-  openURL(KURL(history.pop()),false,true);
+  openURL(KURL(history.pop()),true);
   if (history.isEmpty()) toolbar->setItemEnabled(TOOLBAR_ID_BACK,false);
 }  
 
@@ -249,7 +240,7 @@ void MainWindow::gotoForwardPage()
 {
   QString fu=future.pop();
 //  cout<<"Forward="<<fu<<endl;
-  openURL(KURL(fu),true,true);
+  openURL(KURL(fu),false,true);
   if (future.isEmpty()) toolbar->setItemEnabled(TOOLBAR_ID_FORW,false);
 }
 
@@ -277,7 +268,7 @@ void MainWindow::printpage()
 //desctuctor
 MainWindow::~MainWindow()
 {
-  delete menu;
+//  delete menu;
   if (part) delete part;
 }
 
@@ -303,4 +294,13 @@ void MainWindow::backButtonOff()
 {
   toolbar->getButton(TOOLBAR_ID_BACK)->on(false);
   gotoPreviousPage();
+}
+
+bool divideURL(QString url, QString *type, QString *name)
+{
+	int div=url.find("://",0,false);
+	if (div<0) return false;
+	*type=url.left(div);
+	*name=url.right(url.length()-div-3);
+	return true;
 }

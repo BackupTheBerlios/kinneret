@@ -91,9 +91,13 @@ l2swim.moc.o l2swim.moc.o: l2swim.moc.cpp l2swim.h \
   /usr/share/qt3/include/qrangecontrol.h /usr/include/kde/krun.h \
   /usr/share/qt3/include/qtimer.h /usr/include/kde/kstartupinfo.h \
   /usr/include/kde/kmessagebox.h /usr/include/kde/kguiitem.h \
-  /usr/include/kde/kstdguiitem.h /usr/share/qt3/include/qapplication.h \
+  /usr/include/kde/kstdguiitem.h /usr/include/kde/kapp.h \
+  /usr/include/kde/kapplication.h /usr/include/kde/kdeversion.h \
+  /usr/share/qt3/include/qapplication.h \
   /usr/share/qt3/include/qdesktopwidget.h \
-  /usr/share/qt3/include/qtranslator.h \
+  /usr/share/qt3/include/qtranslator.h /usr/include/kde/ktoolbarbutton.h \
+  /usr/share/qt3/include/qtoolbutton.h /usr/share/qt3/include/qbutton.h \
+  /usr/share/qt3/include/qkeysequence.h \
   /usr/share/qt3/include/private/qucomextra_p.h \
   /usr/share/qt3/include/private/qucom_p.h /usr/share/qt3/include/quuid.h
 
@@ -457,11 +461,25 @@ index.h:
 
 /usr/include/kde/kstdguiitem.h:
 
+/usr/include/kde/kapp.h:
+
+/usr/include/kde/kapplication.h:
+
+/usr/include/kde/kdeversion.h:
+
 /usr/share/qt3/include/qapplication.h:
 
 /usr/share/qt3/include/qdesktopwidget.h:
 
 /usr/share/qt3/include/qtranslator.h:
+
+/usr/include/kde/ktoolbarbutton.h:
+
+/usr/share/qt3/include/qtoolbutton.h:
+
+/usr/share/qt3/include/qbutton.h:
+
+/usr/share/qt3/include/qkeysequence.h:
 
 /usr/share/qt3/include/private/qucomextra_p.h:
 

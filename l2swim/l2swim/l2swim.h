@@ -1,5 +1,5 @@
 /***************************************************************************
-                          swim.cpp  -  description
+                          l2swim.h  -  description
                              -------------------
     begin                : Fri Apr  4 14:44:54 IDT 2003
     copyright           : (C) 2003 by GNU/Linux Kinneret
@@ -37,11 +37,13 @@
 #include <kparts/browserextension.h>
 #include <khtml_part.h>
 #include <khtmlview.h>
-//#include <iostream.h>
 #include <krun.h>
 #include <qfile.h>
 #include <kmessagebox.h>
 #include <qevent.h>
+#include <kapp.h>
+#include <ktoolbarbutton.h>
+#include <qtimer.h>
 
 #define TOOLBAR_ID_BACK 1
 #define TOOLBAR_ID_HOME 2
@@ -53,16 +55,18 @@
 #define HTML 1
 #define PART 2
 
+bool divideURL(QString url, QString *type, QString *name);
+
 class MainWindow : public KMainWindow
 {
   Q_OBJECT
 public:
-  MainWindow ( const char * name, QString spage);
+  MainWindow ( const char * name, QString spage, cmenu *mn);
   ~MainWindow();
   void putImage(QString imagefile);
-  void openURL(KURL url,bool push=true,bool forw=false);
-  void firstload();
-  virtual void show();
+  void openURL(KURL url, bool backward=false,bool forward=false);
+  //void firstload();
+  //virtual void show();
   virtual void keyPressEvent (QKeyEvent *e);
 
 public slots:
