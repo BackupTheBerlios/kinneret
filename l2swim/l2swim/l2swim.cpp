@@ -100,7 +100,7 @@ void MainWindow::firstload()
   else openURL(KURL(QString(startpage)),false);
 //  if (!langexist) KMessageBox::information(this,i18n("Your language menu-file: %1 does not exist, using default language instead").arg(lastmenufile)
 //    ,i18n("Sorry"),"LangMenuFile");
-  if((!startpage.isEmpty())&&(!startpageExist))
+  if((!cmdStartpage.isEmpty())&&(!startpageExist))
       KMessageBox::error(this,i18n("Page %1 does not exist.").arg(cmdStartpage));
 }
 
