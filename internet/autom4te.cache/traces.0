@@ -66,7 +66,7 @@ m4trace:configure.in:36: -1- AC_SUBST([target], [$ac_cv_target])
 m4trace:configure.in:36: -1- AC_SUBST([target_cpu], [`echo $ac_cv_target | sed 's/^\([[^-]]*\)-\([[^-]]*\)-\(.*\)$/\1/'`])
 m4trace:configure.in:36: -1- AC_SUBST([target_vendor], [`echo $ac_cv_target | sed 's/^\([[^-]]*\)-\([[^-]]*\)-\(.*\)$/\2/'`])
 m4trace:configure.in:36: -1- AC_SUBST([target_os], [`echo $ac_cv_target | sed 's/^\([[^-]]*\)-\([[^-]]*\)-\(.*\)$/\3/'`])
-m4trace:configure.in:41: -1- AM_INIT_AUTOMAKE([internet], [0.2-rc1])
+m4trace:configure.in:41: -1- AM_INIT_AUTOMAKE([internet], [0.2])
 m4trace:configure.in:41: -1- AC_PROG_INSTALL
 m4trace:configure.in:41: -1- AC_PROG_INSTALL
 m4trace:configure.in:41: -1- AC_SUBST([INSTALL_PROGRAM])
@@ -149,50 +149,96 @@ m4trace:configure.in:62: -1- AC_SUBST([KDE_USE_FINAL_TRUE])
 m4trace:configure.in:62: -1- AC_SUBST([KDE_USE_FINAL_FALSE])
 m4trace:configure.in:62: -1- AC_SUBST([KDE_USE_CLOSURE_TRUE])
 m4trace:configure.in:62: -1- AC_SUBST([KDE_USE_CLOSURE_FALSE])
-m4trace:configure.in:76: -1- AC_DEFINE_TRACE_LITERAL([KDELIBSUFF])
-m4trace:configure.in:76: -1- AH_OUTPUT([KDELIBSUFF], [/* Suffix for lib directories */
-#undef KDELIBSUFF])
-m4trace:configure.in:76: -1- AC_SUBST([libdir], ["$libdir"])
-m4trace:configure.in:76: -1- AC_DEFINE_TRACE_LITERAL([KDELIBSUFF])
-m4trace:configure.in:76: -1- AH_OUTPUT([KDELIBSUFF], [/* Suffix for lib directories */
-#undef KDELIBSUFF])
-m4trace:configure.in:76: -1- AC_PROG_LIBTOOL
-m4trace:configure.in:76: -1- AC_PROG_LN_S
-m4trace:configure.in:76: -1- AC_SUBST([LN_S], [$as_ln_s])
-m4trace:configure.in:76: -1- AC_SUBST([ECHO])
-m4trace:configure.in:76: -1- AC_SUBST([RANLIB])
-m4trace:configure.in:76: -1- AC_SUBST([ac_ct_RANLIB])
-m4trace:configure.in:76: -1- AC_SUBST([STRIP])
-m4trace:configure.in:76: -1- AC_SUBST([ac_ct_STRIP])
-m4trace:configure.in:76: -1- AC_CHECK_HEADERS([dlfcn.h])
-m4trace:configure.in:76: -1- AH_OUTPUT([HAVE_DLFCN_H], [/* Define to 1 if you have the <dlfcn.h> header file. */
-#undef HAVE_DLFCN_H])
-m4trace:configure.in:76: -1- AC_HEADER_STDC
-m4trace:configure.in:76: -1- AC_SUBST([EGREP])
-m4trace:configure.in:76: -1- AC_DEFINE_TRACE_LITERAL([STDC_HEADERS])
-m4trace:configure.in:76: -1- AH_OUTPUT([STDC_HEADERS], [/* Define to 1 if you have the ANSI C header files. */
+m4trace:configure.in:65: -1- AC_PROG_CPP
+m4trace:configure.in:65: -1- AC_SUBST([CPP])
+m4trace:configure.in:65: -1- AC_SUBST([CPPFLAGS])
+m4trace:configure.in:65: -1- AC_SUBST([CPP])
+m4trace:configure.in:66: -1- AC_PROG_AWK
+m4trace:configure.in:66: -1- AC_SUBST([AWK])
+m4trace:configure.in:67: -1- AC_PROG_CC
+m4trace:configure.in:67: -1- AC_SUBST([CC])
+m4trace:configure.in:67: -1- AC_SUBST([CFLAGS])
+m4trace:configure.in:67: -1- AC_SUBST([LDFLAGS])
+m4trace:configure.in:67: -1- AC_SUBST([CPPFLAGS])
+m4trace:configure.in:67: -1- AC_SUBST([CC])
+m4trace:configure.in:67: -1- AC_SUBST([ac_ct_CC])
+m4trace:configure.in:67: -1- AC_SUBST([CC])
+m4trace:configure.in:67: -1- AC_SUBST([ac_ct_CC])
+m4trace:configure.in:67: -1- AC_SUBST([CC])
+m4trace:configure.in:67: -1- AC_SUBST([CC])
+m4trace:configure.in:67: -1- AC_SUBST([ac_ct_CC])
+m4trace:configure.in:67: -1- AC_SUBST([CCDEPMODE])
+m4trace:configure.in:68: -1- AC_PROG_INSTALL
+m4trace:configure.in:68: -1- AC_SUBST([INSTALL_PROGRAM])
+m4trace:configure.in:68: -1- AC_SUBST([INSTALL_SCRIPT])
+m4trace:configure.in:68: -1- AC_SUBST([INSTALL_DATA])
+m4trace:configure.in:69: -1- AC_PROG_LN_S
+m4trace:configure.in:69: -1- AC_SUBST([LN_S], [$as_ln_s])
+m4trace:configure.in:70: -1- AC_PROG_RANLIB
+m4trace:configure.in:70: -1- AC_SUBST([RANLIB])
+m4trace:configure.in:70: -1- AC_SUBST([ac_ct_RANLIB])
+m4trace:configure.in:91: -1- AC_CHECK_LIB([xml2], [xmlParseFile])
+m4trace:configure.in:91: -1- AH_OUTPUT([HAVE_LIBXML2], [/* Define to 1 if you have the `xml2\' library (-lxml2). */
+#undef HAVE_LIBXML2])
+m4trace:configure.in:91: -1- AC_DEFINE_TRACE_LITERAL([HAVE_LIBXML2])
+m4trace:configure.in:94: -1- AC_HEADER_STDC
+m4trace:configure.in:94: -1- AC_SUBST([EGREP])
+m4trace:configure.in:94: -1- AC_DEFINE_TRACE_LITERAL([STDC_HEADERS])
+m4trace:configure.in:94: -1- AH_OUTPUT([STDC_HEADERS], [/* Define to 1 if you have the ANSI C header files. */
 #undef STDC_HEADERS])
-m4trace:configure.in:76: -1- AC_CHECK_HEADERS([sys/types.h sys/stat.h stdlib.h string.h memory.h strings.h \
+m4trace:configure.in:98: -1- AC_CHECK_HEADERS([libxml/parser.h], [], [AC_MSG_ERROR([
+You need libxml2-devel. If you have it already, make sure it's headers are
+installed into /usr/include/libxml2/. If they are to be found in
+/usr/include/gnome-xml/ or some other directory, please create a symbolic link.])])
+m4trace:configure.in:98: -1- AH_OUTPUT([HAVE_LIBXML_PARSER_H], [/* Define to 1 if you have the <libxml/parser.h> header file. */
+#undef HAVE_LIBXML_PARSER_H])
+m4trace:configure.in:98: -1- AC_CHECK_HEADERS([sys/types.h sys/stat.h stdlib.h string.h memory.h strings.h \
                   inttypes.h stdint.h unistd.h], [], [], [$ac_includes_default])
-m4trace:configure.in:76: -1- AH_OUTPUT([HAVE_SYS_TYPES_H], [/* Define to 1 if you have the <sys/types.h> header file. */
+m4trace:configure.in:98: -1- AH_OUTPUT([HAVE_SYS_TYPES_H], [/* Define to 1 if you have the <sys/types.h> header file. */
 #undef HAVE_SYS_TYPES_H])
-m4trace:configure.in:76: -1- AH_OUTPUT([HAVE_SYS_STAT_H], [/* Define to 1 if you have the <sys/stat.h> header file. */
+m4trace:configure.in:98: -1- AH_OUTPUT([HAVE_SYS_STAT_H], [/* Define to 1 if you have the <sys/stat.h> header file. */
 #undef HAVE_SYS_STAT_H])
-m4trace:configure.in:76: -1- AH_OUTPUT([HAVE_STDLIB_H], [/* Define to 1 if you have the <stdlib.h> header file. */
+m4trace:configure.in:98: -1- AH_OUTPUT([HAVE_STDLIB_H], [/* Define to 1 if you have the <stdlib.h> header file. */
 #undef HAVE_STDLIB_H])
-m4trace:configure.in:76: -1- AH_OUTPUT([HAVE_STRING_H], [/* Define to 1 if you have the <string.h> header file. */
+m4trace:configure.in:98: -1- AH_OUTPUT([HAVE_STRING_H], [/* Define to 1 if you have the <string.h> header file. */
 #undef HAVE_STRING_H])
-m4trace:configure.in:76: -1- AH_OUTPUT([HAVE_MEMORY_H], [/* Define to 1 if you have the <memory.h> header file. */
+m4trace:configure.in:98: -1- AH_OUTPUT([HAVE_MEMORY_H], [/* Define to 1 if you have the <memory.h> header file. */
 #undef HAVE_MEMORY_H])
-m4trace:configure.in:76: -1- AH_OUTPUT([HAVE_STRINGS_H], [/* Define to 1 if you have the <strings.h> header file. */
+m4trace:configure.in:98: -1- AH_OUTPUT([HAVE_STRINGS_H], [/* Define to 1 if you have the <strings.h> header file. */
 #undef HAVE_STRINGS_H])
-m4trace:configure.in:76: -1- AH_OUTPUT([HAVE_INTTYPES_H], [/* Define to 1 if you have the <inttypes.h> header file. */
+m4trace:configure.in:98: -1- AH_OUTPUT([HAVE_INTTYPES_H], [/* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H])
-m4trace:configure.in:76: -1- AH_OUTPUT([HAVE_STDINT_H], [/* Define to 1 if you have the <stdint.h> header file. */
+m4trace:configure.in:98: -1- AH_OUTPUT([HAVE_STDINT_H], [/* Define to 1 if you have the <stdint.h> header file. */
 #undef HAVE_STDINT_H])
-m4trace:configure.in:76: -1- AH_OUTPUT([HAVE_UNISTD_H], [/* Define to 1 if you have the <unistd.h> header file. */
+m4trace:configure.in:98: -1- AH_OUTPUT([HAVE_UNISTD_H], [/* Define to 1 if you have the <unistd.h> header file. */
 #undef HAVE_UNISTD_H])
-m4trace:configure.in:76: -1- AC_CHECK_LIB([dld], [shl_load], [lt_cv_dlopen="shl_load" lt_cv_dlopen_libs="-dld"], [AC_CHECK_FUNC([dlopen],
+m4trace:configure.in:101: -1- AC_C_CONST
+m4trace:configure.in:101: -1- AC_DEFINE_TRACE_LITERAL([const])
+m4trace:configure.in:101: -1- AH_OUTPUT([const], [/* Define to empty if `const\' does not conform to ANSI C. */
+#undef const])
+m4trace:configure.in:102: -1- AC_C_INLINE
+m4trace:configure.in:102: -1- AC_DEFINE_TRACE_LITERAL([inline])
+m4trace:configure.in:102: -1- AH_OUTPUT([inline], [/* Define as `__inline\' if that\'s what the C compiler calls it, or to nothing
+   if it is not supported. */
+#undef inline])
+m4trace:configure.in:102: -1- AC_DEFINE_TRACE_LITERAL([inline])
+m4trace:configure.in:105: -1- AC_DEFINE_TRACE_LITERAL([KDELIBSUFF])
+m4trace:configure.in:105: -1- AH_OUTPUT([KDELIBSUFF], [/* Suffix for lib directories */
+#undef KDELIBSUFF])
+m4trace:configure.in:105: -1- AC_SUBST([libdir], ["$libdir"])
+m4trace:configure.in:105: -1- AC_DEFINE_TRACE_LITERAL([KDELIBSUFF])
+m4trace:configure.in:105: -1- AH_OUTPUT([KDELIBSUFF], [/* Suffix for lib directories */
+#undef KDELIBSUFF])
+m4trace:configure.in:105: -1- AC_PROG_LIBTOOL
+m4trace:configure.in:105: -1- AC_SUBST([ECHO])
+m4trace:configure.in:105: -1- AC_SUBST([RANLIB])
+m4trace:configure.in:105: -1- AC_SUBST([ac_ct_RANLIB])
+m4trace:configure.in:105: -1- AC_SUBST([STRIP])
+m4trace:configure.in:105: -1- AC_SUBST([ac_ct_STRIP])
+m4trace:configure.in:105: -1- AC_CHECK_HEADERS([dlfcn.h])
+m4trace:configure.in:105: -1- AH_OUTPUT([HAVE_DLFCN_H], [/* Define to 1 if you have the <dlfcn.h> header file. */
+#undef HAVE_DLFCN_H])
+m4trace:configure.in:105: -1- AC_CHECK_LIB([dld], [shl_load], [lt_cv_dlopen="shl_load" lt_cv_dlopen_libs="-dld"], [AC_CHECK_FUNC([dlopen],
 	      [lt_cv_dlopen="dlopen"],
 	  [AC_CHECK_LIB([dl], [dlopen],
 		[lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-ldl"],
@@ -204,17 +250,17 @@ m4trace:configure.in:76: -1- AC_CHECK_LIB([dld], [shl_load], [lt_cv_dlopen="shl_
 	    ])
 	  ])
 	])
-m4trace:configure.in:76: -1- AC_CHECK_LIB([dl], [dlopen], [lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-ldl"], [AC_CHECK_LIB([svld], [dlopen],
+m4trace:configure.in:105: -1- AC_CHECK_LIB([dl], [dlopen], [lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-ldl"], [AC_CHECK_LIB([svld], [dlopen],
 		  [lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-lsvld"],
 	      [AC_CHECK_LIB([dld], [dld_link],
 		    [lt_cv_dlopen="dld_link" lt_cv_dlopen_libs="-dld"])
 	      ])
 	    ])
-m4trace:configure.in:76: -1- AC_CHECK_LIB([svld], [dlopen], [lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-lsvld"], [AC_CHECK_LIB([dld], [dld_link],
+m4trace:configure.in:105: -1- AC_CHECK_LIB([svld], [dlopen], [lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-lsvld"], [AC_CHECK_LIB([dld], [dld_link],
 		    [lt_cv_dlopen="dld_link" lt_cv_dlopen_libs="-dld"])
 	      ])
-m4trace:configure.in:76: -1- AC_CHECK_LIB([dld], [dld_link], [lt_cv_dlopen="dld_link" lt_cv_dlopen_libs="-dld"])
-m4trace:configure.in:76: -1- AC_CHECK_LIB([dld], [shl_load], [lt_cv_dlopen="shl_load" lt_cv_dlopen_libs="-dld"], [AC_CHECK_FUNC([dlopen],
+m4trace:configure.in:105: -1- AC_CHECK_LIB([dld], [dld_link], [lt_cv_dlopen="dld_link" lt_cv_dlopen_libs="-dld"])
+m4trace:configure.in:105: -1- AC_CHECK_LIB([dld], [shl_load], [lt_cv_dlopen="shl_load" lt_cv_dlopen_libs="-dld"], [AC_CHECK_FUNC([dlopen],
 	      [lt_cv_dlopen="dlopen"],
 	  [AC_CHECK_LIB([dl], [dlopen],
 		[lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-ldl"],
@@ -226,17 +272,17 @@ m4trace:configure.in:76: -1- AC_CHECK_LIB([dld], [shl_load], [lt_cv_dlopen="shl_
 	    ])
 	  ])
 	])
-m4trace:configure.in:76: -1- AC_CHECK_LIB([dl], [dlopen], [lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-ldl"], [AC_CHECK_LIB([svld], [dlopen],
+m4trace:configure.in:105: -1- AC_CHECK_LIB([dl], [dlopen], [lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-ldl"], [AC_CHECK_LIB([svld], [dlopen],
 		  [lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-lsvld"],
 	      [AC_CHECK_LIB([dld], [dld_link],
 		    [lt_cv_dlopen="dld_link" lt_cv_dlopen_libs="-dld"])
 	      ])
 	    ])
-m4trace:configure.in:76: -1- AC_CHECK_LIB([svld], [dlopen], [lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-lsvld"], [AC_CHECK_LIB([dld], [dld_link],
+m4trace:configure.in:105: -1- AC_CHECK_LIB([svld], [dlopen], [lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-lsvld"], [AC_CHECK_LIB([dld], [dld_link],
 		    [lt_cv_dlopen="dld_link" lt_cv_dlopen_libs="-dld"])
 	      ])
-m4trace:configure.in:76: -1- AC_CHECK_LIB([dld], [dld_link], [lt_cv_dlopen="dld_link" lt_cv_dlopen_libs="-dld"])
-m4trace:configure.in:76: -1- AC_CHECK_LIB([dld], [shl_load], [lt_cv_dlopen="shl_load" lt_cv_dlopen_libs="-dld"], [AC_CHECK_FUNC([dlopen],
+m4trace:configure.in:105: -1- AC_CHECK_LIB([dld], [dld_link], [lt_cv_dlopen="dld_link" lt_cv_dlopen_libs="-dld"])
+m4trace:configure.in:105: -1- AC_CHECK_LIB([dld], [shl_load], [lt_cv_dlopen="shl_load" lt_cv_dlopen_libs="-dld"], [AC_CHECK_FUNC([dlopen],
 	      [lt_cv_dlopen="dlopen"],
 	  [AC_CHECK_LIB([dl], [dlopen],
 		[lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-ldl"],
@@ -248,28 +294,28 @@ m4trace:configure.in:76: -1- AC_CHECK_LIB([dld], [shl_load], [lt_cv_dlopen="shl_
 	    ])
 	  ])
 	])
-m4trace:configure.in:76: -1- AC_CHECK_LIB([dl], [dlopen], [lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-ldl"], [AC_CHECK_LIB([svld], [dlopen],
+m4trace:configure.in:105: -1- AC_CHECK_LIB([dl], [dlopen], [lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-ldl"], [AC_CHECK_LIB([svld], [dlopen],
 		  [lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-lsvld"],
 	      [AC_CHECK_LIB([dld], [dld_link],
 		    [lt_cv_dlopen="dld_link" lt_cv_dlopen_libs="-dld"])
 	      ])
 	    ])
-m4trace:configure.in:76: -1- AC_CHECK_LIB([svld], [dlopen], [lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-lsvld"], [AC_CHECK_LIB([dld], [dld_link],
+m4trace:configure.in:105: -1- AC_CHECK_LIB([svld], [dlopen], [lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-lsvld"], [AC_CHECK_LIB([dld], [dld_link],
 		    [lt_cv_dlopen="dld_link" lt_cv_dlopen_libs="-dld"])
 	      ])
-m4trace:configure.in:76: -1- AC_CHECK_LIB([dld], [dld_link], [lt_cv_dlopen="dld_link" lt_cv_dlopen_libs="-dld"])
-m4trace:configure.in:76: -1- AC_SUBST([LIBTOOL])
-m4trace:configure.in:76: -1- AC_SUBST([KDE_PLUGIN])
-m4trace:configure.in:89: -1- AC_SUBST([USER_INCLUDES])
-m4trace:configure.in:89: -1- AC_SUBST([USER_LDFLAGS])
-m4trace:configure.in:92: -1- AC_SUBST([all_includes])
-m4trace:configure.in:93: -1- AC_SUBST([all_libraries])
-m4trace:configure.in:95: -1- AC_SUBST([AUTODIRS])
-m4trace:configure.in:97: -1- AC_SUBST([TOPSUBDIRS])
-m4trace:configure.in:98: -1- AC_CONFIG_FILES([ Makefile ])
-m4trace:configure.in:99: -1- AC_CONFIG_FILES([ help/Makefile ])
-m4trace:configure.in:100: -1- AC_CONFIG_FILES([ internet/Makefile ])
-m4trace:configure.in:101: -1- AC_CONFIG_FILES([ internet/docs/Makefile ])
-m4trace:configure.in:102: -1- AC_CONFIG_FILES([ internet/docs/en/Makefile ])
-m4trace:configure.in:103: -1- AC_SUBST([LIB@&t@OBJS], [$ac_libobjs])
-m4trace:configure.in:103: -1- AC_SUBST([LTLIBOBJS], [$ac_ltlibobjs])
+m4trace:configure.in:105: -1- AC_CHECK_LIB([dld], [dld_link], [lt_cv_dlopen="dld_link" lt_cv_dlopen_libs="-dld"])
+m4trace:configure.in:105: -1- AC_SUBST([LIBTOOL])
+m4trace:configure.in:105: -1- AC_SUBST([KDE_PLUGIN])
+m4trace:configure.in:118: -1- AC_SUBST([USER_INCLUDES])
+m4trace:configure.in:118: -1- AC_SUBST([USER_LDFLAGS])
+m4trace:configure.in:121: -1- AC_SUBST([all_includes])
+m4trace:configure.in:122: -1- AC_SUBST([all_libraries])
+m4trace:configure.in:124: -1- AC_SUBST([AUTODIRS])
+m4trace:configure.in:126: -1- AC_SUBST([TOPSUBDIRS])
+m4trace:configure.in:127: -1- AC_CONFIG_FILES([ Makefile ])
+m4trace:configure.in:128: -1- AC_CONFIG_FILES([ help/Makefile ])
+m4trace:configure.in:129: -1- AC_CONFIG_FILES([ internet/Makefile ])
+m4trace:configure.in:130: -1- AC_CONFIG_FILES([ internet/docs/Makefile ])
+m4trace:configure.in:131: -1- AC_CONFIG_FILES([ internet/docs/en/Makefile ])
+m4trace:configure.in:132: -1- AC_SUBST([LIB@&t@OBJS], [$ac_libobjs])
+m4trace:configure.in:132: -1- AC_SUBST([LTLIBOBJS], [$ac_ltlibobjs])

@@ -7,6 +7,12 @@
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
 
+/* Define to 1 if you have the `xml2' library (-lxml2). */
+#define HAVE_LIBXML2 1
+
+/* Define to 1 if you have the <libxml/parser.h> header file. */
+#define HAVE_LIBXML_PARSER_H 1
+
 /* Define to 1 if you have the <memory.h> header file. */
 #define HAVE_MEMORY_H 1
 
@@ -59,4 +65,11 @@
 #define STDC_HEADERS 1
 
 /* Version number of package */
-#define VERSION "0.2-rc1"
+#define VERSION "0.2"
+
+/* Define to empty if `const' does not conform to ANSI C. */
+/* #undef const */
+
+/* Define as `__inline' if that's what the C compiler calls it, or to nothing
+   if it is not supported. */
+/* #undef inline */

@@ -38,7 +38,7 @@ dnl Perform program name transformation
 AC_ARG_PROGRAM
 
 dnl Automake doc recommends to do this only here. (Janos)
-AM_INIT_AUTOMAKE(internet,0.2-rc1)
+AM_INIT_AUTOMAKE(internet,0.2)
 
 dnl almost the same like KDE_SET_PEFIX but the path is /usr/local
 dnl
@@ -61,9 +61,24 @@ dnl checks for programs.
 dnl first check for c/c++ compilers
 AC_CHECK_COMPILERS
 
+dnl Checks for programs.
+AC_PROG_CPP
+AC_PROG_AWK
+AC_PROG_CC
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_PROG_RANLIB
+
+all_includes="$all_includes -I/usr/include/libxml2/";
+ac_cv_prog_CPP="$ac_cv_prog_CPP -I/usr/include/libxml2/"
+ac_cv_prog_CXXPP="$ac_cv_prog_CXXPP -I/usr/include/libxml2/"
+
+CPP="$CPP -I/usr/include/libxml2/"
+CXXPP="$CXXPP -I/usr/include/libxml2/"
+
 dnl CXXFLAGS="$NOOPT_CXXFLAGS" dnl __kdevelop[noopt]__
-dnl CFLAGS="$NOOPT_CFLAGS" dnl __kdevelop[noopt]__
-CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS" dnl __kdevelop[exc]__
+CFLAGS="$NOOPT_CFLAGS -I/usr/include/libxml2/" dnl __kdevelop[noopt]__
+CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS -I/usr/include/libxml2/" dnl __kdevelop[exc]__
 
 dnl create only shared libtool-libraries
 AC_ENABLE_SHARED(yes)
@@ -71,6 +86,20 @@ AC_ENABLE_SHARED(yes)
 dnl set the following to yes, if you want to create static
 dnl libtool-libraries, too.
 AC_ENABLE_STATIC(no)
+
+dnl Checks for libraries.
+AC_CHECK_LIB(xml2, xmlParseFile)
+
+dnl Checks for header files.
+AC_HEADER_STDC
+AC_CHECK_HEADERS(libxml/parser.h, [], [AC_MSG_ERROR([
+You need libxml2-devel. If you have it already, make sure it's headers are
+installed into /usr/include/libxml2/. If they are to be found in
+/usr/include/gnome-xml/ or some other directory, please create a symbolic link.])])
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_C_CONST
+AC_C_INLINE
 
 dnl create a working libtool-script
 KDE_PROG_LIBTOOL

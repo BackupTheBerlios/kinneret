@@ -1,6 +1,5 @@
 # Makefile.in generated automatically by automake 1.5 from Makefile.am.
-# KDE tags expanded automatically by am_edit - $Revision: 1.4 $ 
-
+# KDE tags expanded automatically by am_edit - $Revision: 1.5 $ 
 # Copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001
 # Free Software Foundation, Inc.
 # This Makefile.in is free software; the Free Software Foundation
@@ -251,7 +250,7 @@ EXTRA_DIST = main.cpp isp.h dialer.h authentication.h hardware.h db.h db.cpp isp
 
 ####### kdevelop will overwrite this part!!! (end)############
 # set the include path found by configure
-INCLUDES = $(all_includes) -I/usr/include/libxml2/
+INCLUDES = $(all_includes)
 
 # the library search path.
 internet_LDFLAGS = $(all_libraries) 
@@ -543,7 +542,12 @@ GTAGS:
 distclean-tags:
 	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH
 
-DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+#>- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+#>+ 4
+KDE_DIST=internet 
+
+DISTFILES= $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
+
 
 top_distdir = ..
 distdir = $(top_distdir)/$(PACKAGE)-$(VERSION)
@@ -685,6 +689,7 @@ uninstall-local:
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:
+
 
 #>+ 2
 docs-am:

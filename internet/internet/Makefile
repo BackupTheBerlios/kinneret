@@ -1,6 +1,6 @@
 # Makefile.in generated automatically by automake 1.5 from Makefile.am.
 # Generated automatically from Makefile.in by config.pl.
-# KDE tags expanded automatically by am_edit - $Revision: 1.5 $ 
+# KDE tags expanded automatically by am_edit - $Revision: 1.6 $ 
 
 # Copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001
 # Free Software Foundation, Inc.
@@ -52,19 +52,19 @@ INSTALL_PROGRAM = ${INSTALL} $(INSTALL_STRIP_FLAG)
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_HEADER = $(INSTALL_DATA)
-transform = s,x,x,
+transform = s,^,i386-linux-,
 NORMAL_INSTALL = :
 PRE_INSTALL = :
 POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_alias = 
-build_triplet = i686-pc-linux-gnu
-host_alias = 
-host_triplet = i686-pc-linux-gnu
-target_alias = 
-target_triplet = i686-pc-linux-gnu
+build_alias = i386-linux
+build_triplet = i386-pc-linux-gnu
+host_alias = i386-linux
+host_triplet = i386-pc-linux-gnu
+target_alias = i386-linux
+target_triplet = i386-pc-linux-gnu
 AMTAR = ${SHELL} /home/z9u2K/projects/kinneret/cvs/internet/admin/missing --run tar
 ARTSCCONFIG = @ARTSCCONFIG@
 AS = @AS@
@@ -72,7 +72,7 @@ AUTODIRS =
 AWK = gawk
 CC = gcc
 CONF_FILES =  $(top_srcdir)/configure.in.in
-CPP = gcc -E
+CPP = cpp -I/usr/include/libxml2/
 CXX = g++
 CXXCPP = g++ -E
 DCOPIDL = @DCOPIDL@
@@ -198,8 +198,8 @@ USER_LDFLAGS =
 USE_EXCEPTIONS = -fexceptions
 USE_RTTI = 
 USE_THREADS = @USE_THREADS@
-VERSION = 0.2-rc1
-WOVERLOADED_VIRTUAL = 
+VERSION = 0.2
+WOVERLOADED_VIRTUAL = -Woverloaded-virtual
 XGETTEXT = @XGETTEXT@
 XPMINC = @XPMINC@
 XPMLIB = @XPMLIB@
@@ -207,7 +207,7 @@ X_EXTRA_LIBS = @X_EXTRA_LIBS@
 X_INCLUDES = @X_INCLUDES@
 X_LDFLAGS = @X_LDFLAGS@
 X_PRE_LIBS = @X_PRE_LIBS@
-all_includes =  
+all_includes =  -I/usr/include/libxml2/ 
 all_libraries =  
 am__include = include
 am__quote = 
@@ -252,7 +252,7 @@ EXTRA_DIST = main.cpp isp.h dialer.h authentication.h hardware.h db.h db.cpp isp
 
 ####### kdevelop will overwrite this part!!! (end)############
 # set the include path found by configure
-INCLUDES = $(all_includes) -I/usr/include/libxml2/
+INCLUDES = $(all_includes)
 
 # the library search path.
 internet_LDFLAGS = $(all_libraries) 
@@ -286,7 +286,7 @@ DEFS = -DHAVE_CONFIG_H
 DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
 CPPFLAGS = 
 LDFLAGS = 
-LIBS = 
+LIBS = -lxml2 
 depcomp = $(SHELL) $(top_srcdir)/admin/depcomp
 #>- DEP_FILES = $(DEPDIR)/authentication.Po $(DEPDIR)/cmdline.Po \
 #>- 	$(DEPDIR)/config.Po $(DEPDIR)/connection.Po \
@@ -338,7 +338,7 @@ CXXLD = $(CXX)
 #>+ 2
 CXXLINK = $(LIBTOOL) --mode=link --tag=CXX $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
-CXXFLAGS = -Wnon-virtual-dtor -Wno-long-long -Wundef -Wall -pedantic -W -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -ansi -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -Wcast-align -Wconversion -O2 -fno-exceptions -fno-check-new -fexceptions
+CXXFLAGS = -Wnon-virtual-dtor -Wno-long-long -Wundef -Wall -pedantic -W -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -ansi -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -Wcast-align -Wconversion -fno-builtin -g -O2 -O0 -g3 -Wall -I/usr/include/libxml2/ -fno-exceptions -fno-check-new -fexceptions -I/usr/include/libxml2/
 DIST_SOURCES = $(internet_SOURCES)
 
 RECURSIVE_TARGETS = info-recursive dvi-recursive install-info-recursive \
