@@ -4,6 +4,7 @@ This file includes changes since the last upload. It is intended to provide a re
 * merged all tour files into a single file 2/8/2003 dovix
 * massive re-editing on the menu file
 * updated: kinneret_credits 16/8/03
+* new: release_notes 16/08/03
 
 -------------- v 0.5.0beta ----------------
 * Updated ~/etc/l2swim.xsl (no impact on translations - enhanced tags and html output) 5/7/03 dovix

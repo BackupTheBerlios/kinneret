@@ -34,7 +34,7 @@
  <image=kinneret-cd-s.png>
 אודות פרוייקט כנרת - מידע כללי על הפצת גנו/לינוקס כנרת
 <play=release_notes.html>
-<font color=grey>____________________________________________________________</font><br><font color=grey size=2>מפרט גרסה 1.0rc1 של <i><b>גנו/לינוקס כנרת</i></b></font>
+<font color=grey>____________________________________________________________</font><br><font color=grey size=2>תיעוד שינויים ומפרט גרסה</font>
 <end>
 
 <menu=index1>
@@ -96,8 +96,6 @@
 הגיגים על מחשבים (סדרת מאמרים)
   <play=free_essay.html>
 תוכנה חופשית - למה ומדוע?
- <play=why_linux.html>
-למה כדאי לי להשתמש בלינוקס?
   <http=www.hamakor.org.il>
 <font color=grey>____________________________________________________________</font><br><font color=grey size=2> בשיתוף <i>המקור - עמותה ישראלית לתוכנה חופשית ולקוד מקור פתוח</i> </font>
 <end>
