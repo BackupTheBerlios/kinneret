@@ -4,6 +4,7 @@
      Gnu/Linux Kinneret
      'Learn to Swim' Interactive Guide - stylesheet
      (C) 2003 http://www.linux-kinneret.org
+     Some code segments (C) gentoo.org (tables, drop down toc)
 
      This program is free software; you can redistribute it and/or modify it under
      the terms of the GNU General Public License as published by the Free Software
