@@ -85,7 +85,7 @@ vector<string> Database::ListISPs(bool bCNames) const throw (Error)
 	while (!ls.eof())
 	{
 		ls >> strName;
-		if (!strName.empty())
+		if (!strName.empty() && strName != "CVS")
 		{
 			strName.erase(strName.find(".xml"));
 
@@ -133,7 +133,7 @@ vector<string> Database::ListHWs(HardwareType ht) const throw (Error)
 	while (!ls.eof())
 	{
 		ls >> strName;
-		if (!strName.empty())
+		if (!strName.empty() && strName != "CVS")
 		{
 			strName.erase(strName.find(".xml"));
 
@@ -196,7 +196,7 @@ vector<string> Database::ListDialers() const throw (Error)
 	while (!ls.eof())
 	{
 		ls >> strName;
-		if (!strName.empty())
+		if (!strName.empty() && strName != "CVS")
 		{
 			ret.push_back(strName);
 			strName.clear();
@@ -279,7 +279,7 @@ string Database::getModemByName(string name, HardwareType ht) const throw (Error
 	while (!ls.eof())
 	{
 		ls >> strName;
-		if (!strName.empty())
+		if (!strName.empty() && strName != "CVS")
 		{
 			strName.erase(strName.find(".xml"));
 			list.push_back(strName);

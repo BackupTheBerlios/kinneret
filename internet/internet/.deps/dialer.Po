@@ -1,18 +1,18 @@
-dialer.o dialer.o: dialer.cpp \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/fstream \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/istream \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/ios \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/iosfwd \
+dialer.o dialer.o: dialer.cpp internet.h \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/string \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/c++config.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/os_defines.h \
   /usr/include/features.h /usr/include/sys/cdefs.h \
   /usr/include/gnu/stubs.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stringfwd.h \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/char_traits.h \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cstring \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cstddef \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/stddef.h \
+  /usr/include/string.h /usr/include/xlocale.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/fpos.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/c++io.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cstdio \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cstddef \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/stddef.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/stdio.h \
   /usr/include/bits/types.h /usr/include/bits/wordsize.h \
   /usr/include/bits/typesizes.h /usr/include/libio.h \
@@ -24,38 +24,30 @@ dialer.o dialer.o: dialer.cpp \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/gthr-default.h \
   /usr/include/pthread.h /usr/include/sched.h /usr/include/time.h \
   /usr/include/bits/sched.h /usr/include/bits/time.h \
-  /usr/include/xlocale.h /usr/include/signal.h /usr/include/bits/sigset.h \
+  /usr/include/signal.h /usr/include/bits/sigset.h \
   /usr/include/bits/pthreadtypes.h /usr/include/bits/initspin.h \
   /usr/include/bits/sigthread.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cwchar \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/ctime \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/functexcept.h \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/exception_defines.h \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/exception \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/char_traits.h \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cstring \
-  /usr/include/string.h \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/localefwd.h \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/c++locale.h \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/clocale \
-  /usr/include/locale.h /usr/include/bits/locale.h \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/memory \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_algobase.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/climits \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/limits.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/syslimits.h \
   /usr/include/limits.h /usr/include/bits/posix1_lim.h \
   /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
   /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cctype \
-  /usr/include/ctype.h /usr/include/endian.h /usr/include/bits/endian.h \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/string \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/memory \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_algobase.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cstdlib \
   /usr/include/stdlib.h /usr/include/bits/waitflags.h \
-  /usr/include/bits/waitstatus.h /usr/include/sys/types.h \
+  /usr/include/bits/waitstatus.h /usr/include/endian.h \
+  /usr/include/bits/endian.h /usr/include/sys/types.h \
   /usr/include/sys/select.h /usr/include/bits/select.h \
   /usr/include/sys/sysmacros.h /usr/include/alloca.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/new \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/exception \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/iosfwd \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/functexcept.h \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/exception_defines.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_pair.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/type_traits.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_iterator_base_types.h \
@@ -77,6 +69,18 @@ dialer.o dialer.o: dialer.cpp \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_heap.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_tempbuf.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/basic_string.tcc \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/vector \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_vector.h \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_bvector.h \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/fstream \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/istream \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/ios \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/localefwd.h \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/c++locale.h \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/clocale \
+  /usr/include/locale.h /usr/include/bits/locale.h \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cctype \
+  /usr/include/ctype.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/ios_base.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/streambuf \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/streambuf.tcc \
@@ -110,17 +114,15 @@ dialer.o dialer.o: dialer.cpp \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/ostream.tcc \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/basic_file.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/fstream.tcc \
-  dialer.h \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/iostream isp.h \
+  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/iostream \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/map \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_tree.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_map.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_multimap.h \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/vector \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_vector.h \
-  /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_bvector.h \
-  xml.h /usr/include/libxml2/libxml/parser.h \
-  /usr/include/libxml2/libxml/tree.h \
+  /usr/include/unistd.h /usr/include/bits/posix_opt.h \
+  /usr/include/bits/environments.h /usr/include/bits/confname.h \
+  /usr/include/getopt.h dialer.h isp.h xml.h \
+  /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/tree.h \
   /usr/include/libxml2/libxml/xmlversion.h \
   /usr/include/libxml2/libxml/xmlregexp.h \
   /usr/include/libxml2/libxml/valid.h /usr/include/libxml2/libxml/list.h \
@@ -134,13 +136,9 @@ dialer.o dialer.o: dialer.cpp \
   /usr/include/libxml2/libxml/xmlmemory.h \
   /usr/include/libxml2/libxml/threads.h authentication.h hardware.h db.h
 
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/fstream:
+internet.h:
 
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/istream:
-
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/ios:
-
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/iosfwd:
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/string:
 
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/c++config.h:
 
@@ -154,15 +152,23 @@ dialer.o dialer.o: dialer.cpp \
 
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stringfwd.h:
 
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/char_traits.h:
+
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cstring:
+
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cstddef:
+
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/stddef.h:
+
+/usr/include/string.h:
+
+/usr/include/xlocale.h:
+
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/fpos.h:
 
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/c++io.h:
 
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cstdio:
-
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cstddef:
-
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/stddef.h:
 
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/stdio.h:
 
@@ -202,8 +208,6 @@ dialer.o dialer.o: dialer.cpp \
 
 /usr/include/bits/time.h:
 
-/usr/include/xlocale.h:
-
 /usr/include/signal.h:
 
 /usr/include/bits/sigset.h:
@@ -218,27 +222,9 @@ dialer.o dialer.o: dialer.cpp \
 
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/ctime:
 
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/functexcept.h:
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/memory:
 
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/exception_defines.h:
-
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/exception:
-
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/char_traits.h:
-
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cstring:
-
-/usr/include/string.h:
-
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/localefwd.h:
-
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/c++locale.h:
-
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/clocale:
-
-/usr/include/locale.h:
-
-/usr/include/bits/locale.h:
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_algobase.h:
 
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/climits:
 
@@ -258,20 +244,6 @@ dialer.o dialer.o: dialer.cpp \
 
 /usr/include/bits/xopen_lim.h:
 
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cctype:
-
-/usr/include/ctype.h:
-
-/usr/include/endian.h:
-
-/usr/include/bits/endian.h:
-
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/string:
-
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/memory:
-
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_algobase.h:
-
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cstdlib:
 
 /usr/include/stdlib.h:
@@ -279,6 +251,10 @@ dialer.o dialer.o: dialer.cpp \
 /usr/include/bits/waitflags.h:
 
 /usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
 
 /usr/include/sys/types.h:
 
@@ -291,6 +267,14 @@ dialer.o dialer.o: dialer.cpp \
 /usr/include/alloca.h:
 
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/new:
+
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/exception:
+
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/iosfwd:
+
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/functexcept.h:
+
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/exception_defines.h:
 
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_pair.h:
 
@@ -333,6 +317,32 @@ dialer.o dialer.o: dialer.cpp \
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_tempbuf.h:
 
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/basic_string.tcc:
+
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/vector:
+
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_vector.h:
+
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_bvector.h:
+
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/fstream:
+
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/istream:
+
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/ios:
+
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/localefwd.h:
+
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/c++locale.h:
+
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/clocale:
+
+/usr/include/locale.h:
+
+/usr/include/bits/locale.h:
+
+/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cctype:
+
+/usr/include/ctype.h:
 
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/ios_base.h:
 
@@ -408,11 +418,7 @@ dialer.o dialer.o: dialer.cpp \
 
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/fstream.tcc:
 
-dialer.h:
-
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/iostream:
-
-isp.h:
 
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/map:
 
@@ -422,11 +428,19 @@ isp.h:
 
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_multimap.h:
 
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/vector:
+/usr/include/unistd.h:
 
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_vector.h:
+/usr/include/bits/posix_opt.h:
 
-/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/stl_bvector.h:
+/usr/include/bits/environments.h:
+
+/usr/include/bits/confname.h:
+
+/usr/include/getopt.h:
+
+dialer.h:
+
+isp.h:
 
 xml.h:
 

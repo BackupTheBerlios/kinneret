@@ -152,6 +152,7 @@ public:
 	CLFromList	clIFace;
 	CLPair		clDevice;
 	CLPair		clUsername;
+	CLPair		clServer;
 	CLPair		clPasswd;
 	CLPair		clName;
 
@@ -232,6 +233,7 @@ public:
 	SingleInterface		interInterface;	// If dual
 	string				strUsername;
 	string				strPasswd;
+	string				strServer;		// for special cases, like huji
 	string				strConnectionName;
 
 	Description() {}

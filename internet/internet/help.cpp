@@ -41,6 +41,7 @@ void PrintHelp()
 	"--dev=[name] (-d):			Ethernet device, eth0, eth1 etc."				"\n"
 	"--username=[name] (-u):			Username, without the suffix"			"\n"
 	"--passwd=[passwrod] (-p):		Password"									"\n"
+	"--server=[server]			Server (Apply to HUJI mainly)"					"\n"
 	"--name=[name] (-n):			Name of the dialer"							"\n"
 	"\n"
 	"Information:"																"\n"

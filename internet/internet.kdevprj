@@ -23,7 +23,7 @@ cflags=-I/usr/include/libxml2/
 cppflags=
 cxxflags=\s-O0 -g3 -Wall
 ldadd=-lxml2
-ldflags=\s            \s
+ldflags=\s             \s
 
 [General]
 AMChanged=false
@@ -40,7 +40,7 @@ project_type=normal_cpp
 sgml_file=/home/z9u2K/projects/internet/internet/docs/en/index.sgml
 short_info=The Israeli Internet Connection Tool (ICT?)
 sub_dir=internet/
-version=0.1.1
+version=0.1.2
 version_control=None
 workspace=1
 

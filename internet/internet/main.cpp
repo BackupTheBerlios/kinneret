@@ -128,6 +128,9 @@ int main(int argc, char *argv[])
 			// Username
 			desc.strUsername = CmdLine.clUsername.strOpt;
 
+			// Server
+			desc.strServer = CmdLine.clServer.strOpt;
+
 			// Password
 			desc.strPasswd = CmdLine.clPasswd.strOpt;
 

@@ -22,6 +22,28 @@ using namespace std;
 
 #include "xml.h"
 
+ISP::ISP(const Database *const db) : strName(""),
+	strCName(""),
+	strDNS1(""),
+	strDNS2(""),
+	strHomepage(""),
+	strTech(""),
+	strJoin(""),
+	strProxyManual(""),
+	strProxyAuto(""),
+	strPOP3(""),
+	strIMAP(""),
+	strSMTP(""),
+	strEMailSuffix(""),
+	strCableGateway(""),
+	strCableRemotename(""),
+	strADSLSuffix(""),
+	strCableSuffix(""),
+	strSG(""),
+	pDB(db)
+{
+}
+
 void ISP::LoadISP(string name) throw (Error)
 {
 	xmlKeepBlanksDefault(0);
@@ -54,7 +76,8 @@ void ISP::LoadISP(string name) throw (Error)
 		if (IsNode(cur, "cname"))	strCName = GetVal(doc, cur);
 		if (IsNode(cur, "dns1"))	strDNS1 = GetVal(doc, cur);
 		if (IsNode(cur, "dns2"))	strDNS2 = GetVal(doc, cur);
-
+		
+		if (IsNode(cur, "proxy"))		ParseProxy(doc, cur);
 		if (IsNode(cur, "support"))		ParseSupport(doc, cur);
 		if (IsNode(cur, "email"))		ParseEMail(doc, cur);
 		if (IsNode(cur, "broadband"))	ParseBroadband(doc, cur);
@@ -88,6 +111,7 @@ void ISP::ParseEMail(xmlDocPtr doc, xmlNodePtr cur)
 	while (cur != 0)
 	{
 		if (IsNode(cur, "pop3"))		strPOP3 = GetVal(doc, cur);
+		if (IsNode(cur, "imap"))		strIMAP = GetVal(doc, cur);
 		if (IsNode(cur, "smtp"))		strSMTP = GetVal(doc, cur);
 		if (IsNode(cur, "suffix"))		strEMailSuffix = GetVal(doc, cur);
 		
@@ -153,6 +177,17 @@ void ISP::ParseDialup(xmlDocPtr doc, xmlNodePtr cur)
 	while (cur != 0)
 	{
 		if (IsNode(cur, "server")) mapDialup[GetProp(cur, "loc")] = GetVal(doc, cur);
+		cur = cur->next;
+	}
+}
+
+void ISP::ParseProxy(xmlDocPtr doc, xmlNodePtr cur)
+{
+	cur = cur->xmlChildrenNode;
+	while (cur != 0)
+	{
+		if (IsNode(cur, "manual"))	strProxyManual = GetVal(doc, cur);
+		if (IsNode(cur, "auto"))	strProxyAuto = GetVal(doc, cur);
 		cur = cur->next;
 	}
 }

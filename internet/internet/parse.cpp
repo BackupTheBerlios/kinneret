@@ -47,12 +47,15 @@ string Parse(string str, ISP *isp, Authentication *auth, Hardware *hw, Dialer *d
 			else if (name == "isp::tech")					name = isp->getTech();
 			else if (name == "isp::join")					name = isp->getJoin();
 			else if (name == "isp::pop3")					name = isp->getPOP3();
+			else if (name == "isp::imap")					name = isp->getIMAP();
 			else if (name == "isp::smtp")					name = isp->getSMTP();
 			else if (name == "isp::emailsuffix")			name = isp->getEMailSuffix();
 			else if (name == "isp::cable::gateway")			name = isp->getCableGateway();
 			else if (name == "isp::cable::remotename")		name = isp->getCableRemotename();
 			else if (name == "isp::adsl::usrsuffix")		name = isp->getADSLSuffix();
 			else if (name == "isp::cable::usrsuffix")		name = isp->getCableSuffix();
+			else if (name == "isp::proxy::auto")			name = isp->getProxyAuto();
+			else if (name == "isp::proxy::manual")			name = isp->getProxyManual();
 			else
 			{
 				cerr << "Invalid reference name " << name << endl;
@@ -68,8 +71,9 @@ string Parse(string str, ISP *isp, Authentication *auth, Hardware *hw, Dialer *d
 				return string("");
 			}
 
-			if (name == "auth::usr")	name = auth->getUsername();
+			if (name == "auth::usr")			name = auth->getUsername();
 			else if (name == "auth::passwd")	name = auth->getPasswd();
+			else if (name == "auth::server")	name = auth->getServer();
 			else
 			{
 				cerr << "Invalid reference name " << name << endl;

@@ -36,8 +36,12 @@ private:
 	string					strTech;		// isp::tech
 	string					strJoin;		// isp::join
 
+	string					strProxyManual;	// isp::proxy::manual
+	string					strProxyAuto;	// isp::proxy::auto
+
 	// email
 	string					strPOP3;		// isp::pop3
+	string					strIMAP;		// isp::imap
 	string					strSMTP;		// isp::smtp
 	string					strEMailSuffix;	// isp::emailsuffix
 
@@ -60,10 +64,11 @@ private:
 	void					ParseBroadbandGateway(xmlDocPtr doc, xmlNodePtr cur);
 	void					ParseISDN(xmlDocPtr doc, xmlNodePtr cur);
 	void					ParseDialup(xmlDocPtr doc, xmlNodePtr cur);
+	void					ParseProxy(xmlDocPtr doc, xmlNodePtr cur);
 protected:
 public:
 
-	ISP(const Database *const db) : pDB(db) {}
+	ISP(const Database *const db);
 	~ISP() {}
 
 	inline string				getName()				const { return strName;				}
@@ -83,6 +88,9 @@ public:
 	inline map<string, string>	getISDNMap()			const { return mapISDN;				}
 	inline map<string, string>	getDialupMap()			const { return mapDialup;			}
 	inline string				getSG()					const { return strSG;				}
+	inline string				getProxyAuto()			const { return strProxyAuto;		}
+	inline string				getProxyManual()		const { return strProxyManual;		}
+	inline string				getIMAP()				const { return strIMAP;				}
 
 	void LoadISP(string name) throw (Error);
 	void MakeInit(ostream &stream);

@@ -1,8 +1,9 @@
-# Makefile.in generated automatically by automake 1.4-p5 from Makefile.am
+# Makefile.in generated automatically by automake 1.5 from Makefile.am.
 # Generated automatically from Makefile.in by config.pl.
-# KDE tags expanded automatically by am_edit - $Revision: 1.1 $ 
+# KDE tags expanded automatically by am_edit - $Revision: 1.2 $ 
 
-# Copyright (C) 1994, 1995-8, 1999, 2001 Free Software Foundation, Inc.
+# Copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001
+# Free Software Foundation, Inc.
 # This Makefile.in is free software; the Free Software Foundation
 # gives unlimited permission to copy and/or distribute it,
 # with or without modifications, as long as this notice is preserved.
@@ -12,8 +13,9 @@
 # even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 # PARTICULAR PURPOSE.
 
-####### kdevelop will overwrite this part!!! (begin)##########
 
+
+####### kdevelop will overwrite this part!!! (begin)##########
 
 SHELL = /bin/sh
 
@@ -35,26 +37,22 @@ infodir = ${prefix}/info
 mandir = ${prefix}/man
 includedir = ${prefix}/include
 oldincludedir = /usr/include
-
-DESTDIR =
-
 pkgdatadir = $(datadir)/internet
 pkglibdir = $(libdir)/internet
 pkgincludedir = $(includedir)/internet
-
 top_builddir = ..
 
-ACLOCAL = ${SHELL} /home/z9u2K/projects/internet/admin/missing --run aclocal
-AUTOCONF = ${SHELL} /home/z9u2K/projects/internet/admin/missing --run autoconf
-AUTOMAKE = ${SHELL} /home/z9u2K/projects/internet/admin/missing --run automake
-AUTOHEADER = ${SHELL} /home/z9u2K/projects/internet/admin/missing --run autoheader
+ACLOCAL = ${SHELL} /home/z9u2K/projects/kinneret/cvs/internet/admin/missing --run aclocal
+AUTOCONF = ${SHELL} /home/z9u2K/projects/kinneret/cvs/internet/admin/missing --run autoconf
+AUTOMAKE = ${SHELL} /home/z9u2K/projects/kinneret/cvs/internet/admin/missing --run automake
+AUTOHEADER = ${SHELL} /home/z9u2K/projects/kinneret/cvs/internet/admin/missing --run autoheader
 
 INSTALL = /bin/install -c -p
-INSTALL_PROGRAM = ${INSTALL} $(INSTALL_STRIP_FLAG) $(AM_INSTALL_PROGRAM_FLAGS)
+INSTALL_PROGRAM = ${INSTALL} $(INSTALL_STRIP_FLAG)
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_SCRIPT = ${INSTALL}
+INSTALL_HEADER = $(INSTALL_DATA)
 transform = s,^,i386-linux-,
-
 NORMAL_INSTALL = :
 PRE_INSTALL = :
 POST_INSTALL = :
@@ -67,7 +65,7 @@ host_alias = i386-linux
 host_triplet = i386-pc-linux-gnu
 target_alias = i386-linux
 target_triplet = i386-pc-linux-gnu
-AMTAR = ${SHELL} /home/z9u2K/projects/internet/admin/missing --run tar
+AMTAR = ${SHELL} /home/z9u2K/projects/kinneret/cvs/internet/admin/missing --run tar
 ARTSCCONFIG = @ARTSCCONFIG@
 AS = @AS@
 AUTODIRS = 
@@ -163,7 +161,6 @@ LIB_SMB = @LIB_SMB@
 LIB_X11 = @LIB_X11@
 LIB_XEXT = @LIB_XEXT@
 LN_S = ln -s
-MAKEINFO = ${SHELL} /home/z9u2K/projects/internet/admin/missing --run makeinfo
 MCOPIDL = @MCOPIDL@
 MEINPROC = @MEINPROC@
 MICO_INCLUDES = @MICO_INCLUDES@
@@ -201,7 +198,7 @@ USER_LDFLAGS =
 USE_EXCEPTIONS = -fexceptions
 USE_RTTI = 
 USE_THREADS = @USE_THREADS@
-VERSION = 0.1.1
+VERSION = 0.1.2
 WOVERLOADED_VIRTUAL = -Woverloaded-virtual
 XGETTEXT = @XGETTEXT@
 XPMINC = @XPMINC@
@@ -215,7 +212,7 @@ all_libraries =
 am__include = include
 am__quote = 
 idldir = @idldir@
-install_sh = /home/z9u2K/projects/internet/admin/install-sh
+install_sh = /home/z9u2K/projects/kinneret/cvs/internet/admin/install-sh
 jni_includes = @jni_includes@
 kde_appsdir = @kde_appsdir@
 kde_bindir = @kde_bindir@
@@ -238,7 +235,6 @@ kde_styledir = @kde_styledir@
 kde_templatesdir = @kde_templatesdir@
 kde_wallpaperdir = @kde_wallpaperdir@
 kde_widgetdir = @kde_widgetdir@
-libdir = ${exec_prefix}/lib
 micodir = @micodir@
 qt_includes = @qt_includes@
 qt_libraries = @qt_libraries@
@@ -260,145 +256,105 @@ INCLUDES = $(all_includes)
 
 # the library search path.
 internet_LDFLAGS = $(all_libraries) 
+subdir = internet
 mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
-CONFIG_HEADER = ../config.h
-CONFIG_CLEAN_FILES = 
-bin_PROGRAMS =  internet$(EXEEXT)
-PROGRAMS =  $(bin_PROGRAMS)
+CONFIG_HEADER = $(top_builddir)/config.h
+CONFIG_CLEAN_FILES =
+bin_PROGRAMS = internet$(EXEEXT)
+PROGRAMS = $(bin_PROGRAMS)
 
-
-DEFS = -DHAVE_CONFIG_H -I. -I$(srcdir) -I..
-CPPFLAGS = 
-LDFLAGS = 
-LIBS = 
-#>- internet_OBJECTS =  manage.$(OBJEXT) info.$(OBJEXT) internet.$(OBJEXT) \
-#>- config.$(OBJEXT) cmdline.$(OBJEXT) error.$(OBJEXT) hardware.$(OBJEXT) \
-#>- help.$(OBJEXT) wizard.$(OBJEXT) parse.$(OBJEXT) \
-#>- authentication.$(OBJEXT) connection.$(OBJEXT) dialer.$(OBJEXT) \
-#>- usb.$(OBJEXT) xml.$(OBJEXT) ethernet.$(OBJEXT) isp.$(OBJEXT) \
-#>- db.$(OBJEXT) main.$(OBJEXT)
+am_internet_OBJECTS = manage.$(OBJEXT) info.$(OBJEXT) internet.$(OBJEXT) \
+	config.$(OBJEXT) cmdline.$(OBJEXT) error.$(OBJEXT) \
+	hardware.$(OBJEXT) help.$(OBJEXT) wizard.$(OBJEXT) \
+	parse.$(OBJEXT) authentication.$(OBJEXT) connection.$(OBJEXT) \
+	dialer.$(OBJEXT) usb.$(OBJEXT) xml.$(OBJEXT) ethernet.$(OBJEXT) \
+	isp.$(OBJEXT) db.$(OBJEXT) main.$(OBJEXT)
+#>- internet_OBJECTS = $(am_internet_OBJECTS)
 #>+ 9
 internet_final_OBJECTS = internet.all_cpp.o 
 internet_nofinal_OBJECTS = manage.$(OBJEXT) info.$(OBJEXT) internet.$(OBJEXT) \
-config.$(OBJEXT) cmdline.$(OBJEXT) error.$(OBJEXT) hardware.$(OBJEXT) \
-help.$(OBJEXT) wizard.$(OBJEXT) parse.$(OBJEXT) \
-authentication.$(OBJEXT) connection.$(OBJEXT) dialer.$(OBJEXT) \
-usb.$(OBJEXT) xml.$(OBJEXT) ethernet.$(OBJEXT) isp.$(OBJEXT) \
-db.$(OBJEXT) main.$(OBJEXT)
+	config.$(OBJEXT) cmdline.$(OBJEXT) error.$(OBJEXT) \
+	hardware.$(OBJEXT) help.$(OBJEXT) wizard.$(OBJEXT) \
+	parse.$(OBJEXT) authentication.$(OBJEXT) connection.$(OBJEXT) \
+	dialer.$(OBJEXT) usb.$(OBJEXT) xml.$(OBJEXT) ethernet.$(OBJEXT) \
+	isp.$(OBJEXT) db.$(OBJEXT) main.$(OBJEXT)
 internet_OBJECTS = $(internet_nofinal_OBJECTS)
 #internet_OBJECTS = $(internet_final_OBJECTS)
-internet_DEPENDENCIES = 
-CXXFLAGS = -Wnon-virtual-dtor -Wno-long-long -Wundef -Wall -pedantic -W -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -ansi -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -Wcast-align -Wconversion -fno-builtin -g -O2 -O0 -g3 -Wall -I/usr/include/libxml2/ -fno-exceptions -fno-check-new -fexceptions
-#>- CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
-#>+ 1
-CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS)
-#>- LTCXXCOMPILE = $(LIBTOOL) --mode=compile $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
-#>+ 1
-LTCXXCOMPILE = $(LIBTOOL) --mode=compile --tag=CXX $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS)
-CXXLD = $(CXX)
-#>- CXXLINK = $(LIBTOOL) --mode=link $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(LDFLAGS) -o $@
-#>+ 1
-CXXLINK = $(LIBTOOL) --mode=link --tag=CXX $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS) $(LDFLAGS) -o $@
-DIST_COMMON =  Makefile.am Makefile.in
+internet_DEPENDENCIES =
 
+DEFS = -DHAVE_CONFIG_H
+DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+CPPFLAGS = 
+LDFLAGS = 
+LIBS = 
+depcomp = $(SHELL) $(top_srcdir)/admin/depcomp
+#>- DEP_FILES = $(DEPDIR)/authentication.Po $(DEPDIR)/cmdline.Po \
+#>- 	$(DEPDIR)/config.Po $(DEPDIR)/connection.Po \
+#>- 	$(DEPDIR)/db.Po $(DEPDIR)/dialer.Po \
+#>- 	$(DEPDIR)/error.Po $(DEPDIR)/ethernet.Po \
+#>- 	$(DEPDIR)/hardware.Po $(DEPDIR)/help.Po \
+#>- 	$(DEPDIR)/info.Po $(DEPDIR)/internet.Po \
+#>- 	$(DEPDIR)/isp.Po $(DEPDIR)/main.Po \
+#>- 	$(DEPDIR)/manage.Po $(DEPDIR)/parse.Po \
+#>- 	$(DEPDIR)/usb.Po $(DEPDIR)/wizard.Po \
+#>- 	$(DEPDIR)/xml.Po
+#>+ 21
+#DEP_FILES =   $(DEPDIR)/internet.all_cpp.P  $(DEPDIR)/authentication.Po $(DEPDIR)/cmdline.Po \
+#		$(DEPDIR)/config.Po $(DEPDIR)/connection.Po \
+#		$(DEPDIR)/db.Po $(DEPDIR)/dialer.Po \
+#		$(DEPDIR)/error.Po $(DEPDIR)/ethernet.Po \
+#		$(DEPDIR)/hardware.Po $(DEPDIR)/help.Po \
+#		$(DEPDIR)/info.Po $(DEPDIR)/internet.Po \
+#		$(DEPDIR)/isp.Po $(DEPDIR)/main.Po \
+#		$(DEPDIR)/manage.Po $(DEPDIR)/parse.Po \
+#		$(DEPDIR)/usb.Po $(DEPDIR)/wizard.Po \
+#		$(DEPDIR)/xml.Po
+DEP_FILES =   $(DEPDIR)/authentication.Po $(DEPDIR)/cmdline.Po \
+		$(DEPDIR)/config.Po $(DEPDIR)/connection.Po \
+		$(DEPDIR)/db.Po $(DEPDIR)/dialer.Po \
+		$(DEPDIR)/error.Po $(DEPDIR)/ethernet.Po \
+		$(DEPDIR)/hardware.Po $(DEPDIR)/help.Po \
+		$(DEPDIR)/info.Po $(DEPDIR)/internet.Po \
+		$(DEPDIR)/isp.Po $(DEPDIR)/main.Po \
+		$(DEPDIR)/manage.Po $(DEPDIR)/parse.Po \
+		$(DEPDIR)/usb.Po $(DEPDIR)/wizard.Po \
+		$(DEPDIR)/xml.Po
 
-#>- DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
-#>+ 4
-KDE_DIST=isp.h internet dialer.h 
-
-DISTFILES= $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
-
-
-TAR = tar
-GZIP_ENV = --best
-#>- DEP_FILES =  .deps/authentication.P .deps/cmdline.P .deps/config.P \
-#>- .deps/connection.P .deps/db.P .deps/dialer.P .deps/error.P \
-#>- .deps/ethernet.P .deps/hardware.P .deps/help.P .deps/info.P \
-#>- .deps/internet.P .deps/isp.P .deps/main.P .deps/manage.P .deps/parse.P \
-#>- .deps/usb.P .deps/wizard.P .deps/xml.P
-#>+ 11
-#DEP_FILES =   $(DEPDIR)/internet.all_cpp.P   .deps/authentication.P .deps/cmdline.P .deps/config.P \
-#	.deps/connection.P .deps/db.P .deps/dialer.P .deps/error.P \
-#	.deps/ethernet.P .deps/hardware.P .deps/help.P .deps/info.P \
-#	.deps/internet.P .deps/isp.P .deps/main.P .deps/manage.P .deps/parse.P \
-#	.deps/usb.P .deps/wizard.P .deps/xml.P
-DEP_FILES =    .deps/authentication.P .deps/cmdline.P .deps/config.P \
-	.deps/connection.P .deps/db.P .deps/dialer.P .deps/error.P \
-	.deps/ethernet.P .deps/hardware.P .deps/help.P .deps/info.P \
-	.deps/internet.P .deps/isp.P .deps/main.P .deps/manage.P .deps/parse.P \
-	.deps/usb.P .deps/wizard.P .deps/xml.P
-
-SOURCES = $(internet_SOURCES)
-OBJECTS = $(internet_OBJECTS)
-
-#>- all: all-redirect
-#>+ 1
-all: docs-am  all-redirect
-.SUFFIXES:
-.SUFFIXES: .S .c .cpp .lo .o .obj .s
-$(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
-#>- 	cd $(top_srcdir) && $(AUTOMAKE) --gnu internet/Makefile
+#>- CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+#>- 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
 #>+ 2
-	cd $(top_srcdir) && $(AUTOMAKE) --gnu internet/Makefile
-	cd $(top_srcdir) && perl admin/am_edit internet/Makefile.in
+CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS)
+#>- LTCXXCOMPILE = $(LIBTOOL) --mode=compile $(CXX) $(DEFS) \
+#>- 	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+#>- 	$(AM_CXXFLAGS) $(CXXFLAGS)
+#>+ 3
+LTCXXCOMPILE = $(LIBTOOL) --mode=compile --tag=CXX $(CXX) $(DEFS) \
+	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+	$(AM_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS)
+CXXLD = $(CXX)
+#>- CXXLINK = $(LIBTOOL) --mode=link $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) \
+#>- 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+#>+ 2
+CXXLINK = $(LIBTOOL) --mode=link --tag=CXX $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+CXXFLAGS = -Wnon-virtual-dtor -Wno-long-long -Wundef -Wall -pedantic -W -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -ansi -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -Wcast-align -Wconversion -fno-builtin -g -O2 -O0 -g3 -Wall -I/usr/include/libxml2/ -fno-exceptions -fno-check-new -fexceptions
+DIST_SOURCES = $(internet_SOURCES)
 
-Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status $(BUILT_SOURCES)
-	cd $(top_builddir) \
-	  && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
+RECURSIVE_TARGETS = info-recursive dvi-recursive install-info-recursive \
+	uninstall-info-recursive all-recursive install-data-recursive \
+	install-exec-recursive installdirs-recursive install-recursive \
+	uninstall-recursive check-recursive installcheck-recursive
+DIST_COMMON = Makefile.am Makefile.in
+DIST_SUBDIRS = $(SUBDIRS)
+SOURCES = $(internet_SOURCES)
 
+#>- all: all-recursive
+#>+ 1
+all: docs-am  all-recursive
 
-mostlyclean-binPROGRAMS:
-
-clean-binPROGRAMS:
-	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
-
-distclean-binPROGRAMS:
-
-maintainer-clean-binPROGRAMS:
-
-install-binPROGRAMS: $(bin_PROGRAMS)
-	@$(NORMAL_INSTALL)
-	$(mkinstalldirs) $(DESTDIR)$(bindir)
-	@list='$(bin_PROGRAMS)'; for p in $$list; do \
-	  if test -f $$p; then \
-	    echo " $(LIBTOOL)  --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
-	    $(LIBTOOL)  --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
-	  else :; fi; \
-	done
-
-uninstall-binPROGRAMS:
-	@$(NORMAL_UNINSTALL)
-	list='$(bin_PROGRAMS)'; for p in $$list; do \
-	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
-	done
-
-# FIXME: We should only use cygpath when building on Windows,
-# and only if it is available.
-.c.obj:
-	$(COMPILE) -c `cygpath -w $<`
-
-.s.o:
-	$(COMPILE) -c $<
-
-.S.o:
-	$(COMPILE) -c $<
-
-mostlyclean-compile:
-	-rm -f *.o core *.core
-	-rm -f *.$(OBJEXT)
-
-clean-compile:
-
-distclean-compile:
-	-rm -f *.tab.c
-
-maintainer-clean-compile:
-
-.s.lo:
-	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
-
-.S.lo:
-	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
+.SUFFIXES:
+.SUFFIXES: .cpp .lo .o .obj
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -407,18 +363,94 @@ clean-libtool:
 	-rm -rf .libs _libs
 
 distclean-libtool:
+	-rm -f libtool
+$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
+#>- 	cd $(top_srcdir) && \
+#>- 	  $(AUTOMAKE) --gnu  internet/Makefile
+#>+ 3
+	cd $(top_srcdir) && \
+	  $(AUTOMAKE) --gnu  internet/Makefile
+	cd $(top_srcdir) && perl admin/am_edit internet/Makefile.in
+Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+	cd $(top_builddir) && \
+	  CONFIG_HEADERS= CONFIG_LINKS= \
+	  CONFIG_FILES=$(subdir)/$@ $(SHELL) ./config.status
+install-binPROGRAMS: $(bin_PROGRAMS)
+	@$(NORMAL_INSTALL)
+	$(mkinstalldirs) $(DESTDIR)$(bindir)
+	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+	  p1=`echo $$p|sed 's/$(EXEEXT)$$//'`; \
+	  if test -f $$p \
+	     || test -f $$p1 \
+	  ; then \
+	    f=`echo $$p1|sed '$(transform);s/$$/$(EXEEXT)/'`; \
+	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f"; \
+	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f; \
+	  else :; fi; \
+	done
 
-maintainer-clean-libtool:
+uninstall-binPROGRAMS:
+	@$(NORMAL_UNINSTALL)
+	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+	  f=`echo $$p|sed 's/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/'`; \
+	  echo " rm -f $(DESTDIR)$(bindir)/$$f"; \
+	  rm -f $(DESTDIR)$(bindir)/$$f; \
+	done
 
-internet$(EXEEXT): $(internet_OBJECTS) $(internet_DEPENDENCIES)
+clean-binPROGRAMS:
+	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+internet$(EXEEXT): $(internet_OBJECTS) $(internet_DEPENDENCIES) 
 	@rm -f internet$(EXEEXT)
 	$(CXXLINK) $(internet_LDFLAGS) $(internet_OBJECTS) $(internet_LDADD) $(LIBS)
+
+mostlyclean-compile:
+	-rm -f *.$(OBJEXT) core *.core
+
+distclean-compile:
+	-rm -f *.tab.c
+
+include $(DEPDIR)/authentication.Po
+include $(DEPDIR)/cmdline.Po
+include $(DEPDIR)/config.Po
+include $(DEPDIR)/connection.Po
+include $(DEPDIR)/db.Po
+include $(DEPDIR)/dialer.Po
+include $(DEPDIR)/error.Po
+include $(DEPDIR)/ethernet.Po
+include $(DEPDIR)/hardware.Po
+include $(DEPDIR)/help.Po
+include $(DEPDIR)/info.Po
+include $(DEPDIR)/internet.Po
+include $(DEPDIR)/isp.Po
+include $(DEPDIR)/main.Po
+include $(DEPDIR)/manage.Po
+include $(DEPDIR)/parse.Po
+include $(DEPDIR)/usb.Po
+include $(DEPDIR)/wizard.Po
+include $(DEPDIR)/xml.Po
+
+distclean-depend:
+	-rm -rf $(DEPDIR)
+
 .cpp.o:
-	$(CXXCOMPILE) -c $<
+	source='$<' object='$@' libtool=no \
+	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' \
+	$(CXXDEPMODE) $(depcomp) \
+	$(CXXCOMPILE) -c -o $@ `test -f $< || echo '$(srcdir)/'`$<
+
 .cpp.obj:
-	$(CXXCOMPILE) -c `cygpath -w $<`
+	source='$<' object='$@' libtool=no \
+	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' \
+	$(CXXDEPMODE) $(depcomp) \
+	$(CXXCOMPILE) -c -o $@ `cygpath -w $<`
+
 .cpp.lo:
-	$(LTCXXCOMPILE) -c $<
+	source='$<' object='$@' libtool=yes \
+	depfile='$(DEPDIR)/$*.Plo' tmpdepfile='$(DEPDIR)/$*.TPlo' \
+	$(CXXDEPMODE) $(depcomp) \
+	$(LTCXXCOMPILE) -c -o $@ `test -f $< || echo '$(srcdir)/'`$<
+CXXDEPMODE = depmode=gcc3
+uninstall-info-am:
 
 # This directory's subdirectories are mostly independent; you can cd
 # into them and run `make' without going through this Makefile.
@@ -426,12 +458,7 @@ internet$(EXEEXT): $(internet_OBJECTS) $(internet_DEPENDENCIES)
 # (1) if the variable is set in `config.status', edit `config.status'
 #     (which will cause the Makefiles to be regenerated when you run `make');
 # (2) otherwise, pass the desired values on the `make' command line.
-
-
-
-all-recursive install-data-recursive install-exec-recursive \
-installdirs-recursive install-recursive uninstall-recursive  \
-check-recursive installcheck-recursive info-recursive dvi-recursive:
+$(RECURSIVE_TARGETS):
 	@set fnord $(MAKEFLAGS); amf=$$2; \
 	dot_seen=no; \
 	target=`echo $@ | sed s/-recursive//`; \
@@ -454,11 +481,16 @@ mostlyclean-recursive clean-recursive distclean-recursive \
 maintainer-clean-recursive:
 	@set fnord $(MAKEFLAGS); amf=$$2; \
 	dot_seen=no; \
-	rev=''; list='$(SUBDIRS)'; for subdir in $$list; do \
-	  rev="$$subdir $$rev"; \
-	  test "$$subdir" != "." || dot_seen=yes; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	rev=''; for subdir in $$list; do \
+	  if test "$$subdir" = "."; then :; else \
+	    rev="$$subdir $$rev"; \
+	  fi; \
 	done; \
-	test "$$dot_seen" = "no" && rev=". $$rev"; \
+	rev="$$rev ."; \
 	target=`echo $@ | sed s/-recursive//`; \
 	for subdir in $$rev; do \
 	  echo "Making $$target in $$subdir"; \
@@ -477,56 +509,65 @@ tags-recursive:
 
 tags: TAGS
 
-ID: $(HEADERS) $(SOURCES) $(LISP)
-	list='$(SOURCES) $(HEADERS)'; \
-	unique=`for i in $$list; do echo $$i; done | \
-	  awk '    { files[$$0] = 1; } \
+ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
+	list='$(SOURCES) $(HEADERS) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '    { files[$$0] = 1; } \
 	       END { for (i in files) print i; }'`; \
-	here=`pwd` && cd $(srcdir) \
-	  && mkid -f$$here/ID $$unique $(LISP)
+	mkid -fID $$unique $(LISP)
 
-TAGS: tags-recursive $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) $(LISP)
+TAGS: tags-recursive $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) \
+		$(TAGS_FILES) $(LISP)
 	tags=; \
 	here=`pwd`; \
 	list='$(SUBDIRS)'; for subdir in $$list; do \
-   if test "$$subdir" = .; then :; else \
+	  if test "$$subdir" = .; then :; else \
 	    test -f $$subdir/TAGS && tags="$$tags -i $$here/$$subdir/TAGS"; \
-   fi; \
+	  fi; \
 	done; \
-	list='$(SOURCES) $(HEADERS)'; \
-	unique=`for i in $$list; do echo $$i; done | \
-	  awk '    { files[$$0] = 1; } \
+	list='$(SOURCES) $(HEADERS) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '    { files[$$0] = 1; } \
 	       END { for (i in files) print i; }'`; \
 	test -z "$(ETAGS_ARGS)$$unique$(LISP)$$tags" \
-	  || (cd $(srcdir) && etags $(ETAGS_ARGS) $$tags  $$unique $(LISP) -o $$here/TAGS)
+	  || etags $(ETAGS_ARGS) $$tags  $$unique $(LISP)
 
-mostlyclean-tags:
-
-clean-tags:
+GTAGS:
+	here=`CDPATH=: && cd $(top_builddir) && pwd` \
+	  && cd $(top_srcdir) \
+	  && gtags -i $(GTAGS_ARGS) $$here
 
 distclean-tags:
-	-rm -f TAGS ID
+	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH
 
-maintainer-clean-tags:
+#>- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+#>+ 4
+KDE_DIST=internet 
 
-distdir = $(top_builddir)/$(PACKAGE)-$(VERSION)/$(subdir)
+DISTFILES= $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
 
-subdir = internet
+
+top_distdir = ..
+distdir = $(top_distdir)/$(PACKAGE)-$(VERSION)
 
 distdir: $(DISTFILES)
-	here=`cd $(top_builddir) && pwd`; \
-	top_distdir=`cd $(top_distdir) && pwd`; \
-	distdir=`cd $(distdir) && pwd`; \
-	cd $(top_srcdir) \
-	  && $(AUTOMAKE) --include-deps --build-dir=$$here --srcdir-name=$(top_srcdir) --output-dir=$$top_distdir --gnu internet/Makefile
 	@for file in $(DISTFILES); do \
-	  d=$(srcdir); \
+	  if test -f $$file; then d=.; else d=$(srcdir); fi; \
+	  dir=`echo "$$file" | sed -e 's,/[^/]*$$,,'`; \
+	  if test "$$dir" != "$$file" && test "$$dir" != "."; then \
+	    $(mkinstalldirs) "$(distdir)/$$dir"; \
+	  fi; \
 	  if test -d $$d/$$file; then \
-	    cp -pr $$d/$$file $(distdir)/$$file; \
+	    cp -pR $$d/$$file $(distdir) \
+	    || exit 1; \
 	  else \
 	    test -f $(distdir)/$$file \
-	    || ln $$d/$$file $(distdir)/$$file 2> /dev/null \
-	    || cp -p $$d/$$file $(distdir)/$$file || :; \
+	    || cp -p $$d/$$file $(distdir)/$$file \
+	    || exit 1; \
 	  fi; \
 	done
 	for subdir in $(SUBDIRS); do \
@@ -534,150 +575,105 @@ distdir: $(DISTFILES)
 	    test -d $(distdir)/$$subdir \
 	    || mkdir $(distdir)/$$subdir \
 	    || exit 1; \
-	    chmod 777 $(distdir)/$$subdir; \
-	    (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) top_distdir=../$(top_distdir) distdir=../$(distdir)/$$subdir distdir) \
+	    (cd $$subdir && \
+	      $(MAKE) $(AM_MAKEFLAGS) \
+	        top_distdir="$(top_distdir)" \
+	        distdir=../$(distdir)/$$subdir \
+	        distdir) \
 	      || exit 1; \
 	  fi; \
 	done
-
-DEPS_MAGIC := $(shell mkdir .deps > /dev/null 2>&1 || :)
-
--include $(DEP_FILES)
-
-mostlyclean-depend:
-
-clean-depend:
-
-distclean-depend:
-	-rm -rf .deps
-
-maintainer-clean-depend:
-
-%.o: %.c
-	@echo '$(COMPILE) -c $<'; \
-	$(COMPILE) -Wp,-MD,.deps/$(*F).pp -c $<
-	@-cp .deps/$(*F).pp .deps/$(*F).P; \
-	tr ' ' '\012' < .deps/$(*F).pp \
-	  | sed -e 's/^\\$$//' -e '/^$$/ d' -e '/:$$/ d' -e 's/$$/ :/' \
-	    >> .deps/$(*F).P; \
-	rm .deps/$(*F).pp
-
-%.lo: %.c
-	@echo '$(LTCOMPILE) -c $<'; \
-	$(LTCOMPILE) -Wp,-MD,.deps/$(*F).pp -c $<
-	@-sed -e 's/^\([^:]*\)\.o[ 	]*:/\1.lo \1.o :/' \
-	  < .deps/$(*F).pp > .deps/$(*F).P; \
-	tr ' ' '\012' < .deps/$(*F).pp \
-	  | sed -e 's/^\\$$//' -e '/^$$/ d' -e '/:$$/ d' -e 's/$$/ :/' \
-	    >> .deps/$(*F).P; \
-	rm -f .deps/$(*F).pp
-
-%.o: %.cpp
-	@echo '$(CXXCOMPILE) -c $<'; \
-	$(CXXCOMPILE) -Wp,-MD,.deps/$(*F).pp -c $<
-	@-cp .deps/$(*F).pp .deps/$(*F).P; \
-	tr ' ' '\012' < .deps/$(*F).pp \
-	  | sed -e 's/^\\$$//' -e '/^$$/ d' -e '/:$$/ d' -e 's/$$/ :/' \
-	    >> .deps/$(*F).P; \
-	rm .deps/$(*F).pp
-
-%.lo: %.cpp
-	@echo '$(LTCXXCOMPILE) -c $<'; \
-	$(LTCXXCOMPILE) -Wp,-MD,.deps/$(*F).pp -c $<
-	@-sed -e 's/^\([^:]*\)\.o[ 	]*:/\1.lo \1.o :/' \
-	  < .deps/$(*F).pp > .deps/$(*F).P; \
-	tr ' ' '\012' < .deps/$(*F).pp \
-	  | sed -e 's/^\\$$//' -e '/^$$/ d' -e '/:$$/ d' -e 's/$$/ :/' \
-	    >> .deps/$(*F).P; \
-	rm -f .deps/$(*F).pp
-info-am:
-info: info-recursive
-dvi-am:
-dvi: dvi-recursive
 check-am: all-am
 check: check-recursive
-installcheck-am:
-installcheck: installcheck-recursive
-install-exec-am: install-binPROGRAMS
-install-exec: install-exec-recursive
+all-am: Makefile $(PROGRAMS)
+installdirs: installdirs-recursive
+installdirs-am:
+	$(mkinstalldirs) $(DESTDIR)$(bindir)
 
-install-data-am: install-data-local
+install: install-recursive
+install-exec: install-exec-recursive
 install-data: install-data-recursive
+uninstall: uninstall-recursive
 
 install-am: all-am
 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
-install: install-recursive
-uninstall-am: uninstall-binPROGRAMS uninstall-local
-uninstall: uninstall-recursive
-all-am: Makefile $(PROGRAMS)
-all-redirect: all-recursive
+
+installcheck: installcheck-recursive
 install-strip:
-	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
-installdirs: installdirs-recursive
-installdirs-am:
-	$(mkinstalldirs)  $(DESTDIR)$(bindir)
-
-
+	$(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
+	  `test -z '$(STRIP)' || \
+	    echo "INSTALL_PROGRAM_ENV=STRIPPROG='$(STRIP)'"` install
 mostlyclean-generic:
 
 clean-generic:
 
 distclean-generic:
-	-rm -f Makefile $(CONFIG_CLEAN_FILES)
-	-rm -f config.cache config.log stamp-h stamp-h[0-9]*
+	-rm -f Makefile $(CONFIG_CLEAN_FILES) stamp-h stamp-h[0-9]*
 
 maintainer-clean-generic:
-mostlyclean-am:  mostlyclean-binPROGRAMS mostlyclean-compile \
-		mostlyclean-libtool mostlyclean-tags mostlyclean-depend \
-		mostlyclean-generic
-
-mostlyclean: mostlyclean-recursive
-
-#>- clean-am:  clean-binPROGRAMS clean-compile clean-libtool clean-tags \
-#>- 		clean-depend clean-generic mostlyclean-am
-#>+ 2
-clean-am: clean-final   clean-binPROGRAMS clean-compile clean-libtool clean-tags \
-		clean-depend clean-generic mostlyclean-am
-
+	@echo "This command is intended for maintainers to use"
+	@echo "it deletes files that may require special tools to rebuild."
 #>- clean: clean-recursive
 #>+ 1
 clean: kde-rpo-clean  clean-recursive
 
-distclean-am:  distclean-binPROGRAMS distclean-compile distclean-libtool \
-		distclean-tags distclean-depend distclean-generic \
-		clean-am
-	-rm -f libtool
+#>- clean-am: clean-binPROGRAMS clean-generic clean-libtool mostlyclean-am
+#>+ 1
+clean-am: clean-final  clean-binPROGRAMS clean-generic clean-libtool mostlyclean-am
 
 distclean: distclean-recursive
 
-maintainer-clean-am:  maintainer-clean-binPROGRAMS \
-		maintainer-clean-compile maintainer-clean-libtool \
-		maintainer-clean-tags maintainer-clean-depend \
-		maintainer-clean-generic distclean-am
-	@echo "This command is intended for maintainers to use;"
-	@echo "it deletes files that may require special tools to rebuild."
+distclean-am: clean-am distclean-compile distclean-depend \
+	distclean-generic distclean-libtool distclean-tags
+
+dvi: dvi-recursive
+
+dvi-am:
+
+info: info-recursive
+
+info-am:
+
+install-data-am: install-data-local
+
+install-exec-am: install-binPROGRAMS
+
+install-info: install-info-recursive
+
+install-man:
+
+installcheck-am:
 
 maintainer-clean: maintainer-clean-recursive
 
-.PHONY: mostlyclean-binPROGRAMS distclean-binPROGRAMS clean-binPROGRAMS \
-maintainer-clean-binPROGRAMS uninstall-binPROGRAMS install-binPROGRAMS \
-mostlyclean-compile distclean-compile clean-compile \
-maintainer-clean-compile mostlyclean-libtool distclean-libtool \
-clean-libtool maintainer-clean-libtool install-data-recursive \
-uninstall-data-recursive install-exec-recursive \
-uninstall-exec-recursive installdirs-recursive uninstalldirs-recursive \
-all-recursive check-recursive installcheck-recursive info-recursive \
-dvi-recursive mostlyclean-recursive distclean-recursive clean-recursive \
-maintainer-clean-recursive tags tags-recursive mostlyclean-tags \
-distclean-tags clean-tags maintainer-clean-tags distdir \
-mostlyclean-depend distclean-depend clean-depend \
-maintainer-clean-depend info-am info dvi-am dvi check check-am \
-installcheck-am installcheck install-exec-am install-exec \
-install-data-local install-data-am install-data install-am install \
-uninstall-local uninstall-am uninstall all-redirect all-am all \
-installdirs-am installdirs mostlyclean-generic distclean-generic \
-clean-generic maintainer-clean-generic clean mostlyclean distclean \
-maintainer-clean
+maintainer-clean-am: distclean-am maintainer-clean-generic
+
+mostlyclean: mostlyclean-recursive
+
+mostlyclean-am: mostlyclean-compile mostlyclean-generic \
+	mostlyclean-libtool
+
+uninstall-am: uninstall-binPROGRAMS uninstall-info-am uninstall-local
+
+uninstall-info: uninstall-info-recursive
+
+.PHONY: $(RECURSIVE_TARGETS) GTAGS all all-am check check-am clean \
+	clean-binPROGRAMS clean-generic clean-libtool clean-recursive \
+	distclean distclean-compile distclean-depend distclean-generic \
+	distclean-libtool distclean-recursive distclean-tags distdir \
+	dvi dvi-am dvi-recursive info info-am info-recursive install \
+	install-am install-binPROGRAMS install-data install-data-am \
+	install-data-local install-data-recursive install-exec \
+	install-exec-am install-exec-recursive install-info \
+	install-info-am install-info-recursive install-man \
+	install-recursive install-strip installcheck installcheck-am \
+	installdirs installdirs-am installdirs-recursive \
+	maintainer-clean maintainer-clean-generic \
+	maintainer-clean-recursive mostlyclean mostlyclean-compile \
+	mostlyclean-generic mostlyclean-libtool mostlyclean-recursive \
+	tags tags-recursive uninstall uninstall-am \
+	uninstall-binPROGRAMS uninstall-info-am \
+	uninstall-info-recursive uninstall-local uninstall-recursive
 
 
 install-data-local:
@@ -692,7 +688,6 @@ uninstall-local:
 #>- 	-rm -f /etc/internet.conf
 #>+ 1
 	-rm -f $(DESTDIR)/etc/internet.conf
-
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:
@@ -700,9 +695,10 @@ uninstall-local:
 #>+ 2
 docs-am:
 
-#>+ 5
+#>+ 6
 force-reedit:
-		cd $(top_srcdir) && $(AUTOMAKE) --gnu internet/Makefile
+		cd $(top_srcdir) && \
+	  $(AUTOMAKE) --gnu  internet/Makefile
 	cd $(top_srcdir) && perl admin/am_edit internet/Makefile.in
 
 

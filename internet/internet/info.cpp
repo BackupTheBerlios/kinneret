@@ -84,7 +84,10 @@ void InfoISP(const Database &db, string strISP) throw (Error)
 	cout << "Homepage: "					<< isp.getHomepage()		<< endl;
 	cout << "Tech-support: "				<< isp.getTech()			<< endl;
 	cout << "Costumer Center: "				<< isp.getJoin()			<< endl;
+	cout << "Manual Proxy Server: "			<< isp.getProxyManual()		<< endl;
+	cout << "Auto Proxy Server: "			<< isp.getProxyAuto()		<< endl;
 	cout << "POP3 Server: "					<< isp.getPOP3()			<< endl;
+	cout << "IMAP Server: "					<< isp.getIMAP()			<< endl;
 	cout << "SMTP Server: "					<< isp.getSMTP()			<< endl;
 	cout << "E-Mail Suffix: @"				<< isp.getEMailSuffix()		<< endl;
 	cout << "Cable Gateway: "				<< isp.getCableGateway()	<< endl;

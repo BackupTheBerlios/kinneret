@@ -106,14 +106,14 @@ void MakeFromDesc(const Description &desc, const Database &db, const ConfigFile 
 
 		// append suffix
 		if (desc.conMethod == ADSL && !isp.getADSLSuffix().empty())
-			username += string("@[*isp::adsl::usrsuffix*]");
+			username += string("[*isp::adsl::usrsuffix*]");
 
 		else if (desc.conMethod == Cable && !isp.getCableSuffix().empty())
-			username += string("@[*isp::cable::usrsuffix*]");
+			username += string("[*isp::cable::usrsuffix*]");
 
 		// A really stupid class, I know... but it's here for the future
 		// (what if next year your ISP will require a finger print? :)
-		Authentication auth(username, passwd);
+		Authentication auth(username, passwd, desc.strServer);
 
 		Dialer dial(&db);
 		dial.LoadDialer(db.ResolveDialer(&isp, modem, Broadband));

@@ -66,7 +66,7 @@ m4trace:configure.in:36: -1- AC_SUBST([target], [$ac_cv_target])
 m4trace:configure.in:36: -1- AC_SUBST([target_cpu], [`echo $ac_cv_target | sed 's/^\([[^-]]*\)-\([[^-]]*\)-\(.*\)$/\1/'`])
 m4trace:configure.in:36: -1- AC_SUBST([target_vendor], [`echo $ac_cv_target | sed 's/^\([[^-]]*\)-\([[^-]]*\)-\(.*\)$/\2/'`])
 m4trace:configure.in:36: -1- AC_SUBST([target_os], [`echo $ac_cv_target | sed 's/^\([[^-]]*\)-\([[^-]]*\)-\(.*\)$/\3/'`])
-m4trace:configure.in:41: -1- AM_INIT_AUTOMAKE([internet], [0.1.1])
+m4trace:configure.in:41: -1- AM_INIT_AUTOMAKE([internet], [0.1.2])
 m4trace:configure.in:41: -1- AC_PROG_INSTALL
 m4trace:configure.in:41: -1- AC_PROG_INSTALL
 m4trace:configure.in:41: -1- AC_SUBST([INSTALL_PROGRAM])

@@ -39,6 +39,7 @@ CommandLine::CommandLine() :
 	clIFace(),
 	clDevice(),
 	clUsername(),
+	clServer(),
 	clPasswd(),
 	clName(),
 	bListISPs(false),
@@ -97,6 +98,7 @@ void CommandLine::Parse(int argc, char *argv[]) throw (Error)
 		{ "iface",			1, 0, 0x09 },
 		{ "dev",			1, 0, 'd'  },
 		{ "username",		1, 0, 'u'  },
+		{ "server",			1, 0, 0x0C },
 		{ "passwd",			1, 0, 'p'  },
 		{ "name",			1, 0, 'n'  },
 
@@ -149,6 +151,7 @@ void CommandLine::Parse(int argc, char *argv[]) throw (Error)
 		case 'M':  clModem.bIs		= true; clModem.strOpt		= optarg;	break;
 		case 'd':  clDevice.bIs		= true; clDevice.strOpt		= optarg;	break;
 		case 'u':  clUsername.bIs	= true; clUsername.strOpt	= optarg;	break;
+		case 0x0C: clServer.bIs		= true; clServer.strOpt		= optarg;	break;
 		case 'p':  clPasswd.bIs		= true; clPasswd.strOpt		= optarg;	break;
 		case 'n':  clName.bIs		= true; clName.strOpt		= optarg;	break;
 		case 'l':  bListISPs		= true;									break;

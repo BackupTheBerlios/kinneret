@@ -26,19 +26,18 @@ class Authentication
 private:
 	string		strUsername;		// auth::usr
 	string		strPasswd;			// auth::passwd
+	string		strServer;			// auth::server
 protected:
 public:
 
-	Authentication() {}
-	Authentication(string usr, string passwd)
-	{
-		strUsername = usr;
-		strPasswd = passwd;
-	}
+	Authentication() : strUsername(""), strPasswd(""), strServer("") {}
+	Authentication(string usr, string passwd, string serv) : strUsername(usr),
+		strPasswd(passwd), strServer(serv) {}
 	~Authentication() {}
 
 	string getUsername()	const { return strUsername;	}
 	string getPasswd()		const { return strPasswd;	}
+	string getServer()		const { return strServer;	}
 
 	void MakeInit(ostream &stream);
 };
