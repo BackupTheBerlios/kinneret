@@ -1,6 +1,6 @@
 object WForm: TWForm
-  Left = 257
-  Top = 378
+  Left = 259
+  Top = 167
   AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsDialog
@@ -566,7 +566,10 @@ object WForm: TWForm
     Top = 288
     Width = 105
     Height = 33
+    Hint = 'Advanced options for editing kernel parameters'
     Caption = 'Advanced'
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 6
     OnClick = ButtonAdvancedClick
   end

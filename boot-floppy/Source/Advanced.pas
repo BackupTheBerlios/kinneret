@@ -14,16 +14,16 @@ type
     ButtonSave: TButton;
     ButtonCancel: TButton;
     EditKey: TEdit;
-    EditValue: TEdit;
-    Label1: TLabel;
-    Label2: TLabel;
     Explanation: TLabel;
+    Label1: TLabel;
     procedure ButtonRemoveClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure ButtonAddClick(Sender: TObject);
     procedure ButtonCancelClick(Sender: TObject);
     procedure ButtonSaveClick(Sender: TObject);
+    procedure AddKey;
+    procedure EditKeyKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -104,7 +104,7 @@ begin
     end;
 end;
 
-procedure TFormAdvanced.ButtonAddClick(Sender: TObject);
+procedure TFormAdvanced.AddKey;
 var
         i : integer;
 
@@ -114,18 +114,21 @@ begin
             if ParamList.FindRow(EditKey.Text,i) then
             begin
                 ParamList.Row:=i;
-                if MessageDlg(pWideChar(_('This key is already in the list,'+#10#13+
-                'Overwrite ?')),mtConfirmation, [mbOk, mbCancel], 0) = mrOk then
-                begin
-                    ParamList.Values[EditKey.Text]:=EditValue.Text;
-                    EditKey.Text:='';EditValue.Text:='';
-                end;
+                ParamList.SetFocus;
+                ShowMessage(pWideChar(_('This key is already in the list, Edit it instead.')));
+                EditKey.Text:='';
             end else begin
-                ParamList.InsertRow(EditKey.Text,EditValue.Text,TRUE);
+                ParamList.InsertRow(EditKey.Text,'',TRUE);
                 ParamList.Row:=ParamList.RowCount-1;
-                EditKey.Text:='';EditValue.Text:='';
+                ParamList.SetFocus;
+                EditKey.Text:='';
             end;
         end;
+end;
+
+procedure TFormAdvanced.ButtonAddClick(Sender: TObject);
+begin
+        AddKey;
 end;
 
 procedure TFormAdvanced.ButtonCancelClick(Sender: TObject);
@@ -156,6 +159,15 @@ begin
             showmessage(pWideChar(_('Unable to save changes,'+#10#13+
             'Verify the floppy is in place and try again.')));
         end;
+    end;
+end;
+
+procedure TFormAdvanced.EditKeyKeyPress(Sender: TObject; var Key: Char);
+begin
+    if key=#13 then
+    begin
+        Key:=#0;
+        AddKey;
     end;
 end;
 

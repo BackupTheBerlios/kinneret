@@ -18,20 +18,6 @@ object FormAdvanced: TFormAdvanced
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
-    Left = 16
-    Top = 328
-    Width = 18
-    Height = 13
-    Caption = 'Key'
-  end
-  object Label2: TLabel
-    Left = 136
-    Top = 328
-    Width = 27
-    Height = 13
-    Caption = 'Value'
-  end
   object Explanation: TLabel
     Left = 24
     Top = 8
@@ -39,12 +25,22 @@ object FormAdvanced: TFormAdvanced
     Height = 65
     AutoSize = False
   end
+  object Label1: TLabel
+    Left = 80
+    Top = 328
+    Width = 107
+    Height = 13
+    Caption = 'Insert a new key name'
+  end
   object ParamList: TValueListEditor
     Left = 24
     Top = 96
     Width = 273
     Height = 209
+    Hint = 'Edit the Values here'
     KeyOptions = [keyDelete, keyUnique]
+    ParentShowHint = False
+    ShowHint = False
     TabOrder = 0
     ColWidths = (
       116
@@ -55,7 +51,10 @@ object FormAdvanced: TFormAdvanced
     Top = 328
     Width = 81
     Height = 25
-    Caption = 'Add a key'
+    Hint = 'Add a new Key'
+    Caption = 'Add'
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 1
     OnClick = ButtonAddClick
   end
@@ -64,7 +63,10 @@ object FormAdvanced: TFormAdvanced
     Top = 280
     Width = 81
     Height = 25
-    Caption = 'Remove a key'
+    Hint = 'Remove a selected Key and his Value'
+    Caption = 'Remove'
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 2
     OnClick = ButtonRemoveClick
   end
@@ -73,7 +75,10 @@ object FormAdvanced: TFormAdvanced
     Top = 96
     Width = 81
     Height = 25
+    Hint = 'Save changes and exit'
     Caption = 'Save && Exit'
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 3
     OnClick = ButtonSaveClick
   end
@@ -82,22 +87,19 @@ object FormAdvanced: TFormAdvanced
     Top = 144
     Width = 81
     Height = 25
+    Hint = 'Exit without saving'
     Caption = 'Cancel'
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 4
     OnClick = ButtonCancelClick
   end
   object EditKey: TEdit
-    Left = 40
+    Left = 200
     Top = 328
-    Width = 81
+    Width = 97
     Height = 21
     TabOrder = 5
-  end
-  object EditValue: TEdit
-    Left = 168
-    Top = 328
-    Width = 121
-    Height = 21
-    TabOrder = 6
+    OnKeyPress = EditKeyKeyPress
   end
 end
