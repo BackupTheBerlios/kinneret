@@ -49,10 +49,10 @@ HOMEFOUND=""
 echo "${BLUE}Searching for Kinneret's Home...${NORMAL}"
 
 # mount all NTFS directories RO
-for dir in `cat /etc/fstab | grep ntfs | cut -b 6-9`
-do
-	mount -t ntfs -o defaults,ro,user,uid=1000,iocharset=cp1255 /dev/$dir /mnt/$dir 2>&1
-done
+#for dir in `cat /etc/fstab | grep ntfs | cut -b 6-9`
+#do
+#	mount -t ntfs -o defaults,ro,user,uid=1000,iocharset=cp1255 /dev/$dir /mnt/$dir 2>&1
+#done
 
 # mount all vfat directories RW
 for dir in `cat /etc/fstab | grep vfat | cut -b 6-9`

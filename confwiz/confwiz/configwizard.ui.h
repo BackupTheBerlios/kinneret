@@ -81,10 +81,10 @@ void configwizard::onSelect()
 					*devptr = 0;
 
 					// Mount the device as rw
-					QString qCmd = QString("sudo mount ") + QString(device) + QString(" -o defaults,rw,user");
+//					QString qCmd = QString("sudo mount ") + QString(device) + QString(" -o defaults,rw,user");
 
 					// Same goes as above regarding KProcess...
-					system(qCmd);
+//					system(qCmd);
 
 					// Get size and freespace
 					system("df -Th > /tmp/.df");
