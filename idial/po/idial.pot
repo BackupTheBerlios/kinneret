@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2003-07-23 12:00+0300\n"
+"POT-Creation-Date: 2003-07-30 14:36+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,117 +15,35 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:26 main.cpp:39 idial.moc.cpp:34 idial.moc.cpp:42
-msgid "Idial"
-msgstr ""
-
-#: idialer.cpp:227
-msgid "Internet Dialer"
-msgstr ""
-
-#: idialer.cpp:228
-msgid "Connection"
-msgstr ""
-
-#: idialer.cpp:229
-msgid "Username"
-msgstr ""
-
-#: idialer.cpp:230
-msgid "Password"
-msgstr ""
-
-#: idialer.cpp:231
-msgid "Remember password (TODO)"
-msgstr ""
-
-#: idialer.cpp:232
-msgid "Actions"
-msgstr ""
-
-#: idialer.cpp:233
-msgid "Initialize"
-msgstr ""
-
-#: idialer.cpp:234
-msgid "Boot"
-msgstr ""
-
-#: idialer.cpp:235 idialer.cpp:237 idialer.ui.h:79
-msgid "Connect"
-msgstr ""
-
-#: idialer.cpp:236
-msgid "Disconnect"
-msgstr ""
-
-#: idialer.cpp:238
-msgid "Actions:"
-msgstr ""
-
-#: idialer.cpp:240
-msgid "List ISPs"
-msgstr ""
-
-#: idialer.cpp:241
-msgid "List Hardwares"
-msgstr ""
-
-#: idialer.cpp:242
-msgid "Get Info on Hardware"
-msgstr ""
-
-#: idialer.cpp:243
-msgid "Get Info on ISP"
-msgstr ""
-
-#: idialer.cpp:244
-msgid "Delete Current Connection"
-msgstr ""
-
-#: idialer.cpp:245
-msgid "Set Current Connection as Default"
-msgstr ""
-
-#: idialer.cpp:246
-msgid "Extract a Script from Current Connection"
-msgstr ""
-
-#: idialer.cpp:247
-msgid "Parameters"
-msgstr ""
-
-#: idialer.cpp:250 idialer.ui.h:139
-msgid "Advanced"
-msgstr ""
-
-#: idialer.cpp:253
-msgid "Go!"
-msgstr ""
-
-#: idialer.ui.h:23
+#: idialer.ui.h:24
 msgid "Cannot query default connection"
 msgstr ""
 
-#: idialer.ui.h:39
+#: idialer.ui.h:38
 msgid "Cannot query connections list"
 msgstr ""
 
-#: idialer.ui.h:73
+#: idialer.ui.h:72
 msgid "Exectuing..."
 msgstr ""
 
-#: idialer.ui.h:84
+#: idialer.ui.h:78
+msgid "Connect"
+msgstr ""
+
+#: idialer.ui.h:83
 msgid ""
 "\n"
 "Initializing..."
 msgstr ""
 
-#: idialer.ui.h:90
+#: idialer.ui.h:89
 msgid "Cannot initialize connection!"
 msgstr ""
 
-#: idialer.ui.h:92 idialer.ui.h:106 idialer.ui.h:120 idialer.ui.h:134
+#: idialer.ui.h:91 idialer.ui.h:106 idialer.ui.h:121 idialer.ui.h:136
+#: idialer.ui.h:162 idialer.ui.h:183 idialer.ui.h:204 idialer.ui.h:225
+#: idialer.ui.h:244 idialer.ui.h:265 idialer.ui.h:277
 msgid ""
 "\n"
 "Failed."
@@ -141,30 +59,104 @@ msgstr ""
 msgid "Cannot boot connection!"
 msgstr ""
 
-#: idialer.ui.h:112
+#: idialer.ui.h:113
 msgid ""
 "\n"
 "Connecting..."
 msgstr ""
 
-#: idialer.ui.h:118
+#: idialer.ui.h:119
 msgid "Cannot connect!"
 msgstr ""
 
-#: idialer.ui.h:126
+#: idialer.ui.h:128
 msgid ""
 "\n"
 "Disconnecting..."
 msgstr ""
 
-#: idialer.ui.h:132
+#: idialer.ui.h:134
 msgid "Cannot disconnect!"
 msgstr ""
 
-#: idialer.ui.h:145
+#: idialer.ui.h:142
+msgid "Advanced"
+msgstr ""
+
+#: idialer.ui.h:146 idialer.ui.h:301
+msgid "List ISPs"
+msgstr ""
+
+#: idialer.ui.h:160 idialer.ui.h:367
+msgid "Cannot get ISPs list!"
+msgstr ""
+
+#: idialer.ui.h:167 idialer.ui.h:310
+msgid "List Hardwares"
+msgstr ""
+
+#: idialer.ui.h:181
+msgid "Cannot get hardwares list!"
+msgstr ""
+
+#: idialer.ui.h:188 idialer.ui.h:324 idialer.ui.h:426
+msgid "Get Info on Hardware"
+msgstr ""
+
+#: idialer.ui.h:202 idialer.ui.h:223
+msgid "Cannot get hardware info!"
+msgstr ""
+
+#: idialer.ui.h:209 idialer.ui.h:348 idialer.ui.h:442
+msgid "Get Info on ISP"
+msgstr ""
+
+#: idialer.ui.h:230 idialer.ui.h:372
+msgid "Delete Current Connection"
+msgstr ""
+
+#: idialer.ui.h:232
+msgid "Are you sure you want to delete current connection?"
+msgstr ""
+
+#: idialer.ui.h:235 idialer.ui.h:256
+msgid ""
+"\n"
+"Canceled by user."
+msgstr ""
+
+#: idialer.ui.h:242
+msgid "Cannot delete connection!"
+msgstr ""
+
+#: idialer.ui.h:251 idialer.ui.h:381
+msgid "Set Current Connection as Default"
+msgstr ""
+
+#: idialer.ui.h:253
+msgid "Are you sure you want to set current connection to default?"
+msgstr ""
+
+#: idialer.ui.h:263 idialer.ui.h:275
+msgid "Cannot set connection to default!"
+msgstr ""
+
+#: idialer.ui.h:270 idialer.ui.h:390
+msgid "Extract a Script from Current Connection"
+msgstr ""
+
+#: idialer.ui.h:285
 msgid ""
 "\n"
 "Done."
+msgstr ""
+
+#: idialer.ui.h:343
+msgid "Cannot get hardware list!"
+msgstr ""
+
+#: main.cpp:26 main.cpp:39
+msgid "Idial"
 msgstr ""
 
 #: _translatorinfo.cpp:1

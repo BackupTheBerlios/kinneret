@@ -2,116 +2,32 @@
 # Itay 'z9u2K' Duvdevani <z9u2K@bezeqint.net>, 2003
 msgid ""
 msgstr ""
-""
-"Last-Translator: Itay 'z9u2K' Duvdevani <z9u2K@bezeqint.net>\n"
-"PO-Revision-Date: 2003-07-23 12:06+0300\n"
 "Project-Id-Version: he\n"
+"POT-Creation-Date: 2003-07-30 14:36+0300\n"
+"PO-Revision-Date: 2003-07-30 14:39+0300\n"
+"Last-Translator: Itay 'z9u2K' Duvdevani <z9u2K@bezeqint.net>\n"
 "Language-Team: Hebrew <livrix@il.org>\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.1\n"
 
-#: main.cpp:26 main.cpp:39 idial.moc.cpp:34 idial.moc.cpp:42
-msgid "Idial"
-msgstr "כלי החיוג לאינטרנט"
-
-#: idialer.cpp:227
-msgid "Internet Dialer"
-msgstr "חייגן האינטרנט"
-
-#: idialer.cpp:228
-msgid "Connection"
-msgstr "חיבור"
-
-#: idialer.cpp:229
-msgid "Username"
-msgstr "שם משתמש"
-
-#: idialer.cpp:230
-msgid "Password"
-msgstr "סיסמא"
-
-#: idialer.cpp:231
-msgid "Remember password (TODO)"
-msgstr "זכור סיסמא (מל\"ב)"
-
-#: idialer.cpp:232
-msgid "Actions"
-msgstr "פעולות"
-
-#: idialer.cpp:233
-msgid "Initialize"
-msgstr "הכן מערכת"
-
-#: idialer.cpp:234
-msgid "Boot"
-msgstr "אתחל"
-
-#: idialer.cpp:235 idialer.cpp:237 idialer.ui.h:79
-msgid "Connect"
-msgstr "התחבר"
-
-#: idialer.cpp:236
-msgid "Disconnect"
-msgstr "התנתק"
-
-#: idialer.cpp:238
-msgid "Actions:"
-msgstr "פעולות:"
-
-#: idialer.cpp:240
-msgid "List ISPs"
-msgstr "הצג רשימת ספקים"
-
-#: idialer.cpp:241
-msgid "List Hardwares"
-msgstr "הצג רשימת מודמים"
-
-#: idialer.cpp:242
-msgid "Get Info on Hardware"
-msgstr "הצג מידע אודות חומרה"
-
-#: idialer.cpp:243
-msgid "Get Info on ISP"
-msgstr "הצג מידע אודות ספק"
-
-#: idialer.cpp:244
-msgid "Delete Current Connection"
-msgstr "מחק חיבור נוכחי"
-
-#: idialer.cpp:245
-msgid "Set Current Connection as Default"
-msgstr "קבע חיבור נוכחי כברירת מחדל"
-
-#: idialer.cpp:246
-msgid "Extract a Script from Current Connection"
-msgstr "שלוף סקריפט מתוך חיבור"
-
-#: idialer.cpp:247
-msgid "Parameters"
-msgstr "פרמטרים"
-
-#: idialer.cpp:250 idialer.ui.h:139
-msgid "Advanced"
-msgstr "מתקדם"
-
-#: idialer.cpp:253
-msgid "Go!"
-msgstr "בצע!"
-
-#: idialer.ui.h:23
+#: idialer.ui.h:24
 msgid "Cannot query default connection"
 msgstr "שגיאה בקבלת רשימת ספקים"
 
-#: idialer.ui.h:39
+#: idialer.ui.h:38
 msgid "Cannot query connections list"
 msgstr "שגיאה בקבלת רשימת חיבורים"
 
-#: idialer.ui.h:73
+#: idialer.ui.h:72
 msgid "Exectuing..."
 msgstr "מבצע..."
 
-#: idialer.ui.h:84
+#: idialer.ui.h:78
+msgid "Connect"
+msgstr "התחבר"
+
+#: idialer.ui.h:83
 msgid ""
 "\n"
 "Initializing..."
@@ -119,11 +35,13 @@ msgstr ""
 "\n"
 "מגדיר הגדרות מערכת..."
 
-#: idialer.ui.h:90
+#: idialer.ui.h:89
 msgid "Cannot initialize connection!"
 msgstr "שגיאה בעת אתחול מערכת!"
 
-#: idialer.ui.h:92 idialer.ui.h:106 idialer.ui.h:120 idialer.ui.h:134
+#: idialer.ui.h:91 idialer.ui.h:106 idialer.ui.h:121 idialer.ui.h:136
+#: idialer.ui.h:162 idialer.ui.h:183 idialer.ui.h:204 idialer.ui.h:225
+#: idialer.ui.h:244 idialer.ui.h:265 idialer.ui.h:277
 msgid ""
 "\n"
 "Failed."
@@ -143,7 +61,7 @@ msgstr ""
 msgid "Cannot boot connection!"
 msgstr "שגיאה בעת אתחול חיבור!"
 
-#: idialer.ui.h:112
+#: idialer.ui.h:113
 msgid ""
 "\n"
 "Connecting..."
@@ -151,11 +69,11 @@ msgstr ""
 "\n"
 "מתחבר..."
 
-#: idialer.ui.h:118
+#: idialer.ui.h:119
 msgid "Cannot connect!"
 msgstr "שגיאה בעת התחברות!"
 
-#: idialer.ui.h:126
+#: idialer.ui.h:128
 msgid ""
 "\n"
 "Disconnecting..."
@@ -163,17 +81,93 @@ msgstr ""
 "\n"
 "מתנתק..."
 
-#: idialer.ui.h:132
+#: idialer.ui.h:134
 msgid "Cannot disconnect!"
 msgstr "שגיאה בעת התנתקות!"
 
-#: idialer.ui.h:145
+#: idialer.ui.h:142
+msgid "Advanced"
+msgstr "מתקדם"
+
+#: idialer.ui.h:146 idialer.ui.h:301
+msgid "List ISPs"
+msgstr "הצג רשימת ספקים"
+
+#: idialer.ui.h:160 idialer.ui.h:367
+msgid "Cannot get ISPs list!"
+msgstr "שגיאה בקבלת רשימת ספקים"
+
+#: idialer.ui.h:167 idialer.ui.h:310
+msgid "List Hardwares"
+msgstr "הצג רשימת מודמים"
+
+#: idialer.ui.h:181
+msgid "Cannot get hardwares list!"
+msgstr "שגיאה בעת קבלת רשימת חומרה"
+
+#: idialer.ui.h:188 idialer.ui.h:324 idialer.ui.h:426
+msgid "Get Info on Hardware"
+msgstr "הצג מידע אודות חומרה"
+
+#: idialer.ui.h:202 idialer.ui.h:223
+msgid "Cannot get hardware info!"
+msgstr "שגיאה בעת קבלת מידע אודות חומרה"
+
+#: idialer.ui.h:209 idialer.ui.h:348 idialer.ui.h:442
+msgid "Get Info on ISP"
+msgstr "הצג מידע אודות ספק"
+
+#: idialer.ui.h:230 idialer.ui.h:372
+msgid "Delete Current Connection"
+msgstr "מחק חיבור נוכחי"
+
+#: idialer.ui.h:232
+msgid "Are you sure you want to delete current connection?"
+msgstr "האם אתם בטוחים כי ברצונכם למחוק את החיבור הנוכחי?"
+
+#: idialer.ui.h:235 idialer.ui.h:256
+msgid ""
+"\n"
+"Canceled by user."
+msgstr ""
+"\n"
+"בוטל ע\"י המשתמש."
+
+#: idialer.ui.h:242
+msgid "Cannot delete connection!"
+msgstr "שגיאה בעת מחיקת חיבור!"
+
+#: idialer.ui.h:251 idialer.ui.h:381
+msgid "Set Current Connection as Default"
+msgstr "קבע חיבור נוכחי כברירת מחדל"
+
+#: idialer.ui.h:253
+msgid "Are you sure you want to set current connection to default?"
+msgstr "האם אתם בטוחים כי ברצונכם לקבוע חיבור נוכחי כברירת מחדל?"
+
+#: idialer.ui.h:263 idialer.ui.h:275
+msgid "Cannot set connection to default!"
+msgstr "שגיאה בעת קביעת חיבור כברירת מחדל!"
+
+#: idialer.ui.h:270 idialer.ui.h:390
+msgid "Extract a Script from Current Connection"
+msgstr "שלוף סקריפט מתוך חיבור"
+
+#: idialer.ui.h:285
 msgid ""
 "\n"
 "Done."
 msgstr ""
 "\n"
 "בוצע."
+
+#: idialer.ui.h:343
+msgid "Cannot get hardware list!"
+msgstr "שגיאה בעת קבלת רשימת חומרה!"
+
+#: main.cpp:26 main.cpp:39
+msgid "Idial"
+msgstr "כלי החיוג לאינטרנט"
 
 #: _translatorinfo.cpp:1
 msgid ""
@@ -186,4 +180,40 @@ msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
 msgstr "z9u2k@linux-kinneret.org"
+
+#~ msgid "Internet Dialer"
+#~ msgstr "חייגן האינטרנט"
+
+#~ msgid "Connection"
+#~ msgstr "חיבור"
+
+#~ msgid "Username"
+#~ msgstr "שם משתמש"
+
+#~ msgid "Password"
+#~ msgstr "סיסמא"
+
+#~ msgid "Remember password (TODO)"
+#~ msgstr "זכור סיסמא (מל\"ב)"
+
+#~ msgid "Actions"
+#~ msgstr "פעולות"
+
+#~ msgid "Initialize"
+#~ msgstr "הכן מערכת"
+
+#~ msgid "Boot"
+#~ msgstr "אתחל"
+
+#~ msgid "Disconnect"
+#~ msgstr "התנתק"
+
+#~ msgid "Actions:"
+#~ msgstr "פעולות:"
+
+#~ msgid "Parameters"
+#~ msgstr "פרמטרים"
+
+#~ msgid "Go!"
+#~ msgstr "בצע!"
 
