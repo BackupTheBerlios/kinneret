@@ -82,7 +82,7 @@ Click here for English documentation
 <play=he/man_ooo_basic.html>
 מדריך שימוש בסיסי בערכת היישומים המשרדיים OpenOffice.org [טיוטה]
 <play=he/man_ooo_advanced.html>
-מדריך שימוש מתקדם בערכת היישומים המשרדיים OpenOffice.org [טיוטה]
+מדריך שימוש מתקדם בערכת היישומים המשרדיים OpenOffice.org
 <null>
 מדריך עיבוד תמונות עם The Gimp
  <play=he/man_cheese.html>
