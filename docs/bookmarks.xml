@@ -8,6 +8,9 @@
   <bookmark icon="favicons/www.google.co.il" href="http://www.google.co.il/" >
    <title>Google (עברית)</title>
   </bookmark>
+  <bookmark icon="favicons/start.msn.co.il" href="http://start.msn.co.il/" >
+   <title>Start.co.il - The best place to start!</title>
+  </bookmark>
   <bookmark icon="folder" href="http://www.parpar.net/" >
    <title>פרפר- אינדקס אתרים ויזואלי</title>
   </bookmark>
@@ -19,6 +22,9 @@
   </bookmark>
   <bookmark icon="favicons/images.nana.co.il_Common_Includes_Favicon" href="http://www.nana.co.il/" >
    <title>Nana</title>
+  </bookmark>
+  <bookmark icon="www" href="http://www.one.co.il/" >
+   <title>ONE - Israel's Sports Portal</title>
   </bookmark>
  </folder>
  <folder folded="no" icon="bookmark_folder" >
@@ -48,8 +54,23 @@
    <title>חמדע</title>
   </bookmark>
  </folder>
- <folder folded="yes" >
+ <folder folded="no" >
   <title>מקורות מידע</title>
+  <folder folded="no" icon="bookmark_folder" >
+   <title>מילונים</title>
+   <bookmark icon="www" href="http://hebrew-terms.huji.ac.il/" >
+    <title>האקדמיה ללשון העברית - מאגר המונחים</title>
+   </bookmark>
+   <bookmark icon="favicons/dictionary.reference.com" href="http://dictionary.reference.com/" >
+    <title>Dictionary.com</title>
+   </bookmark>
+   <bookmark icon="www" href="http://www.sivanbryce.co.il/milon/index.asp" >
+    <title>מאגר למונחי מחשב</title>
+   </bookmark>
+   <bookmark icon="www" href="http://milon.morfix.co.il/MorDictFirstPage.htm" >
+    <title>מילון מורפיקס</title>
+   </bookmark>
+  </folder>
   <folder folded="no" icon="bookmark_folder" >
    <title>באנגלית</title>
    <bookmark icon="favicons/www.wikipedia.org" href="http://www.wikipedia.org/" >
@@ -82,6 +103,9 @@
   </folder>
   <bookmark icon="favicons/he.wikipedia.org" href="http://he.wikipedia.org/" >
    <title>עמוד ראשי - האנציקלופדיה החופשית</title>
+  </bookmark>
+  <bookmark icon="www" href="http://benyehuda.org/" >
+   <title>פרויקט בן-יהודה</title>
   </bookmark>
   <bookmark icon="www" href="http://www.bendov.info/heb/" >
    <title>Yoav Ben-Dov hebrew index</title>
@@ -129,13 +153,19 @@
    <title>Fish Eye : Movie reviews without the boring bits</title>
   </bookmark>
  </folder>
- <folder folded="yes" >
+ <folder folded="no" >
   <title>לינוקס</title>
+  <bookmark icon="www" href="http://www.hamakor.org.il/" >
+   <title>המקור - עמותה ישראלית לתוכנה חופשית</title>
+  </bookmark>
   <bookmark icon="favicons/www.whatsup.co.il" href="http://www.whatsup.co.il/" >
    <title>Whatsup - פורטל הלינוקס העברי</title>
   </bookmark>
   <bookmark icon="favicons/www.penguin.org.il_images_tux16-16" href="http://www.penguin.org.il/" >
    <title>הפינגווין</title>
+  </bookmark>
+  <bookmark icon="favicons/www.tapuz.co.il" href="http://www.tapuz.co.il/tapuzforum/main/forumpage.asp?id=236" >
+   <title>לינוקס - פורום</title>
   </bookmark>
   <bookmark icon="www" href="http://linux.israel.net/" >
    <title>Linux.Israel.Net</title>
@@ -146,23 +176,11 @@
   <bookmark icon="favicons/www.linuxisrael.co.il_images_icon" href="http://www.linuxisrael.co.il/" >
    <title>Linux Israel</title>
   </bookmark>
-  <folder folded="yes" icon="bookmark_folder" >
-   <title>תוכנות</title>
-   <bookmark icon="www" href="http://www.openoffice.org.il/" >
-    <title>Open Office</title>
-   </bookmark>
-   <bookmark icon="favicons/www.kde.org_il_i18n-il" href="http://www.kde.org/il/" >
-    <title>KDE ישראל</title>
-   </bookmark>
-   <bookmark icon="favicons/www.mozilla.org.il_images_mozilla-16" href="http://www.mozilla.org.il/" >
-    <title>mozilla.org.il: Hebrew Mozilla</title>
-   </bookmark>
-  </folder>
  </folder>
- <bookmark icon="www" href="http://linux-kinneret.org/index.php" >
+ <bookmark icon="www" href="http://linux-kinneret.org/" >
   <title>כנרת</title>
  </bookmark>
- <bookmark icon="favicons/forums.gentoo.org" href="http://forums.gentoo.org/viewtopic.php?t=20175" >
-  <title>Gentoo Forums :: View topic - Kernel SCSI emulation for CD burning - the truth</title>
+ <bookmark icon="www" href="http://www.edulink.co.il/" >
+  <title>אדיולינק קישורים חינוכים</title>
  </bookmark>
 </xbel>
