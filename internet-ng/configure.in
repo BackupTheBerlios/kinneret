@@ -8,4 +8,8 @@ AC_OUTPUT(Makefile \
           src/Makefile \
           src/core/Makefile \
           src/core/resolvers/Makefile \
-          src/core/utils/Makefile)
+          src/core/utils/Makefile \
+          src/tests/Makefile \
+          src/tests/core/Makefile \
+          src/tests/core/resolvers/Makefile \
+          )
