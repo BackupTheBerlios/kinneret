@@ -13,6 +13,7 @@ object parinst2: Tparinst2
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnActivate = FormActivate
   OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
@@ -55,7 +56,7 @@ object parinst2: Tparinst2
       Top = 120
       Width = 297
       Height = 17
-      Caption = 'Desktop shortcut (Windows 95,98,ME)'
+      Caption = 'Desktop shortcut (Windows 95,98)'
       TabOrder = 0
     end
     object CBMenu: TTntCheckBox

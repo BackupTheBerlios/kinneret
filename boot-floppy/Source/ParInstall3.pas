@@ -67,6 +67,25 @@ begin
     source.Add(cdrom+'\boot\VMLINUZ');
     destination.add('c:\boot\VMLINUZ');
   end;
+  if osis95 and (createmenu or createShortcut) then
+  begin
+    source.Add(cdrom+'\boot\loadlin.exe');
+    destination.add('c:\boot\loadlin.exe');
+    source.Add(cdrom+'\boot\linux_9x.bat');
+    destination.add('c:\boot\linux_9x.bat');
+    source.Add(cdrom+'\boot\loadlin.par');
+    destination.add('c:\boot\loadlin.par');
+    source.Add(cdrom+'\boot\Kinneret.pif');
+    destination.add('c:\boot\Kinneret.pif');
+    source.Add(cdrom+'\boot\Kinneret.ico');
+    destination.add('c:\boot\Kinneret.ico');
+    if createShortcut then begin
+      source.Add(cdrom+'\boot\Kinneret.pif');
+      destination.add(MyDesktopFolder+'\Kinneret.ico');
+    end;
+
+  end;
+
   //not enough space in C: (rare)
   if (CreateMenu or CreateShortcut) and (diskFree(3)<2097152) {2MB} then
   begin

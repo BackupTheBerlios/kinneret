@@ -124,9 +124,9 @@ DLL=0
 Locale=1037
 CodePage=1255
 [Version Info Keys]
-CompanyName=
-FileDescription=
-FileVersion=0.0.2.0
+CompanyName=GNU/Linux Kinneret
+FileDescription=Create a boot-floppy and install Kinneret to your Hard-Drive
+FileVersion=0.7
 InternalName=
 LegalCopyright=
 LegalTrademarks=

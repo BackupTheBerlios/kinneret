@@ -78,7 +78,7 @@ end;
 
 procedure TWForm.FormCreate(Sender: TObject);
 begin
-
+  if not getOS then exit;
   WriteSucceed:=false;
 
   Retranslator:=gnugettext.DefaultInstance.TP_CreateRetranslator;

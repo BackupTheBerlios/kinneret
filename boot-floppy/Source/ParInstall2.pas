@@ -25,6 +25,7 @@ type
       Shift: TShiftState; X, Y: Integer);
     procedure ButtonCancelClick(Sender: TObject);
     procedure ButtonStartClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,13 +51,18 @@ begin
   'continues to load from the Hard-Drive automatically.'+#10#13+
   'However, if you rather not use the CD at all, You can'+#10#13+
   'choose one or more of the next options (recommended) :'));
-  if osis95 then
+  if osisMe then
+  begin
+    CBDesktop.Checked:=false;
+    CBDesktop.Enabled:=false;
+    CBMenu.Checked:=false;
+    CBMenu.Enabled:=true;
+  end else if osis95 then
   begin
     CBDesktop.Checked:=true;
     CBDesktop.Enabled:=true;
     CBMenu.Checked:=false;
     CBMenu.Enabled:=true;
-
   end else  //is os NT
   begin
     CBDesktop.Checked:=false;
@@ -152,6 +158,18 @@ begin
   parInst3.createShortcut:=CBDesktop.Checked;
   parInst3.showModal;
   close;
+end;
+
+procedure Tparinst2.FormActivate(Sender: TObject);
+begin
+  if osIsMe then
+  showWarning(MSG, pWideChar(_(
+  'You are using Windows Me.'+#10#13+
+  'Unfortunately Microsoft disabled Real Dos-Mode in this version,'+#10#13+
+  'so you won''t be able to start Kinneret without the Kinneret CD,'+#10#13+
+  'or Kinneret Boot-Floppy.'+#10#13+#10#13+
+  'To learn more, search Google for : Windows Millenium Real Dos.')));
+
 end;
 
 end.
