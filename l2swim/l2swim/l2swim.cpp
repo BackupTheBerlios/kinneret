@@ -70,17 +70,17 @@ MainWindow::MainWindow ( const char* name, const QString spage) : KMainWindow ( 
   toolbar->insertButton(BarIcon("about"), TOOLBAR_ID_ABOUT,
                           SIGNAL(clicked(int)),this,SLOT(about()),TRUE,
                           i18n("About l2swim"));
-
-  toolbar->alignItemRight(TOOLBAR_ID_ABOUT);
-  addToolBar(toolbar);
+	toolbar->alignItemRight(TOOLBAR_ID_ABOUT);
+	addToolBar(toolbar);
   connect( html->browserExtension(),
         SIGNAL( openURLRequest( const KURL &, const KParts::URLArgs & ) ),
         this, SLOT( openURLRequest(const KURL &, const KParts::URLArgs & ) ) );
 
   setCentralWidget( hbox );
   resize(maximumSize());
-
-  setAutoSaveSettings("MainWindow",true);
+  
+	setAutoSaveSettings("MainWindow",true);
+	toolbar->setIconText(KToolBar::IconTextBottom);
 }
 
 void MainWindow::firstload()
