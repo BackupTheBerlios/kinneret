@@ -8,113 +8,97 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
-"POT-Creation-Date: 2003-04-17 15:45+0300\n"
-"PO-Revision-Date: 2003-04-17 15:50+0300\n"
+"POT-Creation-Date: 2003-04-29 17:17+0300\n"
+"PO-Revision-Date: 2003-04-29 21:36+0300\n"
 "Last-Translator: Itay 'z9u2K' Duvdevani <z9u2K@bezeqint.net>\n"
 "Language-Team: Hebrew <livrix@il.org>\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0\n"
 
-#: main.cpp:35
-msgid "Configuration Wizard"
-msgstr "אשף ההגדרות"
-
-#: main.cpp:62 configwizard.cpp:1534
-msgid "partition"
-msgstr "מחיצת עבודה"
-
-#: main.cpp:63 configwizard.cpp:1539
-msgid "swap"
-msgstr "קובץ החלפה"
-
-#: main.cpp:64 configwizard.cpp:1544
-msgid "homedir"
-msgstr "ספריית הבית"
-
-#: main.cpp:65 configwizard.cpp:1547
-msgid "conclusion"
-msgstr "סיכום פעולה"
-
-#: main.cpp:66 configwizard.cpp:1552
-msgid "fonts"
-msgstr "גופנים"
-
-#: main.cpp:67 configwizard.cpp:1556
-msgid "whatsnext?"
-msgstr "מה הלאה?"
-
-#: main.cpp:111 confwiz.moc.cpp:34 confwiz.moc.cpp:42
-msgid "Confwiz"
-msgstr "אשף הגדרת <i>גנו/לינוקס-כנרת</i>"
-
-#: configwizard.ui.h:49
+#: configwizard.ui.h:53
 msgid "Cannot open /etc/fstab"
 msgstr "שגיאה בפתיחת etc/fstab/"
 
-#: configwizard.ui.h:53
+#: configwizard.ui.h:57
 msgid "Device"
 msgstr "מחיצה"
 
-#: configwizard.ui.h:54
+#: configwizard.ui.h:58
 msgid "Size"
 msgstr "גודל"
 
-#: configwizard.ui.h:55
+#: configwizard.ui.h:59
 msgid "Free (% In Use)"
 msgstr "שטח פנוי (% בשימוש)"
 
-#: configwizard.ui.h:85
+#: configwizard.ui.h:92
 msgid "Cannot get device status, skipping"
 msgstr "שגיאה בהשגת מצב ההתקן, מדלג"
 
-#: configwizard.ui.h:89 configwizard.ui.h:90
+#: configwizard.ui.h:96 configwizard.ui.h:97
 msgid "N/A"
 msgstr "לא-זמין"
 
-#: configwizard.ui.h:91
+#: configwizard.ui.h:98
 msgid "N/A (N/A)"
 msgstr "לא-זמין (לא-זמין)"
 
-#: configwizard.ui.h:155
+#: configwizard.ui.h:191 configwizard.ui.h:332
 msgid "Cannot get device status"
 msgstr "שגיאה בהשגת מצב התקן, מדלג"
 
-#: configwizard.ui.h:204
+#: configwizard.ui.h:240
 msgid "Cannot get memory status"
 msgstr "שגיאה בהשגת מצב הזיכרון"
 
-#: configwizard.ui.h:227
+#: configwizard.ui.h:264
 msgid ""
 "You have not have enough free space on any of your hard drives,\n"
-"You need at least 460MB free."
+"You need at least 660MB free."
 msgstr ""
 "אין לך מספיק מקום פנוי על אף אחת מהמחיצות שנמצאו.\n"
-"נדרשים לפחות 460 מגה-בייטים של שטח דיסק פנויים."
+"נדרשים לפחות 660 מגה-בייטים של שטח דיסק פנויים."
 
-#: configwizard.ui.h:291
+#: configwizard.ui.h:370
+msgid ""
+"You do not have enough free space on the selected partition,\n"
+"Please go back and select another."
+msgstr "לא נבחרה מחיצה, יש לחזור ולבחור אחת."
+
+#: configwizard.ui.h:389
+msgid "Swap file too big, swap size reduced to %1"
+msgstr "קובץ ההחלפה גדול מדי למחיצה שנבחרה, משנה את גודלו ל- %1 מ\"ב."
+
+#: configwizard.ui.h:397
 msgid ""
 "You have not selected a partition,\n"
 "please go back and select one."
-msgstr "לא נבחר התקן. יש לחזור ולבחור אחד."
+msgstr "לא נבחרה מחיצה, יש לחזור ולבחור אחת."
 
-#: configwizard.ui.h:312
+#: configwizard.ui.h:418
 msgid "Name"
 msgstr "שם"
 
-#: configwizard.ui.h:364
+#: configwizard.ui.h:427
+msgid "home_dir_warning"
+msgstr ""
+"לא נבחרה תיקיית בית, במקרה זה האשף קבע את תיקיית הבית בשורש המחיצה אותה "
+"בחרת, אם ברצונך לקבוע תיקייה אחרת, יש ללחוץ על \"הקודם\"."
+
+#: configwizard.ui.h:467
 msgid "Path"
 msgstr "נתיב"
 
-#: configwizard.ui.h:425
+#: configwizard.ui.h:534
 msgid "Choose a directory the containes *.ttf files"
 msgstr "יש לבחור תיקיה בה נמצאים גופני TrueType בעלי סיומת ttf."
 
-#: configwizard.ui.h:439
+#: configwizard.ui.h:548
 msgid "Are you sure you want to remove the directory\n"
-msgstr "אתם בטוחים כי ברצונכם למחוק את המחיצה\n"
+msgstr "האם אתם בטוחים כי ברצונכם למחוק את המחיצה\n"
 
-#: configwizard.ui.h:440
+#: configwizard.ui.h:549
 msgid ""
 "\n"
 "From the list?"
@@ -122,42 +106,113 @@ msgstr ""
 "\n"
 "מהרשימה?"
 
-#: configwizard.ui.h:442
+#: configwizard.ui.h:551
 msgid "Are you sure?"
 msgstr "האם אתם בטוחים?"
+
+#: main.cpp:35
+msgid "Configuration Wizard"
+msgstr "אשף ההגדרות"
+
+#: main.cpp:62 configwizard.cpp:1514
+msgid "partition"
+msgstr "מחיצת עבודה"
+
+#: main.cpp:63 configwizard.cpp:1519
+msgid "swap"
+msgstr "קובץ החלפה"
+
+#: main.cpp:64 configwizard.cpp:1524
+msgid "homedir"
+msgstr "ספריית הבית"
+
+#: main.cpp:65 configwizard.cpp:1527
+msgid "conclusion"
+msgstr "סיכום פעולה"
+
+#: main.cpp:66 configwizard.cpp:1532
+msgid "fonts"
+msgstr "גופנים"
+
+#: main.cpp:67 configwizard.cpp:1536
+msgid "whatsnext?"
+msgstr "מה הלאה?"
+
+#: main.cpp:112 confwiz.moc.cpp:34 confwiz.moc.cpp:42
+msgid "Confwiz"
+msgstr "אשף הגדרת <i>גנו/לינוקס-כנרת</i>"
 
 #: help.cpp:134
 msgid "htmlhelp"
 msgstr ""
-"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\"><b><u>אשף ההגדרות - עזרה</u></b></font></font></p>"
-"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\"><u>סוגי הגדרות</u></font></font></p>"
-"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\"><b>אוטומטית</b></font><font size=\"3\"> - בוחרת את המחיצה עם המקום הפנוי הרב ביותר, קובעת את ספריית המסמכים לשורשה ויוצרת קובץ החלפה כך שישארו לפחות 100 מ&quot;ב פנויים על המחיצה ובכל מקרה לא יותר גדול מ- 256 מ&quot;ב. ממולץ ביותר לבחור באפשרות זו.</font></font></p>"
-"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\"><b>ללא</b></font><font size=\"3\"> - לא מתבצעות הגדרות כלל, לא תיווצר תיקיית בית, קובץ החלפה או אינדקס גופנים. אפשרות זו לא מאפשרת שמירה של מסמכים והגדרות ואינה ממולצת כיוון שהיא תגרום לביצועים עלובים מצד המערכת על מערכות שאינן חזקות יחסית.</font></font></p>"
-"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\"><b>מתקדם</b></font><font size=\"3\"> - מאפשר קביעה ידנית של מחיצת העבודה, תיקיית העבודה וגודל קובץ ההחלפה. אפשרות זו ממולצת לשימושם של מומחים בלבד.</font></font></p>"
-"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\"><u>שיטת מספור הכוננים והמחיצות תחת לינוקס</u></font></font></p>"
-"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\">בלינוקס מספור הכוננים והמחיצות אינו כמו בחלונות ע&quot;פ אותיות (C, D וכו'). בלינוקס, המספור מבוצע לפי המבנה הפיסי של המחשב ושל הדיסק. כל כונן קשיח מקבל קידומת hd. קידומת זו מציינת כי מדובר בכונן קשיח. לאחר מכן באה אחת מארבע האותיות a, b, c וא d, המסמלות את המקום אליו מחובר הכונ הקשיח למחשב. hda הוא הכונן הראשון המחובר לבקר ה- IDE ונקרא גם ה- Primary Master. הכונן hdb הוא הכונן השני ומכונה גם Primary Slave, המספור רץ כך ש- c ו- d מסמלים את ה- Secondary Master ו- Secondary Slave בהתאמה. לאחר מכן באה סיפרה, המסמלת את המחיצה בדיסק החל מהסיפרה 1. hda1 היא המחיצה הראשונה על הדיסק הראשון. hda2 היא המחיצה השניה על הדיסק הראשון. hdb4 היא המחיצה הרביעית על הדיסק השני.</font></font></p>"
-"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\"><u>איך להמיר מהצגת לינוקס (hda1) להצגת חלונות (C, D)</u></font><font size=\"3\">?</font></font></p>"
-"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\">אין שיטה בדוקה, כיוון שחלונות ממפה את הכוננים כראות עיניה וללא התחשבות בסדרם הפיסי של הכוננים והמחיצות. ברוב מערכות החלונות, המספור הרץ של מחיצות חלונות יתאים למספור הרץ של מחיצות הלינוקס, כלומר כונן C יהיה hda1, כונן D יהיה hda2 או hdb1 (תלוי במספר המחיצות על הדיסק הראשון). למרות זאת, ייתכנו מערכות בהן שיטה זו אינה תעבוד כיוון שחלונות מיפתה את המחיצות אחרת, במערכות כאלה לא ניתן להמיר באופן פשוט את התצוגות ויש לנחש באיזה מחיצה מדובר ע&quot;פ תוכנה. אשף ההגדרות מציג את הייצוג </font><font size=\"3\"><b>המשוער</b></font><font size=\"3\"> של מחיצות החלונות ע&quot;פ שיטת המספור הרץ שאמורה להתאים לרוב המערכות.</font></font></p>"
-"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\"><u>אשף ההגדרות האישיות</u></font></font></p>"
-"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\">אשף זה יאפשר התאמה אישית של &quot;כנרת&quot; לאופייך. צבעי המערכת, צליליה, טפט שולחן העבודה וכו'. שלב זה אינו חובה וניתן לדלג עליו ע&quot;י ניקוי התיבה המתאימה בשלב האחרון.</font></font></p>"
+"<p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3"
+"\"><b><u>אשף ההגדרות - עזרה</u></b></font></font></p><p align=\"right\" dir="
+"\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\"><u>סוגי הגדרות</u></"
+"font></font></p><p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2"
+"\"><font size=\"3\"><b>אוטומטית</b></font><font size=\"3\"> - בוחרת את "
+"המחיצה עם המקום הפנוי הרב ביותר, קובעת את ספריית המסמכים לשורשה ויוצרת קובץ "
+"החלפה כך שישארו לפחות 300 מ&quot;ב פנויים על המחיצה ובכל מקרה לא יותר גדול "
+"מ- 256 מ&quot;ב. ממולץ ביותר לבחור באפשרות זו.</font></font></p><p align="
+"\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3"
+"\"><b>ללא</b></font><font size=\"3\"> - לא מתבצעות הגדרות כלל, לא תיווצר "
+"תיקיית בית, קובץ החלפה או אינדקס גופנים. אפשרות זו לא מאפשרת שמירה של מסמכים "
+"והגדרות ואינה ממולצת כיוון שהיא תגרום לביצועים עלובים מצד המערכת על מערכות "
+"שאינן חזקות יחסית.</font></font></p><p align=\"right\" dir=\"rtl\"><font "
+"face=\"Arial\" size=\"2\"><font size=\"3\"><b>מתקדם</b></font><font size=\"3"
+"\"> - מאפשר קביעה ידנית של מחיצת העבודה, תיקיית העבודה וגודל קובץ ההחלפה. "
+"אפשרות זו ממולצת לשימושם של מומחים בלבד.</font></font></p><p align=\"right\" "
+"dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\"><u>שיטת מספור "
+"הכוננים והמחיצות תחת לינוקס</u></font></font></p><p align=\"right\" dir=\"rtl"
+"\"><font face=\"Arial\" size=\"2\"><font size=\"3\">בלינוקס מספור הכוננים "
+"והמחיצות אינו כמו בחלונות ע&quot;פ אותיות (C, D וכו'). בלינוקס, המספור מבוצע "
+"לפי המבנה הפיסי של המחשב ושל הדיסק. כל כונן קשיח מקבל קידומת hd. קידומת זו "
+"מציינת כי מדובר בכונן קשיח. לאחר מכן באה אחת מארבע האותיות a, b, c וא d, "
+"המסמלות את המקום אליו מחובר הכונ הקשיח למחשב. hda הוא הכונן הראשון המחובר "
+"לבקר ה- IDE ונקרא גם ה- Primary Master. הכונן hdb הוא הכונן השני ומכונה גם "
+"Primary Slave, המספור רץ כך ש- c ו- d מסמלים את ה- Secondary Master ו- "
+"Secondary Slave בהתאמה. לאחר מכן באה סיפרה, המסמלת את המחיצה בדיסק החל "
+"מהסיפרה 1. hda1 היא המחיצה הראשונה על הדיסק הראשון. hda2 היא המחיצה השניה על "
+"הדיסק הראשון. hdb4 היא המחיצה הרביעית על הדיסק השני.</font></font></p><p "
+"align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3"
+"\"><u>איך להמיר מהצגת לינוקס (hda1) להצגת חלונות (C, D)</u></font><font size="
+"\"3\">?</font></font></p><p align=\"right\" dir=\"rtl\"><font face=\"Arial\" "
+"size=\"2\"><font size=\"3\">אין שיטה בדוקה, כיוון שחלונות ממפה את הכוננים "
+"כראות עיניה וללא התחשבות בסדרם הפיסי של הכוננים והמחיצות. ברוב מערכות "
+"החלונות, המספור הרץ של מחיצות חלונות יתאים למספור הרץ של מחיצות הלינוקס, "
+"כלומר כונן C יהיה hda1, כונן D יהיה hda2 או hdb1 (תלוי במספר המחיצות על "
+"הדיסק הראשון). למרות זאת, ייתכנו מערכות בהן שיטה זו אינה תעבוד כיוון שחלונות "
+"מיפתה את המחיצות אחרת, במערכות כאלה לא ניתן להמיר באופן פשוט את התצוגות ויש "
+"לנחש באיזה מחיצה מדובר ע&quot;פ תוכנה. אשף ההגדרות מציג את הייצוג </"
+"font><font size=\"3\"><b>המשוער</b></font><font size=\"3\"> של מחיצות "
+"החלונות ע&quot;פ שיטת המספור הרץ שאמורה להתאים לרוב המערכות.</font></font></"
+"p><p align=\"right\" dir=\"rtl\"><font face=\"Arial\" size=\"2\"><font size="
+"\"3\"><u>אשף ההגדרות האישיות</u></font></font></p><p align=\"right\" dir="
+"\"rtl\"><font face=\"Arial\" size=\"2\"><font size=\"3\">אשף זה יאפשר התאמה "
+"אישית של &quot;כנרת&quot; לאופייך. צבעי המערכת, צליליה, טפט שולחן העבודה "
+"וכו'. שלב זה אינו חובה וניתן לדלג עליו ע&quot;י ניקוי התיבה המתאימה בשלב "
+"האחרון.</font></font></p>"
 
 #: help.cpp:135
 msgid "Return"
 msgstr "חזרה"
 
-#: pleasewait.cpp:102
+#: pleasewait.cpp:101
 msgid "Configuring..."
-msgstr "מגדיר הגדרות..."
+msgstr ""
+"איתחול קבצים והגדרות הנדרשים להפעלת המערכת \n"
+"אנא המתינו, מגדיר הגדרות מערכת - יש להמתין דקות אחדות (תלוי במהירות המחשב "
+"שלך) לאיתחול קבצים והגדרות הנדרשים להפעלת המערכת. העכבר עלול להגיב באיטיות "
+"בשלב זה"
 
-#: pleasewait.cpp:103
+#: pleasewait.cpp:102
 msgid "Please wait, configuring..."
 msgstr "אנא המתינו, מגדיר הגדרות מערכת..."
 
-#: configwizard.cpp:1519
+#: configwizard.cpp:1499
 msgid "Welcome to Kinneret!"
 msgstr "ברוכים הבאים ל<i>גנו/לינוקס כנרת</i>!"
 
-#: configwizard.cpp:1520
+#: configwizard.cpp:1500
 msgid ""
 "nicemeeting_main\n"
 "here we will put the \"nice to meet you\" text at runtime."
@@ -181,11 +236,11 @@ msgstr ""
 "למשתמשים לא מנוסים להמתין לשחרור הגרסה הרשמית והמלאה. מידע אודות שחרור הגרסה "
 "הרשמית יפורסם באתר הפרוייקט."
 
-#: configwizard.cpp:1522
+#: configwizard.cpp:1502
 msgid "nicetomeet"
 msgstr "נעים להכיר"
 
-#: configwizard.cpp:1523
+#: configwizard.cpp:1503
 msgid ""
 "this is your license, and this is your <a href=\"/home/z9u2K/projects/"
 "kinneret/licenses/gpl_heb.html\">GPL</a>."
@@ -220,11 +275,11 @@ msgstr ""
 "i> שייכות ליוצריהם והן מוגנות בהתאם לחוקי קניין רוחני וזכויות יוצרים אשר "
 "תקפים לגבי מוצרי תוכנה."
 
-#: configwizard.cpp:1524
+#: configwizard.cpp:1504
 msgid "license"
 msgstr "רשיון שימוש"
 
-#: configwizard.cpp:1525
+#: configwizard.cpp:1505
 msgid "setuptype_main"
 msgstr ""
 "יש באפשרותך להפעיל את <i>גנו/לינוקס כנרת</i> מהתקליטור וללא התקנה או הגדרות "
@@ -235,38 +290,38 @@ msgstr ""
 "תידרש הפעלה חוזרת של האשף בעליית המערכת. <br><br>נא לבחור באחת מהאפשרויות "
 "הבאות בכדי להמשיך:"
 
-#: configwizard.cpp:1526
+#: configwizard.cpp:1506
 msgid "setuptype"
 msgstr "סוג התקנה"
 
-#: configwizard.cpp:1527
+#: configwizard.cpp:1507
 msgid "auto"
 msgstr "קביעת הגדרות מהירה (מומלץ)"
 
-#: configwizard.cpp:1528
+#: configwizard.cpp:1508
 msgid "noconfig"
 msgstr "דילוג על שלב ההגדרות (לא מומלץ - גם אם ברצונך רק להתנסות עם המערכת)"
 
-#: configwizard.cpp:1529
+#: configwizard.cpp:1509
 msgid "expert"
 msgstr "קביעת הגדרות מפורטות (לא מומלץ - מיועד למשתמשי לינוקס מנוסים בלבד)"
 
-#: configwizard.cpp:1530
+#: configwizard.cpp:1510
 msgid "express?expert?manual?"
 msgstr "בחירת אופן ביצוע ההגדרות הבסיסיות"
 
-#: configwizard.cpp:1531 configwizard.cpp:1535 configwizard.cpp:1540
-#: configwizard.cpp:1545 configwizard.cpp:1548 configwizard.cpp:1553
+#: configwizard.cpp:1511 configwizard.cpp:1515 configwizard.cpp:1520
+#: configwizard.cpp:1525 configwizard.cpp:1528 configwizard.cpp:1533
 msgid "sidemenu"
 msgstr "תפריט צד"
 
-#: configwizard.cpp:1532
+#: configwizard.cpp:1512
 msgid "partition_main"
 msgstr ""
 "<i>גנו/לינוקס כינרת</i> סרקה את המערכת שלך, ומצאה את המחיצות הבאות התואמות "
 "למערכת ההפעלה \"חלונות\":"
 
-#: configwizard.cpp:1533
+#: configwizard.cpp:1513
 msgid "partition_sub"
 msgstr ""
 "יש לבחור את המחיצה שבה יישמרו קבצי ההגדרות והמסמכים שלך. <br><br>כבר בחרנו "
@@ -276,23 +331,25 @@ msgstr ""
 "למיפוי החלונאי <b>המשוער</b>. ניתן לקבל מידע נוסף על כך על-ידי לחיצה על "
 "כפתור \"עזרה\"."
 
-#: configwizard.cpp:1536
+#: configwizard.cpp:1516
 msgid "swap_main"
 msgstr ""
-"זהו השלב בו עליך לקבוע את גוד קובץ ההחלפה (swap) שיווצר.\n"
-"קובץ ההחלפה מרחיב את הזיכרון הזמין למערכת, לכן, ממולץ בחום כי יווצר אחד. "
-"גודל קובץ ההחלפה הממולץ הוא פי שתיים מגודל הזיכרון הפנימי.\n"
+"זהו השלב בו עליך לקבוע את גודל קובץ ההחלפה (swap) שיווצר.\n"
+"קובץ ההחלפה מרחיב את הזיכרון הזמין למערכת, ולפיכך מומלץ ליצור קובץ כזה "
+"(לתשומת לבך: הגדרת הקובץ עלולה לערוך זמן מה בפעם הראשונה, אך הוא ישפר את "
+"ביצועי המחשב בכל הפעלה חוזרת.גודל קובץ ההחלפה המומלץ הוא פי שתיים מגודל "
+"הזיכרון הפנימי.\n"
 "אם אין ברצונך ליצור קובץ החלפה, יש להכניס אפס."
 
-#: configwizard.cpp:1537
+#: configwizard.cpp:1517
 msgid "swap_sub"
 msgstr "גודל קובץ ההחלפה הרצוי:"
 
-#: configwizard.cpp:1538
+#: configwizard.cpp:1518
 msgid "MB"
 msgstr "מ\"ב"
 
-#: configwizard.cpp:1541
+#: configwizard.cpp:1521
 msgid "dir_main"
 msgstr ""
 "ספריה בשם kinneret תיווצר בשורש של המחיצה הנבחרת. ספרייה זו תשמש לאיחסון "
@@ -300,24 +357,24 @@ msgstr ""
 "פעולה תקינה של המערכת. <br> <br>בנוסף לספריה זו יש באפשרותך לבחור/ליצור את "
 "ספריית ברירת המחדל לשמירת מסמכים (\"תיקיית הבית\")"
 
-#: configwizard.cpp:1542
+#: configwizard.cpp:1522
 msgid "Create"
 msgstr "צור"
 
-#: configwizard.cpp:1543
+#: configwizard.cpp:1523
 msgid "<selected partition>/"
 msgstr "<המחיצה שנבחרה>/"
 
-#: configwizard.cpp:1546
+#: configwizard.cpp:1526
 msgid "conclusion_main"
 msgstr ""
-"הנתיב לספריית הבית שלך ב<i>גנו/לינוקס כינרת</i> הוא /home/knoppix/docs/. "
+"הנתיב לספריית הבית שלך ב<i>גנו/לינוקס כינרת</i> הוא /home/knoppix/docs/ (קישור לספרייה זו יופיע על שולחן העבודה שלך)."
 "ספרייה זו תשמש כברירת המחדל לשמירת קבציך האישיים. יש באפשרותך לגשת לכל "
 "הקבצים שיישמרו בספריה זו גם תחת \"חלונות\". <br><br>מסיבות אבטחה, תיקיית "
 "הבית והמחיצה בה היא נמצאת, הם המקומות היחידים אליהם יש לך הרשאת כתיבה, לכן, "
 "לא כדאי לנסות לשמור קבצים במקומות אחרים - הם לא יישמרו לאחר איתחול מחדש."
 
-#: configwizard.cpp:1549
+#: configwizard.cpp:1529
 msgid "fonts_main"
 msgstr ""
 "כנרת מסוגלת לייבא גופנים ממחיצת חלונות קיימת. כנרת אף מסוגלת לייבא גופנים "
@@ -326,15 +383,15 @@ msgstr ""
 "כנרת סרקה את המערכת וכללה את תיקיית הגופנים הסטנדרטית של חלונות (אם נמצאה). "
 "באפשרותך להוסיף ולהסיר תיקיות כרצונך."
 
-#: configwizard.cpp:1550
+#: configwizard.cpp:1530
 msgid "remove_dir"
 msgstr "הסר"
 
-#: configwizard.cpp:1551
+#: configwizard.cpp:1531
 msgid "add_dir"
 msgstr "הוסף"
 
-#: configwizard.cpp:1554
+#: configwizard.cpp:1534
 msgid "whatsnext_main"
 msgstr ""
 "בודאי יש לך שאלות רבות הנוגעות ל<i>גנו/לינוקס כינרת</i>: מה אפשר לעשות איתה? "
@@ -350,7 +407,7 @@ msgstr ""
 "לנקות את תיבת הסימון הנ\"ל.<br><br>צוות הפרוייקט מברך אותך על הפעלת תקליטור "
 "זה ומאחל לך הנאה ועבודה פוריה!"
 
-#: configwizard.cpp:1555
+#: configwizard.cpp:1535
 msgid "run_pref_wiz"
 msgstr "הרץ את אשף ההתאמה האישית לאחר סיום אשף זה (מומלץ)"
 

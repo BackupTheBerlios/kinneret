@@ -33,6 +33,9 @@ void configwizard::onSelect()
 	const int page_conclusion	= 6;
 	const int page_fonts		= 7;
 	const int page_whatsnext	= 8;
+
+	const int nToKeepFree = 300;	// how many megs to keep free
+	static QString qDefaultHome;
 		
 	// see if that's the 3rd page, if it is,
 	// fill the list box with vfat and partitions.
@@ -56,6 +59,9 @@ void configwizard::onSelect()
 			par_list->addColumn(QString(tr2i18n("Free (% In Use)")), 150);
 			
 			char Letter[2] = { 'C', 0 };	// first drive is C
+
+			QListViewItem *pMaxFreeSpace = 0;
+			float fFreeSpace = 0;
 	
 			while (!fstab.eof())
 			{
@@ -90,6 +96,9 @@ void configwizard::onSelect()
 					QString mntpt(tr2i18n("N/A"));
 					QString size(tr2i18n("N/A"));
 					QString free(tr2i18n("N/A (N/A)"));
+					QString dfdev;
+
+					float fItemFree = 0.0f;
 
 					while (!df.eof())
 					{
@@ -98,6 +107,9 @@ void configwizard::onSelect()
 						{
 							QString qs(szLine);
 							qs = qs.simplifyWhiteSpace();
+
+							dfdev = qs.left(qs.find(' '));
+							
 							qs = qs.remove(0, qs.find(' ') + 1);    // device
 							qs = qs.remove(0, qs.find(' ') + 1);    // fs
 
@@ -107,6 +119,20 @@ void configwizard::onSelect()
 							qs = qs.remove(0, qs.find(' ') + 1);    // used
 
 							free = qs.left(qs.find(' '));
+
+							if (free.find('G') != -1)
+							{
+								QString num = free;
+								num.truncate(free.find('G'));
+								fItemFree = num.toFloat() * 1024.0f;
+							}
+
+							else if (free.find('M') != -1)
+							{
+								QString num = free;
+								num.truncate(free.find('M'));
+								fItemFree = num.toFloat();
+							}
 
 							qs = qs.remove(0, qs.find(' ') + 1);    // Avail
 							free += QString(" (") + qs.left(qs.find(' ')) + QString(")");
@@ -118,18 +144,27 @@ void configwizard::onSelect()
 					df.close();
 					
 					// guess the letter of the drive...
-					mntpt += QString(" (") + QString(Letter) + QString(":)");
+					QListViewItem *vi = new QListViewItem(par_list, mntpt + QString(" (") + QString(Letter) + QString(":)"), size, free, dfdev);
 					Letter[0]++;
-		
-					QListViewItem *vi = new QListViewItem(par_list, mntpt, size, free);
 
 					if (par_list->childCount() == 0) vi->setSelected(true);
 					else vi->setSelected(false);
              
 					par_list->insertItem(vi);
+
+					// find the partition with the largest free space and mark it yellow
+					if (fItemFree > fFreeSpace)
+					{
+						fFreeSpace = fItemFree;
+						pMaxFreeSpace = vi;
+					}
 				}
-			}		
-			
+			}
+
+			// pMaxFreeSpace holds a pointer to the partition with the largest free space, mark it.
+			par_list->setCurrentItem(pMaxFreeSpace);
+			par_list->setSelected(pMaxFreeSpace, true);
+						
 			fstab.close();
 			unlink("/tmp/.df");
 		}
@@ -216,21 +251,22 @@ void configwizard::onSelect()
 			qMem = qMem.remove(0, qMem.find(' ') + 1);    // MemoryTotal:
 			qMem = qMem.left(qMem.find(' '));
 
+			// by default we'll set swap file to size of RAM
 			unsigned long swap = qMem.toULong() / 1024; // To megabytes
 
-			// home will take 100megs, while swap will take swap * 2 or 256.
+			// home will take 100megs, while swap will take swap * 2, swap or 256.
 			sz -= 100;      // home dir will take 100MB
 
 			// make sure we have enough free space
-			if (swap < 512 && sz < 100 + swap)
+			if (swap < 512 && sz < nToKeepFree + swap)
 			{
 				KMessageBox::error(parentWidget(),
 					QString(tr2i18n("You have not have enough free space on any of your hard drives,\n"
-						"You need at least 460MB free.")));
+						"You need at least 660MB free.")));
 					// max home, 100Megs
 					// max swap, 256Megs
-					// min free, 100Megs
-					// min sz >= 460Megs
+					// min free, by var (300megs)
+					// min sz >= 660Megs
 				return;
             }
 
@@ -238,15 +274,14 @@ void configwizard::onSelect()
 			docs_path->setText(partitions[sz + 100]);
 
 			// calculate swap size...
-            
-			if (swap < 512)
+            if (swap < 512)
 			{
 				// can we use swap * 2 and leave at least 100Megs free?
 				// if so, do it!
-				if (sz > swap * 2 + 100) swap *= 2;
+				if (sz > swap * 2 + nToKeepFree) swap *= 2;
 
 				// if not, we already made sure we can use at least 100 + ramsize and leave
-				// 100Megs free, so we'll just set up a swap file at the size of the RAM.
+				// nToKeepFree free, so we'll just set up a swap file at the size of the RAM.
 
 				// NOTE: I have divided this to a nested if and no a single if w/ &&
 				// to seperate between the case in which we have more then 512MB RAM,
@@ -257,9 +292,9 @@ void configwizard::onSelect()
 			// we're not gonna set up a render farm on Kinneret based systems :)
 			if (swap >= 512) swap = 256;
 
-			// Again, we already made sure we can use at least 356 megs and leave 100Megs
+			// Again, we already made sure we can use at least 356 megs and leave nToKeepFree
 			// free.
-                        
+			
 			unlink("/tmp/.meminfo");
 
 			// So now swap holds the size of the swap size...
@@ -267,6 +302,7 @@ void configwizard::onSelect()
 			
 			// Now jump to conclusion and let it to do all the configuration...
 			reinterpret_cast<QWizard*>(this)->showPage(reinterpret_cast<QWizard*>(this)->page(page_conclusion));
+			
 			return;
 		}
 				
@@ -282,10 +318,79 @@ void configwizard::onSelect()
 		// for expert we don't need to do anything...
 	}
 
+	if (currentPage() == reinterpret_cast<QWizard*>(this)->page(page_swap))
+	{
+		// find how much free megs we have on the selected partition
+		// and report if it has less then nToKeepFree+100 megs free.
+		// Get size and freespace
+		system("df -t vfat -B 1M > /tmp/.df");
+		std::ifstream df("/tmp/.df");
+
+		if (!df.is_open())
+		{
+			KMessageBox::error(parentWidget(),
+				   QString(tr2i18n("Cannot get device status")));
+			return;
+		}
+
+		// first line...
+		char szLine[0x300];
+		df.getline(szLine, 0x300);
+
+		QListViewItem *vi = par_list->selectedItem();
+		while (!df.eof())
+		{
+			df.getline(szLine, 0x300);
+
+// Filesystem           1M-blocks      Used Available Use% Mounted on
+// /dev/hda1                20462     18191      2271  89% /mnt/win
+
+			QString qs(szLine);
+
+			qs = qs.simplifyWhiteSpace();
+			QString qDev = qs.left(qs.find(' '));
+			qs = qs.remove(0, qs.find(' ') + 1);    // Filesystem
+			
+			if (qDev == vi->text(3))
+			{
+				qs = qs.remove(0, qs.find(' ') + 1);    // 1M-blocks
+				qs = qs.remove(0, qs.find(' ') + 1);    // Used
+
+				QString qsFree = qs.left(qs.find(' '));
+				lFreeOnPartition = qsFree.toLong();
+			}
+		}
+		
+		df.close();
+		unlink("/tmp/.df");
+
+		if (lFreeOnPartition < 100 + nToKeepFree)
+		{
+			KMessageBox::error(parentWidget(),
+				   QString(tr2i18n("You do not have enough free space on the selected partition,\n\
+Please go back and select another.")));
+
+			nextButton()->setEnabled(false);
+		}
+		else nextButton()->setEnabled(true);
+	}
+
 	// fill the directory tree
 	if (currentPage() == reinterpret_cast<QWizard*>(this)->page(page_homedir) && dir_list->childCount() == 0)
 	{
-	QPtrList<QListViewItem> qpl = par_list->selectedItems();
+		// verify that on the selected partition we have enough room for home+swap+nToKeepFree
+		if (lFreeOnPartition < 100 + nToKeepFree + swap_size->value())
+		{
+			long lNewSwap = lFreeOnPartition - (100 + nToKeepFree);
+
+			swap_size->setValue(lNewSwap);
+
+			KMessageBox::information(parentWidget(),
+				   QString(tr2i18n("Swap file too big, swap size reduced to %1")).arg(lNewSwap));
+		}
+
+		// continue...
+		QPtrList<QListViewItem> qpl = par_list->selectedItems();
 		if (qpl.isEmpty())
 		{
 			KMessageBox::information(parentWidget(),
@@ -300,8 +405,8 @@ void configwizard::onSelect()
 		else nextButton()->setEnabled(true);
 
 		QListViewItem *vi = qpl.first();
-		QString qMnt = vi->text(0).left(vi->text(0).find(' ')) + QString("/");	
-		docs_path->setText(qMnt);
+		qDefaultHome = vi->text(0).left(vi->text(0).find(' ')) + QString("/");	
+		docs_path->setText(qDefaultHome);
 	
 		// So the custom widget thing didn't turned up as I wanted it to...
 		// well, it's only my first KDE app...
@@ -311,13 +416,16 @@ void configwizard::onSelect()
 				this, SLOT(folderSelected(const QString &)));
 
 		dir_list->addColumn(tr2i18n("Name"));
-		Directory *root = new Directory(dir_list, qMnt);
+		Directory *root = new Directory(dir_list, qDefaultHome);
 		root->setOpen(true);
 	}
 	
 	if (currentPage() == reinterpret_cast<QWizard*>(this)->page(page_conclusion))
 	{
-		backButton()->setEnabled(false);
+		// if the user did not selected a home directory and was not in express mode...
+		if (docs_path->text() == qDefaultHome && !radioAuto->isChecked())
+			KMessageBox::information(parentWidget(), tr2i18n("home_dir_warning"));
+		else backButton()->setEnabled(false);
 		
 		// okay.. now, change some stuff...
 		QString qHome = docs_path->text();
@@ -333,7 +441,7 @@ void configwizard::onSelect()
 
 		pleasewait *pw = new pleasewait(this);
 		pw->blinker = new QTimer(pw);
-		pw->blinker->start(1000);		// half a sec
+		pw->blinker->start(1000);		// a sec
 		pw->nLed = 0;
 		connect(pw->blinker, SIGNAL(timeout()), pw, SLOT(onTimer()));
 		
@@ -463,4 +571,9 @@ void configwizard::onHelp()
 	delete l; // delete the list, not the objects
 	
 	hlp->exec();
+}
+
+
+void configwizard::newSwap(int size)
+{
 }

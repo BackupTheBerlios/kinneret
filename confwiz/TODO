@@ -1,2 +1,11 @@
 0.1b (09 Apr. 2003):
-* Check why tune2fs freezes
+v (14) Check why tune2fs freezes
+v (4) The swim guide won't launch when wizard aborts
+? (10) Check help screen
+v (11) Yellow marking the partition with the highest free space
+v (12) Fix typos
+v (13) Adding confirm box if not selecting a home directory
+v (15) Check that swap file + home file is not larger then the free space on partition and anyway leave at least
+  3000mb free
+v (16) Change texts
+x Add status indicator while creating swap/home

@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>334</width>
-            <height>85</height>
+            <width>412</width>
+            <height>175</height>
         </rect>
     </property>
     <property name="sizePolicy">
@@ -54,14 +54,13 @@
                     </property>
                     <property name="font">
                         <font>
-                            <pointsize>12</pointsize>
                         </font>
                     </property>
                     <property name="text">
                         <string>Please wait, configuring...</string>
                     </property>
                     <property name="alignment">
-                        <set>AlignCenter</set>
+                        <set>WordBreak|AlignCenter</set>
                     </property>
                 </widget>
                 <widget class="QLayoutWidget">

@@ -312,7 +312,6 @@
                                 </property>
                                 <property name="font">
                                     <font>
-                                        <pointsize>12</pointsize>
                                     </font>
                                 </property>
                                 <property name="margin">
@@ -420,7 +419,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                         </property>
                         <property name="font">
                             <font>
-                                <pointsize>12</pointsize>
                             </font>
                         </property>
                         <property name="frameShape">
@@ -497,7 +495,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                         </property>
                         <property name="font">
                             <font>
-                                <pointsize>12</pointsize>
                             </font>
                         </property>
                         <property name="text">
@@ -529,7 +526,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                                 </property>
                                 <property name="font">
                                     <font>
-                                        <pointsize>12</pointsize>
                                     </font>
                                 </property>
                                 <property name="title">
@@ -722,7 +718,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                         </property>
                         <property name="font">
                             <font>
-                                <pointsize>12</pointsize>
                             </font>
                         </property>
                         <property name="frameShape">
@@ -752,7 +747,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                                 </property>
                                 <property name="font">
                                     <font>
-                                        <pointsize>12</pointsize>
                                     </font>
                                 </property>
                                 <property name="text">
@@ -780,7 +774,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                                 </property>
                                 <property name="font">
                                     <font>
-                                        <pointsize>12</pointsize>
                                     </font>
                                 </property>
                                 <property name="text">
@@ -873,7 +866,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                         </property>
                         <property name="font">
                             <font>
-                                <pointsize>12</pointsize>
                             </font>
                         </property>
                         <property name="frameShape">
@@ -903,7 +895,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                                 </property>
                                 <property name="font">
                                     <font>
-                                        <pointsize>12</pointsize>
                                     </font>
                                 </property>
                                 <property name="text">
@@ -955,7 +946,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                                                 </property>
                                                 <property name="font">
                                                     <font>
-                                                        <pointsize>12</pointsize>
                                                     </font>
                                                 </property>
                                                 <property name="text">
@@ -1098,7 +1088,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                         </property>
                         <property name="font">
                             <font>
-                                <pointsize>12</pointsize>
                             </font>
                         </property>
                         <property name="frameShape">
@@ -1128,7 +1117,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                                 </property>
                                 <property name="font">
                                     <font>
-                                        <pointsize>12</pointsize>
                                     </font>
                                 </property>
                                 <property name="text">
@@ -1196,7 +1184,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                                         </property>
                                         <property name="font">
                                             <font>
-                                                <pointsize>12</pointsize>
                                             </font>
                                         </property>
                                         <property name="frameShape">
@@ -1267,7 +1254,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                         </property>
                         <property name="font">
                             <font>
-                                <pointsize>12</pointsize>
                             </font>
                         </property>
                         <property name="frameShape">
@@ -1297,7 +1283,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                                 </property>
                                 <property name="font">
                                     <font>
-                                        <pointsize>12</pointsize>
                                     </font>
                                 </property>
                                 <property name="text">
@@ -1410,7 +1395,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                         </property>
                         <property name="font">
                             <font>
-                                <pointsize>12</pointsize>
                             </font>
                         </property>
                         <property name="frameShape">
@@ -1440,7 +1424,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                                 </property>
                                 <property name="font">
                                     <font>
-                                        <pointsize>12</pointsize>
                                     </font>
                                 </property>
                                 <property name="text">
@@ -1497,7 +1480,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                                         </property>
                                         <property name="font">
                                             <font>
-                                                <pointsize>12</pointsize>
                                             </font>
                                         </property>
                                         <property name="text">
@@ -1518,7 +1500,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                                         </property>
                                         <property name="font">
                                             <font>
-                                                <pointsize>12</pointsize>
                                             </font>
                                         </property>
                                         <property name="text">
@@ -1610,7 +1591,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                         </property>
                         <property name="font">
                             <font>
-                                <pointsize>12</pointsize>
                             </font>
                         </property>
                         <property name="frameShape">
@@ -1648,7 +1628,6 @@ here we will put the "nice to meet you" text at runtime.</string>
                                         </property>
                                         <property name="font">
                                             <font>
-                                                <pointsize>12</pointsize>
                                             </font>
                                         </property>
                                         <property name="text">
@@ -1800,10 +1779,19 @@ here we will put the "nice to meet you" text at runtime.</string>
         <receiver>configwizard</receiver>
         <slot>onHelp()</slot>
     </connection>
+    <connection>
+        <sender>swap_size</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>configwizard</receiver>
+        <slot>newSwap(int)</slot>
+    </connection>
 </connections>
 <includes>
     <include location="local" impldecl="in implementation">configwizard.ui.h</include>
 </includes>
+<variables>
+    <variable access="public">long lFreeOnPartition;</variable>
+</variables>
 <slots>
     <slot>onSelect()</slot>
     <slot>folderSelected( const QString &amp; qs )</slot>
@@ -1811,6 +1799,7 @@ here we will put the "nice to meet you" text at runtime.</string>
     <slot>onAddFontDir()</slot>
     <slot>onRemoveFontDir()</slot>
     <slot>onHelp()</slot>
+    <slot>newSwap(int size)</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>

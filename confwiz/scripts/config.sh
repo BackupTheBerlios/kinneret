@@ -35,7 +35,7 @@ then
 fi
 
 mkfs -t ext3 /dev/loop$devnum
-tune2fs -L KINNERET /dev/loop$devnum
+# tune2fs -L KINNERET /dev/loop$devnum		# causes a hang... why?
 
 cd /mnt
 mkdir tmpcfg

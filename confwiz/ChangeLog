@@ -1,0 +1,9 @@
+From 0.1b to 0.1 (29 Apr 2003):
+* Fixed the freezing tune2fs by removing it from the script.
+* The swim wizard will be launched even if the wizard was aborted
+* The wizard now marks the partition of with the largest free space automaticlly
+* Fixed some type mistakes
+* If no home directory was chosen, the user will be warned that it will be set to the root
+* The wizard verifies that the selected partition has enough room and scaled the swap file
+  if it doesn't
+* Changes some texts in the po

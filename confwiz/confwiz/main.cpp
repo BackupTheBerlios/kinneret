@@ -98,7 +98,8 @@ int main(int argc, char *argv[])
 	// Before doing anything, see if the wizard should run...
 	// The startup script will create the file /etc/foundhome
 	// and will put 0 in it if it couldn't find the home directory.
-	if (!QFile::exists(QString("/tmp/foundhome")))
+	#warning ADD NOT!!
+	if (/*!*/QFile::exists(QString("/tmp/foundhome")))
 	{
 		system("sudo /usr/kinneret/bin/ttf.sh");	// load fonts
 		return 0;
@@ -126,14 +127,15 @@ int main(int argc, char *argv[])
 
 	a.exec();
 
-	// user cancels wizard
-	if (wizard->result() == QDialog::Rejected) return 0;
-
-	system("sudo /usr/kinneret/bin/ttf.sh");	// load fonts
+	// only if wizard was completed
+	if (wizard->result() != QDialog::Rejected)
+	{
+		system("sudo /usr/kinneret/bin/ttf.sh");	// load fonts
+	}
 
 	KProcess p;
 
-	if (wizard->checkPrefWiz->isChecked() == true)
+	if (wizard->checkPrefWiz->isChecked() == true && wizard->result() != QDialog::Rejected)
 	{
 		// run preferance wizard...
 		p.clearArguments();
@@ -149,5 +151,6 @@ int main(int argc, char *argv[])
 	p << "/usr/kinneret/bin/swim";
 	p.start();	
 	while (p.isRunning());
+	
 	return 0;
 }

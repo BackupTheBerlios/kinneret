@@ -1,8 +1,9 @@
-# Makefile.in generated automatically by automake 1.4-p5 from Makefile.am
+# Makefile.in generated automatically by automake 1.5 from Makefile.am.
 # Generated automatically from Makefile.in by config.pl.
-# KDE tags expanded automatically by am_edit - $Revision: 1.1 $ 
+# KDE tags expanded automatically by am_edit - $Revision: 1.2 $ 
 
-# Copyright (C) 1994, 1995-8, 1999, 2001 Free Software Foundation, Inc.
+# Copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001
+# Free Software Foundation, Inc.
 # This Makefile.in is free software; the Free Software Foundation
 # gives unlimited permission to copy and/or distribute it,
 # with or without modifications, as long as this notice is preserved.
@@ -12,8 +13,9 @@
 # even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 # PARTICULAR PURPOSE.
 
-####### kdevelop will overwrite this part!!! (begin)##########
 
+
+####### kdevelop will overwrite this part!!! (begin)##########
 
 SHELL = /bin/sh
 
@@ -35,13 +37,9 @@ infodir = ${prefix}/info
 mandir = ${prefix}/man
 includedir = ${prefix}/include
 oldincludedir = /usr/include
-
-DESTDIR =
-
 pkgdatadir = $(datadir)/confwiz
 pkglibdir = $(libdir)/confwiz
 pkgincludedir = $(includedir)/confwiz
-
 top_builddir = ../..
 
 ACLOCAL = ${SHELL} /home/z9u2K/projects/kinneret/cvs/confwiz/admin/missing --run aclocal
@@ -50,11 +48,11 @@ AUTOMAKE = ${SHELL} /home/z9u2K/projects/kinneret/cvs/confwiz/admin/missing --ru
 AUTOHEADER = ${SHELL} /home/z9u2K/projects/kinneret/cvs/confwiz/admin/missing --run autoheader
 
 INSTALL = /bin/install -c -p
-INSTALL_PROGRAM = ${INSTALL} $(INSTALL_STRIP_FLAG) $(AM_INSTALL_PROGRAM_FLAGS)
+INSTALL_PROGRAM = ${INSTALL} $(INSTALL_STRIP_FLAG)
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_SCRIPT = ${INSTALL}
+INSTALL_HEADER = $(INSTALL_DATA)
 transform = s,^,i386-linux-,
-
 NORMAL_INSTALL = :
 PRE_INSTALL = :
 POST_INSTALL = :
@@ -163,7 +161,6 @@ LIB_SMB = -lsmb
 LIB_X11 = -lX11 $(LIBSOCKET)
 LIB_XEXT = -lXext
 LN_S = ln -s
-MAKEINFO = ${SHELL} /home/z9u2K/projects/kinneret/cvs/confwiz/admin/missing --run makeinfo
 MCOPIDL = /usr/kde/3.1/bin/mcopidl
 MEINPROC = /usr/kde/3.1/bin/meinproc
 MICO_INCLUDES = @MICO_INCLUDES@
@@ -201,7 +198,7 @@ USER_LDFLAGS =
 USE_EXCEPTIONS = -fexceptions
 USE_RTTI = 
 USE_THREADS = 
-VERSION = 0.1b
+VERSION = 0.1
 WOVERLOADED_VIRTUAL = 
 XGETTEXT = /usr/bin/xgettext
 XPMINC = @XPMINC@
@@ -238,7 +235,6 @@ kde_styledir = ${libdir}/kde3/plugins/styles
 kde_templatesdir = ${prefix}/share/templates
 kde_wallpaperdir = ${prefix}/share/wallpapers
 kde_widgetdir = /usr/kde/3.1/lib/kde3/plugins/designer
-libdir = ${exec_prefix}/lib
 micodir = @micodir@
 qt_includes = /usr/qt/3/include
 qt_libraries = /usr/qt/3/lib
@@ -247,134 +243,150 @@ x_libraries = /usr/X11R6/lib
 
 EXTRA_DIST = index.docbook 
 
-####### kdevelop will overwrite this part!!! (end)############
 
+####### kdevelop will overwrite this part!!! (end)############
 KDE_LANG = en
 KDE_DOCS = confwiz
+subdir = doc/en
 mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
-CONFIG_HEADER = ../../config.h
-CONFIG_CLEAN_FILES = 
-DIST_COMMON =  Makefile.am Makefile.in
-
-
-#>- DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
-#>+ 4
-KDE_DIST=index.cache.bz2 
-
-DISTFILES= $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
-
-
-TAR = tar
-GZIP_ENV = --best
-#>- all: all-redirect
+CONFIG_HEADER = $(top_builddir)/config.h
+CONFIG_CLEAN_FILES =
+DIST_SOURCES =
+DIST_COMMON = Makefile.am Makefile.in
+#>- all: all-am
 #>+ 1
-all: docs-am  all-redirect
+all: docs-am  all-am
+
 .SUFFIXES:
-$(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
-#>- 	cd $(top_srcdir) && $(AUTOMAKE) --gnu doc/en/Makefile
-#>+ 2
-	cd $(top_srcdir) && $(AUTOMAKE) --gnu doc/en/Makefile
+
+mostlyclean-libtool:
+	-rm -f *.lo
+
+clean-libtool:
+	-rm -rf .libs _libs
+
+distclean-libtool:
+	-rm -f libtool
+$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
+#>- 	cd $(top_srcdir) && \
+#>- 	  $(AUTOMAKE) --gnu  doc/en/Makefile
+#>+ 3
+	cd $(top_srcdir) && \
+	  $(AUTOMAKE) --gnu  doc/en/Makefile
 	cd $(top_srcdir) && perl admin/am_edit doc/en/Makefile.in
-
-Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status $(BUILT_SOURCES)
-	cd $(top_builddir) \
-	  && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
-
+Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+	cd $(top_builddir) && \
+	  CONFIG_HEADERS= CONFIG_LINKS= \
+	  CONFIG_FILES=$(subdir)/$@ $(SHELL) ./config.status
+uninstall-info-am:
 tags: TAGS
 TAGS:
 
 
-distdir = $(top_builddir)/$(PACKAGE)-$(VERSION)/$(subdir)
+DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 
-subdir = doc/en
+top_distdir = ../..
+distdir = $(top_distdir)/$(PACKAGE)-$(VERSION)
 
 #>- distdir: $(DISTFILES)
 #>+ 1
 distdir: distdir-nls  $(DISTFILES)
-	here=`cd $(top_builddir) && pwd`; \
-	top_distdir=`cd $(top_distdir) && pwd`; \
-	distdir=`cd $(distdir) && pwd`; \
-	cd $(top_srcdir) \
-	  && $(AUTOMAKE) --include-deps --build-dir=$$here --srcdir-name=$(top_srcdir) --output-dir=$$top_distdir --gnu doc/en/Makefile
 	@for file in $(DISTFILES); do \
-	  d=$(srcdir); \
+	  if test -f $$file; then d=.; else d=$(srcdir); fi; \
+	  dir=`echo "$$file" | sed -e 's,/[^/]*$$,,'`; \
+	  if test "$$dir" != "$$file" && test "$$dir" != "."; then \
+	    $(mkinstalldirs) "$(distdir)/$$dir"; \
+	  fi; \
 	  if test -d $$d/$$file; then \
-	    cp -pr $$d/$$file $(distdir)/$$file; \
+	    cp -pR $$d/$$file $(distdir) \
+	    || exit 1; \
 	  else \
 	    test -f $(distdir)/$$file \
-	    || ln $$d/$$file $(distdir)/$$file 2> /dev/null \
-	    || cp -p $$d/$$file $(distdir)/$$file || :; \
+	    || cp -p $$d/$$file $(distdir)/$$file \
+	    || exit 1; \
 	  fi; \
 	done
-info-am:
-info: info-am
-dvi-am:
-dvi: dvi-am
 check-am: all-am
 check: check-am
-installcheck-am:
-installcheck: installcheck-am
-install-exec-am:
-install-exec: install-exec-am
+all-am: Makefile
 
-#>- install-data-am:
-#>+ 1
-install-data-am: install-docs install-nls 
-install-data: install-data-am
+installdirs:
 
-install-am: all-am
-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
 install: install-am
-uninstall-am:
+install-exec: install-exec-am
+install-data: install-data-am
 #>- uninstall: uninstall-am
 #>+ 1
 uninstall: uninstall-docs uninstall-nls  uninstall-am
-all-am: Makefile
-all-redirect: all-am
+
+install-am: all-am
+	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+
+installcheck: installcheck-am
 install-strip:
-	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
-installdirs:
-
-
+	$(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
+	  `test -z '$(STRIP)' || \
+	    echo "INSTALL_PROGRAM_ENV=STRIPPROG='$(STRIP)'"` install
 mostlyclean-generic:
 
 clean-generic:
 
 distclean-generic:
-	-rm -f Makefile $(CONFIG_CLEAN_FILES)
-	-rm -f config.cache config.log stamp-h stamp-h[0-9]*
+	-rm -f Makefile $(CONFIG_CLEAN_FILES) stamp-h stamp-h[0-9]*
 
 maintainer-clean-generic:
-mostlyclean-am:  mostlyclean-generic
-
-mostlyclean: mostlyclean-am
-
-#>- clean-am:  clean-generic mostlyclean-am
-#>+ 1
-clean-am: clean-docs   clean-generic mostlyclean-am
-
+	@echo "This command is intended for maintainers to use"
+	@echo "it deletes files that may require special tools to rebuild."
 #>- clean: clean-am
 #>+ 1
 clean: kde-rpo-clean  clean-am
 
-distclean-am:  distclean-generic clean-am
-	-rm -f libtool
+#>- clean-am: clean-generic clean-libtool mostlyclean-am
+#>+ 1
+clean-am: clean-docs  clean-generic clean-libtool mostlyclean-am
 
 distclean: distclean-am
 
-maintainer-clean-am:  maintainer-clean-generic distclean-am
-	@echo "This command is intended for maintainers to use;"
-	@echo "it deletes files that may require special tools to rebuild."
+distclean-am: clean-am distclean-generic distclean-libtool
+
+dvi: dvi-am
+
+dvi-am:
+
+info: info-am
+
+info-am:
+
+#>- install-data-am:
+#>+ 1
+install-data-am: install-docs install-nls 
+
+install-exec-am:
+
+install-info: install-info-am
+
+install-man:
+
+installcheck-am:
 
 maintainer-clean: maintainer-clean-am
 
-.PHONY: tags distdir info-am info dvi-am dvi check check-am \
-installcheck-am installcheck install-exec-am install-exec \
-install-data-am install-data install-am install uninstall-am uninstall \
-all-redirect all-am all installdirs mostlyclean-generic \
-distclean-generic clean-generic maintainer-clean-generic clean \
-mostlyclean distclean maintainer-clean
+maintainer-clean-am: distclean-am maintainer-clean-generic
 
+mostlyclean: mostlyclean-am
+
+mostlyclean-am: mostlyclean-generic mostlyclean-libtool
+
+uninstall-am: uninstall-info-am
+
+.PHONY: all all-am check check-am clean clean-generic clean-libtool \
+	distclean distclean-generic distclean-libtool distdir dvi \
+	dvi-am info info-am install install-am install-data \
+	install-data-am install-exec install-exec-am install-info \
+	install-info-am install-man install-strip installcheck \
+	installcheck-am installdirs maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-generic \
+	mostlyclean-libtool uninstall uninstall-am uninstall-info-am
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
@@ -425,9 +437,10 @@ distdir-nls:
 	  cp $(srcdir)/$$file $(distdir); \
 	done
 
-#>+ 5
+#>+ 6
 force-reedit:
-		cd $(top_srcdir) && $(AUTOMAKE) --gnu doc/en/Makefile
+		cd $(top_srcdir) && \
+	  $(AUTOMAKE) --gnu  doc/en/Makefile
 	cd $(top_srcdir) && perl admin/am_edit doc/en/Makefile.in
 
 
