@@ -175,15 +175,15 @@ begin
    'Make sure the Floppy and the CD are still in place,'+#10#13+
    'Close any running programs'+#10#13+
    'And Reboot the computer.'))
-  else if (Condition=start) then label2.Caption:=PWideChar(_('Welcome to GNU/Linux "Kinneret"'+
-   #10#13+'This program is not an installation Program.'+
-   #10#13+'Kinneret doesn''t need to be installed.'+
+  else if (Condition=start) then label2.Caption:=PWideChar(_('Welcome to GNU/Linux "Kinneret".'+
+   #10#13+'This program is not an installation Program,'+
+   #10#13+'because Kinneret doesn''t need to be installed.'+
    #10#13+'To start Kinneret, You should boot the computer'+
    #10#13+'from the Kinneret CD.'+#10#13#10#13+
    'If You can''t or don''t know how to boot from CD,'+#10#13+
    'You can make a bootable floppy here.'+#10#13#10#13+
-   'NEW: You can now make a Partial Installation,'+#10#13+
-   'if you want to work with Kinneret from the HD.'))
+   'NEW: You can now make a "Hard-Drive Operation",'+#10#13+
+   'if you want to work with Kinneret from the Hard-Drive.'))
   else if (Condition=parInst_made) then Label2.Caption:=pWideChar(_('Kinneret was successfully installed.'+#10#13#10#13+
    'In order to start Kinneret:'+#10#13+
    'If you installed a Desktop Shortcut, just launch it, and'+#10#13+

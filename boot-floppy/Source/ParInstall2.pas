@@ -75,7 +75,7 @@ begin
   end;
   if GetCurrentLanguage='iw' then BidiMode:=bdRightToLeft
   else Bidimode:=bdLeftToRight;
-  Caption:=pWideChar(_('Partial installation options'));
+  Caption:=pWideChar(_('Hard-Drive Operation options'));
   ButtonCancel.Caption:=pwideChar(_('Cancel'));
   ButtonStart.Caption:=pWideChar(_('Start Installation'));
   LabelChoose.Caption:=pwidechar(_('Choose a drive to install GNU/Linux Kinneret :'));

@@ -576,7 +576,7 @@ object WForm: TWForm
     Top = 304
     Width = 137
     Height = 33
-    Caption = 'Partial installation'
+    Caption = 'Hard-Drive Operation'
     TabOrder = 7
     OnClick = TntButton1Click
   end
