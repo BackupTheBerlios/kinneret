@@ -1,10 +1,11 @@
+l2swim (0.7.3-1) unstable; urgency=low
+
+  * New menus system, based on XML DOM.
+
+ -- Nir Misgav <nirro@linux-kinneret.org>  Fri, 14 Aug 2004 12:21:20 +0100
+
 l2swim (0.7.1-1) unstable; urgency=low
 
   * First debian release.
 
  -- Nir Misgav <nirro@linux-kinneret.org>  Fri, 26 Dec 2003 16:42:25 +0100
-
-l2swim (0.7.3-1) unstable; urgency=low
-
-* New menus system, based on XML DOM.
-
