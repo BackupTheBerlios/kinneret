@@ -10,9 +10,9 @@
 # make clean : clean all documents from source.
 # make uninstall 
 
-destdir = /opt/kinneret
+destdir = $(DESTDIR)/opt/kinneret
 docdirs = he en ar ru
-extradirs = image audio
+extradirs = image audio samples
 stylesheet = etc/l2swim.xsl
 menufile = etc/swim_menu.txt
 cssfile = etc/l2swim.css

@@ -1,0 +1,15 @@
+Source: l2swim-docs
+Priority: optional
+Maintainer: Nir Misgav <nirro@linux-kinneret.org>
+Build-Depends: debhelper (>= 4.0.0), xsltproc
+Standards-Version: 3.6.0
+
+Package: l2swim-docs
+Section: Documentation
+Architecture: any
+Depends:
+Suggests: l2swim (>= 0.7.1)
+Description: GNU/Linux documentation, to use with l2swim.
+ This package holds all the GNU/Linux Kinneret documentation.
+ Install it if you want to see the documents in a regular html browser, or with the special GUI - l2swim.
+ The documets are installed to directory : /opt/kinneret/l2swim/doc .

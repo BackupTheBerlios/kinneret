@@ -4,11 +4,13 @@ This file includes changes since the last upload. It is intended to provide a re
 * updated gfdl_license.xml to fit GNU requirements 21/2/04
 * New guide - basic usage of ooo - TBD
 * Updated custom_desktop.xml 8/3/04
-* Updated man_games.xml (game - Enigma) 16/3/04
+* Updated man_games.xml (game - Enigma) 16/3/04 (Nirro)
 * New translation to English: tour_kinneret 27/3/04
 * Updated the original article link for linux history 27/3/04
 * XSL (and some sources) updated to make all documents HTML 4.01 compliant 28/3/04
 * New translation to Arabic: first_time 29/3/04
+* Fixed Makefile to create /opt/kinneret/doc/samples directory 2/4/04 (Nirro)
+* Debianization (for easy creation of deb packages) 2/4/04 (Nirro)
 * Updated Hebrew: first_time to include partial install mode 2/4/04
 
 -------------- v 0.7.2 --------------
