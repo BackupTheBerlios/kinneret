@@ -146,7 +146,8 @@ bool cmenu::initialize(QString filename, QString cmdStartpage, QString *startpag
         }
         // Writing linktext
         if (type.compare("null")==0) page+="<FONT COLOR=GREY><U>"+linktext+"</U></FONT><BR><BR>";
-        else
+        else if (type.compare("text")==0) page+=linktext+"<BR><BR>";
+       	else
         {
           bool isStartpage=false;
           // Check if the link is same as desired startpage.
