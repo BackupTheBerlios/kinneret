@@ -5,7 +5,7 @@ This file contains:
 2. Installation instructions for installing the swimming guide documents
 3. List of directories and their contents
 4. To-do list
-5. Build instructions
+5. Information for authors
 
 ***************************************************************************
 1. Changelog
@@ -17,7 +17,7 @@ Please see the CHANGELOG file.
 
 The instructions here are for version 0.7.
 
-Since the build process is not yet automated, precompiled document files are provided. Please note the use of one menu for all locales (new)
+Please note the use of one menu for all locales (new)
 
 - su
 - {enter root password}
@@ -31,7 +31,7 @@ Since the build process is not yet automated, precompiled document files are pro
 
 You also need to make sure you have a compiled binary in the path (e.g. /usr/bin) and additional image files in /opt/kinneret/images. You can find the image files in the 'etc/image/ directory.
 
-Authors only: You can find a precompiled binary in the 'tmp' directory.
+NOTE: if you do not have the target directories, you have to create them.
 ***************************************************************************
 
 3. List of directories and their contents
@@ -71,8 +71,91 @@ tmp
 
 ***************************************************************************
 
-5. Build instrucions
+5. Information for authors
+
+The Swimming Guide is an application that has the capability to display
+HTML pages.
+
+Each document is a single HTML page that is accesible from a central menu.
+
+The menu uses a special format which is not documented at this stage so it
+is not recommended to mess with it at this point.
+
+This menu contains links to the various documents that make up the Swimming
+Guide repository.
+
+The HTML documents are generated automaticaly from an XML file (the data
+source) and an XSL (the stylesheet). The stylesheet is the same for all the
+documents.
+
+The various documents and related files are stored in the cvs. If you have
+this file it is likely that you already have a local copy of the cvs.
+But if you don't grab it using the instructions for anonymous access from
+here:
+
+http://developer.berlios.de/cvs/?group_id=734
+
+Follow the instructions to download the modulename = l2swim-docs.
+
+For writing documentation, you do not need to have the Swimming Guide 
+program - you can "view" the HTML using any browser (currently I recommend
+Konqueror since Mozilla and sons have a nasty bug in showing Hebrew lists).
+
+If you want to test the real thing, you can find a precompiled binary in
+the 'tmp' directory. Jusy copy it to /usr/bin and run it (l2swim).
+
+As noted, the HTML documents are generated from an XML source and an XSL
+template. for that, make sure you install xsltproc.
+
+If you do not have xsltproc installed, you won't be able to generate the
+HTMLs. You can still write documents but not test them, which is not
+very good.
+  
+To build a single document, the following  
 
 xsltproc -o l2swim-docs/doc/<locale>/<file>.html l2swim-docs/etc/l2swim.xsl l2swim-docs/src/<locale>/<manual>/<file>.xml
 
-You can find scripts (quite rude as for now...) in the 'bin' directory. To run them, switch to this directory and run the scripts (eg. ./mkdoc_he.sh). If you add new files/translations - make sure to add the files to the appropriate script.
+However, to make it easy for you to build the documents, all you have to do
+is to be in the l2swim-docs directory and type:
+
+make
+
+That will automatically build all the relevant files.
+
+Assuming that you have all the proper directories in /opt/kinneret and you
+want to try the "real thing", you can install all the files with:
+
+su
+make install
+exit
+
+note this has to be run as root unless you give write permission to the 
+/opt/kinneret directory to the user.
+
+Now that you have everything set up, you can start writing documents.
+
+At this point, there's no documentation for the various commands used in
+the XML. However, you can find some comments inside the XSL:
+http://cvs.berlios.de/cgi-bin/viewcvs.cgi/kinneret/l2swim-docs/etc/l2swim.xsl
+
+And also use the existing documents as references:
+
+http://cvs.berlios.de/cgi-bin/viewcvs.cgi/kinneret/l2swim-docs/src/
+
+Once you get the cvs snapshot, you can view all these files locally.
+
+TRANSLATORS:
+
+For you the process is somewhat easier.
+
+To get you started, grab the Hebrew document under src/he and copy it to
+the destination folder, e.g. src/ar
+
+Access the file using a text editor (please use utf-8 / unicode encoding),
+and translate every Hebrew string to your destination language.
+
+The only thing you will have to change in the XML is to look for 
+<article lang="hebrew">
+and replace the language to your language.
+
+
