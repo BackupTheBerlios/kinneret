@@ -1,0 +1,881 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="kinneret_apps_list.xsl"?>
+<catalog>
+	<app>
+		<group>ייעודי</group>
+		<title>KMathTool</title>
+		<class>לומדה/מתמטיקה</class>
+		<age>1+2</age>
+		<home>http://edu.kde.org/kmathtool/</home>
+		<version>?</version>
+		<kinneret>0.1</kinneret>
+		<hebrew>קיים</hebrew>
+	</app>
+	<app>
+		<group>ייעודי</group>
+		<title>KGeo</title>
+		<class>מתמטיקה</class>
+		<age>1+2</age>
+		<home>http://edu.kde.org/kgeo/</home>
+		<version>?</version>
+		<kinneret>0.1</kinneret>
+		<hebrew>קיים</hebrew>
+	</app>
+	<app>
+		<group>ייעודי</group>
+		<title>KStars</title>
+		<class>אסטרונומיה</class>
+		<age>1+2+3</age>
+		<home>http://edu.kde.org/kstars/</home>
+		<version>?</version>
+		<kinneret>0.1</kinneret>
+		<hebrew>בעבודה</hebrew>
+	</app>
+	<app>
+		<group>ייעודי</group>
+		<title>TuxPaint</title>
+		<class>ציור</class>
+		<age>1</age>
+		<home>http://www.newbreedsoftware.com/tuxpaint/</home>
+		<version>?</version>
+		<kinneret>0.1</kinneret>
+		<hebrew>בהמתנה</hebrew>
+	</app>
+	<app>
+		<group>ייעודי</group>
+		<title>KmPlot</title>
+		<class>מתמטיקה</class>
+		<age>2+3</age>
+		<home>http://edu.kde.org/kmplot/</home>
+		<version>?</version>
+		<kinneret>0.1</kinneret>
+		<hebrew>בעבודה</hebrew>
+	</app>
+	<app>
+		<group>ייעודי</group>
+		<title>Gimp</title>
+		<class>עיבוד תמונות</class>
+		<age>2+3</age>
+		<home>http://www.gimp.org</home>
+		<version>1.3.X</version>
+		<kinneret>0.1</kinneret>
+		<hebrew>בעבודה</hebrew>
+	</app>
+	<app>
+		<group>ייעודי</group>
+		<title>Kalzium</title>
+		<class>מדע</class>
+		<age>2+3</age>
+		<home>http://edu.kde.org/kalzium/</home>
+		<version>?</version>
+		<kinneret>?</kinneret>
+		<hebrew>לביצוע</hebrew>
+	</app>
+	<app>
+		<group>ייעודי</group>
+		<title>KMatPlot</title>
+		<class>מתמטיקה</class>
+		<age>2+3</age>
+		<home> http://kmatplot.sourceforge.net/</home>
+		<version>?</version>
+		<kinneret>?</kinneret>
+		<hebrew>?</hebrew>
+	</app>
+	<app>
+		<group>ייעודי</group>
+		<title>QCad</title>
+		<class>שרטוט</class>
+		<age>2+3</age>
+		<home>http://www.qcad.org/</home>
+		<version>?</version>
+		<kinneret>?</kinneret>
+		<hebrew>לביצוע</hebrew>
+	</app>
+	<app>
+		<group>ייעודי</group>
+		<title>Sketch</title>
+		<class>ציור</class>
+		<age>2+3</age>
+		<home> http://sketch.sourceforge.net/</home>
+		<version>?</version>
+		<kinneret>?</kinneret>
+		<hebrew>?</hebrew>
+	</app>
+	<app>
+		<group>ייעודי</group>
+		<title>Pingus</title>
+		<class>שעשועים/משחק</class>
+		<age>1+2+3</age>
+		<home>http://pingus.seul.org/</home>
+		<version>?</version>
+		<kinneret>0.1</kinneret>
+		<hebrew>?</hebrew>
+	</app>
+	<app>
+		<group>ייעודי</group>
+		<title>Rocks n Diamonds</title>
+		<class>שעשועים/משחק</class>
+		<age>1</age>
+		<home>http://www.artsoft.org/rocksndiamonds/</home>
+		<version>?</version>
+		<kinneret>?</kinneret>
+		<hebrew>?</hebrew>
+	</app>
+	<app>
+		<group>ייעודי</group>
+		<title>Frozen Bubble</title>
+		<class>שעשועים/משחק</class>
+		<age>1+2+3</age>
+		<home>http://www.frozen-bubble.org/</home>
+		<version>?</version>
+		<kinneret>?</kinneret>
+		<hebrew>?</hebrew>
+	</app>
+	<app>
+		<group>ייעודי</group>
+		<title>nil</title>
+		<class>שעשועים/משחק</class>
+		<age>1+2+3</age>
+		<home>http://nil.sourceforge.net/</home>
+		<version>?</version>
+		<kinneret>?</kinneret>
+		<hebrew>?</hebrew>
+	</app>
+	<app>
+		<group>כללי</group>
+		<title>KDE</title>
+		<class>מנהל חלונות</class>
+		<age>1+2+3</age>
+		<home>http://www.kde.org</home>
+		<version>3.1.2</version>
+		<kinneret>0.1</kinneret>
+		<hebrew>קיים</hebrew>
+		<extra>כולל כל התוכנות שבאות איתו</extra>
+	</app>
+	<app>
+		<group>כללי</group>
+		<title>SIM</title>
+		<class>מסרים מידיים</class>
+		<age>1+2+3</age>
+		<home>http://sim-icq.sourceforge.net/</home>
+		<version>0.81?</version>
+		<kinneret>0.1</kinneret>
+		<hebrew>קיים</hebrew>
+	</app>
+	<app>
+		<group>כללי</group>
+		<title>XMMS</title>
+		<class>נגן שירים</class>
+		<age>1+2+3</age>
+		<home>http://xmms.org/</home>
+		<version>?</version>
+		<kinneret>0.1</kinneret>
+		<hebrew>בעבודה</hebrew>
+	</app>
+	<app>
+		<group>כללי</group>
+		<title>Mozilla</title>
+		<class>דפדפן</class>
+		<age>1+2+3</age>
+		<home>http://www.mozilla.org</home>
+		<version>1.4</version>
+		<kinneret>0.1</kinneret>
+		<hebrew>קיים</hebrew>
+	</app>
+	<app>
+		<group>כללי</group>
+		<title>Fonst - The wall</title>
+		<class>?</class>
+		<age>?</age>
+		<home>http://thewall.revizia.net/</home>
+		<version>?</version>
+		<kinneret>0.1</kinneret>
+		<hebrew>בעבודה</hebrew>
+	</app>
+	<app>
+		<group>כללי</group>
+		<title>Pixie</title>
+		<class>עיבוד תמונות</class>
+		<age>?</age>
+		<home>http://www.mosfet.org/pixie/</home>
+		<version>?</version>
+		<kinneret>?</kinneret>
+		<hebrew>?</hebrew>
+	</app>
+	<app>
+		<group>כללי</group>
+		<title>KBear (ftp)</title>
+		<class>העברת קבצים</class>
+		<age>2+3</age>
+		<home>http://kbear.sourceforge.net/</home>
+		<version>?</version>
+		<kinneret>?</kinneret>
+		<hebrew>?</hebrew>
+	</app>
+	<app>
+		<group>כללי</group>
+		<title>ksirc</title>
+		<class>דיון מקוון</class>
+		<age>1+2+3</age>
+		<home>http://www.kde.orgt/</home>
+		<version>?</version>
+		<kinneret>?</kinneret>
+		<hebrew>?</hebrew>
+	</app>
+	<app>
+		<group>כללי</group>
+		<title>GhostView</title>
+		<class>מציג PDF</class>
+		<age>1+2+3</age>
+		<home>?</home>
+		<version>?</version>
+		<kinneret>?</kinneret>
+		<hebrew>?</hebrew>
+	</app>
+	<app>
+		<group>כללי</group>
+		<title>Kword</title>
+		<class>משרדי/עיבוד תמלילים</class>
+		<age>1+2+3</age>
+		<version>1.2.1</version>
+		<kinneret>0.3</kinneret>
+		<hebrew>קיים</hebrew>
+		<home>http://www.koffice.org/kword/</home>
+		<extra>חלק מקייאופיס 1.2</extra>
+	</app>
+	<app>
+		<group>כללי</group>
+		<title>KSpread</title>
+		<class>משרדי/גליון אלקטרוני</class>
+		<age>1+2+3</age>
+		<version>1.3</version>
+		<kinneret>0.3</kinneret>
+		<hebrew>קיים</hebrew>
+		<home>http://www.koffice.org/kspread/</home>
+		<extra>חלק מקייאופיס 1.2</extra>	
+	</app>
+	<app>
+		<group>כללי</group>
+		<title>KPresenter</title>
+		<class>כללי/מצגות</class>
+		<age>1+2+3</age>
+		<version>1.3</version>
+		<kinneret>0.3</kinneret>
+		<hebrew>קיים</hebrew>
+		<home>http://www.koffice.org/kpresenter/</home>
+		<extra>חלק מקייאופיס 1.2</extra>	
+	</app>
+
+	<app>
+		<group>כללי</group>
+		<title>kivio</title>
+		<class>משרדי/סרטוט</class>
+		<age>1+2+3</age>
+		<version>1.3</version>
+		<kinneret>0.3</kinneret>
+		<hebrew>קיים</hebrew>
+		<home>http://www.thekompany.com/projects/kivio/</home>
+		<extra>חלק מקייאופיס 1.2</extra>	
+	</app>
+
+	<app>
+		<group>כללי</group>
+		<title>Karbon14</title>
+		<class>ציור וקטורי</class>
+		<age>1+2+3</age>
+		<version>1.3</version>
+		<kinneret>0.3</kinneret>
+		<hebrew>חלקי</hebrew>
+		<home>http://www.koffice.org/karbon/</home>
+		<extra>חלק מקייאופיס 1.2</extra>
+	</app>
+
+	<app>
+		<group>כללי</group>
+		<title>Krita</title>
+		<class>עיבוד תמונה</class>
+		<age>1+2+3</age>
+		<version>1.3</version>
+		<kinneret>0.3</kinneret>
+		<hebrew>חלקי</hebrew>
+		<home>http://www.koffice.org/krita/</home>
+		<extra>חלק מקייאופיס 1.2</extra>	
+	</app>
+
+	<app>
+		<group>כללי</group>
+		<title>kugar</title>
+		<class>מחולל דוחות</class>
+		<age>2+3</age>
+		<version>1.3</version>
+		<kinneret>0.3</kinneret>
+		<hebrew>קיים</hebrew>
+		<home>http://www.thekompany.com/projects/kugar/</home>
+		<extra>חלק מקייאופיס 1.2</extra>	
+	</app>
+
+	<app>
+		<group>כללי</group>
+		<title>KChart</title>
+		<class>משרדי/צייר דיאגרמות</class>
+		<age>1+2+3</age>
+		<version>1.3</version>
+		<kinneret>0.3</kinneret>
+		<hebrew>קיים</hebrew>
+		<home>http://www.koffice.org/kchart</home>
+		<extra>חלק מקייאופיס 1.2</extra>	
+	</app>
+
+	<app>
+		<group>כללי</group>
+		<title>KFormula</title>
+		<class>משרדי/עורך נוסחאות</class>
+		<age>2+3</age>
+		<version>1.3</version>
+		<kinneret>0.3</kinneret>
+		<hebrew>קיים</hebrew>
+		<home>http://www.koffice.org/kformula</home>
+		<extra>חלק מקייאופיס 1.2</extra>
+	</app>
+
+	<app>
+		<group>כללי</group>
+		<title>KKBSwitch</title>
+		<class>יישומון</class>
+		<age>1+2+3</age>
+		<version>1.2</version>
+		<kinneret>0.3</kinneret>
+		<hebrew></hebrew>
+		<home>http://apps.kde.com/na/2/info/id/1238</home>
+	</app>
+
+	<app>
+		<group>כללי</group>
+		<title>גרש</title>
+		<class>עורף לקונסול</class>
+		<age>2+3</age>
+		<version></version>
+		<kinneret>0.3?</kinneret>
+		<hebrew>קיים</hebrew>
+		<home>http://www.typo.co.il/~mooffie/geresh/</home>
+	</app>
+
+	<app>
+		<group>כללי</group>
+		<title>katoob</title>
+		<class>עורך גרפי</class>
+		<age>1+2+3</age>
+		<version></version>
+		<kinneret>0.3</kinneret>
+		<hebrew>ללא?</hebrew>
+		<home>http://www.arabeyes.org/project.php?proj=katoob</home>
+	</app>
+
+	<app>
+		<group>כללי</group>
+		<title>Kbabel</title>
+		<class>תרגום</class>
+		<age>2+3</age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+
+	<app>
+		<group></group>
+		<title>Mplayer</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://www.mplayerhq.hu/homepage/</home>
+	</app>
+	
+	<app>
+		<group></group>
+		<title>Kplayer</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew>יש לתרגם</hebrew>
+		<home>http://kplayer.sourceforge.net/</home>
+	</app>
+
+	<app>
+		<group></group>
+		<title>Quanta Plus</title>
+		<class></class>
+		<age></age>
+		<version>The same as KDE</version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://www.kde.org</home>
+	</app>	
+	<app>
+		<group></group>
+		<title>Karamba</title>
+		<class></class>
+		<age></age>
+		<version>The newest</version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://www.efd.lth.se/%7Ed98hk/karamba/</home>
+	</app>
+
+	<app>
+		<group></group>
+		<title>Konqueror </title>
+		<class></class>
+		<age></age>
+		<version>same as KDE</version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>	
+	
+	
+	<app>
+		<group></group>
+		<title>Kdevelop</title>
+		<class></class>
+		<age></age>
+		<version>3</version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://www.kdevelop.org</home>
+	</app>	
+	<app>
+		<group></group>
+		<title>KDE-pim</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://pim.kde.org/</home>
+	</app>	
+	<app>
+		<group></group>
+		<title>KDE games</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://www.kde.org/kdegames/</home>
+	</app>	
+			<app>
+		<group></group>
+		<title>KDE toys</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title>KDE utilities</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title>kdegraphics</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>	
+<app>
+		<group></group>
+		<title>abiword</title>
+		<class></class>
+		<age></age>
+		<version>1.9x</version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://www.abiword.org/</home>
+	</app>
+<app>
+		<group></group>
+		<title>OTS</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://sourceforge.net/projects/libots/OTS</home>
+	</app>
+<app>
+		<group></group>
+		<title>hspell</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://www.ivrix.org.il/projects/spell-checker/</home>
+	</app>
+<app>
+		<group></group>
+		<title>XFCE4</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew>יש לתרגם</hebrew>
+		<home>http://www.xfce.org/</home>
+	</app>
+<app>
+		<group></group>
+		<title>Free-pascal</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://www.freepascal.org/</home>
+	</app>
+<app>
+		<group></group>
+		<title>Gcompris</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew>יש לתרגם</hebrew>
+		<home>http://www.ofset.org/gcompris/</home>
+	</app>
+<app>
+		<group></group>
+		<title>xsltproc </title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://xmlsoft.org/XSLT/xsltproc2.html </home>
+	</app>
+<app>
+		<group></group>
+		<title>Powermanga/</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://linux.tlk.fr/</home>
+	</app>
+<app>
+		<group></group>
+		<title>hbasic</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://hbasic.sourceforge.net/</home>
+	</app>
+<app>
+		<group></group>
+		<title>firestarter</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://firestarter.sourceforge.net/</home>
+	</app>
+<app>
+		<group></group>
+		<title>XMMS Extras</title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home>http://www.xmms.org/comments.php?show=S86, http://www.xmms.org/comments.php?show=P13, http://www.xmms.org/comments.php?show=P101, http://www.xmms.org/faq.php#g7, http://www.gareus.de/xmms/download.html</home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+<app>
+		<group></group>
+		<title></title>
+		<class></class>
+		<age></age>
+		<version></version>
+		<kinneret>?</kinneret>
+		<hebrew></hebrew>
+		<home></home>
+	</app>
+
+</catalog>
