@@ -1,0 +1,28 @@
+CVS Connection Script - README
+------------------------------------------
+
+1. How to use?
+	Run the script as the normal way you run scripts.
+
+2. I want to install.
+	Good for you!
+	Use install-sh script.
+
+3. What is Working Directory?
+	Working directory is the place on your computer where all the stuff you download from the CVS server
+	being saved in. Every time you want to work on something, open the copy in your working directory.
+	IMPORTANT: Creat a working directory before you start activating the script if you don't have one already.
+
+4. I love you. How do I contact you directly? What is your mail address?
+	You can't contact me directly =)
+	I can't give you my mail address.
+	You can find me at whatsup.org.il and linux-kinneret.org
+
+
+5. I found a bug! I swear! I think I can help you upgrade this script!
+	Well, please contact me in the sites I mentioned above.
+	If you can't, send me a mail to: the-q@myrealbox.com
+
+
+
+Hope it will make you lives easier.

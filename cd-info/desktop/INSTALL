@@ -1,0 +1,40 @@
+# ---------------------------------------
+# splash
+# ---------------------------------------
+# need to be set to:
+# splash/darkvision-splash-top-my.png
+
+# ---------------------------------------
+# wallpapers
+# ---------------------------------------
+# set the default wallpaper:
+cp wallpaper/xslf-kn.png /cdrom/KNOPPIX/background.png
+# current image is jpg - is png supported? if not may need to convert image to jpg
+
+# remove original knoppix wallpapers:
+rm /KNOPPIX/usr/share/wallpapers/* -f
+
+# copy new wallpapers:
+cp wallpaper/* /KNOPPIX/usr/share/wallpapers/
+
+# ---------------------------------------
+# desktop configuration
+# ---------------------------------------
+# 1. style: Keramik (as-is, no change)
+# 2. icons: Connectiva Crystal (as-is, no change)
+# 3. right click the desktop -> new -> link to application -> name = kinneret swimming guide -> icon = babelfish (under actions)-> command = /opt/kinneret/bin/swim -> place the icon on the top left side
+# 4. right click on the K -> panel menu -> configure panel -> menus tab -> untick 'show side image' + untick 'quick browser' + tick 'recent documents' + tick 'print system' -> arrangement tab -> tick size=normal -> apply
+# 5. move the garbage can to the bottom right side of the desktop
+
+
+# ---------------------------------------
+# kicker configuration
+# ---------------------------------------
+# 1. drag theclock to the right to make space for another K menu
+# 2. right click on empty space -> add -> special button -> K menu
+# 3. right click on the control panel icon -> remove the icon
+# 4. move the konqueror and home icons a bit to the left
+# 5. next to the right K menu, right click -> add -> special button -> access desktop (if the icon goes into the wrong place - right click and select move)
+# 6. to the left of konqueror -> add -> application button -> what to do -> add this button
+# 7. click on the K menu -> bookmarks -> edit bookmarks -> delete the three entries under 'Toolbar' -> settings -> untick show netscape bookmarks -> add under bookmarks link to 'gnu/linux kinneret web site' and 'whatsup - israeli linux portal' -> check that both show up on the konqueror screen as quick links
+
