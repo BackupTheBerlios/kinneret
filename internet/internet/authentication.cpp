@@ -18,6 +18,10 @@
 
 void Authentication::MakeInit(ostream &stream)
 {
+	stream << "# backup" << endl;
+	stream << "cp /etc/ppp/pap-secrets /etc/ppp/pap-secrets.bak" << endl;
+	stream << "cp /etc/ppp/chap-secrets /etc/ppp/chap-secrets.bak" << endl;
+	
 	stream << "echo '\"" << getUsername() << "\" * \"" << getPasswd() << "\"' > /etc/ppp/pap-secrets" << endl;
 	stream << "echo '\"" << getUsername() << "\" * \"" << getPasswd() << "\"' > /etc/ppp/chap-secrets" << endl;
 }

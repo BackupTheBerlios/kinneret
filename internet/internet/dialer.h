@@ -31,6 +31,7 @@ private:
 	
 	string		strConnect;
 	string		strDisconnect;
+	string		strInit;
 	string		strIFace;		// ppp0 || ippp0 (from the dialer's first line), dialer::iface
 	
 	bool		bDebian;

@@ -194,6 +194,11 @@ void ISP::ParseProxy(xmlDocPtr doc, xmlNodePtr cur)
 
 void ISP::MakeInit(ostream &stream)
 {
+	stream << "# backup" << endl;
+	stream << "cp /etc/resolv.conf /etc/resolv.conf.bak" << endl;
+
+	stream << endl;
+	
 	if (!getSG().empty())
 	{
 		stream << "echo \"search " << getSG() << "\" > /etc/resolv.conf" << endl;

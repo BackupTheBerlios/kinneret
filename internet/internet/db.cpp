@@ -213,10 +213,11 @@ string Database::ResolveDialer(ISP *isp, Hardware *hw, HardwareType ht) const th
 	{
 	case Broadband:
 		// ATM
-		// we'll use RTTI, if hw point to USB, we need the ATM dialer
-		if (typeid(hw) == typeid(USB)) return string("atm");
+		// we'll use RTTI, ADSL USB modems needs PPPoATM
+		if (typeid(hw) == typeid(USB) && hw->getModemType() == ADSL) return string("atm");
 
-		// Mess with Cables first, we only have one dialer.
+		// Mess with Cables first, we only have one dialer... USB or Ethernet,
+		// CDCEther makes them the same... :)
 		if (hw->getModemType() == Cable)
 		{
 			return string("pptp_cable_resolv.conf_workaround");
