@@ -644,8 +644,8 @@
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
-		<hebrew>http://www.wxpython.org/</hebrew>
-		<home></home>
+		<hebrew></hebrew>
+		<home>http://www.wxpython.org/</home>
 	</app>
 <app>
 		<group></group>
