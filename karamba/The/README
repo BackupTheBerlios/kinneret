@@ -1,5 +1,5 @@
 karamba theme - with custom weather.yahoo.com weather script
-Copyright (C) 2003 Robert Paskowitz
+Copyright (C) 2003 Robert Paskowitz - desigen. Gai Shaked - hebrew translation, city changing script, modifications.
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -15,25 +15,19 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 ---------------------------------------------------------------------------
-This Karamba theme displays the following information:
+This Karamba theme was first designed by Robert Paskowitz, translated  and redesigned by Gai Shaked (costello) as a part of GNU/Linux Kinneret.
+
+This theme displays the following information:
 
 Time
 Date
-Uptime
-Current Weather (from weather.yahoo.com)
-4 day forecast (from weather.yahoo.com)
-E-mail(POP3) Checking
-Percent free CPU
+Current Weather (from weather.yahoo.com) *
+4 day forecast (from weather.yahoo.com) *
+Percent used CPU
 Free RAM
-Free Swap
-Free space on Hard Drives (/ and /mnt/windows by default)
+Free space on Hard Drives (/home/knoppix and /mnt/hda1)
 Traffic in/out on eth0
-XMMS Progress
-XMMS Title (Scrolling!)
-and has XMMS Controls
 
-To have your city's weather displayed, edit scripts/weather.pl.
-Make sure to edit scripts/xmms_title.pl to have the XMMS title shown.
-Make sure to put in your username/password/server in scripts/mails.pl to check your e-mail.
+* - you may view the weather for any city in Israel that have a record on weather.yahoo.com.
 
 Make sure you INSTALL the included font.
