@@ -72,7 +72,7 @@ begin
    wForm.WriteSucceed:=False;
    SetErrorMode(SEM_FAILCRITICALERRORS);
 
-   CmdImage := 'boot.img';
+   CmdImage := '\boot\boot.img';
 end;
 
 procedure TMainForm.WriteButtonClick(Sender: TObject);
