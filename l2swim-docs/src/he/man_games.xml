@@ -17,7 +17,7 @@
 <chapter>
 ג'אמפ אנד באמפ (Jump n bump)
 </chapter>
-<image><file>"../image/man_games_jnb_logo.jpg"</file></image>
+<image><file>../image/man_games_jnb_logo.jpg</file></image>
 <para>
 ג'אמפ אנד באמפ ("קפוץ וחבוט") הוא משחק רב משתתפים (2-4) בו כל שחקן מגלם ארנבון חמוד הצובר נקודות ע"י קפיצה מעל ראשיהם של ארנבים אחרים, ובה בעת מנסה למנוע מארנבים אחרים לקפוץ מעליו. 
 </para>
@@ -114,7 +114,7 @@
 <section>
 תמונות מסך
 </section>
-<quatro><one>"../image/man_games_jnb_1.jpg"</one><two>"../image/man_games_jnb_2.jpg"</two><three>"../image/man_games_jnb_3.jpg"</three><four>"../image/man_games_jnb_4.jpg"</four></quatro>
+<quatro><one>../image/man_games_jnb_1.jpg</one><two>../image/man_games_jnb_2.jpg</two><three>../image/man_games_jnb_3.jpg</three><four>../image/man_games_jnb_4.jpg</four></quatro>
 
 <chapter>
 אניגמה (Enigma)
@@ -191,12 +191,12 @@ Alt-X : חזרה מיידית לתפריט הראשי.
 <section>
 תמונות מסך
 </section>
-<quatro><one>"../image/man_games_enigma_1.jpg"</one><two>"../image/man_games_enigma_2.jpg"</two><three>"../image/man_games_enigma_3.jpg"</three><four>"../image/man_games_enigma_4.jpg"</four></quatro>
+<quatro><one>../image/man_games_enigma_1.jpg</one><two>../image/man_games_enigma_2.jpg</two><three>../image/man_games_enigma_3.jpg</three><four>../image/man_games_enigma_4.jpg</four></quatro>
 
 <chapter>
 שבירת לבנים (LBreakout2)
 </chapter>
-<image><file>"../image/man_games_lb2_logo.gif"</file></image>
+<image><file>../image/man_games_lb2_logo.gif</file></image>
 <para>
 משחק קלסי שבו המשתמש אמור להכות במחבט, ולפגוע בלבנים על מנת להפילן מבלי לאבד את הכדור. 
 </para>
@@ -273,7 +273,7 @@ Alt-X : חזרה מיידית לתפריט הראשי.
 <section>
 תמונות מסך
 </section>
-<quatro><one>"../image/man_games_lb2_1.jpg"</one><two>"../image/man_games_lb2_2.jpg"</two><three>"../image/man_games_lb2_3.jpg"</three><four>"../image/man_games_lb2_4.jpg"</four></quatro>
+<quatro><one>../image/man_games_lb2_1.jpg</one><two>../image/man_games_lb2_2.jpg</two><three>../image/man_games_lb2_3.jpg</three><four>../image/man_games_lb2_4.jpg</four></quatro>
 
 <chapter>
 כח המנגה (Power Manga)
@@ -302,57 +302,8 @@ Alt-X : חזרה מיידית לתפריט הראשי.
 <section>
 תמונות מסך
 </section>
-<quatro><one>"../image/man_games_pm_1.jpg"</one><two>"../image/man_games_pm_2.jpg"</two><three>"../image/man_games_pm_3.jpg"</three><four>"../image/man_games_pm_4.jpg"</four></quatro>
+<quatro><one>../image/man_games_pm_1.jpg</one><two>../image/man_games_pm_2.jpg</two><three>../image/man_games_pm_3.jpg</three><four>../image/man_games_pm_4.jpg</four></quatro>
 
-<chapter>
-בועות קפואות (Frozen Bubble)
-</chapter>
-<image><file>"../image/man_games_jnb_logo.jpg"</file></image>
-<para>
-משחק פשוט אך ממכר שבו יש לירות כדורים על מנת ליצור רצפי צבע שיגרמו לנפילת כדורים ארצה.
-</para>
-
-<section>
-מהלך המשחק
-</section>
-<para>
-
-</para>
-
-<section>
-הפסקת המשחק
-</section>
-<para>
-
-</para>
-
-<section>
-מקשי הפעלה
-</section>
-<para>
-
-</para>
-
-
-<para>
-<bullets>
-<item>
-
-</item>
-<item>
-
-</item>
-<item>
-
-</item>
-</bullets>
-</para>
-
-
-<section>
-תמונות מסך
-</section>
-<quatro><one>"../image/man_games_jnb_1.jpg"</one><two>"../image/man_games_jnb_2.jpg"</two><three>"../image/man_games_jnb_3.jpg"</three><four>"../image/man_games_jnb_4.jpg"</four></quatro>
 
 <copy>
 מסמך זה עובד ונערך ע"י תוכנה חופשית בלבד. המסמך נכתב כקובץ XML בעזרת עורך התמלילים Katoob והומר ל HTML בעזרת המעבד xsltptoc תוך שימוש בתבנית XSLT שנכתבה בעזרת Katoob, על מערכת ההפעלה GNU/Linux. 
