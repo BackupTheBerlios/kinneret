@@ -19,15 +19,6 @@ then
 	fi
 
 	DHCPCLIENT="`which dhcpcd`"
-elif [ -x `which dhcpd3` ]
-then
-	dhcpd3
-	if [ $? -ne 0 ]
-	then
-		exit -1
-	fi
-
-	DHCPCLIENT="`which dhcpd3`"
 elif [ -x `which dhclient` ]
 then
 	dhclient
@@ -38,11 +29,12 @@ then
 
 	DHCPCLIENT="`which dhclient`"
 else
+	echo "Cannot find DHCP client!"
 	exit -1
 fi
 
 # See if we already have DHCP client running
-PS=`ps -ax | grep ${DHCPCLIENT} | grep [*hw::eth*] | awk "{print \\$1}"`
+PS=`ps ax | grep ${DHCPCLIENT} | grep [*hw::eth*] | awk "{print \\$1}"`
 if [ " " != " $PS" ]
 then
 	# If so, kill it
@@ -53,7 +45,7 @@ else
 fi
 
 # See if we already have a pptp client running
-PS=`ps -ax | grep pptp | awk "{print \\$1}"`
+PS=`ps ax | grep pptp | awk "{print \\$1}"`
 if [ " " != " $PS" ] ; then
 	# If so, kill it
 	echo "Killing PPtP client " $PS
@@ -83,12 +75,9 @@ fi
 # Gateway
 if [ "${DHCPCLIENT}" == "`which dhclient`" ]
 then
-{*
-%non_debian%{CABLEGW=`cat /etc/dhcpc/dhcpcd-[*hw::eth*].info | grep GATEWAY | cut -d"=" -f2`};
-%debian%{CABLEGW=`grep routers /var/lib/dhcp/dhclient.leases | tail -n 1| cut -d ";" -f1 | cut -d ' ' -f5`};
-*}
-else
-	CABLEGW=""
+	CABLEGW=`grep routers /var/lib/dhcp/dhclient.leases | tail -n 1| cut -d ";" -f1 | cut -d ' ' -f5`
+elif [ "${DHCPCLIENT}" == "`which dhcpcd`" ]
+	CABLEGW=`cat /etc/dhcpc/dhcpcd-[*hw::eth*].info | grep GATEWAY | cut -d"=" -f2`
 fi
 
 # Add route
