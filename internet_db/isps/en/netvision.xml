@@ -18,6 +18,10 @@
 		<join>1-800-65-65-65</join>
 	</support>
 
+	<proxy>
+		<manual>proxy.netvision.net.il:8080</manual>
+	</proxy>
+
 	<broadband>
 		<gateway>
 			<cable>

@@ -18,6 +18,10 @@
 		<join>1-800-64-64-00</join>
 	</support>
 
+	<proxy>
+		<manual>proxy.bezeqint.net:8080</manual>
+	</proxy>
+
 	<broadband>
 		<usrsuffix type="adsl">IBezint</usrsuffix>
 	</broadband>

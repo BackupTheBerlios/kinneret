@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <isp>
-	<name>Actcom</name>
-	<cname>actcom</cname>
+	<name>Israserv</name>
+	<cname>israserv</cname>
 
-	<dns1>192.114.47.4</dns1>
-	<dns2>192.114.47.52</dns2>
+	<dns1>192.115.0.100</dns1>
+	<dns2>192.115.3.100</dns2>
 
 	<support>
-		<homepage>http://www.actcom.net.il</homepage>
-		<tech>04-8300101</tech>
-		<join>1-800-300-123</join>
+		<homepage>http://www.israserv.net.il</homepage>
+		<tech>09-7428522</tech>
 	</support>
 
 	<email>
-		<pop3>pop.actcom.net.il</pop3>
-		<smtp>mail.actcom.net.il</smtp>
-		<suffix>actcom.net.il</suffix>
+		<pop3>mail.israserv.net.il</pop3>
+		<smtp>mail.israserv.net.il</smtp>
+		<suffix>israserv.net.il</suffix>
 	</email>
 
 	<proxy>
-		<manual>proxy.actcom.co.il:8080</manual>
+		<manual>proxy.israserv.net.il:8080</manual>
 	</proxy>
 
 	<broadband>
 		<gateway>
 			<cable>
-				<remotename>[*auth::usr*].c.actcom.net.il</remotename>
+				<ip>192.117.195.250</ip>
+				<remotename>192.117.195.250</remotename>
 			</cable>
 		</gateway>
-		<usrsuffix type="adsl">IActcom</usrsuffix>
-		<usrsuffix type="cable">CActcom</usrsuffix>
+		<usrsuffix type="adsl">@IIsraserv</usrsuffix>
 	</broadband>
-
+<!--
 	<isdn>
 		<server loc="The Center">03-6074000</server>
 		<server loc="The North">04-8319800</server>
@@ -45,4 +44,5 @@
 		<server loc="The Sharon">09-7612000</server>
 		<server loc="The South">08-9482900</server>
 	</dialup>
+-->
 </isp>

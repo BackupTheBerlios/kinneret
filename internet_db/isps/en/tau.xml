@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<isp>
+	<name>Tel Aviv University</name>
+	<cname>tau</cname>
+
+	<dns1>132.66.32.10</dns1>
+	<dns2>132.66.16.2</dns2>
+
+	<support>
+		<homepage>http://www.tau.ac.il</homepage>
+		<tech>03-6408888</tech>
+		<join>http://desk.tau.ac.il</join>
+	</support>
+
+	<email>
+		<pop3>pop.tau.ac.il</pop3>
+		<imap>imap.tau.ac.il</imap>
+		<smtp>post.tau.ac.il</smtp>
+		<suffix>[*auth::server*].tau.ac.il</suffix>
+	</email>
+
+	<proxy>
+		<manual>proxy.tau.ac.il:8080</manual>
+		<auto>http://www.tau.ac.il/tau.pac</auto>
+	</proxy>
+
+	<broadband>
+		<usrsuffix type="adsl">tau</usrsuffix>
+	</broadband>
+
+	<isdn>
+		<server loc="Tel Aviv">03-6464000</server>
+	</isdn>
+
+	<dialup>
+		<server loc="Tel Aviv">03-6964000</server>
+	</dialup>
+</isp>

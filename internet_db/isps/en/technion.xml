@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<isp>
+	<name>Technion</name>
+	<cname>technion</cname>
+
+	<dns1>132.68.1.2</dns1>
+	<dns2>132.68.1.9</dns2>
+
+	<support>
+		<homepage>http://www.technion.ac.il</homepage>
+		<tech>http://trs.technion.ac.il</tech>
+		<join>http://helpdesk.technion.ac.il</join>
+	</support>
+
+	<email>
+		<pop3>[*auth::server*].technion.ac.il</pop3>
+		<smtp>[*auth::server*].technion.ac.il</smtp>
+		<suffix>[*auth::server*].technion.ac.il</suffix>
+	</email>
+
+	<proxy>
+		<manual>wwwproxy.technion.ac.il:8080</manual>
+	</proxy>
+
+	<broadband>
+		<gateway>
+			<cable>
+				<remotename>ccdis3.technion.ac.il</remotename>
+			</cable>
+		</gateway>
+		<usrsuffix type="adsl">technion</usrsuffix>
+	</broadband>
+
+	<isdn>
+		<server loc="Technion">04-8350760</server>
+	</isdn>
+
+	<dialup>
+		<server loc="Technion">04-8350760</server>
+	</dialup>
+</isp>

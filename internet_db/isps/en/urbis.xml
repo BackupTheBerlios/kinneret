@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<isp>
+	<name>Urbis</name>
+	<cname>urbis</cname>
+
+	<dns1>192.118.6.3</dns1>
+	<dns2>192.118.6.3</dns2>
+
+	<support>
+		<homepage>http://www.urbis.net.il</homepage>
+		<tech>1-800-800-136</tech>
+	</support>
+
+	<email>
+		<pop3>mail.urbis.net.il</pop3>
+		<smtp>mail.urbis.net.il</smtp>
+		<suffix>urbis.net.il</suffix>
+	</email>
+
+	<proxy>
+		<manual>proxy.urbis.net.il:8080</manual>
+	</proxy>
+
+	<broadband>
+	<!--
+		<gateway>
+			<cable>
+				<remotename>[*auth::usr*].c.actcom.net.il</remotename>
+			</cable>
+		</gateway>
+	-->
+		<usrsuffix type="adsl">@IUrbis</usrsuffix>
+	</broadband>
+
+	<isdn>
+		<server loc="Unknown">136-255</server>
+		<server loc="Unknown2">03-5266000</server>
+	</isdn>
+
+	<dialup>
+		<server loc="Unknown">136-255</server>
+		<server loc="Unknown2">03-5266000</server>
+	</dialup>
+</isp>

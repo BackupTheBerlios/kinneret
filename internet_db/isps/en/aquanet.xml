@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<isp>
+	<name>Aquanet</name>
+	<cname>aquanet</cname>
+
+	<dns1>192.117.240.10</dns1>
+	<dns2>192.117.240.3</dns2>
+
+	<support>
+		<homepage>http://www.aquanet.co.il</homepage>
+		<tech>03-5395000</tech>
+		<join>03-5395000</join>
+	</support>
+
+	<email>
+		<pop3>mail.aquanet.co.il</pop3>
+		<smtp>mail.aquanet.co.il</smtp>
+		<suffix>aquanet.co.il</suffix>
+	</email>
+
+	<proxy>
+		<manual>proxy.aquanet.co.il:8080</manual>
+	</proxy>
+
+	<broadband>
+		<gateway>
+			<cable>
+				<remotename>cable.aquanet.co.il</remotename>
+			</cable>
+		</gateway>
+		<usrsuffix type="adsl">@IAquanet</usrsuffix>
+	</broadband>
+
+	<isdn>
+		<server loc="Jerusalem">02-6210555</server>
+		<server loc="Tel Aviv">03-5390000</server>
+		<server loc="Haifa">04-8290000</server>
+		<server loc="Rehovot">08-9399000</server>
+		<server loc="Kfar Saba">09-7751000</server>
+	</isdn>
+
+	<dialup>
+		<server loc="Jerusalem">02-6210555</server>
+		<server loc="Tel Aviv">03-5390000</server>
+		<server loc="Haifa">04-8290000</server>
+		<server loc="Rehovot">08-9399000</server>
+		<server loc="Kfar Saba">09-7751000</server>
+	</dialup>
+</isp>

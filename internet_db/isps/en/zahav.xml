@@ -17,6 +17,10 @@
 		<suffix>zahav.net.il</suffix>
 	</email>
 
+	<proxy>
+		<manual>proxy.inter.net.il:8080</manual>
+	</proxy>
+
 	<broadband>
 		<gateway>
 			<cable>

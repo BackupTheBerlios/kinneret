@@ -17,6 +17,10 @@
 		<suffix>012.net.il</suffix>
 	</email>
 
+	<proxy>
+		<manual>proxy.012.net.il:8080</manual>
+	</proxy>
+
 	<broadband>
 		<gateway>
 			<cable>

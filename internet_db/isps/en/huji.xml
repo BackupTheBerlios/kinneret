@@ -8,14 +8,14 @@
 
 	<support>
 		<homepage>http://www.huji.ac.il</homepage>
-		<tech>5883450</tech>
-<!--		<join></join>	-->
+		<tech>http://ca.huji.ac.il/services/internet/connect/home.shtml</tech>
+		<join>http://ca.huji.ac.il/services/internet/internet.shtml</join>
 	</support>
 
 	<email>
-<!--		<pop3>pop.actcom.net.il</pop3>	-->
-<!--		<smtp>mail.actcom.net.il</smtp>	-->
-<!--		<suffix>huji.ac.il</suffix>		-->
+		<pop3>[*auth::server*].huji.ac.il</pop3>
+		<smtp>[*auth::server*].huji.ac.il</smtp>
+		<suffix>[*auth::server*].huji.ac.il</suffix>
 	</email>
 
 	<proxy>
@@ -30,7 +30,6 @@
 			</cable>
 		</gateway>
 		<usrsuffix type="adsl">huji</usrsuffix>
-		<usrsuffix type="cable">huji</usrsuffix>
 	</broadband>
 
 	<isdn>
