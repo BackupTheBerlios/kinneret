@@ -126,7 +126,7 @@ void theme::copyStyle(KConfig *from, KConfig *to,int action, bool *styleChanged,
 	QString widgetStyle=from->readEntry("widgetStyle");
 	for (QStringList::iterator it = styles.begin(); it != styles.end(); it++)
 		if (widgetStyle.compare(*it) == 0) styleValid=true;
-	if (styleValid)
+	if ((styleValid)||(widgetStyle.isEmpty()))
 	{
 		*styleChanged |=copyEntry(from,to,"widgetStyle");
 		kdeglobals->setGroup("KDE");
@@ -251,7 +251,7 @@ bool theme::copyWinDecoration(KConfig *from, KConfig *to)
 		if (info.libraryName.compare(winDecoration) == 0) decorationValid=true;
 	}
 	// Change decoration
-	if (decorationValid) changed |= copyEntry(from,to,"PluginLib");
+	if ((decorationValid)||(winDecoration.isEmpty())) changed |= copyEntry(from,to,"PluginLib");
 	else KMessageBox::error(0,i18n("Window Decoration %1 is not valid").arg(winDecoration));
 	return changed;
 }
