@@ -1,17 +1,21 @@
 [Desktop Entry]
-Comment=Knrtheme - a kcontol module
-DocPath=
-Exec=kcmshell knrtheme
-Icon=
-Keywords=Knrtheme,knrtheme
-Name=The Knrtheme applet
-SwallowExec=
-SwallowTitle=
-Terminal=false
-TerminalOptions=
+Encoding=UTF-8
 Type=Application
-X-KDE-FactoryName=kcmknrtheme
-X-KDE-Library=kcmknrtheme
+DocPath=kcontrol/icons/index.html
+Icon=icons
+Exec=kcmshell icons
+
 X-KDE-ModuleType=Library
-X-KDE-SubstituteUID=false
-X-KDE-Username=
+X-KDE-Library=knrtheme
+X-KDE-FactoryName=knrtheme
+X-KDE-ParentApp=kcontrol
+
+Name=Kinneret's theme manager
+Name[he]=מנהל ערכות הנושא של כנרת
+
+Comment=Customize the Kinneret theme
+Comment[he]=שינוי ערכת הנושא של כנרת
+
+Keywords=
+
+Categories=Qt;KDE;X-KDE-settings-looknfeel
