@@ -1,0 +1,24 @@
+#Theme definition
+KARAMBA X=100 Y=100 W=450 H=189 LOCKED=true INTERVAL=300000 ENCODING=UTF8
+
+#Back images
+IMAGE X=0 Y=0 PATH="body.png"
+IMAGE X=0 Y=0 PATH="top.png"
+
+#Title
+TEXT X=435 Y=5 COLOR=240,240,240 FONTSIZE=12 FONT="NACHLIELI" SHADOW=1 Align=Right SENSOR=program program="/opt/kinneret/karamba/tip/rand.pl" line=1 encoding="UTF8"
+
+#Body
+<GROUP> X=0 Y=22
+TEXT X=445 Y=5 COLOR=0,0,0 FONTSIZE=10 FONT="NACHLIELI" Align=Right SENSOR=program program="/opt/kinneret/karamba/tip/rand.pl" line=2 encoding="UTF8"
+TEXT X=445 Y=20 COLOR=0,0,0 FONTSIZE=10 FONT="NACHLIELI" Align=Right SENSOR=program program="/opt/kinneret/karamba/tip/rand.pl" line=3 encoding="UTF8"
+TEXT X=445 Y=35 COLOR=0,0,0 FONTSIZE=10 FONT="NACHLIELI" Align=Right SENSOR=program program="/opt/kinneret/karamba/tip/rand.pl" line=4 encoding="UTF8"
+TEXT X=445 Y=50 COLOR=0,0,0 FONTSIZE=10 FONT="NACHLIELI" Align=Right SENSOR=program program="/opt/kinneret/karamba/tip/rand.pl" line=5 encoding="UTF8"
+TEXT X=445 Y=65 COLOR=0,0,0 FONTSIZE=10 FONT="NACHLIELI" Align=Right SENSOR=program program="/opt/kinneret/karamba/tip/rand.pl" line=6 encoding="UTF8"
+TEXT X=445 Y=80 COLOR=0,0,0 FONTSIZE=10 FONT="NACHLIELI" Align=Right SENSOR=program program="/opt/kinneret/karamba/tip/rand.pl" line=7 encoding="UTF8"
+TEXT X=445 Y=95 COLOR=0,0,0 FONTSIZE=10 FONT="NACHLIELI" Align=Right SENSOR=program program="/opt/kinneret/karamba/tip/rand.pl" line=8 encoding="UTF8"
+TEXT X=445 Y=110 COLOR=0,0,0 FONTSIZE=10 FONT="NACHLIELI" Align=Right SENSOR=program program="/opt/kinneret/karamba/tip/rand.pl" line=9 encoding="UTF8"
+TEXT X=445 Y=125 COLOR=0,0,0 FONTSIZE=10 FONT="NACHLIELI" Align=Right SENSOR=program program="/opt/kinneret/karamba/tip/rand.pl" line=10 encoding="UTF8"
+TEXT X=445 Y=140 COLOR=0,0,0 FONTSIZE=10 FONT="NACHLIELI" Align=Right SENSOR=program program="/opt/kinneret/karamba/tip/rand.pl" line=11 encoding="UTF8"
+
+</GROUP>
