@@ -16,7 +16,7 @@
 # Language: Hebrew, English, Arabic, Russian, Ethopian
 #
 # Authored by: dovix, dovix@linux-kinneret.org
-# Transformed to XML format by Nir Misgav, Nirro@linux-kinneret.org
+# Ported to XML format by Nir Misgav, Nirro@linux-kinneret.org
 -->
 
 <xml>
@@ -26,8 +26,7 @@
 	imagepath="/opt/kinneret/images" 
 	defaultimage="kinneret-pencil-s.png"
 	defaultdir="rtl"
-	firstpage="mainmenu"
-	cssfile="/opt/kinneret/l2swim/etc/l2swim.css"/>
+	firstpage="mainmenu"/>
 
 <menu name="mainmenu" title="גנו/לינוקס כנרת">
 	<chapter>
