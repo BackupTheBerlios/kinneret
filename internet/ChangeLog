@@ -1,6 +1,7 @@
 v0.2 to v0.3.1
 --------------
 * Added LAN support
+* The tool now deletes everything it created under /tmp/
 
 v0.1 to v0.2-rc1
 ----------------

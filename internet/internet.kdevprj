@@ -110,9 +110,15 @@ install_location=
 type=DATA
 
 [internet/Makefile.am]
-files=internet/main.cpp,internet/isp.h,internet/dialer.h,internet/authentication.h,internet/hardware.h,internet/db.h,internet/db.cpp,internet/isp.cpp,internet/ethernet.cpp,internet/xml.h,internet/xml.cpp,internet/usb.cpp,internet/dialer.cpp,internet/connection.h,internet/connection.cpp,internet/authentication.cpp,internet/parse.h,internet/parse.cpp,internet/wizard.h,internet/wizard.cpp,internet/help.h,internet/help.cpp,internet/hardware.cpp,internet/internet.conf,internet/mklib.sh,internet/internet.h,internet/error.cpp,internet/cmdline.cpp,internet/config.cpp,internet/internet.cpp,internet/info.cpp,internet/manage.cpp,internet/lan.cpp
+files=internet/main.cpp,internet/isp.h,internet/dialer.h,internet/authentication.h,internet/hardware.h,internet/db.h,internet/db.cpp,internet/isp.cpp,internet/ethernet.cpp,internet/xml.h,internet/xml.cpp,internet/usb.cpp,internet/dialer.cpp,internet/connection.h,internet/connection.cpp,internet/authentication.cpp,internet/parse.h,internet/parse.cpp,internet/wizard.h,internet/wizard.cpp,internet/help.h,internet/help.cpp,internet/hardware.cpp,internet/internet.conf,internet/mklib.sh,internet/internet.h,internet/error.cpp,internet/cmdline.cpp,internet/config.cpp,internet/internet.cpp,internet/info.cpp,internet/manage.cpp,internet/lan.cpp,internet/analogmodem.cpp
 sub_dirs=docs
 type=prog_main
+
+[internet/analogmodem.cpp]
+dist=true
+install=false
+install_location=
+type=SOURCE
 
 [internet/authentication.cpp]
 dist=true

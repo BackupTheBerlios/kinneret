@@ -31,6 +31,23 @@
 
 #include "wizard.h"
 
+// delete all the files that the wizard might have created
+void DoCleanup()
+{
+	const char *files[] =
+	{
+		"/tmp/.isps",
+		"/tmp/.hws",
+		"/tmp/.dlrs",
+		"/tmp/.defcon",
+		"/tmp/.eths",
+		0	// I'm not gonna count them... I'll use a NULL... Ok?
+	};
+
+	for (int i = 0 ; files[i] ; i++) unlink(files[i]);
+	system("rm -fr /tmp/iwiz");
+}
+
 int main(int argc, char *argv[])
 {
 	ConfigFile Conf;
@@ -259,6 +276,8 @@ int main(int argc, char *argv[])
 	{
 		if (!CmdLine.bQuite) cerr << error.Msg();
 		cout << endl;
+
+		DoCleanup();
 		
 		return -1;
 	}
@@ -267,6 +286,8 @@ int main(int argc, char *argv[])
 	{
 		if (!CmdLine.bQuite) cerr << "ERROR: Unknown error";
 		cout << endl;
+
+		DoCleanup();
 		
 		return -1;
 	}
