@@ -72,11 +72,13 @@ echo "ACTIVATE_HOME" > /tmp/.progress
 # mount ext3 to /home/knoppix
 mount "${MNT_PT}/kinneret/.config" /home/knoppix -t ext3 -o defaults,rw,loop 2>&1 > /dev/null
 
+mkdir /home/knoppix/partitions/
+
 echo "FINISH" > /tmp/.progress
 # change premissions
 chown -R knoppix:knoppix /home/knoppix
 
 # sym-link
-ln -s "${HOME_DIR}" /home/knoppix/docs
+ln -s "${HOME_DIR}" /home/knoppix/MyFiles
 
 exit 0

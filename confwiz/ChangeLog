@@ -3,6 +3,9 @@ From 0.3b to 0.3.1
 28 Jun 2003:
 * Created directories will be displayed in tree
 * License is now displayed using KHTML
+* /home/knoppix/docs ==> /home/knoppix/MyFiles
+* knoppix.sh creates the directory /home/knoppix/partitions and creates symbolic links
+  in it to all the mount points of all VFAT/FAT partitions.
 
 From 0.1 to 0.3b
 -------------------------------

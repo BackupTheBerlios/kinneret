@@ -16,7 +16,7 @@ GREEN="[1;32m"
 BLUE="[1;34m"
 # MAGENTA: Found devices or drivers
 MAGENTA="[1;35m"
-#
+
 maphome()
 {
 	d=$1
@@ -26,12 +26,28 @@ maphome()
 	# Find a swap file
 	if [ -e $d/kinneret/.swap ]
 	then
-		echo "${BLUE}Found swap file, activating.${NORMAL}"
+		echo "${MAGENTA}Found swap file, activating.${NORMAL}"
 		swapon $d/kinneret/.swap
 	fi
 
 	mount "${d}/kinneret/.config" /home/knoppix -t ext3 -o rw,loop 2>&1 > /dev/null
-	chown -R knoppix:knoppix /home/knoppix
+
+	echo "${BLUE}Linking partitions...${NORMAL}"
+	rm -fr /home/z9u2K/partitions/*
+
+	letter="103"	# C in octal
+	for mntpt in `cat /etc/fstab | grep fat | cut -b 6-9`
+	do
+		echo -e "${BLUE}Linking /mnt/${mntpt} to \\${letter}...${NORMAL}"
+		slash=\\
+		to=`echo -e "${slash}${letter}"`
+		ln -s /mnt/$mntpt/ "/home/z9u2K/partitions/λεπο ${to}"
+
+		let letter++
+	done
+
+	chown -R knoppix:knoppix /home/knoppix/
+
 	HOMEFOUND="yes"
 }
 
