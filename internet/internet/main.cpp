@@ -44,6 +44,9 @@ int main(int argc, char *argv[])
 		// Parse command line
 		CmdLine.Parse(argc, argv);
 
+		// Wizard
+		if (CmdLine.bWizard)			return DoWizard(Conf, CmdLine);
+
 		// Create database
 		Database db(Conf.strDBPath);
 

@@ -22,6 +22,8 @@ using namespace std;
 #include <unistd.h>
 #include <getopt.h>
 
+#include "internet.h"
+
 #include "db.h"
 #include "isp.h"
 #include "hardware.h"
@@ -30,135 +32,194 @@ using namespace std;
 #include "connection.h"
 #include "parse.h"
 
-int DoWizard()
-{/*
-	Database db;
-	vector<string> list = db.ListISPs();
-	vector<string> internal = db.ListISPs(true);
+int SelectFromList(vector<string> list)
+{
+	// print the list
 	vector<string>::iterator iter;
-	int j;
+	unsigned int j = 1;
+	for (iter = list.begin() ; iter != list.end() ; iter++, j++)
+		cout << j << ") " << *iter << endl;
 
-	int distro;
-	cout << "Distros:\n1) Debian based (Knoppix, Linbrew etc.)\n2) Non-debian\nEnter type of distro you use: ";
-	cin >> distro;
+	cout << endl;
 
-	cout << endl << "Listing known ISPs:" << endl;
-	for (j = 0, iter = list.begin() ; iter != list.end() ; iter++, j++)
-		cout << j + 1 << ") " << list[j] << endl;
-
-	cout << "Enter your ISP number: ";
-	cin >> j;
-
-	ISP isp(&db);
-	if (isp.LoadISP(internal[j - 1]))
+	do
 	{
-		cerr << "Invalid ISP.\n";
-		return -1;
+		cout << "Enter selecteion (1-" << list.size() << "): ";
+		cin >> j;
+	} while (j <= 0 || j > list.size());
+
+	return j;
+}
+
+int DoWizard(const ConfigFile &conf, const CommandLine &cmdline) throw (Error)
+{
+	try
+	{
+		Database db(conf.strDBPath);
+		Description desc;
+	
+		cout << "Welcome to the internet connection's tool wizard!\n\n";
+
+		// Debian
+		cout << "Is this Linux based on Debian?\n";
+		vector<string> vec;
+		vec.push_back("Yes (e.g. Debian, Knnopix, Kinneret etc.)");
+		vec.push_back("No (e.g. RedHat, Mandrake etc.)");
+		int j = SelectFromList(vec);
+		desc.bDebianBased = (j == 1);
+
+		cout << endl;
+
+		// ISP
+		cout << "Please select your ISP from the list:\n";
+		vector<string> list = db.ListISPs();
+		vector<string> clist = db.ListISPs(true);
+		j = SelectFromList(list);
+		desc.strISP = clist[j - 1];
+		db.getISPPath(desc.strISP);		// will throw an exception of ISP is invalid
+
+		cout << endl;
+
+		// Connection Method
+		cout << "You are connecting to the internet using...\n";
+		vec.clear();
+		vec.push_back("ADSL");
+		vec.push_back("Cables");
+		j = SelectFromList(vec);
+		desc.conMethod = (j == 1) ? ADSL : Cable;
+
+		cout << endl;
+
+		// Modem
+		cout << "Please select your modem from the list:\n";
+		vec = db.ListHWs(Broadband);
+		j = SelectFromList(vec);
+		desc.strModem = vec[j - 1];
+		db.getModemByName(desc.strModem, Broadband);	// again, for the exception
+
+		cout << endl;
+
+		// Dual?
+		string strModemFile = db.getModemByName(desc.strModem, Broadband);
+		Hardware::MinorType minor = getHardwareType(strModemFile, Broadband, &db);
+		if (minor == Hardware::Unknown) throw Error("Invalid modem");
+		switch (minor)
+		{
+		case Hardware::BBDual:
+			cout << "Your modem is connected to the computer through...\n";
+			vec.clear();
+			vec.push_back("Ethernet");
+			vec.push_back("USB");
+			j = SelectFromList(vec);
+			desc.interInterface = (j == 1) ? interEthernet : interUSB;
+
+			cout << endl;
+			break;
+
+		case Hardware::BBUSB:
+			desc.interInterface = interUSB;
+			break;
+
+		case Hardware::BBEth:
+			desc.interInterface = interEthernet;
+			break;
+
+		default:
+			break;
+		}
+
+		// Eth
+		cout << "Which ethernet device your modem occupies?\n";
+		vec.clear();
+
+		// list eths
+		int ret = system("cat /proc/net/dev | grep eth | cut -b 3-6 > /tmp/.eths");
+
+		ifstream eths("/tmp/.eths");
+		if (!eths || ret != 0) throw Error("Cannot query ethernet interfaces");
+
+		while (!eths.eof())
+		{
+			char szBuffer[0xFF];
+			eths.getline(szBuffer, 0xFF);
+			if (strlen(szBuffer))
+			{
+				szBuffer[4] = 0;
+				vec.push_back(szBuffer);
+			}
+		}
+
+		eths.close();
+		j = SelectFromList(vec);
+
+		desc.strEth = vec[j - 1];
+
+		cout << endl;
+
+		cout << "Username: ";
+		cin >> desc.strUsername;
+
+		system("stty -echo");
+		cout << "Password: ";
+		cin >> desc.strPasswd;
+		system("stty echo");
+
+		cout << endl << endl;
+
+		// Server
+		cout << "Do you need to enter a server name?\n";
+		vec.clear();
+		vec.push_back("Yes");
+		vec.push_back("No");
+		j = SelectFromList(vec);
+		if (j == 1)
+		{
+			cout << "Server: ";
+			cin >> desc.strServer;
+		}
+
+		// Connection name
+		char szBuffer[0xFF];
+		cin.getline(szBuffer, 0xFF);
+		do
+		{
+			cout << "Connetion Name (Unique!): ";
+			cin.getline(szBuffer, 0xFF);
+			desc.strConnectionName = string(szBuffer);
+		} while (FileExists(conf.strDBPath + "connections/" + desc.strConnectionName + ".tar.gz"));
+
+		cout << endl;
+
+		cout << "You are about to create:\n";
+		cout << "Scripts for ";
+		if (!desc.bDebianBased) cout << "non-";
+		cout << "Debian based systems, for ";
+
+		cout << ((desc.conMethod == ADSL) ? "ADSL" : "Cable") << ", ";
+		cout << "to " << desc.strISP << "," << endl;
+		cout << "Using " << desc.strModem << ", on " << desc.strEth << endl;
+		cout << "that is connected to ";
+		cout << ((desc.interInterface == interUSB) ? "a USB port." : "an Ethernet card.");
+		cout << endl;
+		cout << "\nIs this correct [yn] ? ";
+
+		char c;
+		do
+		{
+			cin >> c;
+		} while (c != 'n' && c != 'y');
+		if (c == 'n') throw Error("Canceled by user");
+
+		MakeFromDesc(desc, db, conf, cmdline);
+
+		cout << "Done.\n\n";
 	}
 
-	cout << endl << "Method:\n1) ADSL\n2) Cable\nEnter your method: ";
-	cin >> j;
-
-	int method = j;
-
-	cout << endl << isp.getName() << endl;
-	cout << "Listing modems:" << endl;
-	list = db.ListHWs(Broadband);
-	for (j = 0, iter = list.begin() ; iter != list.end() ; iter++, j++)
-		cout << j + 1 << ") " << list[j] << endl;
-
-	cout << "Enter your modem number: ";
-	cin >> j;
-
-	int conmethod;
-	cout << endl << "Dialing method:\n1) PPtP Dialer\n2) PPPoE Dialer\n3) Dialer, Address from DHCP server\nEnter dialing method: ";
-	cin >> conmethod;
-
-	Ethernet::ConnectionType type;
-	switch (conmethod)
+	catch (...)
 	{
-	case 1:
-		type = Ethernet::ConPPtP;
-		break;
-
-	case 2:
-		type = Ethernet::ConPPPoE;
-		break;
-
-	case 3:
-		type = Ethernet::ConDHCP;
-		break;
+		throw;
 	}
-
-	Ethernet modem(&db, type);
-	if (modem.Load(db.getModemByName(list[j - 1], Broadband)))
-	{
-		cerr << "This modem is not supported yet, we're working on it...\n";
-		return -1;
-	}
-
-	if (modem.pAddress->addrType == Ethernet::AddrNone)
-	{
-		cerr << "Connection method unsupported for this modem.\n";
-		return -1;
-	}
-
-	string eth;
-	cout << "Enter ethernet device (e.g. eth0, eth1 etc.): ";
-	cin >> eth;
-	modem.setEth(eth);
-
-	string username, passwd;
-	cout << endl << "Username (without suffix): ";
-	cin >> username;
-	if (method == 1 && !isp.getADSLSuffix().empty())
-	{
-		username += string("@[*isp::adsl::usrsuffix*]");
-		cout << Parse(username, &isp, 0, 0, 0) << endl;
-	}
-
-	else if (method == 2 && !isp.getCableSuffix().empty())
-	{
-		username += string("@[*isp::cable::usrsuffix*]");
-		cout << Parse(username, &isp, 0, 0, 0) << endl;
-	}
-
-	cout << "Password: ";
-	cin >> passwd;
-
-	Authentication auth(username, passwd);
-
-	cout << endl << "Using dialer: " << db.ResolveDialer(&isp, &modem) << endl;
-
-	Dialer dial(&db);
-	dial.LoadDialer(db.ResolveDialer(&isp, &modem));
-	dial.setDebian(distro == 1);
-
-	Connection con(&modem, &isp, &auth, &dial);
-
-	string strName;
-
-	cout << "Enter a name for this connection: ";
-	cin >> strName;
-
-	con.setName(strName);
-
-	cout << "Building scripts..." << endl;
-	if (con.Make())
-	{
-		cerr << "ERROR: Cannot create scripts.\n";
-		return -1;
-	}
-
-	cout << "Compressing..." << endl;
-	if (con.Install())
-	{
-		cerr << "ERROR: Cannot compress scripts.\n";
-		return -1;
-	}
-
-	cout << "Done.\n";
-*/
+	
 	return 0;
 }
 

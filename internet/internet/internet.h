@@ -244,6 +244,7 @@ public:
 bool FileExists(string strFile);
 void MakeFromDesc(const Description &desc, const Database &db, const ConfigFile &conf,
 	const CommandLine &cmdline) throw (Error);
+int DoWizard(const ConfigFile &conf, const CommandLine &cmdline) throw (Error);
 
 // Info
 void InfoListISPs(const Database &db) throw (Error);

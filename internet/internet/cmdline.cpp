@@ -190,15 +190,12 @@ void CommandLine::Parse(int argc, char *argv[]) throw (Error)
 	// chances for someone to catch on of my really stupid bugs :)
 	if (bQuite) bVerbose = false;
 
-	// If the user is lazy, and does not want to build the full (and really long)
-	// connamd line, he can have the tool asking him questions.
-	// NOTE: Wizard mode ignores the verbose and quite flags, it's interactive anyway...
-	if (bWizard) throw Error("Wizard mode is temporally disabled");
-
 	// Create mode is not any-other-mode, meaning, if we are in create mode,
 	// we must supply all required arguments and a connection will be created,
 	// that's means we are not in manage mode, or info mode.
 	bCreateMode = true;
+
+	if (bWizard) bCreateMode = false;
 
 	// Info mode
 	if (bListISPs || bListConnections) bCreateMode = false;

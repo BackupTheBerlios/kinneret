@@ -17,8 +17,6 @@
 #ifndef __INTERNET_WIZARD_H_
 #define __INTERNET_WIZARD_H_
 
-int DoWizard();		// prototype
-
 #endif
 
 
