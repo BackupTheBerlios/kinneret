@@ -1,5 +1,5 @@
 # Makefile.in generated automatically by automake 1.4-p6 from Makefile.am
-# KDE tags expanded automatically by am_edit - $Revision: 1.9 $ 
+# KDE tags expanded automatically by am_edit - $Revision: 1.10 $ 
 
 # Copyright (C) 1994, 1995-8, 1999, 2001 Free Software Foundation, Inc.
 # This Makefile.in is free software; the Free Software Foundation
@@ -43,16 +43,16 @@ pkgincludedir = $(includedir)/internet
 
 top_builddir = .
 
-ACLOCAL = ${SHELL} /home/z9u2K/projects/kinneret/cvs/internet/admin/missing --run aclocal
-AUTOCONF = ${SHELL} /home/z9u2K/projects/kinneret/cvs/internet/admin/missing --run autoconf
-AUTOMAKE = ${SHELL} /home/z9u2K/projects/kinneret/cvs/internet/admin/missing --run automake
-AUTOHEADER = ${SHELL} /home/z9u2K/projects/kinneret/cvs/internet/admin/missing --run autoheader
+ACLOCAL = ${SHELL} /home/z9u2k/projects/kinneret/cvs/internet/admin/missing --run aclocal
+AUTOCONF = ${SHELL} /home/z9u2k/projects/kinneret/cvs/internet/admin/missing --run autoconf
+AUTOMAKE = ${SHELL} /home/z9u2k/projects/kinneret/cvs/internet/admin/missing --run automake
+AUTOHEADER = ${SHELL} /home/z9u2k/projects/kinneret/cvs/internet/admin/missing --run autoheader
 
 INSTALL = /bin/install -c -p
 INSTALL_PROGRAM = ${INSTALL} $(INSTALL_STRIP_FLAG) $(AM_INSTALL_PROGRAM_FLAGS)
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_SCRIPT = ${INSTALL}
-transform = s,^,i386-linux-,
+transform = s,x,x,
 
 NORMAL_INSTALL = :
 PRE_INSTALL = :
@@ -60,20 +60,20 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_alias = i386-linux
-build_triplet = i386-pc-linux-gnu
-host_alias = i386-linux
-host_triplet = i386-pc-linux-gnu
-target_alias = i386-linux
-target_triplet = i386-pc-linux-gnu
-AMTAR = ${SHELL} /home/z9u2K/projects/kinneret/cvs/internet/admin/missing --run tar
+build_alias = 
+build_triplet = i686-pc-linux-gnu
+host_alias = 
+host_triplet = i686-pc-linux-gnu
+target_alias = 
+target_triplet = i686-pc-linux-gnu
+AMTAR = ${SHELL} /home/z9u2k/projects/kinneret/cvs/internet/admin/missing --run tar
 ARTSCCONFIG = @ARTSCCONFIG@
 AS = @AS@
 AUTODIRS = 
 AWK = gawk
 CC = gcc
 CONF_FILES =  $(top_srcdir)/configure.in.in
-CPP = cpp -I/usr/include/libxml2/
+CPP = gcc -E -I/usr/include/libxml2/
 CXX = g++
 CXXCPP = g++ -E
 DCOPIDL = @DCOPIDL@
@@ -162,7 +162,7 @@ LIB_SMB = @LIB_SMB@
 LIB_X11 = @LIB_X11@
 LIB_XEXT = @LIB_XEXT@
 LN_S = ln -s
-MAKEINFO = ${SHELL} /home/z9u2K/projects/kinneret/cvs/internet/admin/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/z9u2k/projects/kinneret/cvs/internet/admin/missing --run makeinfo
 MCOPIDL = @MCOPIDL@
 MEINPROC = @MEINPROC@
 MICO_INCLUDES = @MICO_INCLUDES@
@@ -201,7 +201,7 @@ USE_EXCEPTIONS = -fexceptions
 USE_RTTI = 
 USE_THREADS = @USE_THREADS@
 VERSION = 0.3.1
-WOVERLOADED_VIRTUAL = -Woverloaded-virtual
+WOVERLOADED_VIRTUAL = 
 XGETTEXT = @XGETTEXT@
 XPMINC = @XPMINC@
 XPMLIB = @XPMLIB@
@@ -214,7 +214,7 @@ all_libraries =
 am__include = include
 am__quote = 
 idldir = @idldir@
-install_sh = /home/z9u2K/projects/kinneret/cvs/internet/admin/install-sh
+install_sh = /home/z9u2k/projects/kinneret/cvs/internet/admin/install-sh
 jni_includes = @jni_includes@
 kde_appsdir = @kde_appsdir@
 kde_bindir = @kde_bindir@

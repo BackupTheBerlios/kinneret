@@ -2,10 +2,10 @@ v0.2 to v0.3.1
 --------------
 * Added LAN support
 * The tool now deletes everything it created under /tmp/
-* As from not only connect.sh and disconnect.sh containes code.
+* As from now, only connect.sh and disconnect.sh containes code.
   init.sh and boot.sh will exist, but will not execute code, for backward
   compatibility. Connect will do init, boot and connect, while disconnect
-  will do diconnect and done.
+  will do disconnect and done.
 
 v0.1 to v0.2-rc1
 ----------------

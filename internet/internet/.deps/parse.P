@@ -20,6 +20,7 @@ parse.o: parse.cpp parse.h \
   /usr/include/gconv.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/stdarg.h \
   /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+  /usr/include/bits/stdio.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/gthr.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/gthr-default.h \
   /usr/include/pthread.h /usr/include/sched.h /usr/include/time.h \
@@ -108,7 +109,7 @@ parse.o: parse.cpp parse.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/cmath \
   /usr/include/math.h /usr/include/bits/huge_val.h \
   /usr/include/bits/nan.h /usr/include/bits/mathdef.h \
-  /usr/include/bits/mathcalls.h \
+  /usr/include/bits/mathcalls.h /usr/include/bits/mathinline.h \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/cmath.tcc \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/typeinfo \
   /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/ostream \
@@ -123,17 +124,21 @@ parse.o: parse.cpp parse.h \
   /usr/include/unistd.h /usr/include/bits/posix_opt.h \
   /usr/include/bits/environments.h /usr/include/bits/confname.h \
   /usr/include/getopt.h ../config.h xml.h \
-  /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/tree.h \
+  /usr/include/libxml2/libxml/parser.h \
   /usr/include/libxml2/libxml/xmlversion.h \
+  /usr/include/libxml2/libxml/xmlexports.h \
+  /usr/include/libxml2/libxml/tree.h \
   /usr/include/libxml2/libxml/xmlregexp.h \
-  /usr/include/libxml2/libxml/valid.h /usr/include/libxml2/libxml/list.h \
+  /usr/include/libxml2/libxml/dict.h /usr/include/libxml2/libxml/hash.h \
+  /usr/include/libxml2/libxml/valid.h \
+  /usr/include/libxml2/libxml/xmlerror.h \
+  /usr/include/libxml2/libxml/list.h \
   /usr/include/libxml2/libxml/xmlautomata.h \
   /usr/include/libxml2/libxml/entities.h \
   /usr/include/libxml2/libxml/encoding.h /usr/include/iconv.h \
   /usr/include/libxml2/libxml/xmlIO.h \
-  /usr/include/libxml2/libxml/globals.h \
-  /usr/include/libxml2/libxml/xmlerror.h \
-  /usr/include/libxml2/libxml/SAX.h /usr/include/libxml2/libxml/xlink.h \
+  /usr/include/libxml2/libxml/globals.h /usr/include/libxml2/libxml/SAX.h \
+  /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
   /usr/include/libxml2/libxml/xmlmemory.h \
   /usr/include/libxml2/libxml/threads.h hardware.h db.h authentication.h \
   dialer.h
@@ -167,6 +172,7 @@ parse.h :
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/stdarg.h :
 /usr/include/bits/stdio_lim.h :
 /usr/include/bits/sys_errlist.h :
+/usr/include/bits/stdio.h :
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/gthr.h :
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/i686-pc-linux-gnu/bits/gthr-default.h :
 /usr/include/pthread.h :
@@ -275,6 +281,7 @@ internet.h :
 /usr/include/bits/nan.h :
 /usr/include/bits/mathdef.h :
 /usr/include/bits/mathcalls.h :
+/usr/include/bits/mathinline.h :
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/bits/cmath.tcc :
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/typeinfo :
 /usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3/include/g++-v3/ostream :
@@ -294,10 +301,14 @@ internet.h :
 ../config.h :
 xml.h :
 /usr/include/libxml2/libxml/parser.h :
-/usr/include/libxml2/libxml/tree.h :
 /usr/include/libxml2/libxml/xmlversion.h :
+/usr/include/libxml2/libxml/xmlexports.h :
+/usr/include/libxml2/libxml/tree.h :
 /usr/include/libxml2/libxml/xmlregexp.h :
+/usr/include/libxml2/libxml/dict.h :
+/usr/include/libxml2/libxml/hash.h :
 /usr/include/libxml2/libxml/valid.h :
+/usr/include/libxml2/libxml/xmlerror.h :
 /usr/include/libxml2/libxml/list.h :
 /usr/include/libxml2/libxml/xmlautomata.h :
 /usr/include/libxml2/libxml/entities.h :
@@ -305,9 +316,9 @@ xml.h :
 /usr/include/iconv.h :
 /usr/include/libxml2/libxml/xmlIO.h :
 /usr/include/libxml2/libxml/globals.h :
-/usr/include/libxml2/libxml/xmlerror.h :
 /usr/include/libxml2/libxml/SAX.h :
 /usr/include/libxml2/libxml/xlink.h :
+/usr/include/libxml2/libxml/SAX2.h :
 /usr/include/libxml2/libxml/xmlmemory.h :
 /usr/include/libxml2/libxml/threads.h :
 hardware.h :
