@@ -13,6 +13,8 @@ This file includes changes since the last upload. It is intended to provide a re
 * Debianization (for easy creation of deb packages) 2/4/04 (Nirro)
 * Updated Hebrew: first_time to include partial install mode 2/4/04
 * Updated ooo manual with latest guide from xslf from 27/feb
+* New: translator_guide 5/4/04
+* icons in xsl now use relative path 5/4/04
 
 -------------- v 0.7.2 --------------
 * Updated first_time.xml 15/1/04
