@@ -1,7 +1,17 @@
+rem Run this file to reinstall grub on windows NT/2000/XP
+rem Usually needed after hard-disk defragmentation.
+
 @echo off
 date /t >> c:\boot\grubinstall.log
 time /t >> c:\boot\grubinstall.log
 echo -------------- >> C:\boot\grubinstall.log
-c:\boot\grubinstall >> c:\boot\grubinstall.log
+attrib -r -h -s c:\boot\stage1 >> C:\boot\grubinstall.log
+attrib -r -h -s c:\boot\stage2 >> C:\boot\grubinstall.log
+c:\boot\flushdrv >> C:\boot\grubinstall.log
+c:\boot\grubinstall -d (hd0,0) -1 c:/boot/stage1 -2 c:/boot/stage2 -m c:/boot/menu.lst >> c:\boot\grubinstall.log
+c:\boot\flushdrv >> C:\boot\grubinstall.log
+attrib +r +h +s c:\boot\stage1
+attrib +r +h +s c:\boot\stage2
+
 echo ==================================================== >> C:\boot\grubinstall.log
 echo. >> c:\boot\grubinstall.log

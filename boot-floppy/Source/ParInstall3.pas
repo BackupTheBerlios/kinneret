@@ -66,6 +66,8 @@ begin
     destination.add('c:\boot\menu.lst');
     source.Add(cdrom+'\boot\grubinstall.exe.nt');
     destination.add('c:\boot\grubinstall.exe');
+    source.Add(cdrom+'\boot\flushdrv.exe.nt');
+    destination.add('c:\boot\flushdrv.exe');
     source.Add(cdrom+'\boot\reinstall.bat.nt');
     destination.add('c:\boot\reinstall.bat');
     source.Add(cdrom+'\boot\stage1');
