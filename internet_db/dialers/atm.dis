@@ -1,1 +1,2 @@
-# TODO
+/sbin/ifconfig ppp0 down
+killall pppd

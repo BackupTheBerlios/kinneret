@@ -1,0 +1,18 @@
+# backup
+cp /etc/ppp/options /etc/ppp/options.bak
+
+# set options
+echo lock > /etc/ppp/options
+echo defaultroute >> /etc/ppp/options
+echo noipdefault >> /etc/ppp/options
+echo noauth >> /etc/ppp/options
+echo holdoff 4 >> /etc/ppp/options
+echo maxfail 25 >> /etc/ppp/options
+echo persist >> /etc/ppp/options
+echo asyncmap 0 >> /etc/ppp/options
+echo lcp-echo-interval  2 >> /etc/ppp/options
+echo lcp-echo-failure   7 >> /etc/ppp/options
+echo name [*auth::usr*] >> /etc/ppp/options
+echo user [*auth::usr*] >> /etc/ppp/options
+echo plugin /usr/lib/pppd/plugins/pppoatm.so >> /etc/ppp/options
+echo [*isp::vpi*].[*isp::vci*] >> /etc/ppp/options
