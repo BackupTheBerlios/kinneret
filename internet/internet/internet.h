@@ -161,6 +161,9 @@ public:
 	CLPair		clLANBroadcast;
 	CLPair		clLANGateway;
 
+	CLFromList	clMyArea;
+	CLPair		clPhoneNumber;
+
 	// Info mode
 	bool		bListISPs;
 	bool		bListConnections;
@@ -215,7 +218,9 @@ enum ConnectionMethod
 {
 	ADSL,
 	Cable,
-	LANSlave
+	LANSlave,
+	Analog,			// dialup
+	DigitalAnalog	// isdn
 };
 
 enum SingleInterface
@@ -248,6 +253,9 @@ public:
 	string				strLANBroadcast;
 	string				strLANGateway;
 	bool				bLANDHCP;
+
+	// Dialup Stuff
+	string				strATDT;
 
 	Description() {}
 	~Description() {}

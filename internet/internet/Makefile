@@ -1,6 +1,6 @@
 # Makefile.in generated automatically by automake 1.4-p6 from Makefile.am
 # Generated automatically from Makefile.in by config.pl.
-# KDE tags expanded automatically by am_edit - $Revision: 1.7 $ 
+# KDE tags expanded automatically by am_edit - $Revision: 1.8 $ 
 
 # Copyright (C) 1994, 1995-8, 1999, 2001 Free Software Foundation, Inc.
 # This Makefile.in is free software; the Free Software Foundation
@@ -247,12 +247,12 @@ x_libraries = @x_libraries@
 
 bin_PROGRAMS = internet
 
-internet_SOURCES = lan.cpp manage.cpp info.cpp internet.cpp config.cpp cmdline.cpp error.cpp hardware.cpp help.cpp wizard.cpp parse.cpp authentication.cpp connection.cpp dialer.cpp usb.cpp xml.cpp ethernet.cpp isp.cpp db.cpp main.cpp 
+internet_SOURCES = analogmodem.cpp lan.cpp manage.cpp info.cpp internet.cpp config.cpp cmdline.cpp error.cpp hardware.cpp help.cpp wizard.cpp parse.cpp authentication.cpp connection.cpp dialer.cpp usb.cpp xml.cpp ethernet.cpp isp.cpp db.cpp main.cpp 
 internet_LDADD = -lxml2
 
 SUBDIRS = docs 
 
-EXTRA_DIST = main.cpp isp.h dialer.h authentication.h hardware.h db.h db.cpp isp.cpp ethernet.cpp xml.h xml.cpp usb.cpp dialer.cpp connection.h connection.cpp authentication.cpp parse.h parse.cpp wizard.h wizard.cpp help.h help.cpp hardware.cpp internet.conf mklib.sh internet.h error.cpp cmdline.cpp config.cpp internet.cpp info.cpp manage.cpp lan.cpp 
+EXTRA_DIST = main.cpp isp.h dialer.h authentication.h hardware.h db.h db.cpp isp.cpp ethernet.cpp xml.h xml.cpp usb.cpp dialer.cpp connection.h connection.cpp authentication.cpp parse.h parse.cpp wizard.h wizard.cpp help.h help.cpp hardware.cpp internet.conf mklib.sh internet.h error.cpp cmdline.cpp config.cpp internet.cpp info.cpp manage.cpp lan.cpp analogmodem.cpp 
 
 ####### kdevelop will overwrite this part!!! (end)############
 # set the include path found by configure
@@ -271,20 +271,20 @@ DEFS = -DHAVE_CONFIG_H -I. -I$(srcdir) -I..
 CPPFLAGS = 
 LDFLAGS = 
 LIBS = -lxml2 
-#>- internet_OBJECTS =  lan.$(OBJEXT) manage.$(OBJEXT) info.$(OBJEXT) \
-#>- internet.$(OBJEXT) config.$(OBJEXT) cmdline.$(OBJEXT) error.$(OBJEXT) \
-#>- hardware.$(OBJEXT) help.$(OBJEXT) wizard.$(OBJEXT) parse.$(OBJEXT) \
-#>- authentication.$(OBJEXT) connection.$(OBJEXT) dialer.$(OBJEXT) \
-#>- usb.$(OBJEXT) xml.$(OBJEXT) ethernet.$(OBJEXT) isp.$(OBJEXT) \
-#>- db.$(OBJEXT) main.$(OBJEXT)
+#>- internet_OBJECTS =  analogmodem.$(OBJEXT) lan.$(OBJEXT) manage.$(OBJEXT) \
+#>- info.$(OBJEXT) internet.$(OBJEXT) config.$(OBJEXT) cmdline.$(OBJEXT) \
+#>- error.$(OBJEXT) hardware.$(OBJEXT) help.$(OBJEXT) wizard.$(OBJEXT) \
+#>- parse.$(OBJEXT) authentication.$(OBJEXT) connection.$(OBJEXT) \
+#>- dialer.$(OBJEXT) usb.$(OBJEXT) xml.$(OBJEXT) ethernet.$(OBJEXT) \
+#>- isp.$(OBJEXT) db.$(OBJEXT) main.$(OBJEXT)
 #>+ 9
 internet_final_OBJECTS = internet.all_cpp.o 
-internet_nofinal_OBJECTS = lan.$(OBJEXT) manage.$(OBJEXT) info.$(OBJEXT) \
-internet.$(OBJEXT) config.$(OBJEXT) cmdline.$(OBJEXT) error.$(OBJEXT) \
-hardware.$(OBJEXT) help.$(OBJEXT) wizard.$(OBJEXT) parse.$(OBJEXT) \
-authentication.$(OBJEXT) connection.$(OBJEXT) dialer.$(OBJEXT) \
-usb.$(OBJEXT) xml.$(OBJEXT) ethernet.$(OBJEXT) isp.$(OBJEXT) \
-db.$(OBJEXT) main.$(OBJEXT)
+internet_nofinal_OBJECTS = analogmodem.$(OBJEXT) lan.$(OBJEXT) manage.$(OBJEXT) \
+info.$(OBJEXT) internet.$(OBJEXT) config.$(OBJEXT) cmdline.$(OBJEXT) \
+error.$(OBJEXT) hardware.$(OBJEXT) help.$(OBJEXT) wizard.$(OBJEXT) \
+parse.$(OBJEXT) authentication.$(OBJEXT) connection.$(OBJEXT) \
+dialer.$(OBJEXT) usb.$(OBJEXT) xml.$(OBJEXT) ethernet.$(OBJEXT) \
+isp.$(OBJEXT) db.$(OBJEXT) main.$(OBJEXT)
 internet_OBJECTS = $(internet_nofinal_OBJECTS)
 #internet_OBJECTS = $(internet_final_OBJECTS)
 internet_DEPENDENCIES = 
@@ -311,22 +311,22 @@ DISTFILES= $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST) $(KDE_
 
 TAR = tar
 GZIP_ENV = --best
-#>- DEP_FILES =  .deps/authentication.P .deps/cmdline.P .deps/config.P \
-#>- .deps/connection.P .deps/db.P .deps/dialer.P .deps/error.P \
-#>- .deps/ethernet.P .deps/hardware.P .deps/help.P .deps/info.P \
-#>- .deps/internet.P .deps/isp.P .deps/lan.P .deps/main.P .deps/manage.P \
-#>- .deps/parse.P .deps/usb.P .deps/wizard.P .deps/xml.P
+#>- DEP_FILES =  .deps/analogmodem.P .deps/authentication.P .deps/cmdline.P \
+#>- .deps/config.P .deps/connection.P .deps/db.P .deps/dialer.P \
+#>- .deps/error.P .deps/ethernet.P .deps/hardware.P .deps/help.P \
+#>- .deps/info.P .deps/internet.P .deps/isp.P .deps/lan.P .deps/main.P \
+#>- .deps/manage.P .deps/parse.P .deps/usb.P .deps/wizard.P .deps/xml.P
 #>+ 11
-#DEP_FILES =   $(DEPDIR)/internet.all_cpp.P   .deps/authentication.P .deps/cmdline.P .deps/config.P \
-#	.deps/connection.P .deps/db.P .deps/dialer.P .deps/error.P \
-#	.deps/ethernet.P .deps/hardware.P .deps/help.P .deps/info.P \
-#	.deps/internet.P .deps/isp.P .deps/lan.P .deps/main.P .deps/manage.P \
-#	.deps/parse.P .deps/usb.P .deps/wizard.P .deps/xml.P
-DEP_FILES =    .deps/authentication.P .deps/cmdline.P .deps/config.P \
-	.deps/connection.P .deps/db.P .deps/dialer.P .deps/error.P \
-	.deps/ethernet.P .deps/hardware.P .deps/help.P .deps/info.P \
-	.deps/internet.P .deps/isp.P .deps/lan.P .deps/main.P .deps/manage.P \
-	.deps/parse.P .deps/usb.P .deps/wizard.P .deps/xml.P
+#DEP_FILES =   $(DEPDIR)/internet.all_cpp.P   .deps/analogmodem.P .deps/authentication.P .deps/cmdline.P \
+#	.deps/config.P .deps/connection.P .deps/db.P .deps/dialer.P \
+#	.deps/error.P .deps/ethernet.P .deps/hardware.P .deps/help.P \
+#	.deps/info.P .deps/internet.P .deps/isp.P .deps/lan.P .deps/main.P \
+#	.deps/manage.P .deps/parse.P .deps/usb.P .deps/wizard.P .deps/xml.P
+DEP_FILES =    .deps/analogmodem.P .deps/authentication.P .deps/cmdline.P \
+	.deps/config.P .deps/connection.P .deps/db.P .deps/dialer.P \
+	.deps/error.P .deps/ethernet.P .deps/hardware.P .deps/help.P \
+	.deps/info.P .deps/internet.P .deps/isp.P .deps/lan.P .deps/main.P \
+	.deps/manage.P .deps/parse.P .deps/usb.P .deps/wizard.P .deps/xml.P
 
 SOURCES = $(internet_SOURCES)
 OBJECTS = $(internet_OBJECTS)
@@ -707,11 +707,11 @@ force-reedit:
 
 
 #>+ 11
-internet.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/lan.cpp $(srcdir)/manage.cpp $(srcdir)/info.cpp $(srcdir)/internet.cpp $(srcdir)/config.cpp $(srcdir)/cmdline.cpp $(srcdir)/error.cpp $(srcdir)/hardware.cpp $(srcdir)/help.cpp $(srcdir)/wizard.cpp $(srcdir)/parse.cpp $(srcdir)/authentication.cpp $(srcdir)/connection.cpp $(srcdir)/dialer.cpp $(srcdir)/usb.cpp $(srcdir)/xml.cpp $(srcdir)/ethernet.cpp $(srcdir)/isp.cpp $(srcdir)/db.cpp $(srcdir)/main.cpp 
+internet.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/analogmodem.cpp $(srcdir)/lan.cpp $(srcdir)/manage.cpp $(srcdir)/info.cpp $(srcdir)/internet.cpp $(srcdir)/config.cpp $(srcdir)/cmdline.cpp $(srcdir)/error.cpp $(srcdir)/hardware.cpp $(srcdir)/help.cpp $(srcdir)/wizard.cpp $(srcdir)/parse.cpp $(srcdir)/authentication.cpp $(srcdir)/connection.cpp $(srcdir)/dialer.cpp $(srcdir)/usb.cpp $(srcdir)/xml.cpp $(srcdir)/ethernet.cpp $(srcdir)/isp.cpp $(srcdir)/db.cpp $(srcdir)/main.cpp 
 	@echo 'creating internet.all_cpp.cpp ...'; \
 	rm -f internet.all_cpp.files internet.all_cpp.final; \
 	echo "#define KDE_USE_FINAL 1" >> internet.all_cpp.final; \
-	for file in lan.cpp manage.cpp info.cpp internet.cpp config.cpp cmdline.cpp error.cpp hardware.cpp help.cpp wizard.cpp parse.cpp authentication.cpp connection.cpp dialer.cpp usb.cpp xml.cpp ethernet.cpp isp.cpp db.cpp main.cpp ; do \
+	for file in analogmodem.cpp lan.cpp manage.cpp info.cpp internet.cpp config.cpp cmdline.cpp error.cpp hardware.cpp help.cpp wizard.cpp parse.cpp authentication.cpp connection.cpp dialer.cpp usb.cpp xml.cpp ethernet.cpp isp.cpp db.cpp main.cpp ; do \
 	  echo "#include \"$$file\"" >> internet.all_cpp.files; \
 	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> internet.all_cpp.final; \
 	done; \

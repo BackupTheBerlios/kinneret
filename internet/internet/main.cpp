@@ -212,6 +212,47 @@ int main(int argc, char *argv[])
 
 			MakeFromDesc(desc, db, Conf, CmdLine);
 		}
+
+		if (CmdLine.clMethod.strOpt == "dialup")
+		{
+			desc.conMethod = Analog;
+
+			// Debian
+			if (CmdLine.clDebian.strOpt == "yes") desc.bDebianBased = true;
+			else if (CmdLine.clDebian.strOpt == "no") desc.bDebianBased = false;
+
+			if (CmdLine.bVerbose)
+			{
+				cout << "Will build scripts for ";
+				if (desc.bDebianBased == false) cout << "non-";
+
+				cout << "Debian based systems\n";
+			}
+
+			// ATDT
+			string phonecode = CmdLine.clPhoneNumber.strOpt.substr(0, 2);
+			if (CmdLine.clMyArea.strOpt == phonecode)
+				desc.strATDT = CmdLine.clPhoneNumber.strOpt.substr(3, 7);
+			else desc.strATDT = phonecode + CmdLine.clPhoneNumber.strOpt.substr(3, 7);
+
+			// Username
+			desc.strUsername = CmdLine.clUsername.strOpt;
+
+			// Server
+			desc.strServer = CmdLine.clServer.strOpt;
+
+			// Password
+			desc.strPasswd = CmdLine.clPasswd.strOpt;
+
+			if (CmdLine.bVerbose) cout << "ATDT: " << desc.strATDT << endl;
+			
+			// Connection name
+			if (FileExists(Conf.strDBPath + "connections/" + CmdLine.clName.strOpt + ".tar.gz"))
+				throw Error("Connection name must be unique");
+
+			desc.strConnectionName = CmdLine.clName.strOpt;
+			MakeFromDesc(desc, db, Conf, CmdLine);
+		}
 	}
 
 	catch (Error &error)

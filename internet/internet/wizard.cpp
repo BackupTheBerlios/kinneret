@@ -86,6 +86,7 @@ int DoWizard(const ConfigFile &conf, const CommandLine &cmdline) throw (Error)
 		vec.push_back("ADSL");
 		vec.push_back("Cables");
 		vec.push_back("LAN");
+		vec.push_back("Dialup");
 		j = SelectFromList(vec);
 
 		switch (j)
@@ -100,6 +101,10 @@ int DoWizard(const ConfigFile &conf, const CommandLine &cmdline) throw (Error)
 
 		case 3:
 			desc.conMethod = LANSlave;
+			break;
+
+		case 4:
+			desc.conMethod = Analog;
 			break;
 		}
 
@@ -347,6 +352,105 @@ int DoWizard(const ConfigFile &conf, const CommandLine &cmdline) throw (Error)
 			if (c == 'n') throw Error("Canceled by user");
 
 			////////////
+			MakeFromDesc(desc, db, conf, cmdline);
+
+			cout << "Done.\n\n";
+		}
+
+		else if (desc.conMethod == Analog)
+		{
+			// Phones
+			cout << "Please select the server near you:\n";
+			ISP isp(&db);
+			isp.LoadISP(desc.strISP);
+			map<string, string> ph = isp.getDialupMap();
+			map<string, string>::iterator iter;
+			int count = 0;
+			for (iter = ph.begin() ; iter != ph.end() ; iter++, count++)
+				cout << count + 1 << ") " << iter->second << " (" << iter->first << ")" << endl;
+
+			cout << endl;
+
+			do
+			{
+				cout << "Enter selecteion (1-" << count << "): ";
+				cin >> j;
+			}
+			while (j <= 0 || j > count);
+
+			count = 0;
+			for (iter = ph.begin() ; count < j - 1 ; iter++, count++);
+			string phonenum = iter->second;
+
+			cout << endl;
+			cout << "What area code are you in?\n";
+			vec.clear();
+			vec.push_back("02");
+			vec.push_back("03");
+			vec.push_back("04");
+			vec.push_back("06");
+			vec.push_back("07");
+			vec.push_back("08");
+			vec.push_back("09");
+			j = SelectFromList(vec);
+
+			string strarea = vec[j - 1];
+
+			// compile ATDT code
+			string phonecode = phonenum.substr(0, 2);
+			if (strarea == phonecode)
+				desc.strATDT = phonenum.substr(3, 7);
+			else desc.strATDT = phonecode + phonenum.substr(3, 7);
+
+			cout << "Username: ";
+			cin >> desc.strUsername;
+
+			system("stty -echo");
+			cout << "Password: ";
+			cin >> desc.strPasswd;
+			system("stty echo");
+
+			cout << endl << endl;
+/*
+			// Server
+			cout << "Do you need to enter a server name?\n";
+			vec.clear();
+			vec.push_back("Yes");
+			vec.push_back("No");
+			j = SelectFromList(vec);
+			if (j == 1)
+			{
+				cout << "Server: ";
+				cin >> desc.strServer;
+			}
+*/
+			// Connection name
+			char szBuffer[0xFF];
+			cin.getline(szBuffer, 0xFF);
+			do
+			{
+				cout << "Connetion Name (Unique!): ";
+				cin.getline(szBuffer, 0xFF);
+				desc.strConnectionName = string(szBuffer);
+			} while (FileExists(conf.strDBPath + "connections/" + desc.strConnectionName + ".tar.gz"));
+
+			cout << endl;
+
+			cout << "You are about to create:\n";
+			cout << "Scripts for ";
+			if (!desc.bDebianBased) cout << "non-";
+			cout << "Debian based systems, for a dialup connection,\n";
+			cout << "connecting to " << phonenum << " (ATDT " << desc.strATDT << ").\n";
+			cout << endl;
+			cout << "\nIs this correct [yn] ? ";
+
+			char c;
+			do
+			{
+				cin >> c;
+			} while (c != 'n' && c != 'y');
+			if (c == 'n') throw Error("Canceled by user");
+
 			MakeFromDesc(desc, db, conf, cmdline);
 
 			cout << "Done.\n\n";

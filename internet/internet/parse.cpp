@@ -91,6 +91,7 @@ string Parse(string str, ISP *isp, Authentication *auth, Hardware *hw, Dialer *d
 
 			if (name == "hw::eth")						name = dynamic_cast<Ethernet*>(hw)->getEth();
 			else if (name == "hw::adsl::gateway")		name = dynamic_cast<Ethernet*>(hw)->getIP();
+			else if (name == "hw::atdt")				name = dynamic_cast<AnalogModem*>(hw)->getATDT();
 			else if (name == "hw::adsl::remotename")	name = dynamic_cast<Ethernet*>(hw)->getRemotename();
 			else
 			{

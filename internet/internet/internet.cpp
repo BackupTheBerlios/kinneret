@@ -205,6 +205,43 @@ void MakeFromDesc(const Description &desc, const Database &db, const ConfigFile 
 				if (system(strCmd.c_str()) != 0) throw ErrorSystem();
 			}
 		}
+
+		else if (desc.conMethod == Analog)
+		{
+			AnalogModem modem(&db);
+			modem.setATDT(desc.strATDT);
+			string username(desc.strUsername), passwd(desc.strPasswd);
+
+			// A really stupid class, I know... but it's here for the future
+			// (what if next year your ISP will require a finger print? :)
+			Authentication auth(username, passwd, desc.strServer);
+
+			Dialer dial(&db);
+			dial.LoadDialer("dialup");
+			dial.setDebian(desc.bDebianBased);
+
+			Connection con(&modem, 0, &auth, &dial);
+			con.setName(desc.strConnectionName);
+			if (FileExists(conf.strDBPath + "connections/" + desc.strConnectionName + ".tar.gz"))
+				throw Error("Connection's name must be unique");
+
+			if (cmdline.bVerbose) cout << "Making..." << endl;
+			con.Make();
+
+			if (cmdline.bVerbose) cout << "Packing and installing..." << endl;
+			con.Install();
+
+			if (cmdline.bVerbose) cout << "Done." << endl;
+
+			if (!FileExists(conf.strDBPath + "connections/default.tar.gz"))
+			{
+				string strCmd = "rm -f '" + conf.strDBPath + "connections/default.tar.gz'";
+				if (system(strCmd.c_str()) != 0) throw ErrorSystem();
+
+				strCmd = "ln -s '" + conf.strDBPath + "connections/" + con.getName() + ".tar.gz' " + conf.strDBPath + "connections/default.tar.gz";
+				if (system(strCmd.c_str()) != 0) throw ErrorSystem();
+			}
+		}
 	}
 
 	catch (bad_alloc)

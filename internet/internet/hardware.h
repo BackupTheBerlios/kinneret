@@ -179,6 +179,28 @@ public:
 	inline void setGateway(const string &s)		{ ifaceIP.strGateway	= s; }
 };
 
+class AnalogModem : public Hardware
+{
+public:
+private:
+protected:
+	string						strATDT;
+
+public:
+	AnalogModem(const Database *const db) throw (Error) :
+		Hardware(db),
+		strATDT("") {}
+	virtual ~AnalogModem() {}
+
+	virtual void MakeInit(ostream &stream) const;
+	virtual void MakeBoot(ostream &stream) const;
+
+	virtual void Load(string strName) throw (Error) { if (0) { cout << strName; } }
+
+	inline string getATDT() const { return strATDT; }
+	inline void setATDT(const string &e) { strATDT = e; }
+};
+
 #endif
 
 

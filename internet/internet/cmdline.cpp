@@ -46,6 +46,8 @@ CommandLine::CommandLine() :
 	clLANMask("255.255.255.0"),
 	clLANBroadcast("255.255.255.255"),
 	clLANGateway("192.168.0.1"),
+	clMyArea(),
+	clPhoneNumber(),
 	bListISPs(false),
 	bListConnections(false),
 	bShowDefault(false),
@@ -66,6 +68,7 @@ CommandLine::CommandLine() :
 	clMethod.Add("adsl");
 	clMethod.Add("cable");
 	clMethod.Add("lan");
+	clMethod.Add("dialup");
 
 	clIFace.Add("eth");
 	clIFace.Add("usb");
@@ -78,6 +81,14 @@ CommandLine::CommandLine() :
 	clExtract.Add("boot");
 	clExtract.Add("connect");
 	clExtract.Add("disconnect");
+
+	clMyArea.Add("02");
+	clMyArea.Add("03");
+	clMyArea.Add("04");
+	clMyArea.Add("06");
+	clMyArea.Add("07");
+	clMyArea.Add("08");
+	clMyArea.Add("09");
 }
 
 void CommandLine::Parse(int argc, char *argv[]) throw (Error)
@@ -111,6 +122,9 @@ void CommandLine::Parse(int argc, char *argv[]) throw (Error)
 		{ "mask",			1, 0, 0x0E },
 		{ "broadcast",		1, 0, 0x0F },
 		{ "gateway",		1, 0, 0x10 },
+
+		{ "myarea",			1, 0, 0x11 },
+		{ "phonenumber",	1, 0, 0x12 },
 
 		// Get information
 		{ "listisps",		0, 0, 'l'  },
@@ -169,6 +183,9 @@ void CommandLine::Parse(int argc, char *argv[]) throw (Error)
 		case 0x0E: clLANMask.bIs		= true; clLANMask.strOpt		= optarg;	break;
 		case 0x0F: clLANBroadcast.bIs	= true; clLANBroadcast.strOpt	= optarg;	break;
 		case 0x10: clLANGateway.bIs		= true; clLANGateway.strOpt		= optarg;	break;
+
+		case 0x11: clMyArea.bIs			= true; clMyArea.strOpt			= optarg;	break;
+		case 0x12: clPhoneNumber.bIs	= true; clPhoneNumber.strOpt	= optarg;	break;
 		
 		case 'l':  bListISPs			= true;										break;
 		case 'H':  clListHWs.bIs		= true; clListHWs.strOpt		= optarg;	break;
@@ -260,6 +277,29 @@ void CommandLine::Parse(int argc, char *argv[]) throw (Error)
 			if (!clLANIP.bIs)		throw ErrorMissingArg("ip");
 			if (!clISP.bIs)			throw ErrorMissingArg("isp");
 			if (!clDevice.bIs)		throw ErrorMissingArg("dev");
+		}
+
+		else if (clMethod.strOpt == string("dialup"))
+		{
+			// Validate lists if we are not in any mode
+			if (!clMyArea.bIs)		throw ErrorMissingArg("myarea");
+			if (!clPhoneNumber.bIs)	throw ErrorMissingArg("phonenumber");
+			if (!clUsername.bIs)	throw ErrorMissingArg("username");
+			if (!clPasswd.bIs)		throw ErrorMissingArg("passwd");
+
+			if (!clMyArea.Valid()) throw ErrorInvalidArgValue("myarea", clMyArea.vList);
+
+			// Validate phone number
+			// 0-1: digit
+			// 2: '-'
+			// 3-9: digit
+			if (clPhoneNumber.strOpt.length() != 10 ||
+				!isdigit(clPhoneNumber.strOpt[0]) || !isdigit(clPhoneNumber.strOpt[1]) ||
+				clPhoneNumber.strOpt[2] != '-' ||
+				!isdigit(clPhoneNumber.strOpt[3]) || !isdigit(clPhoneNumber.strOpt[4]) ||
+				!isdigit(clPhoneNumber.strOpt[5]) || !isdigit(clPhoneNumber.strOpt[6]) ||
+				!isdigit(clPhoneNumber.strOpt[7]) || !isdigit(clPhoneNumber.strOpt[8]) ||
+				!isdigit(clPhoneNumber.strOpt[9])) throw Error("--phonenumber must be of the form: nn-nnnnnnn");
 		}
 	}
 }
