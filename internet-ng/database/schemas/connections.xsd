@@ -3,18 +3,12 @@
    - Schema for connection descriptor.
    -
    - Author: z9u2k
-   - $Revision: 1.3 $
+   - $Revision: 1.4 $
    -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <!-- Simple Types -->
-
-    <!-- Valid ethernet device strings -->
-    <xs:simpleType name="ethDevice">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="eth[0-9]+"/>
-        </xs:restriction>
-    </xs:simpleType>
+    <!-- Common Types -->
+    <xs:include schemaLocation="types.xsd"/>
 
     <!-- Complex Types -->
 

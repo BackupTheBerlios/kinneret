@@ -3,9 +3,12 @@
    - Schema for driver validation.
    -
    - Author: z9u2k
-   - $Revision: 1.3 $
+   - $Revision: 1.4 $
    -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Common Types -->
+    <xs:include schemaLocation="types.xsd"/>
     
     <!-- Simple Types -->
 
@@ -40,23 +43,7 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <!-- Valid IP addresses -->
-    <xs:simpleType name="validIpAddress">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="([0-9]{1,3}\.){3}[0-9]{1,3}"/>
-        </xs:restriction>
-    </xs:simpleType>
-
     <!-- Complex Types -->
-
-    <!-- String element with language attribute -->
-    <xs:complexType name="langTag">
-        <xs:simpleContent>
-            <xs:extension base="xs:string">
-                <xs:attribute name="lang" type="xs:language"/>
-            </xs:extension>
-        </xs:simpleContent>
-    </xs:complexType>
 
     <!-- Intreface Type -->
     <xs:complexType name="interfaceType">

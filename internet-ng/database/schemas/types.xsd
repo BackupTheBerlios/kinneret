@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Simple Types -->
+    
+    <!-- Valid ethernet device strings -->
+    <xs:simpleType name="ethDevice">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="eth[0-9]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Valid IP addresses -->
+    <xs:simpleType name="validIpAddress">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([0-9]{1,3}\.){3}[0-9]{1,3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Valid phone numbers -->
+    <xs:simpleType name="validPhoneNumber">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9\-]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Complex Types -->
+
+    <!-- String element with language attribute -->
+    <xs:complexType name="langTag">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="lang" type="xs:language"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- ValDesc with xs:string value -->
+    <xs:complexType name="stringValDesc">
+        <xs:sequence>
+            <xs:group ref="descGroup"/>
+            <xs:element name="value" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Groups -->
+
+    <!-- Descriptions body -->
+    <xs:group name="descGroup">
+        <xs:sequence>
+            <xs:element name="description" type="langTag"
+                maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:group>
+</xs:schema>
