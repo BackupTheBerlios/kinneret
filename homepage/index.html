@@ -9,7 +9,7 @@
 
 <body bgcolor="#FFFFFF" text="#0066cc" link="#FFFFFF" alink="#000080" vlink="#FFFFFF">
 
-<script language="JavaScript1.2">
+<script language="JavaScript1.2" type="text/javascript">
 
 /*
 Watermark Backgound Image Script- © Dynamic Drive (www.dynamicdrive.com)
@@ -142,7 +142,7 @@ document.write("יום "+dayname+", "+date+" ב"+monthname+", "+yearname);
 <!--
           <td STYLE="background-color:#7494F0"><font color="#FFFFFF"><a href="forums/">מידע&nbsp;וקבוצות&nbsp;דיון</a></font></td>
 -->
-          <td STYLE="background-color:#7494F0"><font color="#FFFFFF"><a href="http://whatsup.org.il/index.php?name=PNphpBB2&file=viewforum&f=45">מידע&nbsp;וקבוצות&nbsp;דיון</a></font></td>
+          <td STYLE="background-color:#7494F0"><font color="#FFFFFF"><a href="http://whatsup.org.il/index.php?name=PNphpBB2&amp;file=viewforum&amp;f=45">מידע&nbsp;וקבוצות&nbsp;דיון</a></font></td>
           <td><img src="rtl/navbarend.gif" width="10" height="20" alt=""></td>
         </tr>
       </table>
@@ -179,8 +179,10 @@ document.write('<div id="content" style="position:absolute;width:125px;left:0;to
 }
 </script>
 
+<!--
 <ilayer name="nscontainer" width=130 height=145 clip="0,0,130,145">
 <layer name="nscontent" width=130 height=145 visibility=hidden>
+-->
 
 <!--INSERT CONTENT HERE-->
             <p>3 בינואר 2005</p>
@@ -196,19 +198,21 @@ document.write('<div id="content" style="position:absolute;width:125px;left:0;to
             <p>דף הבית זמין כעת <a href="index-ru.html" class="orange_white">בתרגום לרוסית</a></p>
 <!--END CONTENT-->
 
+<!--
 </layer>
 </ilayer>
+-->
 
-<script language="JavaScript1.2">
+<script language="JavaScript1.2" type="text/javascript">
 if (iens6)
-document.write('</div></div>')
+document.write('<\/div><\/div>')
 </script>
 
-<table width="130px"><td><p align="right">
-<a href="#" onMouseover="moveup()" onMouseout="clearTimeout(moveupvar)" class="orange_white"><img src="common/scroll_up.gif" border=0> עלה</a>  <a href="#" onMouseover="movedown()" onMouseout="clearTimeout(movedownvar)" class="orange_white"><img src="common/scroll_down.gif" border=0> רד</a></p></td>
+<table width="130px"><tr><td><p align="right">
+<a href="#" onMouseover="moveup()" onMouseout="clearTimeout(moveupvar)" class="orange_white"><img src="common/scroll_up.gif" border=0 alt=""> עלה</a>  <a href="#" onMouseover="movedown()" onMouseout="clearTimeout(movedownvar)" class="orange_white"><img src="common/scroll_down.gif" border=0 alt=""> רד</a></p></td></tr>
 </table>
 
-<script language="JavaScript1.2">
+<script language="JavaScript1.2" type="text/javascript">
 if (iens6){
 var crossobj=document.getElementById? document.getElementById("content") : document.all.content
 var contentheight=crossobj.offsetHeight

@@ -8,6 +8,20 @@
 </head>
 
 <body bgcolor="#FFFFFF" text="#0066cc" link="#FFFFFF" alink="#000080" vlink="#FFFFFF">
+
+<script language="JavaScript1.2" type="text/javascript">
+
+/*
+Watermark Backgound Image Script- © Dynamic Drive (www.dynamicdrive.com)
+For full source code, 100's more DHTML scripts, and TOS,
+visit dynamicdrive.com
+*/
+
+if (document.all||document.getElementById)
+document.body.style.background="url('common/wallpaper.jpg') white center no-repeat fixed"
+
+</script>
+
 <?php
 $tmp = file("hits-counter.txt");
 $dls = $tmp[0]+1;
