@@ -11,7 +11,7 @@
 # FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 # License at http://www.gnu.org/copyleft/gpl.html for more details.
 #
-# Version: 0.7f 16-Jan-2004
+# Version: 0.7f 19-Jan-2004
 # Encoding: [UTF8]
 # Language: Hebrew, English, Arabic, Russian, Ethopian
 #
@@ -39,7 +39,7 @@
 <font color=grey><i>מדריכים בשפות לועזיות:</i></font>
 </text>
 <name=arabic>
-נא לחצ/י כאן למסמכים בﺍﻟﻌﺮﺑﻴﺔ
+إضغط هنا للوثائق في أللغه ألعربيه.
 <null>
 יש לחצ/י כאן למסמכים באמהרית
 <null>
@@ -63,15 +63,13 @@ Click here for English documentation
 <img src="/opt/kinneret/images/star.png">שייט הכרות בכנרת - צילומי נוף ממדריך התיירים
   <play=he/user_interface.html>
 <img src="/opt/kinneret/images/star.png">איפה ה... שלי? כמה דברים שחשוב לדעת כדי לא לטבוע
-  <null>
-<img src="/opt/kinneret/images/star.png">מדריך חיבור ושימוש באינטרנט
-<play=he/custom_desktop.html>
-התאמה אישית של שולחן העבודה
+ <play=he/custom_desktop.html>
+<img src="/opt/kinneret/images/star.png">התאמה אישית של שולחן העבודה
 <null>
-<img src="/opt/kinneret/images/exclamation.png">מדריך לאבטחת המערכת
+<img src="/opt/kinneret/images/star.png">מדריך הגדרה וחיבור לאינטרנט המהיר
  <name=index14>
  <image=kinneret-cap-s.png>
-<img src="/opt/kinneret/images/star.png">מדריכי טיול קצרים ליישומים הכלולים בכנרת
+<img src="/opt/kinneret/images/star.png">אוסף מדריכים ליישומים הכלולים בכנרת
 <play=he/first_time.html>
 <font color=grey>____________________________________________________________</font><br><font size=2>מדריך הפעלה והגדרת תצורה ראשונית</font>
 <end>
@@ -97,6 +95,8 @@ Click here for English documentation
 מדריך עיבוד תמונות עם The Gimp
  <play=he/man_cheese.html>
 מדריך הלחנת מנגינות עם Cheese Tracker
+ <play=he/man_kpovmodeler.html>
+מדריך עיצוב תמונות תלת-מימדיות עם KPovModeler
   <play=he/man_ooo_advanced.html>
 מדריך שימוש מתקדם בערכת היישומים המשרדיים OpenOffice.org
 <end>
@@ -154,13 +154,13 @@ Click here for English documentation
 <end>
 
 <menu=arabic>
- ברוך בואך לגנו/לינוקס כנרת!
-מדור זה מכיל חלק ממסמכי המערכת אשר זמינים בשפה הערבית. אם ברצונך להתנדב לתרגום מסמכים נוספים נא ליצור קשר עם dovix@linux-kinneret.org.<br><br>צוות הפרוייקט מברך אותך על הפעלת תקליטור זה ומאחל לך הנאה ועבודה פוריה!
+أهلا وسهلا بكم في جنو/لينوكس كينيرت.
+يستضيف هذا ألقسم بعض من وثائق ألنظام ألمتاحه بألإنجليزيه. إذا تريد ألتطوع بترجمة ألوثائق ألإضافيه ألرجاء ألإتصال مع dovix@linux-kinneret.org.<br><br>فريق ألمشروع يرحب بك لإستخدام ألنظام ويتمنى لك ألإستمتاع وألعمل ألمثمر.
   <play=ar/tour_kinneret.html>
 <img src="/opt/kinneret/images/star.png">إبحار تعارف في كينيرت - صور
   <play=ar/about_kinneret.html>
   <image=kinneret-cd-s.png>
-ללמוד בכנרת - הכרות ראשונית עם הפרוייקט
+ألتعليم في كينيرت - ألتعرف على ألمشروع
   <play=ar/desktop_ready.html>
    <image=kinneret-floppy-s.png>
 نظام تشغيل للمتسللين(hackers)?
@@ -171,14 +171,15 @@ Click here for English documentation
  <image=kinneret-broom-s.png>
 معلومات للمعنيين في ألأنضمام لمشروع جنو/لينوكس كينيرت
 <text>
-<font size=2>קישורים המסומנים בכוכבית (<img src="/opt/kinneret/images/star.png">) מומלצים להכרות ראשונית עם המערכת. קישורים המסומנים בסימן קריאה (<img src="/opt/kinneret/images/exclamation.png">) חשובים מאוד לידיעתך. קישורים המסומנים בגלובוס (<img src="/opt/kinneret/images/globe.png">) דורשים חיבור לאינטרנט.</font>
+<font size=2>ألروابط ألمعلمه بنجمه(<img src="/opt/kinneret/images/star.png">) مفضله للتعويد على ألنظام. ألروابط ألمعلمه بعلامة تعجب (<img src="/opt/kinneret/images/exclamation.png">) تحتوي على معلومات مهمه. ألروابط ألمعلمه بكره (<img src="/opt/kinneret/images/globe.png">) أرضيه تتطلب إتصال بألإنترنت.</font>
 <font color=grey>____________________________________________________________</font>
-<font color=red size=2>חשוב לדעת!</font><font size=2> <b><i>גנו/לינוקס כנרת</b></i> מסופקת "כפי שהיא", בלא אחריות מסוג כלשהו, בין אם מפורשת ובין אם משתמעת, לרבות, אך מבלי למעט מהאמור, האחריות המשתמעת למסחריות והתאמה למטרה מסוימת. בעלי זכויות היוצרים ו/או מפיצי התוכנה לא ישאו כלפיך באחריות לנזקים, לרבות נזקים כלליים, מיוחדים, משניים או תוצאתיים כלשהם, הנובעים מהשימוש או מאי-היכולת להשתמש בתוכנות המסופקות. </font>
+<font color=red size=2> مهم! </font><font size=2> <b><i>جنو/لينوكس</b></i> كينيرت مزود "كما هو" بدون أي ضمان من أي نوع , إما معبر أو مفهوم ضمنا, يشمل 
+لكن غير محدود ألى ألضمانات ألمداوله للتجاره وألتسويق  وألملاءمه لغرض محدد. </font>
 </text>
 <play=ar/kinneret_license.html>
-<img src="/opt/kinneret/images/exclamation.png"><font color=red size=2>עליך לקרוא בעיון את רישיון השימוש המלא ולהסכים לנאמר בו לפני השימוש בהפצה זו </font> 
+<img src="/opt/kinneret/images/exclamation.png"><font color=red size=2>يطلب منك أن تقرأ وتوافق على حرية ألمستخدم ألكامله  قبل إستعمال هذا ألتوزيع.</font> 
   <http=www.linux-kinneret.org/index-ar.html>
-<img src="/opt/kinneret/images/globe.png"><font size=2> אתר הבית של הפרויקט - בערבית</font>
+<img src="/opt/kinneret/images/globe.png"><font size=2>موقع ألبيت للمشروع في ألغه ألعربيه</font>
 <end>
 
 <menu=english>

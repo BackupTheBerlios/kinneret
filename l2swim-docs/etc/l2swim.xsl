@@ -17,7 +17,7 @@
      http://www.gnu.org/copyleft/gpl.html for more details.
 
      Filename: l2swim.xsl
-     Version: 1.99d (2nd edition) 20-December-2003
+     Version: 1.99e (2nd edition) 19-Jan-2003
      Encoding: [UTF8]
      Language support: Hebrew, Arabic, English, Russian
 
@@ -117,10 +117,10 @@ This document was edited and formatted for <a href="http://www.linux-kinneret.or
 				<xsl:choose>
 <!-- TO DO: needs translation -->
 					<xsl:when test="@lang = 'hebrew'">
-Linux הוא שם רשום של Linus Torvalds; Unix הוא שם רשום של ה Open Group בארה"ב ובמדינות נוספות, Windows הוא שם רשום של Microsoft Corporation. כל שאר השמות הרשומים וזכויות היוצרים שייכים לבעליהם.
+לינוקס הוא שם רשום של Linus Torvalds; יוניקס הוא שם רשום של ה Open Group בארה"ב ובמדינות נוספות, Windows הוא שם רשום של Microsoft Corporation. כל שאר השמות הרשומים וזכויות היוצרים שייכים לבעליהם.
 					</xsl:when>
 					<xsl:when test="@lang = 'arabic'">
-לינוקס הוא שם רשום של Linus Torvalds; יוניקס הוא שם רשום של ה Open Group בארה"ב ובמדינות נוספות, Windows הוא שם רשום של Microsoft Corporation. כל שאר השמות הרשומים וזכויות היוצרים שייכים לבעליהם.
+لينوكس ماركه تجاريه مسجله من قبل لينوس تورفالدز. يونيكس ماركه تجاريه مسجله من قبل ألمجموعه ألمفتوحه في أمريكا وألبلاد ألأخرى. شبابيك  ماركه تجاريه مسجله لشركة مايكروسوفت. باقي ألماركات ألمسجله وحقوق ألنشر تتبع لأصحابها ألخاصه.
 					</xsl:when>
 					<xsl:when test="@lang = 'russian'">
 Linux is a registered trademark by Linus Torvalds. Unix is a registered trademark by the Open Group is the US and other countries. Windows is a registered trademarks of Microsoft corp. All other trademarks and copyrights belong to the respective owners.
@@ -139,7 +139,7 @@ Linux is a registered trademark by Linus Torvalds. Unix is a registered trademar
 חשוב לדעת! גנו/לינוקס כנרת מסופקת "כפי שהיא", בלא אחריות מסוג כלשהו, בין אם מפורשת ובין אם משתמעת, לרבות, אך מבלי למעט מהאמור, האחריות המשתמעת למסחריות והתאמה למטרה מסוימת. בעלי זכויות היוצרים ו/או מפיצי התוכנה לא ישאו כלפיך באחריות לנזקים, לרבות נזקים כלליים, מיוחדים, משניים או תוצאתיים כלשהם, הנובעים מהשימוש או מאי-היכולת להשתמש בתוכנות המסופקות. עליך .לקרוא בעיון את רישיון השימוש המלא ולהסכים לנאמר בו לפני השימוש בהפצה זו.
 					</xsl:when>
 					<xsl:when test="@lang = 'arabic'">
-חשוב לדעת! גנו/לינוקס כנרת מסופקת "כפי שהיא", בלא אחריות מסוג כלשהו, בין אם מפורשת ובין אם משתמעת, לרבות, אך מבלי למעט מהאמור, האחריות המשתמעת למסחריות והתאמה למטרה מסוימת. בעלי זכויות היוצרים ו/או מפיצי התוכנה לא ישאו כלפיך באחריות לנזקים, לרבות נזקים כלליים, מיוחדים, משניים או תוצאתיים כלשהם, הנובעים מהשימוש או מאי-היכולת להשתמש בתוכנות המסופקות. עליך .לקרוא בעיון את רישיון השימוש המלא ולהסכים לנאמר בו לפני השימוש בהפצה זו.
+مهم! جنو/لينوكس كينيرت مزود "كما هو" بدون أي ضمان من أي نوع , إما معبر أو مفهوم ضمنا, يشمل لكن غير محدود ألى ألضمانات ألمداوله للتجاره وألتسويق  وألملاءمه لغرض محدد. عليك أن تقرأ وتوافق على حرية ألمستخدم ألكامله قبل إستخدام هذا ألتوزيع
 					</xsl:when>
 					<xsl:when test="@lang = 'russian'">
 Important! GNU/Linux Kinneret is provided "as is" without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose. You are requested to read and agree to the full end user license prior to using this distribution.
