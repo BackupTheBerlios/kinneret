@@ -203,7 +203,7 @@ $counterMD5 = $tmp[0];
 			</td>
 
 			<td>
-			<a href="http://www.anybrowser.org/campaign/anybrowser_il.html" target="_blank">
+			<a href="http://www.anybrowser.org/campaign/index.html" target="_blank">
 			<img src="common/any_browser_en.gif" width="88" height="32" border="0" alt="Browser independent HTML">
 			</a>
 			</td>
