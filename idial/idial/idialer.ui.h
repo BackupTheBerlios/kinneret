@@ -78,44 +78,34 @@ void idialer::onGo()
 	if (qTab == tr2i18n("Connect"))
 	{
 		// It's easy..
-		if (checkInit->isChecked())
+		if (checkConnect->isChecked())
 		{
+			// init
 			textStdout->setText(textStdout->text() + tr2i18n("\nInitializing..."));
 			QString qCmd = "internet --init=\"" + comboConnections->currentText() + QString("\"");
 			if (system(qCmd))
 			{
-				// YES! That's a GOTO!
-				// I'm too lazy to create a function for it... maybe l8er...
 				KMessageBox::error(parentWidget(), tr2i18n("Cannot initialize connection!"));
 				setWorking(false);
 				textStdout->setText(textStdout->text() + tr2i18n("\nFailed."));
 				return;
 			}
-		}
 
-		if (checkBoot->isChecked())
-		{
+			// boot
 			textStdout->setText(textStdout->text() + tr2i18n("\nBooting..."));
-			QString qCmd = "internet --boot=\"" + comboConnections->currentText() + QString("\"");
+			qCmd = "internet --boot=\"" + comboConnections->currentText() + QString("\"");
 			if (system(qCmd))
 			{
-				// YES! That's a GOTO!
-				// I'm too lazy to create a function for it... maybe l8er...
 				KMessageBox::error(parentWidget(), tr2i18n("Cannot boot connection!"));
 				setWorking(false);
 				textStdout->setText(textStdout->text() + tr2i18n("\nFailed."));
 				return;
 			}
-		}
-
-		if (checkConnect->isChecked())
-		{
+		
 			textStdout->setText(textStdout->text() + tr2i18n("\nConnecting..."));
-			QString qCmd = "internet --connect=\"" + comboConnections->currentText() + QString("\"");
+			qCmd = "internet --connect=\"" + comboConnections->currentText() + QString("\"");
 			if (system(qCmd))
 			{
-				// YES! That's a GOTO!
-				// I'm too lazy to create a function for it... maybe l8er...
 				KMessageBox::error(parentWidget(), tr2i18n("Cannot connect!"));
 				setWorking(false);
 				textStdout->setText(textStdout->text() + tr2i18n("\nFailed."));
@@ -129,8 +119,6 @@ void idialer::onGo()
 			QString qCmd = "internet --kill=\"" + comboConnections->currentText() + QString("\"");
 			if (system(qCmd))
 			{
-				// YES! That's a GOTO!
-				// I'm too lazy to create a function for it... maybe l8er...
 				KMessageBox::error(parentWidget(), tr2i18n("Cannot disconnect!"));
 				setWorking(false);
 				textStdout->setText(textStdout->text() + tr2i18n("\nFailed."));
@@ -408,8 +396,6 @@ void idialer::setWorking( bool b )
 {
 	pushGo->setEnabled(!b);
 	comboConnections->setEnabled(!b);
-	checkInit->setEnabled(!b);
-	checkBoot->setEnabled(!b);
 	checkConnect->setEnabled(!b);
 	checkDisconnect->setEnabled(!b);
 	comboActions->setEnabled(!b);
