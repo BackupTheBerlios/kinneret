@@ -59,8 +59,6 @@ begin
     LabelChoose.Alignment:=taRightJustify;
     LabelBoot.Alignment:=taRightJustify;
     LabelNote.Alignment:=taRightJustify;
-    CBDesktop.Alignment:=taLeftJustify;
-    CBMenu.Alignment:=taLeftJustify;
     LBDesktop.Alignment:=taRightJustify;
     LBMenu.Alignment:=taRightJustify;
   end
@@ -68,10 +66,16 @@ begin
     LabelChoose.Alignment:=taLeftJustify;
     LabelBoot.Alignment:=taLeftJustify;
     LabelNote.Alignment:=taLeftJustify;
-    CBDesktop.Alignment:=taRightJustify;
-    CBMenu.Alignment:=taRightJustify;
     LBDesktop.Alignment:=taLeftJustify;
     LBMenu.Alignment:=taLeftJustify;
+  end;
+  if (GetCurrentLanguage='he') or (GetCurrentLanguage='iw') then
+  begin
+    CBDesktop.Left:=320;
+    CBMenu.Left:=320;
+  end else begin
+  CBDesktop.Left:=16;
+    CBMenu.Left:=16;
   end;
   if GetCurrentLanguage='iw' then BidiMode:=bdRightToLeft
   else Bidimode:=bdLeftToRight;
@@ -88,11 +92,6 @@ begin
   'choose one or more of the next options (recommended) :'));
   TNTGroupBox2.Caption:=pWideChar(_('1. Drive Options'));
   TNTGroupBox1.Caption:=pWideChar(_('2. Boot Options'));
-  if osis95 then
-  begin
-    CBDesktop.Caption:=pWideChar(_('Desktop shortcut (Windows 95,98)'));
-    CBMenu.Caption:=pWideChar(_('Boot Menu (Windows 95,98, NT,2000, XP)'));
-  end else
   begin
     LBDesktop.Caption:=pWideChar(_('Desktop shortcut (Windows 95,98)'));
     LBMenu.Caption:=pWideChar(_('Boot Menu (Windows 95,98, NT,2000, XP)'));
