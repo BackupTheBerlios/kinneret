@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# kiwiz version 0.3.1-91
+# kiwiz version 0.3.1-92
 # (C) 2004 by Dovix, dovix@linux-kinneret.org
 # released under the terms of the GNU General Public License, version 2
 # http://www.fsf.org/copyleft/gpl.txt
@@ -170,3 +170,11 @@ fi
 ##########################################################
 # Select connection to dial
 ##########################################################
+
+lines=$(internet --listcons | wc -l) && lines=$(echo $lines -1 | bc)
+cons=`(internet --listcons | tail -n $lines)`
+opts=`for name in $cons; do
+    echo -n "\"$name\" \"$name\" "
+done`
+echo $opts
+kdialog --title $"Kinneret's Internet WIZard" --menu $"Select a connection to dial:" $opts

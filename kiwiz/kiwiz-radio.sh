@@ -13,9 +13,12 @@
 # TODO:
 #
 # 1. basic flow - IN PROGRESS
-# 2a. add error handling for all commands, especially Internet
-# 2b. add check that necessary commands exist (e.g. kdialog)
-# 3. translation
+# 2. check if radio is already on, and stop before playing new one
+# 3. message when starting playing to wait a fe seconds
+# 4. remove hard coded parameters
+# 5a. add error handling for all commands, especially Internet
+# 5b. add check that necessary commands exist (e.g. kdialog)
+# 6. translation
 
 ##########################################################
 # Main menu
