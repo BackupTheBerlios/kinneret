@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boot-floppy-0.2b\n"
 "POT-Creation-Date: 2004-03-01 20:55\n"
-"PO-Revision-Date: 2004-03-13 02:02+0200\n"
+"PO-Revision-Date: 2004-03-13 15:01+0200\n"
 "Last-Translator: Nir Misgav <nirro@linux-kinneret.org>\n"
 "Language-Team: Nir Misgav <nirro@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -149,12 +149,12 @@ msgstr "כונן"
 #  parinst2..TntGroupBox2..ListDrives......Caption
 #: ParInstall2.dfm:103
 msgid "Free space before inst."
-msgstr "שטח פנוי לפני ההתקנה"
+msgstr "פנוי לפני ההתקנה"
 
 #  parinst2..TntGroupBox2..ListDrives......Caption
 #: ParInstall2.dfm:107
 msgid "Free space after inst."
-msgstr "שטח פנוי לאחר ההתקנה"
+msgstr "פנוי לאחר ההתקנה"
 
 #  ParInst3..Caption
 #: ParInstall3.dfm:5
@@ -298,7 +298,7 @@ msgstr "אפשרויות מתקדמות"
 
 #: Advanced.pas:72
 msgid "To add a new key, insert the key name and press Enter."
-msgstr ".ENTER על מנת להוסיף מפתח, הכנס את שם המפתח ולחץ"
+msgstr ".ENTER על מנת להוסיף מפתח, יש להכניס את שם המפתח ולחץ"
 
 #: Advanced.pas:73
 msgid "Remove key"
@@ -417,14 +417,14 @@ msgstr ""
 
 #: ParInstall2.pas:46
 msgid "Choose a drive to install GNU/Linux Kinneret :"
-msgstr ": בחר כונן להתקנת גנו/לינוקס כנרת"
+msgstr ": בחר כונן להתקנת גנו\\לינוקס כנרת"
 
 #: ParInstall2.pas:48
 msgid ""
 "Note: In some cases, a small directory will be created in\n"
 "drive C:, even if you choose another drive."
 msgstr ""
-"שים לב: במקרים מסויימים, תקיה קטנה תיווצר\n"
+"שים לב: במקרים מסויימים, תיקייה קטנה תיווצר\n"
 ".אפילו אם בחרת בכונן אחר ,C: בכונן"
 
 #: ParInstall2.pas:53
@@ -436,10 +436,10 @@ msgid ""
 "choose one or more of the next options (recommended) :"
 msgstr ""
 "ע\"מ לאתחל את כנרת, ניתן תמיד לאתחל את המחשב\n"
-"בעזרת התקליטור, או תקליטון איתחול. לאחר האיתחול\n"
-".כנרת תעלה באופן אוטומטי מהדיסק הקשיח\n"
-"אולם, יש באפשרותך לבחור באחד או יותר\n"
-": (משיטות האיתחול הבאים (מומלץ"
+"בעזרת התקליטור, או ע\"י תקליטון-איתחול. לאחר\n"
+".האיתחול, כנרת תעלה באופן אוטומטי מהדיסק הקשיח\n"
+"אולם, יש באפשרותך לבחור באחת או יותר משיטות\n"
+": (האיתחול הבאות (מומלץ"
 
 #  GNUGETTEXT
 #: ParInstall2.pas:96
@@ -455,7 +455,7 @@ msgid ""
 "Choose another one."
 msgstr ""
 "%s: אין מספיק שטח פנוי בכונן\n"
-".בחר כונן אחר"
+".בחר בכונן אחר"
 
 #  not enough space in C: (rare)
 #: ParInstall3.pas:100
@@ -481,7 +481,7 @@ msgid ""
 "Error, Can't find C:\\boot.ini\n"
 "Unable to install Boot-Menu."
 msgstr ""
-"C:\\boot.ini שגיאה, לא מוצא את \n"
+"C:\\boot.ini שגיאה, לא מוצא את\n"
 ".לא ניתן להתקין תפריט איתחול"
 
 #: ParInstall3.pas:136
@@ -489,7 +489,7 @@ msgid ""
 "Error, Can't modify C:\\boot.ini\n"
 "Unable to install Boot-Menu."
 msgstr ""
-"C:\\boot.ini שגיאה, לא ניתן לעדכן את \n"
+",C:\\boot.ini שגיאה, לא ניתן לעדכן את \n"
 ".לא ניתן להתקין תפריט איתחול"
 
 #  Remove old boot-menu windows NT
@@ -603,7 +603,7 @@ msgstr ".הכנת התקליטון נכשלה, אנא נסה/י שנית"
 
 #: rawwrite.pas:252
 msgid "Please Insert a floppy to drive A:"
-msgstr "A: אנא הכנס תקליטון לכונן"
+msgstr "A: נא להכניס תקליטון לכונן"
 
 #: rawwrite.pas:255
 msgid "Start"

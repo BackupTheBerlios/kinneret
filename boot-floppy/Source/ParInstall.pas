@@ -45,6 +45,8 @@ begin
   'A complete installation method will be (hopefuly)'+#10#13+
   'available in the future.'+#10#13+#10#13+
   'Do you want to make a partial installation ?'));
+  YesButton.Caption:=pWideChar(_('Yes'));
+  noButton.Caption:=pWideChar(_('Not now, thanks'));
 end;
 
 procedure Tparinst.NoButtonClick(Sender: TObject);

@@ -29,7 +29,6 @@ object parinst: Tparinst
     Top = 256
     Width = 129
     Height = 33
-    Caption = 'Yes'
     TabOrder = 0
     OnClick = YesButtonClick
   end
@@ -38,7 +37,6 @@ object parinst: Tparinst
     Top = 256
     Width = 129
     Height = 33
-    Caption = 'Not now, thanks'
     TabOrder = 1
     OnClick = NoButtonClick
   end

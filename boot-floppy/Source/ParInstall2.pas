@@ -53,6 +53,24 @@ end;
 
 procedure Tparinst2.FormShow(Sender: TObject);
 begin
+  if GetCurrentLanguage='he' then begin
+    LabelChoose.Alignment:=taRightJustify;
+    LabelBoot.Alignment:=taRightJustify;
+    LabelNote.Alignment:=taRightJustify;
+    CBDesktop.Alignment:=taLeftJustify;
+    CBMenu.Alignment:=taLeftJustify;
+  end
+  else begin
+    LabelChoose.Alignment:=taLeftJustify;
+    LabelBoot.Alignment:=taLeftJustify;
+    LabelNote.Alignment:=taLeftJustify;
+    CBDesktop.Alignment:=taRightJustify;
+    CBMenu.Alignment:=taRightJustify;
+  end;
+  if GetCurrentLanguage='iw' then BidiMode:=bdRightToLeft
+  else Bidimode:=bdLeftToRight;
+  ButtonCancel.Caption:=pwideChar(_('Cancel'));
+  ButtonStart.Caption:=pWideChar(_('Start Installation'));
   LabelChoose.Caption:=pwidechar(_('Choose a drive to install GNU/Linux Kinneret :'));
   LabelNote.Caption:=pwideChar(_('Note: In some cases, a small directory will be created in'+#10#13+
   'drive C:, even if you choose another drive.'));
@@ -61,6 +79,10 @@ begin
   'continues to load from the Hard-Drive automatically.'+#10#13+
   'However, if you rather not use the CD at all, You can'+#10#13+
   'choose one or more of the next options (recommended) :'));
+  TNTGroupBox2.Caption:=pWideChar(_('1. Drive Options'));
+  TNTGroupBox1.Caption:=pWideChar(_('2. Boot Options'));
+  CBDesktop.Caption:=pWideChar(_('Desktop shortcut (Windows 95,98)'));
+  CBMenu.Caption:=pWideChar(_('Boot Menu (Windows 95,98, NT,2000, XP)'));
   if osisMe then
   begin
     CBDesktop.Checked:=false;
@@ -88,7 +110,6 @@ var
   i : Integer;
   DriveItem :TtntListItem;
 begin
-  TranslateProperties (self);      //GNUGETTEXT
   ChosenDrive:='';
   {get KNOPPIX SIZE}
   if not fileExists('..\KNOPPIX\knoppix') then knoppixSize:=700
@@ -101,10 +122,8 @@ begin
   for i:=low(DrivesArray) to high(DrivesArray) do
   begin
       DriveItem := ListDrives.Items.Add;
-      DriveItem.Caption := wideformat('%s:  ',
-                [DrivesArray[i].DriveLetter]);
-      DriveItem.SubItems.Add(wideformat(_('%n MB'),
-                [DrivesArray[i].DriveFreeSpace]));
+      DriveItem.Caption := wideformat('%s:  ',[DrivesArray[i].DriveLetter]);
+      DriveItem.SubItems.Add(wideformat('%n MB',[DrivesArray[i].DriveFreeSpace]));
       DriveItem.SubItems.add('');
   end;
   for i:=low(DrivesArray) to high(DrivesArray) do
@@ -113,14 +132,14 @@ begin
     begin
       DriveItem:=ListDrives.Items.Item[i];
       DriveItem.Checked:=true;
-      DriveItem.SubItems[1]:=wideformat(_('%n MB'),
-                [DrivesArray[DriveItem.index].DriveFreeSpace-knoppixSize]);
+      DriveItem.SubItems[1]:=wideformat('%n MB',[DrivesArray[DriveItem.index].DriveFreeSpace-knoppixSize]);
       ButtonStart.Enabled:=true;
       ChosenDrive:=DrivesArray[DriveItem.index].DriveLetter;
       break;
     end;
   end;
  // ListDrives.
+ TranslateProperties (self);      //GNUGETTEXT
 end;
 
 procedure Tparinst2.ListDrivesMouseUp(Sender: TObject;
@@ -140,7 +159,7 @@ begin
       begin
         for i:=0 to ListDrives.Items.Count-1 do
           ListDrives.Items.item[i].SubItems[1]:='';
-        Item.SubItems[1]:=wideformat(_('%n MB'),
+        Item.SubItems[1]:=wideformat('%n MB',
                 [DrivesArray[Item.index].DriveFreeSpace-knoppixSize]);
         ChosenDrive:=DrivesArray[Item.index].DriveLetter;
         ButtonStart.Enabled:=true;

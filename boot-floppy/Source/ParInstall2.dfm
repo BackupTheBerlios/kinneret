@@ -1,6 +1,6 @@
 object parinst2: Tparinst2
-  Left = 242
-  Top = 58
+  Left = 297
+  Top = 111
   BorderStyle = bsToolWindow
   Caption = 'Partial Installation'
   ClientHeight = 478
@@ -23,7 +23,6 @@ object parinst2: Tparinst2
     Top = 424
     Width = 113
     Height = 33
-    Caption = 'Start Installation'
     Enabled = False
     TabOrder = 0
     OnClick = ButtonStartClick
@@ -33,7 +32,6 @@ object parinst2: Tparinst2
     Top = 424
     Width = 113
     Height = 33
-    Caption = 'Cancel'
     TabOrder = 1
     OnClick = ButtonCancelClick
   end
@@ -42,7 +40,6 @@ object parinst2: Tparinst2
     Top = 216
     Width = 353
     Height = 185
-    Caption = '2. Boot Options'
     TabOrder = 2
     object LabelBoot: TTntLabel
       Left = 24
@@ -56,7 +53,6 @@ object parinst2: Tparinst2
       Top = 120
       Width = 297
       Height = 17
-      Caption = 'Desktop shortcut (Windows 95,98)'
       TabOrder = 0
     end
     object CBMenu: TTntCheckBox
@@ -64,7 +60,6 @@ object parinst2: Tparinst2
       Top = 144
       Width = 297
       Height = 17
-      Caption = 'Boot Menu (Windows 95,98, NT,2000, XP)'
       TabOrder = 1
     end
   end
@@ -73,7 +68,6 @@ object parinst2: Tparinst2
     Top = 16
     Width = 353
     Height = 185
-    Caption = '1. Drive Options'
     TabOrder = 3
     object LabelChoose: TTntLabel
       Left = 16
@@ -94,6 +88,7 @@ object parinst2: Tparinst2
       Top = 56
       Width = 321
       Height = 73
+      BiDiMode = bdLeftToRight
       Checkboxes = True
       Columns = <
         item
@@ -109,6 +104,7 @@ object parinst2: Tparinst2
         end>
       ReadOnly = True
       RowSelect = True
+      ParentBiDiMode = False
       TabOrder = 0
       ViewStyle = vsReport
       OnMouseUp = ListDrivesMouseUp
