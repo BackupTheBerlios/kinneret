@@ -50,11 +50,25 @@ checkdir()
 HOMEFOUND=""
 echo "${BLUE}Searching for Kinneret's Home...${NORMAL}"
 
-# mount all NTFS directories RO
-#for dir in `cat /etc/fstab | grep ntfs | cut -b 6-9`
-#do
-#	mount -t ntfs -o defaults,ro,user,uid=1000,iocharset=cp1255 /dev/$dir /mnt/$dir 2>&1
-#done
+# mount all NTFS directories
+if [ `grep ntfs /etc/fstab`]
+then
+	NTFSOK=1
+	captive-install-acquire --scan-disks-quick
+	if [ $? -ne 0 ]
+	then
+		echo "${RED}Unable to load NTFS driver, access to NTFS partition will not be possible${NORMAL}"
+		NTFSOK=0
+	fi
+
+	if [ $NTFSOK ]
+	then
+		for dir in `cat /etc/fstab | grep ntfs | cut -b 6-9`
+		do
+			mount -t captive-ntfs -o defaults,rw,user,uid=1000,codepage=1255,iocharset=cp1255 /dev/$dir /mnt/$dir 2>&1
+		done
+	fi
+fi
 
 # mount all vfat directories RW
 for dir in `cat /etc/fstab | grep vfat | cut -b 6-9`
@@ -65,20 +79,20 @@ done
 # mount all ext2 directories RW
 for dir in `cat /etc/fstab | grep ext2 | cut -b 6-9`
 do
-	mount -t ext2 -o defaults,rw,user,uid=1000 /dev/$dir /mnt/$dir 2>&1
+	mount -t ext2 -o defaults,rw,user /dev/$dir /mnt/$dir 2>&1
 done
 
 # mount all ext3 directories RW
 for dir in `cat /etc/fstab | grep ext3 | cut -b 6-9`
 do
-	mount -t ext3 -o defaults,rw,user,uid=1000 /dev/$dir /mnt/$dir 2>&1
+	mount -t ext3 -o defaults,rw,user /dev/$dir /mnt/$dir 2>&1
 done
 
 # mount all ReiserFS directories RW
-for dir in `cat /etc/fstab | grep reiserfs | cut -b 6-9`
-do
-	mount -t reiserfs -o defaults,rw,user,uid=1000 /dev/$dir /mnt/$dir 2>&1
-done
+#for dir in `cat /etc/fstab | grep reiserfs | cut -b 6-9`
+#do
+#	mount -t reiserfs -o defaults,rw,user /dev/$dir /mnt/$dir 2>&1
+#done
 
 # Scan directories
 for dir in `cat /etc/fstab | grep vfat | cut -b 6-9`
@@ -95,9 +109,6 @@ then
 	echo "0" > /tmp/foundhome
 	chown knoppix:knoppix /tmp/foundhome
 fi
-
-#make sure the partitions directory is present.
-[ ! -e "/home/knoppix/partitions" ] && /cp -ua /etc/skel/partitions /home/knoppix
 
 echo "${BLUE}Linking partitions...${NORMAL}"
 rm -fr /home/knoppix/partitions/*
