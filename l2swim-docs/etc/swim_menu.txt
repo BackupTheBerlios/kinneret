@@ -11,9 +11,9 @@
 # FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 # License at http://www.gnu.org/copyleft/gpl.html for more details.
 #
-# Version: 0.7c 19-Dec-2003
+# Version: 0.7d 20-Dec-2003
 # Encoding: [UTF8]
-# Language: Hebrew
+# Language: Hebrew, English, Arabic, Russian, Ethopian
 #
 # Authored by: dovix, dovix@linux-kinneret.org
 #
@@ -23,8 +23,8 @@
 <defaultdir=rtl>
 
 <menu=mainmenu>
-ברוך בואך לכנרת!
-מדריך זה יעזור לך להכיר חלק ממגוון היישומים והאפשרויות הכלולים ב<b><i>גנו/לינוקס כנרת</b></i>, וילווה אותך לאורך השימוש במערכת. מדריך זה גם מכיל מידע על הפרוייקט וכן יאפשר לך להתוודע לעקרונות הקוד הפתוח והתוכנה החופשית, שבזכותם הפצה זו מתאפשרת. <br><br>קישורים המסומנים בכוכבית (<img src="/opt/kinneret/images/star.png">) מומלצים להכרות ראשונית עם המערכת. קישורים המסומנים בסימן קריאה (<img src="/opt/kinneret/images/exclamation.png">) חשובים מאוד לידיעתך. קישורים המסומנים בגלובוס (<img src="/opt/kinneret/images/globe.png">) דורשים חיבור לאינטרנט.<br><br>צוות הפרוייקט מברך אותך על הפעלת תקליטור זה ומאחל לך הנאה ועבודה פוריה!
+ברוך בואך לגנו/לינוקס כנרת!
+מדריך זה יעזור לך להכיר חלק ממגוון היישומים והאפשרויות הכלולים במערכת, וילווה אותך לאורך השימוש במערכת. מדריך זה גם מכיל מידע על הפרוייקט וכן יאפשר לך להתוודע לעקרונות הקוד הפתוח והתוכנה החופשית, שבזכותם הפצה זו מתאפשרת. <br><br> צוות הפרוייקט מברך אותך על הפעלת תקליטור זה ומאחל לך הנאה ועבודה פוריה!
   <name=index1>
  <image=kinneret-cap-s.png>
 <img src="/opt/kinneret/images/star.png">לומדים לשחות בכנרת - מדריכים להכרות עם המערכת
@@ -33,18 +33,27 @@
   <name=index5>
  <image=kinneret-cd-s.png>
 אודות פרוייקט כנרת - מידע כללי על הפצת <b><i>גנו/לינוקס כנרת</b></i>
-<null>
-<font color=grey>________________ מדריכים בשפות לועזיות ______________</font>
+<text>
+<font size=2>קישורים המסומנים בכוכבית (<img src="/opt/kinneret/images/star.png">) מומלצים להכרות ראשונית עם המערכת. קישורים המסומנים בסימן קריאה (<img src="/opt/kinneret/images/exclamation.png">) חשובים מאוד לידיעתך. קישורים המסומנים בגלובוס (<img src="/opt/kinneret/images/globe.png">) דורשים חיבור לאינטרנט.</font>
+<br>
+<font color=grey><i>מדריכים בשפות לועזיות:</i></font>
+</text>
 <name=arabic>
-ﺍﻟﻌﺮﺑﻴﺔ
+נא לחצ/י כאן למסמכים בﺍﻟﻌﺮﺑﻴﺔ
 <null>
-אמהרית
+יש לחצ/י כאן למסמכים באמהרית
 <null>
- русский
+Click here for русский documentation
 <name=english>
- English
+Click here for English documentation
+<text>
+<font color=grey>____________________________________________________________</font>
+<font color=red size=2>חשוב לדעת!</font><font size=2> <b><i>גנו/לינוקס כנרת</b></i> מסופקת "כפי שהיא", בלא אחריות מסוג כלשהו, בין אם מפורשת ובין אם משתמעת, לרבות, אך מבלי למעט מהאמור, האחריות המשתמעת למסחריות והתאמה למטרה מסוימת. בעלי זכויות היוצרים ו/או מפיצי התוכנה לא ישאו כלפיך באחריות לנזקים, לרבות נזקים כלליים, מיוחדים, משניים או תוצאתיים כלשהם, הנובעים מהשימוש או מאי-היכולת להשתמש בתוכנות המסופקות. </font>
+</text>
 <play=he/kinneret_license.html>
-<font color=grey>____________________________________________________________</font><br><font color=red size=2>חשוב לדעת!</font><font size=2> <b><i>גנו/לינוקס כנרת</b></i> מסופקת "כפי שהיא", בלא אחריות מסוג כלשהו, בין אם מפורשת ובין אם משתמעת, לרבות, אך מבלי למעט מהאמור, האחריות המשתמעת למסחריות והתאמה למטרה מסוימת. בעלי זכויות היוצרים ו/או מפיצי התוכנה לא ישאו כלפיך באחריות לנזקים, לרבות נזקים כלליים, מיוחדים, משניים או תוצאתיים כלשהם, הנובעים מהשימוש או מאי-היכולת להשתמש בתוכנות המסופקות. </font><font color=red size=2>עליך .לקרוא בעיון את רישיון השימוש המלא ולהסכים לנאמר בו לפני השימוש בהפצה זו </font><img src="/opt/kinneret/images/exclamation.png"> 
+<img src="/opt/kinneret/images/exclamation.png"><font color=red size=2>עליך לקרוא בעיון את רישיון השימוש המלא ולהסכים לנאמר בו לפני השימוש בהפצה זו </font> 
+  <http=www.linux-kinneret.org>
+<img src="/opt/kinneret/images/globe.png"><font size=2> אתר הבית של הפרויקט</font>
 <end>
 
 <menu=index1>
@@ -59,7 +68,7 @@
 <null>
 התאמה אישית של שולחן העבודה
 <null>
-מדריך לאבטחת המערכת<img src="/opt/kinneret/images/exclamation.png">
+<img src="/opt/kinneret/images/exclamation.png">מדריך לאבטחת המערכת
  <name=index14>
  <image=kinneret-cap-s.png>
 <img src="/opt/kinneret/images/star.png">מדריכי טיול קצרים ליישומים הכלולים בכנרת
@@ -141,8 +150,8 @@
 <end>
 
 <menu=arabic>
- ברוך בואך לכנרת!
-מדור זה מכיל חלק ממסמכי <b><i>גנו/לינוקס כנרת</b></i> אשר זמינים בשפה הערבית. אם ברצונך להתנדב לתרגום מסמכים נוספים נא ליצור קשר עם dovix@linux-kinneret.org. <br><br>קישורים המסומנים בכוכבית (<img src="/opt/kinneret/images/star.png">) מומלצים להכרות ראשונית עם המערכת. קישורים המסומנים בסימן קריאה (<img src="/opt/kinneret/images/exclamation.png">) חשובים מאוד לידיעתך. קישורים המסומנים בגלובוס (<img src="/opt/kinneret/images/globe.png">) דורשים חיבור לאינטרנט.<br><br>צוות הפרוייקט מברך אותך על הפעלת תקליטור זה ומאחל לך הנאה ועבודה פוריה!
+ ברוך בואך לגנו/לינוקס כנרת!
+מדור זה מכיל חלק ממסמכי המערכת אשר זמינים בשפה הערבית. אם ברצונך להתנדב לתרגום מסמכים נוספים נא ליצור קשר עם dovix@linux-kinneret.org.<br><br>צוות הפרוייקט מברך אותך על הפעלת תקליטור זה ומאחל לך הנאה ועבודה פוריה!
   <play=ar/tour_kinneret.html>
 <img src="/opt/kinneret/images/star.png">إبحار تعارف في كينيرت - صور
   <play=ar/about_kinneret.html>
@@ -157,29 +166,21 @@
  <play=ar/howto_help.html>
  <image=kinneret-broom-s.png>
 معلومات للمعنيين في ألأنضمام لمشروع جنو/لينوكس كينيرت
-<play=he/kinneret_license.html>
-<font color=grey>____________________________________________________________</font><br><font color=red size=2>חשוב לדעת!</font><font size=2> <b><i>גנו/לינוקס כנרת</b></i> מסופקת "כפי שהיא", בלא אחריות מסוג כלשהו, בין אם מפורשת ובין אם משתמעת, לרבות, אך מבלי למעט מהאמור, האחריות המשתמעת למסחריות והתאמה למטרה מסוימת. בעלי זכויות היוצרים ו/או מפיצי התוכנה לא ישאו כלפיך באחריות לנזקים, לרבות נזקים כלליים, מיוחדים, משניים או תוצאתיים כלשהם, הנובעים מהשימוש או מאי-היכולת להשתמש בתוכנות המסופקות. </font><font color=red size=2>עליך .לקרוא בעיון את רישיון השימוש המלא ולהסכים לנאמר בו לפני השימוש בהפצה זו </font><img src="/opt/kinneret/images/exclamation.png"> 
+<text>
+<font size=2>קישורים המסומנים בכוכבית (<img src="/opt/kinneret/images/star.png">) מומלצים להכרות ראשונית עם המערכת. קישורים המסומנים בסימן קריאה (<img src="/opt/kinneret/images/exclamation.png">) חשובים מאוד לידיעתך. קישורים המסומנים בגלובוס (<img src="/opt/kinneret/images/globe.png">) דורשים חיבור לאינטרנט.</font>
+<font color=grey>____________________________________________________________</font>
+<font color=red size=2>חשוב לדעת!</font><font size=2> <b><i>גנו/לינוקס כנרת</b></i> מסופקת "כפי שהיא", בלא אחריות מסוג כלשהו, בין אם מפורשת ובין אם משתמעת, לרבות, אך מבלי למעט מהאמור, האחריות המשתמעת למסחריות והתאמה למטרה מסוימת. בעלי זכויות היוצרים ו/או מפיצי התוכנה לא ישאו כלפיך באחריות לנזקים, לרבות נזקים כלליים, מיוחדים, משניים או תוצאתיים כלשהם, הנובעים מהשימוש או מאי-היכולת להשתמש בתוכנות המסופקות. </font>
+</text>
+<play=ar/kinneret_license.html>
+<img src="/opt/kinneret/images/exclamation.png"><font color=red size=2>עליך לקרוא בעיון את רישיון השימוש המלא ולהסכים לנאמר בו לפני השימוש בהפצה זו </font> 
   <http=www.linux-kinneret.org/index-ar.html>
- <font color=grey>____________________________________________________________</font><br><font size=2> אתר הבית של הפרויקט - בערבית</font> <img src="/opt/kinneret/images/globe.png">
-<end>
-
-<menu=russian>
-<menudir=ltr>
-ברוך בואך לכנרת!
-מדור זה מכיל חלק ממסמכי <b><i>גנו/לינוקס כנרת</b></i> אשר זמינים בשפה הרוסית. אם ברצונך להתנדב לתרגום מסמכים נוספים נא ליצור קשר עם dovix@linux-kinneret.org. <br><br>קישורים המסומנים בכוכבית (<img src="/opt/kinneret/images/star.png">) מומלצים להכרות ראשונית עם המערכת. קישורים המסומנים בסימן קריאה (<img src="/opt/kinneret/images/exclamation.png">) חשובים מאוד לידיעתך. קישורים המסומנים בגלובוס (<img src="/opt/kinneret/images/globe.png">) דורשים חיבור לאינטרנט.<br><br>צוות הפרוייקט מברך אותך על הפעלת תקליטור זה ומאחל לך הנאה ועבודה פוריה!
-   <play=ar/desktop_ready.html>
-   <image=kinneret-floppy-s.png>
-نظام تشغيل للمتسللين(hackers)?
-<play=he/kinneret_license.html>
-<font color=grey>____________________________________________________________</font><br><font color=red size=2>חשוב לדעת!</font><font size=2> <b><i>גנו/לינוקס כנרת</b></i> מסופקת "כפי שהיא", בלא אחריות מסוג כלשהו, בין אם מפורשת ובין אם משתמעת, לרבות, אך מבלי למעט מהאמור, האחריות המשתמעת למסחריות והתאמה למטרה מסוימת. בעלי זכויות היוצרים ו/או מפיצי התוכנה לא ישאו כלפיך באחריות לנזקים, לרבות נזקים כלליים, מיוחדים, משניים או תוצאתיים כלשהם, הנובעים מהשימוש או מאי-היכולת להשתמש בתוכנות המסופקות. </font><font color=red size=2>עליך .לקרוא בעיון את רישיון השימוש המלא ולהסכים לנאמר בו לפני השימוש בהפצה זו </font><img src="/opt/kinneret/images/exclamation.png"> 
-  <http=www.linux-kinneret.org/index-ru.html>
- <font color=grey>____________________________________________________________</font><br><font size=2> אתר הבית של הפרויקט - ברוסית</font> <img src="/opt/kinneret/images/globe.png">
+<img src="/opt/kinneret/images/globe.png"><font size=2> אתר הבית של הפרויקט - בערבית</font>
 <end>
 
 <menu=english>
 <menudir=ltr>
-Welcome to the Kinneret!
-This section hosts some of the <b><i>GNU/Linux Kinneret</b></i> documents that are available in English. If you would like to volunteer to translate additional documents, please contact dovix@linux-kinneret.org. <br><br>Links marked with an asterisk (<img src="/opt/kinneret/images/star.png">) are recommended for familiarization with the system. Links marked with an exclamation mark (<img src="/opt/kinneret/images/exclamation.png">) contain important information.  Links marked with a globe (<img src="/opt/kinneret/images/globe.png">) require an Internet connection.<br><br>The project team welcomes you for using the system and wishes you enjoyment and fruitful work!
+Welcome to GNU/Linux Kinneret!
+This section hosts some of the system documents that are available in English. If you would like to volunteer to translate additional documents, please contact dovix@linux-kinneret.org. <br><br>The project team welcomes you for using the system and wishes you enjoyment and fruitful work!
   <play=en/user_interface.html>
 <img src="/opt/kinneret/images/star.png">Where's my...? Some important things to keep you afloat
    <play=en/linux_history.html>
@@ -187,8 +188,13 @@ History of Linux
  <play=en/about_kinneret.html>
   <image=kinneret-cd-s.png>
 Learning in the Kinneret - familiarization with the project
-<play=he/kinneret_license.html>
-<font color=grey>____________________________________________________________</font><br><font color=red size=2>Important!</font><font size=2> <b><i>GNU/Linux Kinneret</b></i> is provided "as is" without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose.  </font><font color=red size=2>You are requested to read and agree to the full end user license prior to using this distribution. </font><img src="/opt/kinneret/images/exclamation.png"> 
-  <http=www.linux-kinneret.org/index-en.html>
- <font color=grey>____________________________________________________________</font><br><font size=2> The project homepage - in English</font> <img src="/opt/kinneret/images/globe.png">
+<text>
+<font size=2>Links marked with an asterisk (<img src="/opt/kinneret/images/star.png">) are recommended for familiarization with the system. Links marked with an exclamation mark (<img src="/opt/kinneret/images/exclamation.png">) contain important information.  Links marked with a globe (<img src="/opt/kinneret/images/globe.png">) require an Internet connection.</font>
+<font color=grey>____________________________________________________________</font>
+<font color=red size=2>Important!</font><font size=2> <b><i>GNU/Linux Kinneret</b></i> is provided "as is" without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose.
+</text>
+<play=en/kinneret_license.html>
+<img src="/opt/kinneret/images/exclamation.png"><font color=red size=2>You are requested to read and agree to the full end user license prior to using this distribution. </font>
+<http=www.linux-kinneret.org/index-en.html>
+<img src="/opt/kinneret/images/globe.png"><font size=2> The project homepage - in English</font>
 <end>
