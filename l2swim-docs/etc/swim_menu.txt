@@ -11,7 +11,7 @@
 # FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 # License at http://www.gnu.org/copyleft/gpl.html for more details.
 #
-# Version: 0.7f 19-Jan-2004
+# Version: 0.7g 7-feb-2004
 # Encoding: [UTF8]
 # Language: Hebrew, English, Arabic, Russian, Ethopian
 #
@@ -64,7 +64,7 @@ Click here for English documentation
   <play=he/user_interface.html>
 <img src="/opt/kinneret/images/star.png">איפה ה... שלי? כמה דברים שחשוב לדעת כדי לא לטבוע
  <play=he/custom_desktop.html>
-<img src="/opt/kinneret/images/star.png">התאמה אישית של שולחן העבודה
+<img src="/opt/kinneret/images/star.png">התאמה אישית של שולחן העבודה [טיוטה]
 <null>
 <img src="/opt/kinneret/images/star.png">מדריך הגדרה וחיבור לאינטרנט המהיר
  <name=index14>
@@ -82,13 +82,15 @@ Click here for English documentation
 <null>
 מדריך השמעת מוזיקה עם XMMS
 <null>
+מדריך גלישה באינטרנט עם Mozilla Firebird
+<play=he/man_ooo_advanced.html>
+מדריך שימוש מתקדם בערכת היישומים המשרדיים OpenOffice.org [טיוטה]
+<null>
 מדריך עיבוד תמונות עם The Gimp
  <play=he/man_cheese.html>
 מדריך הלחנת מנגינות עם Cheese Tracker
  <play=he/man_kpovmodeler.html>
 מדריך עיצוב תמונות תלת-מימדיות עם KPovModeler
-  <play=he/man_ooo_advanced.html>
-מדריך שימוש מתקדם בערכת היישומים המשרדיים OpenOffice.org
 <end>
 
 <menu=index4>
