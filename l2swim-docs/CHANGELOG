@@ -1,11 +1,12 @@
 This file includes changes since the last upload. It is intended to provide a reference for translators/authors/remastering.
 
--------------- v 0.6 ----------------
+-------------- v 0.6rc1 ----------------
 * merged all tour files into a single file 2/8/2003 dovix
 * massive re-editing on the menu file swim_menu_he.xml 22/8/03
 * updated: kinneret_credits 16/8/03
 * new: release_notes 16/08/03
 * change: man_enigma >> man_games and updated 22/8/03
+* some typo corrections: tour_kinneret.xml, user_interface.xml 2/9/03
 
 -------------- v 0.5.0 ----------------
 * Updated ~/etc/l2swim.xsl (no impact on translations - enhanced tags and html output) 5/7/03 dovix
