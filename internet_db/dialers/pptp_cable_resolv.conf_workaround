@@ -1,7 +1,7 @@
 #!ppp0
 
 # Based on a script from the CABLE-DHCP-PPTP-HOWTO
-
+# fix#1 correct parsing of pump to get CABLEGW- dovix 16/1/04
 
 error_exit()
 {
@@ -117,7 +117,9 @@ case "$DHCPCLIENT_NAME" in
           CABLEGW=`grep routers /var/lib/dhcp/dhclient.leases | tail -n 1| cut -d ";" -f1 | cut -d ' ' -f5`
      ;;
      "pump" )
-          CABLEGW=`$W_PUMP -s | grep Gateway | cut -d':' -f2`
+# fix#1 fix wrong string since output has both 'Gateway:' and 'Gateways:'
+          CABLEGW=`$W_PUMP -s | grep Gateway: | cut -d':' -f2`
+          
      ;;
      * )
           error_exit "WTF?!?!?"
