@@ -95,9 +95,9 @@ fi
 
 # now check the value of mode:
 case $mode in
-  	1)	# proceed to connect
+  	0)	# proceed to connect
 		;;
-	0)	kdialog --title $"Kiwiz warning" --yesno $"You are no longer connected to the Internet.\n\nDo you want to re-connect?."
+	1)	kdialog --title $"Kiwiz warning" --yesno $"You are no longer connected to the Internet.\n\nDo you want to re-connect?."
 		if [ $? -ne 0 ] ; then
 			internet --clearcurr
 			exit 1
