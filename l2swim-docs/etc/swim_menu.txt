@@ -134,8 +134,8 @@
  <play=he/howto_help.html>
  <image=kinneret-broom-s.png>
 רוצה לעזור בפרוייקט? מידעון למעוניינים להצטרף
-<ftp=ftp.berlios.de/pub/kinneret/release_notes.pdf>
-<font color=grey>____________________________________________________________</font><br><font size=2>תיעוד שינויים ומפרט גרסה</font> <img src="/opt/kinneret/images/globe.png">
+<play=he/release_notes.html>
+<font color=grey>____________________________________________________________</font><br><font size=2>תיעוד שינויים ומפרט גרסה</font>
 <end>
 
 <menu=arabic>
