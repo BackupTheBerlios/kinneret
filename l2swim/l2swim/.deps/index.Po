@@ -1,0 +1,106 @@
+index.o index.o: index.cpp index.h /usr/lib/qt3/include/qstring.h \
+  /usr/lib/qt3/include/qcstring.h /usr/lib/qt3/include/qmemarray.h \
+  /usr/lib/qt3/include/qgarray.h /usr/lib/qt3/include/qshared.h \
+  /usr/lib/qt3/include/qglobal.h /usr/lib/qt3/include/qconfig.h \
+  /usr/lib/qt3/include/qmodules.h /usr/lib/qt3/include/qfeatures.h \
+  /usr/include/string.h /usr/include/features.h /usr/include/sys/cdefs.h \
+  /usr/include/gnu/stubs.h \
+  /usr/lib/gcc-lib/i486-suse-linux/3.3/include/stddef.h \
+  /usr/include/xlocale.h /usr/lib/qt3/include/qmime.h \
+  /usr/lib/qt3/include/qwindowdefs.h /usr/lib/qt3/include/qobjectdefs.h \
+  /usr/lib/qt3/include/qnamespace.h /usr/lib/qt3/include/qmap.h \
+  /usr/lib/qt3/include/qdatastream.h /usr/lib/qt3/include/qiodevice.h \
+  /usr/lib/qt3/include/qpair.h /usr/lib/qt3/include/qvaluelist.h \
+  /usr/lib/qt3/include/qtl.h /usr/lib/qt3/include/qtextstream.h \
+  /usr/include/stdio.h /usr/include/bits/types.h \
+  /usr/include/bits/wordsize.h /usr/include/bits/typesizes.h \
+  /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+  /usr/include/bits/wchar.h /usr/include/gconv.h \
+  /usr/lib/gcc-lib/i486-suse-linux/3.3/include/stdarg.h \
+  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+  /usr/include/bits/stdio.h /usr/lib/qt3/include/qfile.h \
+  /opt/kde3/include/klocale.h
+
+index.h:
+
+/usr/lib/qt3/include/qstring.h:
+
+/usr/lib/qt3/include/qcstring.h:
+
+/usr/lib/qt3/include/qmemarray.h:
+
+/usr/lib/qt3/include/qgarray.h:
+
+/usr/lib/qt3/include/qshared.h:
+
+/usr/lib/qt3/include/qglobal.h:
+
+/usr/lib/qt3/include/qconfig.h:
+
+/usr/lib/qt3/include/qmodules.h:
+
+/usr/lib/qt3/include/qfeatures.h:
+
+/usr/include/string.h:
+
+/usr/include/features.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/lib/gcc-lib/i486-suse-linux/3.3/include/stddef.h:
+
+/usr/include/xlocale.h:
+
+/usr/lib/qt3/include/qmime.h:
+
+/usr/lib/qt3/include/qwindowdefs.h:
+
+/usr/lib/qt3/include/qobjectdefs.h:
+
+/usr/lib/qt3/include/qnamespace.h:
+
+/usr/lib/qt3/include/qmap.h:
+
+/usr/lib/qt3/include/qdatastream.h:
+
+/usr/lib/qt3/include/qiodevice.h:
+
+/usr/lib/qt3/include/qpair.h:
+
+/usr/lib/qt3/include/qvaluelist.h:
+
+/usr/lib/qt3/include/qtl.h:
+
+/usr/lib/qt3/include/qtextstream.h:
+
+/usr/include/stdio.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/include/bits/wchar.h:
+
+/usr/include/gconv.h:
+
+/usr/lib/gcc-lib/i486-suse-linux/3.3/include/stdarg.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/lib/qt3/include/qfile.h:
+
+/opt/kde3/include/klocale.h:

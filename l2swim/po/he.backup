@@ -1,0 +1,61 @@
+#: swim.moc.cpp:34 swim.moc.cpp:42
+msgid "MainWindow"
+msgstr ""
+
+#: swim.cpp:43
+msgid ""
+"<b><big><big>Learn To Swim (l2swim)</b></big></big><br><br>"
+"An interactive information center.<br>Version: %1<br>Date: %2<br>Programmed "
+"by : Nir Misgav<br>Email: %3<br>License: GPL<br>All rights reserved to "
+"<i><b>GNU/Linux Kinneret.</i></b>"
+msgstr "מדריך השחייה (l2swim)\n\n"
+" אודות הממשק :\n" 
+"גרסא: %1, מתאריך: %2\n"
+" המתכנת: ניר משגב \n"
+"דוא\"ל: %3\n"
+"אתר הפרוייקט: www.linux-kinnreret.org\n"
+"רשיון: GPL\n"
+" כל הזכויות שמורות ל-גנו/לינוקס כנרת. \n\n"
+" תיאור: \n"
+"\"מדריך השחייה\" פותח ע\"מ לשמש מרכז המידע ומערכת העזרה של גנו/לינוקס כנרת.\n"
+" הממשק נכתב והותאם במיוחד לכנרת, ותוכנן ע\"י צוותי הפיתוח והתיעוד כך שיהיה ידידותי\n"
+" וקל הן למשתמש הקצה והן לכותבי התיעוד. \n"
+" הממשק נכתב כך שהוא בלתי תלוי בתכנים, ולכן ניתן להסבה בקלות לצרכים אחרים. \n"
+" מרכז המידע הוא בעל מבנה של עץ תפריטים, ומסוגל להציג מסמכים מסוגים שונים\n" 
+"(קבצי pdf, html, תמונות, וכל מה שמוגדר כ-kpart ב-kde )\n"
+" הממשק \"יודע\" להריץ ישומים לפי דרישה, ולהפעיל דפדפן חיצוני במקרה של קישור\n"
+" לאינטרנט. הוא תומך בדו-כיווניות ובריבוי שפות. \n\n"
+" אם גילית באג או שיש לך שאלות או הצעות לשיפור, או אם אתה מפתח הרוצה להשתמש\n"
+"בממשק, אנא שלח לי דוא\"ל, או השאר הודעה באתר הפרוייקט, בפורום מתאים."
+
+#: swim.cpp:47
+msgid "Learn to swim"
+msgstr "מדריך השחייה בכנרת"
+
+#: swim.cpp:53 swim.cpp:126
+msgid "ERROR - Image %1 not found"
+msgstr "שגיאה - קובץ תמונה %1 לא נמצא"
+
+#: swim.cpp:85
+msgid "Back to previous page"
+msgstr "חזרה לעמוד קודם"
+
+#: swim.cpp:88
+msgid "Jump to first page"
+msgstr "חזרה לעמוד הראשון"
+
+#: swim.cpp:153 index.cpp:148
+msgid "About l2swim"
+msgstr "אודות מדריך השחייה"
+
+#: index.cpp:145
+msgid "Go back"
+msgstr "חזרה"
+
+#: index.cpp:149
+msgid "Exit"
+msgstr "יציאה"
+
+#: index.cpp:159
+msgid "ERROR - Menu file %1 not found."
+msgstr "שגיאה - קובץ תפריט %1 לא נמצא."

@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2003-07-16 20:27+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: l2swim.cpp:25
+msgid ""
+"<b><big><big>Learn To Swim (l2swim)</b></big></big><br><br>An interactive "
+"information center.<br>Version: %1<br>Date: %2<br>Programmed by : Nir "
+"Misgav<br>Email: %3<br>License: GPL<br>All rights reserved to <i><b>GNU/"
+"Linux Kinneret.</i></b>"
+msgstr ""
+
+#: l2swim.cpp:29
+msgid "Learn to swim"
+msgstr ""
+
+#: l2swim.cpp:48
+msgid "Backward"
+msgstr ""
+
+#: l2swim.cpp:51
+msgid "Forward"
+msgstr ""
+
+#: l2swim.cpp:54
+msgid "Homepage"
+msgstr ""
+
+#: l2swim.cpp:58
+msgid "Zoom-in"
+msgstr ""
+
+#: l2swim.cpp:61
+msgid "Zoom-out"
+msgstr ""
+
+#: l2swim.cpp:65
+msgid "Print page"
+msgstr ""
+
+#: l2swim.cpp:68
+msgid "About l2swim"
+msgstr ""
+
+#: l2swim.cpp:84
+msgid ""
+"Sorry - Your language menu-file: %1 does not exist, using default language "
+"instead"
+msgstr ""
+
+#: l2swim.cpp:254
+msgid "ERROR - Image %1 not found"
+msgstr ""
+
+#: index.cpp:143
+msgid "Go back"
+msgstr ""
+
+#: index.cpp:144
+msgid "Exit"
+msgstr ""
+
+#: index.cpp:156
+msgid "ERROR - Menu file %1 not found."
+msgstr ""
+
+#: l2swim.moc.cpp:34 l2swim.moc.cpp:42
+msgid "MainWindow"
+msgstr ""
