@@ -1,0 +1,14 @@
+Source: knrtheme
+Section: unknown
+Priority: optional
+Maintainer: Nir Misgav <nirro@linux-kinneret.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.0
+
+Package: knrtheme
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: The Kinneret's theme manager
+ A KControl module that manages Look&Feel themes,
+ like icons, wallpaper, colors, style, window decoration and more,
+ in one click. It is also possible to build new themes.
