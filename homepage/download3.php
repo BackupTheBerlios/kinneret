@@ -31,7 +31,7 @@
                 </td>
                 <td width="30"><img src="rtl/middleend.gif" width="30" height="20" alt=""></td>
                 <td STYLE="background-color:#1F2AB9" width="85">
-                  <div align="center"><b><font color="#333333">русский</font></b></div>
+                  <div align="center"><b><font color="#FFFFFF"><a href="index-ru.html">русский</a></font></b></div>
 
                 </td>
                 <td width="30"><img src="rtl/middleend.gif" width="30" height="20" alt=""></td>

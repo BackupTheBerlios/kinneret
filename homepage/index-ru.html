@@ -4,7 +4,6 @@
 <head>
 <title>GNU/Linux Kinneret - Freedom is our secret!</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta HTTP-EQUIV="refresh" content="1; URL=download3-en.php">
 <link REL="StyleSheet" HREF="common/style.css" TYPE="text/css">
 </head>
 
@@ -22,11 +21,11 @@
               <tr>
                 <td width="10"><img src="ltr/leftend.gif" width="10" height="20" alt=""></td>
                 <td STYLE="background-color:#1F2AB9" width="85">
-                <div align="center"><b><font color="#0000C0">English</font></b></div>
+                <div align="center"><b><font color="#FFFFFF"><a href="index-en.html">English</a></font></b></div>
                 </td>
                 <td width="30"><img src="ltr/middleend.gif" width="30" height="20" alt=""></td>
                 <td STYLE="background-color:#1F2AB9" width="85">
-                  <div align="center"><b><font color="#FFFFFF"><a href="index-ru.html">русский</a></font></b></div>
+                  <div align="center"><b><font color="#0000C0">русский</font></b></div>
                 </td>
                 <td width="30"><img src="ltr/middleend.gif" width="30" height="20" alt=""></td>
                 <td STYLE="background-color:#1F2AB9" width="85">
@@ -56,27 +55,27 @@
 var now = new Date();
 var day = now.getDay();
 var dayname;
-        if (day == 0) dayname = "Sunday";
-        if (day == 1) dayname = "Monday";
-        if (day == 2) dayname = "Tuesday";
-        if (day == 3) dayname = "Wednesday";
-        if (day == 4) dayname = "Thursday";
-        if (day == 5) dayname = "Friday";
-        if (day == 6) dayname = "Saturday";
+        if (day == 0) dayname = "Воскресенье";
+        if (day == 1) dayname = "Понедельник";
+        if (day == 2) dayname = "Вторник";
+        if (day == 3) dayname = "Среда";
+        if (day == 4) dayname = "Четверг";
+        if (day == 5) dayname = "Пятница";
+        if (day == 6) dayname = "Суббота";
 var month = now.getMonth();
 var monthname;
-        if (month == 0) monthname = "January";
-        if (month == 1) monthname = "February";
-        if (month == 2) monthname = "March";
-        if (month == 3) monthname = "April";
-        if (month == 4) monthname = "May";
-        if (month == 5) monthname = "June";
-        if (month == 6) monthname = "July";
-        if (month == 7) monthname = "August";
-        if (month == 8) monthname = "September";
-        if (month == 9) monthname = "October";
-        if (month == 10) monthname = "November";
-        if (month == 11) monthname = "December";
+        if (month == 0) monthname = "Январь";
+        if (month == 1) monthname = "Февраль";
+        if (month == 2) monthname = "Март";
+        if (month == 3) monthname = "Апрель";
+        if (month == 4) monthname = "Май";
+        if (month == 5) monthname = "Июнь";
+        if (month == 6) monthname = "Июль";
+        if (month == 7) monthname = "Август";
+        if (month == 8) monthname = "Сентябрь";
+        if (month == 9) monthname = "Октябрь";
+        if (month == 10) monthname = "Ноябрь";
+        if (month == 11) monthname = "Декабрь";
 var date = now.getDate();
 var year = now.getYear();
 var yearname;
@@ -98,7 +97,6 @@ var yearname;
 
 document.write(""+dayname+", "+monthname+" "+date+", "+yearname);
 //-->
-
 </script>
 </font>
 </td>
@@ -117,17 +115,17 @@ document.write(""+dayname+", "+monthname+" "+date+", "+yearname);
       <table width="150" border="0" cellspacing="0" cellpadding="0">
         <tr> 
           <td STYLE="background-color:#7494F0" width="3"><font color="#FFFFFF">&nbsp;</font></td>
-          <td STYLE="background-color:#7494F0"><font color="#333333">Download</font></td>
+          <td STYLE="background-color:#7494F0"><font color="#FFFFFF"><a href="download-en.php">Скачать</a></font></td>
           <td><img src="ltr/navbartop.gif" width="40" height="20" alt=""></td>
         </tr>
         <tr> 
           <td STYLE="background-color:#7494F0" width="3"><font color="#FFFFFF">&nbsp;</font></td>
-          <td STYLE="background-color:#7494F0"><font color="#FFFFFF"><a href="https://developer.berlios.de/forum/?group_id=734">Discussion&nbsp;forums</a></font></td>
+          <td STYLE="background-color:#7494F0"><font color="#FFFFFF"><a href="https://developer.berlios.de/forum/?group_id=734">Форумы</a></font></td>
           <td><img src="ltr/navbarmiddle.gif" width="22" height="20" alt=""></td>
         </tr>
         <tr> 
-          <td STYLE="background-color:#7494F0" width="3"><font color="#FFFFFF">&nbsp;</font></td>
-          <td STYLE="background-color:#7494F0"><font color="#FFFFFF"><a href="http://developer.berlios.de/projects/kinneret" target="new">Developer&nbsp;Home</a></font></td>
+          <td STYLE="background-color:#7494F0" width="3">&nbsp;</td>
+          <td STYLE="background-color:#7494F0"><font color="#FFFFFF"><a href="http://developer.berlios.de/projects/kinneret" target="new">Страничка&nbsp;разработчика</a></font></td>
           <td><img src="ltr/navbarend.gif" width="10" height="20" alt=""></td>
         </tr>
       </table>
@@ -148,24 +146,19 @@ document.write(""+dayname+", "+monthname+" "+date+", "+yearname);
     <td valign="top">
       <table width="500" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td>
-            <p>
-		Download page for GNU/Linux Kinneret will display in a few seconds
-<?php
-$tmp = file("hits-counter.txt");
-$dls = $tmp[0]+1;
-$fp = fopen("hits-counter.txt", "w");
-fwrite($fp, $dls);
-fclose($fp);
-?>
-
-	    <table width="400" border="0" cellspacing="0" cellpadding="0">
+          <td> 
+            <p><b>Добро пожаловать на домашнюю страницу GNU/Линукс Кинерет</b></p> 
+            <p>GNU/Линукс Кинерет - это операционная система и набор прикладных программ, которые поставляются(на CD), как легкий в эксплуатции пакет. Данная система не обязует ползователя к инсталяции и/или трудной настройке, а автоматически опознает «железо», включает «волшебника» для легкого подключения к интернету, а так-же высококачественные прикладные программы с максимальной поддержкой Иврита (поддержка других языков планируется в будущем).</p>
+            <p>Среди прочих поставляемых на диске программ можно найти также офисные (обработка текстов, таблиц, создание презентаций, итд.), интернет (бродилки, почтовики, болталки, итд.), мультимедийные (музыка, фильмы, обработка изображений, итд.) программы, а так же набор развлекателных игр. GNU/Линукс Кинерет призван служить, в первую очередь, ученикам в Израильской системе образования и, вследствии этого, включает в себя разнообразие учебных и обучающих программ, а также среды разработки, которые бывают нужны во время учебы.</p>
+            <p>Данная система может распространяеться бесплатно в интернете. Цель этого проекта, создание бесплатной и качественной альтернативы операционной системе Windows и коммерческим программам, которые ученики исползуют во время учебы, тем самым, продвигая открытые программы и движения их поддерживающие в Израиле, а также давая равные возможности ученикам всех слоёв населения в технологическом веке.</p>
+             <p><a href="about-ru.html" class="orange_white">Дополнительная информация о проекте и педагогическим аспектам</a></p>
+           <table width="400" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td>
                   <div align="right"><img src="ltr/hbtopleft.gif" width="20" height="15" alt=""></div>
                 </td>
                 <td STYLE="background-color:#1F2AB9" height="15"> 
-                  <div align="center"><font color="#FFFFFF">GNU/Linux Kinneret is a remastering of <a href="http://www.knopper.net/knoppix/index-en.html" class="white_blue" target="new"><u>Knoppix</u></a></font></div>
+                  <div align="center"><font color="#FFFFFF">GNU/Линукс&nbsp;Кинерет&nbsp;является&nbsp;переделкой&nbsp;системы&nbsp;<a href="http://www.knopper.net/knoppix/index-en.html" class="white_blue" target="new"><u>Кноппикс</u></a></font></div>
                 </td>
                 <td><img src="ltr/hbtopright.gif" width="20" height="15" alt=""></td>
               </tr>
@@ -177,7 +170,7 @@ fclose($fp);
                   <div align="right"><img src="ltr/hbbottomleft.gif" width="20" height="15" alt=""></div>
                 </td>
                 <td STYLE="background-color:#1F2AB9" height="15"> 
-                  <div align="center"><font color="#FFFFFF">Free site template courtesy of <a href="http://www.serenitymedia.co.uk" class="white_blue" target="new"><u>SerenityMedia.co.uk</u></a></font></div>
+                  <div align="center"><font color="#FFFFFF">Бесплатный шаблон предоставлен <a href="http://www.serenitymedia.co.uk" class="white_blue" target="new"><u>SerenityMedia.co.uk</u></a></font></div>
                 </td>
                 <td><img src="ltr/hbbottomright.gif" width="20" height="15" alt=""></td>
               </tr>
@@ -187,7 +180,7 @@ fclose($fp);
         </tr>
 
 
-<tr><td>This page complies with international standards that ensure comatibility with standard-compliant browsers.</td></tr>
+<tr><td>Данная страница соответствует международным стандартам обеспечивающими совместимость с стандартизированными программами.</td></tr>
 <tr><td>
 <table>
 	<tr>
@@ -218,7 +211,6 @@ fclose($fp);
 	</tr>
 </table>
 </td></tr>
-
 
 
       </table>
