@@ -39,6 +39,7 @@ xsltproc -o ../doc/he/thoughts_1.html ../etc/l2swim.xsl ../src/he/thoughts_1.xml
 xsltproc -o ../doc/he/thoughts_2.html ../etc/l2swim.xsl ../src/he/thoughts_2.xml
 xsltproc -o ../doc/he/thoughts_3.html ../etc/l2swim.xsl ../src/he/thoughts_3.xml
 xsltproc -o ../doc/he/thoughts_4.html ../etc/l2swim.xsl ../src/he/thoughts_4.xml
+xsltproc -o ../doc/he/thoughts_5.html ../etc/l2swim.xsl ../src/he/thoughts_5.xml
 xsltproc -o ../doc/he/first_time.html ../etc/l2swim.xsl ../src/he/first_time.xml
 xsltproc -o ../doc/he/apps_list.html ../etc/l2swim.xsl ../src/he/apps_list.xml
 xsltproc -o ../doc/he/social_contract.html ../etc/l2swim.xsl ../src/he/social_contract.xml
