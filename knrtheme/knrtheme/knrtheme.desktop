@@ -16,6 +16,7 @@ Name[he]=מנהל ערכות הנושא של כנרת
 Comment=Customize the Kinneret theme
 Comment[he]=שינוי ערכת הנושא של כנרת
 
-Keywords=
+Keywords=Theme,Theme manager,Kinneret,Themes
+Keywords[he]=ערכה,ערכת נושא,כנרת,ערכות,ערכות נושא
 
 Categories=Qt;KDE;X-KDE-settings-looknfeel
