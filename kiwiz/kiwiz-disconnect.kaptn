@@ -1,0 +1,28 @@
+#!/usr/bin/kaptain
+#
+# kiwiz version 0.31.1 using kaptain grammer (C) 2004 by Dovix, dovix@linux-kinneret.org
+# released under the terms of the GNU General Public License, version 2
+# http://www.fsf.org/copyleft/gpl.txt
+#
+
+start "Kiwiz - Disconnect"-> main;
+
+#------------- Main -----------------------
+main :framed :horizontal -> main_logo main_pane;
+
+main_logo -> @icon("/home/dovix/iwiz/128x128/apps/network.png");
+
+main_pane -> main_options main_buttons;
+
+main_options :framed -> main_connection;
+main_connection :horizontal "Connection to disconnect" -> @;
+main_connection = `cat /tmp/kiwiz_connect.inf`;
+
+main_buttons :horizontal -> main_connect main_close;
+
+main_connect :horizontal -> @icon("/home/dovix/iwiz/32x32/actions/launch.png") @exec(main_connect_play)="Go";
+
+main_connect_play -> "internet --kill="main_connection" > /tmp/kiwiz_disconnect.log 2> /tmp/kiwiz_disconnect.err ; rm /tmp/kiwiz_connect.inf -f ; kaptain kiwiz-status.kaptn";
+
+
+main_close :horizontal -> @icon("/home/dovix/iwiz/32x32/actions/gohome.png") @close="Close";

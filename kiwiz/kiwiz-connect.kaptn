@@ -1,6 +1,6 @@
 #!/usr/bin/kaptain
 #
-# kiwiz version 0.31.1 using kaptain grammer (C) 2004 by Dovix, dovix2003@linux-kinneret.org
+# kiwiz version 0.31.1 using kaptain grammer (C) 2004 by Dovix, dovix@linux-kinneret.org
 # released under the terms of the GNU General Public License, version 2
 # http://www.fsf.org/copyleft/gpl.txt
 #
@@ -26,7 +26,7 @@ main_buttons :horizontal -> main_connect main_close;
 
 main_connect :horizontal -> @icon("/home/dovix/iwiz/32x32/actions/launch.png") @exec(main_connect_play)="Go";
 
-main_connect_play -> "internet --connect="main_connection" > /tmp/kiwiz_connect.log 2> /tmp/kiwiz_connect.err ; kaptain kiwiz-log.kaptn";
+main_connect_play -> "echo "main_connection" > /tmp/kiwiz_connect.inf; internet --connect="main_connection" > /tmp/kiwiz_connect.log 2> /tmp/kiwiz_connect.err ; kaptain kiwiz-status.kaptn";
 #main_connect_play -> "echo "main_connection" "main_password_value"";
 
 main_close :horizontal -> @icon("/home/dovix/iwiz/32x32/actions/gohome.png") @close="Close";

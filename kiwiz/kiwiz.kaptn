@@ -1,6 +1,6 @@
 #!/usr/bin/kaptain
 #
-# kiwiz version 0.31.1 using kaptain grammer (C) 2004 by Dovix, dovix2003@linux-kinneret.org
+# kiwiz version 0.31.1 using kaptain grammer (C) 2004 by Dovix, dovix@linux-kinneret.org
 # released under the terms of the GNU General Public License, version 2
 # http://www.fsf.org/copyleft/gpl.txt
 #
@@ -37,8 +37,8 @@ dialer_disconnect_pane :horizontal -> dialer_disconnect_icon dialer_disconnect_b
 dialer_disconnect_icon -> @icon("/home/dovix/iwiz/64x64/apps/network.png");
 dialer_disconnect_button -> @action(dialer_disconnect_play)="Disconnect";
 
-#dialer_disconnect_play -> "internet --kill="dialer_connect_list"";
 dialer_disconnect_play -> "kaptain kiwiz-disconnect.kaptn";
+#dialer_disconnect_play -> "internet --kill="default" "> /tmp/kiwiz_disconnect.log 2> /tmp/kiwiz_disconnect.err ; rm /tmp/kiwiz_connect.inf -f ; kaptain kiwiz-status.kaptn";
 
 dialer_bottom_pane :horizontal :framed -> dialer_status_pane dialer_accounts_pane;
 
@@ -108,4 +108,3 @@ help_license_icon -> @icon("/home/dovix/iwiz/64x64/apps/sisadmin.png");
 help_license_button -> @action(help_license_play)="License";
 
 help_license_play -> "ls -l";
-
