@@ -11,7 +11,7 @@
 # FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
 # License at http://www.gnu.org/copyleft/gpl.html for more details.
 #
-# Version: 0.7i 2-Apr-2004
+# Version: 0.7j 5-Apr-2004
 # Encoding: [UTF8]
 # Language: Hebrew, English, Arabic, Russian, Ethopian
 #
@@ -66,12 +66,15 @@ Click here for English documentation
  <name=index14>
  <image=kinneret-cap-s.png>
 <img src="/opt/kinneret/images/star.png">אוסף מדריכים ליישומים הכלולים בכנרת
+ <name=index15>
+ <image=kinneret-cap-s.png>
+אוסף מדריכים למפתחים ולשימוש מתקדם בלינוקס
 <play=he/first_time.html>
 <font color=grey>____________________________________________________________</font><br><font size=2>מדריך הפעלה והגדרת תצורה ראשונית</font>
 <end>
 
 <menu=index14>
- מדריך יישומים הכלולים ב<b><i>גנו/לינוקס כנרת</b></i>
+ מדריכי יישומים הכלולים ב<b><i>גנו/לינוקס כנרת</b></i>
 דף זה מכיל תקצירים שיאפשרו לך ללמוד את עיקרי השימוש בחלק מהתוכנות הכלולות בתקליטור.
 <play=he/man_games.html>
 <img src="/opt/kinneret/images/star.png">מדריך משחקי מחשב 
@@ -89,6 +92,13 @@ Click here for English documentation
 מדריך הלחנת מנגינות עם Cheese Tracker
  <play=he/man_kpovmodeler.html>
 מדריך עיצוב תמונות תלת-מימדיות עם KPovModeler
+<end>
+
+<menu=index15>
+ מדריכים למפתחים ולשימוש מתקדם ב<b><i>לינוקס</b></i>
+דף זה מכיל מדריכים המיועדים למפתחים ומתרגמי יישומים בלינוקס, וכן לשימוש מתקדם במערכת.
+<play=he/translator_guide.html>
+מדריך לתרגום יישומים בלינוקס 
 <end>
 
 <menu=index4>
