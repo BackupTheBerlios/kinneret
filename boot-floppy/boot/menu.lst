@@ -1,0 +1,38 @@
+#
+# Sample boot menu configuration file
+#
+
+#no menu, just run Kinneret
+hiddenmenu
+
+# Boot automatically after 5 secs.
+timeout 5
+
+# By default, boot the first entry.
+default 0
+
+# Fallback to the second entry.
+fallback 1
+
+# For booting GNU/Linux Kinneret
+title GNU/Linux Kinneret
+kernel (hd0,0)/boot/vmlinuz ramdisk_size=100000 init=/etc/init lang=he apm=power-off hda=scsi hdb=scsi hdc=scsi hdd=scsi hde=scsi hdf=scsi hdg=scsi vga=791 noeject noprompt nomce quiet BOOT_IMAGE=knoppix ro
+initrd (hd0,0)/boot/miniroot.gz
+
+# For booting Windows NT or Windows9X
+title Back to Windows menu
+rootnoverify (hd0,0)
+makeactive
+chainloader  +1
+
+# For loading DOS if Windows NT is installed
+# chainload /bootsect.dos
+
+## For installing GRUB into the hard disk
+#title Install GRUB into the hard disk
+#root    (hd0,0)
+#setup   (hd0)
+
+# Change the colors.
+#title Change the colors
+#color light-green/brown blink-red/blue

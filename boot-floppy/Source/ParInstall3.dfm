@@ -3,8 +3,8 @@ object ParInst3: TParInst3
   Top = 57
   BorderStyle = bsToolWindow
   Caption = 'Installing Kinneret'
-  ClientHeight = 224
-  ClientWidth = 436
+  ClientHeight = 159
+  ClientWidth = 329
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,10 +19,20 @@ object ParInst3: TParInst3
   TextHeight = 13
   object LabelWait: TTntLabel
     Left = 16
-    Top = 8
-    Width = 409
-    Height = 25
+    Top = 32
+    Width = 289
+    Height = 41
     Alignment = taCenter
     AutoSize = False
+  end
+  object ButtonClose: TTntButton
+    Left = 104
+    Top = 104
+    Width = 113
+    Height = 33
+    Caption = 'Close'
+    Enabled = False
+    TabOrder = 0
+    OnClick = ButtonCloseClick
   end
 end

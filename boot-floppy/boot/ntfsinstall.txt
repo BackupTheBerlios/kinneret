@@ -1,0 +1,44 @@
+ntfsinstall
+-----------
+
+Purpose:  allow GRUB to be booted from NT/XP
+-------
+
+	This tool modifies the GRUB stage1 and stage2 image files
+	located on an NTFS or FAT volume, to make them bootable 
+	by NTLDR.
+
+Author:
+-------
+	lode_leroy@hotmail.com
+
+Acknowledgements:
+-----------------
+	* The AUTHORS of GNU GRUB 0.93 for creating GRUB
+	* Samuel Leo for writing fsys_ntfs.c
+	* Leonid Lisovskiy for writing fsys_iso9660.c
+	* Gary Ng for updating the GRUB makefiles for NTFS+ISO9660
+
+Copyright:
+----------
+	GPL
+
+Limitations:
+------------
+     booting OS'es from NTLDR requires stage1 to be on the same partition
+     as NTLDR itself.
+
+Changes:
+--------
+0.3: - initial version 
+0.4: - added experimental FAT support (not released)
+     - added support for DOS partition names 
+           (ie. "C:" instead of "(hd0,0)")
+           this works only on windows XP
+0.5: - fixed bug with NTFS: hardcoded partition offset and clustersize
+	replaced by information exposed by fsys_ntfs.c
+     - fixed FAT support
+     - added support for DOS path names 
+       (ie. C:\boot\stage1 instead of "C:/boot/stage1");
+     - code cleanup
+	

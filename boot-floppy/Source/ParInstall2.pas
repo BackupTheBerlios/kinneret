@@ -48,7 +48,7 @@ begin
   LabelBoot.Caption:=pwidechar(_('In order to start Kinneret, you can always boot with the'+#10#13+
   'Kinneret CD, or with a Boot-Floppy. After booting, Kinneret'+#10#13+
   'continues to load from the Hard-Drive automatically.'+#10#13+
-  'However, if you don''t want to use the CD at all, You can'+#10#13+
+  'However, if you rather not use the CD at all, You can'+#10#13+
   'choose one or more of the next options (recommended) :'));
   if osis95 then
   begin
@@ -74,7 +74,7 @@ var
 begin
   ChosenDrive:='';
   {get KNOPPIX SIZE}
-  f:=CreateFile('C:\KNOPPIX\knoppix', GENERIC_READ, FILE_SHARE_READ, nil, OPEN_EXISTING, 0, 0);
+  f:=CreateFile('..\KNOPPIX\knoppix', GENERIC_READ, FILE_SHARE_READ, nil, OPEN_EXISTING, 0, 0);
   knoppixSize:=GetFileSize(f,nil)/1048576;
   closeHandle(f);
   GetAllFixedDrives(DrivesArray);
@@ -151,7 +151,7 @@ begin
   parInst3.createMenu:=CBMenu.Checked;
   parInst3.createShortcut:=CBDesktop.Checked;
   parInst3.showModal;
-  show;
+  close;
 end;
 
 end.
