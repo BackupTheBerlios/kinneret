@@ -46,7 +46,7 @@ void Dialer::LoadDialer(string strName) throw (Error)
 	long lSize = dialer.tellg();
 	dialer.seekg(0, ios_base::beg);
 
-	// allocate buffer and read it (the #!ppp0 this will be in the final script, we can live with that).
+	// allocate buffer and read it (the #!ppp0 will be in the final script, we can live with that).
 	try
 	{
 		szDialer = new char[lSize + 1];
@@ -108,6 +108,7 @@ void Dialer::LoadDialer(string strName) throw (Error)
 
 	dialer.read(szDialer, lSize);
 	dialer.close();
+
 
 	// Clean the string
 	len = lSize - 1;

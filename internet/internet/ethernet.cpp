@@ -44,7 +44,7 @@ void Ethernet::MakeBoot(ostream &stream) const
 		}
 	}
 
-	else stream << "ifconfig " << strEth << "up\n";
+	else stream << "ifconfig " << strEth << " up\n";
 	stream << endl;
 }
 

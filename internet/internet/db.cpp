@@ -214,7 +214,7 @@ string Database::ResolveDialer(ISP *isp, Hardware *hw, HardwareType ht) const th
 	case Broadband:
 		// ATM
 		// we'll use RTTI, ADSL USB modems needs PPPoATM
-		if (typeid(hw) == typeid(USB) && hw->getModemType() == ADSL) return string("atm");
+		if (typeid(*hw) == typeid(USB) && hw->getModemType() == ADSL) return string("atm");
 
 		// Mess with Cables first, we only have one dialer... USB or Ethernet,
 		// CDCEther makes them the same... :)

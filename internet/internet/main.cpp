@@ -105,6 +105,8 @@ int main(int argc, char *argv[])
 			// Modem
 			desc.strModem = CmdLine.clModem.strOpt;
 			db.getModemByName(CmdLine.clModem.strOpt, Broadband);	// again, for the exception
+			if (CmdLine.bVerbose)
+				cout << "Modem's file is: " << db.getModemByName(CmdLine.clModem.strOpt, Broadband) << endl;
 
 			// Dual (?)
 			string strModemFile = db.getModemByName(CmdLine.clModem.strOpt, Broadband);
@@ -115,8 +117,21 @@ int main(int argc, char *argv[])
 				if (CmdLine.clIFace.strOpt.empty())
 					throw Error("This is a dual modem, please specify the --iface flag.");
 
-				if (CmdLine.clIFace.strOpt == "eth") desc.interInterface = interEthernet;
-				else if (CmdLine.clIFace.strOpt == "usb") desc.interInterface = interUSB;
+				if (CmdLine.bVerbose) cout << "The modem has two interfaces." << endl;
+
+				if (CmdLine.clIFace.strOpt == "eth")
+				{
+					if (CmdLine.bVerbose) 
+						cout << "The modem is connected using an ethernet card." << endl;
+					desc.interInterface = interEthernet;
+				}
+				
+				else if (CmdLine.clIFace.strOpt == "usb")
+				{
+					if (CmdLine.bVerbose)
+						cout << "The modem is connected using the USB port." << endl;
+					desc.interInterface = interUSB;
+				}
 			}
 
 			// Eth
@@ -140,7 +155,7 @@ int main(int argc, char *argv[])
 
 			desc.strConnectionName = CmdLine.clName.strOpt;
 		
-			MakeFromDesc(desc, db, Conf);
+			MakeFromDesc(desc, db, Conf, CmdLine);
 		}
 	}
 

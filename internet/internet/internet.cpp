@@ -23,6 +23,8 @@
 #include "authentication.h"
 #include "connection.h"
 
+#include "parse.h"
+
 bool FileExists(string file)
 {
 	ifstream f(file.c_str());
@@ -54,12 +56,14 @@ void Use(const ConfigFile &conf, const CommandLine &cmd, string strScript, strin
 	cout << endl;
 }
 
-void MakeFromDesc(const Description &desc, const Database &db, const ConfigFile &conf) throw (Error)
+void MakeFromDesc(const Description &desc, const Database &db, const ConfigFile &conf, const CommandLine &cmdline) throw (Error)
 {
 	try
 	{
 		ISP isp(&db);
 		isp.LoadISP(desc.strISP);
+
+		if (cmdline.bVerbose) cout << "ISP:" << isp.getName() << endl;
 
 		Hardware *modem = 0;
 		string strModemFile = db.getModemByName(desc.strModem, Broadband);
@@ -72,10 +76,12 @@ void MakeFromDesc(const Description &desc, const Database &db, const ConfigFile 
 		{
 		case Hardware::BBEth:
 			modem = new Ethernet(&db);
+			if (cmdline.bVerbose) cout << "Thernet modem" << endl;
 			break;
 
 		case Hardware::BBUSB:
 			modem = new USB(&db);
+			if (cmdline.bVerbose) cout << "USB modem" << endl;
 			break;
 
 		case Hardware::BBDual:
@@ -118,6 +124,12 @@ void MakeFromDesc(const Description &desc, const Database &db, const ConfigFile 
 		Dialer dial(&db);
 		dial.LoadDialer(db.ResolveDialer(&isp, modem, Broadband));
 		dial.setDebian(desc.bDebianBased);
+
+		if (cmdline.bVerbose)
+		{
+			cout << "Dialer: " << db.ResolveDialer(&isp, modem, Broadband) << endl;
+			cout << "Username:" << Parse(username, &isp, &auth, modem, &dial) << endl;
+		}
 
 		Connection con(modem, &isp, &auth, &dial);
 		con.setName(desc.strConnectionName);
