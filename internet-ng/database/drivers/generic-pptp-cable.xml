@@ -3,10 +3,12 @@
    - Generic cables PPtP modem.
    -
    - Author: z9u2k
-   - $Revision: 1.2 $
+   - $Revision: 1.3 $
    -->
 <driver>
-    <name lang="en">Generic PPtP Cable Modem</name>
+    <name lang="en">
+        Generic PPtP Cable Modem
+    </name>
     <comment lang="en">
         Generic cables modem that uses PPtP for communication.
     </comment>
