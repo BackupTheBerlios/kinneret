@@ -44,7 +44,7 @@ end;
 procedure TFormAbout.FormCreate(Sender: TObject);
 begin
   TranslateProperties (self);      //GNUGETTEXT
-  date:='28/4/04';
+  date:='28/2/04';
   version:='0.7';
   email:='nirro@linux-kinneret.org';
 end;
