@@ -147,22 +147,98 @@ document.write(""+dayname+", "+monthname+" "+date+", "+yearname);
     <td valign="top">
       <table width="500" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td> 
-            <p>
-GNU/Linux Kinneret is free software. We invite you to freely download a ready-to-burn CD image. You may choose from several download mirrors that contain identical copies of the system. If you encounter slow downloads or can't connect, please try another mirror. Download size is approximately 650 MBytes. We recommend that you use a fast Internet connection (cable or xDSL). The download will take about two hours using a 750MBit connection.
+          <td>
 <p>
-We recommend to use a download manager so that download can proceed from the point it was stopped in case of disconnect.This feature is not supported by all download sites.<br>A free utility for Windows operating system can be downloaded <a href="http://francis.dupont.free.fr/downloadplus/" class="orange_white" target="new"> from this site</a>. Instructions are available from that site as well.  
+<b>For increased security, we recommend that you download the ISO and MD5SUM from different download sites. ISO and MD5SUM files must be from the same version.</b>
 <p>
-You can check the downloaded image in order to verify the integrity of the download. For that purpose, the file signature should be computed using a special utility. This signature should be compared with the signature in the file ending with md5sum.<br>A free utility to calculate md5sum for Windows Operating Systems can be downloaded <a href="http://www.md5summer.org/about.html" class="orange_white" target="new">from this site</a>. Instructions are available from that site as well.
+GNU/Linux Kinneret is available in two flavors:
+<ul>
+<li><b>Stable</b> - This version has gone through a long troubleshooting and stabilization period, and is therefore suitable for wide distribution.</li>
+</ul>
+
+<p>
+<TABLE BORDER=1>
+<CAPTION ALIGN=TOP><B>Download sites for stable version of GNU/Linux Kinneret</b></caption>
+<TR>
+  <TH>Number</th>
+  <TH>Mirror</th>
+  <TH>Location</th>
+  <TH>Version</th>
+  <TH>ISO</th>
+  <TH>MD5SUM</th>
+  <TH>Can resume?</th>
+</tr>
+<TR>
+  <TD>#1</td>
+  <TD><a href="http://www.hamakor.org.il/english.html" class="orange_white" target="new">Hamakor</a> - Israeli Society for Free Software and Open-Source Code</td>
+  <TD>Israel</td>
+  <TD>0.6</td>
+  <TD><a href="
+http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange_white">Download</a></td>
+  <TD><a href="http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.md5sum" class="orange_white">Download</a></td>
+  <TD> </td>
+</tr>
+<TR>
+  <TD>#2</td>
+  <TD><a href="http://www.haifux.org/" class="orange_white" target="new">Haifux</a> - Haifa Linux Club</td>
+  <TD>Israel</td>
+  <TD>0.6</td>
+  <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange_white">Download</a></td>
+  <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.6-Yarden.md5sum" class="orange_white">Download</a></td>
+  <TD> </td>
+</tr>
+<TR>
+  <TD>#3</td>
+  <TD><a href="http://developer.berlios.de/" class="orange_white" target="new">Berlios</a> - Fostering Open Source Development</td>
+  <TD>Germany</td>
+  <TD>0.6</td>
+  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.6RC5-yarden.iso" class="orange_white">Download</a></td>
+  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.6RC5-yarden.md5sum" class="orange_white">Download</a></td>
+  <TD> </td>
+</tr>
+
+</table>
+
+<p>
+<ul>
+<li><b>Development</b> - This is a more current version that is used by the system developers, but <u>it may miss functionality or have major issues</u>, and therefore is <u>suitable only for advanced users</u> who want to assist us in quality assurance and development.<br>Development versions labeled as 'rc' represent development versions that are functionaly complete and are undergoing a quality assurance and stabilization period, after which they will be released to the public.<br>Development versions are released in short intervals and do not assure backward compatibility.</li>
+</ul>
 <p>
 
-After you download and check the iso file it should be burned to a blank CDR or CDRW. You should burn it as an image file and not as a regular file.
-	    <p>
-<?php
-$tmp = file("hits-counter.txt");
-$counter = $tmp[0];
-?>
-	    <a href="download2-en.php" class="orange_white">Click here to download the iso and signature files</a> - <b><?=$counter ?></b> hits  since 1-March-2004<br>
+<p>
+<TABLE BORDER=1>
+<CAPTION ALIGN=TOP><B>Download sites for development version of GNU/Linux Kinneret</b></caption>
+<TR>
+  <TH>Number</th>
+  <TH>Mirror</th>
+  <TH>Location</th>
+  <TH>Version</th>
+  <TH>ISO</th>
+  <TH>MD5SUM</th>
+  <TH>Can resume?</th>
+</tr>
+<TR>
+  <TD>#1</td>
+  <TD><a href="http://www.haifux.org/" class="orange_white" target="new">Haifux</a> - Haifa Linux Club</td>
+  <TD>Israel</td>
+  <TD>0.7.1</td>
+  <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.7.1.iso" class="orange_white">Download</a></td>
+  <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.7.1.md5sum" class="orange_white">Download</a></td>
+  <TD> </td>
+</tr>
+<TR>
+  <TD>#2</td>
+  <TD><a href="http://developer.berlios.de/" class="orange_white" target="new">Berlios</a> - Fostering Open Source Development</td>
+  <TD>Germany</td>
+  <TD>0.7.1</td>
+  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.7.1.iso" class="orange_white">Download</a></td>
+  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.7.1.md5sum" class="orange_white">Download</a></td>
+  <TD> </td>
+</tr>
+
+</table>
+<p>
+
 
 	    <table width="400" border="0" cellspacing="0" cellpadding="0">
               <tr>

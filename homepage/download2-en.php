@@ -4,6 +4,7 @@
 <head>
 <title>GNU/Linux Kinneret - Freedom is our secret!</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta HTTP-EQUIV="refresh" content="1; URL=download3-en.php">
 <link REL="StyleSheet" HREF="common/style.css" TYPE="text/css">
 </head>
 
@@ -147,22 +148,16 @@ document.write(""+dayname+", "+monthname+" "+date+", "+yearname);
     <td valign="top">
       <table width="500" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td> 
+          <td>
             <p>
-GNU/Linux Kinneret is free software. We invite you to freely download a ready-to-burn CD image. You may choose from several download mirrors that contain identical copies of the system. If you encounter slow downloads or can't connect, please try another mirror. Download size is approximately 650 MBytes. We recommend that you use a fast Internet connection (cable or xDSL). The download will take about two hours using a 750MBit connection.
-<p>
-We recommend to use a download manager so that download can proceed from the point it was stopped in case of disconnect.This feature is not supported by all download sites.<br>A free utility for Windows operating system can be downloaded <a href="http://francis.dupont.free.fr/downloadplus/" class="orange_white" target="new"> from this site</a>. Instructions are available from that site as well.  
-<p>
-You can check the downloaded image in order to verify the integrity of the download. For that purpose, the file signature should be computed using a special utility. This signature should be compared with the signature in the file ending with md5sum.<br>A free utility to calculate md5sum for Windows Operating Systems can be downloaded <a href="http://www.md5summer.org/about.html" class="orange_white" target="new">from this site</a>. Instructions are available from that site as well.
-<p>
-
-After you download and check the iso file it should be burned to a blank CDR or CDRW. You should burn it as an image file and not as a regular file.
-	    <p>
+		Download page for GNU/Linux Kinneret will display in a few seconds
 <?php
-$tmp = file("hits-counter.txt");
-$counter = $tmp[0];
+$tmp = file("06counter.txt");
+$dls = $tmp[0]+1;
+$fp = fopen("06counter.txt", "w");
+fwrite($fp, $dls);
+fclose($fp);
 ?>
-	    <a href="download2-en.php" class="orange_white">Click here to download the iso and signature files</a> - <b><?=$counter ?></b> hits  since 1-March-2004<br>
 
 	    <table width="400" border="0" cellspacing="0" cellpadding="0">
               <tr>

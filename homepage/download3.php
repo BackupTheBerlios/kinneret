@@ -9,11 +9,12 @@
 
 <body bgcolor="#FFFFFF" text="#0066cc" link="#FFFFFF" alink="#000080" vlink="#FFFFFF">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr> 
+  <tr>
     <td colspan="2">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr> 
+        <tr>
           <td>&nbsp;</td>
+
         </tr>
         <tr>
           <td>
@@ -22,6 +23,7 @@
                 <td width="10"><img src="rtl/leftend.gif" width="10" height="20" alt=""></td>
                 <td STYLE="background-color:#1F2AB9" width="85">
                   <div align="center"><b><font color="#0000C0">עברית</font></b></div>
+
                 </td>
                 <td width="30"><img src="rtl/middleend.gif" width="30" height="20" alt=""></td>
                 <td STYLE="background-color:#1F2AB9" width="85">
@@ -30,6 +32,7 @@
                 <td width="30"><img src="rtl/middleend.gif" width="30" height="20" alt=""></td>
                 <td STYLE="background-color:#1F2AB9" width="85">
                   <div align="center"><b><font color="#333333">русский</font></b></div>
+
                 </td>
                 <td width="30"><img src="rtl/middleend.gif" width="30" height="20" alt=""></td>
                 <td STYLE="background-color:#1F2AB9" width="85">
@@ -38,12 +41,13 @@
                 <td width="10"><img src="rtl/rightend.gif" width="10" height="20" alt=""></td>
               </tr>
             </table>
+
           </td>
         </tr>
-        <tr> 
+        <tr>
           <td><img src="rtl/logo.gif" width="600" height="15" alt=""></td>
         </tr>
-        <tr> 
+        <tr>
           <td>
             <table width="450" border="0" cellspacing="0" cellpadding="0">
               <tr>
@@ -108,6 +112,7 @@ document.write("יום "+dayname+", "+date+" ב"+monthname+", "+yearname);
       </table>
     </td>
   </tr>
+
 </table>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
@@ -147,50 +152,126 @@ document.write("יום "+dayname+", "+date+" ב"+monthname+", "+yearname);
     <td valign="top">
       <table width="500" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td> 
-            <p>
-		גנו/לינוקס כנרת היא תוכנה חופשית. אנו מזמינים אותך להוריד עותק לצריבה חינם. לרשותך עומדים מספר אתרי הורדה המכילים עותקים זהים של המערכת, על מנת לאפשר לך להוריד מאתר חלופי במקרה של עומס. גודל הקובץ לצריבה הוא כ 650 מגהבייט. לצורך ההורדה רצוי להשתמש בקו  אינטרנט מהיר (כבלים או ADSL). משך ההורדה הוא כשעתיים וחצי בקו 750 מגהביט.
+          <td>
 <p>
-מומלץ להשתמש במנהל הורדות על מנת לאפשר המשך ההורדה מהנקודה בה היא נפסקה. אפשרות זו נתמכת רק בחלק משרתי ההורדה.<br>ניתן להוריד תוכנת קוד פתוח מתאימה למערכת ההפעלה חלונות <a href="http://francis.dupont.free.fr/downloadplus/" class="orange_white" target="new"> מהאתר הזה</a>. באתר זה גם מופיעות הוראות שימוש בתוכנה.  
+<b>משיקולי אבטחה, אנו ממליצים להוריד את קבצי ה ISO ו MD5SUM מאתרים שונים. גרסאות התוכנה של הקבצים חייבות להיות זהות.</b>
 <p>
-יש באפשרותך לבדוק את הקובץ שהורדת על מנת לוודא שלא חלו תקלות בזמן ההורדה ושהקובץ תקין. לצורך זה, יש להפעיל על הקובץ תוכנה מיוחדת שתחשב עבור קובץ זה קוד זיהוי ייחודי. את הקוד הזה יש להשוות לקוד המופיע בקובץ עם סיומת md5sum הזמין גם הוא להורדה.<br>ניתן להוריד תוכנת קוד פתוח מתאימה למערכת ההפעלה חלונות לצורך חישוב ובדיקת קוד הזיהוי <a href="http://www.md5summer.org/about.html" class="orange_white" target="new"> מהאתר הזה</a>. באתר זה גם מופיעות הוראות שימוש בתוכנה.
+גנו/לינוקס כנרת זמינה בשתי גרסאות:
+<ul>
+<li><b>גרסה יציבה</b> - זו גרסה שעברה תקופת בדיקות איכות וייצוב ארוכה, ולפיכך מתאימה לשימוש הקהל הרחב.</li>
+</ul>
+
 <p>
-לאחר הורדת קובץ ה iso ובדיקתו, יש לצרוב אותו לתקליטור. יש להקפיד לצרוב אותו כ image ולא כקובץ רגיל.
-	    <p>
-<?php
-$tmp = file("hits-counter.txt");
-$counter = $tmp[0];
-?>
-	    <a href="download2.php" class="orange_white">להורדת המערכת וקובץ בדיקת התקינות</a> - <b><?=$counter ?></b> צפיות החל מתאריך 1 במרץ 2004 <br>
-<a href="ftp://ftp.berlios.de/pub/kinneret/how_to_install.pdf" class="orange_white">מדריך הפעלה והגדרת תצורה ראשונית - לגרסה היציבה (פורמט PDF)</a>
+<TABLE BORDER=1>
+<CAPTION ALIGN=TOP><B>אתרי הורדה לגרסה היציבה של גנו/לינוקס כנרת</b></caption>
+<TR>
+  <TH>מספר</th>
+  <TH>אתר</th>
+  <TH>מיקום</th>
+  <TH>גרסה</th>
+  <TH>ISO</th>
+  <TH>MD5SUM</th>
+  <TH>האם ניתן להמשיך מנקודת ההפסקה?</th>
+</tr>
+<TR>
+  <TD>#1</td>
+  <TD><a href="http://www.hamakor.org.il" class="orange_white" target="new">המקור</a> - עמותה ישראלית לתוכנה חופשית ולקוד-מקור פתוח</td>
+  <TD>Israel</td>
+  <TD>0.6</td>
+  <TD><a href="
+http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange_white">הורדה</a></td>
+  <TD><a href="http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.md5sum" class="orange_white">הורדה</a></td>
+  <TD> </td>
+</tr>
+<TR>
+  <TD>#2</td>
+  <TD><a href="http://www.haifux.org/" class="orange_white" target="new">חייפוקס</a> - מועדון הלינוקס החיפאי</td>
+  <TD>Israel</td>
+  <TD>0.6</td>
+  <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange_white">הורדה</a></td>
+  <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.6-Yarden.md5sum" class="orange_white">הורדה</a></td>
+  <TD> </td>
+</tr>
+<TR>
+  <TD>#3</td>
+  <TD><a href="http://developer.berlios.de/" class="orange_white" target="new">Berlios</a> - חממת פיתוח לקוד-פתוח</td>
+  <TD>Germany</td>
+  <TD>0.6</td>
+  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.6RC5-yarden.iso" class="orange_white">הורדה</a></td>
+  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.6RC5-yarden.md5sum" class="orange_white">הורדה</a></td>
+  <TD> </td>
+</tr>
+
+</table>
+
+<p>
+<ul>
+<li><b>גרסת פיתוח</b> - זו גרסה עדכנית יותר המשמשת את מפתחי המערכת, אולם <u>עלולים להיות בה חוסרים ותקלות</u>, ולפיכך היא <u>מתאימה למשתמשים מתקדמים בלבד</u> המעוניינים לעזור לנו בבקרת איכות ובפיתוח.<br>גרסאות פיתוח המזוהות ע"י התווית 'rc' מייצגות גרסאות שפיתוחן הסתיים ועתה הן בתקופת בדיקות איכות וייצוב שבסיומן הן ישוחררו לקהל הרחב.<br>גרסאות פיתוח משוחררות במרווחים קצרים אחת מהשניה ואינן מבטיחות תאימות לאחור.</li>
+</ul>
+<p>
+
+<p>
+<TABLE BORDER=1>
+<CAPTION ALIGN=TOP><B>אתרי הורדה לגרסת הפיתוח של גנו/לינוקס כנרת</b></caption>
+<TR>
+  <TH>Number</th>
+  <TH>Mirror</th>
+  <TH>Location</th>
+  <TH>Version</th>
+  <TH>ISO</th>
+  <TH>MD5SUM</th>
+  <TH>Can resume?</th>
+</tr>
+<TR>
+  <TD>#1</td>
+  <TD><a href="http://www.haifux.org/" class="orange_white" target="new">Haifux</a> - Haifa Linux Club</td>
+  <TD>Israel</td>
+  <TD>0.7.1</td>
+  <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.7.1.iso" class="orange_white">Download</a></td>
+  <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.7.1.md5sum" class="orange_white">Download</a></td>
+  <TD> </td>
+</tr>
+<TR>
+  <TD>#2</td>
+  <TD><a href="http://developer.berlios.de/" class="orange_white" target="new">Berlios</a> - Fostering Open Source Development</td>
+  <TD>Germany</td>
+  <TD>0.7.1</td>
+  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.7.1.iso" class="orange_white">Download</a></td>
+  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.7.1.md5sum" class="orange_white">Download</a></td>
+  <TD> </td>
+</tr>
+
+</table>
+<p>
+
 
 	    <table width="400" border="0" cellspacing="0" cellpadding="0">
 
               <tr>
-                <td> 
+                <td>
                   <div align="left"><img src="rtl/hbtopleft.gif" width="20" height="15" alt=""></div>
                 </td>
-                <td STYLE="background-color:#1F2AB9" height="15"> 
+                <td STYLE="background-color:#1F2AB9" height="15">
                   <div align="center"><font color="#FFFFFF">גנו/לינוקס כנרת מבוססת על עירצוב של <a href="http://www.knopper.net/knoppix/index-en.html" class="white_blue" target="new"><u>קנופיקס</u></a></font></div>
                 </td>
                 <td><img src="rtl/hbtopright.gif" width="20" height="15" alt=""></td>
               </tr>
 
-              <tr> 
+              <tr>
                 <td colspan="3"><img src="rtl/horizontalbar.gif" width="400" height="15" alt=""></td>
               </tr>
-              <tr> 
-                <td> 
+              <tr>
+                <td>
                   <div align="left"><img src="rtl/hbbottomleft.gif" width="20" height="15" alt=""></div>
                 </td>
-                <td STYLE="background-color:#1F2AB9" height="15"> 
+                <td STYLE="background-color:#1F2AB9" height="15">
                   <div align="center"><font color="#FFFFFF">תבנית אתר חופשית באדיבות <a href="http://www.serenitymedia.co.uk" class="white_blue" target="new"><u>SerenityMedia.co.uk</u></a></font></div>
                 </td>
 
                 <td><img src="rtl/hbbottomright.gif" width="20" height="15" alt=""></td>
               </tr>
             </table>
-            
+
           </td>
         </tr>
 
