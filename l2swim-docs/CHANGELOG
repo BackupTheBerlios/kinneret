@@ -15,7 +15,8 @@ ions - enhanced tags and html output) 5/7/03 dovix
 * new ~/src/he/apps_list.xml 5/7/03 dovix
 * new ~/src/he/first_time.xml 5/7/03 dovix
 * updated all screen captures to a maximum width of 550 pixels (no impact on translations)
-* new ~/src/he/about_kinneret.xml 15/7/03 dovix *PEND*CVS*
+* new ~/src/he/about_kinneret.xml 15/7/03 dovix
+* new ~/src/he/man_enigma.xml 18/7/03 nirro
 ---------------------------------------
 
 

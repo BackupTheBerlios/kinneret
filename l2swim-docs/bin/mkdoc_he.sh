@@ -44,7 +44,7 @@ xsltproc -o ../doc/he/first_time.html ../etc/l2swim.xsl ../src/he/first_time.xml
 xsltproc -o ../doc/he/apps_list.html ../etc/l2swim.xsl ../src/he/apps_list.xml
 xsltproc -o ../doc/he/social_contract.html ../etc/l2swim.xsl ../src/he/social_contract.xml
 xsltproc -o ../doc/he/about_kinneret.html ../etc/l2swim.xsl ../src/he/about_kinneret.xml
-xsltproc -o ../doc/he/enigma.html ../etc/l2swim.xsl ../src/he/enigma.xml
+xsltproc -o ../doc/he/man_enigma.html ../etc/l2swim.xsl ../src/he/man_enigma.xml
 
 echo "if all files were compiles successfuly, then:"
 echo "- enter toot mode : su"
