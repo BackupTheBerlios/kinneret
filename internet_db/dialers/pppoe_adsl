@@ -1,2 +1,6 @@
 #!ppp0
+
+# make sure interface is DOWN
+ifconfig [*hw::eth*] down
+
 adsl-start
