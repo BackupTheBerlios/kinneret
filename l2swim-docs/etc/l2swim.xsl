@@ -27,7 +27,7 @@
           xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version='1.0'>
 <xsl:output method="html" encoding="utf-8"/>
 
-<xsl:template match="document | hebrew | arabic">
+<xsl:template match="document | hebrew | arabic | article">
   <html>
     <head><title>
       <xsl:value-of select="./title"/>
@@ -64,7 +64,7 @@
 
 <!-- document subtitle, underlined, blue and right justified -->
 <!-- use to designate sections within the document, usually followed by some text -->
-<xsl:template match="subtitle">
+<xsl:template match="subtitle | chapter">
   <p>
   <U>
   <FONT COLOR="BLUE">
@@ -76,7 +76,7 @@
 
 <!-- document level 2 subtitle, bold, italics, blue and right justified -->
 <!-- use to designate sections within the document, usually followed by some text -->
-<xsl:template match="subtitle2">
+<xsl:template match="subtitle2 | section">
   <p>
   <B>
   <I>
@@ -90,7 +90,7 @@
 
 <!-- document level 3 subtitle, underlined, italics, blue and right justified -->
 <!-- use to designate sections within the document, usually followed by some text -->
-<xsl:template match="subtitle3">
+<xsl:template match="subtitle3 | subsect">
   <p>
   <U>
   <I>
@@ -105,9 +105,9 @@
 <!-- A paragraph of text terminated with a new line -->
 <xsl:template match="para">
   <p>
-  <blockquote>
+<!--   <blockquote> -->
     <xsl:apply-templates/>
-  </blockquote>
+<!--   </blockquote> -->
   </p>
 </xsl:template>
 
@@ -164,12 +164,12 @@
 </p>
 </xsl:template>
 
-<!-- List of items (using bullets) -->  
+<!-- List of items (using bullets) -->
 <xsl:template match="bullets">
   <ul>
     <xsl:for-each select="item">
      <li>
-      <xsl:apply-templates  mode='text'/>
+      <xsl:apply-templates/>
     </li>
   </xsl:for-each>
  </ul>
@@ -180,7 +180,7 @@
    <ol type="1">
      <xsl:for-each select="item">
       <li>
-       <xsl:apply-templates  mode='text'/>
+       <xsl:apply-templates/>
      </li>
     </xsl:for-each>
   </ol>
@@ -221,6 +221,13 @@
     </xsl:attribute>
   </IMG>
   </CENTER>
+</xsl:template>
+
+<!-- sets the style of text to bold -->
+<xsl:template match="bold">
+  <b>
+    <xsl:apply-templates/>
+  </b>
 </xsl:template>
 
 </xsl:stylesheet>

@@ -1,5 +1,20 @@
 This file includes changes since the last upload. It is intended to provide a reference for translators/authors/remastering.
 
+-------------- v 0.5.0 ----------------
+* Updated ~/etc/l2swim.xsl (no impact on translat
+ions - enhanced tags and html output) 5/7/03 dovix
+* updated ~/etc/swim_menu_he.txt 28/06/03 dovix
+* new  ~/src/he/thoughts_1.xml 28/6/03 dovix PENDING*CVS
+* new  ~/src/he/thoughts_2.xml 28/6/03 dovix PENDING*CVS
+* new  ~/src/he/thoughts_3.xml 28/6/03 dovix PENDING*CVS
+* updated ~/src/he/linux_history.xml 5/7/03 dovix (some spelling and syntax errors)
+* removed ~/src/he/tour*.xml 5/7/03 dovix (replaced with one page tour for each topic) PENDING*CVS
+* new ~/src/he/tour*.xml 5/7/03 dovix (new one page tour for each topic and new screenshots) PENDING*CVS
+* new ~/src/he/apps_list.xml 5/7/03 dovix PENDING*CVS
+* new ~/src/he/first_time.xml 5/7/03 dovix PENDING*CVS
+---------------------------------------
+
+
 -------------- v 0.3.1 ----------------
 
 * Corrected some html bugs in  ~/etc/l2swim.xsl (no impact on translations) 16/06/03 dovix

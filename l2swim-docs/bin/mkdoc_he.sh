@@ -15,24 +15,12 @@
 # http///www.gnu.org/copyleft/gpl.html for more details.
 
 clear
-xsltproc -o ../doc/he/tour1office_kcalc.html ../etc/l2swim.xsl ../src/he/tour1office_kcalc.xml
-xsltproc -o ../doc/he/tour1office_kpresenter.html ../etc/l2swim.xsl ../src/he/tour1office_kpresenter.xml
-xsltproc -o ../doc/he/tour1office_kspread.html ../etc/l2swim.xsl ../src/he/tour1office_kspread.xml
-xsltproc -o ../doc/he/tour1office_kword.html ../etc/l2swim.xsl ../src/he/tour1office_kword.xml
-xsltproc -o ../doc/he/tour2edu_kbabel.html ../etc/l2swim.xsl ../src/he/tour2edu_kbabel.xml
-xsltproc -o ../doc/he/tour2edu_kformula.html ../etc/l2swim.xsl ../src/he/tour2edu_kformula.xml
-xsltproc -o ../doc/he/tour2edu_kgeo.html ../etc/l2swim.xsl ../src/he/tour2edu_kgeo.xml
-xsltproc -o ../doc/he/tour3net_kmail.html ../etc/l2swim.xsl ../src/he/tour3net_kmail.xml
-xsltproc -o ../doc/he/tour3net_konqueror.html ../etc/l2swim.xsl ../src/he/tour3net_konqueror.xml
-xsltproc -o ../doc/he/tour4media_tuxpaint.html ../etc/l2swim.xsl ../src/he/tour4media_tuxpaint.xml
-xsltproc -o ../doc/he/tour4media_xine.html ../etc/l2swim.xsl ../src/he/tour4media_xine.xml
-xsltproc -o ../doc/he/tour4media_xmms.html ../etc/l2swim.xsl ../src/he/tour4media_xmms.xml
-xsltproc -o ../doc/he/tour5games_frozenbubble.html ../etc/l2swim.xsl ../src/he/tour5games_frozenbubble.xml
-xsltproc -o ../doc/he/tour5games_lbreakout2.html ../etc/l2swim.xsl ../src/he/tour5games_lbreakout2.xml
-xsltproc -o ../doc/he/tour5games_powermanga.html ../etc/l2swim.xsl ../src/he/tour5games_powermanga.xml
-xsltproc -o ../doc/he/tour6admin_kcontrol.html ../etc/l2swim.xsl ../src/he/tour6admin_kcontrol.xml
-xsltproc -o ../doc/he/tour6admin_kdiskfree.html ../etc/l2swim.xsl ../src/he/tour6admin_kdiskfree.xml
-xsltproc -o ../doc/he/tour6admin_kfloppy.html ../etc/l2swim.xsl ../src/he/tour6admin_kfloppy.xml
+xsltproc -o ../doc/he/tour_office.html ../etc/l2swim.xsl ../src/he/tour_office.xml
+xsltproc -o ../doc/he/tour_edu.html ../etc/l2swim.xsl ../src/he/tour_edu.xml
+xsltproc -o ../doc/he/tour_net.html ../etc/l2swim.xsl ../src/he/tour_net.xml
+xsltproc -o ../doc/he/tour_media.html ../etc/l2swim.xsl ../src/he/tour_media.xml
+xsltproc -o ../doc/he/tour_games.html ../etc/l2swim.xsl ../src/he/tour_games.xml
+xsltproc -o ../doc/he/tour_admin.html ../etc/l2swim.xsl ../src/he/tour_admin.xml
 xsltproc -o ../doc/he/desktop_ready.html ../etc/l2swim.xsl ../src/he/desktop_ready.xml
 xsltproc -o ../doc/he/faq_kinneret.html ../etc/l2swim.xsl ../src/he/faq_kinneret.xml
 xsltproc -o ../doc/he/fonts_license.html ../etc/l2swim.xsl ../src/he/fonts_license.xml
@@ -47,6 +35,13 @@ xsltproc -o ../doc/he/why_linux.html ../etc/l2swim.xsl ../src/he/why_linux.xml
 xsltproc -o ../doc/he/user_interface.html ../etc/l2swim.xsl ../src/he/user_interface.xml
 xsltproc -o ../doc/he/linux_history.html ../etc/l2swim.xsl ../src/he/linux_history.xml
 xsltproc -o ../doc/he/kinneret_credits.html ../etc/l2swim.xsl ../src/he/kinneret_credits.xml
+xsltproc -o ../doc/he/thoughts_1.html ../etc/l2swim.xsl ../src/he/thoughts_1.xml
+xsltproc -o ../doc/he/thoughts_2.html ../etc/l2swim.xsl ../src/he/thoughts_2.xml
+xsltproc -o ../doc/he/thoughts_3.html ../etc/l2swim.xsl ../src/he/thoughts_3.xml
+xsltproc -o ../doc/he/thoughts_4.html ../etc/l2swim.xsl ../src/he/thoughts_4.xml
+xsltproc -o ../doc/he/first_time.html ../etc/l2swim.xsl ../src/he/first_time.xml
+xsltproc -o ../doc/he/apps_list.html ../etc/l2swim.xsl ../src/he/apps_list.xml
+xsltproc -o ../doc/he/social_contract.html ../etc/l2swim.xsl ../src/he/social_contract.xml
 
 echo "if all files were compiles successfuly, then:"
 echo "- enter toot mode : su"
