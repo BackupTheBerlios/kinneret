@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2003-03-22 23:59\n"
-"PO-Revision-Date: 2003-03-23 00:22+0200\n"
-"Last-Translator: Nir Misgav <nirro@yahoo.com>\n"
+"PO-Revision-Date: 2003-05-06 04:09+0200\n"
+"Last-Translator: Nir Misgav <nirro@hotmail.com>\n"
 "Language-Team: Nir Misgav <nirro@yahoo.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -88,7 +88,7 @@ msgstr "A: שגיאה - אין תקליטון בכונן"
 #. Programmer's name for it: error32
 #: rawwrite.pas:54
 msgid "Error - The floppy is being used by another process"
-msgstr ""
+msgstr "שגיאה - הכונן תפוס ע\"י תהליך אחר"
 
 #. Programmer's name for it: errorWin
 #: rawwrite.pas:55
@@ -134,18 +134,18 @@ msgstr "הכנת תקליטון הפעלה"
 msgid ""
 "Welcome to GNU/Linux \"Kinneret\"\n"
 "This program is not an installation Program.\n"
-"Kinneret doesnt need to be installed.\n"
+"Kinneret doesn't need to be installed.\n"
 "To start Kinneret, You should boot the computer\n"
 "from the Kinneret CD.\n"
 "\n"
 "If You can't or don't know how to boot from CD,\n"
 "You can make a bootable floppy here."
 msgstr ""
-".\"ברוכים הבאים לגנו/לינוקס \"כינרת\n"
+".\"ברוך בואך לגנו/לינוקס \"כנרת\n"
 ",זוהי אינה תוכנית התקנה\n"
-".מכיוון שכינרת אינה זקוקה להתקנה\n"
+".מכיוון שכנרת אינה זקוקה להתקנה\n"
 "\n"
-"על מנת להפעיל את כינרת יש לאתחל את המחשב\n"
+"על מנת להפעיל את כנרת יש לאתחל את המחשב\n"
 ".מחדש מהתקליטור\n"
 "\n"
 "אם אינך יכול/ה או אינך יודע/ת  איך לאתחל\n"
@@ -173,61 +173,81 @@ msgid ""
 msgstr ""
 ".התקליטון הוכן בהצלחה\n"
 "\n"
-":על מנת להפעיל את כינרת, עליך\n"
+":על מנת להפעיל את כנרת, עליך\n"
 "\n"
 ",לוודא שהתקליטון והתקליטור עדיין במקומם\n"
 ",לסגור את כל התוכניות הרצות כרגע\n"
 ".ולאתחל את המחשב מחדש"
 
-#. FormAbout..Font.Name
-#. FormWarning..Font.Name
-#. MainForm..Font.Name
-#. WForm..Font.Name
-#. WForm..Label2..Font.Name
-#: About.dfm:15
-#: WelcomeForm.dfm:15
-#: WelcomeForm.dfm:141
-#: fWarning.dfm:13
-#: rawwrite.dfm:15
-msgid "MS Sans Serif"
-msgstr "MS Sans Serif"
-
-#. FormAbout..Memo1....Lines.Strings
-#: About.dfm:143
+#: About.pas:73
 msgid ""
-"Kinneret Make Boot Floppy\n"
+"Kinneret's Boot Floppy Maker\n"
 "\n"
-"Version: 0.0.2 alpha\n"
-"Date: 21/3/2003\n"
+"Version: 0.2b,\n"
+"Date: 4/5/2003,\n"
 "Written by: Nir Misgav.\n"
-"Lincense: GPL.\n"
-"(Not include TGIFImage)\n"
+"Email: nirro@yahoo.com\n"
+"All rights reserved to\n"
+"GNU/Linux Kinneret.\n"
+"http://www.linux-kinneret.org\n"
 "\n"
-"Based on: RawWriteWin-0.7\n"
-"Written by: John Newbigin\n"
+"Lincense: GPL\n"
+"(Not include TGIFImage).\n"
+"\n"
+"Based on: RawWriteWin-0.7,\n"
+"Written by: John Newbigin,\n"
 "License: GPL.\n"
 "\n"
-"Graphics made with: TGIFImage\n"
-"Author: Andres Melander\n"
+"Graphics made with: TGIFImage,\n"
+"Author: Andres Melander,\n"
 "Ported to D7 by: Finn Tolderlund.\n"
 "License: See TGIFImage.hlp,\n"
 "under section : License.\n"
+"\n"
+"Unicode Libraries from:\n"
+"Tnt Unicode Controls,\n"
+"by Tnt Software Products.\n"
+"License: Unspecific open source,\n"
+"See: TntUnicode.txt."
 msgstr ""
+"מכין תקליטון ההפעלה של כנרת\n"
+"\n"
+",0.2b : גרסא\n"
+",מתאריך: 4/5/2003\n"
+".נכתב ע\"י: ניר משגב\n"
+"nirro@yahoo.com :דוא\"ל\n"
+"כל הזכויות שמורות\n"
+".לגנו/לינוקס כנרת\n"
+"http://www.linux-kinneret.org\n"
+"\n"
+"GPL :רשיון\n"
+".(TGIFImage לא כולל)\n"
+"\n"
+",RawWriteWin-0.7 :מבוסס על\n"
+",John Newbigin :אשר נכתב ע\"י\n"
+".GPL :רשיון\n"
+"\n"
+",TGIFImage: ספריית גרפיקה\n"
+",Andres Melander :נכתבה ע\"י\n"
+".Finn Torbelund: הוסבה לדלפי 7 ע\"י\n"
+",TGIFImage.hlp רשיון: ראה\n"
+".License :בסעיף\n"
+"\n"
+":ספריית יוניקוד\n"
+",Tnt Unicode Controls\n"
+".Tnt Software Products ע\"י\n"
+",(רשיון: פתוח (לא מוגדר\n"
+".TntUnicode.txt :ראה"
 
 #. WForm..Caption
 #: WelcomeForm.dfm:8
 msgid "Welcome to GNU/Linux \"Kinneret\""
-msgstr "\"ברוכים הבאים לגנו/לינוקס \"כינרת"
+msgstr "\"ברוכים הבאים לגנו/לינוקס \"כנרת"
 
 #. WForm..label1..Caption
 #: WelcomeForm.dfm:123
 msgid "Welcome to \"Kinneret\""
-msgstr "\"ברוכים הבאים ל-\"כינרת"
-
-#. WForm..label1..Font.Name
-#: WelcomeForm.dfm:127
-msgid "Arial"
-msgstr "Arial"
+msgstr "\"ברוכים הבאים ל-\"כנרת"
 
 #. WForm..Button3..Caption
 #: WelcomeForm.dfm:518
@@ -238,19 +258,4 @@ msgstr "יציאה"
 #: WelcomeForm.dfm:536
 msgid "Reboot"
 msgstr "אתחול המחשב"
-
-#. WForm..RadioButton2..Caption
-#: WelcomeForm.dfm:546
-msgid "English"
-msgstr ""
-
-#. WForm..RadioButton1..Caption
-#: WelcomeForm.dfm:556
-msgid "עברית"
-msgstr ""
-
-#. WForm..RadioButton1..Caption_UTF7
-#: WelcomeForm.dfm:561
-msgid "+BeIF0QXoBdkF6g"
-msgstr ""
 

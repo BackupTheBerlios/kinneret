@@ -72,7 +72,7 @@ begin
    wForm.WriteSucceed:=False;
    SetErrorMode(SEM_FAILCRITICALERRORS);
 
-   CmdImage := 'boot.img';
+   CmdImage := 'knoppix-orig-boot.img';
 end;
 
 procedure TMainForm.WriteButtonClick(Sender: TObject);
@@ -182,7 +182,7 @@ begin
                           19 : LabelDown.Caption:=pWideChar(_('Error - The floppy is write protected'));
                           32 : LabelDown.Caption:=pWideChar(_('Error - The floppy is being used by another process'));
                        else
-                          LabelDown.Caption:=pWideChar(_('Unknown Error - No''-'+inttostr(Error)));
+                          LabelDown.Caption:=pWideChar(_('Unknown Error - No''-')+inttostr(Error));
                        end;
                      end else LabelDown.Caption:=pWideChar(_('Error - Unable to write to disk,'+#10#13+
               'Please verify that the disk is in drive and not write protected.'));

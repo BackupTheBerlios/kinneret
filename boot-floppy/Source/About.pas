@@ -47,8 +47,34 @@ procedure TFormAbout.FormShow(Sender: TObject);
 begin
     if GetCurrentLanguage='iw' then BidiMode:=bdRightToLeft
     else Bidimode:=bdLeftToRight;
-    Caption:=_('About');
-    Button1.Caption:=_('Close');
+    if GetCurrentLanguage='he' then memo1.Alignment:=taRightJustify
+    else memo1.Alignment:=taLeftJustify;
+    memo1.Text:=PWideChar(_('Kinneret''s Boot Floppy Maker'+#10#13#10#13+
+    'Version: 0.2b,'+#10#13+
+    'Date: 4/5/2003,'+#10#13+
+    'Written by: Nir Misgav.'+#10#13+
+    'Email: nirro@yahoo.com'+#10#13+
+    'All rights reserved to'+#10#13+
+    'GNU/Linux Kinneret.'+#10#13+
+    'http://www.linux-kinneret.org'+#10#13#10#13+
+    'Lincense: GPL'+#10#13+
+    '(Not include TGIFImage).'+#10#13#10#13+
+    'Based on: RawWriteWin-0.7,'+#10#13+
+    'Written by: John Newbigin,'+#10#13+
+    'License: GPL.'+#10#13#10#13+
+    'Graphics made with: TGIFImage,'+#10#13+
+    'Author: Andres Melander,'+#10#13+
+    'Ported to D7 by: Finn Tolderlund.'+#10#13+
+    'License: See TGIFImage.hlp,'+#10#13+
+    'under section : License.'+#10#13#10#13+
+    'Unicode Libraries from:'+#10#13+
+    'Tnt Unicode Controls,'+#10#13+
+    'by Tnt Software Products.'+#10#13+
+    'License: Unspecific open source,'+#10#13+
+    'See: TntUnicode.txt.'));
+
+    Caption:=PWideChar(_('About'));
+    Button1.Caption:=PWideChar(_('Close'));
 end;
 
 end.

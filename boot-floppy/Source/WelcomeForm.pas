@@ -35,6 +35,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure RadioButton2Click(Sender: TObject);
     procedure RadioButton1Click(Sender: TObject);
+    procedure refreshlabel2();
   private
     Retranslator:TExecutable;
   public
@@ -106,13 +107,6 @@ begin
   if (GetCurrentLanguage='he') or (GetCurrentLanguage='iw') then RadioButton1.Checked:=true
   else RadioButton2.Checked:=true;
   TranslateProperties (self);      //GNUGETTEXT
-  label2.Caption:=PWideChar(_('Welcome to GNU/Linux "Kinneret"'+
-  #10#13+'This program is not an installation Program.'+
-  #10#13+'Kinneret doesnt need to be installed.'+
-  #10#13+'To start Kinneret, You should boot the computer'+
-  #10#13+'from the Kinneret CD.'+#10#13#10#13+
-  'If You can''t or don''t know how to boot from CD,'+#10#13+
-  'You can make a bootable floppy here.'));
 end;
 
 function MyExitWindows(RebootParam: Longword): Boolean;
@@ -165,7 +159,7 @@ end;
 
 procedure TWForm.Button1Click(Sender: TObject);
 begin
-  FormAbout.Show;
+  FormAbout.ShowModal;
 end;
 
 
@@ -176,18 +170,8 @@ begin
     Label2.Alignment:=taLeftJustify;
     UseLanguage('en');
     Retranslator.Execute;
-    if Writesucceed then Label2.Caption:=PWideChar(_('Floppy has been successfully written.'+#10#13+
-    #10#13+'To restart Kinneret:'+#10#13+#10#13+
-   'Make sure the Floppy and the CD are still in place,'+#10#13+
-   'Close any running programs'+#10#13+
-   'And Reboot the computer.'))
-  else label2.Caption:=PWideChar(_('Welcome to GNU/Linux "Kinneret"'+
-  #10#13+'This program is not an installation Program.'+
-  #10#13+'Kinneret doesnt need to be installed.'+
-  #10#13+'To start Kinneret, You should boot the computer'+
-  #10#13+'from the Kinneret CD.'+#10#13#10#13+
-  'If You can''t or don''t know how to boot from CD,'+#10#13+
-  'You can make a bootable floppy here.'));
+    Label2.Repaint;
+    refreshlabel2;
 end;
 
 procedure TWForm.RadioButton1Click(Sender: TObject);
@@ -203,18 +187,23 @@ begin
       Label2.Alignment:=taRightJustify;
     end;
     Retranslator.Execute;
-   if Writesucceed then Label2.Caption:=PWideChar(_('Floppy has been successfully written.'+#10#13+
-  #10#13+'To restart Kinneret:'+#10#13+#10#13+
-  'Make sure the Floppy and the CD are still in place,'+#10#13+
-  'Close any running programs'+#10#13+
-  'And Reboot the computer.'))
-    else WForm.label2.Caption:=PWideChar(_('Welcome to GNU/Linux "Kinneret"'+
-  #10#13+'This program is not an installation Program.'+
-  #10#13+'Kinneret doesnt need to be installed.'+
-  #10#13+'To start Kinneret, You should boot the computer'+
-  #10#13+'from the Kinneret CD.'+#10#13#10#13+
-  'If You can''t or don''t know how to boot from CD,'+#10#13+
-  'You can make a bootable floppy here.'));;
+    refreshlabel2;
+end;
+
+procedure TWForm.refreshlabel2();
+begin
+    if Writesucceed then Label2.Caption:=PWideChar(_('Floppy has been successfully written.'+#10#13+
+    #10#13+'To restart Kinneret:'+#10#13+#10#13+
+   'Make sure the Floppy and the CD are still in place,'+#10#13+
+   'Close any running programs'+#10#13+
+   'And Reboot the computer.'))
+  else label2.Caption:=PWideChar(_('Welcome to GNU/Linux "Kinneret"'+
+   #10#13+'This program is not an installation Program.'+
+   #10#13+'Kinneret doesn''t need to be installed.'+
+   #10#13+'To start Kinneret, You should boot the computer'+
+   #10#13+'from the Kinneret CD.'+#10#13#10#13+
+   'If You can''t or don''t know how to boot from CD,'+#10#13+
+   'You can make a bootable floppy here.'));
 end;
 
 end.
