@@ -46,18 +46,18 @@ begin
   source:=TStringList.Create;
   destination:=TStringList.Create;
   // ADDING FILES TO COPY
-  source.Add(cdrom+'\KNOPPIX\knoppix');
-  destination.add(ChosenDrive+':\KNOPPIX\knoppix');
-  source.Add(cdrom+'\KNOPPIX\knoppix.sh');
-  destination.add(ChosenDrive+':\KNOPPIX\knoppix.sh');
+//  source.Add(cdrom+'\KNOPPIX\knoppix');
+//  destination.add(ChosenDrive+':\KNOPPIX\knoppix');
+//  source.Add(cdrom+'\KNOPPIX\knoppix.sh');
+//  destination.add(ChosenDrive+':\KNOPPIX\knoppix.sh');
   if not osis95 and createmenu then
   begin
     source.Add(cdrom+'\boot\menu.lst');
     destination.add('c:\boot\menu.lst');
-    source.Add(cdrom+'\boot\grubinstall.exe');
+    source.Add(cdrom+'\boot\grubinstall.exe.nt');
     destination.add('c:\boot\grubinstall.exe');
-    source.Add(cdrom+'\boot\grubinstall.bat');
-    destination.add('c:\boot\grubinstall.bat');
+    source.Add(cdrom+'\boot\reinstall.bat.nt');
+    destination.add('c:\boot\reinstall.bat');
     source.Add(cdrom+'\boot\stage1');
     destination.add('c:\boot\stage1');
     source.Add(cdrom+'\boot\stage2');
@@ -69,19 +69,17 @@ begin
   end;
   if osis95 and (createmenu or createShortcut) then
   begin
-    source.Add(cdrom+'\boot\loadlin.exe');
+    source.Add(cdrom+'\boot\loadlin.exe.9x');
     destination.add('c:\boot\loadlin.exe');
-    source.Add(cdrom+'\boot\linux_9x.bat');
-    destination.add('c:\boot\linux_9x.bat');
+    source.Add(cdrom+'\boot\Kinneret.bat.9x');
+    destination.add('c:\boot\Kinneret.bat');
     source.Add(cdrom+'\boot\loadlin.par');
     destination.add('c:\boot\loadlin.par');
-    source.Add(cdrom+'\boot\Kinneret.pif');
+    source.Add(cdrom+'\boot\Kinneret.pif.9x');
     destination.add('c:\boot\Kinneret.pif');
-    source.Add(cdrom+'\boot\Kinneret.ico');
-    destination.add('c:\boot\Kinneret.ico');
     if createShortcut then begin
-      source.Add(cdrom+'\boot\Kinneret.pif');
-      destination.add(MyDesktopFolder+'\Kinneret.ico');
+      source.Add(cdrom+'\boot\Kinneret.pif.9x');
+      destination.add(MyDesktopFolder+'\Kinneret.pif');
     end;
 
   end;
@@ -115,7 +113,7 @@ begin
       error:=true;
     end else begin
       copyFile('c:\boot.ini','c:\boot\boot.ini.old',false);
-      ShellExecute(Handle, 'open',PChar('c:\boot\grubinstall.bat'),nil, nil, SW_HIDE);
+      ShellExecute(Handle, 'open',PChar('c:\boot\reinstall.bat'),nil, nil, SW_HIDE);
       attribute:=GetFileAttributes(pchar('c:\boot.ini'));
       SetFileAttributes(pchar('c:\boot.ini'), attribute and not FILE_ATTRIBUTE_READONLY	);
       BootIni := TIniFile.Create('c:\boot.ini');

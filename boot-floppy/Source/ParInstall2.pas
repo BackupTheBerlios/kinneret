@@ -54,7 +54,7 @@ begin
   if osisMe then
   begin
     CBDesktop.Checked:=false;
-    CBDesktop.Enabled:=false;
+    //CBDesktop.Enabled:=false;
     CBMenu.Checked:=false;
     CBMenu.Enabled:=true;
   end else if osis95 then
@@ -80,9 +80,12 @@ var
 begin
   ChosenDrive:='';
   {get KNOPPIX SIZE}
-  f:=CreateFile('..\KNOPPIX\knoppix', GENERIC_READ, FILE_SHARE_READ, nil, OPEN_EXISTING, 0, 0);
-  knoppixSize:=GetFileSize(f,nil)/1048576+2;
-  closeHandle(f);
+  if not fileExists('..\KNOPPIX\knoppix') then knoppixSize:=700
+  else begin
+    f:=CreateFile('..\KNOPPIX\knoppix', GENERIC_READ, FILE_SHARE_READ, nil, OPEN_EXISTING, 0, 0);
+    knoppixSize:=GetFileSize(f,nil)/1048576+2;
+    closeHandle(f);
+  end;
   GetAllFixedDrives(DrivesArray);
   for i:=low(DrivesArray) to high(DrivesArray) do
   begin
@@ -169,7 +172,6 @@ begin
   'so you won''t be able to start Kinneret without the Kinneret CD,'+#10#13+
   'or Kinneret Boot-Floppy.'+#10#13+#10#13+
   'To learn more, search Google for : Windows Millenium Real Dos.')));
-
 end;
 
 end.
