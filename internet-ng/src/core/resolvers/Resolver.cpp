@@ -2,6 +2,7 @@
 #include "core/xml/xml.h"
 #include "core/utils/utils.h"
 #include "core/utils/Log.h"
+#include "core/utils/xts.h"
 
 #include <string>
 #include <vector>
@@ -30,19 +31,12 @@ core::resolvers::Resolver::Resolver(const string &resolverFile,
     Log::verbose("Successfully loaded and validated module.");
 
     // Get resolver name
-    XMLCh *tagName = XMLString::transcode("namespace");
     nameSpace = getAllTextNodes(
-        resolverDocument->getElementsByTagName(tagName)->item(0));
-    XMLString::release(&tagName);
+        resolverDocument->getElementsByTagName(xts("namespace"))->item(0));
     Log::verbose(string("Namespace: ") + nameSpace);
 }
 
 core::resolvers::Resolver::~Resolver() throw () {
-}
-
-void core::resolvers::Resolver::choose(const string &xpath,
-        const string &name) throw () {
-    // TODO
 }
 
 bool core::resolvers::Resolver::canResolve(const string &param)
@@ -62,22 +56,24 @@ string core::resolvers::Resolver::resolvParam(const string &param) const
 
     // Get XPath attribute from element
     DOMNamedNodeMap *attributes = node->getAttributes();
-    XMLCh *xpathAttr = XMLString::transcode("xpath");
-    DOMNode *xpathNode = attributes->getNamedItem(xpathAttr);
-    XMLString::release(&xpathAttr);
+    DOMNode *xpathNode = attributes->getNamedItem(xts("xpath"));
 
-    char *xpath = XMLString::transcode(xpathNode->getTextContent());
-    Log::verbose("Evaluating: " + string(xpath));
-    vector<DOMNode*> xpathResult = evalXPath(xpath, moduleDocument);
-    XMLString::release(&xpath);
+    // Evaluate XPath and get value
+    Log::verbose(string("Evaluating: ") +
+        xts(xpathNode->getTextContent()).asString());
+    vector<DOMNode*> xpathResult = evalXPath(xts(xpathNode->getTextContent()),
+        moduleDocument);
 
+    // See the results
     if (xpathResult.size() == 0) {
+        // Nothing found
         throw ParameterNotFoundException(param +
             " was not found at the module!");
     } else if (xpathResult.size() > 1) {
         // TODO: Choise
         return "TODO";
     } else {
+        // Singe result, return its text.
         return getAllTextNodes(xpathResult[0]);
     }
 }
