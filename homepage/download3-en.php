@@ -230,9 +230,9 @@ http://mirror.hamakor.org.il/pub/Israeli/Kinneret/Kinneret-0.6-Yarden.iso" class
   <TD>#2</td>
   <TD><a href="http://www.haifux.org/" class="orange_white" target="new">Haifux</a> - Haifa Linux Club</td>
   <TD>Israel</td>
-  <TD>0.7.1</td>
-  <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.7.1.iso" class="orange_white">Download</a></td>
-  <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.7.1.md5sum" class="orange_white">Download</a></td>
+  <TD>0.7.2</td>
+  <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.7.2.iso" class="orange_white">Download</a></td>
+  <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.7.2.md5sum" class="orange_white">Download</a></td>
   <TD> </td>
 </tr>
 <TR>
@@ -283,8 +283,14 @@ http://mirror.hamakor.org.il/pub/Israeli/Kinneret/Kinneret-0.6-Yarden.iso" class
 	<tr>
 			<td>
 			<a href="http://validator.w3.org/check/referer" target="_blank">
-			<img src="common/valid_html401.gif" width="88" height="32" border="0" alt="W3C Validated">
+			<img border="0" src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01!" height="31" width="88">
 			</a>
+			</td>
+
+			<td>
+ 			<a href="http://jigsaw.w3.org/css-validator/" target="_blank">
+			<img border="0" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" height="31" width="88">
+ 			</a>
 			</td>
 
 			<td>

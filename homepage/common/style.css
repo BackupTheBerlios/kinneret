@@ -10,7 +10,7 @@ A.white_blue:link		{color: white;background-color: transparent;text-decoration: 
 A.white_blue:visited		{color: white;background-color: transparent;text-decoration: none;}
 A.white_blue:hover		{color: #FF3300;background-color: transparent;text-decoration: none;}
 
-FONT				{FONT-FAMILY: Sans-Serif; FONT-SIZE: 12px; color="#0066cc"}
+FONT				{FONT-FAMILY: Sans-Serif; FONT-SIZE: 12px; }
 TD					{FONT-FAMILY: Sans-Serif; FONT-SIZE: 12px;}
 BODY				{FONT-FAMILY: Sans-Serif; FONT-SIZE: 12px; margin:0px;}
 P					{FONT-FAMILY: Sans-Serif; FONT-SIZE: 12px}

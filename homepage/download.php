@@ -125,7 +125,7 @@ document.write("יום "+dayname+", "+date+" ב"+monthname+", "+yearname);
         </tr>
         <tr> 
           <td STYLE="background-color:#7494F0" width="3"><font color="#FFFFFF">&nbsp;</font></td>
-          <td STYLE="background-color:#7494F0"><font color="#FFFFFF"><a href="main/modules.php?name=Forums">מידע&nbsp;וקבוצות&nbsp;דיון</a></font></td>
+          <td STYLE="background-color:#7494F0"><font color="#FFFFFF"><a href="forums/">מידע&nbsp;וקבוצות&nbsp;דיון</a></font></td>
           <td><img src="rtl/navbarend.gif" width="10" height="20" alt=""></td>
         </tr>
       </table>
@@ -204,8 +204,14 @@ $counter = $tmp[0];
 	<tr>
 			<td>
 			<a href="http://validator.w3.org/check/referer" target="_blank">
-			<img src="common/valid_html401.gif" width="88" height="32" border="0" alt="W3C Validated">
+			<img border="0" src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01!" height="31" width="88">
 			</a>
+			</td>
+
+			<td>
+ 			<a href="http://jigsaw.w3.org/css-validator/" target="_blank">
+			<img border="0" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" height="31" width="88">
+ 			</a>
 			</td>
 
 			<td>
