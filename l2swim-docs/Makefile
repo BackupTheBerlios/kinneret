@@ -1,3 +1,13 @@
+# Swimming Guide documents Makefile,
+# Written by Nir Misgav, Dec 2003.
+# All Rights Reserved to GNU/Linux Kinneret
+#
+# Available rules :
+# make (or make html)
+# make install
+# make clean
+# make uninstall
+
 destdir = /opt/kinneret
 docdirs = he en ar ru
 extradirs = image audio
