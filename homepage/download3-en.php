@@ -219,6 +219,15 @@ http://mirror.hamakor.org.il/pub/Israeli/Kinneret/Kinneret-0.6-Yarden.iso" class
 </tr>
 <TR>
   <TD>#1</td>
+  <TD><a href="http://www.hamakor.org.il/english.html" class="orange_white" target="new">Hamakor</a> - Israeli Society for Free Software and Open-Source Code</td>
+  <TD>Israel</td>
+  <TD>0.7.2</td>
+  <TD><a href="http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.7.2.iso" class="orange_white">Download</a></td>
+  <TD><a href="http://mirror.hamakor.org.il/pub/kinneret/Kinneret-0.7.2.md5sum" class="orange_white">Download</a></td>
+  <TD> </td>
+</tr>
+<TR>
+  <TD>#2</td>
   <TD><a href="http://www.haifux.org/" class="orange_white" target="new">Haifux</a> - Haifa Linux Club</td>
   <TD>Israel</td>
   <TD>0.7.1</td>
@@ -227,7 +236,7 @@ http://mirror.hamakor.org.il/pub/Israeli/Kinneret/Kinneret-0.6-Yarden.iso" class
   <TD> </td>
 </tr>
 <TR>
-  <TD>#2</td>
+  <TD>#3</td>
   <TD><a href="http://developer.berlios.de/" class="orange_white" target="new">Berlios</a> - Fostering Open Source Development</td>
   <TD>Germany</td>
   <TD>0.7.1</td>

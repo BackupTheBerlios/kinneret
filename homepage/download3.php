@@ -176,7 +176,7 @@ document.write("יום "+dayname+", "+date+" ב"+monthname+", "+yearname);
 <TR>
   <TD>#1</td>
   <TD><a href="http://www.hamakor.org.il" class="orange_white" target="new">המקור</a> - עמותה ישראלית לתוכנה חופשית ולקוד-מקור פתוח</td>
-  <TD>Israel</td>
+  <TD>ישראל</td>
   <TD>0.6</td>
   <TD><a href="
 http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange_white">הורדה</a></td>
@@ -186,7 +186,7 @@ http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange
 <TR>
   <TD>#2</td>
   <TD><a href="http://www.haifux.org/" class="orange_white" target="new">חייפוקס</a> - מועדון הלינוקס החיפאי</td>
-  <TD>Israel</td>
+  <TD>ישראל</td>
   <TD>0.6</td>
   <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange_white">הורדה</a></td>
   <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.6-Yarden.md5sum" class="orange_white">הורדה</a></td>
@@ -195,7 +195,7 @@ http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange
 <TR>
   <TD>#3</td>
   <TD><a href="http://developer.berlios.de/" class="orange_white" target="new">Berlios</a> - חממת פיתוח לקוד-פתוח</td>
-  <TD>Germany</td>
+  <TD>גרמניה</td>
   <TD>0.6</td>
   <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.6RC5-yarden.iso" class="orange_white">הורדה</a></td>
   <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.6RC5-yarden.md5sum" class="orange_white">הורדה</a></td>
@@ -224,20 +224,29 @@ http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange
 </tr>
 <TR>
   <TD>#1</td>
-  <TD><a href="http://www.haifux.org/" class="orange_white" target="new">Haifux</a> - Haifa Linux Club</td>
-  <TD>Israel</td>
-  <TD>0.7.1</td>
-  <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.7.1.iso" class="orange_white">Download</a></td>
-  <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.7.1.md5sum" class="orange_white">Download</a></td>
+  <TD><a href="http://www.hamakor.org.il" class="orange_white" target="new">המקור</a> - עמותה ישראלית לתוכנה חופשית ולקוד-מקור פתוח</td>
+  <TD>ישראל</td>
+  <TD>0.7.2</td>
+  <TD><a href="http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.7.2.iso" class="orange_white">הורדה</a></td>
+  <TD><a href="http://mirror.hamakor.org.il/pub/kinneret/Kinneret-0.7.2.md5sum" class="orange_white">הורדה</a></td>
   <TD> </td>
 </tr>
 <TR>
   <TD>#2</td>
-  <TD><a href="http://developer.berlios.de/" class="orange_white" target="new">Berlios</a> - Fostering Open Source Development</td>
-  <TD>Germany</td>
+  <TD><a href="http://www.haifux.org/" class="orange_white" target="new">חייפוקס</a> - מועדון הלינוקס החיפאי</td>
+  <TD>ישראל</td>
   <TD>0.7.1</td>
-  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.7.1.iso" class="orange_white">Download</a></td>
-  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.7.1.md5sum" class="orange_white">Download</a></td>
+  <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.7.1.iso" class="orange_white">הורדה</a></td>
+  <TD><a href="ftp://haifux.org/pub/Kinneret/Kinneret-0.7.1.md5sum" class="orange_white">הורדה</a></td>
+  <TD> </td>
+</tr>
+<TR>
+  <TD>#3</td>
+ <TD><a href="http://developer.berlios.de/" class="orange_white" target="new">Berlios</a> - חממת פיתוח לקוד-פתוח</td>
+   <TD>גרמניה</td>
+  <TD>0.7.1</td>
+  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.7.1.iso" class="orange_white">הורדה</a></td>
+  <TD><a href="http://download.berlios.de/kinneret/Kinneret-0.7.1.md5sum" class="orange_white">הורדה</a></td>
   <TD> </td>
 </tr>
 
@@ -264,8 +273,8 @@ http://mirror.hamakor.org.il/pub/Kinneret/Kinneret-0.6-Yarden.iso" class="orange
   <TD>10 ש"ח (מינימום הזמנה - 25 ש"ח)</td>
 </tr>
 <TR>
-  <TD>1</td>
-  <TD><a href="http://www.guides.co.il" class="orange_white" target="new">בי די מחשבים</a></td>
+  <TD>2</td>
+  <TD><a href="http://bdcomp.8m.com" class="orange_white" target="new">בי די מחשבים</a></td>
   <TD><a href="http://bdcomp.8m.com/services/buylinux.html" class="orange_white" target="new">0.6</a></td>
   <TD><a href="http://bdcomp.8m.com/services/buylinux.html" class="orange_white" target="new">0.7.2</a></td>
   <TD>10 ש"ח</td>
