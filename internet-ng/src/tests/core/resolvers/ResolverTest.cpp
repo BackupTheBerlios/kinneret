@@ -14,10 +14,34 @@ using namespace core::xml;
 using namespace xercesc;
 using namespace std;
 
+class TestResolver : public Resolver {
+public:
+    TestResolver(const string &resolverFile, const string &moduleFile)
+            throw (XMLException, DOMException, FatalException) :
+            Resolver(resolverFile, moduleFile) {
+        // Nothing
+    }
+
+    virtual ~TestResolver() throw () {
+        // Nothing
+    }
+
+    void choose(const string &xpath, const string &name) throw () {
+        // Nothing
+    }
+
+protected:
+
+    string resolvComplex(const string &param, const string &xpath,
+            const string &multi, const vector<DOMNode*> &xpathResult) const {
+        // Nothing
+    }
+};
+
 void testResolver() {
     Resolver *resolver = 0;
     // Load test resolver
-    resolver = new Resolver(
+    resolver = new TestResolver(
         Config::getDatabasePath() +
             Config::getResolversDirectoryName() + "/driver.xml",
         Config::getDatabasePath() +
