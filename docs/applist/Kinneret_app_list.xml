@@ -605,7 +605,7 @@
 		<version></version>
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
-		<home>http://www.xmms.org/comments.php?show=S86, http://www.xmms.org/comments.php?show=P13, http://www.xmms.org/comments.php?show=P101, http://www.xmms.org/faq.php#g7, http://www.gareus.de/xmms/download.html</home>
+		<home>http://www.xmms.org/comments.php?show=S86, http://www.xmms.org/comments.php?show=P13, http://www.xmms.org/comments.php?show=P101, http://www.xmms.org/faq.php#g7, http://www.gareus.de/xmms/download.html, http://modplug-xmms.sourceforge.net/</home>
 	</app>
 <app>
 		<group></group>
@@ -659,43 +659,43 @@
 	</app>
 <app>
 		<group></group>
-		<title></title>
+		<title>kxmleditor</title>
 		<class></class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
-		<home></home>
+		<home>http://kxmleditor.sourceforge.net/</home>
 	</app>
 <app>
 		<group></group>
-		<title></title>
+		<title>CheeseTracker</title>
 		<class></class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
-		<home></home>
+		<home>http://www.reduz.com.ar/cheesetronic/index.php?section=2</home>
 	</app>
 <app>
 		<group></group>
-		<title></title>
+		<title>KTuberling</title>
 		<class></class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
-		<home></home>
+		<home>http://opensource.bureau-cornavin.com/ktuberling/index.html</home>
 	</app>
 <app>
 		<group></group>
-		<title></title>
+		<title>Kalbum</title>
 		<class></class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
 		<hebrew></hebrew>
-		<home></home>
+		<home>http://www.paldandy.com/kalbum/</home>
 	</app>
 <app>
 		<group></group>
