@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
 "POT-Creation-Date: 2004-03-01 20:55\n"
-"PO-Revision-Date: 2004-03-24 22:06+0200\n"
-"Last-Translator: Nir Misgav [Nirro] <nirro@linux-kinneret.org>\n"
+"PO-Revision-Date: 2004-03-24 23:33+0200\n"
+"Last-Translator: Nir Misgav <nirro@linux-kinneret.org>\n"
 "Language-Team: Nir Misgav <nirro@yahoo.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -122,7 +122,7 @@ msgstr ""
 #  ParInst3..ButtonClose..Caption
 #  FormAbout..Button1..Caption
 #  FormAbout..Button1..Caption
-#. FormAbout..Button1..Caption
+#  FormAbout..Button1..Caption
 #: About.dfm:38
 #: About.pas:88
 #: ParInstall3.pas:177
@@ -201,7 +201,7 @@ msgid "Reboot"
 msgstr "אתחול המחשב"
 
 #  WForm..RadioButton2..Caption
-#. WForm..RadioButton2..Caption
+#  WForm..RadioButton2..Caption
 #: WelcomeForm.dfm:547
 msgid "English"
 msgstr ""
@@ -482,10 +482,12 @@ msgid ""
 "\n"
 "To learn more, search Google for : Windows Millenium Real Dos."
 msgstr ""
-"זוהתה מערכת הפעלה : חלונות Me.\n"
-"בגרסה זו בוטלה האפשרות לבצע איתחול\n"
-"במצב Real Dos, לכן לא ניתן יהיה להפעיל\n"
-"את כנרת ללא התקליטור או תקליטון-איתחול.\n"
+"זוהתה מערכת ההפעלה : חלונות Me.\n"
+"\n"
+"בגרסה זו, מיקרוסופט ביטלה את האפשרות לבצע\n"
+"איתחול במצב Real Dos, לכן לא ניתן יהיה להפעיל\n"
+"את כנרת ללא התקליטור או תקליטון-הפעלה\n"
+"(אפשרויות האיתחול האחרות לא יעבדו).\n"
 "\n"
 "למידע נוסף, חפש/י בגוגל: Windows Millenium Real Dos."
 
@@ -783,7 +785,7 @@ msgid "Buffer overflow"
 msgstr ""
 
 #  Programmer's name for it: SInvalidUTF7
-#. Programmer's name for it: SInvalidUTF7
+#  Programmer's name for it: SInvalidUTF7
 #: TntSystem.pas:794
 msgid "Invalid UTF7"
 msgstr ""
