@@ -1,6 +1,6 @@
 object WForm: TWForm
-  Left = 282
-  Top = 223
+  Left = 257
+  Top = 378
   AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsDialog
@@ -503,16 +503,16 @@ object WForm: TWForm
     Transparent = True
   end
   object WriteButton: TTntButton
-    Left = 344
+    Left = 352
     Top = 288
-    Width = 145
+    Width = 137
     Height = 33
     Caption = 'Make a bootable floppy'
     TabOrder = 0
     OnClick = WriteButtonClick
   end
   object Button3: TTntButton
-    Left = 40
+    Left = 8
     Top = 288
     Width = 89
     Height = 33
@@ -530,9 +530,9 @@ object WForm: TWForm
     OnClick = Button1Click
   end
   object Button2: TTntButton
-    Left = 176
+    Left = 240
     Top = 288
-    Width = 145
+    Width = 105
     Height = 33
     Caption = 'Reboot'
     TabOrder = 3
@@ -560,5 +560,14 @@ object WForm: TWForm
     TabOrder = 5
     OnClick = RadioButton1Click
     Caption_UTF7 = '+BeIF0QXoBdkF6g'
+  end
+  object ButtonAdvanced: TTntButton
+    Left = 128
+    Top = 288
+    Width = 105
+    Height = 33
+    Caption = 'Advanced'
+    TabOrder = 6
+    OnClick = ButtonAdvancedClick
   end
 end

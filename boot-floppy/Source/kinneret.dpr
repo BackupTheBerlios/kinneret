@@ -19,7 +19,8 @@ uses
   BinFile in 'BinFile.pas',
   About in 'About.pas' {FormAbout},
   fWarning in 'fWarning.pas' {FormWarning},
-  gnugettext in 'gnugettext.pas';
+  gnugettext in 'gnugettext.pas',
+  Advanced in 'Advanced.pas' {FormAdvanced};
 
 {$R *.RES}
 
@@ -30,5 +31,6 @@ begin
   Application.CreateForm(TMainForm, MainForm);
   Application.CreateForm(TFormAbout, FormAbout);
   Application.CreateForm(TFormWarning, FormWarning);
+  Application.CreateForm(TFormAdvanced, FormAdvanced);
   Application.Run;
 end.

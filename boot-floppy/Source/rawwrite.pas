@@ -24,7 +24,6 @@ type
     Labeldown: TtntLabel;
     procedure FormCreate(Sender: TObject);
     procedure WriteButtonClick(Sender: TObject);
-//    procedure Label5Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
@@ -180,11 +179,12 @@ begin
                           21 : LabelDown.Caption:=pWideChar(_('Error - Floppy is not found on drive A:'));
                           19 : LabelDown.Caption:=pWideChar(_('Error - The floppy is write protected'));
                           32 : LabelDown.Caption:=pWideChar(_('Error - The floppy is being used by another process'));
+                          27 : LabelDown.Caption:=pWideChar(_('Error - The floppy is defected, Try another floppy'));
                        else
                           LabelDown.Caption:=pWideChar(_('Unknown Error - No''-')+inttostr(Error));
                        end;
                      end else LabelDown.Caption:=pWideChar(_('Error - Unable to write to disk,'+#10#13+
-              'Please verify that the disk is in drive and not write protected.'));
+                                        'Please verify that the disk is in drive and not write protected.'));
                      HadError := True;
                  end;
                end;

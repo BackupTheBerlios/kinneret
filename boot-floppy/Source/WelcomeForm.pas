@@ -13,7 +13,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, Menus,gnugettext, About, gifimage,fWarning,
-  Buttons, TntStdCtrls, TntForms;
+  Buttons, TntStdCtrls, TntForms, Advanced;
 
 function MyExitWindows(RebootParam: Longword): Boolean;
 
@@ -28,6 +28,7 @@ type
     Button2: TTntButton;
     RadioButton1: TTntRadioButton;
     RadioButton2: TTntRadioButton;
+    ButtonAdvanced: TTntButton;
     procedure Button3Click(Sender: TObject);
     procedure WriteButtonClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -36,6 +37,7 @@ type
     procedure RadioButton2Click(Sender: TObject);
     procedure RadioButton1Click(Sender: TObject);
     procedure refreshlabel2();
+    procedure ButtonAdvancedClick(Sender: TObject);
   private
     Retranslator:TExecutable;
   public
@@ -204,6 +206,13 @@ begin
    #10#13+'from the Kinneret CD.'+#10#13#10#13+
    'If You can''t or don''t know how to boot from CD,'+#10#13+
    'You can make a bootable floppy here.'));
+end;
+
+procedure TWForm.ButtonAdvancedClick(Sender: TObject);
+begin
+    if fileExists('a:\syslinux.cfg') then FormAdvanced.ShowModal
+    else showmessage('In order to enter the Advanced options, You must put your boot-floppy'+#10#13+
+        '(The floppy you can make here) in drive A:');
 end;
 
 end.
