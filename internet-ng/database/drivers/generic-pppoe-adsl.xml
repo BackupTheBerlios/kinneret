@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+   - Generic ADSL PPPoE modem.
+   -
+   - Author: z9u2k
+   - $Revision: 1.2 $
+   -->
 <driver>
 	<name lang="en">PPPoE ADSL Modem</name>
     <comment lang="en">

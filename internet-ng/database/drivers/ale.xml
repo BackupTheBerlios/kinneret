@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+   - ALE driver.
+   - Currently unsupported.
+   -
+   - Author: z9u2k
+   - $Revision: 1.4 $
+   -->
 <driver>
     <name lang="en">ALE</name>
     <comment lang="en">

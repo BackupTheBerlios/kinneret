@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+   - Generic ADSL PPtP modem.
+   -
+   - Author: z9u2k
+   - $Revision: 1.2 $
+   -->
 <driver>
     <name lang="en">PPtP ADSL Modem</name>
     <type>adsl</type>
