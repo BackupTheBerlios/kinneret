@@ -131,7 +131,9 @@ document.write("יום "+dayname+", "+date+" ב"+monthname+", "+yearname);
       </table>
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
 <tr>
+<td>
 <img src="common/kinneret-tux.png" width="129" height="171" alt="Tux">
+</td>
 </tr>
         <tr>
           <td>
@@ -193,6 +195,44 @@ $counterMD5 = $tmp[0];
             
           </td>
         </tr>
+
+
+
+<tr><td>עמוד זה תואם לתקנים בינלאומיים המאפשרים צפיה בכל דפדפן תקני.</td></tr>
+<tr><td>
+<table>
+	<tr>
+			<td>
+			<a href="http://validator.w3.org/check/referer" target="_blank">
+			<img src="common/valid_html401.gif" width="88" height="32" border="0" alt="W3C Validated">
+			</a>
+			</td>
+
+			<td>
+			<a href="http://www.anybrowser.org/campaign/anybrowser_il.html" target="_blank">
+			<img src="common/any_browser_en.gif" width="88" height="32" border="0" alt="Browser independent HTML">
+			</a>
+			</td>
+
+			<td>
+			<a href="http://www.unicode.org/" target="_blank">
+			<img src="common/unicode.gif" width="88" height="32" border="0" alt="Unicode (UTF-8) Encoded">
+			</a>
+			</td>
+
+			<td>
+			<a href="http://developer.berlios.de" target="_blank">
+			<img src="common/berlios.png" width="88" height="32" border="0" alt="BerliOS Logo">
+			</a>
+			</td>
+
+	</tr>
+</table>
+</td></tr>
+
+
+
+
       </table>
     </td>
   </tr>
