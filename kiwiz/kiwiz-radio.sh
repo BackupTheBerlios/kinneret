@@ -62,6 +62,11 @@ MyStation[6]=$"ClassicFM-UK"
 MyStation[7]=$"ClassicGold-UK"
 MyStation[8]=$"WXPK-Rock-NY"
 MyStation[9]=$"WCWP-Variety-NY"
+MyStation[10]=$"WRHU-Variety-NY"
+MyStation[11]=$"WFDU-Variety-NY"
+MyStation[12]=$"WFUV-Americana-NY"
+MyStation[13]=$"WQXR-Classical-NY"
+MyStation[14]=$"WBLS-Urban-NY"
 
 # Servers
 MyServer[1]="http://213.8.143.164/audiomedia"
@@ -73,6 +78,11 @@ MyServer[6]="mms://audio1.musicradio.com/classicfm"
 MyServer[7]="mms://audio2.musicradio.com/classicgold"
 MyServer[8]="http://pamal.wm.llnwd.net/pamal_wxpk"
 MyServer[9]="http://cwp-media.liu.edu/wcwpfm"
+MyServer[10]="http://www.hofstra.edu/Audio/WRHU_Hofstra.asx"
+MyServer[11]="http://www.warpradio.com/asx/wfdu-fm.asx"
+MyServer[12]="http://www.wfuv.org/wfuvlive.asx"
+MyServer[13]="http://www.wqxr.com/wqxr_wmt_28.asx"
+MyServer[14]="http://www.nyradioguide.com/audiolinks/wbls.asx"
 
 ##########################################################
 # Main menu
