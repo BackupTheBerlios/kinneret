@@ -20,6 +20,7 @@
 <docspath=/opt/kinneret/l2swim/doc/he>
 <imagepath=/opt/kinneret/images>
 <defaultimage=kinneret-pencil-s.png>
+<menulanguage=he>
 
 <menu=mainmenu>
 ברוך בואך לכנרת!
