@@ -49,6 +49,10 @@ void Use(const ConfigFile &conf, const CommandLine &cmd, string strScript, strin
 	string strCmd = "tar -C /tmp/iwiz/ -xzf '" + file + "' ./" + strScript + ".sh";
 	if (system(strCmd.c_str()) != 0) throw ErrorSystem();
 
+	if (cmd.bVerbose) cout << "Changing premission...\n";
+	strCmd = "chmod +x /tmp/iwiz/" + strScript + ".sh";
+	if (system(strCmd.c_str()) != 0) throw ErrorSystem();
+
 	if (cmd.bVerbose) cout << "Running script...\n";
 	strCmd = "/tmp/iwiz/" + strScript + ".sh";
 	if (system(strCmd.c_str()) != 0) throw ErrorSystem();

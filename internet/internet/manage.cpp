@@ -127,6 +127,10 @@ void ManageExtract(const ConfigFile &conf, const CommandLine &cmd,
 	strCmd = "cp /tmp/iwiz/" + strScript + ".sh " + strFile;
 	if (system(strCmd.c_str()) != 0) throw ErrorSystem();
 
+	if (cmd.bVerbose) cout << "Changing premission...\n";
+	strCmd = "chmod +x '" + strFile + "'";
+	if (system(strCmd.c_str()) != 0) throw ErrorSystem();
+
 	cout << endl;
 }
 

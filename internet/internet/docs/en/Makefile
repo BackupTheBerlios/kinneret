@@ -1,6 +1,6 @@
 # Makefile.in generated automatically by automake 1.5 from Makefile.am.
 # Generated automatically from Makefile.in by config.pl.
-# KDE tags expanded automatically by am_edit - $Revision: 1.4 $ 
+# KDE tags expanded automatically by am_edit - $Revision: 1.5 $ 
 
 # Copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001
 # Free Software Foundation, Inc.
@@ -54,19 +54,19 @@ INSTALL_PROGRAM = ${INSTALL} $(INSTALL_STRIP_FLAG)
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_HEADER = $(INSTALL_DATA)
-transform = s,^,i386-linux-,
+transform = s,x,x,
 NORMAL_INSTALL = :
 PRE_INSTALL = :
 POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_alias = i386-linux
-build_triplet = i386-pc-linux-gnu
-host_alias = i386-linux
-host_triplet = i386-pc-linux-gnu
-target_alias = i386-linux
-target_triplet = i386-pc-linux-gnu
+build_alias = 
+build_triplet = i686-pc-linux-gnu
+host_alias = 
+host_triplet = i686-pc-linux-gnu
+target_alias = 
+target_triplet = i686-pc-linux-gnu
 AMTAR = ${SHELL} /home/z9u2K/projects/kinneret/cvs/internet/admin/missing --run tar
 ARTSCCONFIG = @ARTSCCONFIG@
 AS = @AS@
@@ -74,7 +74,7 @@ AUTODIRS =
 AWK = gawk
 CC = gcc
 CONF_FILES =  $(top_srcdir)/configure.in.in
-CPP = cpp
+CPP = gcc -E
 CXX = g++
 CXXCPP = g++ -E
 DCOPIDL = @DCOPIDL@
@@ -201,7 +201,7 @@ USE_EXCEPTIONS = -fexceptions
 USE_RTTI = 
 USE_THREADS = @USE_THREADS@
 VERSION = 0.2-rc1
-WOVERLOADED_VIRTUAL = -Woverloaded-virtual
+WOVERLOADED_VIRTUAL = 
 XGETTEXT = @XGETTEXT@
 XPMINC = @XPMINC@
 XPMLIB = @XPMLIB@

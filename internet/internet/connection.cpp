@@ -116,6 +116,9 @@ void Connection::MakeScript(ScriptType type) throw (Error)
 	if (!script) throw Error404(string("/tmp/iwiz/") + strName + string(".sh"));
 
 	script.write(strScript.c_str(), strScript.length());
+
+	strCmd = "chmod +x /tmp/iwiz/" + strName + ".sh";
+	if (system(strCmd.c_str()) != 0) throw ErrorSystem();
 }
 
 void Connection::Make() throw (Error)
