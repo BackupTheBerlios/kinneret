@@ -19,7 +19,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/xml/xml.cpp,v 1.3 2005/01/19 21:10:22 z9u2k Exp $
+// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/xml/xml.cpp,v 1.4 2005/01/19 21:30:50 z9u2k Exp $
 
 #include <sstream>
 #include <vector>
@@ -148,7 +148,6 @@ string core::xml::getExceptionString(const DOMException &ex) throw () {
 
 string core::xml::getExceptionString(const XalanXPathException &ex) throw () {
     stringstream result;
-    // TODO: Use core::utils::xts when transcoding to local encoding.
     result << "XalanXPathException: " << ex.getMessage().transcode() << 
         " (line: " << ex.getLineNumber() << ", column: " <<
         ex.getColumnNumber() << ").";

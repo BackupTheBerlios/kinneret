@@ -19,7 +19,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/resolvers/Resolver.h,v 1.4 2005/01/19 21:10:22 z9u2k Exp $
+// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/resolvers/Resolver.h,v 1.5 2005/01/19 21:30:50 z9u2k Exp $
 
 #ifndef RESOLVER
 #define RESOLVER
@@ -65,7 +65,9 @@ namespace core {
 
             /* --- Attributes --- */
 
-            /** @return Resolver's name */
+            /**
+             * @return Resolver's name 
+             */
             const std::string getNamespace() const throw () {
                 return nameSpace;
             }
@@ -116,7 +118,7 @@ namespace core {
             /* --- Protected Methods --- */
 
             /**
-             *
+             * TODO: JavaDocs!
              */
             virtual std::string resolvComplex(const std::string &param,
                 const std::string &xpath, const std::string &multi,

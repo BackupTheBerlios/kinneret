@@ -19,7 +19,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/resolvers/Resolver.cpp,v 1.4 2005/01/19 21:10:22 z9u2k Exp $
+// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/resolvers/Resolver.cpp,v 1.5 2005/01/19 21:30:50 z9u2k Exp $
 
 #include "core/resolvers/Resolver.h"
 #include "core/xml/xml.h"
@@ -45,17 +45,21 @@ core::resolvers::Resolver::Resolver(const string &resolverFile,
         throw (XMLException, DOMException, FatalException) {
     Log::verbose("Loading " + resolverFile);
     Log::verbose("Validation will be made using " + getSchema(resolverFile));
+    
     resolverDocument = loadXML(resolverFile, getSchema(resolverFile));
-    Log::verbose("Successfully loaded and validated resolver.");
 
+    Log::verbose("Successfully loaded and validated resolver.");
     Log::verbose("Loading " + moduleFile);
     Log::verbose("Validation will be made using " + getSchema(moduleFile));
+    
     moduleDocument = loadXML(moduleFile, getSchema(moduleFile));
+    
     Log::verbose("Successfully loaded and validated module.");
 
     // Get resolver name
     nameSpace = getAllTextNodes(
         resolverDocument->getElementsByTagName(xts("namespace"))->item(0));
+
     Log::verbose(string("Namespace: ") + nameSpace);
 }
 
@@ -82,16 +86,17 @@ string core::resolvers::Resolver::resolvParam(const string &param) const
     DOMNode *xpathNode = attributes->getNamedItem(xts("xpath"));
 
     // Evaluate XPath and get value
-    Log::verbose(string("Evaluating: ") +
+    Log::verbose(string("Evaluating XPath: ") +
         xts(xpathNode->getTextContent()).asString());
+
     vector<DOMNode*> xpathResult = evalXPath(xts(xpathNode->getTextContent()),
         moduleDocument);
 
     // See the results
     if (xpathResult.size() == 0) {
         // Nothing found
-        throw ParameterNotFoundException(param +
-            " was not found at the module!");
+        throw ParameterNotFoundException(param + " was not found at the "
+            "module!");
     } else if (xpathResult.size() > 1) {
         // TODO: Choise
         return "TODO";
@@ -110,10 +115,10 @@ DOMNode *core::resolvers::Resolver::getParamNode(const string &param) const
 
     vector<DOMNode*> result;
     try {
-        Log::verbose(string("Evaluating: ") + xpath);
+        Log::verbose(string("Evaluating XPath: ") + xpath);
         result = evalXPath(xpath, resolverDocument);
     } catch (const XalanXPathException &ex) {
-        Log::bug("Bug in XPath! " + getExceptionString(ex));
+        Log::bug("Bug in XPath syntax! " + getExceptionString(ex));
         return 0;
     }
 

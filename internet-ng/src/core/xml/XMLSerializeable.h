@@ -19,7 +19,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/xml/XMLSerializeable.h,v 1.3 2005/01/19 21:10:22 z9u2k Exp $
+// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/xml/XMLSerializeable.h,v 1.4 2005/01/19 21:30:50 z9u2k Exp $
 
 #ifndef XML_SERIALIZEABLE
 #define XML_SERIALIZEABLE
@@ -40,10 +40,16 @@ namespace core {
 
             /* --- Constuctors --- */
 
+            /**
+             * TODO: JavaDocs!
+             */
             XMLSerializeable() throw () : XMLReadable(), XMLWriteable() {
                 // Nothing to do
             }
 
+            /**
+             * TODO: JavaDocs!
+             */
             virtual ~XMLSerializeable() throw () {
                 // Nothing to do
             }

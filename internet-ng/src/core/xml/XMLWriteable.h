@@ -19,7 +19,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/xml/XMLWriteable.h,v 1.5 2005/01/19 21:10:22 z9u2k Exp $
+// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/xml/XMLWriteable.h,v 1.6 2005/01/19 21:30:50 z9u2k Exp $
 
 #ifndef XML_WRITEABLE
 #define XML_WRITEABLE
@@ -39,10 +39,16 @@ namespace core {
 
             /* --- Constuctors --- */
 
+            /**
+             * TODO: JavaDocs!
+             */
             XMLWriteable() throw () {
                 // Nothing to do
             }
 
+            /**
+             * TODO: JavaDocs!
+             */
             virtual ~XMLWriteable() throw () {
                 // Nothing to do
             }

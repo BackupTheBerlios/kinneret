@@ -19,7 +19,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/utils/Log.h,v 1.2 2005/01/19 21:10:22 z9u2k Exp $
+// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/utils/Log.h,v 1.3 2005/01/19 21:30:50 z9u2k Exp $
 
 #ifndef CORE_UTILS_LOG
 #define CORE_UTILS_LOG
@@ -31,7 +31,7 @@ namespace core {
         /**
          * Singleton logger.
          * 
-         * @authro z9u2k
+         * @author z9u2k
          */
         class Log {
         public:

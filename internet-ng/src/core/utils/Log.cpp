@@ -19,7 +19,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/utils/Log.cpp,v 1.2 2005/01/19 21:10:22 z9u2k Exp $
+// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/utils/Log.cpp,v 1.3 2005/01/19 21:30:50 z9u2k Exp $
 
 #include <iostream>
 
@@ -27,7 +27,7 @@
 
 using namespace std;
 using namespace core::utils;
-//
+
 // The instance
 Log *Log::instance;
 
