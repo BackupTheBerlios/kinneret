@@ -135,6 +135,16 @@ void iwizard::init()
 		eths.close();
 		comboEth->setCurrentItem(0);
 	}
+
+	// Kinneret autodetect
+	std::ifstream kinneret("/opt/kinneret/bin/config.sh", std::ios::in);
+	if (!kinneret) return;		// says it all, isn't it? :)
+
+	// It's Kinneret, remove the distro step and set to Debian based.
+	kinneret.close();
+	radioDebian->setChecked(true);
+	radioDebian->setEnabled(false);
+	radioNonDebian->setEnabled(false);
 }
 
 

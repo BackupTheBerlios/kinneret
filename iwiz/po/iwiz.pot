@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: iwiz\n"
-"POT-Creation-Date: 2003-08-03 12:49+0300\n"
+"POT-Creation-Date: 2003-08-13 14:54+0300\n"
 "PO-Revision-Date: 2003-07-21 14:13+0300\n"
 "Last-Translator: Itay 'z9u2K' Duvdevani <z9u2K@bezeqint.net>\n"
 "Language-Team: Hebrew <livrix@il.org>\n"
@@ -23,15 +23,15 @@ msgstr ""
 msgid "Cannot query hardware"
 msgstr ""
 
-#: iwizard.ui.h:117
+#: iwizard.ui.h:119
 msgid "Cannot query ethernet devices"
 msgstr ""
 
-#: iwizard.ui.h:164 iwizard.ui.h:233
+#: iwizard.ui.h:177 iwizard.ui.h:246
 msgid "Cannot get modem type"
 msgstr ""
 
-#: iwizard.ui.h:204
+#: iwizard.ui.h:217
 msgid "Cannot resolve modem type"
 msgstr ""
 
@@ -39,26 +39,34 @@ msgstr ""
 msgid "Iwiz"
 msgstr ""
 
-#: main.cpp:76
+#: main.cpp:65
+msgid "Must be root!"
+msgstr ""
+
+#: main.cpp:80
+msgid "You must enter username and password"
+msgstr ""
+
+#: main.cpp:98
 msgid "Cannot open /tmp/.cons"
 msgstr ""
 
-#: main.cpp:185
+#: main.cpp:207
 msgid ""
 "Unable to create connection.\n"
 "/tmp/internet_dump containes the output from the tool,\n"
 "please report a bug and include this file."
 msgstr ""
 
-#: main.cpp:190
+#: main.cpp:212
 msgid "Connection created successfuly"
 msgstr ""
 
-#: main.cpp:198
+#: main.cpp:220
 msgid "Unable to set connection to default."
 msgstr ""
 
-#: main.cpp:201
+#: main.cpp:223
 msgid "Connection set to default"
 msgstr ""
 

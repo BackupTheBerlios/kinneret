@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
-"POT-Creation-Date: 2003-08-03 12:49+0300\n"
-"PO-Revision-Date: 2003-08-03 12:54+0300\n"
+"POT-Creation-Date: 2003-08-13 14:54+0300\n"
+"PO-Revision-Date: 2003-08-13 14:55+0300\n"
 "Last-Translator: Itay 'z9u2K' Duvdevani <z9u2K@bezeqint.net>\n"
 "Language-Team: Hebrew <livrix@il.org>\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,15 +19,15 @@ msgstr "שגיאה בעת קבלת רשימת ספקים"
 msgid "Cannot query hardware"
 msgstr "שגיאה בעת קבלת רשימת מודמים"
 
-#: iwizard.ui.h:117
+#: iwizard.ui.h:119
 msgid "Cannot query ethernet devices"
 msgstr "שגיאה בעת קבלת רשימת ממשקי רשת"
 
-#: iwizard.ui.h:164 iwizard.ui.h:233
+#: iwizard.ui.h:177 iwizard.ui.h:246
 msgid "Cannot get modem type"
 msgstr "שגיאה בעת קבלת סוג המודם"
 
-#: iwizard.ui.h:204
+#: iwizard.ui.h:217
 msgid "Cannot resolve modem type"
 msgstr "שגיאה בעת קביעת סוג המודם"
 
@@ -35,11 +35,19 @@ msgstr "שגיאה בעת קביעת סוג המודם"
 msgid "Iwiz"
 msgstr "אשף האינטרנט"
 
-#: main.cpp:76
+#: main.cpp:65
+msgid "Must be root!"
+msgstr "אינך משתמש העל! עליך להיות משתמש העל (root)."
+
+#: main.cpp:80
+msgid "You must enter username and password"
+msgstr "חובה להזין שם משתמש וסיסמא!"
+
+#: main.cpp:98
 msgid "Cannot open /tmp/.cons"
 msgstr "שגיאה בפתיחת tmp/.cons/"
 
-#: main.cpp:185
+#: main.cpp:207
 msgid ""
 "Unable to create connection.\n"
 "/tmp/internet_dump containes the output from the tool,\n"
@@ -49,15 +57,15 @@ msgstr ""
 "הקובץ tmp/internet_dump/ מכיל מידע אודות הכשל,\n"
 "בעת דיווח באג, יש לכלול קובץ זה."
 
-#: main.cpp:190
+#: main.cpp:212
 msgid "Connection created successfuly"
 msgstr "חיבור נוצר בהצלחה"
 
-#: main.cpp:198
+#: main.cpp:220
 msgid "Unable to set connection to default."
 msgstr "כשל בקביעת חיבור כחיבור ברירת מחדל"
 
-#: main.cpp:201
+#: main.cpp:223
 msgid "Connection set to default"
 msgstr "חיבור נקבע כברירת מחדל"
 
@@ -179,9 +187,9 @@ msgid ""
 "\n"
 "What system are you running this wizard on?"
 msgstr ""
-"מערכות מבוססות Debian דורשות טיפול שונה משאר הלינוקסים בכל הנוגע "
-"לרשתות. בכדי להגדיר את החיבור נכונה, יש לציין הם מדובר במערכת מבוסת Debian "
-"(Debian, Knoppix, כנרת), או לא (Mandrake, RedHat).\n"
+"מערכות מבוססות Debian דורשות טיפול שונה משאר הלינוקסים בכל הנוגע לרשתות. "
+"בכדי להגדיר את החיבור נכונה, יש לציין הם מדובר במערכת מבוסת Debian (Debian, "
+"Knoppix, כנרת), או לא (Mandrake, RedHat).\n"
 "\n"
 "על איזה סוג מערכת מורץ אשף זה כעת?"
 
@@ -289,7 +297,9 @@ msgstr "ממשק המודם"
 msgid ""
 "Type your username as supplied by your ISP (usually English-only letters, In "
 "lowercase, with numbers and '_' allowed)"
-msgstr "יש להקליד את שם המשתמש כפי שסופק ע\"י ספק האינטרנט (בד\"כ אותיות אנגליות קטנות בלבד, בנוסף לסימן '_')"
+msgstr ""
+"יש להקליד את שם המשתמש כפי שסופק ע\"י ספק האינטרנט (בד\"כ אותיות אנגליות "
+"קטנות בלבד, בנוסף לסימן '_')"
 
 #: iwizard.cpp:472
 msgid "Server:"

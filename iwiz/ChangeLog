@@ -1,0 +1,6 @@
+v0.2
+====
+* You must enter username and password
+* If no eth* found, the wizard still continues
+* Autodetection for Kinneret and skipping the distro step
+* whoami == root test is made

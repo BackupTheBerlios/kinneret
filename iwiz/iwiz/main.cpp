@@ -57,7 +57,14 @@ int main(int argc, char *argv[])
 	iwizard *iwiz = new iwizard();
 	iwiz->setFinishEnabled(iwiz->QWizard::page(4), true);
 	a.setMainWidget(iwiz);
-	iwiz->show();  
+	iwiz->show();
+
+	// R U root ?
+	if (system("[ \"`whoami`\" == \"root\" ]"))
+	{
+		KMessageBox::error(0, tr2i18n("Must be root!"));
+		return -1;
+	}
 
 	a.exec();
 
@@ -65,7 +72,22 @@ int main(int argc, char *argv[])
 	{
 		// Wizard completed, run the tool and create the connection!
 
-		// First, check to see if the name is unique.
+		// check if username and password were entered
+		do
+		{
+			if (iwiz->lineUsername->text().isEmpty() || QString(iwiz->linePassword->password()).isEmpty())
+			{
+				KMessageBox::error(iwiz, tr2i18n("You must enter username and password"));
+				iwiz->showPage(iwiz->QWizard::page(4));
+				iwiz->show();
+				a.exec();
+
+				if (iwiz->result() == QDialog::Rejected) return 0;
+			}
+			else break;
+		} while (1);
+
+		// check to see if the name is unique.
 		// if it isn't, allow to the user to rename the connection.
 		vector<string>	vNames;
 		int ret = system("internet -C > /tmp/.cons");
