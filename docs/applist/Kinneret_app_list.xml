@@ -630,7 +630,7 @@
 <app>
 		<group></group>
 		<title>wxPython</title>
-		<class>טולקין לpython</class>
+		<class>טולקיט לפייטון</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
@@ -700,7 +700,7 @@
 <app>
 		<group></group>
 		<title>Kexi</title>
-		<class></class>
+		<class>ממשק למסדי נתונים</class>
 		<age></age>
 		<version></version>
 		<kinneret>?</kinneret>
