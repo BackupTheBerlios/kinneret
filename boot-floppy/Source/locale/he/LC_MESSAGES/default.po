@@ -1,12 +1,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.7\n"
-"POT-Creation-Date: 2004-03-01 20:55\n"
-"PO-Revision-Date: 2004-04-03 01:36+0200\n"
-"Last-Translator: Nir Misgav <nirro@linux-kinneret.org>\n"
+"POT-Creation-Date: 2004-08-10 18:31\n"
+"PO-Revision-Date: 2004-08-10 18:34+0200\n"
+"Last-Translator: Nir Misgav (Nirro) <nirro@linux-kinneret.org>\n"
 "Language-Team: Nir Misgav <nirro@yahoo.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -22,11 +22,11 @@ msgstr ""
 #  WForm..Button1..Caption
 #  FormAbout..Caption
 #  WForm..Button1..Caption
+#  FormAbout..Caption
+#  WForm..Button1..Caption
 #. FormAbout..Caption
 #. WForm..Button1..Caption
 #: About.dfm:8
-#: WelcomeForm.dfm:545
-#: About.pas:84
 msgid "About"
 msgstr "אודות"
 
@@ -128,9 +128,6 @@ msgstr "אודות"
 #. WForm..RadioButton1..Font.Name
 #. WForm..RadioButton3..Font.Name
 #: About.dfm:15
-#: Advanced.dfm:13
-#: fWarning.dfm:13
-#: ParInstall.dfm:11
 #: ParInstall2.dfm:11
 #: ParInstall3.dfm:11
 #: rawwrite.dfm:15
@@ -151,9 +148,6 @@ msgstr "למדריך מפורט יש ללחוץ כאן."
 #  FormAbout..Button1..Caption
 #. FormAbout..Button1..Caption
 #: About.dfm:39
-#: About.pas:85
-#: ParInstall3.pas:179
-#: rawwrite.pas:220
 msgid "Close"
 msgstr "סגור"
 
@@ -172,7 +166,6 @@ msgstr "עריכת הערכים"
 #  FormWarning..Caption
 #. FormWarning..Caption
 #: fWarning.dfm:6
-#: fWarning.pas:65
 msgid "Warning"
 msgstr "אזהרה"
 
@@ -183,10 +176,7 @@ msgstr "אזהרה"
 #  MainForm..Caption
 #  WForm..WriteButton..Caption
 #. MainForm..Caption
-#. WForm..WriteButton..Caption
 #: rawwrite.dfm:8
-#: WelcomeForm.dfm:527
-#: rawwrite.pas:254
 msgid "Make a bootable floppy"
 msgstr "הכנת תקליטון הפעלה"
 
@@ -222,6 +212,18 @@ msgstr "Arial"
 msgid "For detailed user guide press here."
 msgstr "למדריך מפורט נא ללחוץ כאן."
 
+#  MainForm..Caption
+#  WForm..WriteButton..Caption
+#  MainForm..Caption
+#  WForm..WriteButton..Caption
+#  MainForm..Caption
+#  WForm..WriteButton..Caption
+#  WForm..WriteButton..Caption
+#. WForm..WriteButton..Caption
+#: WelcomeForm.dfm:527
+msgid "Make a Boot-floppy"
+msgstr "הכנת תקליטון הפעלה"
+
 #  WForm..Button3..Caption
 #  WForm..Button3..Caption
 #. WForm..Button3..Caption
@@ -244,13 +246,11 @@ msgstr "אתחול המחשב"
 #  WForm..RadioButton2..Caption
 #  WForm..RadioButton2..Caption
 #  WForm..RadioButton2..Caption
+#  WForm..RadioButton2..Caption
+#  WForm..RadioButton2..Caption
+#  WForm..RadioButton2..Caption
 #: WelcomeForm.dfm:564
 msgid "English"
-msgstr ""
-
-#. WForm..RadioButton1..Caption
-#: WelcomeForm.dfm:575
-msgid "עברית"
 msgstr ""
 
 #. WForm..RadioButton1..Caption_UTF7
@@ -265,12 +265,13 @@ msgstr ""
 msgid "Advanced options for editing kernel parameters"
 msgstr "אפשרויות מתקדמות לעריכת הפרמטרים הנשלחים אל הליבה בזמן האיתחול"
 
-#  WForm..ButtonAdvanced..Caption
+#  parinst2..TntGroupBox1..Caption
+#  parinst2..TntGroupBox1..Caption
 #  WForm..ButtonAdvanced..Caption
 #. WForm..ButtonAdvanced..Caption
 #: WelcomeForm.dfm:593
-msgid "Advanced"
-msgstr "מתקדם"
+msgid "Boot-floppy options"
+msgstr "אפשרויות תקליטון הפעלה"
 
 #  parinst2..TntGroupBox2..Caption
 #  parinst2..TntGroupBox2..Caption
@@ -279,11 +280,6 @@ msgstr "מתקדם"
 #: WelcomeForm.dfm:604
 msgid "Hard-Drive Operation"
 msgstr "הפעלה מכונן קשיח"
-
-#. WForm..RadioButton3..Caption
-#: WelcomeForm.dfm:614
-msgid "русский"
-msgstr ""
 
 #. WForm..RadioButton3..Caption_UTF7
 #: WelcomeForm.dfm:624
@@ -298,13 +294,9 @@ msgstr ""
 msgid "Uninstall Kinneret"
 msgstr "הסרת כנרת"
 
-#. WForm..RadioButton4..Caption
-#: WelcomeForm.dfm:640
-msgid "ﺍﻟﻌﺮﺑﻴﺔ"
-msgstr ""
-
 #  WForm..RadioButton4..Caption_UTF7
-#: WelcomeForm.dfm:644
+#. WForm..RadioButton4..Caption_UTF7
+#: WelcomeForm.dfm:645
 msgid "+/o3+3/7M/q7+kf70/pQ"
 msgstr ""
 
@@ -422,9 +414,6 @@ msgstr "הסרת המפתח שנבחר וערכו"
 #  parinst2..ButtonCancel..Caption
 #  parinst2..ButtonCancel..Caption
 #: Advanced.pas:74
-#: fWarning.pas:67
-#: ParInstall2.pas:59
-#: rawwrite.pas:256
 msgid "Cancel"
 msgstr "ביטול"
 
@@ -483,7 +472,6 @@ msgstr "לא"
 #  parinst..YesButton..Caption
 #  parinst..YesButton..Caption
 #: fWarning.pas:62
-#: ParInstall.pas:48
 msgid "Yes"
 msgstr "כן"
 
@@ -631,7 +619,7 @@ msgstr "פנוי לאחר ההתקנה"
 #  Not enough free space
 #  Not enough free space
 #. Not enough free space
-#: ParInstall2.pas:161
+#: ParInstall2.pas:164
 msgid ""
 "Not enough free space on drive %s:\n"
 "Choose another one."
@@ -861,8 +849,8 @@ msgstr ""
 #  Programmer's name for it: SInvalidCurrency
 #  Delphi 5 compatibility
 #  Programmer's name for it: SInvalidCurrency
-#. Delphi 5 compatibility
-#. Programmer's name for it: SInvalidCurrency
+#  Delphi 5 compatibility
+#  Programmer's name for it: SInvalidCurrency
 #: TntSysUtils.pas:45
 msgid "'%s' is not a valid currency value"
 msgstr ""
@@ -936,12 +924,12 @@ msgstr ""
 #  Seperating Line to words
 #  Seperating Line to words
 #  Seperating Line to words
-#. Seperating Line to words
+#  Seperating Line to words
 #: WelcomeForm.pas:223
 msgid ""
-"In order to enter the Advanced options, You must put your boot-floppy\n"
+"In order to enter the Boot-floppy options, you must put your boot-floppy\n"
 "(The floppy you can make here) in drive A:"
 msgstr ""
-"על מנת להיכנס לאפשרויות מתקדמות,\n"
+"על מנת להיכנס לאפשרויות תקליטון הפעלה,\n"
 "יש להכניס את תקליטון ההפעלה (שהכנת כאן) לכונן :A"
 

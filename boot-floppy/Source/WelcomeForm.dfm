@@ -520,18 +520,18 @@ object WForm: TWForm
     OnClick = LinkLabelClick
   end
   object WriteButton: TTntButton
-    Left = 336
+    Left = 312
     Top = 296
-    Width = 129
+    Width = 153
     Height = 33
-    Caption = 'Make a bootable floppy'
+    Caption = 'Make a Boot-floppy'
     TabOrder = 0
     OnClick = WriteButtonClick
   end
   object Button3: TTntButton
-    Left = 80
+    Left = 72
     Top = 344
-    Width = 97
+    Width = 89
     Height = 33
     Caption = 'Exit'
     TabOrder = 1
@@ -547,9 +547,9 @@ object WForm: TWForm
     OnClick = Button1Click
   end
   object Button2: TTntButton
-    Left = 80
+    Left = 72
     Top = 296
-    Width = 97
+    Width = 89
     Height = 33
     Caption = 'Reboot'
     TabOrder = 3
@@ -585,21 +585,21 @@ object WForm: TWForm
     Caption_UTF7 = '+BeIF0QXoBdkF6g'
   end
   object ButtonAdvanced: TTntButton
-    Left = 200
+    Left = 312
     Top = 344
-    Width = 113
+    Width = 153
     Height = 33
     Hint = 'Advanced options for editing kernel parameters'
-    Caption = 'Advanced'
+    Caption = 'Boot-floppy options'
     ParentShowHint = False
     ShowHint = True
     TabOrder = 6
     OnClick = ButtonAdvancedClick
   end
   object TntButton1: TTntButton
-    Left = 336
-    Top = 344
-    Width = 129
+    Left = 176
+    Top = 296
+    Width = 121
     Height = 33
     Caption = 'Hard-Drive Operation'
     TabOrder = 7
@@ -624,9 +624,9 @@ object WForm: TWForm
     Caption_UTF7 = '+BEAEQwRBBEEEOgQ4BDk'
   end
   object TntButton2: TTntButton
-    Left = 200
-    Top = 296
-    Width = 113
+    Left = 176
+    Top = 344
+    Width = 121
     Height = 33
     Caption = 'Uninstall Kinneret'
     Enabled = False

@@ -219,7 +219,7 @@ begin
     FormAdvanced.ParamList.InsertRow(key,word,TRUE);
     FormAdvanced.ShowModal;
   except
-    ShowWarning(MSG,pWideChar(_('In order to enter the Advanced options, You must put your boot-floppy'+#10#13+
+    ShowWarning(MSG,pWideChar(_('In order to enter the Boot-floppy options, you must put your boot-floppy'+#10#13+
         '(The floppy you can make here) in drive A:')));
   end;
 
