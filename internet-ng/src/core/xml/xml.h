@@ -19,7 +19,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/xml/xml.h,v 1.2 2005/01/19 21:10:22 z9u2k Exp $
+// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/xml/xml.h,v 1.3 2005/01/19 21:40:40 z9u2k Exp $
 
 #ifndef CORE_XML_XML
 #define CORE_XML_XML
@@ -90,7 +90,7 @@ namespace core {
          * This method finds all the text nodex it can find under
          * <code>element</code>, concats them together, and returns.
          *
-         * @param element Element to look under
+         * @param node Element to look under
          * @return The concatenation of all the text nodes under
          *         <code>element</code>.
          */

@@ -19,7 +19,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/xml/XMLReadable.h,v 1.4 2005/01/19 21:30:50 z9u2k Exp $
+// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/xml/XMLReadable.h,v 1.5 2005/01/19 21:40:40 z9u2k Exp $
 
 #ifndef XML_READABLE
 #define XML_READABLE
@@ -54,7 +54,7 @@ namespace core {
             /**
              * Loads from a DOM tree.
              *
-             * @parm root Root elemnt of the document.
+             * @param root Root elemnt of the document.
              * @throws InvalidFormatException When the XML is of an invalid
              *         format and the class cannot load from it.
              */

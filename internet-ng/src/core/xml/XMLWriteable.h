@@ -19,7 +19,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/xml/XMLWriteable.h,v 1.6 2005/01/19 21:30:50 z9u2k Exp $
+// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/xml/XMLWriteable.h,v 1.7 2005/01/19 21:40:40 z9u2k Exp $
 
 #ifndef XML_WRITEABLE
 #define XML_WRITEABLE
@@ -58,7 +58,7 @@ namespace core {
             /**
              * Saves to a DOM tree.
              *
-             * @parm document Document to create elements with.
+             * @param document Document to create elements with.
              * @return Root element of serialization.
              */
             virtual DOMElement *toXML(xercesc::DOMDocument *const document) = 0;
