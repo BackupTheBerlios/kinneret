@@ -45,7 +45,7 @@ var
 begin
         toRemove:=ParamList.Strings[ParamList.Row-1];
         if toRemove[Length(toRemove)]='=' then toRemove:=leftstr(toRemove,Length(toRemove)-1);
-        if MessageDlg('Really remove '+toRemove+' ?',
+        if MessageDlg(pWideChar(_('Really remove ')+toRemove+' ?'),
         mtConfirmation, [mbOk, mbCancel], 0) = mrOk then
                 ParamList.DeleteRow(ParamList.row);
 end;
@@ -114,8 +114,8 @@ begin
             if ParamList.FindRow(EditKey.Text,i) then
             begin
                 ParamList.Row:=i;
-                if MessageDlg('This key is already in the list,'+#10#13+
-                'Overwrite ?',mtConfirmation, [mbOk, mbCancel], 0) = mrOk then
+                if MessageDlg(pWideChar(_('This key is already in the list,'+#10#13+
+                'Overwrite ?')),mtConfirmation, [mbOk, mbCancel], 0) = mrOk then
                 begin
                     ParamList.Values[EditKey.Text]:=EditValue.Text;
                     EditKey.Text:='';EditValue.Text:='';
@@ -139,16 +139,16 @@ var
         line : string;
         temp : string;
 begin
-    if MessageDlg('Save changes and exit ?',mtConfirmation, [mbOk, mbCancel], 0) = mrOk then
+    if MessageDlg(pWideChar(_('Save changes and exit ?')),mtConfirmation, [mbOk, mbCancel], 0) = mrOk then
     begin
-        line:='';
+        line:='APPEND';
         for i:=1 to ParamList.RowCount-1 do
         begin
             temp:=paramList.Strings[i-1];
             if temp[Length(temp)]='=' then temp:=leftstr(temp,Length(temp)-1);
-            line:=line+temp+' ';
+            line:=line+' '+temp;
         end;
-        Strings[1]:=leftStr(line,length(line)-1);
+        Strings[1]:=line;
         try
             Strings.SaveToFile(FileName);
             close;
