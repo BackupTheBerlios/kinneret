@@ -148,6 +148,8 @@ end;
 procedure Tparinst2.ButtonStartClick(Sender: TObject);
 begin
   hide;
+  parInst3.createMenu:=CBMenu.Checked;
+  parInst3.createShortcut:=CBDesktop.Checked;
   parInst3.showModal;
   show;
 end;

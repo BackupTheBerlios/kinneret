@@ -15,6 +15,8 @@ type
     function FileOperation (const source, dest: string; op, flags: Integer) : bool;
     { Private declarations }
   public
+    createMenu : bool;
+    createShortcut : bool;
     { Public declarations }
   end;
 
@@ -47,18 +49,22 @@ procedure TParInst3.FormActivate(Sender: TObject);
 var
   destination : string;
   source : string ;
+  file1,file2 : string;
+
 begin
-  source:= 'c:\CDROM\KNOPPIX\knoppix' ;
+  source:= 'c:\CDROM\KNOPPIX\';
+  file1:='knoppix' ;
+  file2:= 'knoppix.sh' ;
   destination:=format('%s:\KNOPPIX\',[ChosenDrive]);
-  if not fileexists(source) or
-  (FileOperation (source, destination , FO_COPY, FOF_ALLOWUNDO or FOF_NOCONFIRMATION	))
-    then showWarning(ERR,pWideChar(_('Error while copying files.'+#10#13+
+  if not fileexists(source+file1)
+  or not fileexists(source+file2)
+  or (FileOperation (source+file1, destination , FO_COPY, FOF_ALLOWUNDO or FOF_NOCONFIRMATION	))
+  or (FileOperation (source+file2, destination , FO_COPY, FOF_ALLOWUNDO or FOF_NOCONFIRMATION	))
+  then begin
+    showWarning(ERR,pWideChar(_('Error while copying files.'+#10#13+
     'Unable to continue.')));
-  source:= 'c:\CDROM\KNOPPIX\knoppix.sh' ;
-  if not fileexists(source) or
-  (FileOperation (source, destination , FO_COPY, FOF_ALLOWUNDO or FOF_NOCONFIRMATION	))
-    then showWarning(ERR,pWideChar(_('Error while copying files.'+#10#13+
-    'Unable to continue.')));
+  end else
+    ShellExecute(Handle, 'open', PChar('command.com'), PChar('/c copy file1.txt file2.txt'), nil, SW_SHOW);
 end;
 
 procedure TParInst3.FormShow(Sender: TObject);
