@@ -3,33 +3,84 @@
    - Schema for connection descriptor.
    -
    - Author: z9u2k
-   - $Revision: 1.1 $
+   - $Revision: 1.2 $
   -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <!-- Authentication section -->
-    
+    <!-- Simple Types -->
+
+    <!-- Valid ethernet device strings -->
+    <xs:simpleType name="ethDevice">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="eth[0-9]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Complex Types -->
+
+    <!--- Choises block -->
+    <xs:complexType name="choices">
+        <xs:sequence>
+            <xs:element name="choice" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="xpath" type="xs:string"/>
+                    <xs:attribute name="name" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- ISP module -->
+    <xs:complexType name="isp">
+        <xs:sequence>
+            <xs:element name="file" type="xs:anyURI"/>
+            <xs:element name="choices" type="choices" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Driver module -->
+    <xs:complexType name="driver">
+        <xs:sequence>
+            <xs:element name="file" type="xs:anyURI"/>
+            <xs:element name="ethernet">
+                <xs:complexType>
+                    <xs:attribute name="device" type="ethDevice"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="choices" type="choices" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Authentication module -->
     <xs:complexType name="auth">
-        <xs:all>
-            <xs:element name="username" type="xs:string"/>
-            <xs:element name="password" type="xs:string"/>
-        </xs:all>
+        <xs:sequence>
+            <xs:element name="username" type="xs:string" minOccurs="0"/>
+            <xs:element name="password" type="xs:string" minOccurs="0"/>
+            <xs:element name="server" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
     </xs:complexType>
 
     <!-- Document -->
 
     <xs:element name="connection">
         <xs:complexType>
-            <xs:all>
-                <xs:element name="name"        type="xs:string"/>
+            <xs:sequence>
+                <!-- Header -->
+                <xs:element name="name" type="xs:string"/>
                 <xs:element name="internet-ng" type="xs:string"/>
-                <xs:element name="created"     type="xs:date"/>
-                <xs:element name="isp"         type="xs:string"/>
-                <xs:element name="modem"       type="xs:string"/>
-                <xs:element name="script"      type="xs:string"/>
-                <xs:element name="authentication"
-                    type="auth" minOccurs="0" maxOccurs="1"/>
-            </xs:all>
+                <xs:element name="created">
+                    <xs:complexType>
+                        <xs:attribute name="date" type="xs:date"/>
+                        <xs:attribute name="time" type="xs:time"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="comment" type="xs:string"/>
+                <!-- Modules -->
+                <xs:element name="isp" type="isp"/>
+                <xs:element name="driver" type="driver"/>
+                <!-- Non-mandatory -->
+                <xs:element name="authentication" type="auth" minOccurs="0"/>
+            </xs:sequence>
         </xs:complexType>
     </xs:element>
 </xs:schema>
