@@ -7,3 +7,4 @@ From 0.1b to 0.1 (29 Apr 2003):
 * The wizard verifies that the selected partition has enough room and scaled the swap file
   if it doesn't
 * Changes some texts in the po
+* Status shown while creating filesystems

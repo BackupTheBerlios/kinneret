@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
-"POT-Creation-Date: 2003-04-29 17:17+0300\n"
-"PO-Revision-Date: 2003-04-29 21:36+0300\n"
+"POT-Creation-Date: 2003-04-30 14:09+0300\n"
+"PO-Revision-Date: 2003-04-30 14:13+0300\n"
 "Last-Translator: Itay 'z9u2K' Duvdevani <z9u2K@bezeqint.net>\n"
 "Language-Team: Hebrew <livrix@il.org>\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -142,6 +142,62 @@ msgstr "מה הלאה?"
 msgid "Confwiz"
 msgstr "אשף הגדרת <i>גנו/לינוקס-כנרת</i>"
 
+#: pleasewait.ui.h:36
+msgid "Creating directory... [1/13]"
+msgstr "יוצר תיקייה... [1/13]"
+
+#: pleasewait.ui.h:39
+msgid "Allocating swap file... [2/13]"
+msgstr "מקצה מקום לקובץ החלפה... [2/13]"
+
+#: pleasewait.ui.h:42
+msgid "Creating swap file system... [3/13]"
+msgstr "יוצר מערכת קבצים בקובץ החלפה... [3/13]"
+
+#: pleasewait.ui.h:45
+msgid "Activating swap file... [4/13]"
+msgstr "מפעיל קובץ החלפה... [4/13]"
+
+#: pleasewait.ui.h:48
+msgid "Allocating home file... [5/13]"
+msgstr "מקצה מקום לתיקיית הבית... [5/13]"
+
+#: pleasewait.ui.h:51
+msgid "Searching for a free device... [6/13]"
+msgstr "מחפש אחר התקן זמין... [6/13]"
+
+#: pleasewait.ui.h:54
+msgid "Creating home file system... [7/13]"
+msgstr "יוצר מערכת קבצים בקובץ תיקיית הבית... [7/13]"
+
+#: pleasewait.ui.h:57
+msgid "Tunning home gile system... [8/13]"
+msgstr "קובע הגדרות מערכת קבצים... [8/13]"
+
+#: pleasewait.ui.h:60
+msgid "Changing ownership... [9/13]"
+msgstr "משנה הרשאות... [9/13]"
+
+#: pleasewait.ui.h:63
+msgid "Copying home... [10/13]"
+msgstr "מעתיק קבצים... [10/13]"
+
+#: pleasewait.ui.h:66
+msgid "Releasing home device... [11/13]"
+msgstr "משחרר התקן... [11/13]"
+
+#: pleasewait.ui.h:69
+msgid "Activating home... [12/13]"
+msgstr "מפעיל את תיקיית הבית... [12/13]"
+
+#: pleasewait.ui.h:72
+msgid "Finishing... [13/13]"
+msgstr "מסיים... [13/13]"
+
+#: pleasewait.ui.h:74
+msgid "Working... [N/A]"
+msgstr "עובד... [לא זמין]"
+
 #: help.cpp:134
 msgid "htmlhelp"
 msgstr ""
@@ -196,7 +252,7 @@ msgstr ""
 msgid "Return"
 msgstr "חזרה"
 
-#: pleasewait.cpp:101
+#: pleasewait.cpp:110
 msgid "Configuring..."
 msgstr ""
 "איתחול קבצים והגדרות הנדרשים להפעלת המערכת \n"
@@ -204,9 +260,13 @@ msgstr ""
 "שלך) לאיתחול קבצים והגדרות הנדרשים להפעלת המערכת. העכבר עלול להגיב באיטיות "
 "בשלב זה"
 
-#: pleasewait.cpp:102
+#: pleasewait.cpp:111
 msgid "Please wait, configuring..."
 msgstr "אנא המתינו, מגדיר הגדרות מערכת..."
+
+#: pleasewait.cpp:112
+msgid "Creating Directory... [1/13]"
+msgstr "יוצר תיקייה... [1/13]"
 
 #: configwizard.cpp:1499
 msgid "Welcome to Kinneret!"
@@ -368,11 +428,12 @@ msgstr "<המחיצה שנבחרה>/"
 #: configwizard.cpp:1526
 msgid "conclusion_main"
 msgstr ""
-"הנתיב לספריית הבית שלך ב<i>גנו/לינוקס כינרת</i> הוא /home/knoppix/docs/ (קישור לספרייה זו יופיע על שולחן העבודה שלך)."
-"ספרייה זו תשמש כברירת המחדל לשמירת קבציך האישיים. יש באפשרותך לגשת לכל "
-"הקבצים שיישמרו בספריה זו גם תחת \"חלונות\". <br><br>מסיבות אבטחה, תיקיית "
-"הבית והמחיצה בה היא נמצאת, הם המקומות היחידים אליהם יש לך הרשאת כתיבה, לכן, "
-"לא כדאי לנסות לשמור קבצים במקומות אחרים - הם לא יישמרו לאחר איתחול מחדש."
+"הנתיב לספריית הבית שלך ב<i>גנו/לינוקס כינרת</i> הוא /home/knoppix/docs/ "
+"(קישור לספרייה זו יופיע על שולחן העבודה שלך).ספרייה זו תשמש כברירת המחדל "
+"לשמירת קבציך האישיים. יש באפשרותך לגשת לכל הקבצים שיישמרו בספריה זו גם תחת "
+"\"חלונות\". <br><br>מסיבות אבטחה, תיקיית הבית והמחיצה בה היא נמצאת, הם "
+"המקומות היחידים אליהם יש לך הרשאת כתיבה, לכן, לא כדאי לנסות לשמור קבצים "
+"במקומות אחרים - הם לא יישמרו לאחר איתחול מחדש."
 
 #: configwizard.cpp:1529
 msgid "fonts_main"

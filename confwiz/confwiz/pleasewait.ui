@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>412</width>
-            <height>175</height>
+            <height>134</height>
         </rect>
     </property>
     <property name="sizePolicy">
@@ -34,7 +34,7 @@
         </property>
         <widget class="QLayoutWidget">
             <property name="name">
-                <cstring>layout6</cstring>
+                <cstring>layout4</cstring>
             </property>
             <vbox>
                 <property name="name">
@@ -58,6 +58,35 @@
                     </property>
                     <property name="text">
                         <string>Please wait, configuring...</string>
+                    </property>
+                    <property name="alignment">
+                        <set>WordBreak|AlignCenter</set>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>status</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>5</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                    </property>
+                    <property name="frameShape">
+                        <enum>Panel</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Sunken</enum>
+                    </property>
+                    <property name="text">
+                        <string>Creating Directory... [1/13]</string>
                     </property>
                     <property name="alignment">
                         <set>WordBreak|AlignCenter</set>

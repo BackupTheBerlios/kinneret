@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2003-04-29 17:17+0300\n"
+"POT-Creation-Date: 2003-04-30 14:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -135,6 +135,62 @@ msgstr ""
 msgid "Confwiz"
 msgstr ""
 
+#: pleasewait.ui.h:36
+msgid "Creating directory... [1/13]"
+msgstr ""
+
+#: pleasewait.ui.h:39
+msgid "Allocating swap file... [2/13]"
+msgstr ""
+
+#: pleasewait.ui.h:42
+msgid "Creating swap file system... [3/13]"
+msgstr ""
+
+#: pleasewait.ui.h:45
+msgid "Activating swap file... [4/13]"
+msgstr ""
+
+#: pleasewait.ui.h:48
+msgid "Allocating home file... [5/13]"
+msgstr ""
+
+#: pleasewait.ui.h:51
+msgid "Searching for a free device... [6/13]"
+msgstr ""
+
+#: pleasewait.ui.h:54
+msgid "Creating home file system... [7/13]"
+msgstr ""
+
+#: pleasewait.ui.h:57
+msgid "Tunning home gile system... [8/13]"
+msgstr ""
+
+#: pleasewait.ui.h:60
+msgid "Changing ownership... [9/13]"
+msgstr ""
+
+#: pleasewait.ui.h:63
+msgid "Copying home... [10/13]"
+msgstr ""
+
+#: pleasewait.ui.h:66
+msgid "Releasing home device... [11/13]"
+msgstr ""
+
+#: pleasewait.ui.h:69
+msgid "Activating home... [12/13]"
+msgstr ""
+
+#: pleasewait.ui.h:72
+msgid "Finishing... [13/13]"
+msgstr ""
+
+#: pleasewait.ui.h:74
+msgid "Working... [N/A]"
+msgstr ""
+
 #: help.cpp:134
 msgid "htmlhelp"
 msgstr ""
@@ -143,12 +199,16 @@ msgstr ""
 msgid "Return"
 msgstr ""
 
-#: pleasewait.cpp:101
+#: pleasewait.cpp:110
 msgid "Configuring..."
 msgstr ""
 
-#: pleasewait.cpp:102
+#: pleasewait.cpp:111
 msgid "Please wait, configuring..."
+msgstr ""
+
+#: pleasewait.cpp:112
+msgid "Creating Directory... [1/13]"
 msgstr ""
 
 #: configwizard.cpp:1499

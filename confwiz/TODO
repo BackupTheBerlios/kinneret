@@ -8,4 +8,4 @@ v (13) Adding confirm box if not selecting a home directory
 v (15) Check that swap file + home file is not larger then the free space on partition and anyway leave at least
   3000mb free
 v (16) Change texts
-x Add status indicator while creating swap/home
+v Add status indicator while creating swap/home
