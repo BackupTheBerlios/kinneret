@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link title="StyleSheet" rel="stylesheet" href="../../etc/l2swim.css" type="text/css">
+<title>
+מדריך שימוש בסיסי בתוכנת עיבוד התמונות The Gimp
+</title>
+</head>
+<body dir="rtl" class="rtl">
+<CENTER>
+<IMG SRC="../image/blue_bar.png" ALT="----------"><H1><FONT COLOR="BLUE">
+מדריך שימוש בסיסי בתוכנת עיבוד התמונות The Gimp
+</FONT></H1>
+<IMG SRC="../image/blue_bar.png" ALT="----------">
+</CENTER>
+<BR><center><table bgcolor="#99ccff" width="90%" cellpadding="5" cellspacing="0" border="1"><tr><td align="center">
+מדריך זה מכיל מקבץ מאמרים שנכתבו ע"י כותבים שונים, כל הזכויות למדריך שמורות לפרוייקט גנו/לינוקס כנרת אלא אם צויין אחרת.
+<BR>
+הפרק <b>עוגת שכבות עם הגימפ</b> נכתב על ידי מאיר קריחלי לשימוש אתר <a target="_blank" href="http://www.whatsup.org.il/article/3879">ווטסאפ</a>. כל הזכויות לפרק זה שמורות למחבר.
+<BR>
+עובד, נערך והותאם עבור גנו/לינוקס כנרת ע"י דוביקס באישור המחברים.
+<BR>
+הרשות נתונה בזאת להעתיק, להפיץ ו/או לשנות את המסמך הזה, תחת תנאי רשיון ה GNU לשימוש חופשי במסמכים, גרסה 1.2 או כל גרסה מאוחרת יותר שתפורסם ע"י קרן התוכנה החופשית.
+</td></tr></table></center>
+<br><form name="contents" action="">
+<b>תוכן</b>:
+	<select name="url" size="1" OnChange="location.href=form.url.options[form.url.selectedIndex].value" style="font-family:Arial,Helvetica,sans-serif; font-size:10"><option value="#doc_chap
+				1">1.
+				
+עוגת שכבות עם הגימפ
+</option></select>
+</form>
+
+<p><U><FONT COLOR="BLUE"><B><span><a name="doc_chap1">1. </a></span>
+עוגת שכבות עם הגימפ
+</B></FONT></U></p>
+
+<p>
+שימוש בשכבות מהווה טכניקה די בסיסית בעיבוד תמונה.
+</p>
+<p>
+נדגים את העבודה ב-gimp עם שכבות ע"י שילוב 3 תמונות לאחת. עוד נדגים תכונות נוספות של שכבות, כגון mask.
+</p>
+
+<p><B><I><FONT COLOR="BLUE"><B>
+מבוא
+</B></FONT></I></B></p>
+
+<p>
+נפתח מספר תמונות (שלוש, בדוגמה זו) ב-gimp:
+</p>
+
+<CENTER><IMG SRC="../image/man_gimp_layers01.jpg" ALT="../image/man_gimp_layers01.jpg"></CENTER>
+
+<p>
+כדי לא לפגוע בתמונות המקוריות, ניצור חדשה ונדביק אליה את התמונות האחרות. אני מעדיף לעבוד עם שכבת רקע נקיה, מה שמאפשר גמישות בשינוי הרקע, ללא פגיעה באלמנטים האחרים בתמונה.
+</p>
+<p>
+לתיבת השיח של השכבות מגיעים בעזרת CTRL+L או בעזרת Dialogs | Layers מהתפריט של התמונה (טיפ: לתפריט אפשר להגיע גם עם קליק ימני על התמונה). כאשר עוברים מתמונה לתמונה, תוכן תיבת השיח משתנה בהתאם כמובן. נוסיף 3 שכבות חדשות לתמונה, בעזרת לחיצה על לחצן השכבה החדשה 3 פעמים.
+</p>
+<p>
+לחיצה כפולה על שכבה תאפשר לנו לשנות את שמה. ניתן להן שמות קריאים (מה שיקל עלינו, במיוחד בתמונות מורכבות). לאחר מכן תיבת השיח של השכבות תראה כך:
+</p>
+
+<CENTER><IMG SRC="../image/man_gimp_layers02.jpg" ALT="../image/man_gimp_layers02.jpg"></CENTER>
+
+<p>
+כמו שניתן לראות, יצרתי את השכבות בסדר שגוי. התמונה דורשת ספר מתחת לפינגווין ועפרון מעל. אל חשש, אפשר לשנות את סדר השכבות בעזרת לחצני החיצים בתיבת השיח של השכבות.
+</p>
+<p>
+כעת נעתיק ונדביק את התמונות השונות. חשוב לשים לב שנמצאים בשכבה הנכונה לפני ההדבקה. בוחרים את השכבה הפעילה בעזרת לחיצה עליה בתיבת השיח של השכבות. שיניתי מעט את גודל התמונה של Tux והזזתי את התמונות השונות על כל שכבה.
+</p>
+<p>
+זכרו: פעולות עריכה מתבצעות על השכבה הפעילה כרגע (לדוגמא: הזזה, מילוי צבע, מתיחה וכן הלאה) ללא השפעה על שכבות אחרות.
+</p>
+<p>
+עוד שימו לב כי תיבת השיח של השכבות מראה תמונה מוקטנת של כל שכבה:
+</p>
+
+<CENTER><IMG SRC="../image/man_gimp_layers03.jpg" ALT="../image/man_gimp_layers03.jpg"></CENTER>
+
+<p>
+מכאן תוכלו להמשיך עם פעולות העריכה עד לשביעות רצונכם.
+</p>
+
+
+<p><B><I><FONT COLOR="BLUE"><B>
+תכונות נוספות
+</B></FONT></I></B></p>
+
+<p><I><FONT COLOR="BLUE" SIZE="-1">
+שקיפות שכבה
+</FONT></I></p>
+
+<p>
+לשכבות תכונות נוספות. אחת מהן היא השקיפות. בתיבת שיח השכבות מד ה-Opacity קובע את אחוז השקיפות של כל שכבה. 0% פירושה שקוף לחלוטין, 100% אין שקיפות. בוחרים בשכבה המבוקשת ומשנים את הערך. לצורך ההדגמה, מילאתי את הרקע בתבנית ושיניתי את אחוז השקיפות של שכבת העפרון:
+</p>
+
+<CENTER><IMG SRC="../image/man_gimp_layers04.jpg" ALT="../image/man_gimp_layers04.jpg"></CENTER>
+<BR>
+<CENTER><IMG SRC="../image/man_gimp_layers05.jpg" ALT="../image/man_gimp_layers05.jpg"></CENTER>
+
+<p><I><FONT COLOR="BLUE" SIZE="-1">
+מצב שכבה
+</FONT></I></p>
+
+<p>
+לכל שכבה יש "מצב" - תיבת הבחירה Mode. תיבת זו מאפשרת לבצע פעולות מתמטיות או לוגיות שונות על כל שכבה עם השכבות מתחתיה (כגון: הכפלת הערכים, חיבור, הבהרה בלבד וכן הלאה). בתמונה הבאה שיניתי את מצב שכבת הספר ל-"Subtract" (חיסור):
+</p>
+
+<CENTER><IMG SRC="../image/man_gimp_layers06.jpg" ALT="../image/man_gimp_layers06.jpg"></CENTER>
+
+<p>
+כדי לחזור למצב הרגיל, בוחרים ב-Normal.
+</p>
+
+<p><I><FONT COLOR="BLUE" SIZE="-1">
+ערוץ מיסוך
+</FONT></I></p>
+
+<p>
+לשכבה אפשר להוסיף ערוץ מיסוך המאפשר לשלוט על ערך השקיפות ותכונות דומות עד לרמת הפיקסל. החזרתי את מצב שכבת הספר לנורמלי, והוספתי מיסוך לשכבה בעזרת לחיצה ימנית על השכבה ובחירת "Add Layer Mask". בתיבה שנפתחה קיימות מספר אפשרויות, אנו נתרכז ב-white (אין שקיפות) ו-Black (שקיפות מלאה). נבחר בללא שקיפות. כעת נוספה בצד ימין של התצלום המוקטן תמונה מוקטנת נוספת של המיסוך (כרגע לבנה כולה):
+</p>
+
+<CENTER><IMG SRC="../image/man_gimp_layers07.jpg" ALT="../image/man_gimp_layers07.jpg"></CENTER>
+
+<p><I><FONT COLOR="BLUE" SIZE="-1">
+מיסוך צבוע
+</FONT></I></p>
+
+<p>
+ניתן להחליף בין עבודה על ערוץ המיסוך לתוכן השכבה בעזרת לחיצה על התצלומים המוקטנים שלהם. נשתמש בכלי ה-Gradient Fill כדי לצבוע את ערוץ המיסוך משחור ללבן. שימו לב לאפקט על שכבת הספר:
+</p>
+
+<CENTER><IMG SRC="../image/man_gimp_layers8.jpg" ALT="../image/man_gimp_layers8.jpg"></CENTER>
+
+
+<p><I><FONT COLOR="BLUE" SIZE="-1">
+העלמת שכבה
+</FONT></I></p>
+
+<p>
+ניתן גם להעלים שכבות בעזרת לחיצה על לחצן ה"עין" ליד כל שכבה. מדוע שנרצה לעשות זאת ? לשמור גרסה של התמונה ללא אלמנט מסויים, או בעת מיזוג שכבות (לאחר שסיימנו לעבוד על תכונות נפרדות של אלמנט מסויים), למזג רק את אלו הנראות, וכן הלאה:
+</p>
+
+<CENTER><IMG SRC="../image/man_gimp_layers09.jpg" ALT="../image/man_gimp_layers09.jpg"></CENTER>
+<BR>
+<table bgcolor="#99ccff" width="100%" cellpadding="5" cellspacing="0" border="0"><tr><td align="center">
+מסמך זה עובד ונערך עבור <a href="http://www.linux-kinneret.org">גנו/לינוקס כנרת</a>, תוך שימוש בתוכנה חופשית בלבד. עמוד זה <a href="http://validator.w3.org/check/referer" target="new">תואם לתקנים בינלאומיים</a><IMG SRC="../image/globe.png" ALT="(web)"> המאפשרים צפיה בכל דפדפן תקני.
+					</td></tr></table>
+<table bgcolor="#bbffbb" width="100%" cellpadding="5" cellspacing="0" border="0"><tr><td align="center">
+לינוקס הוא שם רשום של Linus Torvalds; יוניקס הוא שם רשום של ה Open Group בארה"ב ובמדינות נוספות, Windows הוא שם רשום של Microsoft Corporation. כל שאר השמות הרשומים וזכויות היוצרים שייכים לבעליהם.
+					</td></tr></table>
+<table bgcolor="#ffffbb" width="100%" cellpadding="5" cellspacing="0" border="0"><tr><td align="center">
+חשוב לדעת! גנו/לינוקס כנרת מסופקת "כפי שהיא", בלא אחריות מסוג כלשהו, בין אם מפורשת ובין אם משתמעת, לרבות, אך מבלי למעט מהאמור, האחריות המשתמעת למסחריות והתאמה למטרה מסוימת. בעלי זכויות היוצרים ו/או מפיצי התוכנה לא ישאו כלפיך באחריות לנזקים, לרבות נזקים כלליים, מיוחדים, משניים או תוצאתיים כלשהם, הנובעים מהשימוש או מאי-היכולת להשתמש בתוכנות המסופקות. עליך .לקרוא בעיון את רישיון השימוש המלא ולהסכים לנאמר בו לפני השימוש בהפצה זו.
+					<IMG SRC="../image/exclamation.png" ALT="!">
+</td></tr></table>
+</body>
+</html>
