@@ -20,7 +20,7 @@
 <docspath=/opt/kinneret/l2swim/doc>
 <imagepath=/opt/kinneret/images>
 <defaultimage=kinneret-pencil-s.png>
-<menulanguage=he>
+<defaultdir=rtl>
 
 <menu=mainmenu>
 ברוך בואך לכנרת!
@@ -154,6 +154,7 @@
 <end>
 
 <menu=russian>
+<menudir=ltr>
 ברוך בואך לכנרת!
 מדור זה מכיל חלק ממסמכי <b><i>גנו/לינוקס כנרת</b></i> אשר זמינים בשפה הרוסית. אם ברצונך להתנדב לתרגום מסמכים נוספים נא ליצור קשר עם dovix@linux-kinneret.org. <br><br>קישורים המסומנים בכוכבית (<img src="/opt/kinneret/images/star.png">) מומלצים להכרות ראשונית עם המערכת. קישורים המסומנים בסימן קריאה (<img src="/opt/kinneret/images/exclamation.png">) חשובים מאוד לידיעתך. קישורים המסומנים בגלובוס (<img src="/opt/kinneret/images/globe.png">) דורשים חיבור לאינטרנט.<br><br>צוות הפרוייקט מברך אותך על הפעלת תקליטור זה ומאחל לך הנאה ועבודה פוריה!
    <play=ar/desktop_ready.html>
@@ -166,6 +167,7 @@
 <end>
 
 <menu=english>
+<menudir=ltr>
 Welcome to the Kinneret!
 This section hosts some of the <b><i>GNU/Linux Kinneret</b></i> documents that are available in English. If you would like to volunteer to translate additional documents, please contact dovix@linux-kinneret.org. <br><br>Links marked with an asterisk (<img src="/opt/kinneret/images/star.png">) are recommended for familiarization with the system. Links marked with an exclamation mark (<img src="/opt/kinneret/images/exclamation.png">) contain important information.  Links marked with a globe (<img src="/opt/kinneret/images/globe.png">) require an Internet connection.<br><br>The project team welcomes you for using the system and wishes you enjoyment and fruitful work!
   <play=en/user_interface.html>
