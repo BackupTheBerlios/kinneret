@@ -75,7 +75,7 @@ MainWindow::MainWindow ( const char* name, const QString spage, cmenu* mn) : KMa
                           i18n("About l2swim"));
 	toolbar->alignItemRight(TOOLBAR_ID_ABOUT);
 	addToolBar(toolbar);
-  connect( html->browserExtension(),
+	connect( html->browserExtension(),
         SIGNAL( openURLRequest( const KURL &, const KParts::URLArgs & ) ),
         this, SLOT( openURLRequest(const KURL &, const KParts::URLArgs & ) ) );
 
@@ -85,7 +85,8 @@ MainWindow::MainWindow ( const char* name, const QString spage, cmenu* mn) : KMa
 	setAutoSaveSettings("MainWindow",true);
 	toolbar->setIconText(KToolBar::IconTextBottom);
 
-	openURL(KURL(menu->getFirstPage()),true);
+	if ((!cmdStartpage.isEmpty())&&(menu->exists(cmdStartpage,"menu"))) openURL(KURL("menu://"+cmdStartpage),true);
+	else openURL(KURL(menu->getFirstPage()),true);
 }
 
 void MainWindow::home()

@@ -138,3 +138,18 @@ bool cmenu::getLink(QString linkname, QString type, QString *imagefile, QString 
 	}	
 	return true;
 }
+
+bool cmenu::exists(QString linkname, QString type)
+{
+	QDomElement docElem = menusDoc->documentElement();
+
+	QDomNode node = docElem.firstChild();
+	while( !node.isNull() ) 
+	{
+		if ((node.nodeName().compare(type)==0) 
+		&& (node.isElement()) && (node.toElement().attribute("name").compare(linkname)==0)) break;
+		node = node.nextSibling();
+	}
+	if (node.isNull()) return false;
+	return true;
+}

@@ -31,14 +31,11 @@ public:
     ~cmenu() {delete menusDoc;};
     cmenu(QString filename,bool *success);
     bool getLink(QString linkname,  QString type, QString *imagefile, QString *text=NULL);
-//    void addSection(pcsection what);
-//    void addTextToSection(QString name, QString page);
-//    bool initialize(QString filename, QString cmdStartpage, QString *startpage);
     QString getFirstPage() {return QString("menu://")+firstPage;};
-//    QString getLanguage() {return menulanguage;};
     QString getDocsPath() {return docsPath;};
-    QString getDefaultImage() {return imagePath+defaultImage;};  
+    QString getDefaultImage() {return imagePath+defaultImage;};
+	bool exists(QString linkname, QString type);  
 private:
      QDomDocument* menusDoc;
-     QString firstPage, docsPath, defaultImage, imagePath, defaultDir, cssFile;
+     QString firstPage, docsPath, defaultImage, imagePath, defaultDir;
 };
