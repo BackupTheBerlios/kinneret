@@ -19,6 +19,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
+// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/utils/xts.h,v 1.3 2005/01/19 21:10:22 z9u2k Exp $
+
 #ifndef CORE_UTILS_XTS
 #define CORE_UTILS_XTS
 
@@ -47,7 +49,6 @@ namespace core {
          * so.
          *
          * @author z9u2k
-         * $Revision: 1.2 $
          */
         class xts {
         public:

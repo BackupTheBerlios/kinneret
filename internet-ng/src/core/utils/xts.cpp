@@ -19,6 +19,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
+// $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/kinneret/Repository/internet-ng/src/core/utils/xts.cpp,v 1.2 2005/01/19 21:10:22 z9u2k Exp $
+
 #include "core/utils/xts.h"
 
 using namespace std;
