@@ -1,0 +1,9 @@
+##
+ # Disconnects a PPtP session, and shuts down DHCP.
+ #
+ # Author: z9u2k
+ # $Revision: 1.1 $
+ ##
+
+[*include generic-pptp.dis*]
+killallDHCP;

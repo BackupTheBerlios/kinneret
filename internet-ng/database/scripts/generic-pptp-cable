@@ -1,0 +1,144 @@
+##
+ # Based on a script from the CABLE-DHCP-PPTP-HOWTO, this
+ # script connects a cable modem to the internet.
+ #
+ # Authors: dovix, shlomil, z9u2k
+ # $Revision: 1.1 $
+ ##
+
+# Save resolv.conf, DHCP clients override it.
+cp /etc/resolv.conf /etc/resolv.conf.sv
+if [ $? -ne 0 ]; then
+    exitError "resolve.conf not found"
+fi
+
+# Find and start DHCP
+[*include do-dhcp*]
+
+# Detect PPtP executable name
+W_PPTP="`which pptp`"
+W_PPTP_LINUX="`which pptp-linux`"
+
+if [ -n "$W_PPTP" ]; then
+    PPTP_EXEC="$W_PPTP"
+elif [ -n "$W_PPTP_LINUX" ]; then
+    PPTP_EXEC="$W_PPTP_LINUX"
+else
+    exitError "Could not locate PPtP executable!"
+fi
+
+# See if we already have a pptp client running
+echo "Killing active PPtP client..."
+ps auxwww | grep pptp | awk '{print $2}' | xargs kill -KILL
+
+# Gateway
+echo "Fetching gateway using $DHCPCLIENT_NAME..."
+case "$DHCPCLIENT_NAME" in
+    "dhcpcd" )
+        for path in "/etc/dhcpc" "/var/lib/dhcpc" "invalid"; do
+            if [ -f "${path}/dhcpcd-[*hw::eth*].info" ]; then
+                echo "Reading ${path}/dhcpcd-[*hw::eth*].info..."
+                CABLEGW=`cat ${path}/dhcpcd-[*hw::eth*].info | grep GATEWAY\
+                    | cut -d"=" -f2`
+                break;
+            fi
+        done
+
+        if [ $path == "invalid" ]; then
+            exitError "Could not find dhcpcd's info file!";
+        fi
+    ;;
+    "dhclient" )
+        CABLEGW=`grep routers /var/lib/dhcp/dhclient.leases | tail -n 1\
+            | cut -d ";" -f1 | cut -d ' ' -f5`
+    ;;
+    "pump" )
+        CABLEGW=`$W_PUMP -s | grep Gateway: | cut -d':' -f2`
+    ;;
+    * )
+        exitError "BUG: Reached unreachable code, please report."
+    ;;
+esac
+
+if [ -z "$CABLEGW" ]; then
+    exitError "Failed fetcing gateway!"
+fi
+echo "Gateway is $CABLEGW";
+
+# Add route
+echo "Adding route via " $CABLEGW
+/sbin/route add -host [*isp::cable::gateway*] gw $CABLEGW dev [*config::eth*]
+if [ $? -ne 0 ]; then
+    exitError "Failed adding route via $CABLEGW"
+fi
+
+# Set remotename option for PPtP
+REMOTE_NAME_OPT="remotename \"[*isp::cable-remotename*]\""
+
+# If username contains @CActcom or @cactcom set REMOTE_NAME_OPT to ""
+if [ -n "`echo "[*auth::username*]" | grep -E '@[Cc][Aa]ctcom'`" ]; then
+    REMOTE_NAME_OPT=""
+fi
+
+echo "remotename option = \"${REMOTE_NAME_OPT}\""
+
+echo "Starting PPtP..."
+# Allow previous instance to shut down
+sleep 2
+$PPTP_EXEC [*isp::cable-remotename*] \
+    user [*auth::username*] \
+    debug \
+    $REMOTE_NAME_OPT \
+    mtu 1452 \
+    mru 1452 \
+    noauth \
+    defaultroute
+
+if [ $? -ne 0 ]; then
+    exitError "PPtP execution failed!"
+fi
+
+echo -n "Waiting for IP..."
+counter=1
+IF_RES=1
+while [ "$counter" -le "20" -a "$IF_RES" -ne "0" ]; do
+    echo -n .
+    sleep 1
+    netstat -n -r | grep ppp0 > /dev/null
+    IF_RES=$?
+    counter=`expr $counter + 1`
+done
+if [ $IF_RES -ne 0 ]; then
+    exitError "No IP for 20 seconds, assuming connection failure."
+fi
+
+echo "Connected, fetching new gateway..."
+
+# New gateway
+NEWGW="`/sbin/ifconfig ppp0 | grep inet | cut -d":" -f3 | tail -1 |\
+    cut -d" " -f1`"
+
+if [ -z "$NEWGW" ]; then
+	exitError "Could not fetch new gateway."
+fi
+
+echo "New Gateway: $NEWGW"
+echo "Deleting old default route..."
+/sbin/route del default dev [*config::eth*]
+if [ $? -ne 0 ]; then
+	exitError "Could not delete old default route!"
+fi
+
+echo "Setting default route to $NEWGW..."
+/sbin/route add default gw $NEWGW
+if [ $? -ne 0 ]; then
+	exitError "Could not set new default route"
+fi
+
+echo "Fixing resolv.conf..."
+cp /etc/resolv.conf.sv /etc/resolv.conf
+if [ $? -ne 0 ]; then
+	exit -1
+fi
+
+rm -f /etc/resolv.conf.sv

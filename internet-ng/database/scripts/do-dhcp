@@ -1,0 +1,65 @@
+##
+ # Common script for selecting and activating a DHCP
+ # client for an ethernet card.
+ #
+ # Authors: z9u2k, dovix, shlomil
+ # $Revision: 1.1 $
+ ##
+
+killallDHCP();
+
+##
+ # Goes through the supported clients, and decided which to use. After
+ # choosing, the method starts up the DHCP client, setting the variables
+ # 'DHCPCLIENT' and 'DHCPCLIENT_NAME'.
+ ##
+ W_DHCPCD="`which dhcpcd`"
+ W_DHCLIENT="`which dhclient`"
+ W_PUMP="`which pump`"
+
+ if [ -n "$W_DHCPCD" ]; then
+     echo "Starting dhcpcd..."
+
+     # Start dhcpcd
+     $W_DHCPCD [*config::eth*]
+     DH_RET=$?
+
+     # If we failed, it might indicate the dhcpcd-eth.pid file exists
+     if [ $DH_RET -ne 0 ]; then
+         echo "dhcpcd failed, making sure no PID file exists..."
+
+         for path in "/etc/dhcpcd /var/lib/dhcpc"; do
+             if [ -f "${path}/dhcpcd-[*config::eth*].pid" ]; then
+                 echo "Deleteing ${path}/dhcpcd-[*config::eth*].pid, \
+                 which shouldn't exist."
+                 rm -f ${path}/dhcpcd-[*config::eth*].pid
+             fi
+         done
+
+         # Retry
+         echo "Retrying dhcpcd..."
+         $W_DHCPCD [*config::eth*]
+         DH_RET=$?
+     fi
+     DHCPCLIENT="$W_DHCPCD"
+     DHCPCLIENT_NAME="dhcpcd"
+ elif [ -n "$W_DHCLIENT" ]; then
+     echo "Starting dhclient..."
+     $W_DHCLIENT [*config::eth*]
+     DH_RET=$?
+     DHCPCLIENT="$W_DHCLIENT"
+     DHCPCLIENT_NAME="dhclient"
+ elif [ -n "$W_PUMP" ]; then
+     echo "Starting pump..."
+     $W_PUMP -i [*config::eth*]
+     DH_RET=$?
+     DHCPCLIENT="$W_PUMP"
+     DHCPCLIENT_NAME="pump"
+ else
+     exitError "No DHCP client found!"
+ fi
+
+if [ $DH_RET -ne 0 ]; then
+    exitError "$DHCPCLIENT failed."
+fi
+echo "$DHCPCLIENT_NAME started succesfully for [*config::eth*]."

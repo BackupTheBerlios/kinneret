@@ -1,0 +1,26 @@
+##
+ # Common functions.
+ # 
+ # Authors: z9u2k, dovix
+ # $Revision: 1.1 $
+ ##
+
+##
+ # Terminates the script, supplying the reason
+ # for the termination.
+ ##
+exitError() {
+    echo "ERROR: $1"
+    exit -1
+}
+
+##
+ # Make sure no DHCP is running for [*config::eth*]
+ ##
+killallDHCP() {
+    SUPPORTED_DHCP="dhcpcd|dhclient|pump"
+    echo "Killing all DHCP clients on [*config::eth*]..."
+    ps auxwww | grep -E "$SUPPORTED_DHCP" | grep [*config::eth*] |\
+        awk '{print $2}' | xargs kill -KILL
+    echo "Done."
+}
