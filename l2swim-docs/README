@@ -2,7 +2,7 @@ This CVS directory includes files related to the Kinneret "Learn to Swim" guide
 
 This file contains:
 1. Changelog
-2. Installation instructions for remastering the Kinneret CD
+2. Installation instructions for installing the swimming guide documents
 3. List of directories and their contents
 4. To-do list
 5. Build instructions
@@ -13,7 +13,7 @@ This file contains:
 Please see the CHANGELOG file.
 
 ***************************************************************************
-2. Installation instructions for remastering the Kinneret CD
+2. Installation instructions for installing the swimming guide documents
 
 The instructions here are for version 0.7.
 
