@@ -1,0 +1,10 @@
+A better Hand Point cursor cushandpoint.cur 1 KB (curhandpoint.cur) to replace the one comes with Delphi.
+
+Run Image Editor (shiped with Delphi), locate and open the file:
+C:\Program Files\Borland\Delphi7\lib\controls.res
+
+Expand the cursor items, and double click the first one (32761), a new window will open showing the cursor image.
+
+Now open the cursor file you just download it, select all the image and copy it. Go back to the old cursor window and paste the new image. Save controls.res and close all.
+
+Run/compile any project uses hand point cursor.
