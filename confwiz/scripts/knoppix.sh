@@ -34,22 +34,6 @@ maphome()
 
 	chown -R knoppix:knoppix /home/knoppix/
 
-	echo "${BLUE}Linking partitions...${NORMAL}"
-	rm -fr /home/knoppix/partitions/*
-
-	letter="103"	# C in octal
-	for mntpt in `cat /etc/fstab | grep fat | cut -b 6-9`
-	do
-		echo -e "${BLUE}Linking /mnt/${mntpt} to \\${letter}...${NORMAL}"
-		slash=\\
-		to=`echo -e "${slash}${letter}"`
-		ln -s /mnt/$mntpt/ "/home/knoppix/partitions/λεπο ${to}"
-
-		let letter++
-	done
-
-	chown -R knoppix:knoppix /home/knoppix/partitions/
-
 	HOMEFOUND="yes"
 }
 
@@ -93,5 +77,21 @@ then
 	echo "0" > /tmp/foundhome
 	chown knoppix:knoppix /tmp/foundhome
 fi
+
+echo "${BLUE}Linking partitions...${NORMAL}"
+rm -fr /home/knoppix/partitions/*
+
+letter="103"	# C in octal
+for mntpt in `cat /etc/fstab | grep fat | cut -b 6-9`
+do
+	echo -e "${BLUE}Linking /mnt/${mntpt} to \\${letter}...${NORMAL}"
+	slash=\\
+	to=`echo -e "${slash}${letter}"`
+	ln -s /mnt/$mntpt/ "/home/knoppix/partitions/λεπο ${to}"
+
+	let letter++
+done
+
+chown -R knoppix:knoppix /home/knoppix/partitions/
 
 exit 0
