@@ -51,13 +51,13 @@ echo "${BLUE}Searching for Kinneret's Home...${NORMAL}"
 # mount all NTFS directories RO
 for dir in `cat /etc/fstab | grep ntfs | cut -b 6-9`
 do
-	mount -t ntfs -o defaults,ro,user,uid=1000,codepage=cp1255,iocharset=cp1255,utf8 /dev/$dir /mnt/$dir 2>&1
+	mount -t ntfs -o defaults,ro,user,uid=1000,iocharset=cp1255 /dev/$dir /mnt/$dir 2>&1
 done
 
 # mount all vfat directories RW
 for dir in `cat /etc/fstab | grep vfat | cut -b 6-9`
 do
-	mount -t vfat -o defaults,rw,user,uid=1000,codepage=cp1255,iocharset=cp1255,utf8 /dev/$dir /mnt/$dir 2>&1
+	mount -t vfat -o defaults,rw,user,uid=1000,codepage=1255,iocharset=cp1255,utf8 /dev/$dir /mnt/$dir 2>&1
 done
 
 # Scan directories
