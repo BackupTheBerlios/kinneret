@@ -1,0 +1,34 @@
+######################################################
+#100 Musagim v0.1                                    #
+#Wrriten by Gai Shaked (shaked.gai@gmail.com)        #
+#Graphics by GeniusR13 (GeniusR13@gmx.net)           #
+#Licence: GPL                                        #
+#"Musagim" from wikipedia - License: GFDL            #
+######################################################
+
+
+OVERVIEW
+=========
+These Karamba theme shows Random "musag" every 5 minutes from the list published by MISHRAD HACHINUCH.
+
+Using the theme
+===============
+copy all the files into /opt/kinneret/karamba/100musagim/
+Open 100musagim.theme with Karamba.
+
+Editing the "musagim"
+=====================
+The musagim can be found on the files -
+/opt/kinneret/karamba/100musagim/musag-X
+while X is in integer.
+The first line of each file is the title (as It appear in Wikipedia)
+The seconed line is the text Explaining the musag.
+
+If you add/remove musagim from the list you should change the number in -
+/opt/kinneret/karamba/100musagim/ctl
+This file tells how many musagim are available.
+
+REQUIREMENTS
+============
+Karamba >= 0.17
+Konqueror
