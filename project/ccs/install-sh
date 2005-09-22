@@ -1,0 +1,29 @@
+#!/bin/sh
+NORMAL="[0;39m"
+RED="[1;31m"
+GREEN="[1;32m"
+DARKGRAY="[1;30m"
+BLUE="[1;34m"
+PURPLE="[1;35m"
+DARKPURPLE="[35m"
+DARKRED="[31m"
+BLACK="[30m"
+DARKBLUE="[34m"
+DARKGREEN="[32m"
+WHITE="[1;37m"
+LIGHTGRAY="[37m"
+
+if [ "`id -u`" != "0" ]; then
+echo "${RED}You have to be root to use this script!${NORMAL}"
+exit
+elif [ "`id -u`" = "0" ]; then
+cp -f ccs.sh /usr/bin/ccs
+chmod 755 /usr/bin/ccs
+chown root:bin /usr/bin/ccs
+echo "The script was copied to ${BLUE}/usr/bin/ccs${NORMAL}"
+echo "Now you can type ${PURPLE}ccs${NORMAL} any time in the terminal"
+echo "to open up the script."
+exit
+else
+echo "${RED}Very fatal ERROR!!${NORMAL}"
+fi
