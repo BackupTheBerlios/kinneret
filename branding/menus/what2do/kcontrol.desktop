@@ -1,0 +1,13 @@
+[Desktop Entry]
+Exec=kcontrol -caption "%c" %i %m
+Icon=kcontrol
+Name=Change system settings
+Name[he]=לשנות הגדרות מערכת
+GenericName=KDE Control Center
+GenericName[he]=מרכז הבקרה של KDE
+DocPath=kcontrol/index.html
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

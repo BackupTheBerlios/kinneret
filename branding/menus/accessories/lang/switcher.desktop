@@ -1,0 +1,12 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/switcher
+Hidden=false
+Icon=wizard
+Name=switcher
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

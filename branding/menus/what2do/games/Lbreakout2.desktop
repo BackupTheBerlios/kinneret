@@ -1,0 +1,12 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/games/lbreakout2
+Icon=/usr/share/games/lbreakout2/gfx/win_icon.png
+Name=Lbreakout2
+GenericName[he]=שבירת לבנים
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

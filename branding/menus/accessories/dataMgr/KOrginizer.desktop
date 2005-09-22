@@ -1,0 +1,12 @@
+[Desktop Entry]
+Comment=
+Exec=korginizer
+Icon=korginizer
+Name=KOrginizer
+GenericName=Orginizer
+GenericName[he]=יומן
+Path=
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

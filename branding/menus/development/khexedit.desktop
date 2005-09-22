@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/khexedit
+Icon=khexedit
+Name=KHexEdit
+GenericName=Hexa Editor
+GenericName[he]=עורך הקסדצימלי
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/kdevelop
+Icon=kdevelop
+Name=Kdevelop
+GenericName=KDE Development Envoierment
+GenericName[he]=סביבית הפיתוח של KDE
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

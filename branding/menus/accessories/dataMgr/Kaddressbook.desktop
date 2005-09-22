@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=kaddressbook
+Icon=kaddressbook
+Name=KAddressBook
+GenericName=Address books
+GenericName[he]=ספר כתובות
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

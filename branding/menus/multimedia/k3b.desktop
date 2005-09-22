@@ -1,0 +1,12 @@
+[Desktop Entry]
+Comment=
+Exec=k3b
+Icon=k3b
+Name=K3b
+GenericName=CD Burning
+GenericName[he]=צריבת תקליטורים
+Path=
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

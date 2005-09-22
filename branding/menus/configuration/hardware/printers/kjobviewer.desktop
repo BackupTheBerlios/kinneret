@@ -1,0 +1,11 @@
+[Desktop Entry]
+Comment=
+Exec=kjobviewer -all
+Icon=kjobviewer
+Name=Printer Jobs
+Name[he]=תור הדפסות
+Path=
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

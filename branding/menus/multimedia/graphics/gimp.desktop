@@ -1,0 +1,14 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/gimp
+Hidden=false
+Icon=gimp
+Name=gimp
+GenericName=Image manipulation
+GenericName[he]=עיבוד תמונה
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

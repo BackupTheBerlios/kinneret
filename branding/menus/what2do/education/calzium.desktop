@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/kalzium
+Icon=kalzium
+Name=Kalzium
+GenericName=Chimistry
+GenericName[he]=כימיה
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/xawtv.wrapper reconfigure
+Icon=tv
+Name=Configure TV channels
+Name[he]=הגדרת ערוצי טלויזיה
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+Hidden=true

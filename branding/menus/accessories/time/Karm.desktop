@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=karm
+Icon=karm
+Name=KArm
+GenericName=Time management
+GenericName[he]=מנהל זמנים
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

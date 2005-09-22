@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/kghostview
+Icon=kghostview
+Name=KGhostView
+GenericName=PDF Viewer
+GenericName[he]=מציג PDF
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

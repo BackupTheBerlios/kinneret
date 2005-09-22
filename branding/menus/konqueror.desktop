@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=Konqueror
+Comment=KDE File Manager & Web Browser
+Exec=konqueror %U
+Terminal=false
+Icon=konqueror.png
+
+Encoding=UTF-8
+NoDisplay=true
+X-KDE-Library=libkonqueror
+ServiceTypes=Konqueror
+X-DCOP-ServiceType=multi
+X-KDE-StartupNotify=true
+Type=Application
+Name[en_US]=Konqueror
+Name[en]=Konqueror
+Comment[en_US]=KDE File Manager & Web Browser
+Comment[en]=KDE File Manager & Web Browser

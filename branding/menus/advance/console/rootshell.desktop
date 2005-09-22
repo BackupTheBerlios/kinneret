@@ -1,0 +1,12 @@
+[Desktop Entry]
+Comment=
+Exec=rxvt -bg black -fg green -cr red -ls -e sudo -s
+Icon=tv
+Name=Root shell
+Name[he]=מסוף מנהל מערכת
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

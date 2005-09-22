@@ -1,0 +1,11 @@
+[Desktop Entry]
+Comment=
+Exec=kaddprinterwizard
+Icon=printer1
+Name=KAddPrinterWizard
+Name[he]=אשף התקנת מדפסות
+Path=
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

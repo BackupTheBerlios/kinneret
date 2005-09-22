@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=kmolcalc
+Icon=kmolcalc
+Name=KMolCalc
+GenericName=Chimistry calculator
+GenericName[he]=מחשבון כימי
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

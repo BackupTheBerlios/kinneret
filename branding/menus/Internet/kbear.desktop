@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/kbear
+Icon=kbear
+Name=KBear
+GenericName=FTP client
+GenericName[he]=לקוח FTP
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

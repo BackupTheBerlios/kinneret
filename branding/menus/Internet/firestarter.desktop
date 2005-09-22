@@ -1,0 +1,14 @@
+[Desktop Entry]
+Comment=
+Exec=sudo /usr/sbin/firestarter
+Icon=firestarter
+Name=FireStarter
+GenericName=Firewall
+GenericName[he]=חומת-אש
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+Hidden=true

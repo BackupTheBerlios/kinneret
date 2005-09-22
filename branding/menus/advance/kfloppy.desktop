@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=kfloppy
+Icon=kfloppy
+Name=KFloppy
+GenericName=Floppy Formattor
+GenericName[he]=מפרמט דיסקטים
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

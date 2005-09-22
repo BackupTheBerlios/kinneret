@@ -1,0 +1,14 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/xmms
+Hidden=false
+Icon=xmms
+Name=Listen to music
+Name[he]=לשמוע מוזיקה
+GenericName=xmms
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

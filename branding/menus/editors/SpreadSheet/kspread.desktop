@@ -1,0 +1,21 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=KSpread
+Name[af]=kspread
+Name[eo]=Tabelkalkulilo
+Name[fo]=KRokni
+Name[pt_BR]=KSpread - planilha eletrônica
+Name[sv]=Kspread
+Name[th]=กระดาษคำนวณ K
+Name[ven]=U phadaladza ha K
+Name[xx]=xx
+Exec=kspread
+X-KDE-Library=libkspreadpart
+MimeType=application/x-kspread;application/msexcel
+Type=Application
+Icon=kspread
+ServiceTypes=KOfficePart,KParts/ReadOnlyPart,KParts/ReadWritePart,text/x-csv,application/x-kspread-crypt,application/x-quattropro
+X-KDE-NativeMimeType=application/x-kspread
+X-DCOP-ServiceType=multi
+DocPath=kspread/index.html
+X-KDE-StartupNotify=true

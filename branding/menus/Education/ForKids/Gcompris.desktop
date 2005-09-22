@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/games/gcompris
+Icon=gcompris
+Name=GCompris
+GenericName=Several edu-games
+GenericName[he]=משחקי-לומדה
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

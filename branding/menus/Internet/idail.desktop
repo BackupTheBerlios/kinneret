@@ -1,0 +1,12 @@
+[Desktop Entry]
+Comment=
+Exec=sudo idial
+Icon=connect_creating
+Name=Internet dialer
+Name[he]=חייגן האינטרנט
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

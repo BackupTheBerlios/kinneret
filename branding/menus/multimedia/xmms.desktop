@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=xmms
+Icon=xmms
+Name=xmms
+GenericName=Music
+GenericName[he]=מוזיקה
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

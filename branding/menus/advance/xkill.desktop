@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/X11/xkill
+Icon=no
+Name=xkill
+GenericName=Process killer
+GenericName[he]=מחסל תהליכים
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/kmplot
+Icon=kmplot
+Name=Kmplot
+GenericName=Math Plot
+GenericName[he]=חקירת פונקציות
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

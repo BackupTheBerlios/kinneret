@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=xterm -bg black -fg white
+Icon=xconsole
+Name=XTerm
+GenericName=Console
+GenericName[he]=מסוף
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

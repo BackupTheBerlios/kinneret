@@ -1,0 +1,11 @@
+[Desktop Entry]
+Comment=
+Exec=kprinter
+Icon=print_class
+Name=Printers management
+Name[he]=ניהול מדפסות
+Path=
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

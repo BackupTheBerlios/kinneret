@@ -1,0 +1,12 @@
+[Desktop Entry]
+Comment=
+Exec=kruler
+Icon=kruler
+Name=KRuler
+GenericName=Ruler
+GenericName[he]=סרגל
+Path=
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

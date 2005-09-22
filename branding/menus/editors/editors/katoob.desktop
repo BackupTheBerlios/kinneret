@@ -1,0 +1,14 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/katoob
+Icon=text_right
+Name=katoob
+GenericName=Text Editor
+GenericName[he]=עורך טקסט
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+MimeType=text/rtf

@@ -1,0 +1,18 @@
+[Desktop Entry]
+DocPath=konqueror/index.html
+Encoding=UTF-8
+Exec=kfmclient openProfile webbrowsing
+GenericName=Web browser
+GenericName[he]=דפדפן
+Hidden=false
+Icon=konqueror
+InitialPreference=11
+MimeType=text/html
+Name=קונקי
+Name[he]=קונקי
+Path=
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

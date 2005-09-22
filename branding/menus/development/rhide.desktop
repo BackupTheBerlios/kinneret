@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/rhide
+Icon=xosview
+Name=rhide
+GenericName=Torbo Pascal Compatible
+GenericName[he]=תואם טורבו פסקל
+Path=
+Terminal=1
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

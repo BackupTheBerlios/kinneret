@@ -1,0 +1,12 @@
+[Desktop Entry]
+Comment=
+Exec=krfb
+Icon=krfb
+Name=Krfb
+GenericName=Desktop Shareing
+GenericName[he]=שיתוף שולחנות עבודה
+Path=
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

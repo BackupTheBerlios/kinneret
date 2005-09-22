@@ -1,0 +1,12 @@
+[Desktop Entry]
+Comment=
+Exec=kompare
+Icon=kompare
+Name=Kompare
+GenericName=File compare tool
+GenericName[he]=השוואה בין קבצים
+Path=
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

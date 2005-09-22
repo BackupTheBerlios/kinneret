@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=knotes
+Icon=knotes
+Name=KNotes
+GenericName=Sticky notes
+GenericName[he]=פתקי תזכורת
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

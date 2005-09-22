@@ -1,0 +1,19 @@
+[Desktop Entry]
+Comment=knrtheme - a kcontol module
+Comment[en_US]=knrtheme - a kcontol module
+Encoding=UTF-8
+Exec=kcmshell knrtheme
+GenericName=
+GenericName[en_US]=
+Icon=
+Keywords=knrtheme,knrtheme
+MimeType=
+Name=Kinneret's Theme Manager
+Name[en_US]=Kinneret's Theme Manager
+Name[he]=מנהל ערכות הנושא של כנרת
+ServiceTypes=
+Terminal=false
+Type=Application
+X-KDE-FactoryName=knrtheme
+X-KDE-Library=knrtheme
+X-KDE-ModuleType=Library

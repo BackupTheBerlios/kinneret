@@ -1,0 +1,14 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/sim
+Icon=sim
+Name=SIM
+Name[he]=סים
+GenericName=ICQ client
+GenericName[he]=לקוח ICQ
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/kstars
+Icon=kstars
+Name=Kstars
+GenericName=Astronomy
+GenericName[he]=אסטרונומיה
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

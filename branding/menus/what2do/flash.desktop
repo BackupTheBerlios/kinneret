@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=install_flashplugin.sh -ni
+Icon=blockdevice
+Name=Install flash plug-in
+Name[he]=להתקין פלאש
+Hidden=true
+Path=
+Terminal=1
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

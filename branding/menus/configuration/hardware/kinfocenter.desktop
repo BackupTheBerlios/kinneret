@@ -1,0 +1,11 @@
+[Desktop Entry]
+Comment=
+Exec=kinfocenter
+Icon=hwinfo
+Name=KInfoCenter - Hardware Information
+Name[he]=תצורת חומרה
+Path=
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

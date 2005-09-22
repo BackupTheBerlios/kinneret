@@ -1,0 +1,15 @@
+[Desktop Entry]
+Comment=
+Exec=ark
+GenericName=Compressing
+GenericName[he]=כיווץ
+Icon=ark
+InitialPreference=2
+MimeType=application/x-zip
+Name=Ark
+Path=
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Comment=
+Exec=kbounce
+Icon=kbounce
+Name=KBounce
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

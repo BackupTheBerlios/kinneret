@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/configure_bttv
+Icon=tv
+Name=Configure TV card
+Name[he]=הגדרת כרטיס טלויזיה
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+Hidden=true

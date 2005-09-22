@@ -1,0 +1,16 @@
+[Desktop Entry]
+DocPath=kmail/index.html
+Encoding=UTF-8
+Exec=kmail -caption "%c" %i %m
+GenericName[he]=תוכנית דואר
+Hidden=false
+Icon=kmail
+Name=KMail
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-DCOP-ServiceType=Unique
+X-KDE-StartupNotify=true
+X-KDE-SubstituteUID=false
+X-KDE-Username=

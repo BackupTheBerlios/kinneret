@@ -1,0 +1,14 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/konversation
+Hidden=false
+Icon=/usr/share/icons/locolor/32x32/apps/konversation.png
+Name=Konversation
+GenericName=IRC Client
+GenericName[he]=לקוח IRC
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

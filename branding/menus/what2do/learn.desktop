@@ -1,0 +1,14 @@
+[Desktop Entry]
+Comment=
+Exec=/opt/kinneret/bin/swim
+Icon=babelfish
+Name=Learn about the system
+Name[he]=ללמוד על המערכת
+GenericName=Swim Guide
+GenericName[he]=מדריך השחייה
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

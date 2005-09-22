@@ -1,0 +1,12 @@
+[Desktop Entry]
+Comment=
+Exec=kfax
+Icon=kfax
+Name=KFax
+GenericName=Send & Recive Fax
+GenericName[he]=שליחת וקבלת פקסים
+Path=
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

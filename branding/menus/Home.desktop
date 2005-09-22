@@ -1,0 +1,12 @@
+[Desktop Entry]
+Comment=Home
+Encoding=UTF-8
+Exec=kfmclient openProfile filemanagement
+GenericName[en]=Personal Files
+Icon=folder_home.png
+InitialPreference=11
+MimeType=inode/directory
+Name=בית
+Name[he]=בית
+Terminal=false
+Type=Application

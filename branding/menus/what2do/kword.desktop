@@ -1,0 +1,15 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Write A document
+Name[he]=לכתוב מסמך
+Exec=kword
+X-KDE-Library=libkwordpart
+GenericName=KWord
+MimeType=application/x-kword;application/msword
+Type=Application
+Icon=kword
+ServiceTypes=KOfficePart,KParts/ReadOnlyPart,KParts/ReadWritePart,text/plain,application/x-kword-crypt,application/x-mswrite
+X-KDE-NativeMimeType=application/x-kword
+DocPath=kword/index.html
+X-KDE-StartupNotify=true
+X-DCOP-ServiceType=Multi

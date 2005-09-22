@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=/opt/kinneret/karamba/The/The
+Icon=tv
+Name=Karamba
+Name[he]=קרמבה
+GenericName[he]=מדדים על שולחן העבודה
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

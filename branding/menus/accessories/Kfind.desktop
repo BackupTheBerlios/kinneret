@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=kfind
+Icon=kfind
+Name=KFind
+GenericName=File Finder
+GenericName[he]=חיפוש קבצים
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

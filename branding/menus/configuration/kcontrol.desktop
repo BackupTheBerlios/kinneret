@@ -1,0 +1,11 @@
+[Desktop Entry]
+Exec=kcontrol -caption "%c" %i %m
+Icon=kcontrol
+Name=KDE control center
+Name[he]=מרכז הבקרה של KDE
+DocPath=kcontrol/index.html
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

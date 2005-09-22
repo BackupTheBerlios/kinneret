@@ -1,0 +1,14 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/kugar
+Hidden=false
+Icon=kugar
+Name=Kugar
+GenericName=Business Reports
+GenericName[he]=מחולל דוחות
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

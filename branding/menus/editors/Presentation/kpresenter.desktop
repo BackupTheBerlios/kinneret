@@ -1,0 +1,25 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=KPresenter
+Name[af]=kpresenter
+Name[eo]=Prezentilo
+Name[fo]=KFramvísari
+Name[mk]=K-презентација
+Name[nl]=Kpresenter
+Name[pt_BR]=KPresenter - Gerador de apresentações
+Name[sv]=Kpresenter
+Name[th]=การนำเสนอข้อมูล
+Name[ven]=Mulanguli wa K
+Name[xh]=Umbonisi we K
+Name[xx]=xx
+Name[zu]=Umbonikeleli we K
+Exec=kpresenter
+X-KDE-Library=libkpresenterpart
+MimeType=application/x-kpresenter;application/mspowerpoint
+Type=Application
+Icon=kpresenter
+ServiceTypes=KOfficePart,KParts/ReadOnlyPart,KParts/ReadWritePart
+X-KDE-NativeMimeType=application/x-kpresenter
+X-DCOP-ServiceType=multi
+DocPath=kpresenter/index.html
+X-KDE-StartupNotify=true

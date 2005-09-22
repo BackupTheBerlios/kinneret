@@ -1,0 +1,22 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=KWord
+Name[af]=kword
+Name[eo]=Verkilo
+Name[fo]=KOrð
+Name[is]=Ritvinnsla
+Name[lv]=KWords
+Name[pt_BR]=KWord - processador de texto
+Name[sv]=Kword
+Name[th]=เอกสารข้อความ K
+Name[xx]=xx
+Exec=kword
+X-KDE-Library=libkwordpart
+MimeType=application/x-kword;application/msword
+Type=Application
+Icon=kword
+ServiceTypes=KOfficePart,KParts/ReadOnlyPart,KParts/ReadWritePart,text/plain,application/x-kword-crypt,application/x-mswrite
+X-KDE-NativeMimeType=application/x-kword
+DocPath=kword/index.html
+X-KDE-StartupNotify=true
+X-DCOP-ServiceType=Multi

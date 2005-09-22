@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Konqueror
+Comment=Konqueror
+Exec=kfmclient openURL %u
+Terminal=false
+Icon=konqueror.png
+
+Encoding=UTF-8
+Terminal=0
+InitialPreference=9
+NoDisplay=true
+X-DCOP-ServiceType=Multi
+Type=Application
+Name[en_US]=Konqueror
+Name[en]=Konqueror

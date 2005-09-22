@@ -1,0 +1,12 @@
+[Desktop Entry]
+Comment=
+Exec=kthesaurus
+Icon=contents
+Name=KThesaurus
+GenericName=English thesaurus
+GenericName[he]=מילים נרדפות באנגלית
+Path=
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

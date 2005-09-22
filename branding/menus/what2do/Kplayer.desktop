@@ -1,0 +1,14 @@
+[Desktop Entry]
+Comment=
+Exec=/usr/bin/kplayer
+Icon=kplayer
+Name=Watch movies
+Name[he]=לצפות בסרטים
+GenericName=KPlayer
+Path=
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+
