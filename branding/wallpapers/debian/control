@@ -1,0 +1,15 @@
+Source: kinneret-wallpapers
+Section: kinneret
+Priority: optional
+Maintainer: Gai Shaked <shaked.gai@gmail.com>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.2
+
+Package: kinneret-wallpapers
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Replaces: kinnertwp
+Conflicts: kinnertwp
+Description: GNU/Linux Kinneret wallpapers package
+ GNU/Linux Kinneret wallpapers package
+
