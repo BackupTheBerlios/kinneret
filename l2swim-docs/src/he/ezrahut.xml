@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<article lang="hebrew">
+<title>
+עזרים ללימודי אזרחות
+</title>
+
+<copy>
+מסמך זה נכתב ע"י <link href="mailto:costello@linux-kinneret.org">גיא שקד</link>,נובמבר 2005
+<newl/>
+כל הזכויות למדריך שמורות לפרוייקט גנו/לינוקס כנרת
+<newl/>
+הרשות נתונה בזאת להעתיק, להפיץ ו/או לשנות את המסמך הזה, תחת תנאי רשיון ה GNU לשימוש חופשי במסמכים, גרסה 1.2 או כל גרסה מאוחרת יותר שתפורסם ע"י קרן התוכנה החופשית.
+</copy>
+
+<toc lang="hebrew"/>
+
+<main>
+
+<para>
+מסמך זה מרכז מגוון מקורות מידע ועזרים ללימודי אזרחות
+</para>
+
+<chapter>
+מקורות מידע מקוונים
+</chapter>
+
+<bullets>
+<item>
+	<link href="http://sikumuna.co.il/wiki/%D7%90%D7%96%D7%A8%D7%97%D7%95%D7%AA">סיכומים בנושאי אזרחות - באתר סיכומונה</link><web/>
+</item>
+<item>
+	<link href="http://www.daat.ac.il/daat/ezrachut/ezrahut-2.htm">ריכוז מאמרים על פי תוכנית הלימודים - באתר דעת </link><web/>
+</item>
+<item>
+	<link href="http://www.mkm-haifa.co.il/schools/ironig/bg/c_hp0.htm">לימודי אזרחות - באתר בית הספר עירוני ג' בחיפה</link><web/>
+</item>
+</bullets>
+
+</main>
+
+</article>

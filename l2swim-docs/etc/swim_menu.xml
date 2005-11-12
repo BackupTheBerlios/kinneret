@@ -30,48 +30,38 @@
 
 <menu name="mainmenu" title="גנו/לינוקס כנרת">
 	<chapter>
-		ברוך בואך לגנו/לינוקס כנרת!
+		ברוך בואך לכנרת!
 	</chapter>
 
 	<text><![CDATA[
-		מדריך זה יעזור לך להכיר חלק ממגוון היישומים והאפשרויות הכלולים במערכת, וילווה אותך לאורך השימוש במערכת. מדריך זה גם מכיל מידע על הפרוייקט וכן יאפשר לך להתוודע לעקרונות הקוד הפתוח והתוכנה החופשית, שבזכותם הפצה זו מתאפשרת. <br><br> צוות הפרוייקט מברך אותך על הפעלת תקליטור זה ומאחל לך הנאה ועבודה פוריה!
+		מדריך השחייה הוא מרכז המידע של כנרת, הוא יעזור לך להכיר את מגוון היישומים הנכללים בפרוייקט ואופן השימוש בהם. בנוסף כולל מדריך השחייה מידע על הפרוייקט ועל עקרונות הקוד הפתוח והתוכנה החופשית שעומדים בבסיסו.
 	]]></text>
   
 	<link name="index1"><![CDATA[
-		<img src="/opt/kinneret/images/star.png">לומדים לשחות בכנרת - מדריכים להכרות עם המערכת
+		<img src="/opt/kinneret/images/star.png">לומדים לשחות בכנרת - מדריכים ליישומי הפרוייקט
 	]]></link>
-
+	<link name="index5"><![CDATA[
+		אודות פרוייקט כנרת
+	]]></link>
 	<link name="index4">
 		החופש לבחור - אוסף מאמרים על תוכנה חופשית, קוד פתוח ולינוקס
  	</link>
  
-	<link name="index5"><![CDATA[
-		אודות פרוייקט כנרת - מידע כללי על הפצת <b><i>גנו/לינוקס כנרת</b></i>
-	]]></link>
 
 	<text><![CDATA[
 		<font size=2>קישורים המסומנים בכוכבית (<img src="/opt/kinneret/images/star.png">) מומלצים להכרות ראשונית עם המערכת. קישורים המסומנים בסימן קריאה (<img src="/opt/kinneret/images/exclamation.png">) חשובים מאוד לידיעתך. קישורים המסומנים בגלובוס (<img src="/opt/kinneret/images/globe.png">) דורשים חיבור לאינטרנט.</font><br><br>
-		<font color=grey><i>מדריכים בשפות לועזיות:</i></font>
 	]]></text>
-
-	<link name="arabic">
-		إضغط هنا للوثائق في أللغه ألعربيه.
-	</link>
-
-	<link name="english">
-		Click here for English documentation
-	</link>
 
 	<text><![CDATA[
 		<font color=grey>____________________________________________________________</font><BR>
-		<font color=red size=2>חשוב לדעת!</font><font size=2> <b><i>גנו/לינוקס כנרת</b></i> מסופקת "כפי שהיא", בלא אחריות מסוג כלשהו, בין אם מפורשת ובין אם משתמעת, לרבות, אך מבלי למעט מהאמור, האחריות המשתמעת למסחריות והתאמה למטרה מסוימת. בעלי זכויות היוצרים ו/או מפיצי התוכנה לא ישאו כלפיך באחריות לנזקים, לרבות נזקים כלליים, מיוחדים, משניים או תוצאתיים כלשהם, הנובעים מהשימוש או מאי-היכולת להשתמש בתוכנות המסופקות. </font>
+		<font color=red size=2>חשוב לדעת!</font><font size=2> <b><i> כנרת</b></i> מסופקת "כפי שהיא", בלא אחריות מסוג כלשהו, בין אם מפורשת ובין אם משתמעת, לרבות, אך מבלי למעט מהאמור, האחריות המשתמעת למסחריות והתאמה למטרה מסוימת. בעלי זכויות היוצרים ו/או מפיצי התוכנה לא ישאו כלפיך באחריות לנזקים, לרבות נזקים כלליים, מיוחדים, משניים או תוצאתיים כלשהם, הנובעים מהשימוש או מאי-היכולת להשתמש בתוכנות המסופקות. </font>
 	]]></text>
 
 	<link type="play" name="he/kinneret_license.html" image="kinneret-cap-s.png"><![CDATA[
 		<img src="/opt/kinneret/images/exclamation.png"><font color=red size=2>עליך לקרוא בעיון את רישיון השימוש המלא ולהסכים לנאמר בו לפני השימוש בהפצה זו </font> 
   	]]></link>
 	
-  	<link type="http" name="www.linux-kinneret.org"><![CDATA[
+  	<link type="http" name="kinneret.berlios.de"><![CDATA[
 		<img src="/opt/kinneret/images/globe.png"><font size=2> אתר הבית של הפרויקט</font>
 	]]></link>
 </menu>
@@ -82,10 +72,101 @@
 	</chapter>
 
 	<text><![CDATA[
-		פרק זה יאפשר לך להכיר את <b><i>גנו/לינוקס כנרת</b></i> ולהפיק את המירב ממנה .המדריכים בפרק זה יאפשרו לך לשנות את הגדרות המערכת באופן שיתאימו לצרכיך ולרצונותיך, להתחבר לאינטרנט וכמוכן להכיר את מגוון היישומים הענק.<br><br>פרק זה גם כולל את מדריך ההפעלה הראשונית של גנו/לינוקס כנרת בכדי לאפשר לך להדפיס את המדריך לשימוש חבריך.לאחר מכן מומלץ לך להתוודע לממשק המשתמש של <b><i>גנו/לינוקס כנרת</b></i> וללמוד להשתמש בחלק ממגוון היישומים הכלולים בתקליטור.
+		פרק זה יאפשר לך להכיר את מגוון הכלים הכלולים בפרוייקט כנרת ולהפיק מהם את המירב.
  	]]></text>
  
-	<link type="play" name="he/tour_kinneret.html"><![CDATA[
+	<text><![CDATA[
+		<font size=4><b><u>אזרחות</b></u></font>
+	]]></text>
+	<link type="play" name="he/ezrahut.html"><![CDATA[
+		עזרים ללימודי אזרחות
+	]]></link>
+	
+	<text><![CDATA[
+		<font size=4><b><u>אנגלית</b></u></font>
+	]]></text>
+	<link type="play" name="he/KVocTrain.html"><![CDATA[
+		הרחבת אוצר המילים באמצעות KVocTrain
+	]]></link>
+	
+	<text><![CDATA[
+		<font size=4><b><u>ביולוגיה</b></u></font>
+	]]></text>
+	
+	<text><![CDATA[
+		<font size=4><b><u>גאוגרפיה</b></u></font>
+	]]></text>
+	
+	<text><![CDATA[
+		<font size=4><b><u>חשמל ואלקטרוניקה</b></u></font>
+	]]></text>
+	
+	<text><![CDATA[
+		<font size=4><b><u>כימיה</b></u></font>
+	]]></text>
+	
+	<text><![CDATA[
+		<font size=4><b><u>מדעי המחשב</b></u></font>
+	]]></text>
+	
+	<text><![CDATA[
+		<font size=4><b><u>מוזיקה</b></u></font>
+	]]></text>
+	
+	<text><![CDATA[
+		<font size=4><b><u>מכונות</b></u></font>
+	]]></text>
+	
+	<text><![CDATA[
+		<font size=4><b><u>מתמטיקה</b></u></font>
+	]]></text>
+	
+	<text><![CDATA[
+		<font size=4><b><u>ספרות</b></u></font>
+	]]></text>
+	
+	<text><![CDATA[
+		<font size=4><b><u>עברית</b></u></font>
+	]]></text>
+	
+	<text><![CDATA[
+		<font size=4><b><u>ערבית</b></u></font>
+	]]></text>
+	
+	<text><![CDATA[
+		<font size=4><b><u>פיזיקה</b></u></font>
+	]]></text>
+	
+	<text><![CDATA[
+		<font size=4><b><u>תנ"ך</b></u></font>
+	]]></text>
+	
+	<text><![CDATA[
+		<font size=4><b><u>אחרים</b></u></font>
+	]]></text>
+	<link type="play" name="he/man_ooo_basic.html">
+		מדריך שימוש בסיסי בערכת היישומים המשרדיים OpenOffice.org [טיוטה]
+	</link>
+	<link type="play" name="he/man_ooo_advanced.html">
+		מדריך שימוש מתקדם בערכת היישומים המשרדיים OpenOffice.org
+	</link>
+
+	
+	<text><![CDATA[
+		<font size=4><b><u>מדריכים ליישומי פנאי</b></u></font>
+	]]></text>
+	<link type="play" name="he/man_games.html"><![CDATA[
+		<img src="/opt/kinneret/images/star.png">מדריך משחקי מחשב 
+	]]></link>
+	<link type="play" name="he/man_cheese.html">
+		מדריך הלחנת מנגינות עם Cheese Tracker
+	</link>
+	<link type="play" name="he/man_kpovmodeler.html">
+		מדריך עיצוב תמונות תלת-מימדיות עם KPovModeler
+	</link>
+	
+
+	<!--link type="play" name="he/tour_kinneret.html"><![CDATA[
 		<img src="/opt/kinneret/images/star.png">שייט הכרות בכנרת - צילומי נוף ממדריך התיירים
 	]]></link>
 
@@ -112,7 +193,7 @@
 	<link type="play" name="he/first_time.html"><![CDATA[
 		<font color=grey>____________________________________________________________</font><br>
 		<font size=2>מדריך הפעלה והגדרת תצורה ראשונית</font>
-	]]></link>
+	]]></link-->
 </menu>
 
 <menu name="index14" image="kinneret-cap-s.png" title="מדריכי יישומים">
