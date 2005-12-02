@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link title="StyleSheet" rel="stylesheet" href="../../etc/l2swim.css" type="text/css">
+<title>
+KVocTrain
+</title>
+</head>
+<body dir="rtl" class="rtl">
+<CENTER>
+<IMG SRC="../image/blue_bar.png" ALT="----------"><H1><FONT COLOR="BLUE">
+KVocTrain
+</FONT></H1>
+<IMG SRC="../image/blue_bar.png" ALT="----------">
+</CENTER>
+<BR><center><table bgcolor="#99ccff" width="90%" cellpadding="5" cellspacing="0" border="1"><tr><td align="center">
+מסמך זה נכתב ע"י <a target="_blank" href="mailto:shaked.gai@gmail.com">גיא שקד</a>, דצמבר 2005
+<BR>
+כל הזכויות למדריך שמורות לפרוייקט גנו/לינוקס כנרת
+<BR>
+הרשות נתונה בזאת להעתיק, להפיץ ו/או לשנות את המסמך הזה, תחת תנאי רשיון ה GNU לשימוש חופשי במסמכים, גרסה 1.2 או כל גרסה מאוחרת יותר שתפורסם ע"י קרן התוכנה החופשית.
+</td></tr></table></center>
+<br><form name="contents" action="">
+<b>תוכן</b>:
+	<select name="url" size="1" OnChange="location.href=form.url.options[form.url.selectedIndex].value" style="font-family:Arial,Helvetica,sans-serif; font-size:10"><option value="#doc_chap
+				1">1.
+				הכרות בסיסיות</option>
+<option value="#doc_chap
+				2">2.
+				לימוד</option>
+<option value="#doc_chap
+				3">3.
+				עריכת אוצר-מילים</option></select>
+</form>
+
+<p>
+KVocTrain היא תוכנה לאימון והרחבת אוצר המילים במגוון שפות. מדריך זה ידריך אותך בשימוש בתוכנה לצרכי לימוד ובניית מסמכי אוצר-מילים.
+</p>
+<p><U><FONT COLOR="BLUE"><B><span><a name="doc_chap1">1. </a></span>הכרות בסיסיות</B></FONT></U></p>
+<CENTER><IMG SRC="../image/man_kvoctrain1.png" ALT="../image/man_kvoctrain1.png"></CENTER>
+החלון הראשי של KVocTrain כולל ארבעה איזורים -
+<ul>
+<li>שורת התפריטים - המאפשרת גישה לכל האפשרויות והתכונות הכלולות בתוכנה. בין השאר נשתמש בה על מנת לפתוח ולשמור קבצים, לשנות הגדרות, ולהפיל את חלון הלימוד</li>
+<li>סרגל הכלים המאפשר גישה מהירה לפעולות נפוצות כמו פתיחת קובץ, העתקה, הדבקה וחיפוש.</li>
+<li>טבלת אוצר המילים, בה מופיעים (מימין לשמאל) - שם השיעור, עמודה המורה האם השורה פעילה או לא, שפת המקור (בדוגמה הנ"ל - אנגלית) שפת היעד (בדוגמה - עברית) ושפות נוספות - אם הן קיימות במסמך.</li>
+<li>שורת הסטטוס - בה מופיעים פרטים שונים אודות השורה הנבחרת, ובזמן פעולות ארוכות (כמו פתיחה או שמירה של קובץ גדול) יופיע בה כיתוב בהתאם.</li>
+</ul>
+
+<p><U><FONT COLOR="BLUE"><B><span><a name="doc_chap2">2. </a></span>לימוד</B></FONT></U></p>
+<p><B><I><FONT COLOR="BLUE"><B>שימוש בסיסי</B></FONT></I></B></p>
+<p><I><FONT COLOR="BLUE" SIZE="-1">מסמך אוצר-מילים</FONT></I></p>
+<p>
+קבצי KVocTrain נקראים מסמכי אוצר-מילים. מסמך אוצר-מילים מתאים בין מילים בשתי שפות או יותר. ניתן לבחור מסמך אוצר-מילים מתוך הקבצים המופצים כחלק מכנרת -
+</p>
+<ul><li>en-he.kvtml - מסמך אוצר-מילים הכולל שמות חיות בעברית ובאנגלית</li></ul>
+<p>
+או להוריד קבצים נוספים, ללימוד שפות נוספות מ<a target="_blank" href="http://edu.kde.org/contrib/kvtml.php">אתר האינטרנט הרשמי</a>.
+</p>
+
+<p><I><FONT COLOR="BLUE" SIZE="-1">סוג השאלות</FONT></I></p>
+<p>
+הלימוד באמצעות KVocTrain מתבצע לרוב על ידי אחת משתי שיטות - שאילתה אקראית, ושאלות אמריקאיות. בשאילתה אקראית התוכנה תציג בכל פעם מילה אקראית מתוך השאילתה בשפה מסויימת, ואנחנו נצטרך להקליד את המילה המתאימה בשפה שנייה. בשאלות אמריקאיות התוכנה תציג בכל פעם מילה אחת בשפה מסויימת, וחמש מילים מתוך אוצר המילים בשפה אחרת - ואנחנו נצטרך לבחור את המילה המתאימה.
+</p>
+<p>
+על מנת להתחיל בתהליך הלמידה יש לבחור בתפריט "לימוד" את השפה אותה נרצה ללמוד (למשל על מנת שהתוכנה תציג מילה באנגלית ואנו נצטרך להקליד את המקבילה העברית שלה יש לבחור בעברית). מתוך התפריט שנפתח יש לבחור שאילתה אקראית או אמריקאית, ובמידת הצורך את השפה על בסיסה ייבנו השאלות.
+</p>
+
+<p><I><FONT COLOR="BLUE" SIZE="-1">חלון הלימוד</FONT></I></p>
+<p>
+
+</p>
+
+<p><B><I><FONT COLOR="BLUE"><B>שימוש מתקדם</B></FONT></I></B></p>
+<p><I><FONT COLOR="BLUE" SIZE="-1">ערכי סף</FONT></I></p>
+<p><I><FONT COLOR="BLUE" SIZE="-1">חסימות ופקיעות</FONT></I></p>
+
+<p><U><FONT COLOR="BLUE"><B><span><a name="doc_chap3">3. </a></span>עריכת אוצר-מילים</B></FONT></U></p>
+<table bgcolor="#99ccff" width="100%" cellpadding="5" cellspacing="0" border="0"><tr><td align="center">
+מסמך זה עובד ונערך עבור <a href="http://www.linux-kinneret.org">גנו/לינוקס כנרת</a>, תוך שימוש בתוכנה חופשית בלבד. עמוד זה <a href="http://validator.w3.org/check/referer" target="new">תואם לתקנים בינלאומיים</a><IMG SRC="../image/globe.png" ALT="(web)"> המאפשרים צפיה בכל דפדפן תקני.
+					</td></tr></table>
+<table bgcolor="#bbffbb" width="100%" cellpadding="5" cellspacing="0" border="0"><tr><td align="center">
+לינוקס הוא שם רשום של Linus Torvalds; יוניקס הוא שם רשום של ה Open Group בארה"ב ובמדינות נוספות, Windows הוא שם רשום של Microsoft Corporation. כל שאר השמות הרשומים וזכויות היוצרים שייכים לבעליהם.
+					</td></tr></table>
+<table bgcolor="#ffffbb" width="100%" cellpadding="5" cellspacing="0" border="0"><tr><td align="center">
+חשוב לדעת! גנו/לינוקס כנרת מסופקת "כפי שהיא", בלא אחריות מסוג כלשהו, בין אם מפורשת ובין אם משתמעת, לרבות, אך מבלי למעט מהאמור, האחריות המשתמעת למסחריות והתאמה למטרה מסוימת. בעלי זכויות היוצרים ו/או מפיצי התוכנה לא ישאו כלפיך באחריות לנזקים, לרבות נזקים כלליים, מיוחדים, משניים או תוצאתיים כלשהם, הנובעים מהשימוש או מאי-היכולת להשתמש בתוכנות המסופקות. עליך .לקרוא בעיון את רישיון השימוש המלא ולהסכים לנאמר בו לפני השימוש בהפצה זו.
+					<IMG SRC="../image/exclamation.png" ALT="!">
+</td></tr></table>
+</body>
+</html>
