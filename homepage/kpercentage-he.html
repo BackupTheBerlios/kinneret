@@ -129,7 +129,7 @@ document.write("יום "+dayname+", "+date+" ב"+monthname+", "+yearname);
       <table width="150" border="0" cellspacing="0" cellpadding="0">
         <tr> 
           <td STYLE="background-color:#7494F0" width="3"><font color="#FFFFFF">&nbsp;</font></td>
-          <td STYLE="background-color:#7494F0"><font color="#333333">הוראות&nbsp;שימוש</font></td>
+          <td STYLE="background-color:#7494F0"><a href="useage-he.html">הוראות&nbsp;שימוש</a></td>
           <td><img src="rtl/navbartop.gif" width="40" height="20" alt=""></td>
         </tr>
         <tr> 
@@ -162,52 +162,26 @@ document.write("יום "+dayname+", "+date+" ב"+monthname+", "+yearname);
         <tr>
           <td> 
 
-<p><span style="font-weight: bold;">שימוש בכלים שמציע פרוייקט כנרת</span></p>
-<ul>
-<li><a href="#applist" class="orange_white">רשימת התוכנות</a></li>
-<li><a href="#debian" class="orange_white">שימוש תחת מערכות מבוססות דביאן</a></li>
-<ul>
-<li><a href="#deb-list" class="orange_white">רשימת החבילות</a></li>
-</ul>
-<li><a href="#other" class="orange_white">שימוש במערכות גנו/לינוקס אחרות</a></li>
-<ul>
-אם אתה משתמש במערכת מבוססת גנו/לינוקס לצרכים חינוכיים יכול להיות שכבר היום אתה משתמש בתוצרים של פרוייקט כנרת מבלי להיות מודע לכך. תרגומי תוכנות לדוגמא מופצים בחזרה אל פרוייקטי האם, מסמכים נכתבים תחת רשיון ה-GFDL ורכיבי תוכנה נכתבים תחת רשיון ה-GPL ומופצים הלאה. אם אתה מעוניין להעמיק את השימוש שלך בתוצרי פרוייקט כנרת אתה מוזמן להמשיך לקרא.
-<a name="applist" /><p><u><b>רשימת התוכנות</b></u></p>
+<div style="float:left"><img src="kpercentage.png" width="128" height="128"></div>
+<p><span style="font-weight: bold;">KPercentage - תוכנה לאימון בתרגילי אחוזים</span></p>
 <p>
-פרוייקט כנרת שואף לספר מגוון רחב של פתרונות למגוון הצרכים של התלמיד הישראלי, ניתן להתרשם ממגוון הכלים, ומסטטוס העבודה על כל אחד מהם באמצעות <a href="http://cvs.berlios.de/cgi-bin/viewcvs.cgi/*checkout*/kinneret/docs/applist/educational.html?rev=HEAD&content-type=text/html" class="orange_white" target="new">טבלת היישומים</a>. יישומים להם קיימים כיום תרגום לעברית ותיעוד במסגרת הפרוייקט הם -
+KPercentage היא תוכנה לאימון בתרגילי חשבון הכוללים אחוזים, לתלמידי בית הספר היסודי.
 </p>
 <p>
-<a href="kbruch-he.html" class="orange_white">KBruch</a> - תוכנה לאימון בתרגילי שברים.<br>
-<a href="kpercentage-he.html" class="orange_white">KPercentage</a> - תוכנה לאימון בתרגילי אחוזים.
+אתר הבית - <a href="http://edu.kde.org/kbruch/" class="orange_white" target="new">http://edu.kde.org/kpercentage</a>
 </p>
-<a name="debian" /><p><u><b>שימוש תחת מערכת מבוססת דביאן</b></u></p>
-<p>פרוייקט כנרת מחזיק מאגר APT שמכיל את כל התוצרים שאינם קיימים במאגרים הרשמיים. על מנת להשתמש במאגר יש להוסיף את השורה - 
-<div align="left" dir="ltr"><b>deb ftp://ftp.berlios.de/pub/kinneret/apt/ kinneret main</b></div>
-אל הקובץ -
-<div align="left" dir="ltr"><b>/etc/apt/sources.list</b></div>
-<br>
-שימו לב - חלק מהחבילות במאגר תלויות בחבילות אחרות מהמאגר הרשמי של דביאן מגרסת testing.</p>
-<a name="deb-list" /><p><u>רשימת החבילות</u></p>
-<p>
-<b>confwiz</b> - אשף הפעם הראשונה - עבור גרסת הLiveCD של כנרת.<br>
-<b>graphthing</b> תוכנה ליצירת וביצוע מניפולציות על גרפים, ללימודי תורת הגרפים.<br>
-<b>knrtheme</b> - אשף ערכות הנושא של כנרת.<br>
-<b>l2swim</b> - מדריך השחיה - מרכז המידע של כנרת.<br>
-<b>l2swim-docs</b> - כל מסמכי מדריך השחיה.<br>
-<b>xmms-bidi</b> - נגן המוזיקה XMMS עם תמיכה בעברית.<br>
+<p><u>הורדה</u><br>
+קוד מקור - <a href="http://edu.kde.org/kpercentage/obtain.php" class="orange_white" target="new">הוראות להורדת הגרסה החדשה ביותר מה-CVS</a><br>
+חבילת DEB - <a href="http://packages.debian.org/testing/math/kpercentage"  class="orange_white" target="new">במאגר ה-testing</a>
 </p>
-<b>חבילות מטא</b><br>
-בנוסף לחבילות התוכנה כולל המאגר של כנרת חבילות מטא, שיוודאו שכל הרכיבים הקשורים בנושא מסויים יותקנו במערכת שלך - על ידי בחירת חבילה אחת בלבד.
-<p>
-<b>kinneret-math-yesodi</b> - מתמטיקה לתלמידי היסודי<br>
-<b>kinneret-math-hativa</b> - מתמטיקה לתלמידי החטיבה<br>
-<b>kinneret-math-tichon</b> - מתמטיקה לתלמידי התיכון<br>
-<b>kinneret-math-university</b> - מתמטיקה להשכלה גבוהה<br>
-<b>kinneret-math-full</b> - מתמטיקה לכל הגילאים<br>
+<p><u>תרגום</u><br>
+קובץ ה-PO - <a href="http://websvn.kde.org/*checkout*/trunk/l10n/he/messages/kdeedu/kpercentage.po" class="orange_white" target="new">באתר התרגום של KDE</a><br>
+חבילת DEB - <a href="http://packages.debian.org/testing/kde/kde-i18n-he"  class="orange_white" target="new">במאגר ה-testing</a>
 </p>
-<a name="other" /><p><u><b>שימוש במערכות גנו/לינוקס אחרות</b></u></p>
-<p>כל הרכיבים שמפותחים באופן עצמאי בפרוייקט כנרת זמינים ב<a href="http://cvs.berlios.de/cgi-bin/viewcvs.cgi/kinneret/" class="orange_white" target="new">שרת ה-CVS של כנרת</a> ממנו ניתן להוריד גרסאות עדכניות של התוכנות והמסמכים.</p>
-<p>התרגומים המתבצעים כחלק מהפרוייקט מופצים בחזרה אל פרוייקטי האם וזמינים מאתרי הפרוייקטים השונים</p>
+<p><u>תיעוד</u><br>
+מסמך HTML - <a href="http://cvs.berlios.de/cgi-bin/viewcvs.cgi/*checkout*/kinneret/l2swim-docs/doc/he/man_kpercentage.html?rev=HEAD&content-type=text/html" class="orange_white" target="new">מתוך ה-CVS של כנרת</a><br>
+* זמין גם כחלק ממדריך השחיה
+</p>
 
 
 
