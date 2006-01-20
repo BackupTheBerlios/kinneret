@@ -121,7 +121,10 @@
 		<font size=4><b><u>מתמטיקה</b></u></font>
 	]]></text>
 	<link type="play" name="he/man_kbruch.html"><![CDATA[
-			KBruch - תוכנה לתרגול תרגילי שברים.
+			תרגול שברים עם KBruch
+	]]></link>
+	<link type="play" name="he/man_kpercentage.html"><![CDATA[
+			תרגול אחוזים עם KPercentage
 	]]></link>
 	
 	<text><![CDATA[
